@@ -1,0 +1,75 @@
+{
+  "schema_version": "draft-1",
+  "is_template": true,
+  "run_id": "RUN-YYYYMMDD-NNN",
+  "status": "planned",
+  "acceptance": "not-evaluated",
+  "product": {
+    "repository": "https://github.com/Dinu-Sri/BookOne",
+    "base_sha": null,
+    "candidate_sha": null,
+    "deployed_sha_before": null,
+    "deployed_sha_after": null,
+    "image_digest": null
+  },
+  "qa": {
+    "repository": null,
+    "commit_sha": null,
+    "lockfile_sha256": null,
+    "runner_version": null,
+    "browser_version": null
+  },
+  "environment": {
+    "kind": "staging",
+    "url": "https://bookone.clossyan.com",
+    "owner_authorization": "Owner authorized changes to all test data at this URL on 2026-10-11. Production is outside agent access.",
+    "identity_verified": false,
+    "schema_fingerprint": null,
+    "migration_checksums": [],
+    "non_secret_config_fingerprint": null,
+    "feature_flags": {},
+    "storage_identity": null
+  },
+  "fixtures": {
+    "version": null,
+    "seed": null,
+    "business_clock": null,
+    "timezone": "Asia/Colombo",
+    "currency": "LKR",
+    "tax_rule_version": null,
+    "profile_ids": [],
+    "tenant_ids": [],
+    "roles": []
+  },
+  "selection": {
+    "required_scenario_ids": [],
+    "selected_scenario_ids": [],
+    "excluded_with_reasons": [],
+    "impact_assessment_ref": null
+  },
+  "started_at": null,
+  "finished_at": null,
+  "results": [],
+  "summary": {
+    "required": 0,
+    "selected": 0,
+    "passed": 0,
+    "failed": 0,
+    "blocked": 0,
+    "not_run": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "evidence": [],
+  "bugs": [],
+  "created_record_ids": [],
+  "cleanup": {
+    "status": "not-started",
+    "remaining_records": []
+  },
+  "review": {
+    "reviewer": null,
+    "decision": "not-evaluated",
+    "reason": "Template only. No application tests executed; unknown fingerprints and zero selected tests cannot support acceptance."
+  }
+}

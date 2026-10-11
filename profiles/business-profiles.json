@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "BP-01",
+      "name": "Physical retail / wholesale",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-02",
+      "name": "Digital seller",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-03",
+      "name": "Service agency",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-04",
+      "name": "Rental",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-05",
+      "name": "Mixed event rental / products / services",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-06",
+      "name": "Multi-location",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-07",
+      "name": "Sole proprietor",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-08",
+      "name": "Personal",
+      "status": "designed-not-executed"
+    },
+    {
+      "id": "BP-09",
+      "name": "Multi-company accountant",
+      "status": "designed-not-executed"
+    }
+  ]
+}

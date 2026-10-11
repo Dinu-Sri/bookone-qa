@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/Dinu-Sri/BookOne",
+  "source_commit": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+  "entries": [
+    {
+      "source_path": "apps/e2e-runner/.gitignore",
+      "destination": null,
+      "source_sha256": "fd144e7282d747a1c868b7b2171f83a2781b8be9a5a0fd6ae6390c0f1533e785",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/Dockerfile",
+      "destination": null,
+      "source_sha256": "36ee8c34f7af1e9933705c45fcb8296903aad15888c0b759e9a4e583df6b4a2d",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/README.md",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/README.md",
+      "source_sha256": "46b127f751fab62e28a3a643e9970a54d7061ced1e3654f721d8311b91360bc4",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "46b127f751fab62e28a3a643e9970a54d7061ced1e3654f721d8311b91360bc4",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement-2.csv",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement-2.csv",
+      "source_sha256": "258c26ab18039c65bc1e25a29384f78ddb4f24921c9e02c64c60890dc4051d26",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "258c26ab18039c65bc1e25a29384f78ddb4f24921c9e02c64c60890dc4051d26",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.csv",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.csv",
+      "source_sha256": "21e8aa130ef932fd7d52a1b77ba075b6abd161bee86433cd3700cfff80b86162",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "21e8aa130ef932fd7d52a1b77ba075b6abd161bee86433cd3700cfff80b86162",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.tsv",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.tsv",
+      "source_sha256": "ff53a8ba47f02a7b0fb1f96d7f735c48948e4279e26102be050c96fa9976d68a",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "ff53a8ba47f02a7b0fb1f96d7f735c48948e4279e26102be050c96fa9976d68a",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.xls",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/bank-statement.xls",
+      "source_sha256": "42596062688d5949dc884b7ac66150957db3dbcc835251b03d5c82c4dc79b603",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "42596062688d5949dc884b7ac66150957db3dbcc835251b03d5c82c4dc79b603",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/book-entries-2.json",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/book-entries-2.json",
+      "source_sha256": "7a555bd7e172cf5d4cca0a2a7c556f26028d7d549ef558795277913fa8d3eb93",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "7a555bd7e172cf5d4cca0a2a7c556f26028d7d549ef558795277913fa8d3eb93",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/book-entries.json",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/book-entries.json",
+      "source_sha256": "1d6c17f7e590aab4bed57c7b71e81eea65a0778d39f13abf7087590e5b48a449",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "1d6c17f7e590aab4bed57c7b71e81eea65a0778d39f13abf7087590e5b48a449",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/expected-outcomes.json",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/expected-outcomes.json",
+      "source_sha256": "18aaa468da28e54e9accb8d7fd1debcc88a777f6b9dae535e8eefa2e20b896fd",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "18aaa468da28e54e9accb8d7fd1debcc88a777f6b9dae535e8eefa2e20b896fd",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/fixtures/bank-recon-demo/generate-xlsx.mjs",
+      "destination": "apps/e2e-runner/fixtures/bank-recon-demo/generate-xlsx.mjs",
+      "source_sha256": "38ecd881b0d662ba31c5b15fad2153746976254c5af8e4d829a065b2103e9924",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "38ecd881b0d662ba31c5b15fad2153746976254c5af8e4d829a065b2103e9924",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/package-lock.json",
+      "destination": null,
+      "source_sha256": "d84c636a55b21115dfa2787dfeb935fe03a0589eae4fe62a03e14e82709e5c74",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/package.json",
+      "destination": null,
+      "source_sha256": "6a7f38049a6cf4b125ba1800bf9d1687bafa4684bbcdfee470eb56471aa35557",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/playwright.config.ts",
+      "destination": "apps/e2e-runner/playwright.config.ts",
+      "source_sha256": "d6784face2a2f47125ac159590e3d11f79d380efde9b300f09eaf51f2068801e",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "6960af1d48d33e7c51a71a687f1b024935165dd8a5ed0754108d39cc693e3aea",
+      "adapted": true
+    },
+    {
+      "source_path": "apps/e2e-runner/public/index.html",
+      "destination": null,
+      "source_sha256": "60671b36500c4d130417809d4102825cc2d99aa06c61d915a096dac53f768532",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/agent-browse.mjs",
+      "destination": null,
+      "source_sha256": "d9f9a49b8de092ec190898abfaf3757de98db377bd0ecfa9db5b4099ba935744",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/agent-scenarios/login-smoke.json",
+      "destination": null,
+      "source_sha256": "7afabc8db23fa13a091443e16bc1d2844fc67d41af84b38b3544651d18a9f871",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/agent-scenarios/rental-ops.json",
+      "destination": null,
+      "source_sha256": "bf6c68f5e7452f66cc31735e3910001a93b00baee5f45cff9c2fb799b6e67f1e",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/e2e-bank-recon-demo.mjs",
+      "destination": null,
+      "source_sha256": "c591d23725322ebaacf95f511d4ef79c92431151bf05209d3e2f38b984413746",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/e2e-bank-recon-journey.mjs",
+      "destination": null,
+      "source_sha256": "234c8e2f2e0958c01270ed260c92a642686a0b66af2965b970dfa1557465ed20",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/e2e-level.mjs",
+      "destination": "apps/e2e-runner/scripts/e2e-level.mjs",
+      "source_sha256": "c83dc7d68ff5055baf3699251c0adecd44ccd97c236ae970174f06d5872b0e1e",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c83dc7d68ff5055baf3699251c0adecd44ccd97c236ae970174f06d5872b0e1e",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/export-buckets-json.mjs",
+      "destination": "apps/e2e-runner/scripts/export-buckets-json.mjs",
+      "source_sha256": "ab752011807bd2b93b3449bc55b2610a449d13d8c60b2ac27aa3e7dac2584156",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "ab752011807bd2b93b3449bc55b2610a449d13d8c60b2ac27aa3e7dac2584156",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/generate-coverage.mjs",
+      "destination": "apps/e2e-runner/scripts/generate-coverage.mjs",
+      "source_sha256": "862c95e6cada1c3386e9dcaab9ad4cff7dc61bc15709e7f8fa2d0a59105f3df7",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "862c95e6cada1c3386e9dcaab9ad4cff7dc61bc15709e7f8fa2d0a59105f3df7",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/run-suite.mjs",
+      "destination": "apps/e2e-runner/scripts/run-suite.mjs",
+      "source_sha256": "8b20983b5fe40f051203dc83a25fa3ad28d35a595e0a8112a372790be068c8ec",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "8b20983b5fe40f051203dc83a25fa3ad28d35a595e0a8112a372790be068c8ec",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/ui-audit-bank-import.mjs",
+      "destination": null,
+      "source_sha256": "0d6c3bc3ec9498ef0abc440cbbbe471e83d52947f2221cfea9a9c7fa014cf5f9",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/ui-audit-bank-recon.mjs",
+      "destination": null,
+      "source_sha256": "8effe717a7ff0d8a6379835498abeb43666b6a56aa1ba7bb6fe943c743e627b8",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/scripts/ui-audit-cashbook.mjs",
+      "destination": null,
+      "source_sha256": "8baaf3c30dc8b935f54589931d7ee13f61039bc703029418b371758315eea8c9",
+      "disposition": "source-reference-only",
+      "notes": "Deployment/UI/local account automation retained by pinned source reference; not needed for CLI bootstrap"
+    },
+    {
+      "source_path": "apps/e2e-runner/src/buckets.ts",
+      "destination": "apps/e2e-runner/src/buckets.ts",
+      "source_sha256": "dbcadd34d6020cb89f8ac988ea1cafb399a918fb57b89f561b6be989bf5a4bbd",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "dbcadd34d6020cb89f8ac988ea1cafb399a918fb57b89f561b6be989bf5a4bbd",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/catalog/backlog.json",
+      "destination": "apps/e2e-runner/src/catalog/backlog.json",
+      "source_sha256": "575718b0b1b2047320d26b40fcf38eadfd4fa11aa2510317888a87d31b244bd8",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "575718b0b1b2047320d26b40fcf38eadfd4fa11aa2510317888a87d31b244bd8",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/catalog/buckets.json",
+      "destination": "apps/e2e-runner/src/catalog/buckets.json",
+      "source_sha256": "bf2ef46931999452563c2cec2cb718ea5eb8e01b62efb3a515658b2b5332da24",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "bf2ef46931999452563c2cec2cb718ea5eb8e01b62efb3a515658b2b5332da24",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/catalog/coverage.generated.json",
+      "destination": "apps/e2e-runner/src/catalog/coverage.generated.json",
+      "source_sha256": "2f4949ce280893866f4ac077cc8044f60e7e0fc0f4ed33b0415474a047836620",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "2f4949ce280893866f4ac077cc8044f60e7e0fc0f4ed33b0415474a047836620",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/catalog/level.json",
+      "destination": "apps/e2e-runner/src/catalog/level.json",
+      "source_sha256": "b003bf26c175ec7fc830d17925a3ca17bd0925dd414c95ae23bb5a420ceaa041",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "b003bf26c175ec7fc830d17925a3ca17bd0925dd414c95ae23bb5a420ceaa041",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/catalog/scenarios.json",
+      "destination": "apps/e2e-runner/src/catalog/scenarios.json",
+      "source_sha256": "afdcccc1c41de833c920add72d80ef682fbffd7aba54b24bfe15a60885a85162",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "afdcccc1c41de833c920add72d80ef682fbffd7aba54b24bfe15a60885a85162",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/fixtures.ts",
+      "destination": "apps/e2e-runner/src/fixtures.ts",
+      "source_sha256": "c4baae00e717afd71f1f4555dc1619d399161a6857eeb87720ded2a8664496f4",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c4baae00e717afd71f1f4555dc1619d399161a6857eeb87720ded2a8664496f4",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/assert.ts",
+      "destination": "apps/e2e-runner/src/helpers/assert.ts",
+      "source_sha256": "16f3aa2fb55ea1800810df8cb70c8312c75a52a9f13ec647a1e856faff74bd06",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "16f3aa2fb55ea1800810df8cb70c8312c75a52a9f13ec647a1e856faff74bd06",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/auth.ts",
+      "destination": "apps/e2e-runner/src/helpers/auth.ts",
+      "source_sha256": "cc7b3683d0d1763a5ac2a053aea1e2490c1ef66e557a2d98d18d2ac5fffe000c",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "cc7b3683d0d1763a5ac2a053aea1e2490c1ef66e557a2d98d18d2ac5fffe000c",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/balances.ts",
+      "destination": "apps/e2e-runner/src/helpers/balances.ts",
+      "source_sha256": "4fa3a87400af7cecf417f95753404494fc151810a8752b6f86fc8ab46a74f5d7",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "4fa3a87400af7cecf417f95753404494fc151810a8752b6f86fc8ab46a74f5d7",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/catalog-run.ts",
+      "destination": "apps/e2e-runner/src/helpers/catalog-run.ts",
+      "source_sha256": "b92b98ed86b219ad66b351b8801a3d25bfd7c2e1e56d0b7ee94bbc528f32c934",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "b92b98ed86b219ad66b351b8801a3d25bfd7c2e1e56d0b7ee94bbc528f32c934",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/catalog.ts",
+      "destination": "apps/e2e-runner/src/helpers/catalog.ts",
+      "source_sha256": "e37506b178e86e3524a0973bfcd990428902f3198d7e3ba78f3193ebc806aca3",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "e37506b178e86e3524a0973bfcd990428902f3198d7e3ba78f3193ebc806aca3",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/documents.ts",
+      "destination": "apps/e2e-runner/src/helpers/documents.ts",
+      "source_sha256": "819aaf5fd3e8e2247c3616794146c66c74b295364cdce1a0d607ed2e3fc8e64b",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "819aaf5fd3e8e2247c3616794146c66c74b295364cdce1a0d607ed2e3fc8e64b",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/env.ts",
+      "destination": "apps/e2e-runner/src/helpers/env.ts",
+      "source_sha256": "3705dce5d3205c1a72571b52bed90f36039b9277679eeb62ee28aeefbb93b125",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c268c7d112d3ad8f2c4b0950f9cb30f639b559feebbae88331b04c61ddd99fc2",
+      "adapted": true
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/forms.ts",
+      "destination": "apps/e2e-runner/src/helpers/forms.ts",
+      "source_sha256": "2cf522b6b47d93d602bd725d99e6ce8e6b1b600141618981191e99d827797ebc",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "2cf522b6b47d93d602bd725d99e6ce8e6b1b600141618981191e99d827797ebc",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/lifecycle.ts",
+      "destination": "apps/e2e-runner/src/helpers/lifecycle.ts",
+      "source_sha256": "f523a7a8026fbdcfcd18f8f131587452f1d6092d64f7d12dbfea8098edcc4c92",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "f523a7a8026fbdcfcd18f8f131587452f1d6092d64f7d12dbfea8098edcc4c92",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/masters.ts",
+      "destination": "apps/e2e-runner/src/helpers/masters.ts",
+      "source_sha256": "0c5fe2759fc5088ed0ed3667cd5a3cec5ae2ed37ca5af962a6edaf9f60301f4e",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "0c5fe2759fc5088ed0ed3667cd5a3cec5ae2ed37ca5af962a6edaf9f60301f4e",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/nav.ts",
+      "destination": "apps/e2e-runner/src/helpers/nav.ts",
+      "source_sha256": "6994bf34ade6287b49c8507b3855dc8a5c7853691bf42bc835f5d1d8599f744a",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "6994bf34ade6287b49c8507b3855dc8a5c7853691bf42bc835f5d1d8599f744a",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/settings.ts",
+      "destination": "apps/e2e-runner/src/helpers/settings.ts",
+      "source_sha256": "b5aabc7f37a99e5a82c417f85dab7d9230c818c10ac5130b87cd824c6c5e87e1",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "b5aabc7f37a99e5a82c417f85dab7d9230c818c10ac5130b87cd824c6c5e87e1",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/helpers/staging.ts",
+      "destination": "apps/e2e-runner/src/helpers/staging.ts",
+      "source_sha256": "1e3e08f062db9eae729526be73f14f4bc2b56a9af6611457086982dd5f86afed",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "1e3e08f062db9eae729526be73f14f4bc2b56a9af6611457086982dd5f86afed",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/report-summary.ts",
+      "destination": "apps/e2e-runner/src/report-summary.ts",
+      "source_sha256": "a4cd2f0a77ed342a9156cd4ff4b4ed937bc98c0a330bf39acaa3a26dfae2febf",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "a4cd2f0a77ed342a9156cd4ff4b4ed937bc98c0a330bf39acaa3a26dfae2febf",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/runner/execute.ts",
+      "destination": "apps/e2e-runner/src/runner/execute.ts",
+      "source_sha256": "90dfa81ecab2c7917c5fc058e94977668937a7ef1cf92bb12a1744006a5899b3",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "90dfa81ecab2c7917c5fc058e94977668937a7ef1cf92bb12a1744006a5899b3",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/runner/types.ts",
+      "destination": "apps/e2e-runner/src/runner/types.ts",
+      "source_sha256": "1eeb29a8606d375f6b8b8bd603bdc87bc3a8837f2774ec81f53bfce18b39d4f7",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "1eeb29a8606d375f6b8b8bd603bdc87bc3a8837f2774ec81f53bfce18b39d4f7",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/src/server.ts",
+      "destination": null,
+      "source_sha256": "9b0db64622f57078e5198865d88bcc7100d1c388bbb8753146beebabc6115808",
+      "disposition": "source-reference-only",
+      "notes": "HTTP runner excluded; use local CLI, no public credential/report server"
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/00-smoke.spec.ts",
+      "destination": "apps/e2e-runner/tests/00-smoke.spec.ts",
+      "source_sha256": "71ecc85f6320b40e7b7a62938accf9d346fe64b2bf8d132086aeca95c0c35897",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "71ecc85f6320b40e7b7a62938accf9d346fe64b2bf8d132086aeca95c0c35897",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/01-auth.spec.ts",
+      "destination": "apps/e2e-runner/tests/01-auth.spec.ts",
+      "source_sha256": "dae60d34dd8c72fbd4c75a91451dc11bbea903280ef84143f9d56847f59c3e21",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "dae60d34dd8c72fbd4c75a91451dc11bbea903280ef84143f9d56847f59c3e21",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/02-public.spec.ts",
+      "destination": "apps/e2e-runner/tests/02-public.spec.ts",
+      "source_sha256": "376177bc08531afcc654390912514d135369d880df4f51ffd71ba61f6686b9ce",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "376177bc08531afcc654390912514d135369d880df4f51ffd71ba61f6686b9ce",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/03-shell-routes.spec.ts",
+      "destination": "apps/e2e-runner/tests/03-shell-routes.spec.ts",
+      "source_sha256": "2cb5bb2505ad9e096d606692ae07ce91faa5e7f2f48d21b78e512fa0de9091d1",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "2cb5bb2505ad9e096d606692ae07ce91faa5e7f2f48d21b78e512fa0de9091d1",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/04-company-masters.spec.ts",
+      "destination": "apps/e2e-runner/tests/04-company-masters.spec.ts",
+      "source_sha256": "aa9623c0b980cf81e6e4ca7441b80a16c98ae2246a9d5cb34a7df4ac59cb474c",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "aa9623c0b980cf81e6e4ca7441b80a16c98ae2246a9d5cb34a7df4ac59cb474c",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/05-parties-products.spec.ts",
+      "destination": "apps/e2e-runner/tests/05-parties-products.spec.ts",
+      "source_sha256": "a0abd720fb4d04feac71b97f5af078b9485a4ade9e089ec11609f89f30b54533",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "a0abd720fb4d04feac71b97f5af078b9485a4ade9e089ec11609f89f30b54533",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/06-sales-journey.spec.ts",
+      "destination": "apps/e2e-runner/tests/06-sales-journey.spec.ts",
+      "source_sha256": "ea886f2447f6b697f78e79e2904abdf1d0685fd1ab2453bbb6bbbec1ada66f61",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "ea886f2447f6b697f78e79e2904abdf1d0685fd1ab2453bbb6bbbec1ada66f61",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/07-purchase-inventory.spec.ts",
+      "destination": "apps/e2e-runner/tests/07-purchase-inventory.spec.ts",
+      "source_sha256": "7951603871247a12e5c40a633c1992a8e59d369b51bb4058bf7d656f59295c29",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "7951603871247a12e5c40a633c1992a8e59d369b51bb4058bf7d656f59295c29",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/08-accounting.spec.ts",
+      "destination": "apps/e2e-runner/tests/08-accounting.spec.ts",
+      "source_sha256": "3a9ebce78693faf4257ca5db61a11af66e215f4c3f401d4bd211778ea07da165",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "3a9ebce78693faf4257ca5db61a11af66e215f4c3f401d4bd211778ea07da165",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/09-pos.spec.ts",
+      "destination": "apps/e2e-runner/tests/09-pos.spec.ts",
+      "source_sha256": "ede90b1ef5d6e40d22493d349b89c00c942750789e6d5fdd8b943bb2d153aad6",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "ede90b1ef5d6e40d22493d349b89c00c942750789e6d5fdd8b943bb2d153aad6",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "destination": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "source_sha256": "b1fc80223bcf920bd71c52edbef24c52de6a33f7bcba3a544c77708b4cd0c941",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "b1fc80223bcf920bd71c52edbef24c52de6a33f7bcba3a544c77708b4cd0c941",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "destination": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "source_sha256": "84983c50d01bdd351c647a81c3d2861b2697c2c4fb0d50c5e4358c1f6319c42c",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "84983c50d01bdd351c647a81c3d2861b2697c2c4fb0d50c5e4358c1f6319c42c",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/12-settings-save.spec.ts",
+      "destination": "apps/e2e-runner/tests/12-settings-save.spec.ts",
+      "source_sha256": "7b3da1bc8a8a7eaea2f8f00a5eb777edb9968b95b3ba1d99d205fe59d00b9cac",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "7b3da1bc8a8a7eaea2f8f00a5eb777edb9968b95b3ba1d99d205fe59d00b9cac",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/13-validation-catalog.spec.ts",
+      "destination": "apps/e2e-runner/tests/13-validation-catalog.spec.ts",
+      "source_sha256": "6bcd0672708f69306b61956fa57886907e6f4242fbc159e87abd9ffa851fc323",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "6bcd0672708f69306b61956fa57886907e6f4242fbc159e87abd9ffa851fc323",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/14-route-smoke-ids.spec.ts",
+      "destination": "apps/e2e-runner/tests/14-route-smoke-ids.spec.ts",
+      "source_sha256": "a33a6b70331290c78a79e7ef3391750df6afff391f0500bc3e2c33e76704ffad",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "a33a6b70331290c78a79e7ef3391750df6afff391f0500bc3e2c33e76704ffad",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/15-business-day.spec.ts",
+      "destination": "apps/e2e-runner/tests/15-business-day.spec.ts",
+      "source_sha256": "3170155a75a045cac4d796aaa5c45159d87f72dead8cb39a26f75860caae054d",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "3170155a75a045cac4d796aaa5c45159d87f72dead8cb39a26f75860caae054d",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/16-parties-catalog.spec.ts",
+      "destination": "apps/e2e-runner/tests/16-parties-catalog.spec.ts",
+      "source_sha256": "18b0ac1c28ce94ffb5682c8fd5ea439f070c4e7f80f5e9a6ac95f70c2b85ec1c",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "18b0ac1c28ce94ffb5682c8fd5ea439f070c4e7f80f5e9a6ac95f70c2b85ec1c",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/17-platform.spec.ts",
+      "destination": "apps/e2e-runner/tests/17-platform.spec.ts",
+      "source_sha256": "f7a461ef5829b5335b2c96d0896e25810a5a85f997fdf91fd2914f443c748dc5",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "f7a461ef5829b5335b2c96d0896e25810a5a85f997fdf91fd2914f443c748dc5",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/18-settings-matrix.spec.ts",
+      "destination": "apps/e2e-runner/tests/18-settings-matrix.spec.ts",
+      "source_sha256": "c9513c7428152d2709613c8dfa2da0870f0f3e9247ce768b012f161f98823cdd",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c9513c7428152d2709613c8dfa2da0870f0f3e9247ce768b012f161f98823cdd",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/19-mid-op-edges.spec.ts",
+      "destination": "apps/e2e-runner/tests/19-mid-op-edges.spec.ts",
+      "source_sha256": "85ad3d0a434740a6837ab1107f550f2d19e04f2d0bf4639e4b86c4e9f0418fd7",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "85ad3d0a434740a6837ab1107f550f2d19e04f2d0bf4639e4b86c4e9f0418fd7",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/20-qty-price-matrix.spec.ts",
+      "destination": "apps/e2e-runner/tests/20-qty-price-matrix.spec.ts",
+      "source_sha256": "1169fb4586ff8b18c1dfc51830828ba694c175b50bbe11aa4eccd11421355c66",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "1169fb4586ff8b18c1dfc51830828ba694c175b50bbe11aa4eccd11421355c66",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/21-numeric-edges.spec.ts",
+      "destination": "apps/e2e-runner/tests/21-numeric-edges.spec.ts",
+      "source_sha256": "598c46337438b6bad04c6b2a5531e20b326f07f4d3ecce61ca6b49754c374c73",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "598c46337438b6bad04c6b2a5531e20b326f07f4d3ecce61ca6b49754c374c73",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/22-reports-period-matrix.spec.ts",
+      "destination": "apps/e2e-runner/tests/22-reports-period-matrix.spec.ts",
+      "source_sha256": "41233bf2bada1877dea7bda81b7e12cbcd665e66cd6ab1f068c44864e0b4f8e9",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "41233bf2bada1877dea7bda81b7e12cbcd665e66cd6ab1f068c44864e0b4f8e9",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/23-payment-status-matrix.spec.ts",
+      "destination": "apps/e2e-runner/tests/23-payment-status-matrix.spec.ts",
+      "source_sha256": "aabfa283c350c6544e553ed31e833d3e7832539760d49e81d9c020b96800554f",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "aabfa283c350c6544e553ed31e833d3e7832539760d49e81d9c020b96800554f",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/24-ui-ux.spec.ts",
+      "destination": "apps/e2e-runner/tests/24-ui-ux.spec.ts",
+      "source_sha256": "26bfb50b174415405bf106759bebc6954d053b2bf1b41071ec90ea50bdff10f6",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "26bfb50b174415405bf106759bebc6954d053b2bf1b41071ec90ea50bdff10f6",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/25-stress.spec.ts",
+      "destination": "apps/e2e-runner/tests/25-stress.spec.ts",
+      "source_sha256": "fc84b093f9527e9624f945e27166b2e8b13f65a95bbd02893155eb269f225080",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "fc84b093f9527e9624f945e27166b2e8b13f65a95bbd02893155eb269f225080",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/26-domain-remainder.spec.ts",
+      "destination": "apps/e2e-runner/tests/26-domain-remainder.spec.ts",
+      "source_sha256": "e3b0f05f4413d4a460a383f267499693bf99626a7a55d62586ae16430495a943",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "e3b0f05f4413d4a460a383f267499693bf99626a7a55d62586ae16430495a943",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/27-catalog-sweep.spec.ts",
+      "destination": "apps/e2e-runner/tests/27-catalog-sweep.spec.ts",
+      "source_sha256": "8f326baad0cdc254f929375c5298726f648b4a7e34608c6aaecdfb625c24ec5f",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "8f326baad0cdc254f929375c5298726f648b4a7e34608c6aaecdfb625c24ec5f",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "destination": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "source_sha256": "26e3caeee96b00bd396c88f40e4ab55d30f7dab174f2873a89c99108dd72b5af",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "26e3caeee96b00bd396c88f40e4ab55d30f7dab174f2873a89c99108dd72b5af",
+      "adapted": false
+    },
+    {
+      "source_path": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "destination": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "source_sha256": "2c97505c44cf2ba125eb12028f99523c69a99e77c6b25ac2f6b51a0fb9b15042",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "9aeca66be18f1433816412582b56b26b3518b66587f5abd4e9063c85da312162",
+      "adapted": true
+    },
+    {
+      "source_path": "apps/e2e-runner/tsconfig.json",
+      "destination": "apps/e2e-runner/tsconfig.json",
+      "source_sha256": "c51ae5645aee65c94dbdaf56e8ab00a6e40dfbdd5a8114e0717ae5abe421d8a0",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c51ae5645aee65c94dbdaf56e8ab00a6e40dfbdd5a8114e0717ae5abe421d8a0",
+      "adapted": false
+    },
+    {
+      "source_path": "docs/E2E_AUTOMATION.md",
+      "destination": "docs/legacy/E2E_AUTOMATION.md",
+      "source_sha256": "30a292d31ee095923c344b87cd0c4519401e4737502efe2a7b69f8f76a5a1587",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "30a292d31ee095923c344b87cd0c4519401e4737502efe2a7b69f8f76a5a1587",
+      "adapted": false
+    },
+    {
+      "source_path": "docs/E2E_COVERAGE.md",
+      "destination": "docs/E2E_COVERAGE.md",
+      "source_sha256": "52d8cf8c0bf719e180ff6f3778d1d3cc88080cfd482444a7e3e2f3f568ec3995",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "52d8cf8c0bf719e180ff6f3778d1d3cc88080cfd482444a7e3e2f3f568ec3995",
+      "adapted": false
+    },
+    {
+      "source_path": "docs/E2E_GOVERNANCE.md",
+      "destination": "docs/legacy/E2E_GOVERNANCE.md",
+      "source_sha256": "529a95eca57eb9004ab490e62d26b69af28306c17bd5b94e639493859cbbb295",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "529a95eca57eb9004ab490e62d26b69af28306c17bd5b94e639493859cbbb295",
+      "adapted": false
+    },
+    {
+      "source_path": "docs/E2E_RUNNER.md",
+      "destination": "docs/legacy/E2E_RUNNER.md",
+      "source_sha256": "ff5c1ff3669793633bc8947e38730b381fca827ec2a5b9da4f418c693f53674d",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "ff5c1ff3669793633bc8947e38730b381fca827ec2a5b9da4f418c693f53674d",
+      "adapted": false
+    },
+    {
+      "source_path": "docs/E2E_SCENARIO_CATALOG.md",
+      "destination": "docs/E2E_SCENARIO_CATALOG.md",
+      "source_sha256": "c0a4e7614090983834d430a5d6a184afa229b44da6495cb60ede74d599fc5466",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c0a4e7614090983834d430a5d6a184afa229b44da6495cb60ede74d599fc5466",
+      "adapted": false
+    },
+    {
+      "source_path": "packages/accounting/test/amount-in-words.test.ts",
+      "destination": "packages/accounting/test/amount-in-words.test.ts",
+      "source_sha256": "f775a79bcfb95b381d34b2c2ac0892f50473a19a5bda51949f17135b6215838c",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "4fc9ad521f3320672b6543a65c99587d3460a69fe590b210c6f7fcb47c0988f6",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/accounting/test/document-posting.test.ts",
+      "destination": "packages/accounting/test/document-posting.test.ts",
+      "source_sha256": "cebcd3e84da9b553b9fafd5b8f5dbb9b494e2466a7306566ac6b61b8592c8d5e",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "37f88a8edeb45f227c81b555e2fd9b53978778659bb1321f0fc2e81bf57df090",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/accounting/test/engine.test.ts",
+      "destination": "packages/accounting/test/engine.test.ts",
+      "source_sha256": "33d84646d8ed86504f3ec77034853c750ed1408cfb0ba22ea42a057731610e08",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "35cab38b61f889dc48c947352fe59176b42276abd8fa8ffc00d13a5f0b77e13a",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/accounting/test/rental-availability.test.ts",
+      "destination": "packages/accounting/test/rental-availability.test.ts",
+      "source_sha256": "eb6e4d338aa00fe1d271c19114a8134198579e732a86447e7d19bf97a6e1bf33",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "c69bab276bae2cb63e3aa44baa0009abbc7fc8940a3576833fdd5447d55efcae",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "destination": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "source_sha256": "efa12b18da8a69dd0eb58f88401ae70789243a63d537351bb5ad73d56fa0adb8",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "62e2741b2ec573f8a054fb2f94014a89b0c1ac87c29fb84505506286bd8ca4c7",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/statement-import/test/bank-fixtures.test.ts",
+      "destination": "packages/statement-import/test/bank-fixtures.test.ts",
+      "source_sha256": "017c973c2f639e612539e5eef9ca541210916a2342c1cda458a276323418997b",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "9bb417bd4862bc34bc2643f2485855f473a17bbf23482356b3adbc2ca2544576",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/statement-import/test/hardening.test.ts",
+      "destination": "packages/statement-import/test/hardening.test.ts",
+      "source_sha256": "bcfba9e7357210b4abaf76705cc5bb9ac5f74dc075eaed5cef39f086f718ce42",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "19964dbe815388afa048b6674661d0282f1bb3ed9c4c44f6ae2996b933cb4995",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/statement-import/test/normalize.test.ts",
+      "destination": "packages/statement-import/test/normalize.test.ts",
+      "source_sha256": "636045268c72bb39e9b659ba4e098456e6078d5b3fc1de84519dc939df11c351",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "7d08405b33e06802ca2ba4bc3dab1352001584def22613245f9fba6e8169f034",
+      "adapted": true
+    },
+    {
+      "source_path": "packages/statement-import/test/studio-transform.test.ts",
+      "destination": "packages/statement-import/test/studio-transform.test.ts",
+      "source_sha256": "4d85e2f5280f3b48c783bc2ca943fe556d32a54c0ae6b850822713f4be6c9635",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "46620f788dacae96bc475036829b69e991fbd3f5e31bf2d94d1ec2a59bbbcd7c",
+      "adapted": true
+    },
+    {
+      "source_path": "scripts/export-e2e-catalog.mjs",
+      "destination": "scripts/export-e2e-catalog.mjs",
+      "source_sha256": "34c3360a10a1a179595bc2f3aa213509bbb082da6bd7f726d04d9e38cd6e12af",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "34c3360a10a1a179595bc2f3aa213509bbb082da6bd7f726d04d9e38cd6e12af",
+      "adapted": false
+    },
+    {
+      "source_path": "scripts/generate-e2e-scenario-catalog.mjs",
+      "destination": "scripts/generate-e2e-scenario-catalog.mjs",
+      "source_sha256": "7efbecf9517a96f4ded1bb0ef11fad8eaaf93a1bd1e9b15213e7f7e38b688cdc",
+      "disposition": "imported",
+      "notes": "",
+      "imported_sha256": "7efbecf9517a96f4ded1bb0ef11fad8eaaf93a1bd1e9b15213e7f7e38b688cdc",
+      "adapted": false
+    }
+  ]
+}
