@@ -10,7 +10,7 @@
 - On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
 - Live E2E denial navigation initially hit a temporary browser approval rate limit; subsequent authorized checks completed as recorded below.
 
-## Follow-up after reported staging fix — 2026-10-12
+## Earlier follow-up after reported staging fix — 2026-10-12
 
 - The Viewer role account created a synthetic customer successfully, and then saved a LKR 100 invoice draft as Viewer. Both test records were archived; the invoice remains visible as archived. No invoice was posted and no ledger or stock mutation was attempted.
 - The original invoice error page from the prior run did not appear in this follow-up because the draft save succeeded. The owner-reported fix is therefore **not verified as a fix**; a successful Viewer write was observed instead. Deployed commit/image identity remains unknown.
@@ -67,3 +67,11 @@
 
 The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
 
+
+
+## Retest after latest staging update — 2026-10-12
+
+- The synthetic account remains assigned `Viewer` on `/company/team`. On `/parties/customers/new`, submitting code `QA-VIEW-20261013` and name `QA Viewer Update Retest 20261013` succeeded; that customer appeared in the invoice customer picker and active customer list. This independently repeats BUG-0003.
+- As Viewer, selected that customer, added a synthetic free-text service line at LKR 100, and selected **Save draft**. The app created `INV-20261012-0002` with status `draft` and total LKR 100, independently repeating BUG-0004. No Post action was used.
+- Both newly created records were archived through the UI and success confirmations were observed. They remain archived/recoverable. No journal, stock, payment or posted invoice action was performed. The customer list still shows the earlier test customer `CUS-0001` active with LKR 100 even though its linked test invoice is archived; this was pre-existing at retest start and was left untouched. Its balance meaning requires separate reconciliation; this run does not infer a ledger effect.
+- The deployed commit/image, schema and storage identity remain unavailable. This is repeat exploratory evidence, not acceptance of the new build or a release gate. See [RUN-20261012-viewer-permission-retest-02](runs/RUN-20261012-viewer-permission-retest-02.md).
