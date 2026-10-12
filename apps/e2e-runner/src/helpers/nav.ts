@@ -106,7 +106,6 @@ export const PUBLIC_SMOKE_ROUTES = [
   { path: '/docs/inventory', name: 'Docs inventory' },
   { path: '/docs/accounting', name: 'Docs accounting' },
   { path: '/docs/pos', name: 'Docs POS' },
-  { path: '/e2e', name: 'E2E console' },
   { path: '/login', name: 'Login' },
 ];
 

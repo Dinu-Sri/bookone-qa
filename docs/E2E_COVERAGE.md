@@ -11,7 +11,7 @@
 | IDs referenced in code | 747 |
 | IDs missing | 0 |
 | Coverage (ID presence) | 100% |
-| Generated at | 2026-09-24T03:17:34.091Z |
+| Generated at | 2026-10-12T05:11:14.962Z |
 
 status=referenced means the catalog ID string appears in tests/ or src/ (execute handlers). It does not yet certify deep mutate/balance assertions — see docs/E2E_AUTOMATION.md phases.
 
@@ -41,7 +41,7 @@ status=referenced means the catalog ID string appears in tests/ or src/ (execute
 | 22. Health-check suite step scenarios (mirror product suite) | 15 | 15 | 0 |
 | 26. Reports x period matrix | 15 | 15 | 0 |
 | 25. Document status transitions | 14 | 14 | 0 |
-| 2. Public surfaces (docs & E2E console) | 13 | 13 | 0 |
+| 2. Public surfaces (docs & retired inbuilt E2E) | 13 | 13 | 0 |
 | 21. Rare / stress / ops | 11 | 11 | 0 |
 | 30. Product identity (units, categories, descriptions) | 11 | 11 | 0 |
 | 19. Integrity after operations | 8 | 8 | 0 |

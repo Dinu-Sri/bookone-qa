@@ -1,6 +1,14 @@
 # QA status — 2026-10-12
 
-## Latest batch — 2026-10-12
+## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
+
+- Change record: [changes/CHG-20261012-remove-inbuilt-e2e.md](changes/CHG-20261012-remove-inbuilt-e2e.md). Branch `qa/chg-20261012-e2e-denial`. Companion to BookOne `chore/remove-inbuilt-e2e` / [CHG-20261012-remove-inbuilt-e2e](https://github.com/Dinu-Sri/BookOne/blob/chore/remove-inbuilt-e2e/docs/changes/CHG-20261012-remove-inbuilt-e2e.md).
+- S-0031 / S-0032 / S-0033 / S-0578 and helpers now assert `/e2e` and `/api/e2e/**` cannot start runs or return artifacts. Historical IDs preserved (747, last S-0760); old public-console expectation is retired, not rewritten as a past pass.
+- Ported `pnpm agent:browse` plus login-smoke / rental-ops scripts. HTTP runner remains unpublished.
+- Checks (local, `pnpm --ignore-workspace`, Node v20.19.0): `catalog:sync` 747/747; `check` metadata-valid + 2 guard passes; `test:unit` **94 passed, 4 skipped** on pin `d35ed92`; `test:e2e:list` **770 tests in 29 files** (was 771: extra `S-e2e console public at /e2e` dropped). Browser journeys not executed.
+- These denial tests are written for the **post-cleanup** product. They will fail against a live host that still serves the inbuilt console until BookOne Wave 1b deploys. Discovery succeeded. Product pin unchanged: `d35ed92`. Do not treat this QA change as staging acceptance.
+
+## Previous batch — 2026-10-12 manual entry
 
 - [Manual staging entry run](runs/RUN-20261012-manual-entry-01.md): created three typed products, two quotations, two posted invoices and two valid Simple Entry records under prefix `QA-261012-A`. Mixed and digital invoice stock/accounting assertions passed; journals balanced. The Simple Entry cash-sale path failed because the UI promises Sales Revenue 4000 while submission requests missing account 4300; see [BUG-0001](bugs/BUG-0001-simple-entry-sales-account-mismatch.md).
 - [Baseline audit batch 1](docs/BASELINE_AUDIT_20261012.md): 30 inherited catalog IDs source-reviewed, 717 pending. Review is not acceptance.
@@ -38,7 +46,7 @@
 3. Establish staging build identity and run-owned fixture users/companies.
 4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
 5. Replace optional machine-file bank cases with synthetic portable fixtures.
-6. Follow BookOne docs/REMOVE_INBUILT_E2E.md before deleting old tooling; migrate/retire every source-reference-only item deliberately and update tests that expect old endpoints.
+6. BookOne Wave 1b: delete inbuilt runner/page/APIs/Docker on `chore/remove-inbuilt-e2e` after this QA companion is published; then execute S-0031–S-0033/S-0578 against that candidate. Operator still must stop `bookone-staging-e2e` separately.
 7. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
 
 The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.

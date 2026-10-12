@@ -2,7 +2,7 @@ import { test, expect, loginAsE2eUser, requireE2eAuth } from '../src/fixtures';
 
 /**
  * Fast smoke (default suite entry). Catalog: @smoke.
- * Kept separate so /e2e UI runs can complete quickly; full suite via E2E_FULL=1 or all files.
+ * Kept separate so smoke CLI runs can complete quickly; full suite via E2E_FULL=1 or all files.
  */
 test.describe('Smoke @smoke @p0', () => {
   test.beforeAll(() => requireE2eAuth());

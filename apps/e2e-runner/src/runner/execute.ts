@@ -3,6 +3,8 @@ import { expect } from '@playwright/test';
 import { loginAsE2eUser, ensureLoggedIn } from '../helpers/auth';
 import {
   expectAuthedShell,
+  expectE2eApiGone,
+  expectE2ePageGone,
   expectErrorOrStay,
   expectNoAppCrash,
   expectOnLogin,
@@ -278,27 +280,16 @@ async function handlePublic(page: Page, s: Scenario) {
     expect(body.toLowerCase()).not.toMatch(/master wipe|control room health/i);
     return;
   }
+  if (any(s, 'cannot start', 'needs credentials', 'start without')) {
+    await expectE2eApiGone(page.request);
+    return;
+  }
+  if (any(s, 'report download', 'no artifacts')) {
+    await expectE2eApiGone(page.request);
+    return;
+  }
   if (any(s, '/e2e', 'e2e console')) {
-    await page.goto('/e2e');
-    await expectPublicOk(page);
-    await expect(page.getByText(/E2E|email|password|Start/i).first()).toBeVisible();
-    return;
-  }
-  if (any(s, 'needs credentials', 'start without')) {
-    await page.goto('/e2e');
-    const start = page.getByRole('button', { name: /start/i });
-    if (await start.isVisible().catch(() => false)) {
-      await start.click();
-      await page.waitForTimeout(500);
-      // Should error or stay without running
-      await expect(page.locator('body')).toBeVisible();
-    }
-    return;
-  }
-  if (any(s, 'report download')) {
-    // Cannot complete full nested run; assert download endpoints exist structure-wise
-    await page.goto('/e2e');
-    await expect(page.locator('body')).toBeVisible();
+    await expectE2ePageGone(page);
     return;
   }
   await page.goto('/docs');
@@ -972,7 +963,11 @@ async function handleRouteSmoke(page: Page, s: Scenario) {
     await go(page, '/dashboard');
     return;
   }
-  const isPublic = PUBLIC_SMOKE_ROUTES.some((r) => r.path === path) || path.startsWith('/docs') || path === '/login' || path === '/e2e';
+  if (path === '/e2e') {
+    await expectE2ePageGone(page);
+    return;
+  }
+  const isPublic = PUBLIC_SMOKE_ROUTES.some((r) => r.path === path) || path.startsWith('/docs') || path === '/login';
   const isPlatform = path.startsWith('/control-room');
   if (isPublic) {
     await page.goto(path);

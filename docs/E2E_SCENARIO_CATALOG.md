@@ -2,8 +2,8 @@
 
 > **Purpose:** Exhaustive day-to-day and edge-case scenarios for Playwright automation.
 > **Scope:** Tenant ERP + super-admin Control Room + public surfaces.
-> **Status:** **714 designed** scenarios. A growing subset is automated under `apps/e2e-runner/tests/` with catalog IDs `S-NNNN`. Track coverage: `docs/E2E_COVERAGE.md` (run `pnpm --dir apps/e2e-runner coverage`).
-> **Depth goal:** Full deep coverage (mutate/balance asserts for money paths; load-only for pure route smoke). Run from `/e2e` against any instance (URL + credentials).
+> **Status:** **714 designed** scenarios. A growing subset is automated under `apps/e2e-runner/tests/` with catalog IDs `S-NNNN`. Track coverage: `docs/E2E_COVERAGE.md` (run `pnpm catalog:sync`).
+> **Depth goal:** Full deep coverage (mutate/balance asserts for money paths; load-only for pure route smoke). Run from bookone-qa CLI (`pnpm test:e2e`) against a named candidate. The inbuilt ERP `/e2e` console is retired.
 > **Source:** Routes, server actions, settings, and validations in the BookOne monorepo.
 
 ## How to use
@@ -209,7 +209,7 @@
   2. Not HTML login page
 - **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
 
-## 2. Public surfaces (docs & E2E console)
+## 2. Public surfaces (docs & retired inbuilt E2E)
 
 
 ### S-0021 — Docs home without login
@@ -295,32 +295,32 @@
   1. No health-check/control-room/master wipe docs
 - **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
 
-### S-0031 — E2E console at /e2e public
+### S-0031 — Inbuilt E2E console at /e2e is gone
 
 - **Priority:** P1
 - **Tags:** `@e2e`, `@public`
 - **Steps:**
   1. Open `/e2e` logged out
-  2. UI loads
-- **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
+  2. No runner UI (login redirect or 404 is fine)
+- **Expect:** The inbuilt console is absent. No Start-run control. Historical runs that expected a public console remain historical; this ID now asserts removal.
 
-### S-0032 — E2E start needs credentials
+### S-0032 — POST /api/e2e/runs cannot start a run
 
 - **Priority:** P1
 - **Tags:** `@e2e`, `@edge`
 - **Steps:**
-  1. Start without email/password
-  2. Error
-- **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
+  1. POST `/api/e2e/runs` with email/password/suite
+  2. Request is denied or not found
+- **Expect:** No Playwright run starts. 202/run JSON is a failure.
 
-### S-0033 — E2E report download after run
+### S-0033 — E2E report/log/download endpoints expose no artifacts
 
 - **Priority:** P1
 - **Tags:** `@e2e`
 - **Steps:**
-  1. Complete a run
-  2. Download report/log/bundle
-- **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
+  1. GET `/api/e2e/runs/:id/report`, `/log`, `/download`, `/failures`, `/buckets`
+  2. No run artifacts returned
+- **Expect:** Endpoints cannot expose reports or start history. 404/401/403/redirect is success.
 
 ## 3. Shell, navigation, period, module gating
 
@@ -4951,9 +4951,9 @@
 - **Priority:** P1
 - **Tags:** `@smoke`, `@routes`
 - **Steps:**
-  1. Navigate /e2e with appropriate auth
-  2. Success; no error boundary
-- **Expect:** Valid path succeeds with consistent books/stock/UI; invalid path is blocked with a clear error and no corrupt partial postings.
+  1. Navigate /e2e
+  2. Runner UI is absent; no error boundary
+- **Expect:** Login redirect or 404. The inbuilt console must not load.
 
 ### S-0579 — Route smoke /login
 

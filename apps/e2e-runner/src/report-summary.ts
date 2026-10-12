@@ -278,7 +278,7 @@ export function writeRunReports(dir: string, meta: {
 
   lines.push(`## Log (tail)`, ``, '```', ...(meta.logTail ?? []).slice(-150), '```', ``);
   lines.push(`## How to re-run just this area`, ``);
-  lines.push(`From /e2e pick the **bucket** that failed, or CLI:`, ``);
+  lines.push(`From bookone-qa pick the **bucket** that failed, or CLI:`, ``);
   lines.push('```bash', `E2E_SUITE=<bucket-id> pnpm test:e2e`, '```', ``);
   writeFileSync(join(dir, 'report.md'), lines.join('\n'), 'utf8');
 
@@ -318,7 +318,7 @@ export function writeRunReports(dir: string, meta: {
       ``,
       `passed=${b.passed} failed=${b.failed} skipped=${b.skipped}`,
       ``,
-      `Re-run: set **Suite** to \`${b.id}\` on /e2e or \`E2E_SUITE=${b.id}\`.`,
+      `Re-run: \`E2E_SUITE=${b.id} pnpm test:e2e\`.`,
       ``,
     ];
     for (const f of b.failures) {

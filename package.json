@@ -13,6 +13,7 @@
     "test:unit": "node scripts/verify-product.mjs && vitest run --config vitest.config.ts",
     "test:e2e:list": "node apps/e2e-runner/scripts/run-suite.mjs full -- --list",
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
+    "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
     "check": "pnpm validate && pnpm test:guard"
   },

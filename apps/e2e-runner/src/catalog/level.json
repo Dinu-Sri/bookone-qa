@@ -22,7 +22,7 @@
     "balance": "Journal/stock/AR/AP/TB impact after money paths"
   },
   "run": {
-    "entry": "/e2e",
+    "entry": "pnpm test:e2e",
     "inputs": ["target URL", "email", "password"],
     "gates": "none — any instance"
   },

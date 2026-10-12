@@ -1,7 +1,7 @@
 /**
  * E2E environment helpers (no host/staging gates).
  *
- * /e2e and CLI always run against whatever E2E_BASE_URL + credentials the
+ * CLI always runs against whatever E2E_BASE_URL + credentials the
  * operator provides. Optional admin credentials only enrich Control Room tests.
  */
 

@@ -43,3 +43,5 @@ These are operating instructions for the QA project. The owner authorizes change
 
 25. This GitHub repository is PUBLIC by explicit owner instruction. Follow docs/PUBLIC_DATA_POLICY.md: publish source, synthetic fixtures and sanitized summaries only; keep secrets and raw evidence outside Git and public CI artifacts.
 26. Read product-ref.json before unit checks and verify the staging build before browser acceptance. Update the pin deliberately with impact review; never silently test floating HEAD.
+
+27. Drive the ERP UI from this repository with `pnpm agent:browse` (Playwright click-through). Artifacts go to gitignored `.local/agent-browse/`. Do not use the retired BookOne `/e2e` console or `pnpm agent:browse` in the product repo after Wave 1b.

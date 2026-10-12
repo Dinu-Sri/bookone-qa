@@ -1,11 +1,14 @@
 import { test, expect } from '../src/fixtures';
+import { expectE2eApiGone, expectE2ePageGone } from '../src/helpers/assert';
 import { loadScenariosBySection } from '../src/helpers/catalog';
 import { runCatalogScenario } from '../src/helpers/catalog-run';
 
 /**
- * Catalog §2 — Public surfaces (docs & E2E console).
+ * Catalog §2 — Public surfaces (docs). Inbuilt `/e2e` console must be gone.
  */
-const scenarios = loadScenariosBySection('2.');
+const scenarios = loadScenariosBySection('2.').filter(
+  (s) => !['S-0031', 'S-0032', 'S-0033'].includes(s.id),
+);
 
 test.describe('Public surfaces catalog §2 @docs @public @e2e', () => {
   test('S-0021 docs home without login', async ({ browser }) => {
@@ -50,19 +53,19 @@ test.describe('Public surfaces catalog §2 @docs @public @e2e', () => {
     await ctx.close();
   });
 
-  test('S-e2e console public at /e2e', async ({ browser }) => {
+  test('S-0031 Inbuilt E2E console at /e2e is gone', async ({ browser }) => {
     const ctx = await browser.newContext();
     const page = await ctx.newPage();
-    // ERP /e2e may redirect to dedicated e2e host — both are valid public consoles
-    await page.goto('/e2e');
-    await expect(page).not.toHaveURL(/\/login/);
-    await expect(
-      page.getByRole('heading', { name: /E2E/i }).or(page.getByText(/E2E Test Console|BookOne E2E/i)),
-    ).toBeVisible({ timeout: 20_000 });
-    await expect(
-      page.getByRole('button', { name: /Start (E2E )?run|Start E2E/i }),
-    ).toBeVisible({ timeout: 20_000 });
+    await expectE2ePageGone(page);
     await ctx.close();
+  });
+
+  test('S-0032 POST /api/e2e/runs cannot start a run', async ({ request }) => {
+    await expectE2eApiGone(request);
+  });
+
+  test('S-0033 E2E report/log/download endpoints expose no artifacts', async ({ request }) => {
+    await expectE2eApiGone(request);
   });
 
   // Remaining §2 catalog IDs via executor (public + authed mix handled inside)

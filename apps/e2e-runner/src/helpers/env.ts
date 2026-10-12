@@ -1,4 +1,4 @@
-/** Credentials and base URL for browser tests (from /e2e runner or shell). */
+/** Credentials and base URL for browser tests (QA CLI / env, not the retired ERP /e2e console). */
 export function requireE2eAuth() {
   const email = process.env.E2E_EMAIL?.trim() || '';
   const password = process.env.E2E_PASSWORD || '';

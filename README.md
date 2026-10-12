@@ -7,9 +7,9 @@ Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/B
 - Product source pinned in product-ref.json to d35ed9209852af3fbcfe140176f2f8e74cae15f7.
 - 747 inherited scenario definitions; all assertion-depth reviews are initially pending. Catalog mapping is not business acceptance.
 - 30 browser spec files imported; full discovery finds 771 tests in 29 nonempty files. The inherited bucket preset omitted the team suite; full discovery now includes it.
-- 9 external unit-test files: **86 passed, 4 skipped** locally. Skips require optional local bank fixtures; real bank files were not copied.
+- 10 external unit-test files: **94 passed, 4 skipped** locally (includes independent critical posting cases). Skips require optional local bank fixtures; real bank files were not copied.
 - 2 target-policy checks passed. No staging browser/business acceptance run has occurred in this bootstrap.
-- Product cleanup is a separate task; see the product's docs/REMOVE_INBUILT_E2E.md. Production promotion gates are not yet enforced by this project.
+- Wave 1a (CHG-20261012-remove-inbuilt-e2e): inherited `/e2e` scenarios now assert the inbuilt console and `/api/e2e` are gone. Those tests fail on a build that still hosts the runner until BookOne Wave 1b lands. `pnpm agent:browse` lives here. Product cleanup remains a separate BookOne branch.
 
 ## Quick start
 
@@ -27,7 +27,14 @@ product:prepare clones the official product into ignored work/product at the exa
 
 To run browser tests, install Chromium using pnpm exec playwright install chromium, supply E2E_BASE_URL, E2E_EMAIL and E2E_PASSWORD through a local environment/approved secret store, then use pnpm test:e2e smoke (or p0/core/full/a bucket). Only the owner-authorized staging origin and explicit local origins are accepted by the checked-in target policy. Do not assume a new deployment matches product-ref.json; record its actual build before accepting results. No credentials are bundled.
 
-The migrated E2E suite contains known weak/conditional assertions and scenarios expecting the old inbuilt runner. It is a starting point for strengthening coverage, not a release certification. Some full-suite tests create users, post transactions and change settings; run them with suitable synthetic fixtures. Staging data changes are owner-authorized.
+The migrated E2E suite contains known weak/conditional assertions. S-0031–S-0033 and S-0578 now assert the inbuilt ERP runner is absent. It is a starting point for strengthening coverage, not a release certification. Some full-suite tests create users, post transactions and change settings; run them with suitable synthetic fixtures. Staging data changes are owner-authorized.
+
+Coding-agent click-through (after login from env or gitignored `.local/debug-accounts.json`):
+
+~~~sh
+pnpm agent:browse --path /dashboard
+pnpm agent:browse --script apps/e2e-runner/scripts/agent-scenarios/login-smoke.json
+~~~
 
 ## Memory and rules
 

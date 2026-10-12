@@ -5,7 +5,7 @@ import { expectNoAppCrash } from '../src/helpers/assert';
 
 /**
  * Catalog §18 — Route smoke (load only).
- * One Playwright test per S-NNNN. Runs on any target via /e2e or CLI.
+ * One Playwright test per S-NNNN. Runs on any target via QA CLI.
  */
 const routeScenarios = loadScenariosBySection('18.');
 

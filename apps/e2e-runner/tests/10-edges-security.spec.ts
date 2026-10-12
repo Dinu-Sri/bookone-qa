@@ -44,8 +44,8 @@ test.describe('Security catalog §15 @edge @security @p0', () => {
     await page.goto('/e2e');
     await expect(page.locator('body')).toBeVisible();
     const html = await page.content();
-    // Password field for run is OK; must not embed a prefilled secret value in DOM dumps
     expect(html).not.toMatch(/E2E_PASSWORD\s*=\s*[^<"'\s]{8,}/);
+    expect(html).not.toMatch(/E2E Test Console|Select a preset or bucket/i);
   });
 
   test('S-0463 Suspended tenant blocked', async ({ authedPage: page }) => {

@@ -23,7 +23,7 @@
     {
       "id": "public",
       "label": "Public surfaces",
-      "description": "Docs, search API, /e2e console",
+      "description": "Docs, search API, inbuilt /e2e denial",
       "eta": "~3–5 min",
       "files": [
         "02-public.spec.ts"

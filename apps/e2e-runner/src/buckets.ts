@@ -1,5 +1,5 @@
 /**
- * E2E buckets — run one domain pack at a time from /e2e or CLI.
+ * E2E buckets — run one domain pack at a time from the QA CLI.
  * E2E_SUITE can be a bucket id (auth, sales, …) or a preset (smoke, p0, core, full).
  */
 
@@ -35,7 +35,7 @@ export const E2E_BUCKETS: E2eBucket[] = [
   {
     id: 'public',
     label: 'Public surfaces',
-    description: 'Docs, search API, /e2e console',
+    description: 'Docs, search API, inbuilt /e2e denial',
     eta: '~3–5 min',
     files: ['02-public.spec.ts'],
     group: 'foundation',

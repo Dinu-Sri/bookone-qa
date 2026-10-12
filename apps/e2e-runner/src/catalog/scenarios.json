@@ -273,7 +273,7 @@
   {
     "id": "S-0021",
     "title": "Docs home without login",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P0",
     "tags": [
       "@docs",
@@ -287,7 +287,7 @@
   {
     "id": "S-0022",
     "title": "Docs getting-started pages",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@docs"
@@ -299,7 +299,7 @@
   {
     "id": "S-0023",
     "title": "Docs sales section",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P2",
     "tags": [
       "@docs"
@@ -311,7 +311,7 @@
   {
     "id": "S-0024",
     "title": "Docs purchase section",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P2",
     "tags": [
       "@docs"
@@ -323,7 +323,7 @@
   {
     "id": "S-0025",
     "title": "Docs inventory section",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P2",
     "tags": [
       "@docs"
@@ -335,7 +335,7 @@
   {
     "id": "S-0026",
     "title": "Docs accounting section",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P2",
     "tags": [
       "@docs"
@@ -347,7 +347,7 @@
   {
     "id": "S-0027",
     "title": "Docs POS section",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P2",
     "tags": [
       "@docs"
@@ -359,7 +359,7 @@
   {
     "id": "S-0028",
     "title": "Docs search API public",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@docs",
@@ -373,7 +373,7 @@
   {
     "id": "S-0029",
     "title": "Docs search empty query",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P3",
     "tags": [
       "@docs"
@@ -386,7 +386,7 @@
   {
     "id": "S-0030",
     "title": "Docs exclude admin content",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@docs",
@@ -398,8 +398,8 @@
   },
   {
     "id": "S-0031",
-    "title": "E2E console at /e2e public",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "title": "Inbuilt E2E console at /e2e is gone",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@e2e",
@@ -407,34 +407,34 @@
     ],
     "steps": [
       "Open `/e2e` logged out",
-      "UI loads"
+      "No runner UI (login redirect or 404 is fine)"
     ]
   },
   {
     "id": "S-0032",
-    "title": "E2E start needs credentials",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "title": "POST /api/e2e/runs cannot start a run",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@e2e",
       "@edge"
     ],
     "steps": [
-      "Start without email/password",
-      "Error"
+      "POST `/api/e2e/runs` with email/password/suite",
+      "Request is denied or not found"
     ]
   },
   {
     "id": "S-0033",
-    "title": "E2E report download after run",
-    "section": "2. Public surfaces (docs & E2E console)",
+    "title": "E2E report/log/download endpoints expose no artifacts",
+    "section": "2. Public surfaces (docs & retired inbuilt E2E)",
     "priority": "P1",
     "tags": [
       "@e2e"
     ],
     "steps": [
-      "Complete a run",
-      "Download report/log/bundle"
+      "GET `/api/e2e/runs/:id/report`, `/log`, `/download`, `/failures`, `/buckets`",
+      "No run artifacts returned"
     ]
   },
   {
@@ -7577,8 +7577,8 @@
       "@routes"
     ],
     "steps": [
-      "Navigate /e2e with appropriate auth",
-      "Success; no error boundary"
+      "Navigate /e2e",
+      "Runner UI is absent; no error boundary"
     ]
   },
   {
