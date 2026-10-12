@@ -1,6 +1,6 @@
 # RUN-20261012-fresh-staging-01 — fresh staging baseline
 
-Status: interrupted. Acceptance: blocked pending deployed-build identity and required assertions.
+Status: in progress. Acceptance: blocked pending deployed-build identity and required business/security assertions.
 
 ## Fingerprint and starting state
 
@@ -11,16 +11,16 @@ Status: interrupted. Acceptance: blocked pending deployed-build identity and req
 - UI observation: the selected company loads Control Room Access with one platform super-admin. The Health Check page is now a placeholder. These checks prove only visible route state. No business transactions were posted in this run.
 - User reports prior staging test data was cleaned. This run did not independently count database records. Old `QA-261012-A` records must be considered absent or unknown until checked; old manual-run results remain historical only.
 - Browser baseline: Chrome signed-in owner session. No credentials, cookies, raw financial data, or screenshots are stored in this public record.
-- Local QA checks against product pin `65f84c1`: `pnpm check` passed (747 scenario metadata entries and 2 target-policy assertions); `pnpm test:unit` passed 94 with 4 optional bank-fixture skips; `pnpm test:e2e:list` discovered 770 tests in 29 files. No staging browser assertions executed.
-- Live E2E denial navigation was stopped by a temporary browser automation approval rate limit before the navigation happened. No denial result is claimed.
+- Local QA checks against product pin `65f84c1`: `pnpm check` passed (747 scenario metadata entries and 2 target-policy assertions); `pnpm test:unit` passed 94 with 4 optional bank-fixture skips; `pnpm test:e2e:list` discovered 770 tests in 29 files. These are harness checks, not staging business acceptance.
+- Browser checks against staging: S-0031 passed (the anonymous `/e2e` page did not expose runner UI); S-0032 passed (anonymous POST did not start a run); S-0033 passed (tested run/report/log/download endpoints exposed no run artifacts); S-0578 passed (the `/e2e` route did not show a runner and did not trigger the app error boundary). S-0032/S-0033 had their assertions execute on the first attempt. S-0031's first attempt was blocked before assertion by a missing Playwright browser binary; it then passed using the installed Chrome executable.\n- Separate anonymous route smoke passed for `/dashboard` and `/control-room/access`: both redirected to `/login` and rendered the login form. This was an ad hoc read-only assertion, not an execution of catalog S-0019.\n- Catalog S-0019 was blocked before its test because the auth spec's `beforeAll` requires `E2E_EMAIL` and `E2E_PASSWORD`, even for its no-session test. No credentials were supplied or stored. Normal tenant role versus super-admin isolation is still not-run.\n- Browser test logs and reports remain in the ignored local `apps/e2e-runner/reports/` directory. No screenshots, cookies, credentials, or real business records were copied to public record.
 
 ## Selected first checks
 
 | Scope | Expected outcome | State |
 |---|---|---|
 | Build and environment identity | Deployed commit/image, schema and storage are named before acceptance | blocked |
-| E2E removal S-0031/S-0032/S-0033/S-0578 | Console and runner endpoints cannot start runs or return artifacts | not-run |
-| Login and platform access | Admin can access Control Room; normal tenant role cannot | admin UI observed; denial not-run |
+| E2E removal S-0031/S-0032/S-0033/S-0578 | Console and runner endpoints cannot start runs or return artifacts | passed (anonymous scope; deployed build identity unknown) |
+| Login and platform access | Admin can access Control Room; normal tenant role cannot | admin UI observed; anonymous dashboard and Control Room routes pass; authenticated role denial not-run |
 | Fresh company foundation | Company, accounts, location/settings and product creation persist after reload | not-run |
 | Sales and accounting | Physical, digital/service, rental and mixed quotation-to-invoice journeys; exact AR, revenue, tax, stock and GL outcomes | not-run |
 | Cash and payments | Receive payment, allocation, retry safety, Simple Entry and reconciliation | not-run |
