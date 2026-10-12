@@ -75,3 +75,11 @@ The `QA-261012-A` live staging records are retained for review and require clean
 - As Viewer, selected that customer, added a synthetic free-text service line at LKR 100, and selected **Save draft**. The app created `INV-20261012-0002` with status `draft` and total LKR 100, independently repeating BUG-0004. No Post action was used.
 - Both newly created records were archived through the UI and success confirmations were observed. They remain archived/recoverable. No journal, stock, payment or posted invoice action was performed. The customer list still shows the earlier test customer `CUS-0001` active with LKR 100 even though its linked test invoice is archived; this was pre-existing at retest start and was left untouched. Its balance meaning requires separate reconciliation; this run does not infer a ledger effect.
 - The deployed commit/image, schema and storage identity remain unavailable. This is repeat exploratory evidence, not acceptance of the new build or a release gate. See [RUN-20261012-viewer-permission-retest-02](runs/RUN-20261012-viewer-permission-retest-02.md).
+
+
+## Third Viewer retest after another staging update — 2026-10-12
+
+- The account was still assigned Viewer. A third synthetic customer creation succeeded (`QA-VIEW-20261012-R3`, `QA Viewer Retest Three`) and a LKR 100 service invoice draft was saved as `INV-20261012-0003`. Both records were archived afterward; no invoice was posted.
+- BUG-0003 and BUG-0004 remain reproduced after another owner-reported update. Deployed build/image identity remains unknown, so the behavior cannot be attributed to a verified release.
+- After archiving the draft and customer, the active customer list still shows the earlier test customer at LKR 100 while all listed test invoices are archived. This is an unresolved display/accounting observation; authoritative ledger and subledger state was not checked, so no financial conclusion is drawn.
+- See [RUN-20261012-viewer-permission-retest-03](runs/RUN-20261012-viewer-permission-retest-03.md).
