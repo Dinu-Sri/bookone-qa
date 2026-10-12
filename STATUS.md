@@ -51,7 +51,7 @@
 
 ## Next actions
 
-1. Fix BUG-0002 so Viewer invoice denial renders a normal permission message, then re-run on an identified build. Reproduce BUG-0001 on an identified staging build, trace the Simple Entry Money In mapping from UI through posting, fix the 4000/4300 mismatch and run adjacent accounting regressions.
+1. Confirm the Viewer permission contract; fix and retest BUG-0003 server-side. Dismiss the extension UI, verify the invoice-denial fix (BUG-0002) on an identified build, then reproduce BUG-0001 and trace the Simple Entry Money In mapping from UI through posting.
 2. Verify the deployed commit/image and schema/storage identity; then execute the ordered business journeys in the audit.
 3. Keep the synthetic Viewer account for follow-up role tests; its password remains only in the local gitignored runner env file.
 4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
