@@ -137,12 +137,13 @@ test.describe('Team RBAC @company @team', () => {
   test('S-0737 Remove then restore a helper', async ({ authedPage: page }) => {
     const stamp = Date.now();
     const email = `e2e.restore.${stamp}@bookone.test`;
+    const password = `Qa!${randomUUID()}`;
     await go(page, '/company/team');
     const add = page.locator('form.company-inline-form').filter({ has: page.getByRole('button', { name: /add person/i }) });
     await add.locator('input[name="name"]').fill('E2E Restore');
     await add.locator('input[name="email"]').fill(email);
-    await add.locator('input[name="password"]').fill('Restore#12345');
-    await add.locator('input[name="confirmPassword"]').fill('Restore#12345');
+    await add.locator('input[name="password"]').fill(password);
+    await add.locator('input[name="confirmPassword"]').fill(password);
     await add.locator('select[name="roleId"]').selectOption({ label: 'Viewer' });
     await add.getByRole('button', { name: /add person/i }).click();
     await expect(page.getByText(/can sign in at bookone/i)).toBeVisible({ timeout: 20_000 });

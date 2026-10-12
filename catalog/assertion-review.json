@@ -3141,30 +3141,78 @@
     {
       "id": "S-0449",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No real foreign-record or suspended-tenant fixture; denial and unchanged data not proved.",
+      "rules": [
+        "BR-SEC-01",
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0450",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No real foreign-record or suspended-tenant fixture; denial and unchanged data not proved.",
+      "rules": [
+        "BR-SEC-01",
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0451",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No real foreign-record or suspended-tenant fixture; denial and unchanged data not proved.",
+      "rules": [
+        "BR-SEC-01",
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0452",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No real foreign-record or suspended-tenant fixture; denial and unchanged data not proved.",
+      "rules": [
+        "BR-SEC-01",
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0453",
@@ -3225,23 +3273,57 @@
     {
       "id": "S-0461",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "strengthen",
+      "observed_depth": "narrow-content-regex",
+      "gap": "Check actual response/artifact disclosure beyond a small rendered-text regex.",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0462",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "narrow-content-regex",
+      "gap": "Replace legacy E2E-page assertion with endpoint removal and external artifact redaction checks.",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0463",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No real foreign-record or suspended-tenant fixture; denial and unchanged data not proved.",
+      "rules": [
+        "BR-SEC-01",
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/10-edges-security.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0464",
@@ -4156,37 +4238,107 @@
     {
       "id": "S-0594",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0595",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0596",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0597",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0598",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0599",
@@ -4198,9 +4350,23 @@
     {
       "id": "S-0600",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "replace",
+      "observed_depth": "page-visibility",
+      "gap": "No required numerical reconciliation; reversal may not execute.",
+      "rules": [
+        "BR-ACC-01",
+        "BR-ACC-05",
+        "BR-ACC-07",
+        "BR-STK-01"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/11-integrity.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0601",
@@ -4891,37 +5057,107 @@
     {
       "id": "S-0699",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Keep route/control smoke; no deposit, booking, fleet or ledger acceptance.",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02",
+        "BR-REN-03",
+        "BR-REN-04"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0700",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Keep route/control smoke; no deposit, booking, fleet or ledger acceptance.",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02",
+        "BR-REN-03",
+        "BR-REN-04"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0701",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Keep route/control smoke; no deposit, booking, fleet or ledger acceptance.",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02",
+        "BR-REN-03",
+        "BR-REN-04"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0702",
       "priority": "P2",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Keep route/control smoke; no deposit, booking, fleet or ledger acceptance.",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02",
+        "BR-REN-03",
+        "BR-REN-04"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0703",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Keep route/control smoke; no deposit, booking, fleet or ledger acceptance.",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02",
+        "BR-REN-03",
+        "BR-REN-04"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/28-rental.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0704",
@@ -5031,86 +5267,218 @@
     {
       "id": "S-0713",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0714",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0731",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0732",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0733",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0734",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0735",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0717",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "strengthen",
+      "observed_depth": "role-route-denial",
+      "gap": "Keep distinct cashier session; prove allowed operation and direct mutation denial/no data changes; verified cleanup in finally.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0720",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "strengthen",
+      "observed_depth": "error-message",
+      "gap": "Establish exactly one owner; target exact identity; verify membership/session preserved.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0730",
       "priority": "P0",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "strengthen",
+      "observed_depth": "role-route-denial",
+      "gap": "Keep distinct cashier session; prove allowed operation and direct mutation denial/no data changes; verified cleanup in finally.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0736",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "keep",
+      "observed_depth": "smoke-only",
+      "gap": "Page/control visibility only; operation names do not establish server authorization.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0737",
       "priority": "P1",
-      "assertion_review": "pending",
+      "assertion_review": "reviewed",
       "last_verified_product_sha": null,
-      "last_run": null
+      "last_run": null,
+      "disposition": "strengthen",
+      "observed_depth": "ui-state-transition",
+      "gap": "Verify revoked session cannot read/write, restore correct access and cleanup.",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "reviewed_at": "2026-10-12",
+      "source_product_sha": "d35ed9209852af3fbcfe140176f2f8e74cae15f7",
+      "reviewed_binding": "apps/e2e-runner/tests/29-team-rbac.spec.ts",
+      "review_record": "docs/BASELINE_AUDIT_20261012.md",
+      "acceptance": "not-established"
     },
     {
       "id": "S-0744",

@@ -1,5 +1,12 @@
 # QA status — 2026-10-12
 
+## Latest batch — 2026-10-12
+
+- [Baseline audit batch 1](docs/BASELINE_AUDIT_20261012.md): 30 inherited catalog IDs source-reviewed, 717 pending. Review is not acceptance.
+- Added eight independently specified critical posting unit cases: mixed product types, exact account/amount/side sets, synthetic tax/discount, returns and GRNI clearing. Full unit suite: 94 passed, 4 skipped.
+- Staging browser read-only reconnaissance completed with existing login. No business mutations. Deployed SHA/schema/storage identity still unresolved; owner asked for deployed commit/image and current deployment activity.
+- Read [run record](runs/RUN-20261012-audit-01.md) before resuming. No new live product defect confirmed.
+
 ## Completed
 
 - QA bootstrap published at `9dfe7e9e0282857110366f97fe724b1753ca8e4e`. [GitHub Actions run 38147275729](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38147275729) completed successfully: frozen install, metadata/guard checks, pinned-source unit tests and browser-test discovery.
@@ -18,13 +25,13 @@
 - No staging business acceptance, security certification, restore drill, or production gate established.
 - Staging deployed SHA/schema/storage identity remain unverified.
 - 4 skipped optional bank-fixture cases need portable synthetic replacements.
-- All inherited scenario assertion reviews remain pending, regardless of 100% historical ID presence.
+- 30 inherited catalog IDs now have source reviews; 717 remain pending. None of these source reviews establish staging acceptance.
 - Owner authorizes changes to all test data at https://bookone.clossyan.com; production is outside agent access. Do not ask again for routine staging test-data permission.
 - Public code/records only; operational secrets and raw artifacts remain private/ignored.
 
 ## Next actions
 
-1. Read the [publication handover](runs/PUBLICATION-20261012.md); bootstrap CI is verified and its scope is limited to unit checks and discovery.
+1. Read the latest audit and run record above. Obtain deployed commit/image and stable run window; then execute the ordered business journeys in the audit.
 2. Establish staging build identity and run-owned fixture users/companies.
 3. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
 4. Replace optional machine-file bank cases with synthetic portable fixtures.
