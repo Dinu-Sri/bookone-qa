@@ -33,3 +33,8 @@ The local BookOne source graph at `7b1794fd3c2344bdfa3e095dd0bb9cb8b9647b16` sho
 - Ensure the server denies draft and post writes; hide/disable controls as a usability aid only.
 - Retest create, edit, archive and post denials, and confirm no active document, journal, or stock effect remains.
 - Add a lasting regression test. Do not close until no Viewer draft is created on an identified build.
+
+
+## Retest after latest staging update — 2026-10-12
+
+As a user still assigned `Viewer`, selected synthetic customer `QA Viewer Update Retest 20261013`, added a free-text service line for LKR 100 and selected **Save draft**. The list showed `INV-20261012-0002`, status `draft`, total LKR 100. The invoice was archived. No Post action was used, and no journal or stock effect was checked. This reproduces the write after the reported update; deployed build identity remains unknown.
