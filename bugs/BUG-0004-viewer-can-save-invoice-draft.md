@@ -38,3 +38,8 @@ The local BookOne source graph at `7b1794fd3c2344bdfa3e095dd0bb9cb8b9647b16` sho
 ## Retest after latest staging update — 2026-10-12
 
 As a user still assigned `Viewer`, selected synthetic customer `QA Viewer Update Retest 20261013`, added a free-text service line for LKR 100 and selected **Save draft**. The list showed `INV-20261012-0002`, status `draft`, total LKR 100. The invoice was archived. No Post action was used, and no journal or stock effect was checked. This reproduces the write after the reported update; deployed build identity remains unknown.
+
+
+## Third retest — 2026-10-12
+
+As Viewer after another owner-reported staging update, saved a LKR 100 synthetic service invoice draft as `INV-20261012-0003` for `QA Viewer Retest Three`. The invoice appeared as `draft`, then was archived. No Post action was used and no journal or stock assertion was run. This repeats the finding; deployed build identity remains unknown.
