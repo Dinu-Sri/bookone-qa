@@ -37,3 +37,8 @@ The Viewer job's product contract should be confirmed. This check establishes a 
 ## Retest after latest staging update — 2026-10-12
 
 The Viewer role was rechecked on `/company/team`. A second synthetic customer (`QA-VIEW-20261013`, `QA Viewer Update Retest 20261013`) was submitted through `/parties/customers/new`; the customer appeared in the invoice picker and active customer list. This repeats the finding after the owner reported a new update. The record was archived after testing. The deployed build identity is unknown, so the update cannot be tied to a commit or image.
+
+
+## Third retest — 2026-10-12
+
+After another owner-reported staging update, the account remained assigned Viewer and again created a synthetic customer (`QA-VIEW-20261012-R3`, `QA Viewer Retest Three`). The active customer list showed the record. It was archived after the probe. The deployed build identity remains unknown.
