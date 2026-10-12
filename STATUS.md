@@ -5,10 +5,10 @@
 - Owner reports staging at `https://bookone.clossyan.com` was rebuilt and test data cleaned. The selected company is accessible, and Control Room Access shows one platform super-admin. The Health Check route displays a placeholder stating that operational tools will be added later. These are UI observations, not proof of deployed image or database identity.
 - BookOne `master` reached `5b71d06b12f9ccf7f9ca6b461e21dc1c1314e134` after 12 commits beyond the E2E removal merge, then documentation-only credential redaction merged at `65f84c151f7332efa196ed837ad179ac4818178b` ([PR #2](https://github.com/Dinu-Sri/BookOne/pull/2)). The QA source pin is updated to that latest master for a new unit baseline; browser acceptance still requires independent deployed-build verification.
 - The new product changes remove the executable Control Room health check, company reset, demo seeds, and Audit page; they also change platform-admin assignment and Docker/staging startup. Inherited QA health/reset expectations are stale and require an explicit scenario review. Do not count discovery or the old manual run as acceptance of this build.
-- [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md) records this baseline and the selected first journeys. Deployed image SHA, schema, storage identity, and live E2E denial remain unverified. The public credential found in BookOne docs was redacted from the current guide; the owner must rotate any reused credential because Git history retains old versions.
+- [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md) records the baseline and first live checks. Four anonymous E2E denial assertions and two anonymous route checks passed. Catalog S-0019 was blocked by an auth-fixture setup requirement; Viewer sign-in and direct Control Room denial now pass; invoice creation denial and business journeys remain unverified. Deployed image SHA, schema, and storage identity remain unverified. The public credential found in BookOne docs was redacted from the current guide; the owner must rotate any reused credential because Git history retains old versions.
 - BookOne Production Check reports green while its build/typecheck logs contain errors due to `continue-on-error`; it is advisory until the workflow genuinely fails on required errors. QA CI has no staging browser credentials.
 - On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
-- Live E2E denial navigation was stopped by a temporary browser automation approval rate limit before it happened. No E2E denial assertion passed or failed; retry only after the automation gate is available.
+- Live E2E denial navigation initially hit a temporary browser approval rate limit; subsequent authorized checks completed as recorded below.
 
 ## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
 
@@ -52,8 +52,8 @@
 ## Next actions
 
 1. Reproduce BUG-0001 on an identified staging build, trace the Simple Entry Money In mapping from UI through posting, fix the 4000/4300 mismatch and run adjacent accounting regressions.
-2. Obtain deployed commit/image and stable run window; then execute the ordered business journeys in the audit.
-3. Establish staging build identity and run-owned fixture users/companies.
+2. Verify the deployed commit/image and schema/storage identity; then execute the ordered business journeys in the audit.
+3. Under admin access, create an isolated synthetic customer and test Viewer draft/post denial; clean any generated records. Keep credentials in local secret storage only.
 4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
 5. Replace optional machine-file bank cases with synthetic portable fixtures.
 6. BookOne Wave 1b: delete inbuilt runner/page/APIs/Docker on `chore/remove-inbuilt-e2e` after this QA companion is published; then execute S-0031–S-0033/S-0578 against that candidate. Operator still must stop `bookone-staging-e2e` separately.
