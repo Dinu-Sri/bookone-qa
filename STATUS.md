@@ -10,6 +10,12 @@
 - On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
 - Live E2E denial navigation initially hit a temporary browser approval rate limit; subsequent authorized checks completed as recorded below.
 
+## Follow-up after reported staging fix — 2026-10-12
+
+- The Viewer role account created a synthetic customer successfully, and then saved a LKR 100 invoice draft as Viewer. Both test records were archived; the invoice remains visible as archived. No invoice was posted and no ledger or stock mutation was attempted.
+- The original invoice error page from the prior run did not appear in this follow-up because the draft save succeeded. The owner-reported fix is therefore **not verified as a fix**; a successful Viewer write was observed instead. Deployed commit/image identity remains unknown.
+- See [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md), [BUG-0003](bugs/BUG-0003-viewer-can-create-customer.md), and [BUG-0004](bugs/BUG-0004-viewer-can-save-invoice-draft.md). The BookOne source graph includes a permission call for document creation but is not verified as the deployed revision.
+
 ## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
 
 - Change record: [changes/CHG-20261012-remove-inbuilt-e2e.md](changes/CHG-20261012-remove-inbuilt-e2e.md). Branch `qa/chg-20261012-e2e-denial`. Companion to BookOne `chore/remove-inbuilt-e2e` / [CHG-20261012-remove-inbuilt-e2e](https://github.com/Dinu-Sri/BookOne/blob/chore/remove-inbuilt-e2e/docs/changes/CHG-20261012-remove-inbuilt-e2e.md).
@@ -51,7 +57,7 @@
 
 ## Next actions
 
-1. Fix BUG-0002 so Viewer invoice denial renders a normal permission message, then re-run on an identified build. Reproduce BUG-0001 on an identified staging build, trace the Simple Entry Money In mapping from UI through posting, fix the 4000/4300 mismatch and run adjacent accounting regressions.
+1. Confirm the Viewer permission contract; investigate and fix BUG-0003 and BUG-0004 server-side. Verify denied customer and invoice writes on an identified build. Then reproduce BUG-0001 and trace the Simple Entry Money In mapping from UI through posting.
 2. Verify the deployed commit/image and schema/storage identity; then execute the ordered business journeys in the audit.
 3. Keep the synthetic Viewer account for follow-up role tests; its password remains only in the local gitignored runner env file.
 4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
