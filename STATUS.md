@@ -1,6 +1,10 @@
-# QA status — 2026-10-11
+# QA status — 2026-10-12
 
 ## Completed
+
+- QA bootstrap published at `9dfe7e9e0282857110366f97fe724b1753ca8e4e`. [GitHub Actions run 38147275729](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38147275729) completed successfully: frozen install, metadata/guard checks, pinned-source unit tests and browser-test discovery.
+- Product agent rules, development change contract, ledger/template and cleanup instructions published to BookOne `master` at [`bdff296bd3f0dae6470b15be74cfee8b71567501`](https://github.com/Dinu-Sri/BookOne/commit/bdff296bd3f0dae6470b15be74cfee8b71567501). Only 11 Markdown files changed; runtime testing code/interfaces were not removed.
+- The unit baseline remains pinned to the reviewed product source `d35ed92`; the later product commit is documentation-only. A new runtime candidate requires deliberate pin/impact review and fresh evidence.
 
 - Public repository created at https://github.com/Dinu-Sri/bookone-qa at the owner's request and confirmation.
 - 84 test/catalog/fixture/support files imported from BookOne d35ed9209852af3fbcfe140176f2f8e74cae15f7; 14 deployment/UI/machine-specific files retained by source reference. See migration/source-inventory.json.
@@ -20,7 +24,7 @@
 
 ## Next actions
 
-1. Verify CI bootstrap on the published QA commit and record its URL/outcome.
+1. Read the [publication handover](runs/PUBLICATION-20261012.md); bootstrap CI is verified and its scope is limited to unit checks and discovery.
 2. Establish staging build identity and run-owned fixture users/companies.
 3. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
 4. Replace optional machine-file bank cases with synthetic portable fixtures.
