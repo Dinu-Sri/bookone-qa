@@ -2,10 +2,11 @@
 
 ## Latest batch — 2026-10-12
 
+- [Manual staging entry run](runs/RUN-20261012-manual-entry-01.md): created three typed products, two quotations, two posted invoices and two valid Simple Entry records under prefix `QA-261012-A`. Mixed and digital invoice stock/accounting assertions passed; journals balanced. The Simple Entry cash-sale path failed because the UI promises Sales Revenue 4000 while submission requests missing account 4300; see [BUG-0001](bugs/BUG-0001-simple-entry-sales-account-mismatch.md).
 - [Baseline audit batch 1](docs/BASELINE_AUDIT_20261012.md): 30 inherited catalog IDs source-reviewed, 717 pending. Review is not acceptance.
 - Added eight independently specified critical posting unit cases: mixed product types, exact account/amount/side sets, synthetic tax/discount, returns and GRNI clearing. Full unit suite: 94 passed, 4 skipped.
-- Staging browser read-only reconnaissance completed with existing login. No business mutations. Deployed SHA/schema/storage identity still unresolved; owner asked for deployed commit/image and current deployment activity.
-- Read [run record](runs/RUN-20261012-audit-01.md) before resuming. No new live product defect confirmed.
+- Staging browser mutation testing completed with owner-authorized synthetic data. Deployed SHA/schema/storage identity remains unresolved, so this is exploratory evidence rather than release acceptance.
+- Read the [manual run record](runs/RUN-20261012-manual-entry-01.md) and [BUG-0001](bugs/BUG-0001-simple-entry-sales-account-mismatch.md) before resuming.
 
 ## Completed
 
@@ -26,16 +27,18 @@
 - Staging deployed SHA/schema/storage identity remain unverified.
 - 4 skipped optional bank-fixture cases need portable synthetic replacements.
 - 30 inherited catalog IDs now have source reviews; 717 remain pending. None of these source reviews establish staging acceptance.
-- Owner authorizes changes to all test data at https://bookone.clossyan.com; production is outside agent access. Do not ask again for routine staging test-data permission.
+- The authorized staging target and mutation scope are recorded privately; production remains outside agent access.
 - Public code/records only; operational secrets and raw artifacts remain private/ignored.
+- The manual run did not cover period locks, tax/VAT, payment allocation, reversal/idempotency, concurrent posting, audit history or subledger reconciliation. Its passing journal and stock assertions do not establish those controls.
 
 ## Next actions
 
-1. Read the latest audit and run record above. Obtain deployed commit/image and stable run window; then execute the ordered business journeys in the audit.
-2. Establish staging build identity and run-owned fixture users/companies.
-3. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
-4. Replace optional machine-file bank cases with synthetic portable fixtures.
-5. Follow BookOne docs/REMOVE_INBUILT_E2E.md before deleting old tooling; migrate/retire every source-reference-only item deliberately and update tests that expect old endpoints.
-6. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
+1. Reproduce BUG-0001 on an identified staging build, trace the Simple Entry Money In mapping from UI through posting, fix the 4000/4300 mismatch and run adjacent accounting regressions.
+2. Obtain deployed commit/image and stable run window; then execute the ordered business journeys in the audit.
+3. Establish staging build identity and run-owned fixture users/companies.
+4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
+5. Replace optional machine-file bank cases with synthetic portable fixtures.
+6. Follow BookOne docs/REMOVE_INBUILT_E2E.md before deleting old tooling; migrate/retire every source-reference-only item deliberately and update tests that expect old endpoints.
+7. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
 
-No live test records require cleanup from this bootstrap. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
+The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
