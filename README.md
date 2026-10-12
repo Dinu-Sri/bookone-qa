@@ -4,12 +4,12 @@ Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/B
 
 ## Current state
 
-- Product source pinned in product-ref.json to d35ed9209852af3fbcfe140176f2f8e74cae15f7.
-- 747 inherited scenario definitions; all assertion-depth reviews are initially pending. Catalog mapping is not business acceptance.
-- 30 browser spec files imported; full discovery finds 771 tests in 29 nonempty files. The inherited bucket preset omitted the team suite; full discovery now includes it.
+- Product source pinned in product-ref.json to 65f84c151f7332efa196ed837ad179ac4818178b. The actual staging image/build still needs independent identification.
+- 747 inherited scenario definitions; 30 source reviews complete and 717 pending. Catalog mapping is not business acceptance.
+- 30 browser spec files imported; full discovery finds 770 tests in 29 nonempty files. The inherited bucket preset omitted the team suite; full discovery now includes it.
 - 10 external unit-test files: **94 passed, 4 skipped** locally (includes independent critical posting cases). Skips require optional local bank fixtures; real bank files were not copied.
-- 2 target-policy checks passed. No staging browser/business acceptance run has occurred in this bootstrap.
-- Wave 1a (CHG-20261012-remove-inbuilt-e2e): inherited `/e2e` scenarios now assert the inbuilt console and `/api/e2e` are gone. Those tests fail on a build that still hosts the runner until BookOne Wave 1b lands. `pnpm agent:browse` lives here. Product cleanup remains a separate BookOne branch.
+- 2 target-policy checks passed. The old manual staging run is historical; no browser/business acceptance run has occurred on the fresh rebuilt staging.
+- The inbuilt E2E product cleanup is merged. S-0031–S-0033/S-0578 now assert denial; live verification after deployment is still pending. `pnpm agent:browse` lives here. A later product cleanup also retired Control Room health/reset/audit/demo tools, so inherited expectations for those surfaces need review before broad execution.
 
 ## Quick start
 
@@ -52,3 +52,4 @@ The apps/e2e-runner path is retained inside this QA repository for import compat
 QA repository CI validates metadata, the target guard, pinned-source unit tests and E2E discovery. It has no staging credentials and runs no staging browser tests. Its green result cannot approve a product release. Add new scenarios and review records together; preserve existing IDs and historical results. Update STATUS after each session.
 
 This repository is public by explicit owner instruction. Review every staged file for sensitive information. See PUBLIC_DATA_POLICY before sharing bugs/artifacts. Package.json private=true prevents npm publishing; GitHub visibility is public. No new open-source license grant is implied; imported code retains BookOne's existing rights.
+

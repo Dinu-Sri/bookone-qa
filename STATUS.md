@@ -1,5 +1,15 @@
 # QA status — 2026-10-12
 
+## Fresh staging baseline after rebuild
+
+- Owner reports staging at `https://bookone.clossyan.com` was rebuilt and test data cleaned. The selected company is accessible, and Control Room Access shows one platform super-admin. The Health Check route displays a placeholder stating that operational tools will be added later. These are UI observations, not proof of deployed image or database identity.
+- BookOne `master` reached `5b71d06b12f9ccf7f9ca6b461e21dc1c1314e134` after 12 commits beyond the E2E removal merge, then documentation-only credential redaction merged at `65f84c151f7332efa196ed837ad179ac4818178b` ([PR #2](https://github.com/Dinu-Sri/BookOne/pull/2)). The QA source pin is updated to that latest master for a new unit baseline; browser acceptance still requires independent deployed-build verification.
+- The new product changes remove the executable Control Room health check, company reset, demo seeds, and Audit page; they also change platform-admin assignment and Docker/staging startup. Inherited QA health/reset expectations are stale and require an explicit scenario review. Do not count discovery or the old manual run as acceptance of this build.
+- [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md) records this baseline and the selected first journeys. Deployed image SHA, schema, storage identity, and live E2E denial remain unverified. The public credential found in BookOne docs was redacted from the current guide; the owner must rotate any reused credential because Git history retains old versions.
+- BookOne Production Check reports green while its build/typecheck logs contain errors due to `continue-on-error`; it is advisory until the workflow genuinely fails on required errors. QA CI has no staging browser credentials.
+- On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
+- Live E2E denial navigation was stopped by a temporary browser automation approval rate limit before it happened. No E2E denial assertion passed or failed; retry only after the automation gate is available.
+
 ## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
 
 - Change record: [changes/CHG-20261012-remove-inbuilt-e2e.md](changes/CHG-20261012-remove-inbuilt-e2e.md). Branch `qa/chg-20261012-e2e-denial`. Companion to BookOne `chore/remove-inbuilt-e2e` / [CHG-20261012-remove-inbuilt-e2e](https://github.com/Dinu-Sri/BookOne/blob/chore/remove-inbuilt-e2e/docs/changes/CHG-20261012-remove-inbuilt-e2e.md).
@@ -50,3 +60,4 @@
 7. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
 
 The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
+
