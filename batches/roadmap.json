@@ -13,7 +13,7 @@
     },
     {
       "id": "B",
-      "status": "implemented-source-and-seeded-payment-contracts-lifecycle-planned",
+      "status": "implemented-source-and-partial-postgres-commercial-lifecycle-runtime-browser-gaps",
       "dependsOn": [
         "A"
       ],
@@ -40,7 +40,7 @@
     },
     {
       "id": "E",
-      "status": "implemented-source-contracts-lifecycle-planned",
+      "status": "implemented-source-and-persisted-role-config-probes-wider-lifecycle-open",
       "dependsOn": [
         "B",
         "C",
@@ -51,12 +51,14 @@
     },
     {
       "id": "F",
-      "status": "implemented-source-contracts-lifecycle-planned",
+      "status": "implemented-source-upload-commands-and-postgres-probes-import-storage-upgrade-recovery-open",
       "dependsOn": [
         "A"
       ],
       "title": "Imports/upgrade/concurrency/recovery",
       "acceptance": "not-established"
     }
-  ]
+  ],
+  "runtimeManifest": "batches/runtime.json",
+  "configurationMatrix": "batches/configuration-matrix.json"
 }
