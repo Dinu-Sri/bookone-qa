@@ -105,3 +105,9 @@ it('[E-117] persisted allow overrides cannot elevate Viewer or disabled module; 
   await seed.insert(schema.tenantPermissionOverrides).values({tenantId:TENANT_A,userId:SALES,permissionKey:'sales.invoices.write',effect:'allow'});
   expect((await loadAccessForUser(SALES,TENANT_A,'user'))?.allows('sales.invoices.write','write')).toBe(false);
 });
+it('[RT-008] actual schema rejects missing FK and duplicate unique key with zero saved effects',async()=>{
+  await expect(admin`insert into business_documents(tenant_id,user_id,party_id,document_type,document_number,issue_date,subtotal,total,balance_due) values(${TENANT_A},${OWNER},'00000000-0000-4000-8000-000000000099','sales_invoice','INVALID-FK',${DATE},600,600,600)`).rejects.toMatchObject({code:'23503'});
+  await expect(admin`insert into tenants(name,slug) values('Duplicate synthetic','qa-runtime-a')`).rejects.toMatchObject({code:'23505'});
+  const [state]=await admin`select (select count(*)::int from business_documents) as docs,(select count(*)::int from tenants) as tenants`;
+  expect(state).toEqual({docs:0,tenants:2});
+});

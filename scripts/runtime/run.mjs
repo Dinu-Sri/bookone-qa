@@ -12,7 +12,7 @@ const verify = spawnSync(process.execPath, ['scripts/verify-product.mjs'], { enc
 if (verify.status !== 0) throw new Error('Pinned source verification failed');
 const lanes = [
   { name: 'postgres-rls', file: 'tests/runtime/tenant-context.test.ts', expected: ['RT-001','RT-002','RT-003','RT-004'], credential: 'runtime', boundary: 'real-PostgreSQL-non-owner-product-helper' },
-  { name: 'commercial-lifecycle', file: 'tests/runtime/commercial.test.ts', expected: ['B-101','B-102','B-103','E-115','E-116','E-117'], credential: 'admin', boundary: 'real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading' },
+  { name: 'commercial-lifecycle', file: 'tests/runtime/commercial.test.ts', expected: ['B-101','B-102','B-103','E-115','E-116','E-117','RT-008'], credential: 'admin', boundary: 'real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading' },
   { name: 'reversal-concurrency', file: 'tests/runtime/reversal.test.ts', expected: ['RT-005','RT-006','RT-007'], credential: 'admin', boundary: 'real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay' },
 ];
 const selected = process.argv[2] ?? 'all';
@@ -42,11 +42,11 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   const outcome=laneOutcome(lane.expected,{cases:observed},result.status);
   const cases=outcome.cases;
   const unexpected=observed.filter(t=>!lane.expected.includes(t.id)).length;
-  const observationKeys={'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','expectedAccepted','expectedReversals']};
+  const observationKeys={'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','journalCount','netCashCents','netIncomeCents','expectedAccepted','expectedReversals','expectedJournals','expectedNetCashCents','expectedNetIncomeCents']};
   const rawObservations=existsSync(observationFile)?JSON.parse(readFileSync(observationFile,'utf8')):{};
   const observations={};
   for(const [id,keys] of Object.entries(observationKeys))if(lane.expected.includes(id) && rawObservations[id]) {
-    observations[id]=Object.fromEntries(keys.filter(k=>Number.isSafeInteger(rawObservations[id][k]) && rawObservations[id][k]>=0).map(k=>[k,rawObservations[id][k]]));
+    observations[id]=Object.fromEntries(keys.filter(k=>Number.isSafeInteger(rawObservations[id][k])).map(k=>[k,rawObservations[id][k]]));
   }
   results.push({ lane: lane.name, boundary: lane.boundary, cases, subprocessExit: result.status,
     observations,

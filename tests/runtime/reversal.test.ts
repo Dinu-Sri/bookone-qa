@@ -37,7 +37,9 @@ it('[RT-006] overlapping requests produce exactly one reversal and one financial
   try {results=await Promise.all([reverseTransactionById(id),reverseTransactionById(id)]);}
   finally {await admin.unsafe('DROP TRIGGER qa_runtime_delay_reversal ON transactions');await admin.unsafe('DROP FUNCTION qa_runtime_delay_reversal()');}
   const [count]=await admin`select count(*)::int as count from transactions where reverses_transaction_id=${id}`;
-  observe('RT-006',{acceptedRequests:results.filter(r=>r.success).length,reversalCount:count.count,expectedAccepted:1,expectedReversals:1});
+  const report=await getReports('2026-10');
+  const [journalCount]=await admin`select count(*)::int as count from journal_entries`;
+  observe('RT-006',{acceptedRequests:results.filter(r=>r.success).length,reversalCount:count.count,journalCount:journalCount.count,netCashCents:Math.round(report.cashFlow.netCashFlow*100),netIncomeCents:Math.round(report.income.netIncome*100),expectedAccepted:1,expectedReversals:1,expectedJournals:2,expectedNetCashCents:0,expectedNetIncomeCents:0});
   expect({accepted:results.filter(r=>r.success).length,reversals:count.count}).toEqual({accepted:1,reversals:1});await verifyOne(id);
 });
 it('[RT-007] persisted Viewer role denies reversal of actual existing sale with zero business mutations',async()=>{
