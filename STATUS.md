@@ -8,6 +8,8 @@ BUG-0008's quality→publisher configuration and successful product CI path are 
 
 No staging mutations/reset: prior two synthetic offsetting journals remain, net cash/income0. Docs/search navigation and product form loading checked; full changed write/print/upload/permission journeys unrun. No release acceptance. Next: coding agent fixes the three findings; QA builds isolated full-PostgreSQL B-101–103 and A runtime/RLS/race adapters. Local docker/psql/postgres tools unavailable; CI services are the proposed isolation route. Deeper83 lifecycle tasks/policy gaps remain as specified.
 
+Clean QA commit0ae2ee5 passed [validation52](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38363206075) and [A7](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38363205945). [B–F matrix3](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38363205955) confirms the same47 pass/3 fail with sanitized artifacts retained. QA memory maintenance is not product release approval.
+
 ## B–F foundations and deep lifecycle backlog
 
 [RUN-09](runs/RUN-20261013-deep-batches-09.md) implements35 new source/embedded-action cases across B–F, preserving A15. Latest completed local source runs: A14/1, B10/2, C8/0, D8/0, E3/0, F3/1 (46 pass/4 fail). B broad completed200 generated payment sequences; latest strengthened audit/link assertions were separately checked in B quick. First harness failures and corrections are retained, not product blame.

@@ -10,13 +10,13 @@
   "lastSourceContractRun": "runs/RUN-20261013-071039774-f569f0.json",
   "lastRetestRecord": "runs/RUN-20261013-v2-2-1-retest-10.md",
   "lastCleanSourceCi": {
-    "qaSha": "cbda523fdd57df1c600e74a2541d751b53df2c09",
-    "qaValidationRun": 38358818493,
-    "candidateBatchRun": 38358818701,
-    "candidateResult": "14-pass-1-fail-A-014",
-    "deepBatchRun": 38358818740,
+    "qaSha": "0ae2ee586b511a5ea467d52070c5048ecc9335a2",
+    "qaValidationRun": 38363206075,
+    "candidateBatchRun": 38363205945,
+    "candidateResult": "15-pass-0-fail",
+    "deepBatchRun": 38363205955,
     "deepResult": "B10/2-C8/0-D8/0-E3/0-F3/1",
-    "scope": "quick-source-contracts-no-release-acceptance"
+    "scope": "quick-source-contracts-Zod4.4.3-no-release-acceptance"
   },
   "candidateProductSha": "993664b433cbcdba298bf6948813f0331d588a9e",
   "observedStagingStamp": "v2.2.1 · 993664b",
