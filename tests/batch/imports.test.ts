@@ -28,3 +28,9 @@ it('F-004 impossible calendar dates must not normalize to accepted bank dates',(
   expect(parseStatementDate('2026-02-28').iso).toBe('2026-02-28');
   for(const bad of ['2026-02-30','2026-13-01','31/04/2026'])expect(parseStatementDate(bad).iso).toBe('');
 });
+it('F-009 leap and century rules retain valid ISO/slash and deny impossible dates',()=>{
+  for(const [input,expected] of [['2024-02-29','2024-02-29'],['29/02/2024','2024-02-29'],['2000-02-29','2000-02-29'],['28 Feb 2026','2026-02-28'],['2026-02-29',''],['1900-02-29',''],['29.02.2026','']])expect(parseStatementDate(input).iso,input).toBe(expected);
+});
+it('F-010 impossible named-month dates must not silently roll into the next month',()=>{
+  for(const bad of ['30 Feb 2026','Feb 30, 2026','31 Apr 2026'])expect(parseStatementDate(bad).iso,bad).toBe('');
+});
