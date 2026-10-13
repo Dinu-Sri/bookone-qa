@@ -1,6 +1,10 @@
 # RUN-20261012-viewer-permission-retest-02 — after reported staging update
 
-Status: exploratory retest; release acceptance blocked because deployed build and storage identity are unknown.
+Status: invalid for Viewer-role conclusions; retained as historical UI observation only.
+
+## Validity correction — 2026-10-13
+
+The account's active sign-in was not independently verified before the write actions. Later inspection of `/company/team` showed Owner-level management controls and identified Dinu Madhusanka as Owner, while the synthetic account appeared as a separate Viewer. Therefore this run's successful writes are real UI observations but cannot be attributed to Viewer. Mark both permission assertions **invalid / not-run for Viewer**. The app footer marker was `v2.1.0 · 2b92cf4`; this does not repair the missing actor identity evidence.
 
 ## Fingerprint and preconditions
 
