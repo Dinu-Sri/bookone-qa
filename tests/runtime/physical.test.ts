@@ -6,8 +6,21 @@ import { admin, seed, resetFixture, closeFixture } from './support/fixture';
 import * as schema from '@product/schema/index';
 import { eq } from 'drizzle-orm';
 import { TENANT_A, TENANT_B, OWNER, VIEWER, setActor } from './support/session';
-import { observe } from './support/observations';
-beforeEach(resetFixture);afterAll(closeFixture);
+import { observe as writeObservation } from './support/observations';
+import { pgClient } from '@product/db/db';
+const nonOwner=process.env.QA_RUNTIME_LANE==='physical-nonowner';
+const caseId=(id:string)=>nonOwner?id.replace(/-(\d+)$/,(_,n)=>'-'+String(Number(n)+100).padStart(3,'0')):id;
+const physicalIt=(title:string,fn:()=>Promise<void>)=>it(title.replace(/\[((?:C|RT)-\d{3})\]/,(_,id)=>'['+caseId(id)+']'),fn);
+const observe=(id:string,values:Record<string,number>)=>writeObservation(caseId(id),values);
+beforeEach(async()=>{
+  await resetFixture();
+  if(nonOwner){
+    const [role]=await pgClient()`select rolsuper,rolbypassrls from pg_roles where rolname=current_user`;
+    expect(role).toEqual({rolsuper:false,rolbypassrls:false});
+    const [table]=await pgClient()`select relrowsecurity,pg_get_userbyid(relowner)=current_user as owned from pg_class where oid='accounts'::regclass`;
+    expect(table).toEqual({relrowsecurity:true,owned:false});
+  }
+});afterAll(closeFixture);
 const DATE='2026-10-13';
 const tables=['business_documents','business_document_lines','transactions','journal_entries','journal_lines','inventory_stock_levels','inventory_movements','inventory_cost_layers','inventory_cost_layer_consumptions','settlement_allocations','audit_log'];
 async function snapshot(){const out={};for(const table of tables)out[table]=await admin.unsafe(`select * from ${table} order by id`);return out;}
@@ -58,14 +71,14 @@ async function purchase(p:string){
   expect((await doc(bill)).sourceDocumentId).toBe(grn);await stock(p,10,60000);await ledger({'5100':60000,'2100':-60000});
   return {po,grn,bill};
 }
-it('[C-101] purchase order and pending approval have zero stock/GL until Owner approval',async()=>{
+physicalIt('[C-101] purchase order and pending approval have zero stock/GL until Owner approval',async()=>{
   const p=await setup('last',false,true);const po=await create(input(p,'purchase_order'));
   const pending=await create(input(p,'purchase',10,60,{sourceDocumentId:po}));
   expect((await doc(pending)).status).toBe('pending_approval');expect((await doc(pending)).transactionId).toBeNull();await stock(p,0,0);await ledger({});
   expect((await approvePurchaseDocument(pending)).ok).toBe(true);await stock(p,10,60000);await journal(pending,[['5100','debit',60000],['2100','credit',60000]]);
   const before=await snapshot();expect((await approvePurchaseDocument(pending)).ok).toBe(false);expect(await snapshot()).toEqual(before);
 });
-it('[C-102] GRNI enabled/disabled receipt and bill capitalise ten units exactly once',async()=>{
+physicalIt('[C-102] GRNI enabled/disabled receipt and bill capitalise ten units exactly once',async()=>{
   for(const grni of [false,true]){
     await resetFixture();const p=await setup('last',grni);const {grn,bill}=await purchase(p);
     if(grni){await journal(grn,[['5100','debit',60000],['2150','credit',60000]]);await journal(bill,[['2150','debit',60000],['2100','credit',60000]]);}
@@ -73,19 +86,19 @@ it('[C-102] GRNI enabled/disabled receipt and bill capitalise ten units exactly 
     expect(Number((await doc(bill)).balanceDue)).toBe(600);
   }
 });
-it('[C-103] receipt six then four with separate bills conserves quantities, GRNI and source links',async()=>{
+physicalIt('[C-103] receipt six then four with separate bills conserves quantities, GRNI and source links',async()=>{
   const p=await setup();const po=await create(input(p,'purchase_order'));
   const first=await create(input(p,'goods_receipt',6,60,{sourceDocumentId:po}));await stock(p,6,36000);await ledger({'5100':36000,'2150':-36000});
   await create(input(p,'purchase',6,60,{sourceDocumentId:first}));await stock(p,6,36000);await ledger({'5100':36000,'2100':-36000});
   const second=await create(input(p,'goods_receipt',4,60,{sourceDocumentId:po}));await stock(p,10,60000);await ledger({'5100':60000,'2100':-36000,'2150':-24000});
   await create(input(p,'purchase',4,60,{sourceDocumentId:second}));await stock(p,10,60000);await ledger({'5100':60000,'2100':-60000});
 });
-it('[C-104] partial bills against already received PO do not duplicate stock or GRNI clearance',async()=>{
+physicalIt('[C-104] partial bills against already received PO do not duplicate stock or GRNI clearance',async()=>{
   const p=await setup();const po=await create(input(p,'purchase_order'));await create(input(p,'goods_receipt',10,60,{sourceDocumentId:po}));
   await create(input(p,'purchase',6,60,{sourceDocumentId:po}));await stock(p,10,60000);await ledger({'5100':60000,'2100':-36000,'2150':-24000});
   await create(input(p,'purchase',4,60,{sourceDocumentId:po}));await stock(p,10,60000);await ledger({'5100':60000,'2100':-60000});
 });
-it('[C-105] physical sale partial receipt return and final receipt reconcile all three costing settings',async()=>{
+physicalIt('[C-105] physical sale partial receipt return and final receipt reconcile all three costing settings',async()=>{
   for(const method of ['last','average','fifo']){
     await resetFixture();const p=await setup(method);await purchase(p);
     const sale=await create(input(p,'sales_invoice',2,100));await stock(p,8,48000);
@@ -100,17 +113,17 @@ it('[C-105] physical sale partial receipt return and final receipt reconcile all
     const report=await getReports('2026-10');observe('C-105',{stockQty:9,inventoryValueCents:54000,reportedProfitCents:Math.round(report.income.netIncome*100),expectedProfitCents:4000});expect(report.income.netIncome).toBe(40);
   }
 });
-it('[C-106] supplier payment clears AP exactly once and leaves inventory unchanged',async()=>{
+physicalIt('[C-106] supplier payment clears AP exactly once and leaves inventory unchanged',async()=>{
   const p=await setup();const {bill}=await purchase(p);const request={paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:bill,amount:600}]};
   expect((await payVendorBills(request)).ok).toBe(true);expect(Number((await doc(bill)).balanceDue)).toBe(0);await stock(p,10,60000);await ledger({'1000':-60000,'5100':60000});
   const before=await snapshot();expect((await payVendorBills(request)).ok).toBe(false);expect(await snapshot()).toEqual(before);
 });
-it('[C-107] unpaid credit purchase return reduces AP and stock at original single-batch cost',async()=>{
+physicalIt('[C-107] unpaid credit purchase return reduces AP and stock at original single-batch cost',async()=>{
   const p=await setup();const {bill}=await purchase(p);const credit=await create(input(p,'purchase_return',2,60,{sourceDocumentId:bill}));
   await stock(p,8,48000);await journal(credit,[['2100','debit',12000],['5100','credit',12000]]);await ledger({'5100':48000,'2100':-48000});
   expect(Number((await doc(bill)).balanceDue)).toBe(480);expect(Number((await doc(credit)).balanceDue)).toBe(0);
 });
-it('[C-115] known foreign SKU is rejected with zero document journal stock or audit changes',async()=>{
+physicalIt('[C-115] known foreign SKU is rejected with zero document journal stock or audit changes',async()=>{
   const p=await setup();await purchase(p);await create(input(p,'sales_invoice',1,100));
   const [foreign]=await seed.insert(schema.inventoryProducts).values({tenantId:TENANT_B,sku:'QA-FOREIGN',name:'QA foreign physical unit',productType:'physical',sellPrice:'100.00',unitCost:'60.00'}).returning();
   const before=await snapshot();const result=await createCommercialDocument(input(foreign.id,'sales_invoice',1,100));const after=await snapshot();
@@ -118,7 +131,7 @@ it('[C-115] known foreign SKU is rejected with zero document journal stock or au
   observe('C-115',{accepted:result.ok?1:0,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,foreignLinkedLineCount:foreignLinks.count});
   expect({denied:!result.ok,unchanged:JSON.stringify(after)===JSON.stringify(before)}).toEqual({denied:true,unchanged:true});
 });
-it('[C-116] isolated journal-line failure rolls back every financial stock and document effect',async()=>{
+physicalIt('[C-116] isolated journal-line failure rolls back every financial stock and document effect',async()=>{
   const p=await setup();const before=await snapshot();
   await admin.unsafe(`CREATE FUNCTION qa_physical_fail_line() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'Synthetic QA journal failure'; END $$`);
   await admin.unsafe('CREATE TRIGGER qa_physical_fail_line BEFORE INSERT ON journal_lines FOR EACH ROW EXECUTE FUNCTION qa_physical_fail_line()');
@@ -126,22 +139,22 @@ it('[C-116] isolated journal-line failure rolls back every financial stock and d
   const after=await snapshot();observe('C-116',{accepted:result.ok?1:0,newTransactionCount:after['transactions'].length-before['transactions'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newJournalLineCount:after['journal_lines'].length-before['journal_lines'].length});
   expect(result.ok).toBe(false);expect(after).toEqual(before);
 });
-it('[RT-017] persisted Viewer cannot create a physical purchase or sale and changes no business tables',async()=>{
+physicalIt('[RT-017] persisted Viewer cannot create a physical purchase or sale and changes no business tables',async()=>{
   const p=await setup();await purchase(p);setActor(VIEWER,'viewer');const before=await snapshot();
   for(const type of ['purchase','goods_receipt','sales_invoice','sales_return'])expect((await createCommercialDocument(input(p,type,1,60))).ok).toBe(false);
   expect(await snapshot()).toEqual(before);
 });
-it('[RT-018] locked period rejects a physical sale without consuming lots or stock',async()=>{
+physicalIt('[RT-018] locked period rejects a physical sale without consuming lots or stock',async()=>{
   const p=await setup();await purchase(p);await seed.insert(schema.periodLocks).values({tenantId:TENANT_A,period:'2026-10',status:'locked',userId:OWNER});
   const before=await snapshot();const result=await createCommercialDocument(input(p,'sales_invoice',1,100));const after=await snapshot();
   observe('RT-018',{accepted:result.ok?1:0,newTransactionCount:after['transactions'].length-before['transactions'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newAuditCount:after['audit_log'].length-before['audit_log'].length,newMovementCount:after['inventory_movements'].length-before['inventory_movements'].length});
   expect(result.ok).toBe(false);expect(after).toEqual(before);
 });
-it('[RT-019] disabling sales module rejects physical sale with existing stock preserved',async()=>{
+physicalIt('[RT-019] disabling sales module rejects physical sale with existing stock preserved',async()=>{
   const p=await setup();await purchase(p);await seed.update(schema.tenants).set({modules:{inventory:true,purchase:true,sales:false}}).where(eq(schema.tenants.id,TENANT_A));
   const before=await snapshot();expect((await createCommercialDocument(input(p,'sales_invoice',1,100))).ok).toBe(false);expect(await snapshot()).toEqual(before);
 });
-it('[RT-020] Viewer cannot approve an actual pending physical bill, Owner can',async()=>{
+physicalIt('[RT-020] Viewer cannot approve an actual pending physical bill, Owner can',async()=>{
   const p=await setup('last',false,true);const pending=await create(input(p,'purchase'));const before=await snapshot();setActor(VIEWER,'viewer');
   const result=await approvePurchaseDocument(pending);const after=await snapshot();observe('RT-020',{accepted:result.ok?1:0,newJournalCount:after['journal_entries'].length-before['journal_entries'].length});
   expect({denied:!result.ok,unchanged:JSON.stringify(after)===JSON.stringify(before)}).toEqual({denied:true,unchanged:true});
