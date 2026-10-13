@@ -27,7 +27,7 @@ async function ledger(expected:Record<string,number>,journalCount:number) {
   const journals=await admin`select j.id,sum(case when l.side='debit' then l.amount else -l.amount end)::text as net,count(l.id)::int as lines from journal_entries j join journal_lines l on l.journal_entry_id=j.id group by j.id`;
   expect(journals).toHaveLength(journalCount);for(const j of journals){expect(Number(j.net)).toBe(0);expect(j.lines).toBe(2);}
   const report=await getReports('2026-10');
-  expect(Math.round(report.income.netIncome*100)).toBe(-(expected['4000']??0));
+  expect(Math.round(report.income.netIncome*100)).toBe(-((expected['4000']??0)+(expected['4100']??0)));
   expect(Math.round(report.cashFlow.netCashFlow*100)).toBe(expected['1000']??0);
   await noStock();
 }
@@ -143,12 +143,16 @@ it('[RT-011] actual assigned-location scope denies other-location allocation wit
   expect((await allocateDocumentPayment({documentId:own,amount:100,paymentDate:DATE,paymentAccountCode:'1000'})).ok).toBe(true);expect(Number((await doc(own)).balanceDue)).toBe(500);expect(Number((await doc(other)).balanceDue)).toBe(600);
 });
 it('[B-104] actual invoice receipt250 and credit100 reconcile AR250 cash250 revenue500',async()=>{
+  // Independent existing B-003 posting contract specifies Sales Returns4100.
+  // First PostgreSQL attempt lacked this required fixture account and incorrectly
+  // expected direct4000 reduction. Preserve that attempt as harness failure.
+  await seed.insert(schema.accounts).values({tenantId:TENANT_A,code:'4100',name:'Sales Returns',type:'revenue',normalSide:'debit'});
   const p=await product();const id=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount:250}]})).ok).toBe(true);
   await ledger({'1000':25000,'1300':35000,'4000':-60000},2);
   const credit=await create(input(p,'sales_return',{sourceDocumentId:id,lines:[{productId:p,description:'Synthetic partial service credit',quantity:1,unitPrice:100}]}));
-  await ledger({'1000':25000,'1300':25000,'4000':-50000},3);
+  await ledger({'1000':25000,'1300':25000,'4000':-60000,'4100':10000},3);
   const original=await doc(id),returned=await doc(credit);expect([Number(original.total),Number(original.paidAmount),Number(original.balanceDue),original.status]).toEqual([600,350,250,'partial']);
   expect([returned.sourceDocumentId,Number(returned.total),Number(returned.paidAmount),Number(returned.balanceDue)]).toEqual([id,100,100,0]);
-  await exactJournal(returned.transactionId!,[['4000','debit',10000],['1300','credit',10000]]);
+  await exactJournal(returned.transactionId!,[['4100','debit',10000],['1300','credit',10000]]);
   const allocations=await seed.select().from(schema.settlementAllocations);expect(allocations).toHaveLength(2);expect(allocations.map(a=>Number(a.allocatedAmount)).sort((a,b)=>a-b)).toEqual([100,250]);for(const a of allocations)expect(a.invoiceTransactionId).toBe(original.transactionId);
 });
