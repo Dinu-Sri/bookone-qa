@@ -26,12 +26,19 @@
     "batch:run": "node scripts/batch/run.mjs run",
     "batch:resume": "node scripts/batch/run.mjs resume",
     "batch:export": "node scripts/batch/run.mjs export"
+    ,"matrix:check": "node scripts/matrix.mjs check"
+    ,"matrix:generate": "node scripts/matrix.mjs generate"
+    ,"runtime:prepare": "node scripts/runtime/prepare.mjs"
+    ,"runtime:run": "node scripts/runtime/run.mjs"
+    ,"test:runtime-guard": "node --test tests/infrastructure/runtime-target.test.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",
     "@playwright/test": "1.51.1",
     "@types/node": "22.13.10",
     "drizzle-orm": "0.33.0",
+    "drizzle-kit": "0.24.2",
+    "postgres": "3.4.9",
     "fast-check": "4",
     "react": "19",
     "react-dom": "19",

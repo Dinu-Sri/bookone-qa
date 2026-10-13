@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "strategy": "deterministic-pairwise-plus-mandatory-risk-triples",
+  "factors": {
+    "business": [
+      "services-digital",
+      "physical",
+      "rental",
+      "mixed"
+    ],
+    "entity": [
+      "company",
+      "sole-prop-lite",
+      "sole-prop-full",
+      "personal",
+      "pending"
+    ],
+    "modules": [
+      "all",
+      "sales-only",
+      "inventory-only",
+      "rental-only",
+      "none"
+    ],
+    "role": [
+      "owner",
+      "admin",
+      "accountant",
+      "sales",
+      "purchasing",
+      "warehouse",
+      "cashier",
+      "viewer"
+    ],
+    "scope": [
+      "all",
+      "assigned-location-brand",
+      "other-location-brand",
+      "foreign-tenant"
+    ]
+  },
+  "fullCombinationCount": 3200,
+  "requiredPairCount": 265,
+  "execution": "specified-not-executed",
+  "acceptance": "not-established",
+  "oracle": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
+  "rows": [
+    {
+      "id": "MX-001",
+      "business": "mixed",
+      "entity": "company",
+      "modules": "all",
+      "role": "viewer",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": true,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-002",
+      "business": "mixed",
+      "entity": "company",
+      "modules": "none",
+      "role": "owner",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": true,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-003",
+      "business": "physical",
+      "entity": "sole-prop-lite",
+      "modules": "all",
+      "role": "owner",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": true,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-004",
+      "business": "rental",
+      "entity": "company",
+      "modules": "all",
+      "role": "warehouse",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": true,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-005",
+      "business": "services-digital",
+      "entity": "company",
+      "modules": "all",
+      "role": "sales",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": true,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-006",
+      "business": "services-digital",
+      "entity": "sole-prop-lite",
+      "modules": "sales-only",
+      "role": "admin",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-007",
+      "business": "services-digital",
+      "entity": "sole-prop-full",
+      "modules": "inventory-only",
+      "role": "owner",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-008",
+      "business": "services-digital",
+      "entity": "personal",
+      "modules": "rental-only",
+      "role": "accountant",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-009",
+      "business": "physical",
+      "entity": "sole-prop-full",
+      "modules": "sales-only",
+      "role": "accountant",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-010",
+      "business": "physical",
+      "entity": "personal",
+      "modules": "inventory-only",
+      "role": "sales",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-011",
+      "business": "physical",
+      "entity": "pending",
+      "modules": "rental-only",
+      "role": "admin",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-012",
+      "business": "rental",
+      "entity": "sole-prop-lite",
+      "modules": "inventory-only",
+      "role": "purchasing",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-013",
+      "business": "rental",
+      "entity": "sole-prop-full",
+      "modules": "rental-only",
+      "role": "cashier",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-014",
+      "business": "rental",
+      "entity": "pending",
+      "modules": "sales-only",
+      "role": "sales",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-015",
+      "business": "mixed",
+      "entity": "personal",
+      "modules": "sales-only",
+      "role": "purchasing",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-016",
+      "business": "services-digital",
+      "entity": "pending",
+      "modules": "none",
+      "role": "purchasing",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-017",
+      "business": "rental",
+      "entity": "personal",
+      "modules": "none",
+      "role": "admin",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-018",
+      "business": "mixed",
+      "entity": "sole-prop-lite",
+      "modules": "rental-only",
+      "role": "warehouse",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-019",
+      "business": "physical",
+      "entity": "sole-prop-lite",
+      "modules": "none",
+      "role": "cashier",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-020",
+      "business": "mixed",
+      "entity": "sole-prop-full",
+      "modules": "inventory-only",
+      "role": "admin",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-021",
+      "business": "mixed",
+      "entity": "pending",
+      "modules": "all",
+      "role": "cashier",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-022",
+      "business": "physical",
+      "entity": "company",
+      "modules": "rental-only",
+      "role": "purchasing",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-023",
+      "business": "services-digital",
+      "entity": "company",
+      "modules": "sales-only",
+      "role": "cashier",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-024",
+      "business": "services-digital",
+      "entity": "sole-prop-full",
+      "modules": "none",
+      "role": "warehouse",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-025",
+      "business": "services-digital",
+      "entity": "pending",
+      "modules": "inventory-only",
+      "role": "viewer",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-026",
+      "business": "rental",
+      "entity": "company",
+      "modules": "inventory-only",
+      "role": "accountant",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-027",
+      "business": "physical",
+      "entity": "sole-prop-lite",
+      "modules": "sales-only",
+      "role": "viewer",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-028",
+      "business": "physical",
+      "entity": "personal",
+      "modules": "all",
+      "role": "warehouse",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-029",
+      "business": "rental",
+      "entity": "sole-prop-full",
+      "modules": "all",
+      "role": "viewer",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-030",
+      "business": "rental",
+      "entity": "personal",
+      "modules": "sales-only",
+      "role": "owner",
+      "scope": "assigned-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-031",
+      "business": "mixed",
+      "entity": "sole-prop-lite",
+      "modules": "all",
+      "role": "accountant",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-032",
+      "business": "mixed",
+      "entity": "sole-prop-lite",
+      "modules": "rental-only",
+      "role": "sales",
+      "scope": "other-location-brand",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-033",
+      "business": "services-digital",
+      "entity": "pending",
+      "modules": "rental-only",
+      "role": "owner",
+      "scope": "foreign-tenant",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-034",
+      "business": "services-digital",
+      "entity": "company",
+      "modules": "all",
+      "role": "admin",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-035",
+      "business": "services-digital",
+      "entity": "sole-prop-full",
+      "modules": "all",
+      "role": "purchasing",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-036",
+      "business": "services-digital",
+      "entity": "sole-prop-full",
+      "modules": "none",
+      "role": "sales",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-037",
+      "business": "services-digital",
+      "entity": "personal",
+      "modules": "inventory-only",
+      "role": "cashier",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-038",
+      "business": "services-digital",
+      "entity": "personal",
+      "modules": "rental-only",
+      "role": "viewer",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-039",
+      "business": "services-digital",
+      "entity": "pending",
+      "modules": "sales-only",
+      "role": "warehouse",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-040",
+      "business": "services-digital",
+      "entity": "pending",
+      "modules": "none",
+      "role": "accountant",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-041",
+      "business": "services-digital",
+      "entity": "company",
+      "modules": "inventory-only",
+      "role": "warehouse",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    },
+    {
+      "id": "MX-042",
+      "business": "services-digital",
+      "entity": "company",
+      "modules": "none",
+      "role": "viewer",
+      "scope": "all",
+      "status": "specified-not-executed",
+      "mandatory": false,
+      "workflows": [
+        "create-read-edit-post-pay-return",
+        "module-toggle-existing-data",
+        "upload-download-export"
+      ],
+      "expected": "Apply independently approved operation/role/module/scope rules; denied operations leave financial/stock/file state unchanged. No permission expectation inferred from current UI."
+    }
+  ]
+}
