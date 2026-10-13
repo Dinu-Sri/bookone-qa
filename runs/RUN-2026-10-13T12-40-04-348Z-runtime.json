@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-13T12-40-04-348Z-runtime",
+  "fingerprint": {
+    "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+    "qaSha": "547b15a647f5cbcc90c73226603811de1e8d5a2e",
+    "qaDirty": false,
+    "node": "v22.23.3",
+    "qaContentHash": "ea05fc5b645f7d6ef8c969b1195acc591ed15b0236b1bce3134ac6ee1210c07c",
+    "preparationHash": "e1c396a7d93fad657084375f67740b4bbe47964eac707ba8d4baf0ec3f9e3d04",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "results": [
+    {
+      "lane": "postgres-rls",
+      "boundary": "real-PostgreSQL-non-owner-product-helper",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "passed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "passed"
+        },
+        {
+          "id": "RT-012",
+          "status": "passed"
+        },
+        {
+          "id": "RT-013",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-002": {
+          "expectedOwnRows": 3,
+          "observedRows": 3
+        },
+        "RT-004": {
+          "tenantACount": 1,
+          "afterFailureCount": 0,
+          "tenantBCount": 1,
+          "expectedACount": 1,
+          "expectedAfterFailureCount": 0,
+          "expectedBCount": 1
+        }
+      },
+      "diagnostics": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "passed"
+        },
+        {
+          "id": "B-102",
+          "status": "passed"
+        },
+        {
+          "id": "B-103",
+          "status": "passed"
+        },
+        {
+          "id": "E-115",
+          "status": "passed"
+        },
+        {
+          "id": "E-116",
+          "status": "passed"
+        },
+        {
+          "id": "E-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-008",
+          "status": "passed"
+        },
+        {
+          "id": "RT-009",
+          "status": "passed"
+        },
+        {
+          "id": "RT-010",
+          "status": "passed"
+        },
+        {
+          "id": "RT-011",
+          "status": "passed"
+        },
+        {
+          "id": "B-104",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "B-104": {
+          "reportedIncomeCents": 50000,
+          "expectedIncomeCents": 50000,
+          "reportedCashCents": 25000,
+          "expectedCashCents": 25000
+        }
+      },
+      "diagnostics": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "reversal-concurrency",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "passed"
+        },
+        {
+          "id": "RT-006",
+          "status": "passed"
+        },
+        {
+          "id": "RT-007",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-006": {
+          "acceptedRequests": 1,
+          "reversalCount": 1,
+          "journalCount": 2,
+          "netCashCents": 0,
+          "netIncomeCents": 0,
+          "expectedAccepted": 1,
+          "expectedReversals": 1,
+          "expectedJournals": 2,
+          "expectedNetCashCents": 0,
+          "expectedNetIncomeCents": 0
+        }
+      },
+      "diagnostics": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    }
+  ],
+  "productAcceptance": "not-established",
+  "schemaPreparation": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 42,
+    "migrationsExpected": 42
+  },
+  "missing": [
+    "credential-login",
+    "Next-server-HTTP",
+    "deployed-browser",
+    "full-upgrade",
+    "recovery",
+    "object-storage",
+    "non-owner-concurrent-reversal",
+    "broader-races-and-faults"
+  ]
+}

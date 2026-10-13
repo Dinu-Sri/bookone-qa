@@ -60,3 +60,50 @@ it('[RT-013] product scoped Drizzle transaction commits and rolls back without l
   });
   expect(await client()`select id from accounts`).toHaveLength(0);
 });
+it('[RT-014] nested savepoint rollback and success preserve the outer transaction boundary',async()=>{
+  await withTenantContext(TENANT_A,async()=>{
+    await db().transaction(async tx=>{
+      await tx.execute(sql`update accounts set name='Outer committed' where code='1000'`);
+      await expect(tx.transaction(async nested=>{
+        await nested.execute(sql`update accounts set name='Nested rolled back' where code='1000'`);
+        throw new Error('Synthetic savepoint rollback');
+      })).rejects.toThrow('Synthetic savepoint rollback');
+      expect((await tx.execute(sql`select name from accounts where code='1000'`)).map(r=>r.name)).toEqual(['Outer committed']);
+      await tx.transaction(async nested=>{await nested.execute(sql`update accounts set name='Nested committed' where code='1300'`);});
+    });
+    await expect(db().transaction(async tx=>{
+      await tx.execute(sql`update accounts set name='Outer discarded' where code='1000'`);
+      await tx.transaction(async nested=>{await nested.execute(sql`update accounts set name='Nested discarded' where code='1300'`);});
+      throw new Error('Synthetic outer rollback');
+    })).rejects.toThrow('Synthetic outer rollback');
+    expect((await client()`select name from accounts where code in ('1000','1300') order by code`).map(r=>r.name)).toEqual(['Outer committed','Nested committed']);
+  });
+});
+it('[RT-015] overlapping tenant callbacks use separate connections and never expose foreign rows',async()=>{
+  const scoped=async(tenantId:string)=>withTenantContext(tenantId,async()=>{
+    const [connection]=await client()`select pg_backend_pid()::int as pid`;
+    await client()`select pg_sleep(0.05)`;
+    const rows=await client()`select tenant_id,code from accounts order by code`;
+    return {pid:connection.pid,rows:rows.map(r=>[r.tenant_id,r.code])};
+  });
+  const [a,b]=await Promise.all([scoped(TENANT_A),scoped(TENANT_B)]);
+  expect(a.pid).not.toBe(b.pid);
+  expect(a.rows).toEqual(['1000','1300','4000'].map(c=>[TENANT_A,c]));
+  expect(b.rows).toEqual(['1000','1300','4000'].map(c=>[TENANT_B,c]));
+  expect(await client()`select id from accounts`).toHaveLength(0);
+});
+it('[RT-016] nested same-tenant context reuses connection and foreign context restores the outer tenant',async()=>{
+  const snapshot=async()=>{
+    const [connection]=await client()`select pg_backend_pid()::int as pid`;
+    return {pid:connection.pid,tenants:(await client()`select distinct tenant_id from accounts`).map(r=>r.tenant_id)};
+  };
+  await withTenantContext(TENANT_A,async()=>{
+    const outer=await snapshot();
+    expect(outer.tenants).toEqual([TENANT_A]);
+    expect(await withTenantContext(TENANT_A,snapshot)).toEqual(outer);
+    const nested=await withTenantContext(TENANT_B,snapshot);
+    expect(nested.pid).not.toBe(outer.pid);expect(nested.tenants).toEqual([TENANT_B]);
+    expect(await snapshot()).toEqual(outer);
+  });
+  expect(await client()`select id from accounts`).toHaveLength(0);
+});
