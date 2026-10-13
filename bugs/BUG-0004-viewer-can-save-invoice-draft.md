@@ -1,6 +1,6 @@
 # BUG-0004 — Viewer can save an invoice draft
 
-Status: reproduced in staging after the owner reported the invoice-denial fix was pushed; deployed commit/image identity is unverified.
+Status: **unverified; prior Viewer attribution invalidated on 2026-10-13**. The browser session's active user was not proven to be the synthetic Viewer. Do not treat the previous runs as a reproduced Viewer permission defect.
 Severity: P1 candidate — a company user assigned the Viewer job saved a sales invoice draft. No posting was attempted; this finding alone does not establish ledger or stock impact.
 
 ## Environment
