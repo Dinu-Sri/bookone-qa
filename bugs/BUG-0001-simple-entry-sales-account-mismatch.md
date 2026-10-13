@@ -1,10 +1,14 @@
 # BUG-0001 — Simple Entry cash sale promises account 4000 but submits account 4300
 
-Status: reproduced.
+Status: historically reproduced; focused regression passes on v2.1.0 / 2b92cf4. Closure pending adjacent regression and full candidate evidence.
 Category: product.
 Severity: high. The primary Money In cash-sale path cannot create the transaction in the observed staging company.
 
-## Evidence
+## Current retest — 2026-10-13
+
+[RUN-06](../runs/RUN-20261013-finance-investigation-06.md) explicitly signed in Owner and saved cash sales123.45 and12.34. The second description “QA service probe R6 neutral” contains no sale keyword, exercising the prior default-category failure. Saved journals debit1000/credit4000 by exact amounts. Both were reversed once and their offsetting journals verified. Candidate source posting.ts lines18–25 explicitly defaults new-sale override to4000. No4300 error occurred. Owner contribution/customer clearing/Money Out/missing-account/period-lock cases were not run; keep these outstanding rather than claim full closure.
+
+## Historical evidence
 
 - First observed run: [RUN-20261012-manual-entry-01](../runs/RUN-20261012-manual-entry-01.md).
 - Product deployed SHA/image and schema: unresolved; QA baseline before the run: `de4928375292b502442a94a327389f3e00c1a6ad`.

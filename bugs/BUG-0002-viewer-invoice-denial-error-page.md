@@ -1,9 +1,13 @@
 # BUG-0002 — Viewer invoice save denial renders an application error
 
-Status: Historical symptom reproduced on the earlier staging run. In the follow-up after the owner reported a fix, the Viewer did not see the error page because the draft save succeeded; see BUG-0004. Do not close this record until a denied write is shown to return a normal permission message on an identified build.
-Severity: P2 for the original error-path defect. The follow-up authorization bypass is tracked separately as a P1 candidate in BUG-0004.
+Status: historical error symptom; current create-route denial is usable, original denied-submit branch not rerun. Full closure pending server-action regression.
+Severity: historical P2. Old follow-up Viewer write attribution is withdrawn; no current authorization bypass is inferred from BUG-0004.
 
-## Follow-up — 2026-10-12
+## Current correction and retest — 2026-10-13
+
+Fresh Viewer sign-in on v2.1.0/2b92cf4 showed a normal “Cannot create invoices” message, with no form/save action and no error boundary. See RUN-05. This confirms a usable blocked route; it does not rerun the old denied-submit wrapper. The historic follow-up below had unverified actor identity and is withdrawn as Viewer evidence. The separate confirmed reversal defect is BUG-0009.
+
+## Historical follow-up — actor unverified, 2026-10-12
 
 After the owner reported the fix was pushed, the synthetic Viewer saved a LKR 100 invoice draft (`INV-20261012-0001`) using synthetic customer text. The draft was then archived. The prior application-error symptom did not reproduce in that attempt, but this does not prove the error handling fix: the write was allowed. The deployed commit/image remains unknown. See [BUG-0004](BUG-0004-viewer-can-save-invoice-draft.md).
 

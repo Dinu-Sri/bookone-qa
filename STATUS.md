@@ -1,6 +1,12 @@
 # QA status — updated 2026-10-13
 
-## Verified Viewer retest — 2026-10-13
+## Latest finance/authorization investigation — 2026-10-13
+
+[RUN-06](runs/RUN-20261013-finance-investigation-06.md) on v2.1.0/2b92cf4 verified cash-sale mapping Dr1000/Cr4000, including neutral description. Three synthetic sales were reversed; six balanced journals retained, cash/revenue net0. Confirmed P1s: restricted-role financial reversal (BUG-0009), cash-flow reversal overcount (BUG-0006), customer unposted/archive balance display (BUG-0005), and release-check failure masking (BUG-0008 source review). Default report label mismatch is P2 BUG-0007. [Coding-agent handoff](handoffs/HANDOFF-20261013-finance-and-release.md) gives source pointers and acceptance cases. Original Viewer-create reports are withdrawn; exact security reproduction remains private. Larger invoice/payment/return journey was not run after these failures.
+
+Unit pin65f84c1 is older than the observed candidate; current QA documentation CI is not evidence of candidate units/staging acceptance. Image/schema/storage/restore and cross-tenant/concurrency/audit cases remain unverified.
+
+## Verified Viewer create-route retest — 2026-10-13
 
 Signed out of the Owner session and signed in as the synthetic Viewer. Build footer: `v2.1.0 · 2b92cf4`. Role-loaded navigation labeled business areas “View only.” Direct `/parties/customers/new` and `/sales/invoices/new` routes each rendered explicit cannot-create messages. No records were created or modified. Customer and invoice lists were readable; the existing synthetic customer `CUS-0001` shows LKR 100, and four prior synthetic invoices are archived. The customer balance was left untouched. See [RUN-20261013-authentication-validity-review-05](runs/RUN-20261013-authentication-validity-review-05.md). This verifies UI behavior only; backend/API enforcement, deployed image digest, schema, and storage remain unverified.
 
@@ -59,13 +65,14 @@ The earlier notes claiming Viewer customer/invoice writes were valid have been w
 
 ## Next actions
 
-1. Confirm the Viewer permission contract; investigate and fix BUG-0003 and BUG-0004 server-side. Verify denied customer and invoice writes on an identified build. Then reproduce BUG-0001 and trace the Simple Entry Money In mapping from UI through posting.
-2. Verify the deployed commit/image and schema/storage identity; then execute the ordered business journeys in the audit.
-3. Keep the synthetic Viewer account for follow-up role tests; its password remains only in the local gitignored runner env file.
-4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
-5. Replace optional machine-file bank cases with synthetic portable fixtures.
-6. BookOne Wave 1b: delete inbuilt runner/page/APIs/Docker on `chore/remove-inbuilt-e2e` after this QA companion is published; then execute S-0031–S-0033/S-0578 against that candidate. Operator still must stop `bookone-staging-e2e` separately.
-7. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
+1. Coding agent: address BUG-0009 server permission/dimension boundary, then BUG-0006 signed cash flow and BUG-0005 posted-obligation balances; follow the handoff's regression requirements.
+2. Repair mandatory CI checks and same-SHA publication gate (BUG-0008); fix resolved period labels (BUG-0007).
+3. Preserve original/void/reversal history; no blanket reset/balance edit. Fresh-role checks must precede all role-specific mutations.
+4. Verify candidate image/schema/storage and deliberately update QA source pin with impact review; rerun targeted outcome cases on the deployed fixed version.
+5. Resume isolated invoice/payment/return journeys only after the newly found blockers are tested; money/access/data/recovery coverage remains incomplete.
+6. Retired inbuilt E2E cleanup is already recorded by current BookOne AGENTS.md. Revalidate its denial cases on the current candidate; do not repeat deletion instructions from historical Wave1 notes.
+7. Replace four optional machine-fixture skips with portable fixtures; continue independent review of inherited assertions (30 reviewed/717 pending).
+
 
 The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
 

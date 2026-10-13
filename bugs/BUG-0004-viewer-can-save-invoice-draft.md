@@ -1,50 +1,13 @@
-# BUG-0004 — Viewer can save an invoice draft
+# BUG-0004 — withdrawn Viewer invoice draft creation attribution
 
-Status: **unverified; prior Viewer attribution invalidated on 2026-10-13**. The browser session's active user was not proven to be the synthetic Viewer. Do not treat the previous runs as a reproduced Viewer permission defect.
-Severity: P1 candidate — a company user assigned the Viewer job saved a sales invoice draft. No posting was attempted; this finding alone does not establish ledger or stock impact.
+Status: withdrawn as a reproduced Viewer permission finding; historical actor-attribution error. No current product severity assigned from those attempts.
 
-## Environment
+## Correction and current evidence
 
-- Target: `https://bookone.clossyan.com` staging.
-- Test account: synthetic staging user whose company job is `Viewer`; credentials are excluded.
-- Customer list was empty at test start. No real customer or financial data was used.
+Earlier writes happened, but the signed-in actor was not verified. The Team roster's Viewer assignment did not prove the active browser was that account. Historical runs02–04 and their archived synthetic records remain auditable; their claims must not drive product fixes.
 
-## Reproduction and result
+On2026-10-13, signed out Owner and freshly signed in synthetic Viewer. Role-loaded UI showed business areas View only; direct `/sales/invoices/new` displayed an ordinary cannot-create message. See [RUN-05](../runs/RUN-20261013-authentication-validity-review-05.md), build v2.1.0/2b92cf4. No new customer/invoice was saved in that verified retest.
 
-1. Sign in as the synthetic Viewer.
-2. On `/company/team`, verify the account is assigned job `Viewer`.
-3. Open `/sales/invoices/new`.
-4. Enter synthetic customer text `QA Viewer Invoice Save Probe 20261012`, add a free-text service line `QA Viewer denial probe service`, set quantity to 1 and unit price to LKR 100.
-5. Select **Save draft**; do not select Post.
-6. The app navigates to `/sales/invoices` and displays `INV-20261012-0001`, customer text, status `draft`, total LKR 100.
-7. Archive the test invoice. The UI confirms “Archived successfully”; the invoice remains visible with status `archived` and can be restored.
+Historical source graph at7b1794fd3c2344bdfa3e095dd0bb9cb8b9647b16 was not verified as deployed. Treat its earlier analysis as historical only. UI route denial does not establish complete server-action enforcement; that remains required security coverage.
 
-Expected if Viewer is read-only: server rejects draft creation with a normal permission message and creates no invoice.
-Observed: Viewer created the draft. It was archived for cleanup. No invoice was posted and no ledger or stock mutation was attempted.
-
-## Source review and limits
-
-The local BookOne source graph at `7b1794fd3c2344bdfa3e095dd0bb9cb8b9647b16` shows `createCommercialDocument` calls `assertPermission(perm, 'write')`. That indexed revision is not verified as the deployed revision. The staging result therefore requires investigation of the effective permission mapping and runtime build; this report does not claim the source assertion is absent or that the current build lacks it.
-
-## Follow-up
-
-- Confirm the Viewer job's intended document permissions.
-- Verify the deployed commit/image and the runtime Viewer permission set.
-- Ensure the server denies draft and post writes; hide/disable controls as a usability aid only.
-- Retest create, edit, archive and post denials, and confirm no active document, journal, or stock effect remains.
-- Add a lasting regression test. Do not close until no Viewer draft is created on an identified build.
-
-
-## Retest after latest staging update — 2026-10-12
-
-As a user still assigned `Viewer`, selected synthetic customer `QA Viewer Update Retest 20261013`, added a free-text service line for LKR 100 and selected **Save draft**. The list showed `INV-20261012-0002`, status `draft`, total LKR 100. The invoice was archived. No Post action was used, and no journal or stock effect was checked. This reproduces the write after the reported update; deployed build identity remains unknown.
-
-
-## Third retest — 2026-10-12
-
-As Viewer after another owner-reported staging update, saved a LKR 100 synthetic service invoice draft as `INV-20261012-0003` for `QA Viewer Retest Three`. The invoice appeared as `draft`, then was archived. No Post action was used and no journal or stock assertion was run. This repeats the finding; deployed build identity remains unknown.
-
-
-## Fourth retest — 2026-10-13 (UI build marker v2.1.0 / 2b92cf4)
-
-The staging UI footer displayed `v2.1.0 · 2b92cf4`. The Viewer saved synthetic invoice `INV-20261013-0004` as a draft for LKR 100. It was archived; no Post action was used. The footer marker is not an image digest and no ledger/stock assertion was run.
+Historical records: [run02](../runs/RUN-20261012-viewer-permission-retest-02.md), [run03](../runs/RUN-20261012-viewer-permission-retest-03.md), [run04](../runs/RUN-20261013-viewer-permission-retest-04.md). Git history preserves the original report. The **new confirmed financial-reversal authorization defect is BUG-0009**, independently tested with fresh roles; do not merge that evidence with this withdrawn finding.

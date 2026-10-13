@@ -45,3 +45,10 @@ These are operating instructions for the QA project. The owner authorizes change
 26. Read product-ref.json before unit checks and verify the staging build before browser acceptance. Update the pin deliberately with impact review; never silently test floating HEAD.
 
 27. Drive the ERP UI from this repository with `pnpm agent:browse` (Playwright click-through). Artifacts go to gitignored `.local/agent-browse/`. Do not use the retired BookOne `/e2e` console or `pnpm agent:browse` in the product repo after Wave 1b.
+
+
+## Actor and source verification after the 2026-10-13 attribution correction
+
+28. Before role-specific mutations, explicitly sign out and sign in with the intended fixture. Record the non-secret actor alias, expected job, login transition, loaded role context and build in the same run. Verify active identity through the supported account UI or harness session where available. Company name and Team roster only describe company membership; they do not identify the current actor. Until a session identity surface is available, fresh explicit fixture login plus loaded role context is the minimum evidence. Stop on unexpected role/session context; invalidate earlier role conclusions when attribution is wrong.
+29. Index status/current checkout metadata alone does not prove graph extraction is current. Check for removed nodes and mismatched snippet ranges; use graph discovery first, then verify relevant source against the pinned candidate when stale. Preserve source provenance and label static concerns separately from executed failures.
+30. Creation denial does not establish complete write denial. Cover edits, reversals, archive/restore/delete, payments and exports as applicable with real role-owned and foreign-tenant fixtures; denied financial operations must create zero transactions/journals/audit mutations.
