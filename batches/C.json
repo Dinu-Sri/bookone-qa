@@ -1,0 +1,107 @@
+{
+  "id": "C",
+  "version": 1,
+  "title": "Physical purchase/sale/return posting contracts",
+  "scope": "pure pinned product source; no persisted business lifecycle",
+  "releaseAcceptance": false,
+  "environment": "pure-product-source",
+  "fixtureVersion": "source-calculations-v1",
+  "authBoundary": "not-exercised",
+  "requiredAdditionalLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "lanes": [
+    {
+      "id": "physical",
+      "file": "tests/batch/physical.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    }
+  ],
+  "cases": [
+    {
+      "id": "C-001",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-002",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-003",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-004",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-005",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-006",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-007",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "C-008",
+      "lane": "physical",
+      "rules": [
+        "BR-PUR-01",
+        "BR-STK-02"
+      ],
+      "bugs": [],
+      "critical": true
+    }
+  ]
+}

@@ -4,6 +4,7 @@
   "title": "Shared money, authorization and reporting foundations",
   "scope": "source contracts; embedded PostgreSQL SQL/actions; mocked session and framework boundaries",
   "releaseAcceptance": false,
+  "fixtureVersion": "embedded-pg-v2",
   "requiredAdditionalLayers": ["real-postgres-runtime-rls", "verified-staging-browser", "audit-and-concurrency"],
   "lanes": [
     { "id": "calculations", "file": "tests/batch/calculations.test.ts", "resume": "restart-isolated", "timeoutSeconds": 120 },

@@ -1,5 +1,7 @@
 # Batch implementation and extension protocol
 
+Current B–F foundations,83 lifecycle tasks and policy blockers: [DEEP_BATCH_PROGRAMME.md](DEEP_BATCH_PROGRAMME.md). Use `pnpm batch:coverage`, `pnpm batch:plan --batch B` and `pnpm batch:run --batch B --seed 261013 --profile quick` (A–F supported, A default). `pnpm test:sensitivity` checks limited isolated posting/rental mutants. Resume/export resolve the saved batch and reject mismatched manifests; historical runs require their original QA revision after a manifest change. B seeded allocations exercise embedded SQL, C–F are source-only; none certifies a full lifecycle.
+
 ## Commands
 
 Use Node20+ (CI22) and pnpm9. Install with `pnpm install --frozen-lockfile`; prepare the exact product pin with `pnpm product:prepare`.

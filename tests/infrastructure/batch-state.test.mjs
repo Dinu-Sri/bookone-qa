@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validateBatch, laneOutcome, publicSummary, assertResume } from '../../scripts/batch/state.mjs';
+import { validateBatch, laneOutcome, publicSummary, assertResume, selectBatchId } from '../../scripts/batch/state.mjs';
 import { readFileSync } from 'node:fs';
 const batch=JSON.parse(readFileSync('batches/A.json','utf8'));
 test('case discovery is mandatory; zero tests and missing IDs cannot pass',()=>{
@@ -30,4 +30,14 @@ test('manifest cannot contain executable command injection or empty coverage',()
   validateBatch(batch);
   assert.throws(()=>validateBatch({...batch,cases:[]}));
   assert.throws(()=>validateBatch({...batch,lanes:[{...batch.lanes[0],file:'../../secret.ts'}]}));
+});
+test('batch selection and case ownership cannot mix manifests or traverse paths',()=>{
+  for (const id of ['A','B','C','D','E','F']) assert.equal(selectBatchId(id),id);
+  for (const id of ['../A','G','AB','A;cmd','']) assert.throws(()=>selectBatchId(id));
+  const b={...batch,id:'B',cases:batch.cases.map(c=>({...c,id:c.id.replace('A-','B-')}))};
+  validateBatch(b);
+  assert.throws(()=>validateBatch({...b,cases:batch.cases}));
+  const state={runId:'synthetic',status:'completed',fingerprint:{},seed:1,profile:'quick',lanes:[]};
+  assert.equal(publicSummary(state,b).sourceGate,'failed');
+  assert.equal(publicSummary(state,b).batch,'B');
 });

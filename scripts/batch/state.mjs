@@ -9,8 +9,13 @@ export function atomicJSON(path, value) {
   renameSync(tmp, path);
 }
 export const readJSON = path => JSON.parse(readFileSync(path, 'utf8'));
+export function selectBatchId(value = 'A') {
+  if (!/^[A-F]$/.test(value)) throw new Error('Batch must be A through F');
+  return value;
+}
 export function validateBatch(batch) {
-  if (batch.id !== 'A' || batch.version !== 1 || batch.releaseAcceptance !== false) throw new Error('Unsupported manifest/acceptance claim');
+  selectBatchId(batch.id);
+  if (batch.version !== 1 || batch.releaseAcceptance !== false) throw new Error('Unsupported manifest/acceptance claim');
   const lanes = new Set(batch.lanes.map(l => l.id)), ids = new Set();
   for (const lane of batch.lanes) {
     if (!/^tests\/batch\/[a-z-]+\.test\.tsx?$/.test(lane.file) || lane.resume !== 'restart-isolated' ||
@@ -18,7 +23,7 @@ export function validateBatch(batch) {
   }
   if (lanes.size !== batch.lanes.length || !lanes.size) throw new Error('Missing/duplicate lanes');
   for (const c of batch.cases) {
-    if (!/^A-\d{3}$/.test(c.id) || ids.has(c.id) || !lanes.has(c.lane) || !c.rules?.length ||
+    if (!new RegExp(`^${batch.id}-\\d{3}$`).test(c.id) || ids.has(c.id) || !lanes.has(c.lane) || !c.rules?.length ||
       !c.rules.every(r => /^BR-[A-Z]+-\d{2}$/.test(r)) || !Array.isArray(c.bugs) ||
       !c.bugs.every(b => /^BUG-\d{4}$/.test(b))) throw new Error('Invalid/duplicate case');
     ids.add(c.id);
@@ -44,8 +49,8 @@ export function publicSummary(state, batch) {
   const fingerprint = {};
   const patterns = { productSha:/^[a-f0-9]{40}$/, qaSha:/^[a-f0-9]{40}$/, qaContentHash:/^[a-f0-9]{64}$/,
     batchHash:/^[a-f0-9]{64}$/, nodeVersion:/^v\d+\.\d+\.\d+$/,
-    fixtureVersion:/^embedded-pg-v1$/, environment:/^embedded-postgresql-contract$/,
-    authBoundary:/^synthetic-session-real-product-permission-assertion$/, migrationsAndRuntimeRls:/^not-exercised$/ };
+    fixtureVersion:/^(embedded-pg-v[12]|source-calculations-v1)$/, environment:/^(embedded-postgresql-contract|pure-product-source)$/,
+    authBoundary:/^(synthetic-session-real-product-permission-assertion|not-exercised)$/, migrationsAndRuntimeRls:/^not-exercised$/ };
   for (const [key, pattern] of Object.entries(patterns)) {
     const value = state.fingerprint?.[key]; if (typeof value === 'string' && pattern.test(value)) fingerprint[key] = value;
   }

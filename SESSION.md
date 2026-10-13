@@ -3,6 +3,7 @@
 Canonical memory is versioned in this repository. Read the current reviewed branch, not an old local checkout or chat summary. If main has a pending implementation pointer, inspect that PR/head before starting; never silently treat pending work as merged.
 
 1. Read AGENTS.md, STATUS.md, memory/programme.json and the relevant batch manifest. `pnpm session:start` prints this entry point and the next actions.
+   For B–F read docs/DEEP_BATCH_PROGRAMME.md, batches/coverage.json and memory/policies.json; `pnpm batch:coverage` gives compact implementation/gap counts. Select `--batch B` through F explicitly; resume/export recover the saved batch. Start with B-101–103 full lifecycle adapters, not new calculation-only copies of already covered builders.
 2. Record product/QA SHA, content hash, fixture version, environment and actual role. Verify graph extraction content, not just checkout metadata. No previous pass certifies the new candidate.
 3. Check incomplete `.local/batches/*/state.json` if this workspace has private run state. If not, read committed `runs/` summaries. Private raw logs/credentials are intentionally not portable through Git.
 4. Plan with `pnpm batch:plan`. Run `pnpm product:prepare`, then `pnpm batch:run --seed 261013 --profile quick`. These commands execute isolated source/embedded SQL contracts, not staging mutations.

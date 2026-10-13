@@ -1,0 +1,51 @@
+name: Candidate B-F source contracts
+on:
+  pull_request:
+    paths:
+      - batches/**
+      - tests/batch/**
+      - tests/infrastructure/**
+      - scripts/batch/**
+      - vitest.batch.config.ts
+      - product-ref.json
+      - pnpm-lock.yaml
+      - .github/workflows/batch-deep.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [B, C, D, E, F]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm product:prepare
+      - run: pnpm check
+      - name: Run isolated candidate source contracts
+        env:
+          QA_BATCH: ${{ matrix.batch }}
+        run: pnpm batch:run --batch "$QA_BATCH" --seed 261013 --profile quick
+      - name: Keep sanitized summaries only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-${{ matrix.batch }}-sanitized-summary
+          path: .local/batches/*/summary.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      - name: Evidence scope
+        if: always()
+        run: echo 'Source/embedded fixtures only. No staging secrets, full lifecycle, RLS, concurrency, migration or recovery acceptance.'

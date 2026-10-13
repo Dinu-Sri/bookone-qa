@@ -1,5 +1,13 @@
 # QA status — updated 2026-10-13
 
+## B–F foundations and deep lifecycle backlog
+
+[RUN-09](runs/RUN-20261013-deep-batches-09.md) implements35 new source/embedded-action cases across B–F, preserving A15. Latest completed local source runs: A14/1, B10/2, C8/0, D8/0, E3/0, F3/1 (46 pass/4 fail). B broad completed200 generated payment sequences; latest strengthened audit/link assertions were separately checked in B quick. First harness failures and corrections are retained, not product blame.
+
+Three new isolated findings: BUG-0010 allocation-boundary permission, BUG-0011 invalid tender account acceptance, BUG-0012 impossible bank dates. These do not yet establish deployed exposure/import corruption. Existing BUG-0008 remains open. [New coding/QA handoff](handoffs/HANDOFF-20261013-deep-batches.md) gives next work.
+
+[Deep programme](docs/DEEP_BATCH_PROGRAMME.md), [coverage register](batches/coverage.json) and memory/policies.json preserve83 specified **unimplemented** lifecycle tasks and eight pending policy decisions. `pnpm batch:coverage` distinguishes these from50 executable source cases. All acceptance remains open. Generalized runner and B–F CI preserve failure propagation/checkpoints;2 guard/6 harness/2 mutation-sensitivity assertions passed locally. No staging data changed. Next: B-101–103 full lifecycle adapters plus A runtime gaps, then C/D persisted workflows and E/F acceptance. Historical statements below that B–F are merely planned are superseded at source-foundation depth only.
+
 ## v2.2.0 retest after owner cleanup
 
 Latest product pin6a48cee matches the visible staging stamp `v2.2.0 · 6a48cee`. [RUN-08](runs/RUN-20261013-v2-2-0-retest-08.md) preserves first quick13 pass/2 fail and expanded broad14 pass/1 fail. A-013 now correctly accepts unmasked required commands across split jobs; A-014 remains red.94 retained units passed/4 optional fixture skips; metadata/2 guards/5 harness assertions passed.

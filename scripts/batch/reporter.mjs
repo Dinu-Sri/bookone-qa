@@ -12,7 +12,7 @@ export default class BatchReporter {
       const result = this.results.get(task.id) ?? task.result;
       const parentBroken = broken || (task.type !== 'test' && result?.state === 'fail' && result?.errors?.length > 0);
       if (task.type === 'test') {
-        const id = task.name.match(/\bA-\d{3}\b/)?.[0];
+        const id = task.name.match(/\b[A-F]-\d{3}\b/)?.[0];
         if (!id || seen.has(id)) { collectionError = true; return; }
         seen.add(id);
         const status = parentBroken ? 'blocked' : ({ pass:'passed', fail:'failed', skip:'skipped', todo:'skipped', run:'running' }[result?.state] ?? (final ? 'blocked' : 'pending'));
