@@ -8,6 +8,8 @@ Live Owner cash sale123.45 posted Dr1000/Cr4000 and was reversed with opposite l
 
 BUG-0008 remains partial: same-SHA Tests succeeded and image published while the quality job failed at Lint and skipped Type check/Build. [Current coding-agent handoff](handoffs/HANDOFF-20261013-v2-2-0-next.md) details repair and failure-propagation acceptance. Preserve this finding; B–F being planned does not make their absence a new product defect.
 
+Published QA commit e6d46cb passed [repository validation46](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38354952412). [Candidate Batch A3](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38354952276) independently reproduces14 pass/1 fail (A-014) from clean committed source and retains a sanitized summary artifact. This deliberate product failure is distinct from QA harness health.
+
 Owner reports old records cleaned; October baseline observed zero. New prefix `QA-261013-V220` leaves two offsetting journals/transactions as intentional history. Do not reuse historical fixture IDs or repeat a reset. Image digest/schema/runtime-role/storage identity, real-server Viewer denial, RLS/dimensions/concurrency/audit/recovery and larger document journeys remain unverified. Next: quality gate repair plus Batch A runtime layers, then Batch B service/digital journeys; isolated Batch B development may proceed meanwhile. No release acceptance.
 
 ## Batch strategy implemented — 2026-10-13

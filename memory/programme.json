@@ -9,6 +9,7 @@
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261013-055111667-bca0fb.json",
   "lastRetestRecord": "runs/RUN-20261013-v2-2-0-retest-08.md",
+  "lastCleanSourceCi": { "qaSha": "e6d46cb6359a0a181371c74ca797e0a609d39c35", "qaValidationRun": 38354952412, "candidateBatchRun": 38354952276, "candidateResult": "14-pass-1-fail-A-014", "sanitizedArtifactId": 11792631570 },
   "candidateProductSha": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
   "observedStagingStamp": "v2.2.0 · 6a48cee",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
