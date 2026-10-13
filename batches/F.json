@@ -116,6 +116,28 @@
                                     "BR-SEC-01"
                                 ],
                       "lane":  "uploads"
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+
+                               ],
+                      "id":  "F-009",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "lane":  "imports"
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+                                   "BUG-0012"
+                               ],
+                      "id":  "F-010",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "lane":  "imports"
                   }
               ]
 }

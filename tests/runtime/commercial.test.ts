@@ -1,6 +1,6 @@
 import { beforeEach, afterAll, it, expect } from 'vitest';
 import { createCommercialDocument } from '@product/web/app/actions/commercial-docs';
-import { receiveCustomerPayments } from '@product/web/app/actions/documents';
+import { receiveCustomerPayments, allocateDocumentPayment } from '@product/web/app/actions/documents';
 import { getReports } from '@product/web/app/actions/workspace';
 import { loadAccessForUser } from '@product/auth/permissions/load';
 import { admin, seed, resetFixture, closeFixture } from './support/fixture';
@@ -110,4 +110,45 @@ it('[RT-008] actual schema rejects missing FK and duplicate unique key with zero
   await expect(admin`insert into tenants(name,slug) values('Duplicate synthetic','qa-runtime-a')`).rejects.toMatchObject({code:'23505'});
   const [state]=await admin`select (select count(*)::int from business_documents) as docs,(select count(*)::int from tenants) as tenants`;
   expect(state).toEqual({docs:0,tenants:2});
+});
+async function businessSnapshot() {
+  const out={};for(const table of ['business_documents','transactions','journal_entries','journal_lines','settlement_allocations','audit_log','inventory_movements'])out[table]=await admin.unsafe(`select * from ${table} order by id`);return out;
+}
+it('[RT-009] direct allocation uses persisted Viewer/Sales permission and valid custom bank',async()=>{
+  const p=await product();const id=await create(input(p));
+  await seed.insert(schema.accounts).values({tenantId:TENANT_A,code:'1101',name:'Custom synthetic bank',type:'asset',normalSide:'debit'});
+  const before=await businessSnapshot();setActor(VIEWER,'viewer');
+  expect((await allocateDocumentPayment({documentId:id,amount:250,paymentDate:DATE,paymentAccountCode:'1101'})).ok).toBe(false);expect(await businessSnapshot()).toEqual(before);
+  setActor(SALES,'sales');expect((await allocateDocumentPayment({documentId:id,amount:250,paymentDate:DATE,paymentAccountCode:'1101'})).ok).toBe(true);
+  const d=await doc(id);expect([Number(d.paidAmount),Number(d.balanceDue)]).toEqual([250,350]);
+  const rows=await admin`select a.code,l.side,l.amount::text as amount from journal_lines l join accounts a on a.id=l.account_id join journal_entries j on j.id=l.journal_entry_id join transactions t on t.id=j.transaction_id where t.accounting_type='payment' order by a.code`;
+  expect(rows.map(r=>[r.code,r.side,Number(r.amount)])).toEqual([['1101','debit',250],['1300','credit',250]]);
+});
+it('[RT-010] Sales AR grant cannot pay AP bill; Owner AP positive control has exact posting',async()=>{
+  await seed.insert(schema.accounts).values([{tenantId:TENANT_A,code:'2100',name:'AP',type:'liability',normalSide:'credit'},{tenantId:TENANT_A,code:'6800',name:'Service expense',type:'expense',normalSide:'debit'}]);
+  const p=await product();const id=await create(input(p,'purchase'));expect(Number((await doc(id)).total)).toBe(600);
+  const before=await businessSnapshot();setActor(SALES,'sales');const access=await loadAccessForUser(SALES,TENANT_A,'user');expect(access?.allows('sales.payments.write','write')).toBe(true);expect(access?.allows('purchase.payments.write','write')).toBe(false);
+  expect((await allocateDocumentPayment({documentId:id,amount:100,paymentDate:DATE,paymentAccountCode:'1000'})).ok).toBe(false);expect(await businessSnapshot()).toEqual(before);
+  setActor();expect((await allocateDocumentPayment({documentId:id,amount:100,paymentDate:DATE,paymentAccountCode:'1000'})).ok).toBe(true);
+  const payments=await admin`select id from transactions where accounting_type='payment'`;expect(payments).toHaveLength(1);await exactJournal(payments[0].id,[['2100','debit',10000],['1000','credit',10000]]);
+  expect([Number((await doc(id)).paidAmount),Number((await doc(id)).balanceDue)]).toEqual([100,500]);
+});
+it('[RT-011] actual assigned-location scope denies other-location allocation with own positive control',async()=>{
+  const locations=await seed.insert(schema.locations).values([{tenantId:TENANT_A,name:'Assigned synthetic shop',code:'QA-L1'},{tenantId:TENANT_A,name:'Other synthetic shop',code:'QA-L2'}]).returning();
+  const [membership]=await seed.select().from(schema.tenantMemberships).where(eq(schema.tenantMemberships.userId,SALES));
+  await seed.insert(schema.tenantMembershipScopes).values({tenantId:TENANT_A,membershipId:membership.id,scopeType:'location',targetId:locations[0].id});
+  const p=await product();const own=await create(input(p,'sales_invoice',{locationId:locations[0].id}));const other=await create(input(p,'sales_invoice',{locationId:locations[1].id}));
+  const before=await businessSnapshot();setActor(SALES,'sales');expect((await loadAccessForUser(SALES,TENANT_A,'user'))?.locationIds).toEqual([locations[0].id]);
+  expect((await allocateDocumentPayment({documentId:other,amount:100,paymentDate:DATE,paymentAccountCode:'1000'})).ok).toBe(false);expect(await businessSnapshot()).toEqual(before);
+  expect((await allocateDocumentPayment({documentId:own,amount:100,paymentDate:DATE,paymentAccountCode:'1000'})).ok).toBe(true);expect(Number((await doc(own)).balanceDue)).toBe(500);expect(Number((await doc(other)).balanceDue)).toBe(600);
+});
+it('[B-104] actual invoice receipt250 and credit100 reconcile AR250 cash250 revenue500',async()=>{
+  const p=await product();const id=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount:250}]})).ok).toBe(true);
+  await ledger({'1000':25000,'1300':35000,'4000':-60000},2);
+  const credit=await create(input(p,'sales_return',{sourceDocumentId:id,lines:[{productId:p,description:'Synthetic partial service credit',quantity:1,unitPrice:100}]}));
+  await ledger({'1000':25000,'1300':25000,'4000':-50000},3);
+  const original=await doc(id),returned=await doc(credit);expect([Number(original.total),Number(original.paidAmount),Number(original.balanceDue),original.status]).toEqual([600,350,250,'partial']);
+  expect([returned.sourceDocumentId,Number(returned.total),Number(returned.paidAmount),Number(returned.balanceDue)]).toEqual([id,100,100,0]);
+  await exactJournal(returned.transactionId!,[['4000','debit',10000],['1300','credit',10000]]);
+  const allocations=await seed.select().from(schema.settlementAllocations);expect(allocations).toHaveLength(2);expect(allocations.map(a=>Number(a.allocatedAmount)).sort((a,b)=>a-b)).toEqual([100,250]);for(const a of allocations)expect(a.invoiceTransactionId).toBe(original.transactionId);
 });

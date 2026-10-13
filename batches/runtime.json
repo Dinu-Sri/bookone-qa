@@ -1,29 +1,50 @@
 {
-  "version": 1,
-  "productAcceptance": "not-established",
-  "fixtureVersion": "runtime-v1",
-  "guide": "docs/POSTGRES_RUNTIME.md",
-  "lanes": [
-    {
-      "name": "postgres-rls",
-      "file": "tests/runtime/tenant-context.test.ts",
-      "expected": ["RT-001", "RT-002", "RT-003", "RT-004"],
-      "credential": "runtime",
-      "boundary": "real-PostgreSQL-non-owner-product-helper"
-    },
-    {
-      "name": "commercial-lifecycle",
-      "file": "tests/runtime/commercial.test.ts",
-      "expected": ["B-101", "B-102", "B-103", "E-115", "E-116", "E-117", "RT-008"],
-      "credential": "admin",
-      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading"
-    },
-    {
-      "name": "reversal-concurrency",
-      "file": "tests/runtime/reversal.test.ts",
-      "expected": ["RT-005", "RT-006", "RT-007"],
-      "credential": "admin",
-      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay"
-    }
-  ]
+    "version":  1,
+    "productAcceptance":  "not-established",
+    "fixtureVersion":  "runtime-v1",
+    "guide":  "docs/POSTGRES_RUNTIME.md",
+    "lanes":  [
+                  {
+                      "name":  "postgres-rls",
+                      "file":  "tests/runtime/tenant-context.test.ts",
+                      "expected":  [
+                                       "RT-001",
+                                       "RT-002",
+                                       "RT-003",
+                                       "RT-004"
+                                   ],
+                      "credential":  "runtime",
+                      "boundary":  "real-PostgreSQL-non-owner-product-helper"
+                  },
+                  {
+                      "name":  "commercial-lifecycle",
+                      "file":  "tests/runtime/commercial.test.ts",
+                      "expected":  [
+                                       "B-101",
+                                       "B-102",
+                                       "B-103",
+                                       "E-115",
+                                       "E-116",
+                                       "E-117",
+                                       "RT-008",
+                                       "RT-009",
+                                       "RT-010",
+                                       "RT-011",
+                                       "B-104"
+                                   ],
+                      "credential":  "admin",
+                      "boundary":  "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading"
+                  },
+                  {
+                      "name":  "reversal-concurrency",
+                      "file":  "tests/runtime/reversal.test.ts",
+                      "expected":  [
+                                       "RT-005",
+                                       "RT-006",
+                                       "RT-007"
+                                   ],
+                      "credential":  "admin",
+                      "boundary":  "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay"
+                  }
+              ]
 }

@@ -114,3 +114,28 @@ it('B-012 normal payment wrapper denies Viewer as actor-adapter positive control
   const result=await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount:1}]});
   expect({denied:!result.ok,unchanged:JSON.stringify(await snapshot())===JSON.stringify(before)}).toEqual({denied:true,unchanged:true});
 });
+it('B-013 custom active bank1101 is valid tender with exact journal and linked allocation',async()=>{
+  const id=await invoice();await db().insert(accounts).values({tenantId:TENANT_A,code:'1101',name:'Synthetic custom bank',type:'asset',normalSide:'debit'});
+  expect((await pay(id,2500,'1101')).ok).toBe(true);
+  const state=await snapshot(),codes=new Map((await db().select().from(accounts)).map(a=>[a.id,a.code]));
+  const payment=state.tx.find(t=>t.accountingType==='payment')!;const journal=state.journals.find(j=>j.transactionId===payment.id)!;
+  exactLines(state.lines.filter(l=>l.journalEntryId===journal.id).map(l=>({accountCode:codes.get(l.accountId)!,side:l.side,amount:Number(l.amount)})),[line('1101','debit',25),line('1300','credit',25)]);
+  expect(state.allocations).toHaveLength(1);expect(Number(state.docs[0].balanceDue)).toBe(75);
+});
+it('B-014 inactive voided control and expense tenders deny with no saved changes',async()=>{
+  const id=await invoice();
+  await db().insert(accounts).values([
+    {tenantId:TENANT_A,code:'1101',name:'Inactive bank',type:'asset',normalSide:'debit',isActive:'0'},
+    {tenantId:TENANT_A,code:'1102',name:'Voided bank',type:'asset',normalSide:'debit',voidedAt:new Date()},
+    {tenantId:TENANT_A,code:'1201',name:'Wrong account type',type:'expense',normalSide:'debit'},
+  ]);
+  const before=await snapshot();for(const code of ['1101','1102','1201','1300']){expect((await pay(id,100,code)).ok,code).toBe(false);expect(await snapshot()).toEqual(before);}
+});
+it('B-015 existing foreign-owned bank code cannot be used as tender',async()=>{
+  const id=await invoice();await db().insert(accounts).values({tenantId:TENANT_B,code:'1109',name:'Foreign synthetic bank',type:'asset',normalSide:'debit'});
+  const before=await snapshot();expect((await pay(id,100,'1109')).ok).toBe(false);expect(await snapshot()).toEqual(before);
+});
+it('B-016 transaction link without posted marker cannot accept allocation',async()=>{
+  const id=await invoice();await db().update(businessDocuments).set({postedAt:null}).where(eq(businessDocuments.id,id));
+  const before=await snapshot();expect((await pay(id,100)).ok).toBe(false);expect(await snapshot()).toEqual(before);
+});
