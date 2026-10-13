@@ -100,7 +100,7 @@ physicalIt('[C-104] partial bills against already received PO do not duplicate s
 });
 physicalIt('[C-105] physical sale partial receipt return and final receipt reconcile all three costing settings',async()=>{
   for(const method of ['last','average','fifo']){
-    await resetFixture();const p=await setup(method);await purchase(p);
+    await resetFixture();const p=await setup(method);const {bill}=await purchase(p);
     const sale=await create(input(p,'sales_invoice',2,100));await stock(p,8,48000);
     await journal(sale,[['1300','debit',20000],['4000','credit',20000],['5000','debit',12000],['5100','credit',12000]]);
     expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:sale,amount:80}]})).ok).toBe(true);
@@ -110,7 +110,9 @@ physicalIt('[C-105] physical sale partial receipt return and final receipt recon
     expect(Number((await doc(sale)).balanceDue)).toBe(20);expect(Number((await doc(credit)).balanceDue)).toBe(0);
     expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:sale,amount:20}]})).ok).toBe(true);
     expect(Number((await doc(sale)).balanceDue)).toBe(0);await ledger({'1000':10000,'5100':54000,'2100':-60000,'4000':-20000,'4100':10000,'5000':6000});
-    const report=await getReports('2026-10');observe('C-105',{stockQty:9,inventoryValueCents:54000,reportedProfitCents:Math.round(report.income.netIncome*100),expectedProfitCents:4000});expect(report.income.netIncome).toBe(40);
+    expect((await payVendorBills({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:bill,amount:600}]})).ok).toBe(true);
+    expect(Number((await doc(bill)).balanceDue)).toBe(0);await stock(p,9,54000);await ledger({'1000':-50000,'5100':54000,'4000':-20000,'4100':10000,'5000':6000});
+    const report=await getReports('2026-10');observe('C-105',{stockQty:9,inventoryValueCents:54000,reportedProfitCents:Math.round(report.income.netIncome*100),expectedProfitCents:4000,reportedCashCents:Math.round(report.cashFlow.netCashFlow*100),expectedCashCents:-50000});expect(report.income.netIncome).toBe(40);expect(report.cashFlow.netCashFlow).toBe(-500);
   }
 });
 physicalIt('[C-106] supplier payment clears AP exactly once and leaves inventory unchanged',async()=>{
