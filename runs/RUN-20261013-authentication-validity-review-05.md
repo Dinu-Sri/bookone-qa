@@ -1,27 +1,26 @@
 # RUN-20261013-authentication-validity-review-05 — correct Viewer test actor attribution
 
-Status: completed. Prior Viewer write conclusions from follow-up runs 02–04 are invalidated because the actor was not verified.
+Status: completed. This run replaces the pending identity check from the earlier draft.
 
-## Observation
+## Verified session
 
-- Staging footer shows build marker v2.1.0 · 2b92cf4.
-- The Team page lists Dinu Madhusanka as Owner and the synthetic test account as a separate Viewer.
-- The Team page rendered user-management controls: add person, send invite, role selectors, and Remove controls. This strongly indicates the active browser session has Owner/admin-level access.
-- No explicit fresh Viewer sign-in or same-session active-user identity check was recorded before the write actions in runs 02–04.
+- Signed out of the Owner session and signed in with the synthetic Viewer account. The sign-in completed into the company workspace.
+- The role-loaded navigation labeled all business areas, including Customers and Sales Invoices, as “View only.”
+- Staging footer showed build marker `v2.1.0 · 2b92cf4`.
+- The team roster had previously shown the synthetic account assigned the Viewer job; the current session’s role-filtered UI then independently showed view-only access.
 
-## Correction
+## Checks
 
-- Customer creation and invoice draft saves in runs 02–04 occurred, and those newly created records were archived. Their actor identity was not verified. They are not proof that Viewer can write.
-- BUG-0003 and BUG-0004 are now marked unverified. Do not count the historical attempts as Viewer permission failures or as release blockers.
-- The earlier original run, including BUG-0002, must be audited separately for session identity before retaining any Viewer-specific conclusion. No result is promoted by assumption.
+- Customer list was readable. It showed the pre-existing synthetic customer `CUS-0001`, with balance LKR 100; this run did not modify it.
+- Direct route `/parties/customers/new` displayed “Cannot create customers” and “Your job can view customers but cannot save them.”
+- Direct route `/sales/invoices/new` displayed “Cannot create invoices” and “Your job can view sales invoices but cannot save or post them.”
+- Invoice list was readable and showed four earlier synthetic invoices, all archived. No new records were created in this run.
 
-## Next controlled run
+## Conclusions and cleanup
 
-1. Sign out of the Owner account.
-2. Sign in explicitly as the synthetic Viewer.
-3. Record non-secret evidence of the active user and Viewer job in the same session before testing.
-4. Verify Team page behavior and controls are consistent with that role; do not infer identity from the account roster alone.
-5. Run one low-risk customer creation and one draft save only if authorized, then archive them. Never post the invoice.
-6. If Viewer cannot safely sign in, stop and ask the owner for help rather than continuing under the Owner session.
+- Current UI behavior denies Viewer customer creation and invoice creation/posting on the observed build marker. The earlier run 02–04 writes were performed under an unverified actor and remain invalid evidence for Viewer write permissions; those records were already archived.
+- BUG-0003 and BUG-0004 should be closed as “not reproduced under verified Viewer session,” while retaining the history that the prior actor attribution was wrong. This is UI evidence; backend/API enforcement was not independently exercised.
+- No invoice was saved or posted and no customer was created. Existing staging data, including `CUS-0001` and the four archived invoices, was left untouched.
+- Image digest, deployed source SHA, schema, and storage identity remain unverified. This is exploratory evidence, not a release acceptance gate.
 
-No credentials, cookies, or private identifiers beyond the already-public synthetic account are included.
+No credentials, cookies, or password material are included.
