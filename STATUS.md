@@ -83,3 +83,10 @@ The `QA-261012-A` live staging records are retained for review and require clean
 - BUG-0003 and BUG-0004 remain reproduced after another owner-reported update. Deployed build/image identity remains unknown, so the behavior cannot be attributed to a verified release.
 - After archiving the draft and customer, the active customer list still shows the earlier test customer at LKR 100 while all listed test invoices are archived. This is an unresolved display/accounting observation; authoritative ledger and subledger state was not checked, so no financial conclusion is drawn.
 - See [RUN-20261012-viewer-permission-retest-03](runs/RUN-20261012-viewer-permission-retest-03.md).
+
+
+## Fourth Viewer retest — build marker v2.1.0 / 2b92cf4 — 2026-10-13
+
+- Staging UI footer displays `v2.1.0 · 2b92cf4`. The account remains assigned Viewer. As Viewer, created customer `QA-VIEW-20261013-R4` and saved draft invoice `INV-20261013-0004` for LKR 100. Both permission findings remain reproduced on this visible build marker.
+- Archived the new customer and invoice. No invoice was posted. After cleanup, the active customer list still shows pre-existing `CUS-0001` with LKR 100 although its test invoices are archived. Authoritative accounting records were not inspected; reconcile separately.
+- See [RUN-20261013-viewer-permission-retest-04](runs/RUN-20261013-viewer-permission-retest-04.md). The footer marker is not an image digest and does not identify schema/storage.
