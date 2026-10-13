@@ -1,5 +1,13 @@
 # QA status — updated 2026-10-13
 
+## Physical goods first: real owner/non-owner actions expose three findings
+
+[RUN-15](runs/RUN-20261013-physical-lifecycle-15.md), unchanged v2.2.4 ·343d546. Owner requests all business types, physical first. Added13 physical scenarios at two DB depths, total49 runtime executions41 pass/8 fail; all23 original core and60 source cases pass. Actual purchase/GRN/bill/partial receipt, fixed-price last/average/FIFO sale/return/payments reconcile stock9/value540/AR0/AP0/profit40/cash flow-500. Viewer create/module denial positives pass. No missing/setup runtime cases; all42 SQL applied. No staging writes/reset/upload or production access.
+
+New BUG0018 foreign SKU accepted with cross-tenant line, BUG0019 failed posting leaves transaction/empty journal, BUG0020 Viewer approves/posts pending purchase; all reproduce with non-owner NOBYPASSRLS action connection as well as owner. Locked-period sale denies financially but adds business audit (BUG0019), not a proven financial period-lock bypass. [Current coding-agent handoff](handoffs/HANDOFF-20261013-physical-findings.md). Implementation3bd28e2a: [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38406075283), [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38406074753), [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38406075898) green; [runtime49](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38406074817) deliberately red. First36 and initial dual-role49 results preserved.
+
+44 agent rules/92 lifecycle tasks/42-row matrix/10 policies retain remaining company/settings/user/file/C/D/service/mixed/upgrade/recovery scope. Physical masters/config/auth identity are seeded fixture boundaries; actual deployed credential/HTTP/storage exposure remains unverified. Next repair ownership/atomicity/approval, inspect next pin, rerun60/49, then remaining C locations/races/files/live layers. No release approval. Earlier passing statements below belong to their explicit tested scope only.
+
 ## v2.2.4: 60 source and23 PostgreSQL checks pass
 
 [RUN-14](runs/RUN-20261013-v2-2-4-retest-14.md), product343d546 matches observed staging v2.2.4 ·343d546. Existing Owner navigation/Dashboard restored; read-only baseline2 offsetting postings/net0 retained. All60 source and23 actual PostgreSQL cases pass, including driver query/commit/rollback/nested savepoints, overlapping/nested tenant contexts, real persisted permission/payment controls, credit income500/cash250/AR250 and exactly one concurrent reversal/two journals/net0. Current schema plus42 SQL files applied; no missing/setup runtime cases. Retained units94 pass/4 optional skips. No staging writes/reset or production access.

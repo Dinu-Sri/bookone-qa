@@ -2,7 +2,7 @@
 
 Canonical machine register: [coverage.json](../batches/coverage.json). Policies: [policies.json](../memory/policies.json). Startup: [SESSION.md](../SESSION.md). This programme is committed memory; chat context is not required to recover it. Original83 lifecycle tasks are preserved; additional configuration/file tasks and partial PostgreSQL implementations are explicitly indexed. Source, PostgreSQL and browser acceptance are separate. A specification is not an implementation or a passing test. All batches remain unaccepted for release.
 
-Current extension: [PostgreSQL guide](POSTGRES_RUNTIME.md), [runtime manifest](../batches/runtime.json), [configuration/upload rules](CONFIGURATION_AND_UPLOAD_COVERAGE.md), [42-row matrix](../batches/configuration-matrix.json), and RUN-12.60 source cases and18 PostgreSQL cases are executable;92 lifecycle tasks include partial implementations and open layers. Matrix rows are specified, not executed business journeys. Do not add overlapping pure-calculation tests in place of actual commands/settings/actor/files.
+Current extension: [PostgreSQL guide](POSTGRES_RUNTIME.md), [runtime manifest](../batches/runtime.json), [configuration/upload rules](CONFIGURATION_AND_UPLOAD_COVERAGE.md), [42-row matrix](../batches/configuration-matrix.json), and RUN-15.60 source cases and49 PostgreSQL case executions are implemented;26 physical executions repeat13 scenarios at owner/non-owner boundaries.92 lifecycle tasks retain partial implementations/open layers. Matrix rows are specified, not executed business journeys. Do not add overlapping pure-calculation tests in place of actual commands/settings/actor/files.
 
 ## Run and resume
 
@@ -32,7 +32,7 @@ CI runs independent source batches without staging credentials. Harness validati
 4. Representative live browser acceptance: freshly verified roles, persisted reload, UI errors, keyboard/double submits, printing/files/exports; verify build before/after. A small representative journey set complements deeper isolated tests.
 5. Historical upgrade/recovery: prior-release DB and files with immutable financial snapshots, full migrations, restart compatibility, isolated restore and measured RPO/RTO.
 
-Development order is A runtime gaps + B lifecycle, then C and D, then mixed E and resilience F. Source contracts for all B–F can be developed immediately. A gate failure does not prohibit isolated test development; it blocks affected release acceptance. First-launch scope is unresolved; all profiles remain in the specification.
+Owner now requests all business types, physical first: extend C after the current A/B core, then remaining service/digital, rental D and mixed E; auth/settings/files/history/recovery run throughout. [Decision](../decisions/ADR-20261013-all-businesses-physical-first.md). Source contracts for all B–F may continue; a critical failure blocks affected release acceptance, not unaffected isolated test development. First-launch gate/policies remain explicit and unresolved.
 
 ## Business fixtures and exact anchors
 
@@ -54,6 +54,7 @@ These anchors are proposals for pending workflow-policy decisions where noted in
 
 - B-001–003 call real invoice/return builders for service/digital credit/cash, synthetic tax/discount and nonphysical credits. B-004–012 use real allocation/permission code with an independently seeded invoice and embedded SQL. They do not execute quotation/conversion/commercial creation. Session loading and operational logging are fixture boundaries; accounting permission assertions remain real. Full migrations/FKs/unique/RLS/dimension scope are not exercised.
 - C-001–008 test real GRN/bill/cash purchase/return/opening/adjustment/sale posting builders. No live SKU quantity, costing layers, receipt commands or product master mutation is proven by these calculations.
+- C-101–107/115/116 and RT-017–020 now call actual physical commands on full PostgreSQL with exact stock/cost/GL/AP/AR/settings/role/fault checks. +100 aliases repeat on a genuine non-owner NOBYPASSRLS connection. Product-master/config/CoA/membership creation is declared direct fixture setup. Identity/Next adapters, missing real browser/storage, broader scopes/races/policies and failed ownership/atomicity/approval cases remain explicit; this is not completed C acceptance.
 - D-001–008 test real inclusive-date overlap/padding/capacity, invoice timing, deposit suggestions, hire posting and default reconciliation. Deposit suggestion is not a deposit liability posting. No booking/dispatch/return/wash/repair/payment lifecycle is proven.
 - E-001–003 compare complete mixed postings, line permutations and all32 bounded product/tender/synthetic-tax combinations. This is exhaustive for those three factors only; it does not cover real entity/tier/module/role combinations.
 - F-001–004 test portable amount/sign parsing, fingerprint isolation and calendar validity. Repeated fingerprint equality does not prove persistent duplicate-import suppression. Migrations, imports/reconciliation, restore and stress tests are planned, not implemented.

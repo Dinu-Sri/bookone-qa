@@ -50,6 +50,48 @@
                                    ],
                       "credential":  "admin",
                       "boundary":  "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay"
+                  },
+                  {
+                      "name":  "physical-lifecycle",
+                      "file":  "tests/runtime/physical.test.ts",
+                      "expected":  [
+                                       "C-101",
+                                       "C-102",
+                                       "C-103",
+                                       "C-104",
+                                       "C-105",
+                                       "C-106",
+                                       "C-107",
+                                       "C-115",
+                                       "C-116",
+                                       "RT-017",
+                                       "RT-018",
+                                       "RT-019",
+                                       "RT-020"
+                                   ],
+                      "credential":  "admin",
+                      "boundary":  "real-PostgreSQL-owner-connection-physical-settings-permissions-isolated-fault"
+                  },
+                  {
+                      "name":  "physical-nonowner",
+                      "file":  "tests/runtime/physical.test.ts",
+                      "expected":  [
+                                       "C-201",
+                                       "C-202",
+                                       "C-203",
+                                       "C-204",
+                                       "C-205",
+                                       "C-206",
+                                       "C-207",
+                                       "C-215",
+                                       "C-216",
+                                       "RT-117",
+                                       "RT-118",
+                                       "RT-119",
+                                       "RT-120"
+                                   ],
+                      "credential":  "runtime",
+                      "boundary":  "real-PostgreSQL-non-owner-physical-actions-persisted-permissions-isolated-fault"
                   }
               ]
 }
