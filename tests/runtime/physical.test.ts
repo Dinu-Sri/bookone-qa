@@ -114,7 +114,8 @@ it('[C-115] known foreign SKU is rejected with zero document journal stock or au
   const p=await setup();await purchase(p);await create(input(p,'sales_invoice',1,100));
   const [foreign]=await seed.insert(schema.inventoryProducts).values({tenantId:TENANT_B,sku:'QA-FOREIGN',name:'QA foreign physical unit',productType:'physical',sellPrice:'100.00',unitCost:'60.00'}).returning();
   const before=await snapshot();const result=await createCommercialDocument(input(foreign.id,'sales_invoice',1,100));const after=await snapshot();
-  observe('C-115',{accepted:result.ok?1:0,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length});
+  const [foreignLinks]=await admin`select count(*)::int as count from business_document_lines l join inventory_products p on p.id=l.product_id where l.tenant_id=${TENANT_A} and p.tenant_id=${TENANT_B}`;
+  observe('C-115',{accepted:result.ok?1:0,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,foreignLinkedLineCount:foreignLinks.count});
   expect({denied:!result.ok,unchanged:JSON.stringify(after)===JSON.stringify(before)}).toEqual({denied:true,unchanged:true});
 });
 it('[C-116] isolated journal-line failure rolls back every financial stock and document effect',async()=>{
@@ -122,7 +123,7 @@ it('[C-116] isolated journal-line failure rolls back every financial stock and d
   await admin.unsafe(`CREATE FUNCTION qa_physical_fail_line() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'Synthetic QA journal failure'; END $$`);
   await admin.unsafe('CREATE TRIGGER qa_physical_fail_line BEFORE INSERT ON journal_lines FOR EACH ROW EXECUTE FUNCTION qa_physical_fail_line()');
   let result;try{result=await createCommercialDocument(input(p,'purchase'));}finally{await admin.unsafe('DROP TRIGGER qa_physical_fail_line ON journal_lines');await admin.unsafe('DROP FUNCTION qa_physical_fail_line()');}
-  const after=await snapshot();observe('C-116',{accepted:result.ok?1:0,newTransactionCount:after['transactions'].length-before['transactions'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,newDocumentCount:after['business_documents'].length-before['business_documents'].length});
+  const after=await snapshot();observe('C-116',{accepted:result.ok?1:0,newTransactionCount:after['transactions'].length-before['transactions'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newJournalLineCount:after['journal_lines'].length-before['journal_lines'].length});
   expect(result.ok).toBe(false);expect(after).toEqual(before);
 });
 it('[RT-017] persisted Viewer cannot create a physical purchase or sale and changes no business tables',async()=>{
@@ -132,7 +133,9 @@ it('[RT-017] persisted Viewer cannot create a physical purchase or sale and chan
 });
 it('[RT-018] locked period rejects a physical sale without consuming lots or stock',async()=>{
   const p=await setup();await purchase(p);await seed.insert(schema.periodLocks).values({tenantId:TENANT_A,period:'2026-10',status:'locked',userId:OWNER});
-  const before=await snapshot();expect((await createCommercialDocument(input(p,'sales_invoice',1,100))).ok).toBe(false);expect(await snapshot()).toEqual(before);
+  const before=await snapshot();const result=await createCommercialDocument(input(p,'sales_invoice',1,100));const after=await snapshot();
+  observe('RT-018',{accepted:result.ok?1:0,newTransactionCount:after['transactions'].length-before['transactions'].length,newJournalCount:after['journal_entries'].length-before['journal_entries'].length,newDocumentCount:after['business_documents'].length-before['business_documents'].length,newAuditCount:after['audit_log'].length-before['audit_log'].length,newMovementCount:after['inventory_movements'].length-before['inventory_movements'].length});
+  expect(result.ok).toBe(false);expect(after).toEqual(before);
 });
 it('[RT-019] disabling sales module rejects physical sale with existing stock preserved',async()=>{
   const p=await setup();await purchase(p);await seed.update(schema.tenants).set({modules:{inventory:true,purchase:true,sales:false}}).where(eq(schema.tenants.id,TENANT_A));
