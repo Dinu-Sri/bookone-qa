@@ -42,3 +42,8 @@ The Viewer role was rechecked on `/company/team`. A second synthetic customer (`
 ## Third retest — 2026-10-12
 
 After another owner-reported staging update, the account remained assigned Viewer and again created a synthetic customer (`QA-VIEW-20261012-R3`, `QA Viewer Retest Three`). The active customer list showed the record. It was archived after the probe. The deployed build identity remains unknown.
+
+
+## Fourth retest — 2026-10-13 (UI build marker v2.1.0 / 2b92cf4)
+
+The staging UI footer displayed `v2.1.0 · 2b92cf4`. The synthetic Viewer again created customer `QA-VIEW-20261013-R4`, which appeared in the active list. The customer was archived. The UI build marker does not verify the running image digest, schema or storage identity.
