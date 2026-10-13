@@ -4,20 +4,20 @@
   "strategyDecision": "decisions/ADR-20261013-batch-testing.md",
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
-  "currentBatch": "B",
-  "implementationStatus": "60-source-23-postgres-pass-bounded-fixes-acceptance-open",
+  "currentBatch": "C",
+  "implementationStatus": "60-source-pass-49-postgres-41-pass-8-fail-physical-owner-nonowner-three-findings",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261013-095909380-17a67b.json",
-  "lastRetestRecord": "runs/RUN-20261013-v2-2-4-retest-14.md",
+  "lastRetestRecord": "runs/RUN-20261013-physical-lifecycle-15.md",
   "lastCleanSourceCi": {
     "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-    "qaSha": "5c13470400336ec4457ecd4aaef698fbe941fa0d",
-    "qaValidationRun": 38399507182,
-    "candidateBatchRun": 38399507069,
+    "qaSha": "3bd28e2a20478029f57583889239f2f13a7931d1",
+    "qaValidationRun": 38406075283,
+    "candidateBatchRun": 38406074753,
     "candidateResult": "15-pass-0-fail",
-    "deepBatchRun": 38399507009,
+    "deepBatchRun": 38406075898,
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
-    "scope": "60-quick-source-contracts-no-release-acceptance"
+    "scope": "60-source-contracts-no-release-acceptance"
   },
   "candidateProductSha": "343d546ed41f7790e1fc45414d130012dab37a39",
   "observedStagingStamp": "v2.2.4 · 343d546",
@@ -35,14 +35,17 @@
     "BUG-0014",
     "BUG-0015",
     "BUG-0016",
-    "BUG-0017"
+    "BUG-0017",
+    "BUG-0018",
+    "BUG-0019",
+    "BUG-0020"
   ],
   "nextActions": [
-    "Fresh explicit Owner/Viewer login and actor verification, representative live B workflow/read/reload/deny; no blind staging reset or payment replay.",
-    "Add intended non-owner commercial/reversal action and permission loading, HTTP/login and wider scope/revoked/cache acceptance; helper passes alone are insufficient.",
-    "Historical migration040/data preservation and duplicate-history failure/recovery in isolated PostgreSQL, verify deployed schema/runtime role/image/backup identity.",
-    "Real synthetic storage upload/sign/download/cleanup and company/module/settings/roles matrix, then C/D persisted physical/rental lifecycle coverage.",
-    "Maintain60-source/23-runtime core regressions for each exact new candidate, broaden shared/unknown diffs, review sensitivity/release-gate negative/manual/external promotion; resolve10 policies."
+    "Coding agent repairs foreign SKU ownership, commercial atomicity including denial metadata and Viewer purchase approval; keep all original expectations.",
+    "Inspect/pin next product SHA and rerun all60 source/49 runtime on a fresh isolated PostgreSQL service; keep failures red and role boundaries distinct.",
+    "Continue C locations/transfers, landed cost, varied costing/backdate/negative-stock policy, retries/concurrent issues, later stock/cost/audit fault boundaries and physical uploads.",
+    "Fresh verified Owner/Viewer browser physical journey, real storage/download/print and actual deployed role/schema/image identity after critical fixes; no blind staging reset or payment replay.",
+    "All business types remain in scope: remaining service/digital, rental and mixed, settings/roles/files/upgrade/recovery and unresolved policy/gate work."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -68,19 +71,22 @@
     "F": "runs/RUN-20261013-095902771-f8dbeb.json"
   },
   "workQueue": [
-    "B-101",
-    "B-102",
-    "B-103",
-    "B-104",
-    "B-108",
-    "B-106",
-    "B-107",
-    "B-115",
-    "B-109",
-    "B-110",
+    "C-115",
+    "C-116",
+    "C-101",
+    "C-108",
+    "C-109",
+    "C-110",
+    "C-111",
+    "C-112",
+    "C-113",
+    "C-114",
     "C-102",
     "C-103",
+    "C-104",
     "C-105",
+    "C-106",
+    "C-107",
     "D-101",
     "D-102",
     "D-103",
@@ -94,24 +100,28 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
     "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-    "qaImplementationSha": "5c13470400336ec4457ecd4aaef698fbe941fa0d",
-    "testedPrMergeSha": "9c703c8dc9724426b96399b00ddd5b14fb18b1b4",
-    "run": 38399507247,
-    "result": "23-pass-0-fail",
+    "qaImplementationSha": "3bd28e2a20478029f57583889239f2f13a7931d1",
+    "testedPrMergeSha": "f0e5b6d267d4d9f8bb514ba3d7fc7abaf7a4ffdb",
+    "run": 38406074817,
+    "result": "41-pass-8-fail",
     "schema": "current-Drizzle-plus-all42-SQL-PostgreSQL16.15",
-    "scope": "restricted-helper-driver-transactions-nesting-overlap;owner-business-actions;synthetic-login"
+    "scope": "23-core-pass;13-physical-scenarios-owner-and-nonowner;synthetic-login;no-deployed-acceptance"
   },
   "configurationMatrix": "batches/configuration-matrix.json",
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261013-v2-2-4-next.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261013-physical-findings.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
-  "activeFindings": [],
+  "activeFindings": [
+    "BUG-0018",
+    "BUG-0019",
+    "BUG-0020"
+  ],
   "verifiedBoundedFixes": [
     "BUG-0010",
     "BUG-0011",
@@ -129,5 +139,32 @@
     "BUG-0014/17": "Non-owner actual helper/query/transactions/nesting/overlap pass; existing-session navigation restored. Full non-owner business/login/pool-cancellation/recovery remains open.",
     "BUG-0015/16": "Actual owner-connected credit report and concurrent reversal invariants pass; non-owner/HTTP races and historical upgrade/recovery remain open."
   },
-  "currentFailedExecutableCases": []
+  "currentFailedExecutableCases": [
+    "C-115",
+    "C-116",
+    "RT-018",
+    "RT-020",
+    "C-215",
+    "C-216",
+    "RT-118",
+    "RT-120"
+  ],
+  "ownerTestingScope": {
+    "businessTypes": [
+      "physical",
+      "service",
+      "digital",
+      "rental",
+      "mixed"
+    ],
+    "first": "physical",
+    "decision": "decisions/ADR-20261013-all-businesses-physical-first.md",
+    "date": "2026-10-13",
+    "releaseScope": "separate-owner-policy-pending"
+  },
+  "implementedRuntimeLayers": {
+    "physical": "Actual product commands at owner and non-owner NOBYPASSRLS DB role, seeded masters/settings and synthetic session;9 passing/4 failing patterns per role",
+    "commercial": "Existing service/digital/credit owner action lane; actual non-owner business depth remains partial",
+    "reversal": "Existing owner action contention lane; non-owner concurrent reversal remains open"
+  }
 }

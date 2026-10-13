@@ -267,92 +267,176 @@
       "id": "C-101",
       "batch": "C",
       "slug": "po-approval",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "PO and pending/rejected purchase create no unintended AP, inventory valuation or duplicate receipt.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Owner approval/repeat and pending controls pass; Viewer approval fails RT020/120 (BUG0020). Approval authorization, wider jobs/scopes and live acceptance remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-201",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-102",
       "batch": "C",
       "slug": "receipt-bill",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "10 units at60 through PO/GRN/bill yield stock10, inventory600, AP600 and GRNI0, not double values.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-202",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-103",
       "batch": "C",
       "slug": "partial-receipt",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Receive6 then4 and bill separately; each movement has source link and exact remaining quantity/GRNI.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-203",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-104",
       "batch": "C",
       "slug": "partial-bill",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Bill a subset of already received stock then final bill; no duplicate capitalisation and exact liability outstanding.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-204",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-105",
       "batch": "C",
       "slug": "sale-payment-return",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Sell2 at100/cost60 from10; receive80; return1 at original60; receive20: stock9,value540,AR0, net profit40.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-205",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-106",
       "batch": "C",
       "slug": "vendor-payment",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Pay AP600 once; cash falls600 and AP0 without changing stock/revenue.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-206",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-107",
       "batch": "C",
       "slug": "purchase-return",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Return2 of10 to vendor: stock8, inventory480, approved AP/refund120 and original cost layers linked.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "passed",
+        "nonOwnerAlias": "C-207",
+        "nonOwner": "passed"
+      }
     },
     {
       "id": "C-108",
@@ -449,27 +533,51 @@
       "id": "C-115",
       "batch": "C",
       "slug": "locks-denials",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Locked period, Viewer, foreign tenant and restricted location writes denied for real stock records.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Foreign SKU deny fails at both DB roles; repair BUG0018. Viewer create denies pass; locked-period finance denies but audit changes (BUG0019). Wider location/brand/read/revoked/browser boundaries remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "failed",
+        "nonOwnerAlias": "C-215",
+        "nonOwner": "failed"
+      }
     },
     {
       "id": "C-116",
       "batch": "C",
       "slug": "rollback-history",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Injected failure at stock/journal/audit boundaries rolls back; void/reversal restores correct effects and keeps links/history.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Journal-line fault leaves orphan transaction/empty journal at both DB roles (BUG0019); repair before later stock/cost/audit faults, retries, historical void/recovery acceptance.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection",
+        "persisted-lifecycle-non-owner-connection-synthetic-session"
+      ],
+      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "owner": "failed",
+        "nonOwnerAlias": "C-216",
+        "nonOwner": "failed"
+      }
     },
     {
       "id": "D-101",
@@ -1273,5 +1381,12 @@
     }
   ],
   "configurationMatrix": "batches/configuration-matrix.json",
-  "runtimeManifest": "batches/runtime.json"
+  "runtimeManifest": "batches/runtime.json",
+  "testingOrder": [
+    "physical",
+    "service-digital",
+    "rental",
+    "mixed",
+    "history-recovery-throughout"
+  ]
 }
