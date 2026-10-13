@@ -17,11 +17,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json"
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "B-102",
@@ -34,11 +39,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json"
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "B-103",
@@ -51,11 +61,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json"
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "B-104",
@@ -68,11 +83,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Correct money/stock/subledger journey executes, report income fails BUG0016; retain expected net500 and retest alongside runtime/browser layers.",
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
-      ]
+      ],
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "B-105",
@@ -1121,8 +1141,13 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "E-116",
@@ -1138,8 +1163,13 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "E-117",
@@ -1155,8 +1185,13 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "latestAttempt": {
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
+      }
     },
     {
       "id": "F-119",

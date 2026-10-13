@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-13T12-28-33-405Z-runtime",
+  "fingerprint": {
+    "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
+    "qaSha": "4e05e103b9e566c137be8d194840ee9010d33cdb",
+    "qaDirty": false,
+    "node": "v22.23.3",
+    "qaContentHash": "fcb3ac97d220e9ea4132c638dc7ae2adc6accc6ef64af7cad352d2131eb80a72",
+    "preparationHash": "e2dc7acf8fab3ee8fd5a8ba5d17b6a94b4b43e3ab2ebdbe3c587105a639b4502",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "results": [
+    {
+      "lane": "postgres-rls",
+      "boundary": "real-PostgreSQL-non-owner-product-helper",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "failed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "failed"
+        },
+        {
+          "id": "RT-012",
+          "status": "failed"
+        },
+        {
+          "id": "RT-013",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {},
+      "diagnostics": {
+        "RT-002": [
+          "driver-options-parsers-missing"
+        ],
+        "RT-004": [
+          "driver-options-parsers-missing"
+        ],
+        "RT-012": [
+          "driver-options-parsers-missing"
+        ],
+        "RT-013": [
+          "driver-options-parsers-missing"
+        ]
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "failed"
+        },
+        {
+          "id": "B-102",
+          "status": "failed"
+        },
+        {
+          "id": "B-103",
+          "status": "failed"
+        },
+        {
+          "id": "E-115",
+          "status": "failed"
+        },
+        {
+          "id": "E-116",
+          "status": "failed"
+        },
+        {
+          "id": "E-117",
+          "status": "failed"
+        },
+        {
+          "id": "RT-008",
+          "status": "passed"
+        },
+        {
+          "id": "RT-009",
+          "status": "failed"
+        },
+        {
+          "id": "RT-010",
+          "status": "failed"
+        },
+        {
+          "id": "RT-011",
+          "status": "failed"
+        },
+        {
+          "id": "B-104",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {},
+      "diagnostics": {},
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "reversal-concurrency",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "failed"
+        },
+        {
+          "id": "RT-006",
+          "status": "failed"
+        },
+        {
+          "id": "RT-007",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {},
+      "diagnostics": {},
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    }
+  ],
+  "productAcceptance": "not-established",
+  "schemaPreparation": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 42,
+    "migrationsExpected": 42
+  },
+  "missing": [
+    "credential-login",
+    "Next-server-HTTP",
+    "deployed-browser",
+    "full-upgrade",
+    "recovery",
+    "object-storage",
+    "non-owner-concurrent-reversal",
+    "broader-races-and-faults"
+  ]
+}

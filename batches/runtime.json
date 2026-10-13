@@ -11,7 +11,12 @@
                                        "RT-001",
                                        "RT-002",
                                        "RT-003",
-                                       "RT-004"
+                                       "RT-004",
+                                       "RT-012",
+                                       "RT-013",
+                                       "RT-014",
+                                       "RT-015",
+                                       "RT-016"
                                    ],
                       "credential":  "runtime",
                       "boundary":  "real-PostgreSQL-non-owner-product-helper"
