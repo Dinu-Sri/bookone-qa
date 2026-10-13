@@ -10,11 +10,13 @@
   "lastSourceContractRun": "runs/RUN-20261013-063516233-1ab6cc.json",
   "lastRetestRecord": "runs/RUN-20261013-deep-batches-09.md",
   "lastCleanSourceCi": {
-    "qaSha": "e6d46cb6359a0a181371c74ca797e0a609d39c35",
-    "qaValidationRun": 38354952412,
-    "candidateBatchRun": 38354952276,
+    "qaSha": "cbda523fdd57df1c600e74a2541d751b53df2c09",
+    "qaValidationRun": 38358818493,
+    "candidateBatchRun": 38358818701,
     "candidateResult": "14-pass-1-fail-A-014",
-    "sanitizedArtifactId": 11792631570
+    "deepBatchRun": 38358818740,
+    "deepResult": "B10/2-C8/0-D8/0-E3/0-F3/1",
+    "scope": "quick-source-contracts-no-release-acceptance"
   },
   "candidateProductSha": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
   "observedStagingStamp": "v2.2.0 · 6a48cee",

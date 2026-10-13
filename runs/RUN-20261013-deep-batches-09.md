@@ -14,3 +14,20 @@ BUG-0012: parseStatementDate returned impossible2026-02-30 as an accepted ISO da
 No quote/commercial creation, inventory movement/cost-layer, rental lifecycle/deposit liability, persistent import duplicate, full migrations/runtime-RLS/dimension scope, race/fault/restore or deployed UI acceptance implied. Policy-dependent cases remain unresolved. All staging fixtures from RUN-08 remain unchanged; no reset/cleanup required here.
 
 Next exact QA work: B-101–103 full persisted quotation/draft/invoice/receipt adapters on isolated full-schema PostgreSQL, then credit/state/retry and real permission/race cases. Next coding work: existing mandatory quality-publish gate plus new shared-allocation permission/tender and calendar validation findings. Compare actual new product diff, deliberately advance pin and rerun A plus affected/dependent batches; prior passes do not certify a changed candidate.
+
+## Clean committed-source CI confirmation
+
+Implementation commit `cbda523fdd57df1c600e74a2541d751b53df2c09`, [PR7](https://github.com/Dinu-Sri/bookone-qa/pull/7). [QA repository validation49](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818493) succeeded: install, metadata/guards/harness, pin preparation, sensitivity, retained units and browser discovery. Discovery is not browser execution.
+
+[Batch A5](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818701) and [B–F source matrix1](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818740) independently reproduce the expected46 pass/4 fail on clean committed source (quick profile). Every job completed setup/check/prepare and uploaded a sanitized summary. This is a validated harness with intentionally red candidate contracts; merging QA maintenance is not product release acceptance.
+
+| Batch | CI run ID | Pass/fail | Sanitized artifact ID |
+|---|---|---|---|
+| A | RUN-20261013-064843098-4d6310 |14/1|11793993075|
+| B | RUN-20261013-064845092-475be6 |10/2|11793242907|
+| C | RUN-20261013-064844310-4e0cdc |8/0|11793264189|
+| D | RUN-20261013-064842887-3338d8 |8/0|11793662415|
+| E | RUN-20261013-064846228-e52522 |3/0|11793133171|
+| F | RUN-20261013-064841034-40a2ec |3/1|11793138091|
+
+CI quick confirms latest audit/link assertions; local200-sequence broad evidence remains bound to its earlier content hash as described above. Later documentation commits retain the exact implementation SHA and run IDs.

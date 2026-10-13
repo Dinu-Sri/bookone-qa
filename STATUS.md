@@ -8,6 +8,8 @@ Three new isolated findings: BUG-0010 allocation-boundary permission, BUG-0011 i
 
 [Deep programme](docs/DEEP_BATCH_PROGRAMME.md), [coverage register](batches/coverage.json) and memory/policies.json preserve83 specified **unimplemented** lifecycle tasks and eight pending policy decisions. `pnpm batch:coverage` distinguishes these from50 executable source cases. All acceptance remains open. Generalized runner and B–F CI preserve failure propagation/checkpoints;2 guard/6 harness/2 mutation-sensitivity assertions passed locally. No staging data changed. Next: B-101–103 full lifecycle adapters plus A runtime gaps, then C/D persisted workflows and E/F acceptance. Historical statements below that B–F are merely planned are superseded at source-foundation depth only.
 
+Clean QA commit cbda523 passed [repository validation49](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818493). [A5](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818701) and [B–F matrix1](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38358818740) reproduced46 pass/4 fail with every sanitized artifact retained. Expected candidate failures remain red; QA programme maintenance is separate from product promotion.
+
 ## v2.2.0 retest after owner cleanup
 
 Latest product pin6a48cee matches the visible staging stamp `v2.2.0 · 6a48cee`. [RUN-08](runs/RUN-20261013-v2-2-0-retest-08.md) preserves first quick13 pass/2 fail and expanded broad14 pass/1 fail. A-013 now correctly accepts unmasked required commands across split jobs; A-014 remains red.94 retained units passed/4 optional fixture skips; metadata/2 guards/5 harness assertions passed.
