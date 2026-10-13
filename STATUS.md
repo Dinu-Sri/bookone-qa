@@ -6,6 +6,8 @@ Owner accepted automated risk-based batches and durable agent memory. SESSION.md
 
 First full development run:7 passed/8 failed, zero skips/blocks; failures map to the five known BUG-0005–0009 groups. Generated cash-flow model shrank to a one-cent sale followed by reversal. Metadata,2 target guards and5 runner-integrity tests passed. Retained units on deliberately advanced pin2b92cf4:94 passed/4 optional fixture skips. These are independent scope statements; no release acceptance.
 
+Clean implementation execution is preserved in [RUN-07](runs/RUN-20261013-batch-a-bootstrap-07.md) and its immutable JSON:15 checks in20.378seconds,7 pass/8 fail. GitHub QA validation43 succeeded and Candidate Batch A1 correctly failed with the same outcomes; sanitized summary artifact was retained. Product bugs remain unfixed. Startup index now points to this run; B–F and required real-runtime layers remain unimplemented.
+
 Read [batch coding-agent handoff](handoffs/HANDOFF-20261013-batch-runner.md) before fixing candidate failures. Public CI keeps harness validation distinct from candidate contracts and only uploads sanitized summaries. A source-contract green would still not prove real-login/RLS/migration/dimension/concurrency/audit/browser/recovery requirements. Product promotion wiring and first-launch scope remain outstanding.
 
 ## Latest finance/authorization investigation — 2026-10-13

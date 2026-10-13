@@ -7,7 +7,7 @@
   "currentBatch": "A",
   "implementationStatus": "source-runner-validated-product-contracts-red",
   "lastVerifiedRelease": null,
-  "lastSourceContractRun": null,
+  "lastSourceContractRun": "runs/RUN-20261013-043211904-e676d1.json",
   "knownBugGroups": ["BUG-0005", "BUG-0006", "BUG-0007", "BUG-0008", "BUG-0009"],
   "nextActions": [
     "Keep Batch A candidate assertions red until the five product bug groups are fixed; export each new run.",
