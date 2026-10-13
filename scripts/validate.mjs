@@ -1,7 +1,13 @@
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {join,dirname} from 'node:path';
 import assert from 'node:assert/strict';
+import {validateBatch} from './batch/state.mjs';
 const read=(p)=>JSON.parse(readFileSync(p,'utf8'));
+validateBatch(read('batches/A.json'));
+const programme=read('memory/programme.json');
+assert.equal(programme.schemaVersion,1);
+assert.ok(programme.nextActions?.length,'Missing session next actions');
+for(const key of ['strategyDecision','sessionProtocol','implementationGuide'])assert.ok(existsSync(programme[key]),`Missing memory pointer ${key}`);
 const scenarios=read('apps/e2e-runner/src/catalog/scenarios.json');
 const reviews=read('catalog/assertion-review.json').scenarios;
 assert.equal(new Set(scenarios.map(s=>s.id)).size,scenarios.length,'Duplicate scenario IDs');

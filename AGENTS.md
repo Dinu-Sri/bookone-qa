@@ -45,3 +45,18 @@ These are operating instructions for the QA project. The owner authorizes change
 26. Read product-ref.json before unit checks and verify the staging build before browser acceptance. Update the pin deliberately with impact review; never silently test floating HEAD.
 
 27. Drive the ERP UI from this repository with `pnpm agent:browse` (Playwright click-through). Artifacts go to gitignored `.local/agent-browse/`. Do not use the retired BookOne `/e2e` console or `pnpm agent:browse` in the product repo after Wave 1b.
+
+
+## Actor and source verification after the 2026-10-13 attribution correction
+
+28. Before role-specific mutations, explicitly sign out and sign in with the intended fixture. Record the non-secret actor alias, expected job, login transition, loaded role context and build in the same run. Verify active identity through the supported account UI or harness session where available. Company name and Team roster only describe company membership; they do not identify the current actor. Until a session identity surface is available, fresh explicit fixture login plus loaded role context is the minimum evidence. Stop on unexpected role/session context; invalidate earlier role conclusions when attribution is wrong.
+29. Index status/current checkout metadata alone does not prove graph extraction is current. Check for removed nodes and mismatched snippet ranges; use graph discovery first, then verify relevant source against the pinned candidate when stale. Preserve source provenance and label static concerns separately from executed failures.
+30. Creation denial does not establish complete write denial. Cover edits, reversals, archive/restore/delete, payments and exports as applicable with real role-owned and foreign-tenant fixtures; denied financial operations must create zero transactions/journals/audit mutations.
+
+## Batch/session memory — effective 2026-10-13
+
+31. Read SESSION.md and memory/programme.json after STATUS.md at startup; use `pnpm session:start` and the relevant manifest. Record implementation versus executed versus accepted evidence separately. Update both indexes before ending a session and commit reviewed sanitized run summaries. Chat history and ignored local folders are not canonical portable memory.
+32. Preserve runner checkpoints/first failures. Resume only unfinished isolated lanes at the identical fingerprint; a fix, source-pin change or edited tests requires a new run. Never automatically replay live payments or reset an unidentified tenant to recreate setup. If private state is unavailable, disclose that and resume from committed summaries.
+33. Batch A currently provides source, embedded SQL/action and render/workflow contracts. Synthetic session/dimension/framework adapters are explicit; they do not prove real-login loading, full migrations, runtime RLS, scopes, multi-connection concurrency or deployed UI. Never promote those results to release acceptance. Extend real-runtime layers before closing critical bugs or wiring production approval.
+34. Keep product failures red and independent from QA-harness validation. Missing/skip/blocked cases and failed subprocesses cannot pass. A batch has fixed expected case IDs; zero discovery fails. Group duplicate symptoms only with evidence of shared cause; preserve original assertion outcomes. Tests may not redefine expected finance values to match a fix.
+35. Follow docs/BATCH_TESTING.md and decisions/ADR-20261013-batch-testing.md when extending B–F. Models use independent integer-money expectations, legal and invalid transitions, typed business policies and reproducible seeds. A prior pass is not reused for a changed candidate. Broaden unknown/shared change impacts. Launch scope is still owner-undecided.

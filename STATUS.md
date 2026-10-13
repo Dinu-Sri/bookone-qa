@@ -1,4 +1,24 @@
-# QA status — 2026-10-12
+# QA status — updated 2026-10-13
+
+## Batch strategy implemented — 2026-10-13
+
+Owner accepted automated risk-based batches and durable agent memory. SESSION.md, memory/programme.json, the ADR and docs/BATCH_TESTING.md are now the startup/extension protocol. Batch A has15 mapped executable source/embedded SQL/render/workflow checks and automatic private checkpoints, seed replay, immutable sanitized exports and fingerprint-checked interruption resume. B–F and real-runtime acceptance remain planned.
+
+First full development run:7 passed/8 failed, zero skips/blocks; failures map to the five known BUG-0005–0009 groups. Generated cash-flow model shrank to a one-cent sale followed by reversal. Metadata,2 target guards and5 runner-integrity tests passed. Retained units on deliberately advanced pin2b92cf4:94 passed/4 optional fixture skips. These are independent scope statements; no release acceptance.
+
+Clean implementation execution is preserved in [RUN-07](runs/RUN-20261013-batch-a-bootstrap-07.md) and its immutable JSON:15 checks in20.378seconds,7 pass/8 fail. GitHub QA validation43 succeeded and Candidate Batch A1 correctly failed with the same outcomes; sanitized summary artifact was retained. Product bugs remain unfixed. Startup index now points to this run; B–F and required real-runtime layers remain unimplemented.
+
+Read [batch coding-agent handoff](handoffs/HANDOFF-20261013-batch-runner.md) before fixing candidate failures. Public CI keeps harness validation distinct from candidate contracts and only uploads sanitized summaries. A source-contract green would still not prove real-login/RLS/migration/dimension/concurrency/audit/browser/recovery requirements. Product promotion wiring and first-launch scope remain outstanding.
+
+## Latest finance/authorization investigation — 2026-10-13
+
+[RUN-06](runs/RUN-20261013-finance-investigation-06.md) on v2.1.0/2b92cf4 verified cash-sale mapping Dr1000/Cr4000, including neutral description. Three synthetic sales were reversed; six balanced journals retained, cash/revenue net0. Confirmed P1s: restricted-role financial reversal (BUG-0009), cash-flow reversal overcount (BUG-0006), customer unposted/archive balance display (BUG-0005), and release-check failure masking (BUG-0008 source review). Default report label mismatch is P2 BUG-0007. [Coding-agent handoff](handoffs/HANDOFF-20261013-finance-and-release.md) gives source pointers and acceptance cases. Original Viewer-create reports are withdrawn; exact security reproduction remains private. Larger invoice/payment/return journey was not run after these failures.
+
+Unit pin65f84c1 is older than the observed candidate; current QA documentation CI is not evidence of candidate units/staging acceptance. Image/schema/storage/restore and cross-tenant/concurrency/audit cases remain unverified.
+
+## Verified Viewer create-route retest — 2026-10-13
+
+Signed out of the Owner session and signed in as the synthetic Viewer. Build footer: `v2.1.0 · 2b92cf4`. Role-loaded navigation labeled business areas “View only.” Direct `/parties/customers/new` and `/sales/invoices/new` routes each rendered explicit cannot-create messages. No records were created or modified. Customer and invoice lists were readable; the existing synthetic customer `CUS-0001` shows LKR 100, and four prior synthetic invoices are archived. The customer balance was left untouched. See [RUN-20261013-authentication-validity-review-05](runs/RUN-20261013-authentication-validity-review-05.md). This verifies UI behavior only; backend/API enforcement, deployed image digest, schema, and storage remain unverified.
 
 ## Fresh staging baseline after rebuild
 
@@ -10,11 +30,9 @@
 - On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
 - Live E2E denial navigation initially hit a temporary browser approval rate limit; subsequent authorized checks completed as recorded below.
 
-## Follow-up after reported staging fix — 2026-10-12
+## Superseded Viewer write claims — runs 02–04
 
-- The Viewer role account created a synthetic customer successfully, and then saved a LKR 100 invoice draft as Viewer. Both test records were archived; the invoice remains visible as archived. No invoice was posted and no ledger or stock mutation was attempted.
-- The original invoice error page from the prior run did not appear in this follow-up because the draft save succeeded. The owner-reported fix is therefore **not verified as a fix**; a successful Viewer write was observed instead. Deployed commit/image identity remains unknown.
-- See [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md), [BUG-0003](bugs/BUG-0003-viewer-can-create-customer.md), and [BUG-0004](bugs/BUG-0004-viewer-can-save-invoice-draft.md). The BookOne source graph includes a permission call for document creation but is not verified as the deployed revision.
+The earlier notes claiming Viewer customer/invoice writes were valid have been withdrawn: the actor was not verified before those actions. The created records were archived, but they are not Viewer permission evidence. See [RUN-20261013-authentication-validity-review-05](runs/RUN-20261013-authentication-validity-review-05.md), which verifies a Viewer session and confirms the create routes are denied in the UI.
 
 ## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
 
@@ -57,13 +75,27 @@
 
 ## Next actions
 
-1. Confirm the Viewer permission contract; investigate and fix BUG-0003 and BUG-0004 server-side. Verify denied customer and invoice writes on an identified build. Then reproduce BUG-0001 and trace the Simple Entry Money In mapping from UI through posting.
-2. Verify the deployed commit/image and schema/storage identity; then execute the ordered business journeys in the audit.
-3. Keep the synthetic Viewer account for follow-up role tests; its password remains only in the local gitignored runner env file.
-4. Audit/deepen P0 money/access/data assertions; start mixed rental/products/services plus isolated type-specific journeys.
-5. Replace optional machine-file bank cases with synthetic portable fixtures.
-6. BookOne Wave 1b: delete inbuilt runner/page/APIs/Docker on `chore/remove-inbuilt-e2e` after this QA companion is published; then execute S-0031–S-0033/S-0578 against that candidate. Operator still must stop `bookone-staging-e2e` separately.
-7. Wire trusted external status checks and owner-controlled release promotion; add real migration/recovery rehearsals.
+1. Coding agent: address BUG-0009 server permission/dimension boundary, then BUG-0006 signed cash flow and BUG-0005 posted-obligation balances; follow the handoff's regression requirements.
+2. Repair mandatory CI checks and same-SHA publication gate (BUG-0008); fix resolved period labels (BUG-0007).
+3. Preserve original/void/reversal history; no blanket reset/balance edit. Fresh-role checks must precede all role-specific mutations.
+4. Verify candidate image/schema/storage and deliberately update QA source pin with impact review; rerun targeted outcome cases on the deployed fixed version.
+5. Resume isolated invoice/payment/return journeys only after the newly found blockers are tested; money/access/data/recovery coverage remains incomplete.
+6. Retired inbuilt E2E cleanup is already recorded by current BookOne AGENTS.md. Revalidate its denial cases on the current candidate; do not repeat deletion instructions from historical Wave1 notes.
+7. Replace four optional machine-fixture skips with portable fixtures; continue independent review of inherited assertions (30 reviewed/717 pending).
+
 
 The `QA-261012-A` live staging records are retained for review and require cleanup only when the owner no longer needs them. Read AGENTS.md, this file and relevant records in new sessions. Local dependency/product checkouts under ignored work/ are reproducible, not canonical memory.
 
+
+
+## Superseded follow-up record — 2026-10-12
+
+The original run record is retained for audit history, but its Viewer attribution is unverified. Do not use its customer/invoice creation steps as evidence of Viewer permissions. The created records were later archived. The verified check is RUN-20261013-authentication-validity-review-05.
+
+## Superseded third retest attribution — 2026-10-12
+
+The records and UI actions described in the original run are historical, but the active actor was not verified. The actions do not establish Viewer write capability. See RUN-20261013-authentication-validity-review-05 for the verified retest.
+
+## Superseded fourth retest attribution — build marker v2.1.0 / 2b92cf4
+
+The original run's Viewer attribution is unverified. The verified Viewer session on the same visible marker showed direct customer and invoice create routes denied; see RUN-20261013-authentication-validity-review-05.

@@ -4,6 +4,10 @@ Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/B
 
 ## Current state
 
+- Start new sessions with [SESSION.md](SESSION.md) and `pnpm session:start`. The accepted batch strategy, current work and next actions live in [memory/programme.json](memory/programme.json), [batch guide](docs/BATCH_TESTING.md) and [roadmap](batches/roadmap.json).
+- Batch A now implements15 independent source/embedded SQL/render/workflow checks, including generated sale/reversal models and the five known bug groups. Run `pnpm batch:run --seed 261013 --profile quick`; a nonzero exit is expected on the current defective product candidate. It is a source regression signal, not release certification.
+- Current implementation pin is2b92cf40a3d258dcfc29655759d37b0c32aaebbf. The older snapshot bullets below are historical baseline facts; they do not certify this candidate. See STATUS.md and current run records.
+
 - Product source pinned in product-ref.json to 65f84c151f7332efa196ed837ad179ac4818178b. The actual staging image/build still needs independent identification.
 - 747 inherited scenario definitions; 30 source reviews complete and 717 pending. Catalog mapping is not business acceptance.
 - 30 browser spec files imported; full discovery finds 770 tests in 29 nonempty files. The inherited bucket preset omitted the team suite; full discovery now includes it.
@@ -49,7 +53,7 @@ The apps/e2e-runner path is retained inside this QA repository for import compat
 
 ## CI and contribution
 
-QA repository CI validates metadata, the target guard, pinned-source unit tests and E2E discovery. It has no staging credentials and runs no staging browser tests. Its green result cannot approve a product release. Add new scenarios and review records together; preserve existing IDs and historical results. Update STATUS after each session.
+QA repository validation checks metadata, the target guard, runner integrity, pinned-source units and E2E discovery. Separate Candidate Batch A contracts reports product failures as red and retains only sanitized outcome artifacts. It has no staging credentials and runs no staging browser tests. Neither workflow is wired to product promotion; green repository validation cannot approve a product release. Add new scenarios and review records together; preserve existing IDs and historical results. Update STATUS and memory/programme.json after each session.
 
 This repository is public by explicit owner instruction. Review every staged file for sensitive information. See PUBLIC_DATA_POLICY before sharing bugs/artifacts. Package.json private=true prevents npm publishing; GitHub visibility is public. No new open-source license grant is implied; imported code retains BookOne's existing rights.
 

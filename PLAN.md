@@ -2,7 +2,7 @@
 
 # BookOne QA programme
 
-Status: proposed, grounded in source review on 2026-10-11. Execution has not started.
+Status: programme in progress. The owner accepted risk-based automated batches on2026-10-13. Batch A source/embedded SQL contracts are implemented; real-runtime acceptance and B–F remain planned. Current executable protocol: SESSION.md, memory/programme.json and docs/BATCH_TESTING.md. Earlier phase text below is historical programme context, not a claim that its requirements have been completed.
 
 ## 1. Outcomes
 
