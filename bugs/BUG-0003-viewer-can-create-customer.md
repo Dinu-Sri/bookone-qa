@@ -1,6 +1,6 @@
 # BUG-0003 — Viewer can create customer records
 
-Status: reproduced in the staging UI; deployed commit/image identity is unverified.
+Status: **unverified; prior Viewer attribution invalidated on 2026-10-13**. The browser session's active user was not proven to be the synthetic Viewer. Do not treat the previous runs as a reproduced Viewer permission defect.
 Severity: P1 candidate — a user explicitly assigned the Viewer job created a customer. Confirm the intended Viewer permission contract with the product owner before treating the severity as final.
 
 ## Environment
