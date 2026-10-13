@@ -9,3 +9,7 @@ Default Reports/Cash Flow showed selector Oct2026 but body/metric January2001 wi
 `apps/web/src/app/reports/page.tsx` lines51–53 parses `${periodOptions.selected}-01` as a Date. Selected is a token such as this_month; getPeriodOptions already supplies the resolved human label. Use that resolved label consistently rather than parsing tokens as calendar months.
 
 Regression: default/current/last month, explicit month, all time, rolling7/30d, fiscal year and custom-range labels; verify headings, selected range and report/tab navigation preserve identical range. Remaining modes were not executed in this investigation.
+
+## Retest 2026-10-13 — v2.2.0
+
+Candidate6a48cee passes default/explicit/all source label cases. Live default heading and selector agree on October2026. Fixed within tested scope; adjacent real period transitions remain pending. See [RUN-08](../runs/RUN-20261013-v2-2-0-retest-08.md).

@@ -57,7 +57,7 @@ describe('Batch A real product actions / isolated embedded PostgreSQL', () => {
     expect({ denied: !result.success, unchanged: JSON.stringify(await snapshot()) === JSON.stringify(before) })
       .toEqual({ denied: true, unchanged: true });
   });
-  it('A-006 archived unposted draft contributes zero customer receivables', async () => {
+  it('A-006 posted-obligation states exclude drafts and orders and preserve archived debt', async () => {
     const [party] = await db().insert(parties).values({ tenantId: TENANT_A, name: 'QA draft party', isCustomer: '1' }).returning();
     await db().insert(businessDocuments).values({ tenantId: TENANT_A,
       userId: '00000000-0000-4000-8000-000000000003', partyId: party.id,
@@ -67,6 +67,28 @@ describe('Batch A real product actions / isolated embedded PostgreSQL', () => {
     expect(customers).toHaveLength(1);
     expect(customers[0].openReceivable).toBe(0);
     expect((await snapshot()).journals).toHaveLength(0);
+    // Independent amounts specify obligations; postedAt is a fixture marker,
+    // not evidence of a real invoice posting/migration workflow.
+    for (const [i, status] of ['draft', 'pending_approval', 'void', 'rejected'].entries()) {
+      await db().insert(businessDocuments).values({ tenantId: TENANT_A,
+        userId: '00000000-0000-4000-8000-000000000003', partyId: party.id,
+        documentType: 'sales_invoice', documentNumber: `QA-EXCLUDED-${i}`, issueDate: DATE,
+        status, postedAt: new Date(), subtotal: '50', total: '50', balanceDue: '50' });
+    }
+    await db().insert(businessDocuments).values([
+      { tenantId: TENANT_A, userId: '00000000-0000-4000-8000-000000000003', partyId: party.id,
+        documentType: 'sales_invoice', documentNumber: 'QA-POSTED-ARCHIVE', issueDate: DATE,
+        status: 'archived', postedAt: new Date(), subtotal: '80', total: '80', balanceDue: '80' },
+      { tenantId: TENANT_A, userId: '00000000-0000-4000-8000-000000000003', partyId: party.id,
+        documentType: 'vendor_bill', documentNumber: 'QA-POSTED-BILL', issueDate: DATE,
+        status: 'archived', postedAt: new Date(), subtotal: '60', total: '60', balanceDue: '60' },
+      { tenantId: TENANT_A, userId: '00000000-0000-4000-8000-000000000003', partyId: party.id,
+        documentType: 'purchase_order', documentNumber: 'QA-ORDER', issueDate: DATE,
+        status: 'archived', postedAt: new Date(), subtotal: '200', total: '200', balanceDue: '200' },
+    ]);
+    const after = await listParties({ kind: 'customer' });
+    expect(after[0].openReceivable).toBe(80);
+    expect(after[0].openPayable).toBe(60);
   });
   it('A-007 generated sale/reversal sequences reconcile Reports after each command', async () => {
     type Model = { sales: Array<{ cents: number; reversed: boolean }> };

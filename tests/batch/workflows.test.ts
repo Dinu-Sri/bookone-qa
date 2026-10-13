@@ -8,10 +8,27 @@ function requiredChecks(job: any) {
       (s.run ?? '').trim() === `pnpm ${check}` &&
       (s['continue-on-error'] == null || s['continue-on-error'] === false)));
 }
+
+// Job separation is valid; each mandatory command must remain an unmasked,
+// unconditional step. Do not require an arbitrary single-job layout.
+function mandatoryCommandsPresent(jobs: any) {
+  return ['lint', 'typecheck', 'build', 'test'].every(check =>
+    Object.values(jobs ?? {}).some((job: any) => !job.if &&
+      (job['continue-on-error'] == null || job['continue-on-error'] === false) &&
+      job.steps?.some((s: any) => !s.if && (s.run ?? '').trim() === `pnpm ${check}` &&
+        (s['continue-on-error'] == null || s['continue-on-error'] === false))));
+}
 describe('Batch A current source release workflow contracts', () => {
   it('A-013 mandatory validation genuinely fails on command errors', () => {
     const wf = read('production-check.yml');
-    expect(Object.values(wf.jobs).some(requiredChecks)).toBe(true);
+    const split = { tests: { steps: [{ run: 'pnpm test' }] }, quality: {
+      steps: ['lint', 'typecheck', 'build'].map(c => ({ run: `pnpm ${c}` })) } };
+    expect(mandatoryCommandsPresent(split)).toBe(true);
+    expect(mandatoryCommandsPresent({ tests: split.tests })).toBe(false);
+    expect(mandatoryCommandsPresent({ ...split, quality: { ...split.quality, 'continue-on-error': true } })).toBe(false);
+    expect(mandatoryCommandsPresent({ ...split, tests: { steps: [{ run: 'pnpm test || echo skipped' }] } })).toBe(false);
+    expect(mandatoryCommandsPresent({ ...split, tests: { if: 'false', steps: split.tests.steps } })).toBe(false);
+    expect(mandatoryCommandsPresent(wf.jobs)).toBe(true);
   });
   it('A-014 image publication depends on successful same-workflow required validation', () => {
     const wf = read('docker-web.yml');

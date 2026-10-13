@@ -22,3 +22,7 @@ After all three run-owned sales/reversals, six balanced journals net cash/revenu
 Use one cash-movement calculation based on signed cash/bank journal lines or a correctly signed complete posting model. Retain period/date, tenant, dimension and reversal history. Never simply remove original/reversal pairs globally: an October receipt reversed in November must preserve each month's movement. Internal bank/cash transfers net0; noncash invoices are not receipts; payment/refund journals must be represented. Audit other consumers (transaction amount badges, cashbook summaries, charts/exports).
 
 Required regression: sale/reversal net0 same period; different-period reversal; reversed expense; duplicate/reversal-of-reversal denial; transfer net0; invoice payment/refund completeness; exact decimal amounts; filters and fresh reload. P&L/balance sheet and cash-flow assertions must be independent.
+
+## Retest 2026-10-13 — v2.2.0
+
+Candidate6a48cee passes source cash-flow/model cases and focused live123.45 sale/reversal: journals offset exactly, Reports/Dashboard net cash/income0, history retained. Minimal reproduction corrected. Cross-period/transfer/invoice-payment/custom liquid-account adjacent acceptance remains pending. See [RUN-08](../runs/RUN-20261013-v2-2-0-retest-08.md).

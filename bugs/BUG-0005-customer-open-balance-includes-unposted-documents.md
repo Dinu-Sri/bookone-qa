@@ -18,3 +18,7 @@ At candidate SHA, `apps/web/src/app/actions/parties.ts` listParties balance aggr
 Do not blindly exclude all archived invoices: archiving a **posted** unpaid invoice must not erase its debt or rewrite journals. Define eligible posted financial obligations and distinguish archive visibility from void/reversal. Share the financial rule with AR/AP aging, allocation and customer/vendor detail. The current open-AR query also does not exclude drafts; that is a source-review concern requiring a live draft regression, not a passed/failed test in this run. AP includes purchase_order in the party balance sum; validate ordered commitments separately from posted payables.
 
 Required regression: draft0, archived draft0, posted100, paid0, partial payment remainder, posted return credit sign, void/reversal, archived posted unpaid obligation, vendor order/bill distinction, tenant/dimension scope. Assert agreement with posted subledger/journals, not merely agreement between two equally wrong views.
+
+## Retest 2026-10-13 — v2.2.0
+
+Candidate6a48cee passes A-006 expanded embedded SQL states: archived unposted0, excluded states0, archived posted customer debt80/vendor debt60 retained, purchase order200 excluded from AP. Fix verified at this source boundary; fresh live document/aging workflow remains pending. Not closed. See [RUN-08](../runs/RUN-20261013-v2-2-0-retest-08.md).
