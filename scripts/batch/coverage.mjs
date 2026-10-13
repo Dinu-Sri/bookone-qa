@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { readJSON, validateBatch } from './state.mjs';
+import { runtimeManifest } from '../runtime/manifest.mjs';
 export function validateCoverage() {
   const register=readJSON('batches/coverage.json'), ids=new Set(), manifests={};
   assert.equal(register.version,1); assert.equal(register.acceptance,'not-established');
@@ -17,7 +18,9 @@ export function validateCoverage() {
   }
   const rows=Object.entries(manifests).map(([batch,m])=>({batch,executableSourceCases:m.cases.length,
     lifecycleTasks:register.tasks.filter(t=>t.batch===batch).length,scope:m.scope,acceptance:'not-established'}));
+  const runtime=runtimeManifest();
   return { rows, lifecycleTasks:register.tasks.length, totalExecutable:rows.reduce((n,r)=>n+r.executableSourceCases,0),
+    executablePostgresCases:runtime.lanes.reduce((n,l)=>n+l.expected.length,0),runtimeAcceptance:runtime.productAcceptance,
     pendingPolicies:readJSON(register.policyRegistry).items.filter(x=>x.status!=='approved').length,
     note:'Written source contracts and specified tasks are not passing release coverage; consult immutable candidate runs.' };
 }

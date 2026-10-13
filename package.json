@@ -17,7 +17,7 @@
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
-    "check": "pnpm validate && pnpm test:guard && pnpm test:harness",
+    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs",
     "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
@@ -26,12 +26,19 @@
     "batch:run": "node scripts/batch/run.mjs run",
     "batch:resume": "node scripts/batch/run.mjs resume",
     "batch:export": "node scripts/batch/run.mjs export"
+    ,"matrix:check": "node scripts/matrix.mjs check"
+    ,"matrix:generate": "node scripts/matrix.mjs generate"
+    ,"runtime:prepare": "node scripts/runtime/prepare.mjs"
+    ,"runtime:run": "node scripts/runtime/run.mjs"
+    ,"test:runtime-guard": "node --test tests/infrastructure/runtime-target.test.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",
     "@playwright/test": "1.51.1",
     "@types/node": "22.13.10",
     "drizzle-orm": "0.33.0",
+    "drizzle-kit": "0.24.2",
+    "postgres": "3.4.9",
     "fast-check": "4",
     "react": "19",
     "react-dom": "19",

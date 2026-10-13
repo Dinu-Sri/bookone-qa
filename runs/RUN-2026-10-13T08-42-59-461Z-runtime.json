@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-13T08-42-59-461Z-runtime",
+  "fingerprint": {
+    "productSha": "993664b433cbcdba298bf6948813f0331d588a9e",
+    "qaSha": "37683e7c78e74240500ad50cd3f22c5537e44df3",
+    "qaDirty": false,
+    "node": "v22.23.3",
+    "qaContentHash": "08ec5112b1a570850258d163712ba706a7dd899b24ac64faf3050c4f516a2606",
+    "preparationHash": "4a2c0082d27132242c130751d7b0645b78f254b2dbd01b47f35c7856596abaac",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "results": [
+    {
+      "lane": "postgres-rls",
+      "boundary": "real-PostgreSQL-non-owner-product-helper",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "failed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {
+        "RT-002": {
+          "expectedOwnRows": 3,
+          "observedRows": 0
+        },
+        "RT-004": {
+          "tenantACount": 0,
+          "afterFailureCount": 0,
+          "tenantBCount": 0,
+          "expectedACount": 1,
+          "expectedAfterFailureCount": 0,
+          "expectedBCount": 1
+        }
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "passed"
+        },
+        {
+          "id": "B-102",
+          "status": "passed"
+        },
+        {
+          "id": "B-103",
+          "status": "passed"
+        },
+        {
+          "id": "E-115",
+          "status": "passed"
+        },
+        {
+          "id": "E-116",
+          "status": "passed"
+        },
+        {
+          "id": "E-117",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "reversal-concurrency",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "passed"
+        },
+        {
+          "id": "RT-006",
+          "status": "failed"
+        },
+        {
+          "id": "RT-007",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {
+        "RT-006": {
+          "acceptedRequests": 2,
+          "reversalCount": 2,
+          "expectedAccepted": 1,
+          "expectedReversals": 1
+        }
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    }
+  ],
+  "productAcceptance": "not-established",
+  "schemaPreparation": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 41,
+    "migrationsExpected": 41
+  },
+  "missing": [
+    "credential-login",
+    "Next-server-HTTP",
+    "deployed-browser",
+    "full-upgrade",
+    "recovery",
+    "object-storage",
+    "non-owner-concurrent-reversal",
+    "broader-races-and-faults"
+  ]
+}

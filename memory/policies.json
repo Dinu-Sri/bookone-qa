@@ -1,13 +1,75 @@
 {
   "version": 1,
   "items": [
-    {"id":"POL-01","status":"unresolved","topic":"First-launch business/entity/module scope","blocks":"Which lifecycle batches must gate launch","source":"owner decision pending; all batch specifications retained"},
-    {"id":"POL-02","status":"unresolved","topic":"Currency precision, rounding stage, discount allocation and inclusive/exclusive tax","blocks":"Tax/discount boundary acceptance","source":"docs/CORE_RULES.md; synthetic arithmetic fixtures are not tax-law approval"},
-    {"id":"POL-03","status":"unresolved","topic":"Inventory costing, negative stock, fractional units and backdating","blocks":"C-111/C-112 valuation acceptance","source":"docs/CORE_RULES.md"},
-    {"id":"POL-04","status":"unresolved","topic":"Rental interval/timezone/padding and authorised overlap overrides","blocks":"Rental real-calendar edge acceptance","source":"current source is inclusive calendar dates with ceil(hours/24) padding; owner policy not yet approved"},
-    {"id":"POL-05","status":"unresolved","topic":"Rental damage, loss, late fees, deposit application/refund/forfeiture","blocks":"D money/return exception acceptance","source":"docs/CORE_RULES.md"},
-    {"id":"POL-06","status":"unresolved","topic":"Batch payment atomicity, overpayment, credits and idempotency policy","blocks":"B-105/B-115 and retry semantics","source":"multi-invoice wrapper currently loops individual allocations; do not infer partial success is approved"},
-    {"id":"POL-07","status":"unresolved","topic":"Commercial versus manual AR/AP and book-domain reconciliation bridges","blocks":"Subledger acceptance when manual control journals exist","source":"docs/CORE_RULES.md"},
-    {"id":"POL-08","status":"unresolved","topic":"Recovery RPO/RTO and supported upgrade/rollback versions","blocks":"F recovery acceptance","source":"owner-managed isolated recovery infrastructure required"}
+    {
+      "id": "POL-01",
+      "status": "unresolved",
+      "topic": "First-launch business/entity/module scope",
+      "blocks": "Which lifecycle batches must gate launch",
+      "source": "owner decision pending; all batch specifications retained"
+    },
+    {
+      "id": "POL-02",
+      "status": "unresolved",
+      "topic": "Currency precision, rounding stage, discount allocation and inclusive/exclusive tax",
+      "blocks": "Tax/discount boundary acceptance",
+      "source": "docs/CORE_RULES.md; synthetic arithmetic fixtures are not tax-law approval"
+    },
+    {
+      "id": "POL-03",
+      "status": "unresolved",
+      "topic": "Inventory costing, negative stock, fractional units and backdating",
+      "blocks": "C-111/C-112 valuation acceptance",
+      "source": "docs/CORE_RULES.md"
+    },
+    {
+      "id": "POL-04",
+      "status": "unresolved",
+      "topic": "Rental interval/timezone/padding and authorised overlap overrides",
+      "blocks": "Rental real-calendar edge acceptance",
+      "source": "current source is inclusive calendar dates with ceil(hours/24) padding; owner policy not yet approved"
+    },
+    {
+      "id": "POL-05",
+      "status": "unresolved",
+      "topic": "Rental damage, loss, late fees, deposit application/refund/forfeiture",
+      "blocks": "D money/return exception acceptance",
+      "source": "docs/CORE_RULES.md"
+    },
+    {
+      "id": "POL-06",
+      "status": "unresolved",
+      "topic": "Batch payment atomicity, overpayment, credits and idempotency policy",
+      "blocks": "B-105/B-115 and retry semantics",
+      "source": "multi-invoice wrapper currently loops individual allocations; do not infer partial success is approved"
+    },
+    {
+      "id": "POL-07",
+      "status": "unresolved",
+      "topic": "Commercial versus manual AR/AP and book-domain reconciliation bridges",
+      "blocks": "Subledger acceptance when manual control journals exist",
+      "source": "docs/CORE_RULES.md"
+    },
+    {
+      "id": "POL-08",
+      "status": "unresolved",
+      "topic": "Recovery RPO/RTO and supported upgrade/rollback versions",
+      "blocks": "F recovery acceptance",
+      "source": "owner-managed isolated recovery infrastructure required"
+    },
+    {
+      "id": "POL-09",
+      "status": "unresolved",
+      "topic": "File role/record-link permissions, supported content formats and intended public link visibility",
+      "blocks": "Real upload/download/asset/archive acceptance beyond mandatory tenant isolation",
+      "source": "Owner requested comprehensive files on2026-10-13; cross-tenant signing is always forbidden; documented Viewer/unattached/public/HEIC policies need confirmation"
+    },
+    {
+      "id": "POL-10",
+      "status": "unresolved",
+      "topic": "Existing record visibility after module disable and settings changes during drafts",
+      "blocks": "Settings transition/history read behaviour acceptance",
+      "source": "History must be preserved; define readable/hidden status and draft configuration snapshot policy before asserting visibility semantics"
+    }
   ]
 }

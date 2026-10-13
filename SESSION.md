@@ -2,6 +2,8 @@
 
 Canonical memory is versioned in this repository. Read the current reviewed branch, not an old local checkout or chat summary. If main has a pending implementation pointer, inspect that PR/head before starting; never silently treat pending work as merged.
 
+Configuration and files: read docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md and run `pnpm matrix:check`. The matrix is a specification, not acceptance. The PostgreSQL lane is `pnpm runtime:prepare` then `pnpm runtime:run`, using only a fresh isolated PostgreSQL16 service; see docs/POSTGRES_RUNTIME.md. Never reuse a live staging DB or substitute owner-connection action passes for non-bypassRLS acceptance.
+
 1. Read AGENTS.md, STATUS.md, memory/programme.json and the relevant batch manifest. `pnpm session:start` prints this entry point and the next actions.
    For B–F read docs/DEEP_BATCH_PROGRAMME.md, batches/coverage.json and memory/policies.json; `pnpm batch:coverage` gives compact implementation/gap counts. Select `--batch B` through F explicitly; resume/export recover the saved batch. Start with B-101–103 full lifecycle adapters, not new calculation-only copies of already covered builders.
 2. Record product/QA SHA, content hash, fixture version, environment and actual role. Verify graph extraction content, not just checkout metadata. No previous pass certifies the new candidate.

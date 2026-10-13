@@ -1,0 +1,11 @@
+# BUG-0013 — Receipt download action signs a foreign tenant key
+
+Provisional P1 security finding; reproduced through actual pinned action with synthetic session and recorded SDK signer. Product993664b. Deployed route reachability, actual signing/cloud storage and real customer exposure are not verified. No actual foreign object was accessed.
+
+Reproduction: F-008 in `tests/batch/uploads.test.ts`. TenantB uploads a synthetic receipt through actual `uploadReceipt`; the isolated command recorder retains a real generated B-key. Switch synthetic identity to TenantA, upload A's own receipt, then request its URL as positive control. Request B's known key. Expected null/deny and one total signer call. Actual non-null result and two calls, including B's key. First outcome: [run](../runs/RUN-20261013-083058211-36c6d1.json). Three adjacent MIME/size/path-command cases passed; impossible bank date F-004 remains a separate known failure.
+
+Source: `apps/web/src/app/actions/upload-receipt.ts`, `getReceiptDownloadUrl` requires tenant context but ignores its tenantId and sends caller-supplied `key` to `GetObjectCommand`/`getSignedUrl`. The SDK fixture intentionally does not authorize on behalf of the action. Current real signer accepts a storage key by design; authorization belongs before it.
+
+Repair requirements: enforce current tenant ownership and authorized record/scope/role before signing, using canonical key parsing and record linkage as applicable. Reject unrelated buckets/namespaces, empty/malformed/traversal-like keys and foreign tenant keys; preserve legitimate own downloads and intended public-link rules. Do not rely on key secrecy or UI hiding. Decide unattached-file and Viewer read policies explicitly. Reuse equivalent checks for product/rental/logo/archive assets where needed, with source-specific expectations.
+
+Acceptance: F-008 red-to-green on a deliberately advanced product pin plus positive controls; real owned/foreign files in isolated storage with supported server/HTTP/browser flows; membership/module/scope changes and signed URL/public access/expiry checks. Existing URLs issued before a fix need an explicit exposure/expiry assessment. Keep this report open until required runtime evidence exists.
