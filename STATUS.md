@@ -1,4 +1,8 @@
-# QA status — 2026-10-12
+# QA status — updated 2026-10-13
+
+## Verified Viewer retest — 2026-10-13
+
+Signed out of the Owner session and signed in as the synthetic Viewer. Build footer: `v2.1.0 · 2b92cf4`. Role-loaded navigation labeled business areas “View only.” Direct `/parties/customers/new` and `/sales/invoices/new` routes each rendered explicit cannot-create messages. No records were created or modified. Customer and invoice lists were readable; the existing synthetic customer `CUS-0001` shows LKR 100, and four prior synthetic invoices are archived. The customer balance was left untouched. See [RUN-20261013-authentication-validity-review-05](runs/RUN-20261013-authentication-validity-review-05.md). This verifies UI behavior only; backend/API enforcement, deployed image digest, schema, and storage remain unverified.
 
 ## Fresh staging baseline after rebuild
 
@@ -10,11 +14,9 @@
 - On the new source pin `65f84c1`, local QA metadata/target guard passed (747 scenarios, 2 guard assertions), independent unit tests passed 94 with 4 optional fixture skips, and browser discovery listed 770 tests in 29 files. These checks did not exercise staging business flows.
 - Live E2E denial navigation initially hit a temporary browser approval rate limit; subsequent authorized checks completed as recorded below.
 
-## Earlier follow-up after reported staging fix — 2026-10-12
+## Superseded Viewer write claims — runs 02–04
 
-- The Viewer role account created a synthetic customer successfully, and then saved a LKR 100 invoice draft as Viewer. Both test records were archived; the invoice remains visible as archived. No invoice was posted and no ledger or stock mutation was attempted.
-- The original invoice error page from the prior run did not appear in this follow-up because the draft save succeeded. The owner-reported fix is therefore **not verified as a fix**; a successful Viewer write was observed instead. Deployed commit/image identity remains unknown.
-- See [RUN-20261012-fresh-staging-01](runs/RUN-20261012-fresh-staging-01.md), [BUG-0003](bugs/BUG-0003-viewer-can-create-customer.md), and [BUG-0004](bugs/BUG-0004-viewer-can-save-invoice-draft.md). The BookOne source graph includes a permission call for document creation but is not verified as the deployed revision.
+The earlier notes claiming Viewer customer/invoice writes were valid have been withdrawn: the actor was not verified before those actions. The created records were archived, but they are not Viewer permission evidence. See [RUN-20261013-authentication-validity-review-05](runs/RUN-20261013-authentication-validity-review-05.md), which verifies a Viewer session and confirms the create routes are denied in the UI.
 
 ## Latest batch — 2026-10-12 Wave 1a (inbuilt E2E denial)
 
@@ -69,24 +71,14 @@ The `QA-261012-A` live staging records are retained for review and require clean
 
 
 
-## Retest after latest staging update — 2026-10-12
+## Superseded follow-up record — 2026-10-12
 
-- The synthetic account remains assigned `Viewer` on `/company/team`. On `/parties/customers/new`, submitting code `QA-VIEW-20261013` and name `QA Viewer Update Retest 20261013` succeeded; that customer appeared in the invoice customer picker and active customer list. This independently repeats BUG-0003.
-- As Viewer, selected that customer, added a synthetic free-text service line at LKR 100, and selected **Save draft**. The app created `INV-20261012-0002` with status `draft` and total LKR 100, independently repeating BUG-0004. No Post action was used.
-- Both newly created records were archived through the UI and success confirmations were observed. They remain archived/recoverable. No journal, stock, payment or posted invoice action was performed. The customer list still shows the earlier test customer `CUS-0001` active with LKR 100 even though its linked test invoice is archived; this was pre-existing at retest start and was left untouched. Its balance meaning requires separate reconciliation; this run does not infer a ledger effect.
-- The deployed commit/image, schema and storage identity remain unavailable. This is repeat exploratory evidence, not acceptance of the new build or a release gate. See [RUN-20261012-viewer-permission-retest-02](runs/RUN-20261012-viewer-permission-retest-02.md).
+The original run record is retained for audit history, but its Viewer attribution is unverified. Do not use its customer/invoice creation steps as evidence of Viewer permissions. The created records were later archived. The verified check is RUN-20261013-authentication-validity-review-05.
 
+## Superseded third retest attribution — 2026-10-12
 
-## Third Viewer retest after another staging update — 2026-10-12
+The records and UI actions described in the original run are historical, but the active actor was not verified. The actions do not establish Viewer write capability. See RUN-20261013-authentication-validity-review-05 for the verified retest.
 
-- The account was still assigned Viewer. A third synthetic customer creation succeeded (`QA-VIEW-20261012-R3`, `QA Viewer Retest Three`) and a LKR 100 service invoice draft was saved as `INV-20261012-0003`. Both records were archived afterward; no invoice was posted.
-- BUG-0003 and BUG-0004 remain reproduced after another owner-reported update. Deployed build/image identity remains unknown, so the behavior cannot be attributed to a verified release.
-- After archiving the draft and customer, the active customer list still shows the earlier test customer at LKR 100 while all listed test invoices are archived. This is an unresolved display/accounting observation; authoritative ledger and subledger state was not checked, so no financial conclusion is drawn.
-- See [RUN-20261012-viewer-permission-retest-03](runs/RUN-20261012-viewer-permission-retest-03.md).
+## Superseded fourth retest attribution — build marker v2.1.0 / 2b92cf4
 
-
-## Fourth Viewer retest — build marker v2.1.0 / 2b92cf4 — 2026-10-13
-
-- Staging UI footer displays `v2.1.0 · 2b92cf4`. The account remains assigned Viewer. As Viewer, created customer `QA-VIEW-20261013-R4` and saved draft invoice `INV-20261013-0004` for LKR 100. Both permission findings remain reproduced on this visible build marker.
-- Archived the new customer and invoice. No invoice was posted. After cleanup, the active customer list still shows pre-existing `CUS-0001` with LKR 100 although its test invoices are archived. Authoritative accounting records were not inspected; reconcile separately.
-- See [RUN-20261013-viewer-permission-retest-04](runs/RUN-20261013-viewer-permission-retest-04.md). The footer marker is not an image digest and does not identify schema/storage.
+The original run's Viewer attribution is unverified. The verified Viewer session on the same visible marker showed direct customer and invoice create routes denied; see RUN-20261013-authentication-validity-review-05.
