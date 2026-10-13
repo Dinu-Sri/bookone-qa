@@ -1,5 +1,15 @@
 # QA status — updated 2026-10-13
 
+## v2.2.0 retest after owner cleanup
+
+Latest product pin6a48cee matches the visible staging stamp `v2.2.0 · 6a48cee`. [RUN-08](runs/RUN-20261013-v2-2-0-retest-08.md) preserves first quick13 pass/2 fail and expanded broad14 pass/1 fail. A-013 now correctly accepts unmasked required commands across split jobs; A-014 remains red.94 retained units passed/4 optional fixture skips; metadata/2 guards/5 harness assertions passed.
+
+Live Owner cash sale123.45 posted Dr1000/Cr4000 and was reversed with opposite lines; both balanced journals retained, cash/income net0 in Reports and Dashboard. Fresh Viewer could read the existing sale with no Reverse control. Default October label corrected. Source/action fixes for BUG-0005/0006/0007/0009 pass tested scope; these bugs are awaiting adjacent/runtime acceptance, not universally closed.
+
+BUG-0008 remains partial: same-SHA Tests succeeded and image published while the quality job failed at Lint and skipped Type check/Build. [Current coding-agent handoff](handoffs/HANDOFF-20261013-v2-2-0-next.md) details repair and failure-propagation acceptance. Preserve this finding; B–F being planned does not make their absence a new product defect.
+
+Owner reports old records cleaned; October baseline observed zero. New prefix `QA-261013-V220` leaves two offsetting journals/transactions as intentional history. Do not reuse historical fixture IDs or repeat a reset. Image digest/schema/runtime-role/storage identity, real-server Viewer denial, RLS/dimensions/concurrency/audit/recovery and larger document journeys remain unverified. Next: quality gate repair plus Batch A runtime layers, then Batch B service/digital journeys; isolated Batch B development may proceed meanwhile. No release acceptance.
+
 ## Batch strategy implemented — 2026-10-13
 
 Owner accepted automated risk-based batches and durable agent memory. SESSION.md, memory/programme.json, the ADR and docs/BATCH_TESTING.md are now the startup/extension protocol. Batch A has15 mapped executable source/embedded SQL/render/workflow checks and automatic private checkpoints, seed replay, immutable sanitized exports and fingerprint-checked interruption resume. B–F and real-runtime acceptance remain planned.
@@ -74,6 +84,8 @@ The earlier notes claiming Viewer customer/invoice writes were valid have been w
 - The manual run did not cover period locks, tax/VAT, payment allocation, reversal/idempotency, concurrent posting, audit history or subledger reconciliation. Its passing journal and stock assertions do not establish those controls.
 
 ## Next actions
+
+The latest RUN-08/handoff above supersedes the older ordered list below: first four business groups have tested fixes at6a48cee; their remaining acceptance layers are specified in RUN-08. BUG-0008 still needs repair. Older next actions and cleanup statements are historical evidence, not instructions to recreate records removed by the owner.
 
 1. Coding agent: address BUG-0009 server permission/dimension boundary, then BUG-0006 signed cash flow and BUG-0005 posted-obligation balances; follow the handoff's regression requirements.
 2. Repair mandatory CI checks and same-SHA publication gate (BUG-0008); fix resolved period labels (BUG-0007).
