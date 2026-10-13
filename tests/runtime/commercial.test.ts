@@ -7,6 +7,7 @@ import { admin, seed, resetFixture, closeFixture } from './support/fixture';
 import * as schema from '@product/schema/index';
 import { eq } from 'drizzle-orm';
 import { TENANT_A, OWNER, VIEWER, SALES, setActor } from './support/session';
+import { observe } from './support/observations';
 beforeEach(resetFixture);
 afterAll(closeFixture);
 const DATE='2026-10-13';
@@ -27,6 +28,7 @@ async function ledger(expected:Record<string,number>,journalCount:number) {
   const journals=await admin`select j.id,sum(case when l.side='debit' then l.amount else -l.amount end)::text as net,count(l.id)::int as lines from journal_entries j join journal_lines l on l.journal_entry_id=j.id group by j.id`;
   expect(journals).toHaveLength(journalCount);for(const j of journals){expect(Number(j.net)).toBe(0);expect(j.lines).toBe(2);}
   const report=await getReports('2026-10');
+  if(expected['4100']!==undefined)observe('B-104',{reportedIncomeCents:Math.round(report.income.netIncome*100),expectedIncomeCents:-((expected['4000']??0)+(expected['4100']??0)),reportedCashCents:Math.round(report.cashFlow.netCashFlow*100),expectedCashCents:expected['1000']??0});
   expect(Math.round(report.income.netIncome*100)).toBe(-((expected['4000']??0)+(expected['4100']??0)));
   expect(Math.round(report.cashFlow.netCashFlow*100)).toBe(expected['1000']??0);
   await noStock();

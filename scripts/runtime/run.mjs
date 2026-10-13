@@ -40,7 +40,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   const outcome=laneOutcome(lane.expected,{cases:observed},result.status);
   const cases=outcome.cases;
   const unexpected=observed.filter(t=>!lane.expected.includes(t.id)).length;
-  const observationKeys={'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','journalCount','netCashCents','netIncomeCents','expectedAccepted','expectedReversals','expectedJournals','expectedNetCashCents','expectedNetIncomeCents']};
+  const observationKeys={'B-104':['reportedIncomeCents','expectedIncomeCents','reportedCashCents','expectedCashCents'],'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','journalCount','netCashCents','netIncomeCents','expectedAccepted','expectedReversals','expectedJournals','expectedNetCashCents','expectedNetIncomeCents']};
   const rawObservations=existsSync(observationFile)?JSON.parse(readFileSync(observationFile,'utf8')):{};
   const observations={};
   for(const [id,keys] of Object.entries(observationKeys))if(lane.expected.includes(id) && rawObservations[id]) {
