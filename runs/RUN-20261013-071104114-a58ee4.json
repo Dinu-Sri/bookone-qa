@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261013-071104114-a58ee4",
+  "batch": "B",
+  "fingerprint": {
+    "productSha": "993664b433cbcdba298bf6948813f0331d588a9e",
+    "qaSha": "7480fe54b2b9cacd4496832d8565bbdc0bee480d",
+    "qaContentHash": "43d88a547aeaa0f4ebd5f60e910c0c94128ccc35a7356250f5420ba2f199c9cd",
+    "batchHash": "49b7eb86e9178e74ec50de467e29f89ff4d434e8105a7ed1e1fa0e6420e3bca9",
+    "nodeVersion": "v20.19.0",
+    "fixtureVersion": "embedded-pg-v2",
+    "environment": "embedded-postgresql-contract",
+    "authBoundary": "synthetic-session-real-product-permission-assertion",
+    "migrationsAndRuntimeRls": "not-exercised",
+    "qaDirty": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "startedAt": "2026-10-13T07:11:04.116Z",
+  "finishedAt": "2026-10-13T07:11:37.348Z",
+  "status": "completed",
+  "sourceGate": "failed",
+  "releaseAcceptance": "not-established",
+  "missingAcceptanceLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "cases": [
+    {
+      "id": "B-001",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-002",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-003",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-004",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-005",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-006",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-007",
+      "status": "failed",
+      "rules": [
+        "BR-SEC-02",
+        "BR-ACC-03"
+      ],
+      "bugs": [
+        "BUG-0010"
+      ]
+    },
+    {
+      "id": "B-008",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-01",
+        "BR-ACC-03"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-009",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-010",
+      "status": "passed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "B-011",
+      "status": "failed",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [
+        "BUG-0011"
+      ]
+    },
+    {
+      "id": "B-012",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "bugs": []
+    }
+  ],
+  "totals": {
+    "passed": 10,
+    "failed": 2,
+    "flaky": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "not-run": 0
+  }
+}

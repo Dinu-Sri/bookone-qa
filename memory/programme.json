@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "B",
-  "implementationStatus": "A-F-source-foundations-known-product-failures-runtime-acceptance-open",
+  "implementationStatus": "A-source-green-B-F-three-findings-runtime-lifecycle-acceptance-open",
   "lastVerifiedRelease": null,
-  "lastSourceContractRun": "runs/RUN-20261013-063516233-1ab6cc.json",
-  "lastRetestRecord": "runs/RUN-20261013-deep-batches-09.md",
+  "lastSourceContractRun": "runs/RUN-20261013-071039774-f569f0.json",
+  "lastRetestRecord": "runs/RUN-20261013-v2-2-1-retest-10.md",
   "lastCleanSourceCi": {
     "qaSha": "cbda523fdd57df1c600e74a2541d751b53df2c09",
     "qaValidationRun": 38358818493,
@@ -18,8 +18,8 @@
     "deepResult": "B10/2-C8/0-D8/0-E3/0-F3/1",
     "scope": "quick-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
-  "observedStagingStamp": "v2.2.0 · 6a48cee",
+  "candidateProductSha": "993664b433cbcdba298bf6948813f0331d588a9e",
+  "observedStagingStamp": "v2.2.1 · 993664b",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -32,11 +32,11 @@
     "BUG-0012"
   ],
   "nextActions": [
-    "Coding agent repairs required quality-publication gate and reviews new allocation-boundary permission/tender and calendar findings; no deployed exposure is yet proven.",
-    "QA implements B-101–103 full quotation/draft/commercial posting/payment adapters and independent state model on isolated full-schema PostgreSQL.",
-    "Complete A runtime-role/RLS/dimension/denial/race/audit layers; preserve current source failures until fixed candidate reproductions and adjacent acceptance pass.",
-    "Follow 83 lifecycle task specifications for B–F; source-foundation passes cannot complete those tasks.",
-    "Resolve owner first-launch scope and eight policy decisions in memory/policies.json; preserve all business-type plans meanwhile."
+    "Coding agent fixes BUG-0010 allocation-boundary permission, BUG-0011 tender eligibility and BUG-0012 real calendar validation; deployed exposure/downstream corruption remain unverified.",
+    "QA implements B-101–103 full commercial lifecycle plus A runtime permissions/RLS/dimensions/concurrent reversal in isolated PostgreSQL CI services; local DB tools unavailable.",
+    "Quality-publication configuration passes at993664b; complete live negative gate/manual path and trusted same-SHA external QA promotion evidence before release certification.",
+    "Compare actual next product diff and deliberately advance pin; rerun A–F and affected adjacent cases with aligned dependency/fixture identities.",
+    "Preserve 83 lifecycle tasks and resolve owner launch scope and eight pending policies."
   ],
   "missingAcceptance": [
     "runtime-RLS",
@@ -54,12 +54,12 @@
   "coverageRegister": "batches/coverage.json",
   "policyRegistry": "memory/policies.json",
   "lastBatchRuns": {
-    "A": "runs/RUN-20261013-063516233-1ab6cc.json",
-    "B": "runs/RUN-20261013-064138147-a682f5.json",
-    "C": "runs/RUN-20261013-063822994-682dde.json",
-    "D": "runs/RUN-20261013-063836271-3c76af.json",
-    "E": "runs/RUN-20261013-063851205-f31095.json",
-    "F": "runs/RUN-20261013-063904605-4132f6.json"
+    "A": "runs/RUN-20261013-071039774-f569f0.json",
+    "B": "runs/RUN-20261013-071104114-a58ee4.json",
+    "C": "runs/RUN-20261013-071141487-b34f2c.json",
+    "D": "runs/RUN-20261013-071148705-736146.json",
+    "E": "runs/RUN-20261013-071154373-7366e1.json",
+    "F": "runs/RUN-20261013-071159481-e13519.json"
   },
   "workQueue": [
     "B-101",

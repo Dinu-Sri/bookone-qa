@@ -6,7 +6,7 @@ Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/B
 
 - Start new sessions with [SESSION.md](SESSION.md) and `pnpm session:start`. The accepted batch strategy, current work and next actions live in [memory/programme.json](memory/programme.json), [batch guide](docs/BATCH_TESTING.md) and [roadmap](batches/roadmap.json).
 - Batch A now implements15 independent source/embedded SQL/render/workflow checks, including generated sale/reversal models and the five known bug groups. Run `pnpm batch:run --seed 261013 --profile quick`; a nonzero exit is expected on the current defective product candidate. It is a source regression signal, not release certification.
-- Current source pin is6a48cee55689746462aa668cdd65ad9f3cfb876b. B–F add35 executable source cases and83 specified lifecycle tasks; see the deep programme below and RUN-09. All runtime/lifecycle release acceptance remains open. The older snapshot bullets below are historical baseline facts; they do not certify this candidate.
+- Current source pin is993664b433cbcdba298bf6948813f0331d588a9e. [RUN-10](runs/RUN-20261013-v2-2-1-retest-10.md) verifies A15/0 and47 pass/3 fail overall; QA Zod is aligned to4.4.3. B–F have35 executable source cases and83 specified lifecycle tasks. All runtime/lifecycle release acceptance remains open. Older snapshot bullets below are historical facts.
 
 - Historical bootstrap source pin was65f84c151f7332efa196ed837ad179ac4818178b; current pin is declared above. RUN-08 observed v2.2.0/6a48cee staging stamp; image digest/schema/storage acceptance remains unresolved.
 - 747 inherited scenario definitions; 30 source reviews complete and 717 pending. Catalog mapping is not business acceptance.
