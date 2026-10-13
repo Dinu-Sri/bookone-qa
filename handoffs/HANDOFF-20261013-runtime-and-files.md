@@ -1,0 +1,15 @@
+# Coding-agent handoff: deep PostgreSQL and receipt findings
+
+Read BookOne AGENTS.md/QA_CHANGE_CONTRACT; preserve finance/history, create a product CHG record and required version bump. Baseline993664b/v2.2.1; QA PR9 implements the deeper evidence described in [RUN-11](../runs/RUN-20261013-runtime-and-files-11.md). The earlier request for BUG-0010/11/12 remains active; this adds three findings. QA has not changed product code, deployed infrastructure, or staging records.
+
+| Priority | Finding | Reproduction and requested repair |
+| --- | --- | --- |
+| P1 | [BUG-0015](../bugs/BUG-0015-concurrent-double-reversal.md) double reversal | Actual PostgreSQL concurrent actions accept two reversals of123.45; three journals and cash/income-123.45 instead of0. Lock/claim original inside the same transaction and enforce database uniqueness; preserve losing-request atomicity and audit/history. RT-006 remains red. |
+| Provisional P1 | [BUG-0013](../bugs/BUG-0013-foreign-receipt-signing.md) foreign receipt signer | Actual action forwards a known synthetic TenantB receipt key to signer while identity is TenantA; own-file positive control passes. Enforce canonical tenant/record/scope authorization before signing and review adjacent asset paths. Mocked signer proof only; real storage/deployed exposure unverified. F-008 remains red. |
+| Provisional P1 | [BUG-0014](../bugs/BUG-0014-tenant-context-lifetime.md) tenant helper | PostgreSQL NOBYPASSRLS role gets0 own rows through product helper where3 are expected; direct transaction control sees3 and denies foreign rows/writes. Transaction-local setting expires before callback and pool connection is unbound. Correct complete request/action/permission transaction binding; verify actual deployed runtime role. RT-002/004 remain red. |
+
+All41 current SQL files applied after the full current Drizzle schema; missing FK/duplicate unique-key negative checks pass. B-101–103 actual quote/order/draft, typed invoice posting, two-receipt journeys and E-115–117 persisted permission/configuration/override checks pass at **owner DB connection** depth. This separates business logic from the failing restricted-role helper; it does not approve deployment or establish credential/HTTP/browser acceptance.
+
+For each fix document actual changed symbols, routes/settings/migrations/dependencies, before/after, intended runtime DB role, compatibility and validation. QA will independently compare the new diff, deliberately advance its pin, run A–F plus PostgreSQL and changed/adjacent config/file cases, then representative freshly verified actor/browser/storage checks. Current quality-publication CI success cannot certify these business/security findings. Do not weaken tests, drop SQL/security constraints or grant BYPASSRLS to make them pass.
+
+Follow-up order: fix once-only financial posting and file ownership promptly; resolve the tenant transaction/runtime role boundary across auth/actions; continue physical/rental persisted workflows and broader configuration/file cases. Pending product policies remain in QA memory; they do not waive tenant protection or single-effect financial requirements.

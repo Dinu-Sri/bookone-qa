@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { runtimeTarget } from './target.mjs';
 import { laneOutcome } from '../batch/state.mjs';
+import { runtimeManifest } from './manifest.mjs';
 runtimeTarget(process.env.QA_RUNTIME_ADMIN_URL, process.env.QA_RUNTIME_ISOLATION);
 const preparation = JSON.parse(readFileSync('.local/runtime/preparation.json', 'utf8'));
 if (!preparation.complete) throw new Error('Complete schema preparation required');
@@ -10,11 +11,7 @@ const productSha = JSON.parse(readFileSync('product-ref.json', 'utf8')).commit;
 if (preparation.productSha !== productSha) throw new Error('Prepared database candidate mismatch');
 const verify = spawnSync(process.execPath, ['scripts/verify-product.mjs'], { encoding: 'utf8' });
 if (verify.status !== 0) throw new Error('Pinned source verification failed');
-const lanes = [
-  { name: 'postgres-rls', file: 'tests/runtime/tenant-context.test.ts', expected: ['RT-001','RT-002','RT-003','RT-004'], credential: 'runtime', boundary: 'real-PostgreSQL-non-owner-product-helper' },
-  { name: 'commercial-lifecycle', file: 'tests/runtime/commercial.test.ts', expected: ['B-101','B-102','B-103','E-115','E-116','E-117','RT-008'], credential: 'admin', boundary: 'real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading' },
-  { name: 'reversal-concurrency', file: 'tests/runtime/reversal.test.ts', expected: ['RT-005','RT-006','RT-007'], credential: 'admin', boundary: 'real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay' },
-];
+const manifest=runtimeManifest(), lanes=manifest.lanes;
 const selected = process.argv[2] ?? 'all';
 if (selected !== 'all' && !lanes.some(l => l.name === selected)) throw new Error('Unknown runtime lane');
 const runId = 'RUN-' + new Date().toISOString().replace(/[:.]/g, '-') + '-runtime';
@@ -25,11 +22,12 @@ const contentHash = () => createHash('sha256').update(git('ls-files','--cached',
   .filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p) && !p.startsWith('runs/')).sort()
   .map(p=>p+'\0'+createHash('sha256').update(readFileSync(p)).digest('hex')).join('\n')).digest('hex');
 const qaContentHash=contentHash();
+const assertCandidate=()=>{if(contentHash()!==qaContentHash || git('-C','work/product','rev-parse','HEAD')!==productSha || git('-C','work/product','status','--porcelain','--untracked-files=no'))throw new Error('Candidate or QA content changed during runtime run');};
 const fingerprint = { productSha, qaSha: git('rev-parse','HEAD'), qaDirty: Boolean(git('status','--porcelain')), node: process.version,
   qaContentHash,
   preparationHash: createHash('sha256').update(JSON.stringify(preparation)).digest('hex'), fixtureVersion: 'runtime-v1', environment: 'ephemeral-loopback-PostgreSQL16' };
 for (const lane of lanes.filter(l => selected === 'all' || l.name === selected)) {
-  if(contentHash()!==qaContentHash)throw new Error('QA content changed during runtime run');
+  assertCandidate();
   const outputFile = `.local/runtime/${runId}/${lane.name}.json`;
   const observationFile=`.local/runtime/${runId}/${lane.name}-observations.json`;
   const url = lane.credential === 'admin' ? process.env.QA_RUNTIME_ADMIN_URL : JSON.parse(readFileSync('.local/runtime/connection.json','utf8')).url;
@@ -52,12 +50,14 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
     observations,
     status: outcome.status, evidenceComplete:outcome.evidenceComplete, infrastructureFailure:outcome.infrastructureFailure, unexpected });
   writeFileSync(`.local/runtime/${runId}/checkpoint.json`,JSON.stringify({fingerprint,results},null,2));
+  assertCandidate();
 }
-if(contentHash()!==qaContentHash)throw new Error('QA content changed during runtime run');
+assertCandidate();
 const out = { schemaVersion: 1, runId, fingerprint, results, productAcceptance: 'not-established',
   schemaPreparation:{postgresVersionNumber:preparation.postgresVersionNumber,migrationsApplied:preparation.migrations.filter(m=>m.result==='applied').length,migrationsExpected:preparation.migrations.length},
   missing: ['credential-login','Next-server-HTTP','deployed-browser','full-upgrade','recovery','object-storage','non-owner-concurrent-reversal','broader-races-and-faults'] };
 mkdirSync('runs', { recursive: true });
 writeFileSync(`runs/${runId}.json`, JSON.stringify(out,null,2) + '\n', { flag: 'wx' });
+writeFileSync('.local/runtime/latest-summary.json',JSON.stringify(out,null,2)+'\n');
 console.log(JSON.stringify(out,null,2));
 if (results.some(r => r.status !== 'passed')) process.exitCode = 1;

@@ -1,5 +1,7 @@
 # BUG-0014 — Product tenant helper does not bind the callback to tenant context
 
+Follow-up numeric evidence: [runtime3](../runs/RUN-2026-10-13T08-47-49-891Z-runtime.json) records0 own account rows versus3 expected through the helper. A and B callbacks each expose0 tenant IDs versus1 expected; after the thrown callback0 IDs are exposed as expected. Thus the switch case fails on missing own visibility, not an observed cross-tenant leak. Independent transaction positive controls still pass.
+
 Provisional P1 runtime compatibility/security-boundary finding. Actual PostgreSQL16, full current schema plus all41 SQL files, product993664b, non-owner NOBYPASSRLS role and actual product postgres-js pool/helpers. The executed helper assertions fail; deployed DB credentials/RLS enforcement and actual leakage are unverified. This is not a claim that staging leaked customer data.
 
 First evidence: [runtime summary](../runs/RUN-2026-10-13T08-28-48-128Z-runtime.json), [CI1](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38369449028), QA implementatione0382ae3 / tested PR merge01b129d7. RT-001 own-tenant transaction/RLS positive control and RT-003 separate-connection own/foreign read/write checks pass. RT-002 product `withTenantContext` callback and RT-004 tenant switching/exception cleanup fail. Exact numeric diagnostics are added in the follow-up run; do not infer returned row values from status-only first evidence.

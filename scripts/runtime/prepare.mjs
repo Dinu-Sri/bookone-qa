@@ -1,10 +1,11 @@
-import { readFileSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, mkdirSync, writeFileSync, existsSync, unlinkSync } from 'node:fs';
 import { createHash, randomBytes } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import postgres from 'postgres';
 import { runtimeTarget } from './target.mjs';
 runtimeTarget(process.env.QA_RUNTIME_ADMIN_URL, process.env.QA_RUNTIME_ISOLATION);
 mkdirSync('.local/runtime', { recursive: true });
+if(existsSync('.local/runtime/latest-summary.json'))unlinkSync('.local/runtime/latest-summary.json'); // Cache copy only; immutable runs remain.
 const verify = spawnSync(process.execPath, ['scripts/verify-product.mjs'], { encoding: 'utf8' });
 if (verify.status !== 0) throw new Error('Pinned source verification failed');
 const sql = postgres(process.env.QA_RUNTIME_ADMIN_URL, { max: 1 });

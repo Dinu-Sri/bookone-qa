@@ -10,40 +10,52 @@
       "id": "B-101",
       "batch": "B",
       "slug": "quote-order-draft",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Quote/order/draft conversions retain lines, prices and source links without revenue, AR, cash or stock journals.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "B-102",
       "batch": "B",
       "slug": "post-invoice",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Service and digital invoice 3x200 posts Dr1300/Cr4000 600; stock/COGS unchanged; reload and print retain600.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "B-103",
       "batch": "B",
       "slug": "allocation-journey",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Receive250 then350 against600: AR350 then0, cash600, revenue600, two linked allocations and audits.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded PostgreSQL action layer; implement intended non-owner action/login/HTTP/browser/print and broader settings coverage before full acceptance.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "B-104",
@@ -940,7 +952,9 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes.",
+      "partialImplementation": "batches/runtime.json; current full schema/41 SQL files, targeted role/RLS/helper/constraint and concurrent reversal probes. Signup/upgrade/full runtime and broader races remain unimplemented or failing.",
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "F-108",
@@ -1005,7 +1019,9 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes.",
+      "partialImplementation": "batches/runtime.json; current full schema/41 SQL files, targeted role/RLS/helper/constraint and concurrent reversal probes. Signup/upgrade/full runtime and broader races remain unimplemented or failing.",
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "F-113",
@@ -1018,7 +1034,9 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes.",
+      "partialImplementation": "batches/runtime.json; current full schema/41 SQL files, targeted role/RLS/helper/constraint and concurrent reversal probes. Signup/upgrade/full runtime and broader races remain unimplemented or failing.",
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json"
     },
     {
       "id": "F-114",
@@ -1084,6 +1102,137 @@
         "browser"
       ],
       "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-115",
+      "batch": "E",
+      "slug": "persisted-role-controls",
+      "status": "implemented-awaiting-evidence",
+      "expected": "Persisted Owner/Sales can create invoice; Viewer denies same actual command with zero financial/doc/audit effects.",
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "implementedLayers": [
+        "persisted-permission-load-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json",
+      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+    },
+    {
+      "id": "E-116",
+      "batch": "E",
+      "slug": "persisted-module-entity-ceilings",
+      "status": "implemented-awaiting-evidence",
+      "expected": "Actual loaded Owner/Sales permissions respect enabled module and company/sole-prop/personal/pending ceilings.",
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "implementedLayers": [
+        "persisted-permission-load-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json",
+      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+    },
+    {
+      "id": "E-117",
+      "batch": "E",
+      "slug": "persisted-override-ceilings",
+      "status": "implemented-awaiting-evidence",
+      "expected": "Viewer allow override cannot elevate write; Owner deny restricts permission; Sales allow cannot enable a disabled module.",
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "implementedLayers": [
+        "persisted-permission-load-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-13T08-47-49-891Z-runtime.json",
+      "next": "Expand to remaining jobs/custom/team/scope/revocation and actual login/HTTP/browser actions; preserve current positive/negative checks."
+    },
+    {
+      "id": "F-119",
+      "batch": "F",
+      "slug": "receipt-storage-roundtrip",
+      "status": "specified-not-implemented",
+      "expected": "Valid synthetic supported receipt retains tenant/actor/link/bytes metadata and authorised own download; foreign key denied before signing.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
+    },
+    {
+      "id": "F-120",
+      "batch": "F",
+      "slug": "product-image-upload",
+      "status": "specified-not-implemented",
+      "expected": "Supported product image transforms/render/reload correctly; invalid MIME/bytes/dimensions/size/path/foreign link denied with no corrupt old image or orphan object.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
+    },
+    {
+      "id": "F-121",
+      "batch": "F",
+      "slug": "rental-photos-upload",
+      "status": "specified-not-implemented",
+      "expected": "Dispatch/return photo attaches only to authorised tenant/event/scope; replacement/failure/retry preserves original facts and object consistency.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
+    },
+    {
+      "id": "F-122",
+      "batch": "F",
+      "slug": "assets-and-public-links",
+      "status": "specified-not-implemented",
+      "expected": "Logo/print assets and intended public links respect tenant/record ownership, expiry and approved visibility after role/module changes.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
+    },
+    {
+      "id": "F-123",
+      "batch": "F",
+      "slug": "upload-failure-atomicity",
+      "status": "specified-not-implemented",
+      "expected": "Storage or DB failure/cancel/retry/double-submit leaves one intended attachment or no accepted mutation and reconciles orphan cleanup in isolation.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
+    },
+    {
+      "id": "F-124",
+      "batch": "F",
+      "slug": "file-content-and-export-safety",
+      "status": "specified-not-implemented",
+      "expected": "Harmless wrong-magic/truncated formats, unsupported/empty/oversized files, filename paths and inert HTML/formula text cannot bypass validation or execute through rendering/exports.",
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Discover actual source/route, bind supported format and approved role policy, implement isolated real storage and server/browser outcomes; F005–008 are recorded SDK source checks only."
     }
-  ]
+  ],
+  "configurationMatrix": "batches/configuration-matrix.json",
+  "runtimeManifest": "batches/runtime.json"
 }
