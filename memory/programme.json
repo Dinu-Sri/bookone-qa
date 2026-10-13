@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "programme": "BookOne risk-based batch QA",
+  "strategyDecision": "decisions/ADR-20261013-batch-testing.md",
+  "sessionProtocol": "SESSION.md",
+  "implementationGuide": "docs/BATCH_TESTING.md",
+  "currentBatch": "A",
+  "implementationStatus": "source-runner-validated-product-contracts-red",
+  "lastVerifiedRelease": null,
+  "lastSourceContractRun": null,
+  "knownBugGroups": ["BUG-0005", "BUG-0006", "BUG-0007", "BUG-0008", "BUG-0009"],
+  "nextActions": [
+    "Keep Batch A candidate assertions red until the five product bug groups are fixed; export each new run.",
+    "Coding agent fixes reversal authorization, cash-flow signs, posted obligations, period labels and release checks.",
+    "Retest exact fixed candidate; develop real-PostgreSQL/runtime-role, browser, audit and concurrent-posting lanes.",
+    "Owner chooses first-launch business scope and resolves tax/rounding/return/rental policies.",
+    "Build B/C/D state models, then mixed E and resilience F; review inherited assertions incrementally."
+  ],
+  "missingAcceptance": ["runtime-RLS", "real-login-permission-load", "migration-constraints", "dimension-denials", "concurrency", "audit-content", "verified-staging-candidate", "recovery"],
+  "credentialsPolicy": "local-ignored-or-authorized-secret-store; no-public-credentials",
+  "rawEvidencePolicy": "private .local; only explicit allowlisted immutable summaries in runs/"
+}

@@ -1,0 +1,52 @@
+name: Candidate Batch A contracts
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: Reproducible 32-bit generation seed
+        default: '261013'
+        required: true
+  pull_request:
+    paths:
+      - batches/**
+      - tests/batch/**
+      - scripts/batch/**
+      - vitest.batch.config.ts
+      - product-ref.json
+      - pnpm-lock.yaml
+      - .github/workflows/batch-a.yml
+permissions:
+  contents: read
+jobs:
+  candidate-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm product:prepare
+      - name: Run candidate contracts (known defects must stay red)
+        env:
+          QA_SEED_INPUT: ${{ inputs.seed || '261013' }}
+        run: pnpm batch:run --seed "$QA_SEED_INPUT" --profile quick
+      - name: Publish scope statement
+        if: always()
+        run: echo 'Source/embedded SQL contracts only. Real login/RLS/migrations/browser/recovery acceptance and product promotion wiring are not established.'
+      - name: Keep sanitized outcome summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-a-sanitized-summary
+          path: .local/batches/*/summary.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      # Only allowlisted summaries; no state files, logs, credentials or raw artifacts.

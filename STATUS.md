@@ -1,5 +1,13 @@
 # QA status — updated 2026-10-13
 
+## Batch strategy implemented — 2026-10-13
+
+Owner accepted automated risk-based batches and durable agent memory. SESSION.md, memory/programme.json, the ADR and docs/BATCH_TESTING.md are now the startup/extension protocol. Batch A has15 mapped executable source/embedded SQL/render/workflow checks and automatic private checkpoints, seed replay, immutable sanitized exports and fingerprint-checked interruption resume. B–F and real-runtime acceptance remain planned.
+
+First full development run:7 passed/8 failed, zero skips/blocks; failures map to the five known BUG-0005–0009 groups. Generated cash-flow model shrank to a one-cent sale followed by reversal. Metadata,2 target guards and5 runner-integrity tests passed. Retained units on deliberately advanced pin2b92cf4:94 passed/4 optional fixture skips. These are independent scope statements; no release acceptance.
+
+Read [batch coding-agent handoff](handoffs/HANDOFF-20261013-batch-runner.md) before fixing candidate failures. Public CI keeps harness validation distinct from candidate contracts and only uploads sanitized summaries. A source-contract green would still not prove real-login/RLS/migration/dimension/concurrency/audit/browser/recovery requirements. Product promotion wiring and first-launch scope remain outstanding.
+
 ## Latest finance/authorization investigation — 2026-10-13
 
 [RUN-06](runs/RUN-20261013-finance-investigation-06.md) on v2.1.0/2b92cf4 verified cash-sale mapping Dr1000/Cr4000, including neutral description. Three synthetic sales were reversed; six balanced journals retained, cash/revenue net0. Confirmed P1s: restricted-role financial reversal (BUG-0009), cash-flow reversal overcount (BUG-0006), customer unposted/archive balance display (BUG-0005), and release-check failure masking (BUG-0008 source review). Default report label mismatch is P2 BUG-0007. [Coding-agent handoff](handoffs/HANDOFF-20261013-finance-and-release.md) gives source pointers and acceptance cases. Original Viewer-create reports are withdrawn; exact security reproduction remains private. Larger invoice/payment/return journey was not run after these failures.

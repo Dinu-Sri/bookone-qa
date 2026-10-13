@@ -1,0 +1,31 @@
+{
+  "id": "A",
+  "version": 1,
+  "title": "Shared money, authorization and reporting foundations",
+  "scope": "source contracts; embedded PostgreSQL SQL/actions; mocked session and framework boundaries",
+  "releaseAcceptance": false,
+  "requiredAdditionalLayers": ["real-postgres-runtime-rls", "verified-staging-browser", "audit-and-concurrency"],
+  "lanes": [
+    { "id": "calculations", "file": "tests/batch/calculations.test.ts", "resume": "restart-isolated", "timeoutSeconds": 120 },
+    { "id": "actions", "file": "tests/batch/actions.test.ts", "resume": "restart-isolated", "timeoutSeconds": 300 },
+    { "id": "render", "file": "tests/batch/report-label.test.tsx", "resume": "restart-isolated", "timeoutSeconds": 120 },
+    { "id": "workflows", "file": "tests/batch/workflows.test.ts", "resume": "restart-isolated", "timeoutSeconds": 120 }
+  ],
+  "cases": [
+    { "id": "A-001", "lane": "calculations", "rules": ["BR-ACC-02"], "bugs": ["BUG-0001"], "critical": true },
+    { "id": "A-002", "lane": "calculations", "rules": ["BR-ACC-02", "BR-STK-03"], "bugs": [], "critical": true },
+    { "id": "A-003", "lane": "actions", "rules": ["BR-ACC-02", "BR-ACC-04", "BR-ACC-05"], "bugs": [], "critical": true },
+    { "id": "A-004", "lane": "actions", "rules": ["BR-ACC-08"], "bugs": ["BUG-0006"], "critical": true },
+    { "id": "A-005", "lane": "actions", "rules": ["BR-SEC-02"], "bugs": ["BUG-0009"], "critical": true },
+    { "id": "A-006", "lane": "actions", "rules": ["BR-ACC-07", "BR-SAL-01"], "bugs": ["BUG-0005"], "critical": true },
+    { "id": "A-007", "lane": "actions", "rules": ["BR-ACC-04", "BR-ACC-05", "BR-ACC-08"], "bugs": ["BUG-0006"], "critical": true },
+    { "id": "A-008", "lane": "actions", "rules": ["BR-SEC-01"], "bugs": [], "critical": true },
+    { "id": "A-009", "lane": "actions", "rules": ["BR-ACC-06"], "bugs": [], "critical": true },
+    { "id": "A-010", "lane": "render", "rules": ["BR-ACC-08"], "bugs": ["BUG-0007"], "critical": false },
+    { "id": "A-011", "lane": "render", "rules": ["BR-ACC-08"], "bugs": [], "critical": false },
+    { "id": "A-012", "lane": "render", "rules": ["BR-ACC-08"], "bugs": ["BUG-0007"], "critical": false },
+    { "id": "A-013", "lane": "workflows", "rules": ["BR-DAT-02"], "bugs": ["BUG-0008"], "critical": true },
+    { "id": "A-014", "lane": "workflows", "rules": ["BR-DAT-02"], "bugs": ["BUG-0008"], "critical": true },
+    { "id": "A-015", "lane": "actions", "rules": ["BR-SEC-02"], "bugs": [], "critical": true }
+  ]
+}
