@@ -1,12 +1,62 @@
 {
-  "version": 1,
+  "version": 2,
   "launchScope": "undecided-by-owner",
+  "programme": "docs/DEEP_BATCH_PROGRAMME.md",
+  "coverage": "batches/coverage.json",
   "batches": [
-    { "id": "A", "status": "implemented-source-contracts", "dependsOn": [], "title": "Shared foundations" },
-    { "id": "B", "status": "planned", "dependsOn": ["A"], "title": "Services and digital invoices/payments/credits" },
-    { "id": "C", "status": "planned", "dependsOn": ["A"], "title": "Physical purchase/sale/return/valuation" },
-    { "id": "D", "status": "planned", "dependsOn": ["A"], "title": "Rental booking/deposit/dispatch/return" },
-    { "id": "E", "status": "planned", "dependsOn": ["B", "C", "D"], "title": "Mixed businesses and settings interactions" },
-    { "id": "F", "status": "planned", "dependsOn": ["A"], "title": "Imports/upgrade/concurrency/recovery" }
+    {
+      "id": "A",
+      "status": "implemented-source-contracts-runtime-gaps",
+      "dependsOn": [],
+      "title": "Shared foundations",
+      "acceptance": "not-established"
+    },
+    {
+      "id": "B",
+      "status": "implemented-source-and-seeded-payment-contracts-lifecycle-planned",
+      "dependsOn": [
+        "A"
+      ],
+      "title": "Services and digital invoices/payments/credits",
+      "acceptance": "not-established"
+    },
+    {
+      "id": "C",
+      "status": "implemented-source-contracts-lifecycle-planned",
+      "dependsOn": [
+        "A"
+      ],
+      "title": "Physical purchase/sale/return/valuation",
+      "acceptance": "not-established"
+    },
+    {
+      "id": "D",
+      "status": "implemented-source-contracts-lifecycle-planned",
+      "dependsOn": [
+        "A"
+      ],
+      "title": "Rental booking/deposit/dispatch/return",
+      "acceptance": "not-established"
+    },
+    {
+      "id": "E",
+      "status": "implemented-source-contracts-lifecycle-planned",
+      "dependsOn": [
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "Mixed businesses and settings interactions",
+      "acceptance": "not-established"
+    },
+    {
+      "id": "F",
+      "status": "implemented-source-contracts-lifecycle-planned",
+      "dependsOn": [
+        "A"
+      ],
+      "title": "Imports/upgrade/concurrency/recovery",
+      "acceptance": "not-established"
+    }
   ]
 }

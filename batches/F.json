@@ -1,0 +1,65 @@
+{
+  "id": "F",
+  "version": 1,
+  "title": "Portable import normalization and fingerprint contracts",
+  "scope": "pure pinned product source; no persisted business lifecycle",
+  "releaseAcceptance": false,
+  "environment": "pure-product-source",
+  "fixtureVersion": "source-calculations-v1",
+  "authBoundary": "not-exercised",
+  "requiredAdditionalLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "lanes": [
+    {
+      "id": "imports",
+      "file": "tests/batch/imports.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    }
+  ],
+  "cases": [
+    {
+      "id": "F-001",
+      "lane": "imports",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "F-002",
+      "lane": "imports",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "F-003",
+      "lane": "imports",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "F-004",
+      "lane": "imports",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [
+        "BUG-0012"
+      ],
+      "critical": true
+    }
+  ]
+}

@@ -3,22 +3,30 @@ import { randomBytes } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, appendFileSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { assertResume, atomicJSON, hash, laneOutcome, publicSummary, readJSON, validateBatch } from './state.mjs';
+import { assertResume, atomicJSON, hash, laneOutcome, publicSummary, readJSON, validateBatch, selectBatchId } from './state.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 process.chdir(root);
 const args = process.argv.slice(2);
 const option = (name, fallback) => { const i = args.indexOf(name); return i < 0 ? fallback : args[i+1]; };
 const command = args[0] ?? 'plan';
-const batch = readJSON('batches/A.json'); validateBatch(batch);
+const safeRunId = id => /^RUN-\d{8}-\d{9}-[a-f0-9]{6}$/.test(id);
+let savedState;
+if (['resume', 'export'].includes(command)) {
+  if (!safeRunId(args[1])) throw new Error('Invalid run ID');
+  savedState = readJSON(`.local/batches/${args[1]}/state.json`);
+}
+const batchId = selectBatchId(savedState?.batch ?? (savedState ? 'A' : option('--batch', 'A')));
+if (savedState && args.includes('--batch') && option('--batch') !== batchId) throw new Error('Run belongs to another batch');
+const batch = readJSON(`batches/${batchId}.json`); validateBatch(batch);
 if (!['plan', 'run', 'resume', 'export'].includes(command)) throw new Error('Use plan/run/resume/export');
 if (command === 'plan') {
   console.log(JSON.stringify({ batch, roadmap: readJSON('batches/roadmap.json') }, null, 2)); process.exit(0);
 }
 const git = (dir, ...xs) => execFileSync('git', ['-C', dir, ...xs], { encoding:'utf8' }).trim();
-const safeRunId = id => /^RUN-\d{8}-\d{9}-[a-f0-9]{6}$/.test(id);
 if (command === 'export') {
   const id = args[1]; if (!safeRunId(id)) throw new Error('Invalid run ID');
   const state = readJSON(`.local/batches/${id}/state.json`);
+  if (state.fingerprint?.batchHash !== hash(JSON.stringify(batch))) throw new Error('Manifest changed; preserve original run and export using its original QA revision');
   if (state.status !== 'completed') throw new Error('Export only completed runs; interrupted evidence stays private');
   const target = resolve('runs', `${id}.json`); if (existsSync(target)) throw new Error('Immutable run export already exists');
   atomicJSON(target, publicSummary(state, batch)); console.log(`Sanitized allowlisted summary: runs/${id}.json`); process.exit(0);
@@ -27,13 +35,16 @@ const ref = readJSON('product-ref.json');
 if (ref.repository !== 'https://github.com/Dinu-Sri/BookOne.git' || !/^[a-f0-9]{40}$/.test(ref.commit)) throw new Error('Invalid product reference');
 if (git('work/product','rev-parse','HEAD') !== ref.commit || git('work/product','remote','get-url','origin') !== ref.repository ||
   git('work/product','status','--porcelain','--untracked-files=no')) throw new Error('Product checkout must be pinned, correct-origin and clean');
+const currentContentHash = () => {
 const files = git('.', 'ls-files', '--cached', '--others', '--exclude-standard').split(/\r?\n/)
   .filter(p => /\.(?:mjs|ts|tsx|json|md|ya?ml)$/.test(p) && !p.startsWith('runs/')).sort();
-const contentHash = hash(files.map(p => `${p}\0${hash(readFileSync(p))}`).join('\n'));
+return hash(files.map(p => `${p}\0${hash(readFileSync(p))}`).join('\n'));
+};
+const contentHash = currentContentHash();
 const fingerprint = { productSha: ref.commit, qaSha: git('.','rev-parse','HEAD'), qaContentHash: contentHash,
   qaDirty: Boolean(git('.','status','--porcelain')), batchHash: hash(JSON.stringify(batch)),
-  nodeVersion: process.version, fixtureVersion: 'embedded-pg-v1', environment: 'embedded-postgresql-contract',
-  authBoundary: 'synthetic-session-real-product-permission-assertion', migrationsAndRuntimeRls: 'not-exercised' };
+  nodeVersion: process.version, fixtureVersion: batch.fixtureVersion ?? 'embedded-pg-v1', environment: batch.environment ?? 'embedded-postgresql-contract',
+  authBoundary: batch.authBoundary ?? 'synthetic-session-real-product-permission-assertion', migrationsAndRuntimeRls: 'not-exercised' };
 let state, runDir;
 if (command === 'resume') {
   const id = args[1]; if (!safeRunId(id)) throw new Error('Invalid run ID');
@@ -44,13 +55,21 @@ if (command === 'resume') {
   const stamp = new Date().toISOString().replace(/[-:TZ.]/g,'');
   const runId = `RUN-${stamp.slice(0,8)}-${stamp.slice(8)}-${randomBytes(3).toString('hex')}`;
   runDir = resolve('.local/batches', runId); mkdirSync(runDir, { recursive:true });
-  state = { schemaVersion:1, runId, fingerprint, profile, seed, startedAt:new Date().toISOString(), status:'running',
+  state = { schemaVersion:1, batch: batch.id, runId, fingerprint, profile, seed, startedAt:new Date().toISOString(), status:'running',
     lanes: batch.lanes.map(l => ({ id:l.id, status:'pending', attempts:[] })) };
 }
 const statePath = resolve(runDir,'state.json'); state.status = 'running'; atomicJSON(statePath,state);
+const assertUnchanged = () => {
+  if (currentContentHash() !== contentHash || git('work/product','rev-parse','HEAD') !== ref.commit ||
+    git('work/product','status','--porcelain','--untracked-files=no')) {
+    state.status='interrupted';atomicJSON(statePath,state);
+    throw new Error('Candidate or QA content changed during execution; preserve checkpoints and start a new run');
+  }
+};
 let child;
 process.on('SIGINT', () => { child?.kill(); state.status='interrupted'; atomicJSON(statePath,state); process.exit(130); });
 for (const lane of batch.lanes) {
+  assertUnchanged();
   const current = state.lanes.find(l => l.id === lane.id);
   if (['passed','failed'].includes(current.status)) continue; // Resume unfinished lanes only. No result erasure.
   if (current.status === 'running') {
@@ -77,6 +96,7 @@ for (const lane of batch.lanes) {
   Object.assign(current.attempts.at(-1), { finishedAt:new Date().toISOString(), outcome });
   current.status=outcome.status; atomicJSON(statePath,state);
 }
+assertUnchanged();
 state.status='completed'; state.finishedAt=new Date().toISOString(); atomicJSON(statePath,state);
 const summary=publicSummary(state,batch); atomicJSON(resolve(runDir,'summary.json'),summary);
 console.log(JSON.stringify({runId:state.runId,sourceGate:summary.sourceGate,totals:summary.totals,

@@ -6,9 +6,9 @@ Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/B
 
 - Start new sessions with [SESSION.md](SESSION.md) and `pnpm session:start`. The accepted batch strategy, current work and next actions live in [memory/programme.json](memory/programme.json), [batch guide](docs/BATCH_TESTING.md) and [roadmap](batches/roadmap.json).
 - Batch A now implements15 independent source/embedded SQL/render/workflow checks, including generated sale/reversal models and the five known bug groups. Run `pnpm batch:run --seed 261013 --profile quick`; a nonzero exit is expected on the current defective product candidate. It is a source regression signal, not release certification.
-- Current implementation pin is2b92cf40a3d258dcfc29655759d37b0c32aaebbf. The older snapshot bullets below are historical baseline facts; they do not certify this candidate. See STATUS.md and current run records.
+- Current source pin is6a48cee55689746462aa668cdd65ad9f3cfb876b. B–F add35 executable source cases and83 specified lifecycle tasks; see the deep programme below and RUN-09. All runtime/lifecycle release acceptance remains open. The older snapshot bullets below are historical baseline facts; they do not certify this candidate.
 
-- Product source pinned in product-ref.json to 65f84c151f7332efa196ed837ad179ac4818178b. The actual staging image/build still needs independent identification.
+- Historical bootstrap source pin was65f84c151f7332efa196ed837ad179ac4818178b; current pin is declared above. RUN-08 observed v2.2.0/6a48cee staging stamp; image digest/schema/storage acceptance remains unresolved.
 - 747 inherited scenario definitions; 30 source reviews complete and 717 pending. Catalog mapping is not business acceptance.
 - 30 browser spec files imported; full discovery finds 770 tests in 29 nonempty files. The inherited bucket preset omitted the team suite; full discovery now includes it.
 - 10 external unit-test files: **94 passed, 4 skipped** locally (includes independent critical posting cases). Skips require optional local bank fixtures; real bank files were not copied.
@@ -56,4 +56,8 @@ The apps/e2e-runner path is retained inside this QA repository for import compat
 QA repository validation checks metadata, the target guard, runner integrity, pinned-source units and E2E discovery. Separate Candidate Batch A contracts reports product failures as red and retains only sanitized outcome artifacts. It has no staging credentials and runs no staging browser tests. Neither workflow is wired to product promotion; green repository validation cannot approve a product release. Add new scenarios and review records together; preserve existing IDs and historical results. Update STATUS and memory/programme.json after each session.
 
 This repository is public by explicit owner instruction. Review every staged file for sensitive information. See PUBLIC_DATA_POLICY before sharing bugs/artifacts. Package.json private=true prevents npm publishing; GitHub visibility is public. No new open-source license grant is implied; imported code retains BookOne's existing rights.
+
+## Deep batch programme and continuity
+
+Read [SESSION.md](SESSION.md) and [DEEP_BATCH_PROGRAMME.md](docs/DEEP_BATCH_PROGRAMME.md). `pnpm batch:coverage` distinguishes50 executable source cases from83 specified unimplemented lifecycle tasks; no release acceptance is established. Run B–F with `pnpm batch:run --batch B --seed 261013 --profile quick` (change B to the relevant batch). A remains the mandatory shared regression. Startup memory, policies, exact work queue and immutable runs preserve progress across agents/sessions. [RUN-09](runs/RUN-20261013-deep-batches-09.md) records tested scope and remaining failures.
 

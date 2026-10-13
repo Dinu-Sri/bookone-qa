@@ -1,0 +1,156 @@
+{
+  "id": "B",
+  "version": 1,
+  "title": "Service/digital arithmetic and persisted invoice payment allocations",
+  "scope": "source and embedded PostgreSQL actions; seeded invoice; synthetic session; creation lifecycle not exercised",
+  "releaseAcceptance": false,
+  "environment": "embedded-postgresql-contract",
+  "fixtureVersion": "embedded-pg-v2",
+  "authBoundary": "synthetic-session-real-product-permission-assertion",
+  "requiredAdditionalLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "lanes": [
+    {
+      "id": "services",
+      "file": "tests/batch/services.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    },
+    {
+      "id": "payments",
+      "file": "tests/batch/payments.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    }
+  ],
+  "cases": [
+    {
+      "id": "B-001",
+      "lane": "services",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-002",
+      "lane": "services",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-003",
+      "lane": "services",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-004",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-005",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-006",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-007",
+      "lane": "payments",
+      "rules": [
+        "BR-SEC-02",
+        "BR-ACC-03"
+      ],
+      "bugs": [
+        "BUG-0010"
+      ],
+      "critical": true
+    },
+    {
+      "id": "B-008",
+      "lane": "payments",
+      "rules": [
+        "BR-SEC-01",
+        "BR-ACC-03"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-009",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-010",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "B-011",
+      "lane": "payments",
+      "rules": [
+        "BR-ACC-02",
+        "BR-SAL-02"
+      ],
+      "bugs": [
+        "BUG-0011"
+      ],
+      "critical": true
+    },
+    {
+      "id": "B-012",
+      "lane": "payments",
+      "rules": [
+        "BR-SEC-02"
+      ],
+      "bugs": [],
+      "critical": true
+    }
+  ]
+}

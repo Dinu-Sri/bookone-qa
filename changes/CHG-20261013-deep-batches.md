@@ -1,0 +1,11 @@
+# B–F batch foundations and portable programme memory
+
+Owner requested building comprehensive batches during product gate repair. Scope: independent QA repository only; no staging records, deployments or product changes. Keep current deliberately pinned product6a48cee; coding agent may advance master independently. Source graph BookOneREAL checkout metadata6a48cee, relevant implementations verified against the exact pinned checkout.
+
+Intent: generalize the Batch A runner to A–F without relaxing fail-closed discovery/checkpoints/resume/export; build product calculation contracts for B–F and persisted payment-action contracts for B; save a complete ordered acceptance backlog and unresolved policies. Explicitly distinguish executable source contracts from unimplemented workflows and live acceptance. No prior pass reused.
+
+Risk: shared runner/database fixture changes require infrastructure tests and a fresh Batch A regression. New embedded tables add document lines and settlements; fixture version advances to embedded-pg-v2. Export refuses a changed manifest and resolves the batch from saved state (historical states without batch remain A). No financial oracle imports product sum/expected helpers. Financial accounts/amounts compared exactly; generated amounts use integer cents or whole-money fixtures. Synthetic taxes are product arithmetic fixtures, not jurisdictional tax approval.
+
+Selected validation: metadata, target guards, runner integrity, A–F quick source contracts; B broad generated payment sequences; mutation-sensitivity controls where implemented. Every missing acceptance layer remains explicit. First failures and exports retained; new findings classified by product versus adapter/environment and summarized for coding agent after execution.
+
+Outcome: [RUN-09](../runs/RUN-20261013-deep-batches-09.md),50 executable source cases total (35 new) and83 specified lifecycle tasks; latest source outcomes46 pass/4 fail. Three new isolated product findings, two diagnosed fixture/property errors corrected with history preserved. Explicit allocation/audit links added and verified in another B quick run. No staging/product changes. Clean CI publication evidence follows separately.

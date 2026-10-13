@@ -1,0 +1,1089 @@
+{
+  "version": 1,
+  "productBaseline": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
+  "specification": "docs/DEEP_BATCH_PROGRAMME.md",
+  "launchScope": "owner-decision-pending",
+  "acceptance": "not-established",
+  "policyRegistry": "memory/policies.json",
+  "tasks": [
+    {
+      "id": "B-101",
+      "batch": "B",
+      "slug": "quote-order-draft",
+      "status": "specified-not-implemented",
+      "expected": "Quote/order/draft conversions retain lines, prices and source links without revenue, AR, cash or stock journals.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-102",
+      "batch": "B",
+      "slug": "post-invoice",
+      "status": "specified-not-implemented",
+      "expected": "Service and digital invoice 3x200 posts Dr1300/Cr4000 600; stock/COGS unchanged; reload and print retain600.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-103",
+      "batch": "B",
+      "slug": "allocation-journey",
+      "status": "specified-not-implemented",
+      "expected": "Receive250 then350 against600: AR350 then0, cash600, revenue600, two linked allocations and audits.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-104",
+      "batch": "B",
+      "slug": "credit-partial",
+      "status": "specified-not-implemented",
+      "expected": "Unpaid600 invoice credited100 after receipt250 ends AR250, cash250, net revenue500; no stock.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-105",
+      "batch": "B",
+      "slug": "paid-refund",
+      "status": "specified-not-implemented",
+      "expected": "Paid invoice credit/refund keeps original receipt; approved refund path settles customer credit once.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-106",
+      "batch": "B",
+      "slug": "retry",
+      "status": "specified-not-implemented",
+      "expected": "Repeat invoice/conversion/payment request with same idempotency key creates one accepted operation; different keys follow explicit duplicate policy.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-107",
+      "batch": "B",
+      "slug": "concurrent-pay",
+      "status": "specified-not-implemented",
+      "expected": "Two simultaneous receipts against the same open balance cannot overallocate; persisted AR and GL agree.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-108",
+      "batch": "B",
+      "slug": "invalid-states",
+      "status": "specified-not-implemented",
+      "expected": "Draft/void/rejected/unposted/wrong-document allocation or edits are denied atomically; archived posted debt remains collectible per policy.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-109",
+      "batch": "B",
+      "slug": "roles-scopes",
+      "status": "specified-not-implemented",
+      "expected": "Owner/accountant/sales/cashier/Viewer/suspended member permissions match server outcomes; brand/location restrictions apply to existing records.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-110",
+      "batch": "B",
+      "slug": "tenant-files",
+      "status": "specified-not-implemented",
+      "expected": "Real tenant B document IDs, receipts, export URLs and cached report data cannot be read or changed by tenant A.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-111",
+      "batch": "B",
+      "slug": "closed-date",
+      "status": "specified-not-implemented",
+      "expected": "Locked posting/payment/credit periods reject writes; permitted corrections preserve original locked facts.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-112",
+      "batch": "B",
+      "slug": "atomicity",
+      "status": "specified-not-implemented",
+      "expected": "Inject failure between header/line/journal/allocation/audit writes; no partial business operation survives.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-113",
+      "batch": "B",
+      "slug": "history",
+      "status": "specified-not-implemented",
+      "expected": "Rename customer/product and change price/tax after posting; historical amounts and party-as-recorded remain unchanged.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-114",
+      "batch": "B",
+      "slug": "tax-discount",
+      "status": "specified-not-implemented",
+      "expected": "Approved inclusive/exclusive tax, rounding stage and discounts agree across preview/post/credit/print/export; pending policy blocks acceptance.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-115",
+      "batch": "B",
+      "slug": "payment-batch-failure",
+      "status": "specified-not-implemented",
+      "expected": "Mixed valid/invalid multi-invoice payment follows declared atomic-versus-partial contract; retry cannot double-pay an earlier successful row.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-116",
+      "batch": "B",
+      "slug": "cashbook-bridge",
+      "status": "specified-not-implemented",
+      "expected": "Commercial AR and manual/simple-entry control postings reconcile via declared bridge, never by ignoring mismatches.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "B-117",
+      "batch": "B",
+      "slug": "digital-entitlement",
+      "status": "specified-not-implemented",
+      "expected": "Delivery/licence entitlement is tested only if implemented; invoice acceptance does not establish delivery.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-101",
+      "batch": "C",
+      "slug": "po-approval",
+      "status": "specified-not-implemented",
+      "expected": "PO and pending/rejected purchase create no unintended AP, inventory valuation or duplicate receipt.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-102",
+      "batch": "C",
+      "slug": "receipt-bill",
+      "status": "specified-not-implemented",
+      "expected": "10 units at60 through PO/GRN/bill yield stock10, inventory600, AP600 and GRNI0, not double values.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-103",
+      "batch": "C",
+      "slug": "partial-receipt",
+      "status": "specified-not-implemented",
+      "expected": "Receive6 then4 and bill separately; each movement has source link and exact remaining quantity/GRNI.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-104",
+      "batch": "C",
+      "slug": "partial-bill",
+      "status": "specified-not-implemented",
+      "expected": "Bill a subset of already received stock then final bill; no duplicate capitalisation and exact liability outstanding.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-105",
+      "batch": "C",
+      "slug": "sale-payment-return",
+      "status": "specified-not-implemented",
+      "expected": "Sell2 at100/cost60 from10; receive80; return1 at original60; receive20: stock9,value540,AR0, net profit40.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-106",
+      "batch": "C",
+      "slug": "vendor-payment",
+      "status": "specified-not-implemented",
+      "expected": "Pay AP600 once; cash falls600 and AP0 without changing stock/revenue.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-107",
+      "batch": "C",
+      "slug": "purchase-return",
+      "status": "specified-not-implemented",
+      "expected": "Return2 of10 to vendor: stock8, inventory480, approved AP/refund120 and original cost layers linked.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-108",
+      "batch": "C",
+      "slug": "landed-cost",
+      "status": "specified-not-implemented",
+      "expected": "Approved freight/duty allocation reconciles invoice totals and cost layers without charging service lines as stock.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-109",
+      "batch": "C",
+      "slug": "locations",
+      "status": "specified-not-implemented",
+      "expected": "Transfer between two locations conserves total quantity/value; source/target scopes and returns remain correct.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-110",
+      "batch": "C",
+      "slug": "adjust-opening",
+      "status": "specified-not-implemented",
+      "expected": "Opening and positive/negative adjustments use approved equity/expense rules with reason and audit.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-111",
+      "batch": "C",
+      "slug": "cost-backdate",
+      "status": "specified-not-implemented",
+      "expected": "Two receipts at different prices, then sale/return/backdate follow approved costing; historical posted cost is preserved.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-112",
+      "batch": "C",
+      "slug": "negative-stock",
+      "status": "specified-not-implemented",
+      "expected": "Zero/negative/fractional/insufficient stock actions follow approved type/unit policy; invalid ones have zero side effects.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-113",
+      "batch": "C",
+      "slug": "supplier-duplicate",
+      "status": "specified-not-implemented",
+      "expected": "Same supplier invoice/reference sequential and concurrent submissions obey explicit duplicate policy.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-114",
+      "batch": "C",
+      "slug": "concurrent-issue",
+      "status": "specified-not-implemented",
+      "expected": "Last unit sold simultaneously cannot be issued twice; count/value and both outcomes reconcile.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-115",
+      "batch": "C",
+      "slug": "locks-denials",
+      "status": "specified-not-implemented",
+      "expected": "Locked period, Viewer, foreign tenant and restricted location writes denied for real stock records.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "C-116",
+      "batch": "C",
+      "slug": "rollback-history",
+      "status": "specified-not-implemented",
+      "expected": "Injected failure at stock/journal/audit boundaries rolls back; void/reversal restores correct effects and keeps links/history.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-101",
+      "batch": "D",
+      "slug": "fixture",
+      "status": "specified-not-implemented",
+      "expected": "Balanced fleet20; reserve10 across declared inclusive interval, owned20/committed10/free10; no revenue on reservation.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-102",
+      "batch": "D",
+      "slug": "deposit",
+      "status": "specified-not-implemented",
+      "expected": "Collect refundable1000: cash+1000, liability+1000, revenue0; audit and payment link retained.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-103",
+      "batch": "D",
+      "slug": "dispatch",
+      "status": "specified-not-implemented",
+      "expected": "Dispatch10 transfers fleet state/locations; owned fleet/value unchanged and no physical-sale COGS.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-104",
+      "batch": "D",
+      "slug": "partial-return",
+      "status": "specified-not-implemented",
+      "expected": "Return8 good and2 dirty: dispatched0, owned20, free18 until dirty2 washed, then free20.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-105",
+      "batch": "D",
+      "slug": "return-buckets",
+      "status": "specified-not-implemented",
+      "expected": "Good/dirty/repair/missing counts sum to dispatched quantity; no over-return, negative counts or lost units.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-106",
+      "batch": "D",
+      "slug": "extension-overlap",
+      "status": "specified-not-implemented",
+      "expected": "Extension/new reservation accounts for all existing commitments and wash padding; authorised override has reason and audit.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-107",
+      "batch": "D",
+      "slug": "concurrent-booking",
+      "status": "specified-not-implemented",
+      "expected": "Two competing reservations for final capacity cannot oversubscribe unless explicitly authorised policy permits override.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-108",
+      "batch": "D",
+      "slug": "timing",
+      "status": "specified-not-implemented",
+      "expected": "Invoice-on-confirm/dispatch/return/manual boundaries and overrides enforced in actual posting actions.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-109",
+      "batch": "D",
+      "slug": "deposit-apply-refund",
+      "status": "specified-not-implemented",
+      "expected": "Hire/service invoice700; apply700 of1000 deposit, refund300: AR0, deposit liability0, cash700, revenue700.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-110",
+      "batch": "D",
+      "slug": "over-refund-retry",
+      "status": "specified-not-implemented",
+      "expected": "Over-refund/duplicate collect/apply/refund are denied or idempotent without duplicate money journals.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-111",
+      "batch": "D",
+      "slug": "cancel",
+      "status": "specified-not-implemented",
+      "expected": "Cancel before/after dispatch under approved policy; release correct commitments and preserve money/history.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-112",
+      "batch": "D",
+      "slug": "damage-missing",
+      "status": "specified-not-implemented",
+      "expected": "Approved damage charges/write-off/forfeiture settle correct accounts and fleet quantities, retain evidence and policy links.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-113",
+      "batch": "D",
+      "slug": "late-return",
+      "status": "specified-not-implemented",
+      "expected": "Late return/fees use approved clock and day/hour/event rules with leap/month/timezone examples.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-114",
+      "batch": "D",
+      "slug": "wash-repair",
+      "status": "specified-not-implemented",
+      "expected": "Wash and repair intake/release cannot create fleet or release another tenant/location's units.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-115",
+      "batch": "D",
+      "slug": "settings",
+      "status": "specified-not-implemented",
+      "expected": "Disabled unit/timing/deposit/module options and default changes cannot bypass server constraints.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-116",
+      "batch": "D",
+      "slug": "historical-price",
+      "status": "specified-not-implemented",
+      "expected": "Fleet rates/settings changed after booking do not silently recalculate accepted historical hire/deposit amounts.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-117",
+      "batch": "D",
+      "slug": "permissions-files",
+      "status": "specified-not-implemented",
+      "expected": "Role/suspended/tenant/dimension denials cover dispatch/return/deposits/photos/documents and exports.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "D-118",
+      "batch": "D",
+      "slug": "atomicity",
+      "status": "specified-not-implemented",
+      "expected": "Failure between booking/stock/deposit/journal/audit changes leaves no half-dispatched or half-refunded event.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-101",
+      "batch": "E",
+      "slug": "mixed-job",
+      "status": "specified-not-implemented",
+      "expected": "Hire500+service200+physical300+digital100 total1100; only sold goods have COGS180, fleet ownership unchanged.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-102",
+      "batch": "E",
+      "slug": "tax-discount-return",
+      "status": "specified-not-implemented",
+      "expected": "Approved mixed tax/discount allocation and partial physical/nonphysical returns reconcile every account and stock class.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-103",
+      "batch": "E",
+      "slug": "entity-tier",
+      "status": "specified-not-implemented",
+      "expected": "Company/sole/personal capability tiers apply independently of business type; unsupported combinations explicitly declared.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-104",
+      "batch": "E",
+      "slug": "module-toggle",
+      "status": "specified-not-implemented",
+      "expected": "Inventory/rental/tax/POS module ceilings enforced server-side; disabling a module preserves readable history.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-105",
+      "batch": "E",
+      "slug": "book-domain",
+      "status": "specified-not-implemented",
+      "expected": "Personal and business journals/control balances/files do not cross book-domain filters.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-106",
+      "batch": "E",
+      "slug": "scope-report",
+      "status": "specified-not-implemented",
+      "expected": "Two locations/brands with identical numbers: scoped reports/exports equal their own ledger slice without leakage.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-107",
+      "batch": "E",
+      "slug": "multi-tenant-switch",
+      "status": "specified-not-implemented",
+      "expected": "Switch A→B→A; caches/forms/session/report sentinels remain tenant-specific, including stale submissions.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-108",
+      "batch": "E",
+      "slug": "role-revocation",
+      "status": "specified-not-implemented",
+      "expected": "Revoke/change job while another tab stays open; stale writes denied and read scopes refreshed.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-109",
+      "batch": "E",
+      "slug": "shared-discounts",
+      "status": "specified-not-implemented",
+      "expected": "Settings changed mid-draft use declared versioning policy, never silently rewrite posted history.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-110",
+      "batch": "E",
+      "slug": "pos-stock-rental",
+      "status": "specified-not-implemented",
+      "expected": "POS cash/credit returns keep physical goods, rental availability and nonphysical fulfilment separate.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-111",
+      "batch": "E",
+      "slug": "browser-submit",
+      "status": "specified-not-implemented",
+      "expected": "Double click/slow response/reload/back/keyboard submission cannot repeat accepted posting; recoverable errors remain actionable.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-112",
+      "batch": "E",
+      "slug": "export-print",
+      "status": "specified-not-implemented",
+      "expected": "Mixed invoice/receipt/export preserves exact amounts, line identities and authorised visibility; injection payloads harmless.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-113",
+      "batch": "E",
+      "slug": "invalid-settings",
+      "status": "specified-not-implemented",
+      "expected": "Mandatory accounts missing/disabled/cross-tenant cannot yield apparently successful incomplete postings.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "E-114",
+      "batch": "E",
+      "slug": "mixed-concurrency",
+      "status": "specified-not-implemented",
+      "expected": "Overlapping sale/rental/payment requests contend on correct resources and conserve money/stock/fleet.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-101",
+      "batch": "F",
+      "slug": "portable-files",
+      "status": "specified-not-implemented",
+      "expected": "Synthetic CSV/XLSX/PDF-bank formats/sign/date conventions normalize independently expected lines with no machine-only fixture dependency.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-102",
+      "batch": "F",
+      "slug": "duplicate-import",
+      "status": "specified-not-implemented",
+      "expected": "Same file/rows uploaded twice result in one accepted bank line per tenant/account identity; similar foreign account lines remain distinct.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-103",
+      "batch": "F",
+      "slug": "malformed-import",
+      "status": "specified-not-implemented",
+      "expected": "Invalid calendar dates, malformed amounts, unknown columns and ambiguous signs follow explicit validation policy; no silent financial data invention.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-104",
+      "batch": "F",
+      "slug": "import-rollback",
+      "status": "specified-not-implemented",
+      "expected": "Interrupted import/reconciliation retries preserve once-only accepted lines and no partial postings.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-105",
+      "batch": "F",
+      "slug": "matching",
+      "status": "specified-not-implemented",
+      "expected": "Partial/overlap/one-to-many matching uses exact amounts/date/account constraints and documented decision audit.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-106",
+      "batch": "F",
+      "slug": "untrusted-files",
+      "status": "specified-not-implemented",
+      "expected": "Oversized/wrong-type/formula/path payloads handled in bounded isolation without leaking secrets or cross-tenant attachments.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-107",
+      "batch": "F",
+      "slug": "fresh-install",
+      "status": "specified-not-implemented",
+      "expected": "Apply full migrations with production-like runtime role/RLS; signup/CoA/modules and first transaction work.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-108",
+      "batch": "F",
+      "slug": "upgrade",
+      "status": "specified-not-implemented",
+      "expected": "Prior-release golden DB/files upgrade; row/attachment checksums and semantic journal/allocation/stock snapshots preserved.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-109",
+      "batch": "F",
+      "slug": "failed-migration",
+      "status": "specified-not-implemented",
+      "expected": "Stop during migration/startup then restart under documented safe procedure; no lost accepted facts or incompatible half-version.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-110",
+      "batch": "F",
+      "slug": "restore",
+      "status": "specified-not-implemented",
+      "expected": "Restore backup DB+files into authorised isolated target; authenticate roles, checksums and business totals match; measure RPO/RTO.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-111",
+      "batch": "F",
+      "slug": "compatibility",
+      "status": "specified-not-implemented",
+      "expected": "Code rollback versus schema rollback policy tested separately; current data remains usable under supported versions.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-112",
+      "batch": "F",
+      "slug": "rls-pooling",
+      "status": "specified-not-implemented",
+      "expected": "Production-like non-bypassRLS role and alternating pooled connections cannot read/write foreign tenant, jobs, caches or files.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-113",
+      "batch": "F",
+      "slug": "posting-races",
+      "status": "specified-not-implemented",
+      "expected": "Duplicate concurrent invoice/payment/reversal/import has one accepted financial effect and consistent idempotency status.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-114",
+      "batch": "F",
+      "slug": "failure-injection",
+      "status": "specified-not-implemented",
+      "expected": "Crash/network/storage failures at each durable boundary recover without accepted-operation loss, phantom success or duplicate retry.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-115",
+      "batch": "F",
+      "slug": "audit-redaction",
+      "status": "specified-not-implemented",
+      "expected": "Who/what/when/reason/correlation retained; public logs/artifacts exclude customer/session/secrets; denied actions audited according to policy.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-116",
+      "batch": "F",
+      "slug": "artifact-gate",
+      "status": "specified-not-implemented",
+      "expected": "Every required same-SHA status fails closed for missing/skipped/cancelled/failure; tested immutable artifact is the one promoted.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-117",
+      "batch": "F",
+      "slug": "bounded-load",
+      "status": "specified-not-implemented",
+      "expected": "Declared representative load records p95, errors and integrity under isolated capacity; never stress shared staging without scope.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    },
+    {
+      "id": "F-118",
+      "batch": "F",
+      "slug": "cleanup",
+      "status": "specified-not-implemented",
+      "expected": "Run-owned fixtures cleanup is idempotent, tenant-scoped and history-aware; other fixtures and recovery evidence survive.",
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+    }
+  ]
+}

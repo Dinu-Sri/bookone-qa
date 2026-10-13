@@ -17,6 +17,7 @@ export default defineConfig({
     { find: '@product/schema', replacement: local('./work/product/packages/db/src/schema') },
     { find: '@product/auth', replacement: local('./work/product/packages/auth/src') },
     { find: '@product/accounting', replacement: local('./work/product/packages/accounting/src') },
+    { find: '@product/statement-import', replacement: local('./work/product/packages/statement-import/src') },
     { find: '@', replacement: local('./work/product/apps/web/src') },
   ] },
   esbuild: { jsx: 'automatic', jsxImportSource: 'react' },

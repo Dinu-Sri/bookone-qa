@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261013-063836271-3c76af",
+  "batch": "D",
+  "fingerprint": {
+    "productSha": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
+    "qaSha": "fd03d8764674697d7ed7afd783e843c9fd02f96e",
+    "qaContentHash": "50f2de921751f0c96116e8b011ffb6c880abde8e2764c260bb4e8b564608e0d2",
+    "batchHash": "e377deba10f34ad909098fd07ef16c48512393addb680fc9225f1f3a8ffb5e48",
+    "nodeVersion": "v20.19.0",
+    "fixtureVersion": "source-calculations-v1",
+    "environment": "pure-product-source",
+    "authBoundary": "not-exercised",
+    "migrationsAndRuntimeRls": "not-exercised",
+    "qaDirty": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "startedAt": "2026-10-13T06:38:36.274Z",
+  "finishedAt": "2026-10-13T06:38:44.656Z",
+  "status": "completed",
+  "sourceGate": "passed",
+  "releaseAcceptance": "not-established",
+  "missingAcceptanceLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "cases": [
+    {
+      "id": "D-001",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-002",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-003",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-004",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-005",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-006",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-007",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "D-008",
+      "status": "passed",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": []
+    }
+  ],
+  "totals": {
+    "passed": 8,
+    "failed": 0,
+    "flaky": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "not-run": 0
+  }
+}

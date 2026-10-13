@@ -1,0 +1,57 @@
+{
+  "id": "E",
+  "version": 1,
+  "title": "Mixed product posting combinations",
+  "scope": "pure pinned product source; no persisted business lifecycle",
+  "releaseAcceptance": false,
+  "environment": "pure-product-source",
+  "fixtureVersion": "source-calculations-v1",
+  "authBoundary": "not-exercised",
+  "requiredAdditionalLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "lanes": [
+    {
+      "id": "mixed",
+      "file": "tests/batch/mixed.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    }
+  ],
+  "cases": [
+    {
+      "id": "E-001",
+      "lane": "mixed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "E-002",
+      "lane": "mixed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "E-003",
+      "lane": "mixed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": [],
+      "critical": true
+    }
+  ]
+}

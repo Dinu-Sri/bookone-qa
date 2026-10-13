@@ -10,7 +10,8 @@ let client: PGlite;
 let orm: ReturnType<typeof drizzle>;
 const tables = [schema.tenants, schema.users, schema.accounts, schema.parties,
   schema.transactions, schema.journalEntries, schema.journalLines,
-  schema.businessDocuments, schema.periodLocks, schema.auditLog];
+  schema.businessDocuments, schema.periodLocks, schema.auditLog,
+  schema.businessDocumentLines, schema.settlementAllocations];
 const quote = (s: string) => '"' + s.replaceAll('"', '""') + '"';
 const dialect = new PgDialect();
 function defaultSQL(value: unknown) {

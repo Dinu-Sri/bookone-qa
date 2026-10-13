@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261013-063904605-4132f6",
+  "batch": "F",
+  "fingerprint": {
+    "productSha": "6a48cee55689746462aa668cdd65ad9f3cfb876b",
+    "qaSha": "fd03d8764674697d7ed7afd783e843c9fd02f96e",
+    "qaContentHash": "50f2de921751f0c96116e8b011ffb6c880abde8e2764c260bb4e8b564608e0d2",
+    "batchHash": "932fb2a3bce595191048b2c1b856b4363972d52620879776acf6fd86e6ac094f",
+    "nodeVersion": "v20.19.0",
+    "fixtureVersion": "source-calculations-v1",
+    "environment": "pure-product-source",
+    "authBoundary": "not-exercised",
+    "migrationsAndRuntimeRls": "not-exercised",
+    "qaDirty": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "startedAt": "2026-10-13T06:39:04.608Z",
+  "finishedAt": "2026-10-13T06:39:12.681Z",
+  "status": "completed",
+  "sourceGate": "failed",
+  "releaseAcceptance": "not-established",
+  "missingAcceptanceLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "cases": [
+    {
+      "id": "F-001",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-002",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-003",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-004",
+      "status": "failed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [
+        "BUG-0012"
+      ]
+    }
+  ],
+  "totals": {
+    "passed": 3,
+    "failed": 1,
+    "flaky": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "not-run": 0
+  }
+}

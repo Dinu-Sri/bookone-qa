@@ -19,8 +19,10 @@
     "catalog:sync": "node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
     "check": "pnpm validate && pnpm test:guard && pnpm test:harness",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs",
+    "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
     "batch:plan": "node scripts/batch/run.mjs plan",
+    "batch:coverage": "node scripts/batch/coverage.mjs",
     "batch:run": "node scripts/batch/run.mjs run",
     "batch:resume": "node scripts/batch/run.mjs resume",
     "batch:export": "node scripts/batch/run.mjs export"

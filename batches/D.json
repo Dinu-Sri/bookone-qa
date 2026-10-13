@@ -1,0 +1,107 @@
+{
+  "id": "D",
+  "version": 1,
+  "title": "Rental availability, timing, settings and hire posting contracts",
+  "scope": "pure pinned product source; no persisted business lifecycle",
+  "releaseAcceptance": false,
+  "environment": "pure-product-source",
+  "fixtureVersion": "source-calculations-v1",
+  "authBoundary": "not-exercised",
+  "requiredAdditionalLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "lanes": [
+    {
+      "id": "rentals",
+      "file": "tests/batch/rentals.test.ts",
+      "resume": "restart-isolated",
+      "timeoutSeconds": 300
+    }
+  ],
+  "cases": [
+    {
+      "id": "D-001",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-002",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-003",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-004",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-005",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-006",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-007",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    },
+    {
+      "id": "D-008",
+      "lane": "rentals",
+      "rules": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "bugs": [],
+      "critical": true
+    }
+  ]
+}
