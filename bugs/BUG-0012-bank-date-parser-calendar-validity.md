@@ -5,3 +5,7 @@ Status: reproduced pure parser contract; downstream import/commit impact not yet
 Required work: validate real calendar year/month/day including leap years for every format and serial/date-object path; preserve approved ambiguous-date convention. Invalid values must produce an actionable validation outcome, never silently invent or roll over bank dates. Verify downstream preview/commit validation and prove no malformed line becomes a financial posting. Retest valid dates, month/year/leap boundaries and malformed portable fixtures.
 
 Evidence: [deep batch run](../runs/RUN-20261013-deep-batches-09.md). This does not establish a live import corrupted data.
+
+## v2.2.1 retest — 2026-10-13
+
+At993664b F-004 still fails: impossible2026-02-30 accepted by parser. Source function unchanged; downstream import corruption remains unknown. See [RUN-10](../runs/RUN-20261013-v2-2-1-retest-10.md).

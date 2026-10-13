@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest';
 import { parse } from 'yaml';
 const read = (name: string) => parse(readFileSync(`work/product/.github/workflows/${name}`, 'utf8'));
 function requiredChecks(job: any) {
-  return (job?.['continue-on-error'] == null || job['continue-on-error'] === false) &&
+  return !job?.if && (job?.['continue-on-error'] == null || job['continue-on-error'] === false) &&
     ['lint', 'typecheck', 'build', 'test'].every(check => job?.steps?.some((s: any) =>
-      (s.run ?? '').trim() === `pnpm ${check}` &&
+      !s.if && (s.run ?? '').trim() === `pnpm ${check}` &&
       (s['continue-on-error'] == null || s['continue-on-error'] === false)));
 }
 
@@ -32,6 +32,19 @@ describe('Batch A current source release workflow contracts', () => {
   });
   it('A-014 image publication depends on successful same-workflow required validation', () => {
     const wf = read('docker-web.yml');
+    expect(wf.on.push).toBeTruthy();
+    expect(Object.hasOwn(wf.on, 'workflow_dispatch')).toBe(true);
+    const quality = Object.values(wf.jobs).find(requiredChecks) as any;
+    expect(quality).toBeTruthy();
+    // Independent mutations of the real parsed quality job must be rejected.
+    expect(requiredChecks({ ...quality, if: "github.event_name == 'push'" })).toBe(false);
+    expect(requiredChecks({ ...quality, 'continue-on-error': true })).toBe(false);
+    for (const check of ['lint','typecheck','build','test']) {
+      expect(requiredChecks({ ...quality, steps: quality.steps.filter((s: any) => s.run !== `pnpm ${check}`) })).toBe(false);
+      for (const change of [{ run: `pnpm ${check} || echo skipped` }, { if: 'false' }, { 'continue-on-error': true }]) {
+        expect(requiredChecks({ ...quality, steps: quality.steps.map((s: any) => s.run === `pnpm ${check}` ? {...s,...change} : s) })).toBe(false);
+      }
+    }
     const jobs: any = wf.jobs;
     const publishers = Object.entries(jobs).filter(([,j]: any) => j.steps?.some((s: any) => s.with?.push === true));
     expect(publishers.length).toBeGreaterThan(0);
@@ -43,6 +56,8 @@ describe('Batch A current source release workflow contracts', () => {
     }
     for (const [id, job] of publishers as [string, any][]) {
       expect(hasRequiredAncestor(id)).toBe(true);
+      expect(job.if).toBeUndefined();
+      expect(job['continue-on-error']).not.toBe(true);
       expect(/always\(|failure\(/.test(job.if ?? '')).toBe(false);
       for (const j of [job, ...Object.values(jobs).filter(requiredChecks)] as any[])
         for (const step of j.steps ?? []) if (String(step.uses ?? '').startsWith('actions/checkout@'))

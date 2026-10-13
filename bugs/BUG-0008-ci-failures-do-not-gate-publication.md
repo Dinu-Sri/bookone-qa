@@ -13,3 +13,7 @@ Acceptance: controlled failing lint/typecheck/build/test each turns required val
 ## Retest 2026-10-13 — v2.2.0
 
 Candidate6a48cee is a partial fix: masking removed and same-SHA Tests gate added. Production Check271 quality job fails at Lint, skips Type check/Build, while Docker web image12 succeeds/publishes. workflow_dispatch bypass remains. A-013 split-job adapter corrected; A-014 red, with same-workflow recognition limitation disclosed. Independent CI evidence confirms required quality failures still permit publication. See [RUN-08](../runs/RUN-20261013-v2-2-0-retest-08.md).
+
+## v2.2.1 retest — 2026-10-13
+
+At993664b source quality→publisher dependency, unconditional mandatory commands and no manual bypass pass A-013/A-014, including independent configuration mutations. Actual product CI quality and dependent publish succeeded. Configuration/positive-path fix verified; controlled negative live/manual dispatch and required external QA promotion remain outstanding acceptance. Do not call source/quality green full release certification. See [RUN-10](../runs/RUN-20261013-v2-2-1-retest-10.md).

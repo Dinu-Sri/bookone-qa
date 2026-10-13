@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261013-070229924-729d92",
+  "batch": "E",
+  "fingerprint": {
+    "productSha": "993664b433cbcdba298bf6948813f0331d588a9e",
+    "qaSha": "7480fe54b2b9cacd4496832d8565bbdc0bee480d",
+    "qaContentHash": "2bb4bd22ee69139cf27c86a36eda8459c8ca427ce3fc0bea9cdc6f0204ca912f",
+    "batchHash": "4c4e71ed6df87a7c07e262e6071d7fb7a872c2db4a5cec445338ec7765549dae",
+    "nodeVersion": "v20.19.0",
+    "fixtureVersion": "source-calculations-v1",
+    "environment": "pure-product-source",
+    "authBoundary": "not-exercised",
+    "migrationsAndRuntimeRls": "not-exercised",
+    "qaDirty": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "startedAt": "2026-10-13T07:02:29.927Z",
+  "finishedAt": "2026-10-13T07:02:35.284Z",
+  "status": "completed",
+  "sourceGate": "passed",
+  "releaseAcceptance": "not-established",
+  "missingAcceptanceLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "cases": [
+    {
+      "id": "E-001",
+      "status": "passed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "E-002",
+      "status": "passed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "E-003",
+      "status": "passed",
+      "rules": [
+        "BR-STK-03",
+        "BR-ACC-02"
+      ],
+      "bugs": []
+    }
+  ],
+  "totals": {
+    "passed": 3,
+    "failed": 0,
+    "flaky": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "not-run": 0
+  }
+}
