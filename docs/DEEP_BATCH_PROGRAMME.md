@@ -2,7 +2,7 @@
 
 Canonical machine register: [coverage.json](../batches/coverage.json). Policies: [policies.json](../memory/policies.json). Startup: [SESSION.md](../SESSION.md). This programme is committed memory; chat context is not required to recover it. Original83 lifecycle tasks are preserved; additional configuration/file tasks and partial PostgreSQL implementations are explicitly indexed. Source, PostgreSQL and browser acceptance are separate. A specification is not an implementation or a passing test. All batches remain unaccepted for release.
 
-Current extension: [PostgreSQL guide](POSTGRES_RUNTIME.md), [runtime manifest](../batches/runtime.json), [configuration/upload rules](CONFIGURATION_AND_UPLOAD_COVERAGE.md), [42-row matrix](../batches/configuration-matrix.json), and RUN-11.54 source cases and14 PostgreSQL cases are executable;92 lifecycle tasks include partial implementations and open layers. Matrix rows are specified, not executed business journeys. Do not add overlapping pure-calculation tests in place of actual commands/settings/actor/files.
+Current extension: [PostgreSQL guide](POSTGRES_RUNTIME.md), [runtime manifest](../batches/runtime.json), [configuration/upload rules](CONFIGURATION_AND_UPLOAD_COVERAGE.md), [42-row matrix](../batches/configuration-matrix.json), and RUN-12.60 source cases and18 PostgreSQL cases are executable;92 lifecycle tasks include partial implementations and open layers. Matrix rows are specified, not executed business journeys. Do not add overlapping pure-calculation tests in place of actual commands/settings/actor/files.
 
 ## Run and resume
 

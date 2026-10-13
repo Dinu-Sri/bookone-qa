@@ -1,5 +1,11 @@
 # QA status — updated 2026-10-13
 
+## v2.2.2 retest: payment fixes verified; date repair partial; credit report defect
+
+[RUN-12](runs/RUN-20261013-v2-2-2-retest-12.md), product9c17f2b matches observed staging v2.2.2 ·9c17f2b.60 source cases58 pass/2 fail;18 PostgreSQL cases14 pass/4 fail. BUG-0010/11 fixed at tested source and persisted-role/owner-connection action depth, including AR/AP privilege separation, custom bank and assigned-location controls. Original F-004 passes; BUG-0012 still fails named-month input `30 Feb 2026`→2026-03-02. New BUG-0016: invoice600/credit100 reports income700 instead of500 despite correct ledger/subledger/cash250. Prior BUG-0013 receipt signer, BUG-0014 restricted tenant helper and BUG-0015 duplicate reversal remain active. No release approval.
+
+Clean implementation5a6947d3: [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38381586302) and [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38381586089) green; [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38381586090) and [PostgreSQL](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38381586178) preserve exact known failures. First credit fixture/expectation defect corrected from pre-existing B-003 Sales Returns4100 contract; first attempt retained, not product blame. Current [coding-agent follow-up](handoffs/HANDOFF-20261013-v2-2-2-followup.md). Product CI quality/publisher jobs green; staged Dashboard read only, no business writes/reset. Wider credential/HTTP/browser/storage/upgrade/recovery and physical/rental workflows stay open in canonical memory. Historical results below remain preserved.
+
 ## PostgreSQL workflows, company/role/module matrix and receipt coverage
 
 Final reviewed implementationecf4be58 passed [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294708) and [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294677); [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294659) and [PostgreSQL](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294844) reproduce the exact known failures, no infrastructure failures. Runtime new-run-only artifact11800492349;14 executed cases11/3. Earlier implementation evidence below remains immutable.

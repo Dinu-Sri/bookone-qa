@@ -1,5 +1,7 @@
 # BUG-0010 — allocation boundary lacks its own write permission
 
+Latest bounded status: **fix verified at9c17f2b/v2.2.2**, source B-007/B-012 and actual persisted Viewer/Sales/Owner permission loading through owner-connection PostgreSQL RT-009–011. AR/AP permission separation and assigned-location deny/positive checks pass with zero denied business mutations. [RUN-12](../runs/RUN-20261013-v2-2-2-retest-12.md). Real login/HTTP/deployed exposure and safe non-owner runtime boundary remain unverified; no universal closure. Historical reproductions below are immutable.
+
 Status: reproduced in isolated source/action contract, **deployed exposure not verified**. Severity: provisional P1 authorization. Product6a48cee; B-007. Normal receive-payment wrapper denies synthetic Viewer (B-012 positive control), but the exported allocation boundary accepted it and persisted financial/allocation/audit changes in the same fixture. This is independent of the now-corrected reversal boundary BUG-0009.
 
 Session loading is synthetic; real product permission assertion is retained where called. No staging request or customer record was touched. Existing-tenant invoice is real fixture data, not a nonexistent-ID probe. Do not infer full runtime access solely from this test.

@@ -1,0 +1,13 @@
+# v2.2.2 follow-up for the coding agent
+
+QA observed staging v2.2.2 ·9c17f2b as Owner, independently reviewed the13-file diff, pinned that exact product, and ran fresh source/PostgreSQL regressions. No staging writes or reset. Read [RUN-12](../runs/RUN-20261013-v2-2-2-retest-12.md) for fingerprints and first attempts.
+
+BUG-0010 and BUG-0011 fixes pass at tested depth: direct Viewer allocation denies with unchanged business state; real persisted Sales can receive AR but cannot pay AP; Owner AP positive control posts exact Dr2100/Cr1000; assigned-location denial and own-location positive control pass; custom bank1101 works; revenue/inactive/void/control/expense/foreign tenders deny. These are synthetic authenticated identities with actual permission loading/actions/SQL, owner DB connection; deployed credential/HTTP acceptance remains open.
+
+Additional work:
+
+1. **BUG-0012 remains partial.** F-004 original ISO/slash repro and leap/century cases now pass. F-010: `30 Feb 2026` returns `2026-03-02`; named-month fallback uses permissive Date.parse. Validate the original components for every accepted textual format and prevent rollover; retain valid `28 Feb 2026`, ISO/slash/serial/Date input and approved DD/MM ambiguity. Test downstream preview/commit no invalid posting. F-010 stops at first failure; do not claim the other bad named forms were executed.
+2. **New [BUG-0016](../bugs/BUG-0016-sales-return-income-sign.md), P1.** Actual service invoice600, receipt250 and credit100 yield correct GL net revenue500 and cash250, but getReports reports income700. Debit-normal Sales Returns4100 is being added to revenue. Fix report contribution signs, preserve journals/accounts/history, and review contra-account/report/Dashboard effects. Existing B-003 contract specifies Dr4100/Cr1300; do not change it to hide the reporting defect. B-104 must retain income500/AR250/cash250 and linked documents/allocations.
+3. Previously handed off **BUG-0013 receipt signer, BUG-0014 tenant context and BUG-0015 concurrent double reversal still reproduce** on9c17f2b in their documented isolated layers. Their files were not changed by this release. Keep their current fixes separate from this candidate's verified outcomes.
+
+Product CI Production Check273 and Docker14 are green with successful quality and publisher jobs. This does not certify the remaining business/security failures. Follow product AGENTS/CHG/version rules; document actual diff, migrations/runtime role/settings and compatibility. QA deliberately advances the pin after handoff and reruns core plus adjacent layers; no blanket staging reset is needed.
