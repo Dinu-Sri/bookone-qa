@@ -2,6 +2,8 @@
 
 Product baseline remains993664b while the coding agent fixes BUG-0010–12. The PostgreSQL driver3.4.9 and drizzle-kit0.24.2 match that product lockfile. This lane is independent of the embedded PGlite source contracts and never connects to shared staging.
 
+CI service is bound to127.0.0.1 on its disposable runner, with trust authentication only for that isolated service. The URL and restricted-role password are generated per run and masked/private; no fixed password is committed. Real database role/RLS and permissions are tested, not PostgreSQL password authentication. Actual deployed credentials/connection authentication remain unverified. Never copy this service configuration into shared staging or production.
+
 CI provisions a fresh PostgreSQL16 service with a dedicated database. Locally, provide `QA_RUNTIME_ADMIN_URL` for an empty loopback database named `bookone_qa_runtime`, and `QA_RUNTIME_ISOLATION=ephemeral-local-postgres`; then `pnpm product:prepare`, `pnpm runtime:prepare`, `pnpm runtime:run`. No local PostgreSQL tools were available when this was written; CI is the execution route. There is no unattended live replay or database reuse. Generate a fresh service for every run.
 
 Preparation verifies the product pin, refuses nonempty databases, pushes the complete current product Drizzle schema, applies every ordered SQL migration without catch-and-ignore, records migration hashes/results privately, and creates a random-password non-owner NOBYPASSRLS role. Failed preparation remains failed; no skipped migration is called applied. This checks the current schema-plus-SQL fresh setup path, not historical upgrades, product startup swallowing, registration, or backup restore.
