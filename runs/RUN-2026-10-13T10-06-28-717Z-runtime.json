@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-13T10-06-28-717Z-runtime",
+  "fingerprint": {
+    "productSha": "9c17f2b76eb9498b692c68a20c232e0cc44c6fdb",
+    "qaSha": "c539643c69f69f32782489ff56b8256fd50095b6",
+    "qaDirty": false,
+    "node": "v22.23.3",
+    "qaContentHash": "dbc5ed88aa84b9f2e7db54cf8657fe2e28c5afdbfcb6d416cafc8b0f402490b9",
+    "preparationHash": "889afe19845338df9399c15084dfe02c185b1a4a7e941f202411c4ae302f0469",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "results": [
+    {
+      "lane": "postgres-rls",
+      "boundary": "real-PostgreSQL-non-owner-product-helper",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "failed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {
+        "RT-002": {
+          "expectedOwnRows": 3,
+          "observedRows": 0
+        },
+        "RT-004": {
+          "tenantACount": 0,
+          "afterFailureCount": 0,
+          "tenantBCount": 0,
+          "expectedACount": 1,
+          "expectedAfterFailureCount": 0,
+          "expectedBCount": 1
+        }
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "passed"
+        },
+        {
+          "id": "B-102",
+          "status": "passed"
+        },
+        {
+          "id": "B-103",
+          "status": "passed"
+        },
+        {
+          "id": "E-115",
+          "status": "passed"
+        },
+        {
+          "id": "E-116",
+          "status": "passed"
+        },
+        {
+          "id": "E-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-008",
+          "status": "passed"
+        },
+        {
+          "id": "RT-009",
+          "status": "passed"
+        },
+        {
+          "id": "RT-010",
+          "status": "passed"
+        },
+        {
+          "id": "RT-011",
+          "status": "passed"
+        },
+        {
+          "id": "B-104",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {},
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "reversal-concurrency",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "passed"
+        },
+        {
+          "id": "RT-006",
+          "status": "failed"
+        },
+        {
+          "id": "RT-007",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {
+        "RT-006": {
+          "acceptedRequests": 2,
+          "reversalCount": 2,
+          "journalCount": 3,
+          "netCashCents": -12345,
+          "netIncomeCents": -12345,
+          "expectedAccepted": 1,
+          "expectedReversals": 1,
+          "expectedJournals": 2,
+          "expectedNetCashCents": 0,
+          "expectedNetIncomeCents": 0
+        }
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    }
+  ],
+  "productAcceptance": "not-established",
+  "schemaPreparation": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 41,
+    "migrationsExpected": 41
+  },
+  "missing": [
+    "credential-login",
+    "Next-server-HTTP",
+    "deployed-browser",
+    "full-upgrade",
+    "recovery",
+    "object-storage",
+    "non-owner-concurrent-reversal",
+    "broader-races-and-faults"
+  ]
+}

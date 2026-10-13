@@ -152,9 +152,10 @@ it('[B-104] actual invoice receipt250 and credit100 reconcile AR250 cash250 reve
   const p=await product();const id=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount:250}]})).ok).toBe(true);
   await ledger({'1000':25000,'1300':35000,'4000':-60000},2);
   const credit=await create(input(p,'sales_return',{sourceDocumentId:id,lines:[{productId:p,description:'Synthetic partial service credit',quantity:1,unitPrice:100}]}));
-  await ledger({'1000':25000,'1300':25000,'4000':-60000,'4100':10000},3);
   const original=await doc(id),returned=await doc(credit);expect([Number(original.total),Number(original.paidAmount),Number(original.balanceDue),original.status]).toEqual([600,350,250,'partial']);
   expect([returned.sourceDocumentId,Number(returned.total),Number(returned.paidAmount),Number(returned.balanceDue)]).toEqual([id,100,100,0]);
   await exactJournal(returned.transactionId!,[['4100','debit',10000],['1300','credit',10000]]);
   const allocations=await seed.select().from(schema.settlementAllocations);expect(allocations).toHaveLength(2);expect(allocations.map(a=>Number(a.allocatedAmount)).sort((a,b)=>a-b)).toEqual([100,250]);for(const a of allocations)expect(a.invoiceTransactionId).toBe(original.transactionId);
+  await noStock();
+  await ledger({'1000':25000,'1300':25000,'4000':-60000,'4100':10000},3);
 });
