@@ -2,6 +2,8 @@
 
 ## PostgreSQL workflows, company/role/module matrix and receipt coverage
 
+Final reviewed implementationecf4be58 passed [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294708) and [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294677); [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294659) and [PostgreSQL](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294844) reproduce the exact known failures, no infrastructure failures. Runtime new-run-only artifact11800492349;14 executed cases11/3. Earlier implementation evidence below remains immutable.
+
 [RUN-11](runs/RUN-20261013-runtime-and-files-11.md): product993664b unchanged.54 source cases50 pass/4 fail;14 PostgreSQL cases11 pass/3 fail. Full current Drizzle schema plus all41 SQL files applied on fresh PostgreSQL16.15; FK/unique negative controls pass. Actual quote/order/draft→typed invoice→two receipts and persisted permission/module/entity/override cases pass at owner-connection action depth. No credential login/HTTP/browser/real-storage acceptance and no staging mutations or reset.
 
 New [BUG-0013](bugs/BUG-0013-foreign-receipt-signing.md) forwards a known foreign receipt key to recorded signer; [BUG-0014](bugs/BUG-0014-tenant-context-lifetime.md) helper sees0 own rows under NOBYPASSRLS where3 are expected (explicit transaction positive control passes); [BUG-0015](bugs/BUG-0015-concurrent-double-reversal.md) concurrent actions create2 reversals/3 journals and net cash/income-123.45 instead of0. These are distinct tested findings; deployed exposure remains unverified. Previous BUG-0010/11/12 remain active. [Current coding-agent handoff](handoffs/HANDOFF-20261013-runtime-and-files.md).

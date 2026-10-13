@@ -1,5 +1,7 @@
 # RUN-11 — Isolated PostgreSQL, configuration and receipt contracts
 
+Final reviewed implementationecf4be58 (tested PR merge92d46d64): [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294708) and [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294677) green; [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294659)50/4 overall includingA; [PostgreSQL](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38374294844)11/3. [Final immutable runtime summary](RUN-2026-10-13T09-10-03-134Z-runtime.json), artifact11800492349. All14 expected cases executed with no infrastructure/skip/unknown failures. Fresh loopback-only service, generated masked/private URL/role credentials, current schema/all41 migrations and new-run-only sanitized artifact path verified. Same exact failing IDs and numerical findings; earlier fingerprints preserved.
+
 Owner authorized independent QA development while coding agent fixes BUG-0010–12 and explicitly requested company/module/settings/user/file coverage. Product stays pinned993664b. This run did not access/mutate staging, use production, log into a real account or reset live records. Previous staging stamp v2.2.1/993664b is historical context; no new deployed stamp was checked this turn.
 
 ## Implemented and executed
