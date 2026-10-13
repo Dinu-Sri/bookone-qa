@@ -43,3 +43,8 @@ As a user still assigned `Viewer`, selected synthetic customer `QA Viewer Update
 ## Third retest — 2026-10-12
 
 As Viewer after another owner-reported staging update, saved a LKR 100 synthetic service invoice draft as `INV-20261012-0003` for `QA Viewer Retest Three`. The invoice appeared as `draft`, then was archived. No Post action was used and no journal or stock assertion was run. This repeats the finding; deployed build identity remains unknown.
+
+
+## Fourth retest — 2026-10-13 (UI build marker v2.1.0 / 2b92cf4)
+
+The staging UI footer displayed `v2.1.0 · 2b92cf4`. The Viewer saved synthetic invoice `INV-20261013-0004` as a draft for LKR 100. It was archived; no Post action was used. The footer marker is not an image digest and no ledger/stock assertion was run.
