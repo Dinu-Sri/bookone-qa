@@ -31,6 +31,11 @@ async function ledger(expected:Record<string,number>,journalCount:number) {
   expect(Math.round(report.cashFlow.netCashFlow*100)).toBe(expected['1000']??0);
   await noStock();
 }
+async function exactJournal(transactionId:string,expected:[string,string,number][]) {
+  const rows=await admin`select a.code,l.side,l.amount::text as amount,j.tenant_id,j.user_id,j.entry_date from journal_entries j join journal_lines l on l.journal_entry_id=j.id join accounts a on a.id=l.account_id where j.transaction_id=${transactionId}`;
+  expect(rows.map(r=>[r.code,r.side,Math.round(Number(r.amount)*100)]).sort()).toEqual([...expected].sort());
+  for(const r of rows)expect([r.tenant_id,r.user_id,r.entry_date]).toEqual([TENANT_A,OWNER,DATE]);
+}
 it('[B-101] real quotation/order/draft conversion preserves lines and no financial or stock posting',async()=>{
   const p=await product();
   const quote=await create(input(p,'quotation'));
@@ -52,12 +57,14 @@ it('[B-102] service and digital draft posting through actual command retains ID 
     const d=await doc(posted);expect([Number(d.total),Number(d.balanceDue),Number(d.paidAmount)]).toEqual([600,600,0]);expect(d.transactionId).toBeTruthy();expect(d.postedAt).toBeTruthy();
     const active=await admin`select count(*)::int as count from business_document_lines where document_id=${posted} and voided_at is null`;expect(active[0].count).toBe(1);
     await ledger({'1300':60000,'4000':-60000},1);
+    await exactJournal(d.transactionId!,[['1300','debit',60000],['4000','credit',60000]]);
     const audits=await admin`select user_id,tenant_id,record_id from audit_log where table_name='business_documents' and record_id=${posted}`;
     expect(audits.length).toBeGreaterThanOrEqual(1);for(const a of audits)expect([a.user_id,a.tenant_id]).toEqual([OWNER,TENANT_A]);
   }
 });
 it('[B-103] actual invoice then two receipts reconcile persisted subledger/journals/audit after each command',async()=>{
   const p=await product();const id=await create(input(p));const invoice=await doc(id);await ledger({'1300':60000,'4000':-60000},1);
+  await exactJournal(invoice.transactionId!,[['1300','debit',60000],['4000','credit',60000]]);
   let paid=0,count=0;
   for(const amount of [250,350]) {
     const result=await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount}]});expect(result,result.error).toMatchObject({ok:true,paidCount:1});paid+=amount;count++;
@@ -66,6 +73,9 @@ it('[B-103] actual invoice then two receipts reconcile persisted subledger/journ
     const allocations=await seed.select().from(schema.settlementAllocations);expect(allocations).toHaveLength(count);expect(allocations.reduce((n,a)=>n+Number(a.allocatedAmount),0)).toBe(paid);
     for(const a of allocations) {
       expect([a.tenantId,a.invoiceTransactionId]).toEqual([TENANT_A,invoice.transactionId]);
+      const [payment]=await seed.select().from(schema.transactions).where(eq(schema.transactions.id,a.paymentTransactionId));
+      expect([payment.tenantId,payment.userId,payment.date,payment.accountingType,payment.direction,Number(payment.amount)]).toEqual([TENANT_A,OWNER,DATE,'payment','money_in',Number(a.allocatedAmount)]);
+      await exactJournal(a.paymentTransactionId,[['1000','debit',Math.round(Number(a.allocatedAmount)*100)],['1300','credit',Math.round(Number(a.allocatedAmount)*100)]]);
       const audit=await admin`select user_id,tenant_id,new_values from audit_log where action='ALLOCATE' and record_id=${a.paymentTransactionId}`;
       expect(audit).toHaveLength(1);expect([audit[0].user_id,audit[0].tenant_id]).toEqual([OWNER,TENANT_A]);expect(audit[0].new_values).toMatchObject({documentId:id,paymentTransactionId:a.paymentTransactionId,amount:Number(a.allocatedAmount)});
     }

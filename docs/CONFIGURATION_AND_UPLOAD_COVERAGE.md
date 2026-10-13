@@ -36,7 +36,7 @@ Required file cases:
 | Imports | Preview has no financial effects; invalid date/amount/currency/reference mapping and mixed valid/invalid rows; duplicate file/row fingerprints by tenant/account; commit/retry/reversal reconcile journal/subledger/stock where applicable. No half-import unless an approved policy explicitly defines it. |
 | Archives | Export excludes credentials/session/secrets; restore checks version/ownership, empty-tenant requirement, checksum/foreign refs and counts/balances/files; failure atomicity and recovery in isolated infrastructure. |
 
-File-role policies and HEIC handling require source/requirements confirmation. Policy uncertainty is not permission to weaken cross-tenant isolation. Receipt URL source review currently suggests a missing tenant-key check; this is an investigation until an executed signer/runtime reproduction exists. Production storage and actual cloud credentials are never needed for isolated QA.
+File-role policies and HEIC handling require source/requirements confirmation. Policy uncertainty is not permission to weaken cross-tenant isolation. F-008 now reproduces foreign-key forwarding to a recorded signer through the actual product action; see BUG-0013. Real storage, signed URL verification and deployed access remain unrun. F-005–007 cover only declared MIME, size, path and SDK-command metadata/bytes; they do not validate PDF/image structure or malware handling. Production storage and actual cloud credentials are never needed for isolated QA.
 
 ## Regression selection and memory
 

@@ -1,65 +1,121 @@
 {
-  "id": "F",
-  "version": 1,
-  "title": "Portable import normalization and fingerprint contracts",
-  "scope": "pure pinned product source; no persisted business lifecycle",
-  "releaseAcceptance": false,
-  "environment": "pure-product-source",
-  "fixtureVersion": "source-calculations-v1",
-  "authBoundary": "not-exercised",
-  "requiredAdditionalLayers": [
-    "full-business-lifecycle",
-    "real-postgres-runtime-rls",
-    "verified-staging-browser",
-    "audit-and-concurrency",
-    "recovery"
-  ],
-  "lanes": [
-    {
-      "id": "imports",
-      "file": "tests/batch/imports.test.ts",
-      "resume": "restart-isolated",
-      "timeoutSeconds": 300
-    }
-  ],
-  "cases": [
-    {
-      "id": "F-001",
-      "lane": "imports",
-      "rules": [
-        "BR-IMP-01"
-      ],
-      "bugs": [],
-      "critical": true
-    },
-    {
-      "id": "F-002",
-      "lane": "imports",
-      "rules": [
-        "BR-IMP-01"
-      ],
-      "bugs": [],
-      "critical": true
-    },
-    {
-      "id": "F-003",
-      "lane": "imports",
-      "rules": [
-        "BR-IMP-01"
-      ],
-      "bugs": [],
-      "critical": true
-    },
-    {
-      "id": "F-004",
-      "lane": "imports",
-      "rules": [
-        "BR-IMP-01"
-      ],
-      "bugs": [
-        "BUG-0012"
-      ],
-      "critical": true
-    }
-  ]
+    "id":  "F",
+    "version":  1,
+    "title":  "Import normalization and receipt object-command contracts",
+    "scope":  "pinned source plus synthetic session and recorded SDK commands; no real object storage or import commit",
+    "releaseAcceptance":  false,
+    "environment":  "pure-product-source",
+    "fixtureVersion":  "source-and-object-command-v1",
+    "authBoundary":  "synthetic-session-mocked-object-storage",
+    "requiredAdditionalLayers":  [
+                                     "full-business-lifecycle",
+                                     "real-postgres-runtime-rls",
+                                     "verified-staging-browser",
+                                     "audit-and-concurrency",
+                                     "recovery"
+                                 ],
+    "lanes":  [
+                  {
+                      "id":  "imports",
+                      "file":  "tests/batch/imports.test.ts",
+                      "resume":  "restart-isolated",
+                      "timeoutSeconds":  300
+                  },
+                  {
+                      "resume":  "restart-isolated",
+                      "timeoutSeconds":  120,
+                      "id":  "uploads",
+                      "file":  "tests/batch/uploads.test.ts"
+                  }
+              ],
+    "cases":  [
+                  {
+                      "id":  "F-001",
+                      "lane":  "imports",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "bugs":  [
+
+                               ],
+                      "critical":  true
+                  },
+                  {
+                      "id":  "F-002",
+                      "lane":  "imports",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "bugs":  [
+
+                               ],
+                      "critical":  true
+                  },
+                  {
+                      "id":  "F-003",
+                      "lane":  "imports",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "bugs":  [
+
+                               ],
+                      "critical":  true
+                  },
+                  {
+                      "id":  "F-004",
+                      "lane":  "imports",
+                      "rules":  [
+                                    "BR-IMP-01"
+                                ],
+                      "bugs":  [
+                                   "BUG-0012"
+                               ],
+                      "critical":  true
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+
+                               ],
+                      "id":  "F-005",
+                      "rules":  [
+                                    "BR-SEC-01"
+                                ],
+                      "lane":  "uploads"
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+
+                               ],
+                      "id":  "F-006",
+                      "rules":  [
+                                    "BR-SEC-01"
+                                ],
+                      "lane":  "uploads"
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+
+                               ],
+                      "id":  "F-007",
+                      "rules":  [
+                                    "BR-SEC-01"
+                                ],
+                      "lane":  "uploads"
+                  },
+                  {
+                      "critical":  true,
+                      "bugs":  [
+                                   "BUG-0013"
+                               ],
+                      "id":  "F-008",
+                      "rules":  [
+                                    "BR-SEC-01"
+                                ],
+                      "lane":  "uploads"
+                  }
+              ]
 }

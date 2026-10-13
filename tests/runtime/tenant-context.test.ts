@@ -4,6 +4,7 @@ import { pgClient } from '@product/db/db';
 import { withTenantContext } from '@product/db/helpers';
 import { TENANT_A, TENANT_B } from './support/session';
 import { resetFixture, closeFixture } from './support/fixture';
+import { observe } from './support/observations';
 beforeEach(resetFixture);
 afterAll(closeFixture);
 const client = () => pgClient();
@@ -17,6 +18,7 @@ it('[RT-001] non-owner role and actual RLS filter seeded foreign records', async
 });
 it('[RT-002] product withTenantContext retains tenant through its callback', async () => {
   const rows = await withTenantContext(TENANT_A,()=>client()`select tenant_id,code from accounts order by code`);
+  observe('RT-002',{expectedOwnRows:3,observedRows:rows.length});
   expect(rows.map(r=>[r.tenant_id,r.code])).toEqual(['1000','1300','4000'].map(c=>[TENANT_A,c]));
 });
 it('[RT-003] foreign read/write denied on separate real connection with positive own control', async () => {
@@ -35,5 +37,6 @@ it('[RT-004] tenant switching and thrown callback leave no pooled tenant leakage
   await expect(withTenantContext(TENANT_A,async()=>{throw new Error('Synthetic callback failure');})).rejects.toThrow('Synthetic callback failure');
   const none = await ids();
   const b = await withTenantContext(TENANT_B,ids);
+  observe('RT-004',{tenantACount:a.length,afterFailureCount:none.length,tenantBCount:b.length,expectedACount:1,expectedAfterFailureCount:0,expectedBCount:1});
   expect({a,none,b}).toEqual({a:[TENANT_A],none:[],b:[TENANT_B]});
 });

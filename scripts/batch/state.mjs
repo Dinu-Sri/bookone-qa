@@ -49,8 +49,8 @@ export function publicSummary(state, batch) {
   const fingerprint = {};
   const patterns = { productSha:/^[a-f0-9]{40}$/, qaSha:/^[a-f0-9]{40}$/, qaContentHash:/^[a-f0-9]{64}$/,
     batchHash:/^[a-f0-9]{64}$/, nodeVersion:/^v\d+\.\d+\.\d+$/,
-    fixtureVersion:/^(embedded-pg-v[12]|source-calculations-v1)$/, environment:/^(embedded-postgresql-contract|pure-product-source)$/,
-    authBoundary:/^(synthetic-session-real-product-permission-assertion|not-exercised)$/, migrationsAndRuntimeRls:/^not-exercised$/ };
+    fixtureVersion:/^(embedded-pg-v[12]|source-calculations-v1|source-and-object-command-v1)$/, environment:/^(embedded-postgresql-contract|pure-product-source)$/,
+    authBoundary:/^(synthetic-session-real-product-permission-assertion|synthetic-session-mocked-object-storage|not-exercised)$/, migrationsAndRuntimeRls:/^not-exercised$/ };
   for (const [key, pattern] of Object.entries(patterns)) {
     const value = state.fingerprint?.[key]; if (typeof value === 'string' && pattern.test(value)) fingerprint[key] = value;
   }

@@ -17,7 +17,7 @@
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
-    "check": "pnpm validate && pnpm test:guard && pnpm test:harness",
+    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs",
     "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
