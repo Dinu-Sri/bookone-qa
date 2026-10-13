@@ -1,5 +1,11 @@
 # QA status — updated 2026-10-13
 
+## v2.2.4: 60 source and23 PostgreSQL checks pass
+
+[RUN-14](runs/RUN-20261013-v2-2-4-retest-14.md), product343d546 matches observed staging v2.2.4 ·343d546. Existing Owner navigation/Dashboard restored; read-only baseline2 offsetting postings/net0 retained. All60 source and23 actual PostgreSQL cases pass, including driver query/commit/rollback/nested savepoints, overlapping/nested tenant contexts, real persisted permission/payment controls, credit income500/cash250/AR250 and exactly one concurrent reversal/two journals/net0. Current schema plus42 SQL files applied; no missing/setup runtime cases. Retained units94 pass/4 optional skips. No staging writes/reset or production access.
+
+BUG0010–17 have the bounded passing regressions described in RUN-14; no current failed executable case. This is not universal bug closure or release approval. First v2.2.3 failure runs remain preserved below. Implementation5c134704: [validation](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38399507182), [A](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38399507069), [B–F](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38399507009), [PostgreSQL23](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38399507247) green. [Current next-work handoff](handoffs/HANDOFF-20261013-v2-2-4-next.md): fresh credential/browser and actual non-owner business/HTTP/storage, historical upgrade/recovery, then C/D physical/rental.43 agent rules/92 lifecycle tasks/42-row matrix/10 pending policies preserve remaining scope.
+
 ## v2.2.3: source checks pass; reserved-client runtime regression
 
 [RUN-13](runs/RUN-20261013-v2-2-3-retest-13.md), product0d902d5 matches observed staging v2.2.3 ·0d902d5. All60 source cases pass; retained units94 pass/4 optional skips. First unchanged18-case PostgreSQL run3 pass/15 fail; diagnostic20-case run3 pass/17 fail, all42 SQL migrations applied, no missing/setup cases. New [BUG-0017](bugs/BUG-0017-reserved-client-driver-compatibility.md): actual product reserved-client Drizzle construction throws reading missing options.parsers. RT-002/004/012/013 independently classify that error; transaction/financial/race assertions are not reached. Permission-loader wrapping is a likely cause of existing-session navigation loss, already reported to coding agent. No staging writes/reset or release approval.

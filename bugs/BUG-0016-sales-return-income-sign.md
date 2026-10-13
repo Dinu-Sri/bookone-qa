@@ -13,3 +13,7 @@ Acceptance: unchanged B-104 ends reported income500, cash250, AR250, original600
 ## v2.2.3 retest - 2026-10-13
 
 v2.2.3/0d adds statement-sign helper/report changes. All B source cases pass, but real B-104 fails before credit/report assertions due to shared runtime regression. No new income value observed and no runtime acceptance. See RUN-13/BUG-0017; expected income500/cash250/AR250 unchanged.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+B-104 passes exact persisted credit/allocation/journal/no-stock assertions and reports income500/cash250/AR250. Bounded actual owner-connected finance fix; non-owner/browser/export/other contra-account report coverage remains open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.

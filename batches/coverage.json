@@ -17,15 +17,15 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -39,15 +39,15 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -61,15 +61,15 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -83,15 +83,15 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -1141,12 +1141,12 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -1163,12 +1163,12 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {
@@ -1185,12 +1185,12 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T10-11-31-621Z-runtime.json",
-      "next": "Current0d runtime fails upstream; repair BUG0017 and rerun unchanged persisted invariants, then required non-owner/login/HTTP/browser layers. Earlier passing evidence is candidate-specific.",
+      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
       "latestAttempt": {
-        "productSha": "0d902d55f56df51c6661251b99610de08f68be38",
-        "evidence": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
-        "result": "failed"
+        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+        "result": "passed"
       }
     },
     {

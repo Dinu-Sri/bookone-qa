@@ -13,3 +13,7 @@ Read-only staging observation after reload: v2.2.3 ·0d902d5, existing Owner ses
 Repair the connection-bound adapter with the actual pinned driver contract, including a supported transaction API, same-connection nested operations, rollback/cleanup and per-request isolation. Merely attaching options leaves `begin` compatibility unproven. Do not bind a reserved client's transaction method to the base pool, bypass RLS, or hard-code navigation/access to hide this failure.
 
 Acceptance: unchanged helper and business positives, RT-012/013, permissions/Viewer denials, exact quote→invoice→receipts→credit reports, sequential and concurrent reversal invariants; then fresh Owner/Viewer login and navigation, non-owner actions, nested/interleaved tenants and cleanup after exceptions. Prior-release migration/duplicate-history recovery remains separate.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+RT-012/013 plus nested/savepoint/overlapping/restored tenant controls pass using actual driver on343. Existing-session Owner navigation and read-only Dashboard restored. Bounded runtime regression fixed; fresh credential/non-owner business/HTTP and wider pool/recovery acceptance remain open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.

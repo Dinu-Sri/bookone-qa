@@ -15,3 +15,7 @@ At993664b F-004 still fails: impossible2026-02-30 accepted by parser. Source fun
 ## v2.2.3 retest - 2026-10-13
 
 v2.2.3/0d: F-004/009/010 calendar regressions pass, including named invalid dates and valid controls. Bounded source fix verified; actual file import and downstream reconciliation remain open. See RUN-13.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+All calendar source regressions pass on343; actual import/commit/reconciliation remains open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.

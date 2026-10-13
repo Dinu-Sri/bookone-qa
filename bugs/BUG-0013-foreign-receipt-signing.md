@@ -13,3 +13,7 @@ Acceptance: F-008 red-to-green on a deliberately advanced product pin plus posit
 ## v2.2.3 retest - 2026-10-13
 
 v2.2.3/0d: F-008 source recorded-signer guard passes; known foreign key is denied before the SDK signer. Bounded source fix verified; actual object storage, login/HTTP and adjacent asset acceptance remain open. See RUN-13.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+Foreign receipt key guard passes on343 before recorded signer; actual storage/HTTP/adjacent asset acceptance remains open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.

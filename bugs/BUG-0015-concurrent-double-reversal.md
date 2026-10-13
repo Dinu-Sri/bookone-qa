@@ -15,3 +15,7 @@ Acceptance: unchanged RT-006 becomes one accepted effect with net0 under forced 
 ## v2.2.3 retest — 2026-10-13
 
 v2.2.3/0d adds original-row locking and index040. Fresh current schema plus42 migrations applies, but RT-005/006/007 fail on sale/permission prerequisites before reversal contention. No new duplicate reversal observed or accepted fix demonstrated. See RUN-13/BUG-0017. Preserve old numeric evidence; historical upgrade/recovery remains open.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+RT-005/006/007 pass: one accepted concurrent reversal, two total journals, cash/income0 with exact linkage/audit and Viewer denial. Bounded actual owner-connected action fix; non-owner/HTTP races and historical040 upgrade/recovery remain open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.

@@ -5,21 +5,22 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "B",
-  "implementationStatus": "60-source-pass-20-postgres-reserved-driver-regression-acceptance-open",
+  "implementationStatus": "60-source-23-postgres-pass-bounded-fixes-acceptance-open",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261013-095909380-17a67b.json",
-  "lastRetestRecord": "runs/RUN-20261013-v2-2-3-retest-13.md",
+  "lastRetestRecord": "runs/RUN-20261013-v2-2-4-retest-14.md",
   "lastCleanSourceCi": {
-    "qaSha": "da183d9437948aee1ff7f763c9bb35ab9b078df7",
-    "qaValidationRun": 38397470471,
-    "candidateBatchRun": 38397470575,
+    "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+    "qaSha": "5c13470400336ec4457ecd4aaef698fbe941fa0d",
+    "qaValidationRun": 38399507182,
+    "candidateBatchRun": 38399507069,
     "candidateResult": "15-pass-0-fail",
-    "deepBatchRun": 38397470608,
+    "deepBatchRun": 38399507009,
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-quick-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "0d902d55f56df51c6661251b99610de08f68be38",
-  "observedStagingStamp": "v2.2.3 · 0d902d5",
+  "candidateProductSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+  "observedStagingStamp": "v2.2.4 · 343d546",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -37,14 +38,14 @@
     "BUG-0017"
   ],
   "nextActions": [
-    "Coding agent already fixing navigation: provide confirmed BUG0017 reserved-client constructor evidence and require supported same-connection transaction integration.",
-    "Inspect next actual product diff, deliberately pin exact SHA and rerun all60 source/20 runtime cases on a fresh isolated service; preserve unchanged accounting expectations.",
-    "Once helper works, verify report500/cash250/AR250 and exactly one concurrent reversal; do not close0015/16 from prerequisite failures.",
-    "Fresh intended Owner/Viewer login/navigation, actual non-owner action/login/HTTP and nested/interleaved tenant cleanup; no blind shared staging reset or payment replay.",
-    "Prior-release migration040/data-preservation/duplicate-history failure/recovery; then C/D physical/rental persisted workflows, company/settings/user/file matrix and10 unresolved policies."
+    "Fresh explicit Owner/Viewer login and actor verification, representative live B workflow/read/reload/deny; no blind staging reset or payment replay.",
+    "Add intended non-owner commercial/reversal action and permission loading, HTTP/login and wider scope/revoked/cache acceptance; helper passes alone are insufficient.",
+    "Historical migration040/data preservation and duplicate-history failure/recovery in isolated PostgreSQL, verify deployed schema/runtime role/image/backup identity.",
+    "Real synthetic storage upload/sign/download/cleanup and company/module/settings/roles matrix, then C/D persisted physical/rental lifecycle coverage.",
+    "Maintain60-source/23-runtime core regressions for each exact new candidate, broaden shared/unknown diffs, review sensitivity/release-gate negative/manual/external promotion; resolve10 policies."
   ],
   "missingAcceptance": [
-    "safe-runtime-tenant-binding",
+    "full-non-owner-business-actions",
     "credential-login-and-HTTP",
     "wider-role-dimension-denials",
     "broader-concurrency-and-atomicity",
@@ -67,17 +68,10 @@
     "F": "runs/RUN-20261013-095902771-f8dbeb.json"
   },
   "workQueue": [
-    "RT-012",
-    "RT-013",
-    "RT-002",
-    "RT-004",
-    "B-104",
-    "RT-006",
-    "F-010",
-    "F-008",
     "B-101",
     "B-102",
     "B-103",
+    "B-104",
     "B-108",
     "B-106",
     "B-107",
@@ -100,37 +94,40 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-13T12-28-33-405Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
-    "qaImplementationSha": "da183d9437948aee1ff7f763c9bb35ab9b078df7",
-    "testedPrMergeSha": "4e05e103b9e566c137be8d194840ee9010d33cdb",
-    "run": 38397470660,
-    "result": "3-pass-17-fail",
+    "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+    "qaImplementationSha": "5c13470400336ec4457ecd4aaef698fbe941fa0d",
+    "testedPrMergeSha": "9c703c8dc9724426b96399b00ddd5b14fb18b1b4",
+    "run": 38399507247,
+    "result": "23-pass-0-fail",
     "schema": "current-Drizzle-plus-all42-SQL-PostgreSQL16.15",
-    "scope": "20-cases;constructor-regression;no-financial-race-acceptance"
+    "scope": "restricted-helper-driver-transactions-nesting-overlap;owner-business-actions;synthetic-login"
   },
   "configurationMatrix": "batches/configuration-matrix.json",
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261013-v2-2-3-runtime.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261013-v2-2-4-next.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
-  "activeFindings": [
+  "activeFindings": [],
+  "verifiedBoundedFixes": [
+    "BUG-0010",
+    "BUG-0011",
+    "BUG-0012",
+    "BUG-0013",
     "BUG-0014",
     "BUG-0015",
     "BUG-0016",
     "BUG-0017"
   ],
-  "verifiedBoundedFixes": [
-    "BUG-0010",
-    "BUG-0011",
-    "BUG-0012",
-    "BUG-0013"
-  ],
   "boundedFixLimits": {
-    "BUG-0010/11": "Original source controls pass new candidate; prior persisted action evidence belongs to9c only. New0d real actions fail upstream, not renewed original-defect proof.",
+    "BUG-0010/11": "Current source and owner-connected persisted-role payment/scope positives and denials pass; actual non-owner HTTP/login remains open.",
     "BUG-0012": "F-004/009/010 source calendars pass; real import/reconciliation remains open.",
-    "BUG-0013": "F-008 source recorded-signer guard passes; real storage/HTTP remains open."
-  }
+    "BUG-0013": "F-008 source recorded-signer guard passes; real storage/HTTP remains open.",
+    "BUG-0014/17": "Non-owner actual helper/query/transactions/nesting/overlap pass; existing-session navigation restored. Full non-owner business/login/pool-cancellation/recovery remains open.",
+    "BUG-0015/16": "Actual owner-connected credit report and concurrent reversal invariants pass; non-owner/HTTP races and historical upgrade/recovery remain open."
+  },
+  "currentFailedExecutableCases": []
 }

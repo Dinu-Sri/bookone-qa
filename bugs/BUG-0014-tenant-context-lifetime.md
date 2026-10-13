@@ -15,3 +15,7 @@ Acceptance: both helper tests pass through an actual non-owner role with positiv
 ## v2.2.3 retest — 2026-10-13
 
 v2.2.3/0d: RT-002/004 now fail before callback assertions at Drizzle construction, not at the older zero-own-rows comparison. See BUG-0017 and RUN-13; tenant binding/cleanup and nested/interleaved runtime acceptance remain unresolved.
+
+## v2.2.4 bounded retest — 2026-10-13
+
+RT-002 own3 rows and RT-004 A1/none0/B1 pass on actual non-owner role. Driver query/commit/rollback/savepoints/parallel and nested tenant contexts also pass. Full non-owner business/login/HTTP/pool-cancellation acceptance remains open. See [RUN-14](../runs/RUN-20261013-v2-2-4-retest-14.md). Earlier failures remain preserved.
