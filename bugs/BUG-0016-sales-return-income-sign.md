@@ -9,3 +9,7 @@ Source investigation: graph lookup for getReports/computeAccountBalances returne
 Repair: preserve posted journal signs/history; aggregate report contributions by accounting meaning/side, including contra revenue. Do not relabel4100, negate stored amounts, flip journals, hide the return or adjust snapshots to match700. Review P&L, net-income/retained-earnings calculations and Dashboard, plus gross revenue/discount/return display and corresponding contra-expense/asset cases. Keep scope/date/tenant filters.
 
 Acceptance: unchanged B-104 ends reported income500, cash250, AR250, original600/credit100 links and allocations intact, no stock effect. Add independent debit-normal revenue/credit-normal expense positive/negative cases and representative browser checks. First initial credit attempt lacked4100 in QA and had an incorrect direct4000 expectation; that harness defect was corrected from the pre-existing B-003 contract, with first evidence retained, before this product finding was recorded.
+
+## v2.2.3 retest - 2026-10-13
+
+v2.2.3/0d adds statement-sign helper/report changes. All B source cases pass, but real B-104 fails before credit/report assertions due to shared runtime regression. No new income value observed and no runtime acceptance. See RUN-13/BUG-0017; expected income500/cash250/AR250 unchanged.

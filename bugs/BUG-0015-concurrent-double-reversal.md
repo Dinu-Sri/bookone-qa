@@ -11,3 +11,7 @@ Source: `apps/web/src/app/actions/record-entry.ts`, `createReversingEntry` check
 Repair requirements: put eligibility read/lock and financial writes in the same tenant-scoped transaction, lock/serialize the original or use an atomic claim, recheck under the lock, and enforce an additive database uniqueness invariant for an original's reversal according to preserved-history policy. Roll back the losing request cleanly; keep its response understandable. Do not fix this with client disabling, global locks or assertion changes. Review other read-then-write flows: invoice numbering/posting, payment balance/allocations, cost layers/stock, rental availability and imports.
 
 Acceptance: unchanged RT-006 becomes one accepted effect with net0 under forced contention; sequential, permission, period/scope, audit/link and foreign-tenant checks remain correct. Repeat with independent processes/HTTP sessions and intended non-owner runtime role. Add failure/retry evidence; never silently delete duplicate financial history in deployed systems.
+
+## v2.2.3 retest — 2026-10-13
+
+v2.2.3/0d adds original-row locking and index040. Fresh current schema plus42 migrations applies, but RT-005/006/007 fail on sale/permission prerequisites before reversal contention. No new duplicate reversal observed or accepted fix demonstrated. See RUN-13/BUG-0017. Preserve old numeric evidence; historical upgrade/recovery remains open.

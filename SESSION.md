@@ -2,6 +2,8 @@
 
 Canonical memory is versioned in this repository. Read the current reviewed branch, not an old local checkout or chat summary. If main has a pending implementation pointer, inspect that PR/head before starting; never silently treat pending work as merged.
 
+Current candidate v2.2.3/0d902d5 has60 source passes but a confirmed reserved-client Drizzle constructor regression, BUG-0017. Current runtime manifest20; first unchanged18-case attempt is preserved. Read RUN-13 and HANDOFF-20261013-v2-2-3-runtime before continuing. Do not reuse v2.2.2 action passes or interpret upstream failures as re-reproduction of old race/report defects.
+
 Configuration and files: read docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md and run `pnpm matrix:check`. The matrix is a specification, not acceptance. The PostgreSQL lane is `pnpm runtime:prepare` then `pnpm runtime:run`, using only a fresh isolated PostgreSQL16 service; see docs/POSTGRES_RUNTIME.md. Never reuse a live staging DB or substitute owner-connection action passes for non-bypassRLS acceptance.
 
 1. Read AGENTS.md, STATUS.md, memory/programme.json and the relevant batch manifest. `pnpm session:start` prints this entry point and the next actions.

@@ -11,3 +11,7 @@ Source: `packages/db/src/helpers.ts` uses `set_config('app.current_tenant_id', t
 Repair requirements: make tenant state, permission loading and queries run on the same explicitly scoped connection/transaction for the complete operation, including nested helpers and business transactions. Fail closed for absent/invalid tenant context and always clear/rollback safely; avoid session settings leaking on reused connections. Confirm deployed runtime role is not table owner/superuser/BYPASSRLS rather than assuming policies enforce it. Keep correct tenant predicates/composite ownership checks even with RLS.
 
 Acceptance: both helper tests pass through an actual non-owner role with positive own rows and real foreign rows; alternate/interleave tenants and thrown callbacks on multiple pooled connections; actual login/permission loading and commercial/reversal actions under the intended runtime role. Owner-mode commercial passes are explicitly separate evidence. No production credential changes or staging resets were performed by QA.
+
+## v2.2.3 retest — 2026-10-13
+
+v2.2.3/0d: RT-002/004 now fail before callback assertions at Drizzle construction, not at the older zero-own-rows comparison. See BUG-0017 and RUN-13; tenant binding/cleanup and nested/interleaved runtime acceptance remain unresolved.

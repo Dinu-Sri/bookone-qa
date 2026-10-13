@@ -9,3 +9,7 @@ Source: `apps/web/src/app/actions/upload-receipt.ts`, `getReceiptDownloadUrl` re
 Repair requirements: enforce current tenant ownership and authorized record/scope/role before signing, using canonical key parsing and record linkage as applicable. Reject unrelated buckets/namespaces, empty/malformed/traversal-like keys and foreign tenant keys; preserve legitimate own downloads and intended public-link rules. Do not rely on key secrecy or UI hiding. Decide unattached-file and Viewer read policies explicitly. Reuse equivalent checks for product/rental/logo/archive assets where needed, with source-specific expectations.
 
 Acceptance: F-008 red-to-green on a deliberately advanced product pin plus positive controls; real owned/foreign files in isolated storage with supported server/HTTP/browser flows; membership/module/scope changes and signed URL/public access/expiry checks. Existing URLs issued before a fix need an explicit exposure/expiry assessment. Keep this report open until required runtime evidence exists.
+
+## v2.2.3 retest - 2026-10-13
+
+v2.2.3/0d: F-008 source recorded-signer guard passes; known foreign key is denied before the SDK signer. Bounded source fix verified; actual object storage, login/HTTP and adjacent asset acceptance remain open. See RUN-13.
