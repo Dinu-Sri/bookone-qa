@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { runtimeTarget } from './target.mjs';
 import { laneOutcome } from '../batch/state.mjs';
 import { runtimeManifest } from './manifest.mjs';
+import { failureCategories } from './diagnostics.mjs';
 runtimeTarget(process.env.QA_RUNTIME_ADMIN_URL, process.env.QA_RUNTIME_ISOLATION);
 const preparation = JSON.parse(readFileSync('.local/runtime/preparation.json', 'utf8'));
 if (!preparation.complete) throw new Error('Complete schema preparation required');
@@ -38,6 +39,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   let tests=[];try {tests=JSON.parse(readFileSync(outputFile,'utf8')).testResults.flatMap(t=>t.assertionResults??[]);}catch{}
   const observed=tests.map(t=>({id:t.fullName?.match(/\[((?:RT|[A-F])-\d{3})\]/)?.[1]??'unknown',status:['passed','failed'].includes(t.status)?t.status:'blocked'}));
   const outcome=laneOutcome(lane.expected,{cases:observed},result.status);
+  const diagnostics=Object.fromEntries(tests.filter(t=>t.status==='failed').map(t=>[t.fullName?.match(/\[((?:RT|[A-F])-\d{3})\]/)?.[1],failureCategories(t.failureMessages)]).filter(([id,categories])=>lane.expected.includes(id)&&categories.length));
   const cases=outcome.cases;
   const unexpected=observed.filter(t=>!lane.expected.includes(t.id)).length;
   const observationKeys={'B-104':['reportedIncomeCents','expectedIncomeCents','reportedCashCents','expectedCashCents'],'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','journalCount','netCashCents','netIncomeCents','expectedAccepted','expectedReversals','expectedJournals','expectedNetCashCents','expectedNetIncomeCents']};
@@ -47,7 +49,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
     observations[id]=Object.fromEntries(keys.filter(k=>Number.isSafeInteger(rawObservations[id][k])).map(k=>[k,rawObservations[id][k]]));
   }
   results.push({ lane: lane.name, boundary: lane.boundary, cases, subprocessExit: result.status,
-    observations,
+    observations, diagnostics,
     status: outcome.status, evidenceComplete:outcome.evidenceComplete, infrastructureFailure:outcome.infrastructureFailure, unexpected });
   writeFileSync(`.local/runtime/${runId}/checkpoint.json`,JSON.stringify({fingerprint,results},null,2));
   assertCandidate();

@@ -1,6 +1,7 @@
 import { beforeEach, afterAll, it, expect } from 'vitest';
 import postgres from 'postgres';
-import { pgClient } from '@product/db/db';
+import { pgClient, db, reservePgClient, drizzleOn } from '@product/db/db';
+import { sql } from 'drizzle-orm';
 import { withTenantContext } from '@product/db/helpers';
 import { TENANT_A, TENANT_B } from './support/session';
 import { resetFixture, closeFixture } from './support/fixture';
@@ -39,4 +40,23 @@ it('[RT-004] tenant switching and thrown callback leave no pooled tenant leakage
   const b = await withTenantContext(TENANT_B,ids);
   observe('RT-004',{tenantACount:a.length,afterFailureCount:none.length,tenantBCount:b.length,expectedACount:1,expectedAfterFailureCount:0,expectedBCount:1});
   expect({a,none,b}).toEqual({a:[TENANT_A],none:[],b:[TENANT_B]});
+});
+it('[RT-012] product reserved client supports real Drizzle query construction',async()=>{
+  const reserved=await reservePgClient();
+  try {
+    await reserved`select set_config('app.current_tenant_id',${TENANT_A},false)`;
+    const rows=await drizzleOn(reserved).execute(sql`select tenant_id,code from accounts order by code`);
+    expect(rows.map(r=>[r.tenant_id,r.code])).toEqual(['1000','1300','4000'].map(c=>[TENANT_A,c]));
+  } finally {
+    try {await reserved`select set_config('app.current_tenant_id','',false)`;} finally {reserved.release();}
+  }
+});
+it('[RT-013] product scoped Drizzle transaction commits and rolls back without leaking tenant',async()=>{
+  await withTenantContext(TENANT_A,async()=>{
+    await db().transaction(async tx=>{await tx.execute(sql`update accounts set name='Committed fixture' where code='1000'`);});
+    await expect(db().transaction(async tx=>{await tx.execute(sql`update accounts set name='Rolled-back fixture' where code='1000'`);throw new Error('Synthetic rollback');})).rejects.toThrow('Synthetic rollback');
+    const rows=await client()`select name from accounts where code='1000'`;
+    expect(rows.map(r=>r.name)).toEqual(['Committed fixture']);
+  });
+  expect(await client()`select id from accounts`).toHaveLength(0);
 });
