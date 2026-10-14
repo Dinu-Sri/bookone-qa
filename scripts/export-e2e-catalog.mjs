@@ -41,6 +41,11 @@ for (const line of lines) {
   }
   if (!cur) continue;
 
+  if (/^- \*\*Execution policy:\*\* dedicated-backup$/.test(line)) {
+    cur.executionPolicy = 'dedicated-backup';
+    continue;
+  }
+
   const p = line.match(/^- \*\*Priority:\*\*\s*(P\d)/);
   if (p) {
     cur.priority = p[1];

@@ -1,10 +1,10 @@
 {
   "summary": {
-    "generated_at": "2026-10-12T05:11:14.962Z",
-    "catalog_total": 747,
+    "generated_at": "2026-10-14T04:42:37.277Z",
+    "catalog_total": 792,
     "referenced": 747,
-    "missing": 0,
-    "coverage_pct": 100,
+    "missing": 45,
+    "coverage_pct": 94.3,
     "by_priority_referenced": {
       "P0": 337,
       "P1": 323,
@@ -115,6 +115,10 @@
       "total": 29,
       "referenced": 29
     },
+    "32. Tenant archive and form overlay": {
+      "total": 45,
+      "referenced": 0
+    },
     "4. Company masters": {
       "total": 30,
       "referenced": 30
@@ -140,7 +144,53 @@
       "referenced": 44
     }
   },
-  "missing_ids": [],
+  "missing_ids": [
+    "S-0761",
+    "S-0762",
+    "S-0763",
+    "S-0764",
+    "S-0765",
+    "S-0766",
+    "S-0767",
+    "S-0768",
+    "S-0769",
+    "S-0770",
+    "S-0771",
+    "S-0772",
+    "S-0773",
+    "S-0774",
+    "S-0775",
+    "S-0776",
+    "S-0777",
+    "S-0778",
+    "S-0779",
+    "S-0780",
+    "S-0781",
+    "S-0782",
+    "S-0783",
+    "S-0784",
+    "S-0785",
+    "S-0786",
+    "S-0787",
+    "S-0788",
+    "S-0789",
+    "S-0790",
+    "S-0791",
+    "S-0792",
+    "S-0793",
+    "S-0794",
+    "S-0795",
+    "S-0796",
+    "S-0797",
+    "S-0798",
+    "S-0799",
+    "S-0800",
+    "S-0801",
+    "S-0802",
+    "S-0803",
+    "S-0804",
+    "S-0805"
+  ],
   "scenarios": [
     {
       "id": "S-0001",
@@ -10419,6 +10469,681 @@
         "tests/27-catalog-sweep.spec.ts"
       ],
       "status": "referenced"
+    },
+    {
+      "id": "S-0761",
+      "title": "Stamp and owner page smoke",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@stamp"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0762",
+      "title": "Fresh primary Owner identity",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@access"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0763",
+      "title": "Viewer cannot read or write backup",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@access"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0764",
+      "title": "Company Admin cannot acquire owner-only backup",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@access"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0765",
+      "title": "Control Room requires platform super-admin",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@access"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0766",
+      "title": "Password and confirmation validation",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0767",
+      "title": "Paired encrypted downloads and checksums",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0768",
+      "title": "Tenant export isolation",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0769",
+      "title": "Archive and telemetry omit secrets and operator data",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0770",
+      "title": "Complete multi-business golden snapshot",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0771",
+      "title": "Snapshot consistency during posting",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0772",
+      "title": "Per-company prepare rate limit",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0773",
+      "title": "Prepared download expiry and ownership",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@export"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0774",
+      "title": "All trading families enforce emptiness",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0775",
+      "title": "Non-empty restore refusal",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0776",
+      "title": "Wrong password and corrupt archive fail safely",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0777",
+      "title": "Schema kind checksum and compatibility gates",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0778",
+      "title": "Real source A to empty B restore",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0779",
+      "title": "Seed CoA jobs and document sequences",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0780",
+      "title": "Restorer ownership and teammate identity",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0781",
+      "title": "Independent accounting stock and subledger integrity",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0782",
+      "title": "Failed restore rolls back completely",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0783",
+      "title": "Second data restore refused",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0784",
+      "title": "Concurrent data restores serialize safely",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@data"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0785",
+      "title": "Matching files restore and open real attachments",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0786",
+      "title": "Data-only books and missing attachment UI",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0787",
+      "title": "Pair mismatch prior-data and cross-checksum guards",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0788",
+      "title": "Files pack applies at most once",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0789",
+      "title": "Fill missing objects without overwrite",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0790",
+      "title": "Prefix-only storage identity rewrite",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0791",
+      "title": "Large pack chunk boundary",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0792",
+      "title": "Interrupted chunk and size protections",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0793",
+      "title": "Invalid object paths and bytes",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0794",
+      "title": "Storage failure recovery",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@files"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0795",
+      "title": "Thirty-day reminder boundaries",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@reminder"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0796",
+      "title": "No prepared pair and real storage failure",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@smoke"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0797",
+      "title": "withFormPending success and error cleanup",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0798",
+      "title": "Backup overlay dismisses promptly",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0799",
+      "title": "Reverse and login overlay regression",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0800",
+      "title": "Invoice payment and conversion saves",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0801",
+      "title": "Filters search and cancel do not arm busy",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0802",
+      "title": "Delay watchdog and long operation semantics",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0803",
+      "title": "Pathname unmount and shared form cleanup",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0804",
+      "title": "Accessible error retry and overlapping forms",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@overlay"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
+    },
+    {
+      "id": "S-0805",
+      "title": "Mandatory unchanged core and physical regressions",
+      "section": "32. Tenant archive and form overlay",
+      "priority": "P0",
+      "tags": [
+        "@tenant-archive",
+        "@core"
+      ],
+      "referenced_in": [],
+      "status": "missing",
+      "execution_policy": "dedicated-backup",
+      "dedicated_assertions": "catalog/backup-assertions.json",
+      "browser_automation": "backlog"
     }
   ]
 }

@@ -5,6 +5,7 @@ export type Scenario = {
   priority: string;
   tags: string[];
   steps: string[];
+  executionPolicy?: 'dedicated-backup';
 };
 
 /** Shared mutable state across serial catalog runs. */

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261014-045146451-984f97",
+  "batch": "F",
+  "fingerprint": {
+    "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "productStamp": "v2.5.3 · 5becb2d",
+    "qaSha": "4bf29bff987cd16db1352c838fa5e5796b17e9ee",
+    "qaContentHash": "9a825ff5b81b5f0b6ee300078495174542cdda22fdac9f57d89e8f354478fb39",
+    "batchHash": "fee23ca56481196dec848428d07697721619236d614e483261507eb436f8edfb",
+    "nodeVersion": "v20.19.0",
+    "fixtureVersion": "source-and-object-command-v1",
+    "environment": "pure-product-source",
+    "authBoundary": "synthetic-session-mocked-object-storage",
+    "migrationsAndRuntimeRls": "not-exercised",
+    "qaDirty": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "startedAt": "2026-10-14T04:51:46.454Z",
+  "finishedAt": "2026-10-14T04:52:03.582Z",
+  "status": "completed",
+  "sourceGate": "passed",
+  "releaseAcceptance": "not-established",
+  "missingAcceptanceLayers": [
+    "full-business-lifecycle",
+    "real-postgres-runtime-rls",
+    "verified-staging-browser",
+    "audit-and-concurrency",
+    "recovery"
+  ],
+  "cases": [
+    {
+      "id": "F-001",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-002",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-003",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-004",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [
+        "BUG-0012"
+      ]
+    },
+    {
+      "id": "F-009",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-010",
+      "status": "passed",
+      "rules": [
+        "BR-IMP-01"
+      ],
+      "bugs": [
+        "BUG-0012"
+      ]
+    },
+    {
+      "id": "F-005",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-006",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-007",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "bugs": []
+    },
+    {
+      "id": "F-008",
+      "status": "passed",
+      "rules": [
+        "BR-SEC-01"
+      ],
+      "bugs": [
+        "BUG-0013"
+      ]
+    }
+  ],
+  "totals": {
+    "passed": 10,
+    "failed": 0,
+    "flaky": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "not-run": 0
+  }
+}

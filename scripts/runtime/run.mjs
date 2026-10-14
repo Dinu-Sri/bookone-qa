@@ -24,7 +24,7 @@ const contentHash = () => createHash('sha256').update(git('ls-files','--cached',
   .map(p=>p+'\0'+createHash('sha256').update(readFileSync(p)).digest('hex')).join('\n')).digest('hex');
 const qaContentHash=contentHash();
 const assertCandidate=()=>{if(contentHash()!==qaContentHash || git('-C','work/product','rev-parse','HEAD')!==productSha || git('-C','work/product','status','--porcelain','--untracked-files=no'))throw new Error('Candidate or QA content changed during runtime run');};
-const fingerprint = { productSha, qaSha: git('rev-parse','HEAD'), qaDirty: Boolean(git('status','--porcelain')), node: process.version,
+const fingerprint = { productSha, productStamp:`v${readFileSync('work/product/VERSION','utf8').trim()} · ${productSha.slice(0,7)}`, qaSha: git('rev-parse','HEAD'), qaDirty: Boolean(git('status','--porcelain')), node: process.version,
   qaContentHash,
   preparationHash: createHash('sha256').update(JSON.stringify(preparation)).digest('hex'), fixtureVersion: 'runtime-v1', environment: 'ephemeral-loopback-PostgreSQL16' };
 for (const lane of lanes.filter(l => selected === 'all' || l.name === selected)) {

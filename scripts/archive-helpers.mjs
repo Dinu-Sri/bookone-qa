@@ -1,0 +1,24 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {spawnSync} from 'node:child_process';
+import {createHash,randomBytes} from 'node:crypto';
+const read=p=>JSON.parse(readFileSync(p,'utf8')),hash=v=>createHash('sha256').update(v).digest('hex');
+const git=(...args)=>{const r=spawnSync('git',args,{encoding:'utf8'});if(r.status!==0)throw new Error('Git fingerprint unavailable');return r.stdout.trim();};
+const ref=read('product-ref.json'),plan=read('batches/backup-restore.json');
+if(plan.productSha!==ref.commit)throw new Error('Plan pin mismatch');
+if(spawnSync(process.execPath,['scripts/verify-product.mjs'],{encoding:'utf8'}).status!==0)throw new Error('Pinned product verification failed');
+const content=()=>hash(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+hash(readFileSync(p))).join('\n'));
+const fingerprint={productSha:ref.commit,productStamp:plan.requiredLiveStamp,qaSha:git('rev-parse','HEAD'),qaDirty:Boolean(git('status','--porcelain')),qaContentHash:content(),planHash:hash(JSON.stringify(plan)),node:process.version,fixtureVersion:'archive-pure-v1',environment:'pinned-source-in-memory-helpers',liveStampObserved:false};
+const runId='RUN-'+new Date().toISOString().replace(/[:.]/g,'-')+'-archive-'+randomBytes(3).toString('hex'),dir='.local/archive-helpers/'+runId;mkdirSync(dir,{recursive:true});
+const output=dir+'/raw.json';
+const r=spawnSync(process.execPath,['node_modules/vitest/vitest.mjs','run','--config','vitest.archive.config.ts','--reporter=json',`--outputFile=${output}`],{encoding:'utf8',timeout:120000});
+writeFileSync(dir+'/raw.log',(r.stdout??'')+(r.stderr??''));
+let observed=[];try{observed=read(output).testResults.flatMap(t=>t.assertionResults??[]).map(t=>({id:t.fullName?.match(/\[(S-\d{4})\]/)?.[1],status:['passed','failed'].includes(t.status)?t.status:'blocked'}));}catch{}
+const changed=content()!==fingerprint.qaContentHash||git('-C','work/product','rev-parse','HEAD')!==ref.commit||Boolean(git('-C','work/product','status','--porcelain','--untracked-files=no'));
+const cases=plan.helperIds.map(id=>{const hits=observed.filter(c=>c.id===id);return{id,status:hits.length===1?hits[0].status:'blocked'};});
+const unexpected=observed.filter(c=>!plan.helperIds.includes(c.id)).length;
+const counts=Object.fromEntries(['passed','failed','blocked'].map(s=>[s,cases.filter(c=>c.status===s).length]));
+const infrastructureFailure=changed||unexpected>0||r.status===null||(!counts.failed&&r.status!==0);
+const summary={schemaVersion:1,runId,fingerprint,counts,cases,unexpected,infrastructureFailure,productAcceptance:'not-established',scope:'partial-pure-helpers-no-real-export-restore-HTTP-PG-MinIO-or-browser'};
+writeFileSync(dir+'/summary.json',JSON.stringify(summary,null,2)+'\n');
+mkdirSync('runs',{recursive:true});writeFileSync('runs/'+runId+'.json',JSON.stringify(summary,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify(summary,null,2));if(counts.failed||counts.blocked||infrastructureFailure)process.exitCode=1;

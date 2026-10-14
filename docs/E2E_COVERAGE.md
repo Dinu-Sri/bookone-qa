@@ -7,11 +7,11 @@
 
 | Metric | Value |
 |--------|------:|
-| Catalog total | 747 |
+| Catalog total | 792 |
 | IDs referenced in code | 747 |
-| IDs missing | 0 |
-| Coverage (ID presence) | 100% |
-| Generated at | 2026-10-12T05:11:14.962Z |
+| IDs missing | 45 |
+| Coverage (ID presence) | 94.3% |
+| Generated at | 2026-10-14T04:42:37.277Z |
 
 status=referenced means the catalog ID string appears in tests/ or src/ (execute handlers). It does not yet certify deep mutate/balance assertions — see docs/E2E_AUTOMATION.md phases.
 
@@ -21,6 +21,7 @@ status=referenced means the catalog ID string appears in tests/ or src/ (execute
 |---------|------:|----------:|--------:|
 | 18. Route smoke (load only) | 83 | 83 | 0 |
 | 8. Sales lifecycle | 66 | 66 | 0 |
+| 32. Tenant archive and form overlay | 45 | 0 | 45 |
 | 9. Purchase lifecycle | 44 | 44 | 0 |
 | 11. Accounting, reports, reconciliation | 44 | 44 | 0 |
 | 6. Products & stock | 39 | 39 | 0 |
@@ -51,9 +52,53 @@ status=referenced means the catalog ID string appears in tests/ or src/ (execute
 | 27. Company settings pages save | 5 | 5 | 0 |
 | 29. Company location delete | 2 | 2 | 0 |
 
-## Missing P0 IDs (0)
+## Missing P0 IDs (45)
 
-_None - all P0 IDs appear in source._
+- `S-0761`
+- `S-0762`
+- `S-0763`
+- `S-0764`
+- `S-0765`
+- `S-0766`
+- `S-0767`
+- `S-0768`
+- `S-0769`
+- `S-0770`
+- `S-0771`
+- `S-0772`
+- `S-0773`
+- `S-0774`
+- `S-0775`
+- `S-0776`
+- `S-0777`
+- `S-0778`
+- `S-0779`
+- `S-0780`
+- `S-0781`
+- `S-0782`
+- `S-0783`
+- `S-0784`
+- `S-0785`
+- `S-0786`
+- `S-0787`
+- `S-0788`
+- `S-0789`
+- `S-0790`
+- `S-0791`
+- `S-0792`
+- `S-0793`
+- `S-0794`
+- `S-0795`
+- `S-0796`
+- `S-0797`
+- `S-0798`
+- `S-0799`
+- `S-0800`
+- `S-0801`
+- `S-0802`
+- `S-0803`
+- `S-0804`
+- `S-0805`
 
 ## Artifacts
 
