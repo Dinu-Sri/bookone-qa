@@ -1,3 +1,9 @@
+# Latest executed customer-readiness checkpoint — 2026-10-14
+
+Candidate **v2.5.5 · 8e1a2b8**. [Fresh campaign](runs/CAMP-20261014-113321106-568961.json): **260 passed, four failed, zero skipped/blocked/not-run**. All98 retained units execute with deterministic synthetic fixtures; source60/helper16 and original85 PG assertions pass. New AP race passes. B-115/RT-025/RT-026/RT-027 remain red in two independent PG runs. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [gates](memory/customer-readiness.json) and AGENTS.md53–55.
+
+No customer-ready certification;137 full workflows remain unaccepted (58 partial bindings,79 unbound). Next: repair the three issue groups, pin/retest the new candidate, and complete fresh normal-role physical-first and deployed archive A→emptyB workflows. Exact test-account approval and Chrome popup dismissal remain pending. Only disposable source company created; no new users/financial records/archive writes. Historical checkpoints below retain earlier outcomes and pending notes.
+
 # Current readiness checkpoint — v2.5.5, 2026-10-14
 
 Goal active; customer readiness **not certified**. Original repairs pass at bounded source/PG/helper layers. Deeper campaign: **256 passed, four failed, four skipped**, no infrastructure blocks; PG86/90. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [campaign](runs/CAMP-20261014-111034220-9ed0bc.json) and [readiness gates](memory/customer-readiness.json). BUG-0031 batch partial effects, BUG-0032 changed-key payload false success and BUG-0024 current missing-checksum variant remain open. AP concurrency and all85 original PG cases pass.

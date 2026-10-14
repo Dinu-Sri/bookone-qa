@@ -1,5 +1,7 @@
 # Current retest candidate — 2026-10-14
 
+Latest campaign-v2 [CAMP-20261014-113321106-568961](../runs/CAMP-20261014-113321106-568961.json) executes264 assertions:260 pass/four fail/zero skips. All98 retained units now receive portable synthetic bank fixtures. Fingerprint includes their byte hash. See current handoff and customer-readiness ledger; historical fixture-skip notes below remain evidence of earlier runs.
+
 Execution candidate **v2.5.5 · 8e1a2b8**, source SHA 8e1a2b8b29e662940bfcfecc4230875c83e35b6d. Read changes/CHG-20261014-v255-retest.md and memory/customer-readiness.json. Unchanged assertions rerun first; earlier candidate notes/results below are historical. Legacy archive exception is still under rulebook RF-06 review.
 
 # One coordinated BookOne QA campaign

@@ -22,6 +22,10 @@ Read `tests/runtime/payment-boundaries.test.ts`, RT-027 in `tests/runtime/archiv
 
 Next QA change generates portable synthetic bank workbooks, so all 98 retained unit assertions can execute. Locally 98 passed/zero skips; whole fresh campaign-v2 CI is pending. This removes a fixture gap, not a real-bank-format certification.
 
+### Completed portable-fixture campaign
+
+[Fresh campaign](../runs/CAMP-20261014-113321106-568961.json), CI38557308389: **260 passed, four failed, zero skipped/blocked/not-run**. All98 retained unit assertions execute. The same B-115/RT-025/RT-026/RT-027 fail; [PG repeat](../runs/RUN-2026-10-14T11-33-18-445Z-runtime.json), CI38557308352, confirms86/90. Product8e1a2b8; QA implementationf266659, tested mergea76f84e; content86dccfaa2fc0025412f0c645d2d36f72e6cde5848efec4f39a1dadb9f5c940b5. Campaign-v2 bank bytes1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc. Previous results above are preserved, not overwritten. Latest report supersedes the earlier pending-CI note.
+
 ## Remaining acceptance gates
 
 All137 workflows remain unaccepted as full workflows (58 partial bindings,79 unbound). Real normal-Owner/Viewer sessions, physical-first complete business journey, deployed encrypted A→empty-B restore, actual attachment bytes, configuration/scope matrix, history/upgrade/operator DR and Sri Lankan expert review remain required. No release certificate or readiness percentage is asserted.
