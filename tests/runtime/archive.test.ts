@@ -4,7 +4,7 @@ import {eq} from 'drizzle-orm';
 import {admin,seed,resetFixture,closeFixture} from './support/fixture';
 import * as schema from '@product/schema/index';
 import {TENANT_A,TENANT_B,OWNER} from './support/session';
-import {withTenantContext} from '@product/db/tenant-context';
+import {withTenantContext} from '@product/db/helpers';
 import {snapshotTenantTables,trialBalanceHash} from '@product/db/archive/snapshot';
 import {restoreTenantDataArchive,restoreTenantFilesArchive,filesRestoreAlreadyApplied} from '@product/db/archive/restore';
 import {tenantIsOperationallyEmpty} from '@product/db/archive/empty';

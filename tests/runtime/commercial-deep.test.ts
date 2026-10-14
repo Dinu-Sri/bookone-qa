@@ -17,7 +17,7 @@ async function snapshot(){const out={};for(const table of ['parties','business_d
 it('[B-106] successful same-key invoice and payment retries retain exactly one accepted effect',async()=>{
  const p=await product(),key='qa-campaign-invoice';const a=await invoice(p,{idempotencyKey:key}),b=await invoice(p,{idempotencyKey:key});expect(a).toBe(b);
  const request={paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:a,amount:250}],idempotencyKey:'qa-campaign-payment'};
- expect((await receiveCustomerPayments(request)).ok).toBe(true);const before=await snapshot();expect((await receiveCustomerPayments(request)).ok).toBe(true);expect(await snapshot()).toEqual(before);expect([Number((await doc(a)).paidAmount),Number((await doc(a)).balanceDue)]).toEqual([250,350]);
+ const first=await receiveCustomerPayments(request);expect(first.ok).toBe(true);const before=await snapshot();const replay=await receiveCustomerPayments(request);const [count]=await admin`select count(*)::int as n from transactions where accounting_type='payment'`;const d=await doc(a);observe('B-106',{invoiceReplaySame:a===b?1:0,firstPaymentAccepted:first.ok?1:0,replayAccepted:replay.ok?1:0,paymentCount:count.n,paidCents:Math.round(Number(d.paidAmount)*100),balanceCents:Math.round(Number(d.balanceDue)*100)});expect(replay.ok).toBe(true);expect(await snapshot()).toEqual(before);expect([Number(d.paidAmount),Number(d.balanceDue)]).toEqual([250,350]);
 });
 it('[B-107] controlled simultaneous350 receipts against600 accept only one and reconcile cash AR allocations',async()=>{
  const id=await invoice(await product());await admin`select pg_advisory_lock(9921107)`;

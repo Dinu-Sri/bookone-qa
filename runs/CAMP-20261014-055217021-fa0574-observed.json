@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "kind": "campaign-aggregate-observation",
+  "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+  "productStamp": "v2.5.3 · 5becb2d",
+  "implementationSha": "0f91affd52d4934f01cad097e3a0d8ac690de9a4",
+  "workflow": 38518894233,
+  "runId": "CAMP-20261014-055217021-fa0574",
+  "totals": {
+    "passed": 230,
+    "failed": 8,
+    "blocked": 14,
+    "skipped": 4,
+    "flaky": 0,
+    "not-run": 0
+  },
+  "coverage": {
+    "definedWorkflows": 137,
+    "withPartialBindings": 56,
+    "withoutBindings": 81,
+    "acceptedFullWorkflows": 0
+  },
+  "detailedCaseEvidence": "workflow-sanitized-artifact; not-retrieved-here",
+  "campaignAcceptance": "not-established"
+}

@@ -21,7 +21,7 @@
     "scope": "60-source-contracts-no-release-acceptance"
   },
   "candidateProductSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-  "observedStagingStamp": "v2.5.3 Â· 5becb2d",
+  "observedStagingStamp": "v2.5.3 Ã‚Â· 5becb2d",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -44,7 +44,7 @@
   ],
   "nextActions": [
     "Read backup contract, QA guide and plan; verify stamp again before each live phase.",
-    "All60 source and49 PostgreSQL pass on5becb2d at their explicit boundaries; preserve unchanged0010â€“16 guards and completed physical bounded fixes.",
+    "All60 source and49 PostgreSQL pass on5becb2d at their explicit boundaries; preserve unchanged0010Ã¢â‚¬â€œ16 guards and completed physical bounded fixes.",
     "Coding agent repairs BUG0021/S0764 owner-only RBAC-off resolver and clarifies archive integrity/legacy-checksum/incomplete-files risks; route exposure remains unestablished.",
     "Implement isolated restore persistence, rollback, stock/AR/AP and races before acceptance.",
     "Fresh verified normal Owner/Viewer/Admin with synthetic source A receipts/images and brand-new empty B; execute export/data/files browser journey privately.",
@@ -202,13 +202,19 @@
     "guide": "docs/FULL_CAMPAIGN.md",
     "decision": "decisions/ADR-20261014-coordinated-campaign.md",
     "scope": "137-defined-workflows",
-    "status": "unified-runner-and33-new-runtime-assertions; CI-persistence-execution-pending",
+    "status": "first-attempt-preserved; corrected-archive-import-and-configured-rental-locations;85-runtime-followup-pending",
     "retainedUnitCases": 98,
     "sourceCases": 60,
-    "runtimeCases": 82,
+    "runtimeCases": 85,
     "archiveHelperCases": 16,
     "latestLocal": "runs/CAMP-20261014-054320952-275531.json",
     "firstLocal": "169-pass-1-fail-81-runtime-blocked-4-optional-skips",
-    "acceptance": "not-established"
+    "acceptance": "not-established",
+    "firstCi": {
+      "workflow": 38518894233,
+      "aggregate": "runs/CAMP-20261014-055217021-fa0574-observed.json",
+      "runtime": "runs/RUN-2026-10-14T05-52-04-763Z-runtime.json",
+      "result": "230-pass-8-fail-14-blocked-4-optional-skips"
+    }
   }
 }

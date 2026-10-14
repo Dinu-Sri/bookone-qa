@@ -19,6 +19,10 @@ export function campaignPlan() {
  return {schemaVersion:1,config,stages,tasks,policyBlockers:policies,planHash:hash(JSON.stringify({config,stages,tasks,policies}))};
 }
 export const terminal=s=>['passed','failed','blocked'].includes(s);
+export function attemptStatus(attempts,id,fallback='not-run') {
+ const statuses=(attempts??[]).map(a=>a.cases?.find(c=>c.id===id)?.status).filter(s=>['passed','failed','blocked','skipped','flaky','not-run'].includes(s));
+ const last=statuses.at(-1)??fallback;return last==='passed'&&statuses.includes('failed')?'flaky':last;
+}
 export function resumeGuard(state,fingerprint) {
  assert.equal(state.schemaVersion,1);assert.equal(state.kind,'full-campaign');assert.notEqual(state.status,'completed','Completed campaign is immutable');
  assert.deepEqual(state.fingerprint,fingerprint,'Campaign fingerprint changed; start a new campaign');
@@ -30,12 +34,12 @@ export function caseOutcome(expected,observed,exitCode) {
 }
 export function campaignSummary(state,plan) {
  const reasons=['assertion-outcome','subprocess-failed','incomplete-discovery','prerequisite-failed','runtime-unavailable','candidate-changed','interrupted','not-run'];
- const stages=plan.stages.map(s=>{const current=state.stages.find(x=>x.id===s.id),last=current?.attempts?.at(-1);return {id:s.id,status:terminal(current?.status)?current.status:'blocked',reason:reasons.includes(current?.reason)?current.reason:'not-run',cases:s.expected.map(id=>({id,status:['passed','failed','blocked','skipped','flaky','not-run'].includes(last?.cases?.find(c=>c.id===id)?.status)?last.cases.find(c=>c.id===id).status:current?.status==='blocked'?'blocked':'not-run'}))};});
+ const stages=plan.stages.map(s=>{const current=state.stages.find(x=>x.id===s.id);return {id:s.id,status:terminal(current?.status)?current.status:'blocked',reason:reasons.includes(current?.reason)?current.reason:'not-run',cases:s.expected.map(id=>({id,status:attemptStatus(current?.attempts,id,current?.status==='blocked'?'blocked':'not-run')}))};});
  const cases=stages.flatMap(s=>s.cases.map(c=>({stage:s.id,...c}))),statuses=['passed','failed','blocked','skipped','flaky','not-run'];
  const tasks=plan.tasks.map(t=>{const observations=t.bindings.map(b=>({stage:b.stage,id:b.id,status:stages.find(s=>s.id===b.stage)?.cases.find(c=>c.id===b.id)?.status??'not-run'}));return {id:t.id,batch:t.batch,implementation:t.implementation,observations,requiredLayers:t.requiredLayers,fullWorkflow:'not-accepted',evidence:'partial-only',next:observations.length?'complete-required-layers':'implement-workflow'};});
  // Never emit arbitrary runner errors, stdout, credentials, notes or raw evidence paths.
  const fp={},patterns={productSha:/^[a-f0-9]{40}$/,productStamp:/^v\d+\.\d+\.\d+ · [a-f0-9]{7}$/,qaSha:/^[a-f0-9]{40}$/,qaContentHash:/^[a-f0-9]{64}$/,planHash:/^[a-f0-9]{64}$/,node:/^v\d+\.\d+\.\d+$/,fixtureVersion:/^campaign-v1$/};
  for(const [key,re]of Object.entries(patterns))if(re.test(state.fingerprint?.[key]??''))fp[key]=state.fingerprint[key];
  if(typeof state.fingerprint?.qaDirty==='boolean')fp.qaDirty=state.fingerprint.qaDirty;if(typeof state.fingerprint?.runtimeSelected==='boolean')fp.runtimeSelected=state.fingerprint.runtimeSelected;
- return {schemaVersion:1,kind:'full-campaign',runId:/^CAMP-\d{8}-\d{9}-[a-f0-9]{6}$/.test(state.runId)?state.runId:'invalid',fingerprint:fp,seed:Number.isInteger(state.seed)?state.seed:null,profile:['quick','broad'].includes(state.profile)?state.profile:'unknown',stages,totals:Object.fromEntries(statuses.map(s=>[s,cases.filter(c=>c.status===s).length])),tasks,policyBlockers:plan.policyBlockers,coverage:{definedWorkflows:tasks.length,withPartialBindings:tasks.filter(t=>t.observations.length).length,withoutBindings:tasks.filter(t=>!t.observations.length).length,acceptedFullWorkflows:0},executedGate:stages.every(s=>s.status==='passed')?'passed':'failed',campaignAcceptance:'not-established',scope:'isolated-implemented-checks-plus-explicit-unfinished-workflows; no-live-browser-or-release-acceptance'};
+ return {schemaVersion:1,kind:'full-campaign',runId:/^CAMP-\d{8}-\d{9}-[a-f0-9]{6}$/.test(state.runId)?state.runId:'invalid',fingerprint:fp,seed:Number.isInteger(state.seed)?state.seed:null,profile:['quick','broad'].includes(state.profile)?state.profile:'unknown',stages,totals:Object.fromEntries(statuses.map(s=>[s,cases.filter(c=>c.status===s).length])),tasks,policyBlockers:plan.policyBlockers,coverage:{definedWorkflows:tasks.length,withPartialBindings:tasks.filter(t=>t.observations.length).length,withoutBindings:tasks.filter(t=>!t.observations.length).length,acceptedFullWorkflows:0},executedGate:stages.every(s=>s.status==='passed')&&cases.every(c=>c.status==='passed')?'passed':'failed',campaignAcceptance:'not-established',scope:'isolated-implemented-checks-plus-explicit-unfinished-workflows; no-live-browser-or-release-acceptance'};
 }

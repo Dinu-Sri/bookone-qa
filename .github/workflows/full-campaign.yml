@@ -41,6 +41,9 @@ jobs:
       - run: node scripts/runtime/ci-target.mjs
       - name: All implemented checks; missing workflows cannot pass
         run: pnpm campaign:run --seed 261013 --profile quick --jobs 2
+      - name: Allowlisted campaign report
+        if: always()
+        run: node scripts/campaign/report.mjs
       - name: Preserve allowlisted campaign and child summaries only
         if: always()
         uses: actions/upload-artifact@v4
