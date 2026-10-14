@@ -1,3 +1,7 @@
+## Active non-owner role/scope wave
+
+Ten new command/query cases planned on unchanged v2.5.5 · 8e1a2b8. Explicit Sales/Cashier/Accountant positives/denials, actual branch/brand scope, restricted detail read, isolated scope-table fault, Sales off/history, deny override/suspension and real foreign tenant fixtures. Original281 assertions preserved; new291/117PG planned. Read changes/CHG-20261014-role-scope-boundaries.md; no new pass/defect claimed before execution. Browser approval/popup remain pending.
+
 # Resume BookOne QA
 
 1. Read AGENTS.md, STATUS.md, memory/customer-readiness.json and memory/programme.json. Canonical source is reviewed QA main; inspect pending PRs before assuming work merged. Check local Git/product identities and graph extraction freshness.

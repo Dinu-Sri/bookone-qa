@@ -228,14 +228,17 @@
       "id": "B-109",
       "batch": "B",
       "slug": "roles-scopes",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Owner/accountant/sales/cashier/Viewer/suspended member permissions match server outcomes; brand/location restrictions apply to existing records.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Execute explicit job/scope/fault/revocation controls; actual credential/HTTP/React request cache/browser and complete role/module/scopes/file layers remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-non-owner-db-synthetic-session"
+      ]
     },
     {
       "id": "B-110",
