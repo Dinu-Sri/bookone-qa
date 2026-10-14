@@ -1,97 +1,165 @@
 {
-    "version":  1,
-    "productAcceptance":  "not-established",
-    "fixtureVersion":  "runtime-v1",
-    "guide":  "docs/POSTGRES_RUNTIME.md",
-    "lanes":  [
-                  {
-                      "name":  "postgres-rls",
-                      "file":  "tests/runtime/tenant-context.test.ts",
-                      "expected":  [
-                                       "RT-001",
-                                       "RT-002",
-                                       "RT-003",
-                                       "RT-004",
-                                       "RT-012",
-                                       "RT-013",
-                                       "RT-014",
-                                       "RT-015",
-                                       "RT-016"
-                                   ],
-                      "credential":  "runtime",
-                      "boundary":  "real-PostgreSQL-non-owner-product-helper"
-                  },
-                  {
-                      "name":  "commercial-lifecycle",
-                      "file":  "tests/runtime/commercial.test.ts",
-                      "expected":  [
-                                       "B-101",
-                                       "B-102",
-                                       "B-103",
-                                       "E-115",
-                                       "E-116",
-                                       "E-117",
-                                       "RT-008",
-                                       "RT-009",
-                                       "RT-010",
-                                       "RT-011",
-                                       "B-104"
-                                   ],
-                      "credential":  "admin",
-                      "boundary":  "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading"
-                  },
-                  {
-                      "name":  "reversal-concurrency",
-                      "file":  "tests/runtime/reversal.test.ts",
-                      "expected":  [
-                                       "RT-005",
-                                       "RT-006",
-                                       "RT-007"
-                                   ],
-                      "credential":  "admin",
-                      "boundary":  "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay"
-                  },
-                  {
-                      "name":  "physical-lifecycle",
-                      "file":  "tests/runtime/physical.test.ts",
-                      "expected":  [
-                                       "C-101",
-                                       "C-102",
-                                       "C-103",
-                                       "C-104",
-                                       "C-105",
-                                       "C-106",
-                                       "C-107",
-                                       "C-115",
-                                       "C-116",
-                                       "RT-017",
-                                       "RT-018",
-                                       "RT-019",
-                                       "RT-020"
-                                   ],
-                      "credential":  "admin",
-                      "boundary":  "real-PostgreSQL-owner-connection-physical-settings-permissions-isolated-fault"
-                  },
-                  {
-                      "name":  "physical-nonowner",
-                      "file":  "tests/runtime/physical.test.ts",
-                      "expected":  [
-                                       "C-201",
-                                       "C-202",
-                                       "C-203",
-                                       "C-204",
-                                       "C-205",
-                                       "C-206",
-                                       "C-207",
-                                       "C-215",
-                                       "C-216",
-                                       "RT-117",
-                                       "RT-118",
-                                       "RT-119",
-                                       "RT-120"
-                                   ],
-                      "credential":  "runtime",
-                      "boundary":  "real-PostgreSQL-non-owner-physical-actions-persisted-permissions-isolated-fault"
-                  }
-              ]
+  "version": 1,
+  "productAcceptance": "not-established",
+  "fixtureVersion": "runtime-v1",
+  "guide": "docs/POSTGRES_RUNTIME.md",
+  "lanes": [
+    {
+      "name": "postgres-rls",
+      "file": "tests/runtime/tenant-context.test.ts",
+      "expected": [
+        "RT-001",
+        "RT-002",
+        "RT-003",
+        "RT-004",
+        "RT-012",
+        "RT-013",
+        "RT-014",
+        "RT-015",
+        "RT-016"
+      ],
+      "credential": "runtime",
+      "boundary": "real-PostgreSQL-non-owner-product-helper"
+    },
+    {
+      "name": "commercial-lifecycle",
+      "file": "tests/runtime/commercial.test.ts",
+      "expected": [
+        "B-101",
+        "B-102",
+        "B-103",
+        "E-115",
+        "E-116",
+        "E-117",
+        "RT-008",
+        "RT-009",
+        "RT-010",
+        "RT-011",
+        "B-104"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading"
+    },
+    {
+      "name": "reversal-concurrency",
+      "file": "tests/runtime/reversal.test.ts",
+      "expected": [
+        "RT-005",
+        "RT-006",
+        "RT-007"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay"
+    },
+    {
+      "name": "physical-lifecycle",
+      "file": "tests/runtime/physical.test.ts",
+      "expected": [
+        "C-101",
+        "C-102",
+        "C-103",
+        "C-104",
+        "C-105",
+        "C-106",
+        "C-107",
+        "C-115",
+        "C-116",
+        "RT-017",
+        "RT-018",
+        "RT-019",
+        "RT-020"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-physical-settings-permissions-isolated-fault"
+    },
+    {
+      "name": "physical-nonowner",
+      "file": "tests/runtime/physical.test.ts",
+      "expected": [
+        "C-201",
+        "C-202",
+        "C-203",
+        "C-204",
+        "C-205",
+        "C-206",
+        "C-207",
+        "C-215",
+        "C-216",
+        "RT-117",
+        "RT-118",
+        "RT-119",
+        "RT-120"
+      ],
+      "credential": "runtime",
+      "boundary": "real-PostgreSQL-non-owner-physical-actions-persisted-permissions-isolated-fault"
+    },
+    {
+      "name": "commercial-deep",
+      "file": "tests/runtime/commercial-deep.test.ts",
+      "expected": [
+        "B-106",
+        "B-107",
+        "B-108",
+        "B-111",
+        "B-112",
+        "B-113",
+        "E-108",
+        "E-113"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-controlled-race-fault-stale-membership"
+    },
+    {
+      "name": "archive-persistence",
+      "file": "tests/runtime/archive.test.ts",
+      "expected": [
+        "S-0774",
+        "S-0775",
+        "S-0776",
+        "S-0778",
+        "S-0780",
+        "S-0781",
+        "S-0782",
+        "S-0783",
+        "S-0784",
+        "S-0785",
+        "S-0787",
+        "S-0788",
+        "S-0789",
+        "S-0793"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-encrypted-archive-synthetic-memory-storage"
+    },
+    {
+      "name": "rental-lifecycle",
+      "file": "tests/runtime/rental.test.ts",
+      "expected": [
+        "D-101",
+        "D-102",
+        "D-103",
+        "D-105",
+        "D-109",
+        "D-110",
+        "D-117",
+        "D-118",
+        "RT-023",
+        "E-104"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-rental-money-fleet-permissions-fault"
+    },
+    {
+      "name": "stock-transfer",
+      "file": "tests/runtime/transfer.test.ts",
+      "expected": [
+        "C-109",
+        "RT-021",
+        "RT-022",
+        "C-114"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-location-transfer-permissions-race"
+    }
+  ]
 }

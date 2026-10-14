@@ -17,16 +17,24 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "B-102",
@@ -39,16 +47,24 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "B-103",
@@ -61,16 +77,24 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "B-104",
@@ -83,16 +107,24 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "B-105",
@@ -111,40 +143,76 @@
       "id": "B-106",
       "batch": "B",
       "slug": "retry",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Repeat invoice/conversion/payment request with same idempotency key creates one accepted operation; different keys follow explicit duplicate policy.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-107",
       "batch": "B",
       "slug": "concurrent-pay",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Two simultaneous receipts against the same open balance cannot overallocate; persisted AR and GL agree.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-108",
       "batch": "B",
       "slug": "invalid-states",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Draft/void/rejected/unposted/wrong-document allocation or edits are denied atomically; archived posted debt remains collectible per policy.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-109",
@@ -176,40 +244,76 @@
       "id": "B-111",
       "batch": "B",
       "slug": "closed-date",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Locked posting/payment/credit periods reject writes; permitted corrections preserve original locked facts.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-112",
       "batch": "B",
       "slug": "atomicity",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Inject failure between header/line/journal/allocation/audit writes; no partial business operation survives.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-113",
       "batch": "B",
       "slug": "history",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Rename customer/product and change price/tax after posting; historical amounts and party-as-recorded remain unchanged.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "B-114",
@@ -274,23 +378,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Owner approval/repeat and Viewer denial now pass at both DB roles; wider jobs/scopes, fresh credential HTTP and browser acceptance remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-201",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-201",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-201",
           "nonOwner": "passed"
@@ -308,23 +418,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-202",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-202",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-202",
           "nonOwner": "passed"
@@ -342,23 +458,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-203",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-203",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-203",
           "nonOwner": "passed"
@@ -376,23 +498,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-204",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-204",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-204",
           "nonOwner": "passed"
@@ -410,23 +538,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-205",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-205",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-205",
           "nonOwner": "passed"
@@ -444,23 +578,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-206",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-206",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-206",
           "nonOwner": "passed"
@@ -478,23 +618,29 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Bounded owner/non-owner physical action assertions pass, including fixed-price fixtures; broader policies, source/audit/cost-layer linkage, configuration, races, credential/HTTP/browser/files remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-207",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
           "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
           "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-207",
+          "nonOwner": "passed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
           "owner": "passed",
           "nonOwnerAlias": "C-207",
           "nonOwner": "passed"
@@ -518,14 +664,26 @@
       "id": "C-109",
       "batch": "C",
       "slug": "locations",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Transfer between two locations conserves total quantity/value; source/target scopes and returns remain correct.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/transfer.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "C-110",
@@ -583,14 +741,26 @@
       "id": "C-114",
       "batch": "C",
       "slug": "concurrent-issue",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Last unit sold simultaneously cannot be issued twice; count/value and both outcomes reconcile.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/transfer.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "C-115",
@@ -603,18 +773,17 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Foreign SKU, Viewer create and locked-period zero-business-mutation denials now pass at both DB roles; wider location/brand/read/revoked/HTTP/browser boundaries remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-215",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
@@ -623,6 +792,13 @@
           "owner": "failed",
           "nonOwnerAlias": "C-215",
           "nonOwner": "failed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-215",
+          "nonOwner": "passed"
         }
       ]
     },
@@ -637,18 +813,17 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Journal fault fully rolls back at both DB roles; later stock/cost/audit faults, retries, historical void/recovery and live acceptance remain open.",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
       "latestAttempt": {
         "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
-        "owner": "passed",
-        "nonOwnerAlias": "C-216",
-        "nonOwner": "passed"
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
       },
       "attemptHistory": [
         {
@@ -657,6 +832,13 @@
           "owner": "failed",
           "nonOwnerAlias": "C-216",
           "nonOwner": "failed"
+        },
+        {
+          "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+          "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-216",
+          "nonOwner": "passed"
         }
       ]
     },
@@ -664,40 +846,76 @@
       "id": "D-101",
       "batch": "D",
       "slug": "fixture",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Balanced fleet20; reserve10 across declared inclusive interval, owned20/committed10/free10; no revenue on reservation.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-102",
       "batch": "D",
       "slug": "deposit",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Collect refundable1000: cash+1000, liability+1000, revenue0; audit and payment link retained.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-103",
       "batch": "D",
       "slug": "dispatch",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Dispatch10 transfers fleet state/locations; owned fleet/value unchanged and no physical-sale COGS.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-104",
@@ -716,14 +934,26 @@
       "id": "D-105",
       "batch": "D",
       "slug": "return-buckets",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Good/dirty/repair/missing counts sum to dispatched quantity; no over-return, negative counts or lost units.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-106",
@@ -768,27 +998,51 @@
       "id": "D-109",
       "batch": "D",
       "slug": "deposit-apply-refund",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Hire/service invoice700; apply700 of1000 deposit, refund300: AR0, deposit liability0, cash700, revenue700.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-110",
       "batch": "D",
       "slug": "over-refund-retry",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Over-refund/duplicate collect/apply/refund are denied or idempotent without duplicate money journals.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-111",
@@ -872,27 +1126,51 @@
       "id": "D-117",
       "batch": "D",
       "slug": "permissions-files",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Role/suspended/tenant/dimension denials cover dispatch/return/deposits/photos/documents and exports.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "D-118",
       "batch": "D",
       "slug": "atomicity",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Failure between booking/stock/deposit/journal/audit changes leaves no half-dispatched or half-refunded event.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "E-101",
@@ -937,14 +1215,22 @@
       "id": "E-104",
       "batch": "E",
       "slug": "module-toggle",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Inventory/rental/tax/POS module ceilings enforced server-side; disabling a module preserves readable history.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair reproduced bounded failure, rerun unchanged assertion and then complete required layers.",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "E-105",
@@ -989,14 +1275,26 @@
       "id": "E-108",
       "batch": "E",
       "slug": "role-revocation",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Revoke/change job while another tab stays open; stale writes denied and read scopes refreshed.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "E-109",
@@ -1054,14 +1352,26 @@
       "id": "E-113",
       "batch": "E",
       "slug": "invalid-settings",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Mandatory accounts missing/disabled/cross-tenant cannot yield apparently successful incomplete postings.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts",
+      "attemptHistory": [],
+      "latestAttempt": {
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json"
     },
     {
       "id": "E-114",
@@ -1330,13 +1640,21 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "E-116",
@@ -1352,13 +1670,21 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "E-117",
@@ -1374,13 +1700,21 @@
       "implementedLayers": [
         "persisted-permission-load-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-      "next": "Passing current343 bounded PostgreSQL owner-action layer. Required intended non-owner/login/HTTP/browser/print and broader settings layers remain open; do not certify full task acceptance.",
+      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
-        "result": "passed"
-      }
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-product-command; required layers remain open"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T12-44-53-696Z-runtime.json",
+          "result": "passed"
+        }
+      ]
     },
     {
       "id": "F-119",

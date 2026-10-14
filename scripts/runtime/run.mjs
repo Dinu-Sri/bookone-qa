@@ -37,20 +37,32 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   });
   writeFileSync(`.local/runtime/${runId}/${lane.name}.log`, (result.stdout ?? '') + (result.stderr ?? ''));
   let tests=[];try {tests=JSON.parse(readFileSync(outputFile,'utf8')).testResults.flatMap(t=>t.assertionResults??[]);}catch{}
-  const observed=tests.map(t=>({id:t.fullName?.match(/\[((?:RT|[A-F])-\d{3})\]/)?.[1]??'unknown',status:['passed','failed'].includes(t.status)?t.status:'blocked'}));
+  const observed=tests.map(t=>({id:t.fullName?.match(/\[((?:RT|[A-F])-\d{3}|S-\d{4})\]/)?.[1]??'unknown',status:['passed','failed'].includes(t.status)?t.status:'blocked'}));
   const outcome=laneOutcome(lane.expected,{cases:observed},result.status);
-  const diagnostics=Object.fromEntries(tests.filter(t=>t.status==='failed').map(t=>[t.fullName?.match(/\[((?:RT|[A-F])-\d{3})\]/)?.[1],failureCategories(t.failureMessages)]).filter(([id,categories])=>lane.expected.includes(id)&&categories.length));
+  const diagnostics=Object.fromEntries(tests.filter(t=>t.status==='failed').map(t=>[t.fullName?.match(/\[((?:RT|[A-F])-\d{3}|S-\d{4})\]/)?.[1],failureCategories(t.failureMessages)]).filter(([id,categories])=>lane.expected.includes(id)&&categories.length));
+  const failureLocations={};
+  for(const t of tests.filter(t=>t.status==='failed')){
+    const id=t.fullName?.match(/\[((?:RT|[A-F])-\d{3}|S-\d{4})\]/)?.[1];if(!lane.expected.includes(id))continue;
+    const locations=[...String(t.failureMessages??'').matchAll(/tests[\/\\]runtime[\/\\]([a-z-]+\.test\.ts):(\d+):(\d+)/g)].filter(m=>'tests/runtime/'+m[1]===lane.file).map(m=>({line:Number(m[2]),column:Number(m[3])}));
+    if(locations.length)failureLocations[id]=locations.slice(0,4);
+  }
   const cases=outcome.cases;
   const unexpected=observed.filter(t=>!lane.expected.includes(t.id)).length;
   const observationKeys={'C-105':['stockQty','inventoryValueCents','reportedProfitCents','expectedProfitCents','reportedCashCents','expectedCashCents'],'C-115':['accepted','newDocumentCount','newJournalCount','foreignLinkedLineCount'],'C-116':['accepted','newTransactionCount','newJournalCount','newDocumentCount','newJournalLineCount'],'RT-018':['accepted','newTransactionCount','newJournalCount','newDocumentCount','newAuditCount','newMovementCount'],'RT-020':['accepted','newJournalCount'],'B-104':['reportedIncomeCents','expectedIncomeCents','reportedCashCents','expectedCashCents'],'RT-002':['expectedOwnRows','observedRows'],'RT-004':['tenantACount','afterFailureCount','tenantBCount','expectedACount','expectedAfterFailureCount','expectedBCount'],'RT-006':['acceptedRequests','reversalCount','journalCount','netCashCents','netIncomeCents','expectedAccepted','expectedReversals','expectedJournals','expectedNetCashCents','expectedNetIncomeCents']};
   for(const id of ['C-105','C-115','C-116','RT-018','RT-020'])observationKeys[id.replace(/-(\d+)$/,(_,n)=>'-'+String(Number(n)+100).padStart(3,'0'))]=observationKeys[id];
+  observationKeys['B-107']=['accepted','payments','receiptCents','paidCents','balanceCents','arCents'];
+  observationKeys['B-106']=['invoiceReplaySame','firstPaymentAccepted','replayAccepted','paymentCount','paidCents','balanceCents'];
+  for(const id of ['D-103','D-105','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded'];
+  observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
+  observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];
+  observationKeys['S-0782']=['acceptedIncoherent','targetDocuments','targetJournalLines','unchanged'];
   const rawObservations=existsSync(observationFile)?JSON.parse(readFileSync(observationFile,'utf8')):{};
   const observations={};
   for(const [id,keys] of Object.entries(observationKeys))if(lane.expected.includes(id) && rawObservations[id]) {
     observations[id]=Object.fromEntries(keys.filter(k=>Number.isSafeInteger(rawObservations[id][k])).map(k=>[k,rawObservations[id][k]]));
   }
   results.push({ lane: lane.name, boundary: lane.boundary, cases, subprocessExit: result.status,
-    observations, diagnostics,
+    observations, diagnostics, failureLocations,
     status: outcome.status, evidenceComplete:outcome.evidenceComplete, infrastructureFailure:outcome.infrastructureFailure, unexpected });
   writeFileSync(`.local/runtime/${runId}/checkpoint.json`,JSON.stringify({fingerprint,results},null,2));
   assertCandidate();

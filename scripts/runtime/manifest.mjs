@@ -10,7 +10,7 @@ export function runtimeManifest() {
     assert.match(lane.file,/^tests\/runtime\/[a-z-]+\.test\.ts$/);assert.ok(existsSync(lane.file));
     assert.ok(['admin','runtime'].includes(lane.credential));assert.match(lane.boundary,/^real-PostgreSQL-[a-zA-Z-]+$/);
     assert.ok(lane.expected.length);
-    for(const id of lane.expected){assert.match(id,/^(RT|[A-F])-\d{3}$/);assert.ok(!ids.has(id));ids.add(id);}
+    for(const id of lane.expected){assert.match(id,/^(?:(?:RT|[A-F])-\d{3}|S-\d{4})$/);assert.ok(!ids.has(id));ids.add(id);}
   }
   assert.ok(names.size);return manifest;
 }
