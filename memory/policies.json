@@ -3,73 +3,168 @@
   "items": [
     {
       "id": "POL-01",
-      "status": "unresolved",
+      "status": "scope-known-launch-gate-pending",
       "topic": "First-launch business/entity/module scope",
-      "blocks": "Which lifecycle batches must gate launch",
-      "source": "Owner requests testing all business types starting physical2026-10-13; actual first-launch gate/entity/module decisions remain separate and pending."
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "Owner requests testing all business types starting physical2026-10-13; actual first-launch gate/entity/module decisions remain separate and pending.",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "RB-GOV-01",
+        "RB-CONFIG-02"
+      ],
+      "resolution": "All known requested business types remain in QA scope; first launch gates are a separate release decision.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-02",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Currency precision, rounding stage, discount allocation and inclusive/exclusive tax",
-      "blocks": "Tax/discount boundary acceptance",
-      "source": "docs/CORE_RULES.md; synthetic arithmetic fixtures are not tax-law approval"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "docs/CORE_RULES.md; synthetic arithmetic fixtures are not tax-law approval",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-SAL-03",
+        "RB-LK-01",
+        "RB-LK-02",
+        "RB-LK-03"
+      ],
+      "resolution": "Exact calculation default specified; tax applicability/print format/mixed tax support review still needed.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-03",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Inventory costing, negative stock, fractional units and backdating",
-      "blocks": "C-111/C-112 valuation acceptance",
-      "source": "docs/CORE_RULES.md"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "docs/CORE_RULES.md",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-STK-01",
+        "BR-STK-02",
+        "RB-INV-01",
+        "RB-INV-02",
+        "RB-INV-03"
+      ],
+      "resolution": "New average/block profile and backdate/quantity rules specified; framework, legacy valuation and implementation need review.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-04",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Rental interval/timezone/padding and authorised overlap overrides",
-      "blocks": "Rental real-calendar edge acceptance",
-      "source": "current source is inclusive calendar dates with ceil(hours/24) padding; owner policy not yet approved"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "current source is inclusive calendar dates with ceil(hours/24) padding; owner policy not yet approved",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-REN-01",
+        "BR-REN-02"
+      ],
+      "resolution": "Inclusive date v1 preserved; safe block default and audited scoped overrides specified. Timestamp/hour calendar capability remains separate.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-05",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Rental damage, loss, late fees, deposit application/refund/forfeiture",
-      "blocks": "D money/return exception acceptance",
-      "source": "docs/CORE_RULES.md"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "docs/CORE_RULES.md",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-REN-04",
+        "RB-REN-01",
+        "RB-ACC-01"
+      ],
+      "resolution": "Deposit liability established; zero unagreed penalties and separate approved charges specified. Contract/lease/revenue treatment needs expert review.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-06",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Batch payment atomicity, overpayment, credits and idempotency policy",
-      "blocks": "B-105/B-115 and retry semantics",
-      "source": "multi-invoice wrapper currently loops individual allocations; do not infer partial success is approved"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "multi-invoice wrapper currently loops individual allocations; do not infer partial success is approved",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-ACC-04",
+        "BR-SAL-02",
+        "RB-PAY-01",
+        "RB-PAY-02"
+      ],
+      "resolution": "No over-allocation established; all-or-nothing batch default, explicit advances and replay outcome specified. Implement and validate unchanged failing repros.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-07",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Commercial versus manual AR/AP and book-domain reconciliation bridges",
-      "blocks": "Subledger acceptance when manual control journals exist",
-      "source": "docs/CORE_RULES.md"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "docs/CORE_RULES.md",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-ACC-07",
+        "BR-ACC-08",
+        "RB-ARCH-03"
+      ],
+      "resolution": "Linked manual/opening bridge and no silent mismatch default specified; exact legitimate legacy bridge still needs implementation/expert fixtures.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-08",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Recovery RPO/RTO and supported upgrade/rollback versions",
-      "blocks": "F recovery acceptance",
-      "source": "owner-managed isolated recovery infrastructure required"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "owner-managed isolated recovery infrastructure required",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-DAT-02",
+        "BR-DAT-03",
+        "RB-DATA-02",
+        "RB-ARCH-05"
+      ],
+      "resolution": "RPO24h/RTO4h planning target specified; actual operator capability/compatibility/legacy pairing not accepted.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-09",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "File role/record-link permissions, supported content formats and intended public link visibility",
-      "blocks": "Real upload/download/asset/archive acceptance beyond mandatory tenant isolation",
-      "source": "Owner requested comprehensive files on2026-10-13; cross-tenant signing is always forbidden; documented Viewer/unattached/public/HEIC policies need confirmation"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "Owner requested comprehensive files on2026-10-13; cross-tenant signing is always forbidden; documented Viewer/unattached/public/HEIC policies need confirmation",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "RB-FILE-01",
+        "RB-FILE-02",
+        "RB-DATA-01"
+      ],
+      "resolution": "Scoped private access, explicit branding derivative and file-type/size defaults specified; endpoint/storage/privacy applicability review remains.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     },
     {
       "id": "POL-10",
-      "status": "unresolved",
+      "status": "specified-with-review-gaps",
       "topic": "Existing record visibility after module disable and settings changes during drafts",
-      "blocks": "Settings transition/history read behaviour acceptance",
-      "source": "History must be preserved; define readable/hidden status and draft configuration snapshot policy before asserting visibility semantics"
+      "blocks": "Full acceptance of remaining expert applicability/implementation gaps only; established and adopted-default expectations can be specified and tested.",
+      "source": "History must be preserved; define readable/hidden status and draft configuration snapshot policy before asserting visibility semantics",
+      "previousStatus": "unresolved",
+      "ruleIds": [
+        "BR-DAT-01",
+        "RB-CONFIG-01"
+      ],
+      "resolution": "Authorised readable history, write deny and draft snapshot/reconfirmation default specified; statutory effective-date requirements still take precedence.",
+      "review": "docs/rulebook/REVIEW.md",
+      "resolvedAt": "2026-10-14"
     }
-  ]
+  ],
+  "rulebook": "rules/rulebook.json",
+  "readableRulebook": "docs/rulebook/RULES.md",
+  "lastResolution": "2026-10-14 owner-delegated initial defaults; independent expert/implementation acceptance pending"
 }

@@ -1,3 +1,7 @@
+# Rulebook established — 2026-10-14
+
+Rulebook1.0.0:57 rules / 35 sources,27 inherited BR IDs retained. Read docs/rulebook/README.md and RULES.md before new expectations; owner delegated professional product defaults, with Sri Lankan source/applicability and independent expert status explicit. Ten POL topics now have rule links/defaults plus narrower review gaps. RF-01–10 remain for expert/implementation review. Existing product assertions/results and pin5becb2d were not changed. New master9b8e443/v2.5.4 archive diff observed, untested here; no live staging stamp/mutations. RULEBOOK source/governance validation only, not product acceptance.
+
 # Full campaign findings — 2026-10-14
 
 Current reviewed campaign:259 slots,242 pass/13 fail/4 optional skips; no infrastructure blocks. Original60 source and49 DB core still pass; deeper tests expose nine new groups0022–0030 plus contained0021. Read RUN17, docs/FULL_CAMPAIGN.md, latest CAMP in programme and HANDOFF-20261014-full-campaign-findings. Full137 workflows remain unaccepted (57 partially bound,80 unbound); policy question pending. Current live image must be freshly verified; last tab text did not expose a stamp. No live mutations in this campaign.

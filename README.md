@@ -1,3 +1,7 @@
+# Current rulebook and evidence — 2026-10-14
+
+Read [the business rulebook](docs/rulebook/README.md) and [readable rules](docs/rulebook/RULES.md). Latest executed campaign is259slots/242 pass/13 fail/4 skip on product 5becb2d; all137full workflows remain unaccepted. `product-ref.json` is the current execution pin. Newer product 9b8e443 was reviewed only as a source diff. Earlier state bullets below are historical snapshots, not current pins or acceptance.
+
 # BookOne QA
 
 Public independent QA repository for [BookOne ERP](https://github.com/Dinu-Sri/BookOne), owned by Dinu-Sri. Tests, business rules, change awareness, sanitized run history, bugs and session memory live here. Credentials and raw evidence do not.
@@ -60,4 +64,3 @@ This repository is public by explicit owner instruction. Review every staged fil
 ## Deep batch programme and continuity
 
 Read [SESSION.md](SESSION.md) and [DEEP_BATCH_PROGRAMME.md](docs/DEEP_BATCH_PROGRAMME.md). `pnpm batch:coverage` distinguishes60 executable source cases,18 isolated PostgreSQL cases and92 lifecycle tasks with partial implementations/open layers; no release acceptance is established. Run B–F with `pnpm batch:run --batch B --seed 261013 --profile quick` (change B to the relevant batch). A remains the mandatory shared regression. Startup memory, policies, exact work queue and immutable runs preserve progress across agents/sessions. [RUN-12](runs/RUN-20261013-v2-2-2-retest-12.md) records current scope/failures. Read [PostgreSQL execution](docs/POSTGRES_RUNTIME.md) and [settings/roles/files](docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md); `pnpm matrix:check` verifies the42-row coverage plan without claiming business passes.
-

@@ -52,9 +52,11 @@
     "BUG-0030"
   ],
   "nextActions": [
+    "Read rulebook1.0.0 and RF-01–10; adopt defaults for new specifications, preserve old evidence/settings, and request expert decisions only for remaining actual applicability conflicts.",
+    "Review/pin/retest v2.5.4 archive diff9b8e443 on a fresh run; source observation is not a deployed stamp or bug closure.",
     "Coding agent repairs0022–0030 and existing0021 by shared permission/tender, lock/transaction, archive-integrity/pair and idempotency boundaries; preserve original assertions.",
     "Read RUN17 and full-campaign handoff; examine product diff/CHGs, update pin+required stamp deliberately and rerun all259 slots on fresh isolated PostgreSQL.",
-    "Owner/coding agent define unresolved business policies before policy-specific acceptance; question remains pending.",
+    "Initial professional defaults are specified in rulebook1.0.0; resolve remaining RF-01–10 expert applicability/conflicts and implement policy-specific fixtures before acceptance.",
     "Continue80 unbound workflows and remaining layers of57 partial workflows: actual credential/browser/MinIO, settings/scopes, varied costs, rental/mixed/POS/import, historical upgrades and operator recovery.",
     "Before live writes freshly verify sidebar/actor; use supported run-owned fixtures/new empty restore target, no company reset SQL or payment replay."
   ],
@@ -265,5 +267,18 @@
     "unboundWorkflows": 80,
     "acceptedFullWorkflows": 0,
     "policyOwnershipQuestion": "pending-owner-response"
+  },
+  "rulebook": {
+    "version": "1.0.0",
+    "register": "rules/rulebook.json",
+    "readable": "docs/rulebook/RULES.md",
+    "governance": "docs/rulebook/README.md",
+    "expertReview": "docs/rulebook/REVIEW.md",
+    "study": "docs/rulebook/STUDY.md",
+    "expertApproval": "pending",
+    "initialDelegation": "owner2026-10-14",
+    "productStudyBaseline": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "newProductDiffObserved": "9b8e443e4c7775eb601365e244939258225c751c",
+    "executionPinUnchanged": true
   }
 }
