@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 const local = (p: string) => fileURLToPath(new URL(p, import.meta.url));
 export default defineConfig({
   resolve: { alias: [
+    { find: 'server-only', replacement: local('./tests/batch/support/server-only.ts') },
     { find: /^@aws-sdk\/(client-s3|s3-request-presigner)$/, replacement: local('./tests/batch/support/object-store.ts') },
     { find: '@bookone/db', replacement: local('./tests/batch/support/database.ts') },
     { find: '@bookone/auth', replacement: local('./tests/batch/support/actor.ts') },

@@ -38,7 +38,8 @@
     "campaign:resume": "node scripts/campaign/run.mjs resume",
     "test:campaign-guard": "node --test tests/infrastructure/campaign-state.test.mjs",
     "rulebook:render": "node scripts/rulebook.mjs render",
-    "rulebook:check": "node scripts/rulebook.mjs check"
+    "rulebook:check": "node scripts/rulebook.mjs check",
+    "test:embedded-sql": "vitest run --config vitest.embedded.config.ts"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",

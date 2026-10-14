@@ -3,7 +3,17 @@
   "objective": "Customer readiness for all requested BookOne business types",
   "status": "active-not-certified",
   "updatedAt": "2026-10-14",
-  "scope": ["physical", "service", "digital", "rental", "mixed", "company/settings/modules", "roles/scopes/tenants", "uploads/imports", "history/upgrade/recovery"],
+  "scope": [
+    "physical",
+    "service",
+    "digital",
+    "rental",
+    "mixed",
+    "company/settings/modules",
+    "roles/scopes/tenants",
+    "uploads/imports",
+    "history/upgrade/recovery"
+  ],
   "candidateSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
   "observedLiveStamp": "v2.5.5 · 8e1a2b8",
   "rulebookVersion": "1.0.0",
@@ -11,17 +21,91 @@
   "acceptedRelease": null,
   "progressPolicy": "Report bound, executed and accepted separately. No overall readiness percentage from assertion counts or partially automated workflows.",
   "gates": [
-    {"id":"G-CORE","topic":"Current candidate regression and critical defect retest","status":"queued","required":"Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"},
-    {"id":"G-PHYSICAL","topic":"Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports","status":"pending-full-acceptance","required":"Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"},
-    {"id":"G-SERVICE","topic":"Service/digital sales and supported delivery/advance/credit behaviour","status":"pending-full-acceptance","required":"Independent accounts/tax/recognition/delivery expectations; unsupported advertised capabilities explicit"},
-    {"id":"G-RENTAL","topic":"Booking/dispatch/return/wash/repair/deposit/refund and availability","status":"pending-full-acceptance","required":"Timing/settings/overlap/roles, units/value/liability conservation and real UI/files evidence"},
-    {"id":"G-MIXED","topic":"Mixed business/POS/settings/entity/domain/history transitions","status":"pending-full-acceptance","required":"Supported combined workflows and mandatory financial/security combinations, not only pairwise plan integrity"},
-    {"id":"G-SECURITY","topic":"Real login, membership, scopes, tenant isolation and file/export access","status":"pending-full-acceptance","required":"Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav"},
-    {"id":"G-ARCHIVE","topic":"Owner source-A to new-empty-B portable data/files restore","status":"pending-deployed-journey","required":"Real exported encrypted pair, current-pair checksums, remapped data/roles, coherent books/stock, attachment bytes and repeat/failure guards"},
-    {"id":"G-RECOVERY","topic":"Historical upgrades and operator DB/files disaster recovery","status":"requires-isolated-operator-infrastructure","required":"Accepted prior-version fixtures, supported upgrade/rollback, measured isolated DB+files recovery and RPO/RTO; no production restore"},
-    {"id":"G-LK","topic":"Sri Lankan tax/format/framework and privacy applicability","status":"expert-review-gaps","required":"Applicable rule versions and RF-01–10 expert decisions; no statutory approval from delegated defaults"},
-    {"id":"G-RELEASE","topic":"Build-specific customer acceptance decision","status":"pending-other-gates","required":"No unresolved exposed P0/P1, all launch-critical declared layers accepted, risks/gaps disclosed and exact image/schema/config/rule/QA fingerprint"}
+    {
+      "id": "G-CORE",
+      "topic": "Current candidate regression and critical defect retest",
+      "status": "original85PG-and16helpers-pass; source-adapter-correction-in-progress",
+      "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
+    },
+    {
+      "id": "G-PHYSICAL",
+      "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
+      "status": "pending-full-acceptance",
+      "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
+    },
+    {
+      "id": "G-SERVICE",
+      "topic": "Service/digital sales and supported delivery/advance/credit behaviour",
+      "status": "pending-full-acceptance",
+      "required": "Independent accounts/tax/recognition/delivery expectations; unsupported advertised capabilities explicit"
+    },
+    {
+      "id": "G-RENTAL",
+      "topic": "Booking/dispatch/return/wash/repair/deposit/refund and availability",
+      "status": "pending-full-acceptance",
+      "required": "Timing/settings/overlap/roles, units/value/liability conservation and real UI/files evidence"
+    },
+    {
+      "id": "G-MIXED",
+      "topic": "Mixed business/POS/settings/entity/domain/history transitions",
+      "status": "pending-full-acceptance",
+      "required": "Supported combined workflows and mandatory financial/security combinations, not only pairwise plan integrity"
+    },
+    {
+      "id": "G-SECURITY",
+      "topic": "Real login, membership, scopes, tenant isolation and file/export access",
+      "status": "pending-full-acceptance",
+      "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav"
+    },
+    {
+      "id": "G-ARCHIVE",
+      "topic": "Owner source-A to new-empty-B portable data/files restore",
+      "status": "pending-deployed-journey",
+      "required": "Real exported encrypted pair, current-pair checksums, remapped data/roles, coherent books/stock, attachment bytes and repeat/failure guards"
+    },
+    {
+      "id": "G-RECOVERY",
+      "topic": "Historical upgrades and operator DB/files disaster recovery",
+      "status": "requires-isolated-operator-infrastructure",
+      "required": "Accepted prior-version fixtures, supported upgrade/rollback, measured isolated DB+files recovery and RPO/RTO; no production restore"
+    },
+    {
+      "id": "G-LK",
+      "topic": "Sri Lankan tax/format/framework and privacy applicability",
+      "status": "expert-review-gaps",
+      "required": "Applicable rule versions and RF-01–10 expert decisions; no statutory approval from delegated defaults"
+    },
+    {
+      "id": "G-RELEASE",
+      "topic": "Build-specific customer acceptance decision",
+      "status": "pending-other-gates",
+      "required": "No unresolved exposed P0/P1, all launch-critical declared layers accepted, risks/gaps disclosed and exact image/schema/config/rule/QA fingerprint"
+    }
   ],
-  "nextActions": ["Review/pin8e1 and execute unchanged coordinated campaign in fresh isolated PG", "Resolve demonstrated harness prerequisites while preserving first run", "Extend AP/concurrency and archive adjacent cases without weakening original repros", "Fresh normal-Owner/Viewer browser journeys; physical first and real archive restore", "Continue unbound workflows and external recovery/expert gaps"],
-  "operatingLimits": ["Disposable staging data only; no production access", "No company-reset SQL or shared-staging stress", "No public credentials, cookies, archive passwords/files or raw evidence", "No old-run acceptance for changed candidate"]
+  "nextActions": [
+    "Review/pin8e1 and execute unchanged coordinated campaign in fresh isolated PG",
+    "Resolve demonstrated harness prerequisites while preserving first run",
+    "Extend AP/concurrency and archive adjacent cases without weakening original repros",
+    "Fresh normal-Owner/Viewer browser journeys; physical first and real archive restore",
+    "Continue unbound workflows and external recovery/expert gaps"
+  ],
+  "operatingLimits": [
+    "Disposable staging data only; no production access",
+    "No company-reset SQL or shared-staging stress",
+    "No public credentials, cookies, archive passwords/files or raw evidence",
+    "No old-run acceptance for changed candidate"
+  ],
+  "firstRetest": {
+    "campaign": "runs/CAMP-20261014-103005108-d85e2e.json",
+    "ci": 38549938743,
+    "totals": {
+      "passed": 250,
+      "failed": 5,
+      "skipped": 4
+    },
+    "runtime": "runs/RUN-2026-10-14T10-30-17-711Z-runtime.json",
+    "runtimeCases": 85,
+    "runtimePassed": 85,
+    "classification": "Five source-B failures from missing pgClient fixture export; diagnostic proved. First aligned local B15/1 then server-only marker fixed; B16/0. Business assertions unchanged."
+  }
 }

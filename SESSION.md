@@ -1,3 +1,7 @@
+# v2.5.5 first retest — bounded repairs pass
+
+First unchanged CI campaign250pass/5fail/4optional skips. All85original real-PG commands and16archive helpers pass, including original13failed cases/0021–0030 repros; full bug closure still needs declared live/security/storage layers. Five source-B failures traced to missing pgClient adapter export, independently diagnosed. Added actual tagged SQL on same PGlite transaction with commit/rollback/nested controls (3pass) and explicit server-only framework marker. First aligned localB15/1 marker failure preserved; final localB16/0. No business expectation changed. Fresh whole-campaign CI pending; read CHG-v255-retest and customer-readiness ledger.
+
 # Customer-readiness goal active — v2.5.5 retest
 
 Owner asks to achieve customer readiness. Read memory/customer-readiness.json and changes/CHG-20261014-v255-retest.md. Source and required live stamp deliberately pinned **v2.5.5 · 8e1a2b8**; cumulative diff inspected. Existing259 slots and137-workflow scope preserved. First unchanged isolated campaign pending; no reported fix independently closed. No live mutations in this preparation.
