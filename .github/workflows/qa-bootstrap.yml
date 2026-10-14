@@ -22,6 +22,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm product:prepare
+      - run: pnpm rulebook:check
       - run: pnpm test:sensitivity
       - run: pnpm test:unit
       - run: pnpm test:e2e:list

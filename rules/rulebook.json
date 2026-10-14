@@ -1,0 +1,2459 @@
+{
+  "schemaVersion": 1,
+  "rulebookVersion": "1.0.0",
+  "jurisdiction": "LK",
+  "updatedAt": "2026-10-14",
+  "effectivePolicyFrom": "2026-10-14",
+  "ownerDelegation": {
+    "date": "2026-10-14",
+    "scope": "Extract product intent and fill non-statutory gaps using professional defaults; future expert review requested.",
+    "expertApproval": false
+  },
+  "productStudy": {
+    "baselineSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "baselineVersion": "2.5.3",
+    "latestDiffSha": "9b8e443e4c7775eb601365e244939258225c751c",
+    "latestDiffVersion": "2.5.4",
+    "testedPinUnchanged": true,
+    "graph": "BookOneREAL graph searched first; stale extraction (old test nodes,41migrations vs43applied) so pinned source and latest commit diff verified directly.",
+    "scope": "Accounting, sales/purchase/stock/rental, role/entity/settings, recon/POS, archive and overlay contracts; not an exhaustive audit of every feature or legal regime."
+  },
+  "authorityOrder": [
+    "Applicable Sri Lankan law/Gazette and eligible accounting framework",
+    "Explicit owner-approved product decision and frozen contract",
+    "Owner-delegated defaults adopted here",
+    "Current implementation as descriptive evidence only"
+  ],
+  "sources": [
+    {
+      "id": "P-CORE",
+      "kind": "product",
+      "title": "docs/PRODUCTION_RULES.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/PRODUCTION_RULES.md",
+      "path": "docs/PRODUCTION_RULES.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Rules 2–8,10",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-POST",
+      "kind": "product",
+      "title": "packages/accounting/src/engine/document-posting.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/packages/accounting/src/engine/document-posting.ts",
+      "path": "packages/accounting/src/engine/document-posting.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "buildSalesInvoicePosting, purchase/return/GRN builders, round2",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-SALES",
+      "kind": "product",
+      "title": "apps/web/src/app/actions/commercial-docs.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/app/actions/commercial-docs.ts",
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "createCommercialDocument, loadSalesVatConfig, nextTaxInvoiceNumber",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-PAY",
+      "kind": "product",
+      "title": "apps/web/src/app/actions/documents.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/app/actions/documents.ts",
+      "path": "apps/web/src/app/actions/documents.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "allocateDocumentPayment, receiveCustomerPayments, payVendorBills",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-INV",
+      "kind": "product",
+      "title": "apps/web/src/app/actions/inventory-settings.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/app/actions/inventory-settings.ts",
+      "path": "apps/web/src/app/actions/inventory-settings.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "DEFAULTS, supported allow/block and last/average/fifo",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-COST",
+      "kind": "product",
+      "title": "apps/web/src/lib/inventory-costing.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/lib/inventory-costing.ts",
+      "path": "apps/web/src/lib/inventory-costing.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "openLayers, receive/consumeCostLayers; swallowed exceptions are implementation concerns",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-PUR",
+      "kind": "product",
+      "title": "docs/PURCHASE_DESIGN.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/PURCHASE_DESIGN.md",
+      "path": "docs/PURCHASE_DESIGN.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Locked direction and later completed P0–P3 sections; earlier baseline/gaps are dated",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-REN",
+      "kind": "product",
+      "title": "docs/RENTAL_CATERING_DESIGN.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/RENTAL_CATERING_DESIGN.md",
+      "path": "docs/RENTAL_CATERING_DESIGN.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "What must not happen, return locations, deposits, settings; earlier gap narrative is dated",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-DATES",
+      "kind": "product",
+      "title": "packages/accounting/src/rental-availability.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/packages/accounting/src/rental-availability.ts",
+      "path": "packages/accounting/src/rental-availability.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Inclusive YYYY-MM-DD, datesOverlap, ceil(hours/24) padding",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-TIMING",
+      "kind": "product",
+      "title": "packages/accounting/src/rental-invoice-timing.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/packages/accounting/src/rental-invoice-timing.ts",
+      "path": "packages/accounting/src/rental-invoice-timing.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Invoice stage gates; not revenue-recognition certification",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-RSET",
+      "kind": "product",
+      "title": "apps/web/src/lib/rental-core.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/lib/rental-core.ts",
+      "path": "apps/web/src/lib/rental-core.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "DEFAULT_RENTAL_SETTINGS, overlap/timing options",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-RMONEY",
+      "kind": "product",
+      "title": "apps/web/src/app/actions/rental-money.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/apps/web/src/app/actions/rental-money.ts",
+      "path": "apps/web/src/app/actions/rental-money.ts",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Deposit collection/application/refund and postBalanced",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-ACCESS",
+      "kind": "product",
+      "title": "docs/ACCESS_CONTROL_DESIGN.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/ACCESS_CONTROL_DESIGN.md",
+      "path": "docs/ACCESS_CONTROL_DESIGN.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Role/module/entity/scope ceiling; dated overview must not override current changes",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-RESOLVE",
+      "kind": "product",
+      "title": "packages/auth/src/permissions/resolve.ts",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/9b8e443e4c7775eb601365e244939258225c751c/packages/auth/src/permissions/resolve.ts",
+      "path": "packages/auth/src/permissions/resolve.ts",
+      "productSha": "9b8e443e4c7775eb601365e244939258225c751c",
+      "locator": "Current permission fallback and privileged keys",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-ENTITY",
+      "kind": "product",
+      "title": "docs/ENTITY_TIERS_AND_TAX_ARCHITECTURE.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/ENTITY_TIERS_AND_TAX_ARCHITECTURE.md",
+      "path": "docs/ENTITY_TIERS_AND_TAX_ARCHITECTURE.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Product model, domains; explicitly partly planning",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-RECON",
+      "kind": "product",
+      "title": "docs/BANK_RECONCILIATION_WORKBENCH.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/BANK_RECONCILIATION_WORKBENCH.md",
+      "path": "docs/BANK_RECONCILIATION_WORKBENCH.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Document authority, separate bank/books, staging, confirmation, no silent money",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-POS",
+      "kind": "product",
+      "title": "docs/POS_DESIGN.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/POS_DESIGN.md",
+      "path": "docs/POS_DESIGN.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Locked register/tender/return choices",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-ARCHIVE",
+      "kind": "product",
+      "title": "docs/TENANT_BACKUP_ARCHIVE.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/docs/TENANT_BACKUP_ARCHIVE.md",
+      "path": "docs/TENANT_BACKUP_ARCHIVE.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Frozen v2.5.3 archive spec; full live journey not verified",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-ARCHIVE-NEW",
+      "kind": "product",
+      "title": "docs/TENANT_BACKUP_ARCHIVE.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/9b8e443e4c7775eb601365e244939258225c751c/docs/TENANT_BACKUP_ARCHIVE.md",
+      "path": "docs/TENANT_BACKUP_ARCHIVE.md",
+      "productSha": "9b8e443e4c7775eb601365e244939258225c751c",
+      "locator": "v2.5.4 integrity additions and legacy pairing exception",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-ARCHIVE-CHG",
+      "kind": "product",
+      "title": "docs/changes/CHG-20261014-archive-backup-owner-integrity.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/9b8e443e4c7775eb601365e244939258225c751c/docs/changes/CHG-20261014-archive-backup-owner-integrity.md",
+      "path": "docs/changes/CHG-20261014-archive-backup-owner-integrity.md",
+      "productSha": "9b8e443e4c7775eb601365e244939258225c751c",
+      "locator": "Ready-for-QA, scope and legacy exception",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "P-FORM",
+      "kind": "product",
+      "title": "AGENTS.md",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/5becb2dcc768e056e34f8507fc2ecd2a3475e6a9/AGENTS.md",
+      "path": "AGENTS.md",
+      "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+      "locator": "Form busy overlay contract",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Specification or source evidence; no new execution or release acceptance."
+    },
+    {
+      "id": "LK-VAT-RATE",
+      "kind": "external",
+      "title": "IRD VAT overview",
+      "url": "https://www.ird.gov.lk/en/Type%20of%20Taxes/SitePages/Value%20Added%20Tax%20%28VAT%29.aspx?menuid=1204",
+      "locator": "Standard rate18% from 2024-01-01; page also has dated/possibly stale thresholds. No registration-threshold automation approved.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-VAT-ACT",
+      "kind": "external",
+      "title": "IRD VAT Act consolidated through 2025",
+      "url": "https://www.ird.gov.lk/si/publications/Value%20Added%20Tax_Acts/VAT_Act_No_14%5BE%5D_2002_%28Consolidation_2025%29.pdf",
+      "locator": "Sections 2,4,5,7,8,20(4),22,25; informational consolidation, read with2026 amendment.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-VAT-2026",
+      "kind": "external",
+      "title": "VAT Amendment Act14of2026",
+      "url": "https://www.ird.gov.lk/en/publications/Value%20Added%20Tax_Acts/VAT_Act_No_14-2026_E.PDF",
+      "locator": "Certified2026-06-30; special financial/digital regimes, do not apply ordinary-SME rate indiscriminately.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-INVOICE",
+      "kind": "external",
+      "title": "Gazette2481/22 invoice specification",
+      "url": "https://www.ird.gov.lk/en/publications/Gazette_Documents/2026_2481-22_E.pdf",
+      "locator": "Annexure I2–4; PDF text and pages1–2 screenshot requested; serial separators/example need expert interpretation.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-INVOICE-DATE",
+      "kind": "external",
+      "title": "Gazette2500/106 effective-date amendment",
+      "url": "https://www.ird.gov.lk/en/publications/Gazette_Documents/2026_2500_106_E.pdf",
+      "locator": "Effective date changed to2026-10-01; other matters unchanged.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-SME",
+      "kind": "external",
+      "title": "Sri Lanka SLFRS for SMEs2015",
+      "url": "https://www.slaasc.lk/files/SLFRS%20FOR%20SMEs%20-%202015_1483585270_SLFRS%20FOR%20SMEs%20-%202015.pdf",
+      "locator": "Sections 1 eligibility,13.16–18 cost techniques/formulas,20.24–26 operating leases,23.14–22 service revenue. Local applicability and later amendments need per-entity review.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-LKAS2",
+      "kind": "external",
+      "title": "Sri Lanka LKAS 2 Inventories2025 bound-volume copy",
+      "url": "https://www.slaasc.lk/files/?C=M%3BO%3DD",
+      "locator": "Follow file LKAS 2-Inventories _1754043513; PDF read, paras 9–11,23–27. Official index is linked because filename contains extensive spaces.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-SLFRS15",
+      "kind": "external",
+      "title": "Sri Lanka SLFRS 15 Revenue2025 bound-volume copy",
+      "url": "https://www.slaasc.lk/files/?C=M%3BO%3DD",
+      "locator": "Follow file SLFRS 15-Revenue _1754044324; PDF read, paras 5,31,35,46. Lease contracts outside scope.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-SSCL",
+      "kind": "external",
+      "title": "IRD SSCL overview",
+      "url": "https://www.ird.gov.lk/en/Type%20of%20Taxes/SitePages/Social%20Security%20Contribution%20Levy%20%28SSCL%29.aspx",
+      "locator": "Separate tax regime; activity/liable turnover and date-specific applicability must be evaluated, no flat invoice default adopted.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-PDPA",
+      "kind": "external",
+      "title": "DPA legal sources and Gazette index",
+      "url": "https://www.dpa.gov.lk/guidelines.php",
+      "locator": "Act9of2022, amendment22of2025, Gazette2498/16 dated2026-07-22, several regulations still labelled draft. Gazette PDF fetch failed; no certified commencement scope claimed.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "LK-PDPA-AMEND",
+      "kind": "external",
+      "title": "PDPA Amendment22of2025",
+      "url": "https://www.dpa.gov.lk/acts/22-2025_E_251104_201549%20%281%29.pdf",
+      "locator": "Section 2 changes commencement by Gazette; stale2025 enforcement headline cannot be used alone.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Applicability and interpretation require Sri Lankan subject expert review."
+    },
+    {
+      "id": "OWASP-AUTH",
+      "kind": "external",
+      "title": "OWASP Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "locator": "Least privilege, deny by default, permission checks each request.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Engineering guidance, not Sri Lankan legislation."
+    },
+    {
+      "id": "OWASP-FILE",
+      "kind": "external",
+      "title": "OWASP File Upload Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "locator": "Allowlist, inspect content, size limits, authorization, safe storage.",
+      "checkedAt": "2026-10-14",
+      "verification": "read",
+      "limitation": "Engineering guidance; chosen formats/limits are BookOne policy."
+    },
+    {
+      "id": "OWNER-20261014",
+      "kind": "owner",
+      "title": "Owner instruction to extract product rules and fill gaps for Sri Lanka",
+      "url": null,
+      "locator": "This conversation2026-10-14: maintain human-readable editable rules; professional defaults permitted; future expert review requested.",
+      "checkedAt": "2026-10-14",
+      "verification": "instruction",
+      "limitation": "Delegates product defaults; does not certify legal/accounting applicability or change production configuration."
+    }
+  ],
+  "rules": [
+    {
+      "id": "BR-ACC-01",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Every posted journal balances",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Persisted debit equals credit in LKR cents for each journal; no empty journal for a completed financial event. Correct accounts must also be checked.",
+      "currentBehaviour": "Builders enforce totals; RUN17 still exposes incomplete failed rental postings.",
+      "examples": [
+        "Sale 600: Dr AR 600, Cr revenue 600; Dr cash 600/Cr expense600 is balanced but is not a valid sale."
+      ],
+      "sourceIds": [
+        "P-CORE",
+        "P-POST"
+      ],
+      "checkIds": [
+        "B-102",
+        "D-118"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0027"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-02",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Correct posting and settlement separation",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Recognition creates revenue/expense and the relevant control balance; settlement clears control without recognising the same sale/purchase again. Use account purpose, not a hardcoded code as law.",
+      "currentBehaviour": "Default product codes AR 1300/AP 2100, revenue 4000, returns4100, stock 5100/COGS5000; CoA is configurable.",
+      "examples": [
+        "Invoice 600 then receipt 250: revenue 600, cash 250, AR 350."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-PAY"
+      ],
+      "checkIds": [
+        "B-102",
+        "B-103",
+        "C-106"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-03",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Business operations commit atomically",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Document, party, journal, settlement, stock/layers and business audit commit together or roll back together. Connection scoping alone is not a transaction. Security failure telemetry may be separate.",
+      "currentBehaviour": "Physical posting regressions pass at bounded depth; rental/transfer fault tests leave partial rows.",
+      "examples": [
+        "Injected journal-line failure: no new financial transaction, document, stock mutation or business CREATE audit."
+      ],
+      "sourceIds": [
+        "P-CORE",
+        "P-RMONEY",
+        "P-COST"
+      ],
+      "checkIds": [
+        "B-112",
+        "C-116",
+        "D-118",
+        "RT-022"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0027",
+        "BUG-0029"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-04",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Idempotency and concurrent allocations",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "One logical operation has one committed effect. Replay of completed same key returns its recorded outcome; key reuse with different payload rejects. Balance decisions must be serialised, not read before an unprotected write.",
+      "currentBehaviour": "RUN17 shows payment replay busy and concurrent AR over-allocation; invoice replay positive passes.",
+      "examples": [
+        "600 invoice; two simultaneous350 payments: only one350 effect, remaining AR 250."
+      ],
+      "sourceIds": [
+        "P-PAY"
+      ],
+      "checkIds": [
+        "B-106",
+        "B-107"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0022",
+        "BUG-0023"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-05",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Reversals retain history",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Reverse once with original link, actor/date/reason and inverse effects; prohibit a second active reversal including races. Original entries remain accessible to authorised users.",
+      "currentBehaviour": "Original sequential/concurrent reversal regressions pass at bounded DB depth.",
+      "examples": [
+        "Sale 123.45 then valid reversal: net cash/revenue 0 with two linked journals."
+      ],
+      "sourceIds": [
+        "P-CORE"
+      ],
+      "checkIds": [
+        "RT-006",
+        "RT-007"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-06",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Locked periods and correcting dates",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Do not change a closed-period fact. Correct in an authorised open period with links; reject if no allowed period or explicit authorised reopen is available. A reversal is not permission to post into a locked date.",
+      "currentBehaviour": "Period guards exist on several paths; full all-module/role/date coverage remains incomplete.",
+      "examples": [
+        "September locked; October correction retains September original and records October inverse."
+      ],
+      "sourceIds": [
+        "P-CORE"
+      ],
+      "checkIds": [
+        "B-111",
+        "C-115",
+        "RT-009"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-07",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Reconcile commercial and manual controls",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "AR/AP controls equal signed commercial open items plus explicitly linked opening/manual adjustments within identical tenant/domain/currency/as-of scope. Default deny unlinked direct control-account postings; legacy differences use a reviewed bridge, never silent tolerance.",
+      "currentBehaviour": "Two entry highways and document-based ageing create reconciliation risk; archive v2.5.4 compares fixed controls to documents without an approved bridge.",
+      "examples": [
+        "AR GL700 = invoices600 + approved customer opening100; report must disclose both, not hide100."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-ARCHIVE-NEW",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-116",
+        "S-0782"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0030"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Expert must define permitted opening/manual bridge and migration of existing differences; do not reject a valid legacy archive merely by ignoring its bridge."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-ACC-08",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Reports use the same accounting scope",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Trial balance, income, balance sheet, ageing and cash reconcile for identical posting status, dates, domain and dimensions. Credits reduce net income; settlement is not income.",
+      "currentBehaviour": "Credit600/100 bounded report regression now passes; broader reports remain unaccepted.",
+      "examples": [
+        "Invoice 600 credit 100 receipt 250: net income 500, cash 250, AR 250."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-PAY"
+      ],
+      "checkIds": [
+        "B-104",
+        "E-106"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-SAL-01",
+      "revision": 1,
+      "area": "sales",
+      "title": "Pre-posting documents",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and sales lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Quotes/orders/drafts do not post revenue, cash, AR or sale stock. Rental/physical reservation effects exist only under explicit reservation rules. Conversions preserve source links and line facts.",
+      "currentBehaviour": "B-101 bounded quote/order/draft command passes; full UI conversion remains open.",
+      "examples": [
+        "Quote600 converts to draft600: zero GL; posting the invoice creates exactly one600 recognition."
+      ],
+      "sourceIds": [
+        "P-SALES",
+        "P-REN"
+      ],
+      "checkIds": [
+        "B-101"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-SAL-02",
+      "revision": 1,
+      "area": "sales",
+      "title": "Posting, payment, credit and refund states",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and sales lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Only posted live obligations accept allocation. Positive amounts cannot over-allocate remaining debt. Credits/refunds retain source, tax and quantity/cost links; refund cannot exceed refundable balance.",
+      "currentBehaviour": "Single-document overpay denial exists; race failure remains BUG-0022. Complete paid-return/refund workflow still unimplemented.",
+      "examples": [
+        "600 invoice credit 100 payment 250 leaves250 due; cash refund is a separate authorised settlement, not another sale."
+      ],
+      "sourceIds": [
+        "P-PAY",
+        "P-POST"
+      ],
+      "checkIds": [
+        "B-103",
+        "B-104",
+        "B-105",
+        "B-108"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0022"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-SAL-03",
+      "revision": 1,
+      "area": "sales",
+      "title": "Deterministic monetary calculation",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and sales lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Use exact decimal or integer cents. Round half away from zero to two decimals; round extended line amounts, apply valid discounts, allocate header discount proportionally to positive line nets using largest remainders with stable line-ID ties, then calculate tax per rate bucket and sum. Reject negative net or excessive discount. Reverse recorded amounts exactly.",
+      "currentBehaviour": "Builder uses JS round2, single header VAT rate and first-account rounding correction; this is current behaviour, not approval for mixed tax buckets or decimal ties.",
+      "examples": [
+        "Net100.05 at18% gives VAT 18.01 and total 118.06; reversing returns exactly118.06."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-114",
+        "E-102",
+        "E-109"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Tax-bucket rounding is delegated product policy, not asserted as a Sri Lankan statutory rounding mandate. Existing tests are not rewritten without a policy-versioned new fixture."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-PUR-01",
+      "revision": 1,
+      "area": "purchase",
+      "title": "Receive and bill once",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and purchasing lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "PO does not post; GRN receives quantities once; bill linked to GRN clears GRNI when configured without receiving again. Partial receipts/bills cannot exceed approved remaining quantities absent an explicitly approved over-receipt.",
+      "currentBehaviour": "Current physical PG cases cover PO→GRN→bill, GRNI and partials at bounded depth; stale earlier purchase narrative says GRN later.",
+      "examples": [
+        "Receive10 at60: stock 600; bill600 adds AP 600 and clears GRNI600, no second10 stock."
+      ],
+      "sourceIds": [
+        "P-PUR",
+        "P-POST"
+      ],
+      "checkIds": [
+        "C-101",
+        "C-102",
+        "C-103",
+        "C-104"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-PUR-02",
+      "revision": 1,
+      "area": "purchase",
+      "title": "Approvals and supplier duplicates",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and purchasing lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Pending approval has no posted financial/stock effect; only permitted scoped writer approves/rejects. Use supplier+reference+tenant duplicate detection; an exceptional duplicate needs explicit authorised reason, not silent second posting.",
+      "currentBehaviour": "Viewer approval denial regression passes; exact duplicate override behaviour needs implementation review.",
+      "examples": [
+        "Viewer approves pending200: denied, zero posting; authorised owner approves once: AP 200."
+      ],
+      "sourceIds": [
+        "P-PUR",
+        "P-ACCESS",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-101",
+        "C-113",
+        "C-115"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-STK-01",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Quantity conservation",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Per SKU/location closing equals opening+receipts+returns+adjustments−issues. Internal transfers preserve tenant totals and carry cost; all IDs must refer to live current-tenant products/locations.",
+      "currentBehaviour": "Basic transfers conserve quantity; failed/racing transfers leave additional cost/history rows.",
+      "examples": [
+        "Transfer2 of 10 units from A to B: A8 B2, tenant10, no revenue."
+      ],
+      "sourceIds": [
+        "P-COST",
+        "P-CORE"
+      ],
+      "checkIds": [
+        "C-109",
+        "RT-021",
+        "RT-022"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0028",
+        "BUG-0029"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-STK-02",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Quantity and value are independently conserved",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Stock quantities, remaining layers, carrying value, COGS and returns reconcile. A returned sold unit uses original issued cost unless an approved adjustment separately explains difference; transfers do not generate profit.",
+      "currentBehaviour": "Constant-price FIFO/average/last PG positives pass; variable-price/returns/backdate acceptance remains open.",
+      "examples": [
+        "Receive10×60; sell3×100 and return1: stock 8/value 480, COGS120, net revenue 200."
+      ],
+      "sourceIds": [
+        "P-COST",
+        "P-POST"
+      ],
+      "checkIds": [
+        "C-105",
+        "C-107",
+        "C-111"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-STK-03",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Physical, service, digital and rental effects",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Physical sale consumes stock and COGS; service/digital sales do not. Ordinary rental hire changes availability, not permanent fleet sale/COGS. A non-null unknown/foreign product ID must reject rather than become a free-text service line.",
+      "currentBehaviour": "Core product distinction and SKU ownership regressions pass; digital entitlement workflow still not specified as shipped.",
+      "examples": [
+        "Invoice physical300+service200+hire100: only physical sold quantity incurs sale COGS."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-REN"
+      ],
+      "checkIds": [
+        "C-115",
+        "E-101",
+        "B-117"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-REN-01",
+      "revision": 1,
+      "area": "rental",
+      "title": "Availability and interval model",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and rental operations lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Preserve v1 inclusive local-calendar dates in Asia/Colombo; same-day endpoints overlap. Padding uses ceil(hours/24) whole days and must be described clearly. Safe new-company default block; warn/allow/override are explicit company choices, with scoped authority and recorded reason for override. Recheck under concurrency.",
+      "currentBehaviour": "datesOverlap uses inclusive dates; default overlap is override; date-granular padding cannot demonstrate hourly turnaround precision.",
+      "examples": [
+        "Booking10–12 Oct with6-hour padding blocks through 13 Oct; next date-only booking can start14 Oct."
+      ],
+      "sourceIds": [
+        "P-DATES",
+        "P-RSET",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "D-106",
+        "D-107",
+        "D-115"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Date-granular v1 rule retained by delegated choice. Hourly billing is not evidence of hourly availability; propose a separately versioned timestamp calendar if required."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-REN-02",
+      "revision": 1,
+      "area": "rental",
+      "title": "Hire, invoicing and earned income",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and rental operations lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Ordinary hire never consumes fleet as a sale. Respect configured invoice stage with explicit permitted override. Invoice stage, VAT time of supply and financial revenue recognition are separate decisions; advance money is not automatically earned hire income.",
+      "currentBehaviour": "P-TIMING gates invoice posting; on_confirm default does not prove accrual revenue recognition.",
+      "examples": [
+        "Future event security deposit 1000: cash 1000/liability 1000, revenue 0."
+      ],
+      "sourceIds": [
+        "P-REN",
+        "P-TIMING"
+      ],
+      "checkIds": [
+        "D-102",
+        "D-108"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-REN-03",
+      "revision": 1,
+      "area": "rental",
+      "title": "All dispatched units stay accounted for",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and rental operations lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Returned good/dirty/repair/missing/outstanding quantities cannot exceed dispatch; washing/repair units unavailable until released. Missing records are not automatically good returns or sales credits. Loss/write-off needs authority and a traceable asset adjustment.",
+      "currentBehaviour": "Bounded return-bucket tests exist; complete loss/recovery approvals remain open.",
+      "examples": [
+        "Dispatch10; good6 dirty2 repair1 missing1 totals10; only6 immediately rentable."
+      ],
+      "sourceIds": [
+        "P-REN"
+      ],
+      "checkIds": [
+        "D-103",
+        "D-104",
+        "D-105",
+        "D-112",
+        "D-114"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-REN-04",
+      "revision": 1,
+      "area": "rental",
+      "title": "Refundable deposit liability",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and rental operations lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Collect deposit into liability; apply only against a posted authorised charge; refund only remaining liability through a valid liquid tender. Keep each collection/application/refund linked and atomic.",
+      "currentBehaviour": "Deposit 1000/apply700/refund 300 positive passes; Viewer/tender/module and fault assertions fail in RUN17.",
+      "examples": [
+        "1000 collected−700 applied−300 refunded =0 remaining liability; hire revenue is not recognised a second time."
+      ],
+      "sourceIds": [
+        "P-REN",
+        "P-RMONEY"
+      ],
+      "checkIds": [
+        "D-102",
+        "D-109",
+        "D-110",
+        "D-117",
+        "D-118"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0026",
+        "BUG-0027"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-SEC-01",
+      "revision": 1,
+      "area": "access",
+      "title": "Tenant isolation at every boundary",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and security lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Derive tenant from authenticated active membership. Deny foreign records/files/reports/caches including known real foreign IDs; test actual non-owner DB role and simultaneous pooled connections. Never equate table-owner tests with RLS proof.",
+      "currentBehaviour": "Non-owner helper tests pass; actual HTTP/login/object-storage coverage remains open.",
+      "examples": [
+        "TenantA requests B receipt key: no signing call, no bytes and no mutation."
+      ],
+      "sourceIds": [
+        "P-CORE",
+        "P-ACCESS",
+        "OWASP-AUTH"
+      ],
+      "checkIds": [
+        "F-112",
+        "RT-014",
+        "E-107"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-SEC-02",
+      "revision": 1,
+      "area": "access",
+      "title": "Authoritative roles, capabilities and scopes",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and security lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Viewer cannot mutate business state. Membership/job grants are limited by module/entity/location/brand ceilings. Owner-only privileges cannot arrive via extra jobs, exceptions or RBAC-off fallback. Control Room is platform super_admin only; company Admin is not platform admin. Revocation and membership/job changes must apply to the next authoritative server request, including cached permissions and stale pages; a previously visible button is not authority.",
+      "currentBehaviour": "v2.5.4 patches backup resolver; no retest yet. Rental/transfer write holes persist in v2.5.3 evidence.",
+      "examples": [
+        "Viewer direct rental money/stock transfer denied with identical before/after business snapshots."
+      ],
+      "sourceIds": [
+        "P-ACCESS",
+        "P-RESOLVE",
+        "OWASP-AUTH"
+      ],
+      "checkIds": [
+        "E-115",
+        "E-116",
+        "E-117",
+        "D-117",
+        "C-109",
+        "S-0764"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0021",
+        "BUG-0026",
+        "BUG-0028"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-DAT-01",
+      "revision": 1,
+      "area": "data",
+      "title": "Preserve historical facts",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Posted amounts, line/tax/price/party snapshots, dates, attachments and audit relationships retain meaning after master/config edits or upgrades. Corrections use traceable entries; master rename must not silently rewrite issued invoice facts.",
+      "currentBehaviour": "Historical snapshot/UI coverage incomplete.",
+      "examples": [
+        "Change price100→120 today: last month issued100 invoice remains100."
+      ],
+      "sourceIds": [
+        "P-CORE"
+      ],
+      "checkIds": [
+        "B-113",
+        "D-116",
+        "E-112"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-DAT-02",
+      "revision": 1,
+      "area": "data",
+      "title": "Upgrade and rollback compatibility",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Test real prior-version datasets, interrupted migration/restart and semantic reconciliation. Reject unsupported downgrade/forward archive versions. Restoring old application code alone is not database rollback.",
+      "currentBehaviour": "Fresh current43 SQL application passed; prior-release upgrade/recovery not yet accepted.",
+      "examples": [
+        "Migration failure: all accepted pre-upgrade invoices and objects survive restart or tested isolated recovery."
+      ],
+      "sourceIds": [
+        "P-CORE",
+        "P-ARCHIVE"
+      ],
+      "checkIds": [
+        "F-108",
+        "F-109",
+        "F-111"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-DAT-03",
+      "revision": 1,
+      "area": "data",
+      "title": "Usable recovery",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Restore consistent DB and object storage into isolation and prove books/files/roles usable. Company portable archives and operator disaster recovery are separate capabilities. No accepted RPO/RTO from a plan or successful export alone.",
+      "currentBehaviour": "No full live tenant restore or operator DR acceptance recorded.",
+      "examples": [
+        "Data restore without files opens books but receipt shows Missing attachment until matching pack is applied."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE"
+      ],
+      "checkIds": [
+        "F-110",
+        "S-0778",
+        "S-0785",
+        "S-0786"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-IMP-01",
+      "revision": 1,
+      "area": "imports",
+      "title": "Traceable repeat-safe import",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Normalise signs/dates/amounts with an explicit source profile; reject impossible/ambiguous dates unless user confirms interpretation. Stage immutable bank evidence, deduplicate, then require an authorised decision to create books. Matching does not create another sale.",
+      "currentBehaviour": "Impossible-date source regressions pass; broader recon journey remains open.",
+      "examples": [
+        "Import28Feb2026 accepted;30Feb2026 rejected; reimport same bank row never doubles cash."
+      ],
+      "sourceIds": [
+        "P-RECON"
+      ],
+      "checkIds": [
+        "F-101",
+        "F-102",
+        "F-103",
+        "F-104",
+        "F-105"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "BR-AUD-01",
+      "revision": 1,
+      "area": "data",
+      "title": "Trustworthy audit without secrets",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Record actor/tenant/operation/time/reason and related records for sensitive changes. Successful business audit belongs to atomic commit; failure telemetry does not imply success. Never record archive passwords, session cookies or raw private documents in public evidence.",
+      "currentBehaviour": "RUN17 keeps raw/private artifacts ignored; complete action audit review remains open.",
+      "examples": [
+        "Denied Viewer transfer may record security denial, but cannot record a successful stock CREATE."
+      ],
+      "sourceIds": [
+        "P-CORE"
+      ],
+      "checkIds": [
+        "F-115",
+        "F-116"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-01",
+      "revision": 1,
+      "area": "tax",
+      "title": "Tax profile and effective-date registry",
+      "authority": "Sri Lankan official source / applicability qualified",
+      "status": "external-requirement",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Sri Lankan tax practitioner and product owner",
+      "appliesTo": "Sri Lankan entity with the stated tax registration, supply classification and effective date",
+      "expectation": "Apply the tax classification and effective-dated rate to the relevant registered supply; ordinary standard VAT baseline is18% from 2024-01-01. Exempt, zero-rated and out-of-scope are distinct. Invoice styling alone must not switch tax liability off.",
+      "currentBehaviour": "loadSalesVatConfig applies VAT only for tax_invoice+vatRegistered, a source concern requiring tax-path review; no deployed tax-compliance verdict.",
+      "examples": [
+        "Registered ordinary taxable net 1000 at18%: tax180 total 1180; unregistered trader is not automatically entitled to issue that tax invoice."
+      ],
+      "sourceIds": [
+        "LK-VAT-RATE",
+        "LK-VAT-ACT",
+        "LK-VAT-2026",
+        "P-SALES"
+      ],
+      "checkIds": [
+        "B-114",
+        "E-102"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Expert confirm transaction classification, supply date, registration, export evidence and any2026 special regime; do not use stale overview thresholds."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-02",
+      "revision": 1,
+      "area": "tax",
+      "title": "Sri Lankan tax invoice specification",
+      "authority": "Sri Lankan official source / applicability qualified",
+      "status": "external-requirement",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Sri Lankan tax practitioner and product owner",
+      "appliesTo": "Sri Lankan entity with the stated tax registration, supply classification and effective date",
+      "expectation": "For applicable tax invoices issued from 2026-10-01, meet Gazette2481/22 as amended by2500/106: prescribed supplier/purchaser particulars, unique structured serial, invoice/supply dates in MM/DD/YYYY and LKR amounts to two decimals. Only VAT-subject supplies belong on this tax invoice.",
+      "currentBehaviour": "Current serial template YYMMM_DEPT/SERIAL differs from Gazette structure; print/template and purchaser fields not yet audited.",
+      "examples": [
+        "An ordinary commercial INV number is not by itself evidence of compliant tax invoice numbering."
+      ],
+      "sourceIds": [
+        "LK-INVOICE",
+        "LK-INVOICE-DATE",
+        "P-SALES"
+      ],
+      "checkIds": [
+        "E-112",
+        "B-114"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Serial separator/example inconsistency and purchaser applicability require practitioner interpretation; keep dates in internal ISO and render statutory print separately."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-03",
+      "revision": 1,
+      "area": "tax",
+      "title": "Input VAT and taxable-price modes",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Sri Lankan tax practitioner and product owner",
+      "appliesTo": "Sri Lankan entity with the stated tax registration, supply classification and effective date",
+      "expectation": "Keep recoverable input VAT separate from inventory/expense; nonrecoverable tax is assigned per approved accounting treatment. Require documentary eligibility. Inclusive price must be explicitly declared and decomposed; do not add VAT twice. Mixed rates/exempt goods require line classification; reject unsupported mixed-tax posting.",
+      "currentBehaviour": "Single-rate net-exclusive builder exists; complete input eligibility/inclusive/mixed tax support is not established.",
+      "examples": [
+        "Inclusive1180 at18% decomposes to net 1000 VAT 180; eligible purchase posts Dr asset/expense1000 Dr inputVAT180 Cr AP 1180."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "LK-VAT-ACT",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-114",
+        "E-102",
+        "C-108"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Expert must approve input recoverability, tax credit/debit-note adjustments and time of supply; these are not inferred from a checkbox."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-04",
+      "revision": 1,
+      "area": "tax",
+      "title": "Other Sri Lankan taxes are distinct capabilities",
+      "authority": "Unresolved source or applicability conflict",
+      "status": "open-review",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Sri Lankan tax practitioner and product owner",
+      "appliesTo": "Sri Lankan entity with the stated tax registration, supply classification and effective date",
+      "expectation": "Do not claim full Sri Lankan tax compliance from VAT arithmetic. SSCL, AIT/WHT, APIT, income-tax schedules, stamp duty and customs need separate applicable effective-dated rules and support declarations. Do not add a flat SSCL charge to every invoice.",
+      "currentBehaviour": "Tax packs are partly roadmap; no full filing/compliance certification.",
+      "examples": [
+        "Ordinary invoice tax controls passing does not validate payroll deductions or import customs obligations."
+      ],
+      "sourceIds": [
+        "LK-SSCL",
+        "LK-VAT-2026",
+        "P-ENTITY"
+      ],
+      "checkIds": [],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Specialist scope and latest Acts/notices still needed; disabled or unsupported capability must be explicit rather than simulated passing."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-05",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Choose the reporting framework per entity",
+      "authority": "Unresolved source or applicability conflict",
+      "status": "open-review",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Record applicable full SLFRS/LKAS, SLFRS for SMEs, Smaller Entities or other supported basis with expert justification. Legal entity kind or product lite/full tier alone cannot select statutory reporting eligibility.",
+      "currentBehaviour": "Entity architecture describes operational tiers; no independently confirmed framework selection.",
+      "examples": [
+        "A small company using full ERP is not automatically required to use the same reporting framework as every listed enterprise."
+      ],
+      "sourceIds": [
+        "LK-SME",
+        "P-ENTITY"
+      ],
+      "checkIds": [
+        "E-103"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Sri Lankan accountant confirms eligibility/current local edition; international amendments are not automatically local adoption."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-INV-01",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Professional inventory valuation profile",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "New statutory inventory profile defaults to moving weighted average, with FIFO selectable under a consistent entity policy. LKAS 2 uses FIFO/weighted average for interchangeable goods and specific identification for qualifying items; last-purchase cost needs separate justification before statutory use. Review impairment and attributable acquisition costs.",
+      "currentBehaviour": "Product defaults last cost; new profile choice is a requirement proposal for coding, not a configuration change made by QA.",
+      "examples": [
+        "10 units at60 then10at80: average 70, issue5 costs 350; FIFO issue5 costs 300."
+      ],
+      "sourceIds": [
+        "LK-LKAS2",
+        "LK-SME",
+        "P-INV",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-111"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "SME section 13.16 permits recent purchase price as a technique if it approximates cost; this is not an unconditional last-cost ban. Confirm evidence/eligibility. Review rental fleet asset classification/depreciation separately."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-INV-02",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Negative and fractional stock",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Safe new-company profile blocks issues beyond available quantities. Existing allow-mode remains an explicit operational exception with provisional cost and later reviewed true-up; never silently invent zero cost. Validate unit precision and four-decimal quantity storage, reject excess precision or explicitly convert; discrete items default whole units.",
+      "currentBehaviour": "Product default allow; quantity helpers use4decimals. True-up and unit-specific constraints not established.",
+      "examples": [
+        "Own2 chairs, try dispatch3 under block: reject zero effects; kilograms may accept0.1250 under declared unit policy."
+      ],
+      "sourceIds": [
+        "P-INV",
+        "P-COST",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-112",
+        "C-114"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-INV-03",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Backdating and costing-method changes",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Default reject backdated movements that precede later valued movements unless a controlled recalculation/correction workflow preserves links and closed-period rules. Change costing prospectively with reviewed opening quantities/values; never rewrite issued facts invisibly.",
+      "currentBehaviour": "FIFO orders by received date; recomputation/negative true-up coverage not established.",
+      "examples": [
+        "Backdated60 receipt after an80-cost sale must not quietly change old COGS with no correcting record."
+      ],
+      "sourceIds": [
+        "P-COST",
+        "P-CORE",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-111",
+        "B-113"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-REN-01",
+      "revision": 1,
+      "area": "rental",
+      "title": "Late, damage, loss and cancellation charges",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and rental operations lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Default late/damage/forfeiture charge is0 until agreed terms/configuration exists. Record inspection/evidence and permission; draft separate charge/credit and approve before deposit application. An asset loss and customer compensation are separate accounting events; no automatic refund beyond liability.",
+      "currentBehaviour": "Default lateFeePerDay0; wash/repair/loss design exists. Full fee policy and receipts remain unaccepted.",
+      "examples": [
+        "Deposit 1000, approved damage200: apply200, remaining refundable800; do not forfeit1000 without contractual basis."
+      ],
+      "sourceIds": [
+        "P-REN",
+        "P-RSET",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "D-111",
+        "D-112",
+        "D-113"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ACC-01",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Invoice date versus revenue recognition",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Accrual profile distinguishes earned goods/service revenue, advances/deferred income, refundable deposits and payment settlement. Service recognition follows delivered obligations; hire arrangements require lease/service classification and period treatment. Do not infer earned income solely from cash receipt or invoice date.",
+      "currentBehaviour": "Builders recognise invoice revenue immediately; on_confirm rental stage may precede earned service. Deferred/lease workflow not established.",
+      "examples": [
+        "Paid1000 inOctober forNovember service: advance liability before performance; recognise earned amount when delivered."
+      ],
+      "sourceIds": [
+        "LK-SLFRS15",
+        "LK-SME",
+        "P-POST",
+        "P-TIMING",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "D-108",
+        "B-116"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "SLFRS 15 excludes lease contracts. Expert confirms SME section 23 or full-framework treatment and hire classification before statutory acceptance."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-PAY-01",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Whole-batch payment semantics",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Default one submitted payment batch is all-or-nothing: prevalidate and lock all obligations, then commit every allocation or none. If a future partial mode is offered it must be explicitly selected, itemised and replay-safe. Preserve single-operation no-overpay invariant independently.",
+      "currentBehaviour": "Wrappers loop individual allocations and may leave earlier successes. Current output is not an approved partial-mode contract.",
+      "examples": [
+        "Batch bills A100/B200 whereB invalid: default cash 0/AP unchanged, no payment forA."
+      ],
+      "sourceIds": [
+        "P-PAY",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-115",
+        "B-106"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-PAY-02",
+      "revision": 1,
+      "area": "accounting",
+      "title": "Overpayment, advances and valid tenders",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Accounting/product owner; Sri Lankan accountant for reporting treatment",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Document allocation cannot exceed debt; excess money uses a separately supported customer/vendor advance or unapplied balance, never a negative invoice balance. Tender must be current-tenant active nonvoid liquid asset with scope; sales revenue cannot be tender.",
+      "currentBehaviour": "Commercial tender guards pass; rental money tender4000 accepted in RUN17.",
+      "examples": [
+        "Customer pays700 for600 invoice: reject allocation700 or explicitly record600 settlement+100 advance through a supported workflow."
+      ],
+      "sourceIds": [
+        "P-PAY",
+        "P-RMONEY"
+      ],
+      "checkIds": [
+        "B-107",
+        "D-117",
+        "RT-023"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0022",
+        "BUG-0026"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-CONFIG-01",
+      "revision": 1,
+      "area": "configuration",
+      "title": "Module-off history and drafts",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Disabling a module preserves history and permits authorised read/report access to existing records, while denying new module writes including direct calls. Drafts snapshot prices/policy version; settings changes require explicit recalculation and reconfirmation before posting. Mandatory law effective at supply/issue date still applies.",
+      "currentBehaviour": "Some view ceilings retain history; draft settings-snapshot and all-module transitions not established.",
+      "examples": [
+        "Disable inventory: old stock report remains readable to permitted user; new transfer denied; old600 draft never silently becomes650."
+      ],
+      "sourceIds": [
+        "P-ACCESS",
+        "P-ENTITY",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "E-104",
+        "E-113",
+        "D-116"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0026"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-CONFIG-02",
+      "revision": 1,
+      "area": "configuration",
+      "title": "Legal entities and book domains",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Personal entity uses personal domain; company business only; sole-proprietor supports separate personal/business records as documented. Reports must not mix domains silently; incorporation uses new company with traceable opening transfer, preserving former entity.",
+      "currentBehaviour": "Architecture partly planning; full operational/tax tier journey remains unaccepted.",
+      "examples": [
+        "Owner private groceries cannot silently reduce company trading profit."
+      ],
+      "sourceIds": [
+        "P-ENTITY"
+      ],
+      "checkIds": [
+        "E-103",
+        "E-105"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-FILE-01",
+      "revision": 1,
+      "area": "files",
+      "title": "Private record-linked file access",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and security/privacy lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Financial receipts, bank imports and rental evidence are private; download requires access to linked record and current tenant. Viewer may read attachments only when that record read is permitted. Write/delete requires matching write authority. Public branding uses an explicit safe published derivative; default financial public links denied.",
+      "currentBehaviour": "Tenant-prefix signer regression passes; actual MinIO/HTTP role and public-link behaviour remains unaccepted.",
+      "examples": [
+        "A Viewer with invoice read can read its permitted receipt, but cannot upload/replace it or read another branch forbidden by scope."
+      ],
+      "sourceIds": [
+        "P-ACCESS",
+        "OWASP-AUTH",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-110",
+        "F-119",
+        "F-122"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-FILE-02",
+      "revision": 1,
+      "area": "files",
+      "title": "Formats, upload bounds and content safety",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and security/privacy lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Default receipts JPG/PNG/PDF up to10MiB; product logos JPG/PNG/WebP up to5MiB. Validate actual content, safe decoding, tenant-generated keys and total resource bounds. No active HTML/SVG or scripts by default. HEIC only through an explicitly supported safe converter. Archive/import have their own documented limits.",
+      "currentBehaviour": "Proposed ordinary-file defaults; endpoint/tunnel/current UI limits not fully audited. Archive chunk4MiB is a separate contract.",
+      "examples": [
+        "Renamed executable receipt.jpg or oversized PDF rejects without partial business attachment state."
+      ],
+      "sourceIds": [
+        "OWASP-FILE",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "F-106",
+        "F-120",
+        "F-121",
+        "F-123",
+        "F-124"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-DATA-01",
+      "revision": 1,
+      "area": "data",
+      "title": "Retention and privacy lifecycle",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Default preserve financial books/supporting evidence7years after financial year end, longer under legal hold or applicable law; exact entity/legal retention review required. Do not apply that blanket period to unrelated personal data. Keep minimised PII, purpose/access/retention records and reviewed deletion/anonymisation without breaking required books.",
+      "currentBehaviour": "No verified automatic retention/deletion or complete PDPA workflow. VAT invoice duplicate statutory minimum is five years after relevant taxable period.",
+      "examples": [
+        "A deletion request cannot erase an invoice required for retention; restrict nonessential contact data and record lawful decision."
+      ],
+      "sourceIds": [
+        "LK-VAT-ACT",
+        "LK-PDPA",
+        "LK-PDPA-AMEND",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "F-115",
+        "F-118"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Seven years is a delegated conservative product default, not a universal Sri Lankan legal period. Review company law, holds, rights, processor contracts and cross-border hosting."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-DATA-02",
+      "revision": 1,
+      "area": "data",
+      "title": "Operator recovery service targets",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Planning target: RPO≤24h and RTO≤4h for initial operator DR, encrypted offsite DB+files, monitored daily backups and isolated recovery drill before launch; improve for real payment volume. Measure achieved bounds and document incident starting point. Never promise these before evidence.",
+      "currentBehaviour": "Operator infrastructure inaccessible; no measured recovery or accepted service guarantee.",
+      "examples": [
+        "A restore taking6h fails4h target even if records ultimately restore; company owner download is not a daily operator backup."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "F-110"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Operator validates feasibility, cost, restore point and workload; targets can be revised through recorded owner decision."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ARCH-01",
+      "revision": 1,
+      "area": "data",
+      "title": "Owner-only export of two private files",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Export current tenant only; owner password confirmed and at least8characters, no storage of password, no auth password hashes/ops logs/foreign tenant. Two encrypted files share export identity/version and checksums; exclude _archive objects. Rate prepare1per2minutes/company, prepared downloads about15minutes.",
+      "currentBehaviour": "v2.5.3 Owner page/export seen but no accepted full journey; v2.5.4 resolver fix not retested.",
+      "examples": [
+        "CompanyA export cannot contain B data or teammate login hashes."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE",
+        "P-ARCHIVE-NEW"
+      ],
+      "checkIds": [
+        "S-0762",
+        "S-0763",
+        "S-0764",
+        "S-0766",
+        "S-0767",
+        "S-0768",
+        "S-0769",
+        "S-0770",
+        "S-0771",
+        "S-0772",
+        "S-0773"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ARCH-02",
+      "revision": 1,
+      "area": "data",
+      "title": "Empty-target restore and identity remap",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Supported restore into a newly created operationally empty tenant only; remap tenant/row IDs and relationships, replace signup seeds, make restorer Owner and skip extra users/passwords. Second data restore denied. Empty gate covers supported trading tables, not only journals.",
+      "currentBehaviour": "v2.5.3 bounded data restore positives pass; no credential/browser/real-storage acceptance.",
+      "examples": [
+        "A traded tenant refuses; a seeded empty target receives remapped invoices and distinct restorer Owner."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE"
+      ],
+      "checkIds": [
+        "S-0774",
+        "S-0775",
+        "S-0778",
+        "S-0779",
+        "S-0780",
+        "S-0783",
+        "S-0784"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ARCH-03",
+      "revision": 1,
+      "area": "data",
+      "title": "Restore semantic accounting and stock integrity",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Validate crypto/schema, FK/source links, per-journal nonempty balanced lines, trial hash, quantities/values/layers, document totals and scoped AR/AP including explicit approved bridges. Any failure rolls back data and leaves target operationally empty. A matching checksum alone cannot prove correct books.",
+      "currentBehaviour": "v2.5.4 adds stock/layer and fixed-account AR/AP validators; unexecuted and requires legitimate return/manual/legacy fixtures.",
+      "examples": [
+        "Crafted600posted invoice with AR 600 and no journal lines rejects with zero target trading rows."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE",
+        "P-ARCHIVE-NEW",
+        "P-ARCHIVE-CHG"
+      ],
+      "checkIds": [
+        "S-0781",
+        "S-0782"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0030"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ARCH-04",
+      "revision": 1,
+      "area": "data",
+      "title": "Files pairing, completion and retry",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Current paired pack must match applied data export identity and both recorded cross checksums; keys rewrite only source prefix→target, fill missing objects without overwrite. Invalid required bytes cannot mark complete. Stage/validate before completion; valid earlier S3 writes after a failure remain explicitly incomplete and safe to retry. Completed apply once.",
+      "currentBehaviour": "BUG0024wrongdataSha accepted in v2.5.3; v2.5.4 checks filesSha and refuses invalid completion, but full cross-data-checksum assurance not independently established.",
+      "examples": [
+        "WrongdataSHA with sameexportID rejects; invalid receipt bytes never produce completed-pack audit."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE",
+        "P-ARCHIVE-NEW"
+      ],
+      "checkIds": [
+        "S-0787",
+        "S-0793",
+        "S-0794"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [
+        "BUG-0024",
+        "BUG-0025"
+      ],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-ARCH-05",
+      "revision": 1,
+      "area": "data",
+      "title": "Legacy archive exception requires a versioned decision",
+      "authority": "Unresolved source or applicability conflict",
+      "status": "open-review",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and platform operator",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Frozen paired-checksum promise remains. v2.5.4 documented exportId-only legacy v2.4.0 path must be separately identified as weaker, with explicit compatibility/owner decision and trusted provenance. Missing checksum is not matching checksum; cannot weaken existing wrong-pair assertions.",
+      "currentBehaviour": "Latest product doc introduces exception; no independent golden legacy restore/provenance acceptance.",
+      "examples": [
+        "Legacy missingfilesSHA cannot be reported as full cross-checksum verification."
+      ],
+      "sourceIds": [
+        "P-ARCHIVE",
+        "P-ARCHIVE-NEW",
+        "P-ARCHIVE-CHG"
+      ],
+      "checkIds": [
+        "S-0787"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Resolve contract change before legacy acceptance; inspect actual goldenv2.4.0 archive rather than creating one that simply matches latest implementation."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-UI-01",
+      "revision": 1,
+      "area": "configuration",
+      "title": "Form completion is truthful",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Pending overlay clears in finally/page-ready; GET search, filters and Cancel never initiate write pending.45 second watchdog is only fallback, not success. Single/double submit cannot cause duplicate posting; show actual operation errors.",
+      "currentBehaviour": "v2.5.3 overlay fix documented; full live journeys unverified.",
+      "examples": [
+        "Successful invoice save becomes usable without refresh; failure removes pending and shows error with no partial business state."
+      ],
+      "sourceIds": [
+        "P-FORM"
+      ],
+      "checkIds": [
+        "E-111",
+        "S-0797",
+        "S-0798",
+        "S-0799",
+        "S-0800",
+        "S-0801",
+        "S-0802",
+        "S-0803",
+        "S-0804"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-POS-01",
+      "revision": 1,
+      "area": "sales",
+      "title": "POS sales, tenders, change and shift totals",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and sales lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "POS physical/service sales use shared posting rules and current register/shift scope. Cash change is not extra revenue; mixed tenders reconcile total; returns cannot exceed recorded eligible quantity/value without explicit free-return policy and authority. No ordinary hire SKU sold as physical.",
+      "currentBehaviour": "POS design includes free returns; complete shift/tender/device/permission journeys remain open.",
+      "examples": [
+        "Cash sale600 tender1000 gives change400, net cash/revenue 600; shift float is not revenue."
+      ],
+      "sourceIds": [
+        "P-POS",
+        "P-POST"
+      ],
+      "checkIds": [
+        "E-110"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-GOV-01",
+      "revision": 1,
+      "area": "governance",
+      "title": "All-business QA scope and honest acceptance",
+      "authority": "Existing product contract / mandatory QA invariant",
+      "status": "product-contract",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and QA maintainer",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Test physical, service/digital, rental and mixed businesses plus settings/roles/files/history. A rulebook is intended-behaviour source, not proof of implemented features, statutory certification or release readiness. Full workflow acceptance requires declared layers on current fingerprint.",
+      "currentBehaviour": "137 full workflows:57 partial bindings80unbound;259assertion slots242pass13fail4skip on5bec only.",
+      "examples": [
+        "Adding a rule or linking a case never changes an old failed run to passed."
+      ],
+      "sourceIds": [
+        "OWNER-20261014"
+      ],
+      "checkIds": [],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Review on every relevant change; independent expert approval not yet recorded."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-LK-06",
+      "revision": 1,
+      "area": "configuration",
+      "title": "Sri Lankan currency and business dates",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Sri Lankan profile uses LKR with two-decimal posted amounts and Asia/Colombo business dates. Store event timestamps unambiguously; ISO calendar dates do not shift across server/browser timezones. Print statutory dates separately under RB-LK-02. Explicit company financial year and tax period are separate settings. Unsupported foreign-currency/FX workflows must reject or disclose their limitation; never add unlike currencies.",
+      "currentBehaviour": "Current document paths use LKR; complete timezone/financial-year/FX coverage has not been accepted.",
+      "examples": [
+        "A payment at 00:15 Colombo belongs to that local business date even if UTC is the preceding date."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-PAY",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-111",
+        "D-115",
+        "E-105"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Delegated initial product policy; confirm support, applicability and compatibility before full acceptance."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-INV-04",
+      "revision": 1,
+      "area": "inventory",
+      "title": "Opening balances are a reconciled accounting event",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and inventory/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Opening inventory quantity and carrying value require one traceable opening accounting entry against approved opening equity/control. Product master quantity setup alone does not establish a complete financial opening. Imports of opening layers/documents must avoid a second stock/GL opening.",
+      "currentBehaviour": "Earlier integration audit describes master opening quantity without GL; complete opening valuation reconciliation remains open.",
+      "examples": [
+        "Opening 10 units at60 produces stock10/value600 and inventory debit600 with reviewed opening counterpart; later bill does not repeat the opening."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "P-COST",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-110",
+        "C-111"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Delegated initial product policy; confirm support, applicability and compatibility before full acceptance."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-PUR-01",
+      "revision": 1,
+      "area": "purchase",
+      "title": "Import purchase and landed costs",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and purchasing/accounting lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Use a supported reviewed allocation basis for attributable freight/duty/clearing and other acquisition costs; exclude recoverable input tax. Preserve supplier currency, conversion evidence and settlement/FX treatment where supported. Do not present a local net-only bill as fully supported import accounting.",
+      "currentBehaviour": "Import design includes later landed-cost scope; full import/customs/FX acceptance is not established.",
+      "examples": [
+        "Goods1000 + attributable freight100 with recoverable VAT excluded gives inventory1100, not twice-posted freight."
+      ],
+      "sourceIds": [
+        "P-PUR",
+        "LK-LKAS2",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "C-108"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Delegated initial product policy; confirm support, applicability and compatibility before full acceptance."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    },
+    {
+      "id": "RB-SAL-01",
+      "revision": 1,
+      "area": "sales",
+      "title": "Service and digital fulfilment",
+      "authority": "Owner-delegated professional product default",
+      "status": "adopted-default",
+      "effectiveFrom": "2026-10-14",
+      "retiredAt": null,
+      "owner": "Product owner and sales lead",
+      "appliesTo": "Relevant enabled capability, tenant/book domain and role; preserve history for disabled capabilities",
+      "expectation": "Specify whether digital/service lines mean a one-off sale, staged work, subscription or licence. Invoice/payment state alone cannot certify delivery or entitlement. Supported access activation, renewal, cancellation and refund require explicit contracts and idempotent authorised actions; unsupported recurring features remain backlog.",
+      "currentBehaviour": "Product has service/digital type distinction; actual licence/subscription/entitlement implementation has not been established.",
+      "examples": [
+        "A failed payment never creates paid digital access; if no entitlement service exists, report that scenario unsupported rather than passed."
+      ],
+      "sourceIds": [
+        "P-POST",
+        "OWNER-20261014"
+      ],
+      "checkIds": [
+        "B-117",
+        "E-101"
+      ],
+      "coverageMeaning": "Related existing IDs or planned workflow IDs only; mapping is not assertion execution or acceptance.",
+      "bugIds": [],
+      "expertReview": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": "Delegated initial product policy; confirm support, applicability and compatibility before full acceptance."
+      },
+      "changeImpact": "Product/QA change record + independent expected fixture + new fingerprinted run; no retrospective rewrite of prior evidence."
+    }
+  ]
+}

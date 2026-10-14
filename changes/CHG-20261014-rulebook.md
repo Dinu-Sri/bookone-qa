@@ -1,0 +1,8 @@
+# CHG-20261014-rulebook — intended behaviour and Sri Lankan policy reference
+
+Owner instruction2026-10-14; QA base957dccd. Created canonical rules/rulebook.json and generated docs/rulebook/RULES.md, authority/change protocol,35source references,57rules, RF-01–10expert queue and rule-change template.27inherited BR IDs retained; ten POL topics linked to defaults and remaining qualified gaps. Source5becb2d/v2.5.3 plus9b8e443/v2.5.4 archive diff inspected; no pin update or product retest.
+
+Added rulebook:render/check and required pnpm-check validation of schema/IDs/authority/source/case references, supported expert approval and generated-view parity. Negative controls duplicate-ID/unknown-source/unknown-case/unsupported-approval/stale-view reject; valid register restored. Session/agent/status/programme entry points now link canonical rules. Existing full-campaign fingerprint hashes tracked register content; no retrospective modification of old evidence or business expectations.
+
+Initial defaults are owner-delegated and independently expert-pending. Legal/frame applicability, legacy archive exception and implementation gaps remain explicit. No product-code/configuration change, staging/production business writes, company-reset SQL, archive downloads or secret publication. Validation covers QA maintenance only; existing242pass/13fail/4skip and137unaccepted full workflows are unchanged.
+First CI 38537859303 on 8de445e failed because the metadata check ran before the ignored product checkout was prepared. Preserve that failure as QA setup ordering, not a product defect. Metadata checks now declare source availability; bootstrap repeats the source-path check after product:prepare. Business assertions and policy expectations were not changed.
