@@ -84,6 +84,16 @@ it('[S-0787] mismatched data cross-checksum in files pack refuses without marker
 it('[S-0788] second matching file application refuses without duplicate completion audit',async()=>{
  const p=await pack(),s=store();expect((await restore(p)).ok).toBe(true);expect((await files(p,s)).ok).toBe(true);const before=await targetSnapshot();expect((await files(p,s)).ok).toBe(false);expect(await targetSnapshot()).toEqual(before);
 });
+it('[RT-027] current-version files pack cannot omit the restored data cross-checksum',async()=>{
+ const p=await pack(),s=store();
+ p.data.manifest.appVersion='2.5.5';p.data.manifest.appCommit='8e1a2b8';
+ p.files.manifest.appVersion='2.5.5';p.files.manifest.appCommit='8e1a2b8';
+ expect((await restore(p)).ok).toBe(true);const before=await targetSnapshot();
+ delete (p.files.manifest as any).dataSha256;
+ const result=await files(p,s);const marker=await withTenantContext(TENANT_B,()=>filesRestoreAlreadyApplied(TENANT_B,p.data.manifest.exportId));
+ const actual={accepted:result.ok?1:0,writtenObjects:s.map.size,marker:marker?1:0,unchanged:JSON.stringify(await targetSnapshot())===JSON.stringify(before)?1:0,sourceChecksumPresent:p.data.manifest.dataSha256?1:0,packChecksumPresent:p.files.manifest.dataSha256?1:0};observe('RT-027',actual);
+ expect(actual).toEqual({accepted:0,writtenObjects:0,marker:0,unchanged:1,sourceChecksumPresent:1,packChecksumPresent:0});
+});
 it('[S-0789] actual files restore marker does not overwrite existing target sentinel bytes',async()=>{
  const p=await pack(),target=p.key.replace(`tenants/${TENANT_A}/`,`tenants/${TENANT_B}/`),sentinel=Buffer.from('Existing synthetic sentinel'),s=store({key:target,body:sentinel});expect((await restore(p)).ok).toBe(true);expect((await files(p,s)).ok).toBe(true);expect(s.map.get(target)?.equals(sentinel)).toBe(true);
 });

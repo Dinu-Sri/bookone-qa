@@ -1,3 +1,7 @@
+# Customer-readiness wave2 — adjacent boundaries
+
+Original v2.5.5 unchanged campaign255pass0fail4optional skips; original85real-PG/16helper/60source assertions pass. Read CAMP-20261014-105045793-99e923 and CHG-payment-archive-boundaries. Added5adjacent cases, now90PG/264campaign slots; first execution pending. B-115 is one new partial binding, full137-workflow acceptance still0. Platform-admin fresh login/source company created; normal Owner/Admin/Viewer accounts awaiting specific access approval after browser auto-review rejected creation. No staging financial writes/archives/reset; credentials remain private.
+
 # v2.5.5 first retest — bounded repairs pass
 
 First unchanged CI campaign250pass/5fail/4optional skips. All85original real-PG commands and16archive helpers pass, including original13failed cases/0021–0030 repros; full bug closure still needs declared live/security/storage layers. Five source-B failures traced to missing pgClient adapter export, independently diagnosed. Added actual tagged SQL on same PGlite transaction with commit/rollback/nested controls (3pass) and explicit server-only framework marker. First aligned localB15/1 marker failure preserved; final localB16/0. No business expectation changed. Fresh whole-campaign CI pending; read CHG-v255-retest and customer-readiness ledger.

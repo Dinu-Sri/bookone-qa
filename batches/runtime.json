@@ -126,7 +126,8 @@
         "S-0787",
         "S-0788",
         "S-0789",
-        "S-0793"
+        "S-0793",
+        "RT-027"
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-encrypted-archive-synthetic-memory-storage"
@@ -160,6 +161,18 @@
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-location-transfer-permissions-race"
+    },
+    {
+      "name": "payment-boundaries",
+      "file": "tests/runtime/payment-boundaries.test.ts",
+      "expected": [
+        "RT-024",
+        "B-115",
+        "RT-025",
+        "RT-026"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-connection-payment-concurrency-batch-identity"
     }
   ]
 }

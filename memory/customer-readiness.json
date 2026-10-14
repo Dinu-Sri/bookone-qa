@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "original85PG-and16helpers-pass; source-adapter-correction-in-progress",
+      "status": "original-critical-repros-bounded-pass; adjacent-and-live-layers-pending",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -55,7 +55,8 @@
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
       "status": "pending-full-acceptance",
-      "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav"
+      "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
+      "dependency": "Specific staging Owner/Admin/Viewer creation approval requested after automatic browser review rejection."
     },
     {
       "id": "G-ARCHIVE",
@@ -83,6 +84,7 @@
     }
   ],
   "nextActions": [
+    "Normal staging fixture account creation pending exact access approval; continue isolated boundary checks independently.",
     "Review/pin8e1 and execute unchanged coordinated campaign in fresh isolated PG",
     "Resolve demonstrated harness prerequisites while preserving first run",
     "Extend AP/concurrency and archive adjacent cases without weakening original repros",
@@ -107,5 +109,15 @@
     "runtimeCases": 85,
     "runtimePassed": 85,
     "classification": "Five source-B failures from missing pgClient fixture export; diagnostic proved. First aligned local B15/1 then server-only marker fixed; B16/0. Business assertions unchanged."
+  },
+  "originalRetest": {
+    "record": "runs/CAMP-20261014-105045793-99e923.json",
+    "ci": 38552293241,
+    "assertionsPassed": 255,
+    "failed": 0,
+    "optionalSkipped": 4,
+    "originalRuntimePassed": 85,
+    "archiveHelpersPassed": 16,
+    "sourcePassed": 60
   }
 }

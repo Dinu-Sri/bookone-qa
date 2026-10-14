@@ -52,6 +52,7 @@
     "BUG-0030"
   ],
   "nextActions": [
+    "Read new payment/archive boundary plan and run90PG/264slots; preserve initial v2.5.5 source-adapter failures and unchanged passing repros.",
     "Preserved first8e1 campaign250/5/4; original85 PG and16helpers pass. Source adapter now real tagged SQL/same-transaction plus framework marker; rerun unchanged full campaign at new QA fingerprint.",
     "Customer-readiness wave1: rerun unchanged259-slot coordinated campaign on8e1; preserve first failures and original repros.",
     "Read rulebook1.0.0 and RF-01–10; adopt defaults for new specifications, preserve old evidence/settings, and request expert decisions only for remaining actual applicability conflicts.",
@@ -268,7 +269,9 @@
     "partiallyBoundWorkflows": 57,
     "unboundWorkflows": 80,
     "acceptedFullWorkflows": 0,
-    "policyOwnershipQuestion": "pending-owner-response"
+    "policyOwnershipQuestion": "pending-owner-response",
+    "lastV255Unchanged": "runs/CAMP-20261014-105045793-99e923.json",
+    "v255UnchangedResult": "255pass0fail4optional skips; original85PG16helpers60source pass; full acceptance pending"
   },
   "rulebook": {
     "version": "1.0.0",
