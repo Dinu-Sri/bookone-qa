@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-  "observedStagingStamp": "v2.5.3 Ã‚Â· 5becb2d",
+  "candidateProductSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+  "observedStagingStamp": "v2.5.5 · 8e1a2b8",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -52,6 +52,7 @@
     "BUG-0030"
   ],
   "nextActions": [
+    "Customer-readiness wave1: rerun unchanged259-slot coordinated campaign on8e1; preserve first failures and original repros.",
     "Read rulebook1.0.0 and RF-01–10; adopt defaults for new specifications, preserve old evidence/settings, and request expert decisions only for remaining actual applicability conflicts.",
     "Review/pin/retest v2.5.4 archive diff9b8e443 on a fresh run; source observation is not a deployed stamp or bug closure.",
     "Coding agent repairs0022–0030 and existing0021 by shared permission/tender, lock/transaction, archive-integrity/pair and idempotency boundaries; preserve original assertions.",
@@ -282,5 +283,6 @@
     "executionPinUnchanged": true,
     "publication": "memory/rulebook-publication.json",
     "productAgentIntegration": "https://github.com/Dinu-Sri/BookOne/pull/3"
-  }
+  },
+  "customerReadiness": "memory/customer-readiness.json"
 }

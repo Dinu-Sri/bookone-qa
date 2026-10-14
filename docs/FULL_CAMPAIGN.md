@@ -1,3 +1,7 @@
+# Current retest candidate — 2026-10-14
+
+Execution candidate **v2.5.5 · 8e1a2b8**, source SHA 8e1a2b8b29e662940bfcfecc4230875c83e35b6d. Read changes/CHG-20261014-v255-retest.md and memory/customer-readiness.json. Unchanged assertions rerun first; earlier candidate notes/results below are historical. Legacy archive exception is still under rulebook RF-06 review.
+
 # One coordinated BookOne QA campaign
 
 Owner requested all modules together on2026-10-14. The campaign includes98 retained unit cases (94 previously passing and4 optional machine-fixture skips), the six implemented source batches, isolated PostgreSQL business/security checks, archive helpers,92 lifecycle tasks and45 dedicated archive/overlay scenarios. One command executes implemented checks and records unfinished work in the same report. Scope is137 defined workflows; this is not every possible combination or a completed release gate.

@@ -1,3 +1,7 @@
+# Customer-readiness goal active — v2.5.5 retest
+
+Owner asks to achieve customer readiness. Read memory/customer-readiness.json and changes/CHG-20261014-v255-retest.md. Source and required live stamp deliberately pinned **v2.5.5 · 8e1a2b8**; cumulative diff inspected. Existing259 slots and137-workflow scope preserved. First unchanged isolated campaign pending; no reported fix independently closed. No live mutations in this preparation.
+
 # v2.5.5 available for independent retest — 2026-10-14
 
 Live Dashboard sidebar observed **v2.5.5 · 8e1a2b8**; current UI identifies primary job Owner. Product commit8e1a2b8b29e662940bfcfecc4230875c83e35b6d and both CI workflows verified green. Read [the readiness observation](runs/OBS-20261014-v255-readiness.md). This is read-only deployment/source evidence, not verification of reported fixes. Execution pin remains5becb2d and old campaign outcomes remain immutable. Next deliberately review/pin the cumulative v2.5.4–5 diff, preserve original assertions and rerun the coordinated campaign on fresh isolated PostgreSQL, then real identity/tenant/browser/files and complete launch-critical workflows. Do not close BUG0021–0030 from coding-agent claims.

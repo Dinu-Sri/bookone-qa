@@ -1,3 +1,7 @@
+# Customer-readiness goal active — v2.5.5 retest
+
+Owner asks to achieve customer readiness. Read memory/customer-readiness.json and changes/CHG-20261014-v255-retest.md. Source and required live stamp deliberately pinned **v2.5.5 · 8e1a2b8**; cumulative diff inspected. Existing259 slots and137-workflow scope preserved. First unchanged isolated campaign pending; no reported fix independently closed. No live mutations in this preparation.
+
 # Rulebook established — 2026-10-14
 
 Rulebook1.0.0:57 rules / 35 sources,27 inherited BR IDs retained. Read docs/rulebook/README.md and RULES.md before new expectations; owner delegated professional product defaults, with Sri Lankan source/applicability and independent expert status explicit. Ten POL topics now have rule links/defaults plus narrower review gaps. RF-01–10 remain for expert/implementation review. Existing product assertions/results and pin5becb2d were not changed. New master9b8e443/v2.5.4 archive diff observed, untested here; no live staging stamp/mutations. RULEBOOK source/governance validation only, not product acceptance.
