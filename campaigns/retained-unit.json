@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "U-9be5244c63042781",
+      "file": "packages/accounting/test/amount-in-words.test.ts",
+      "titleHash": "131415e8acabbce4e948e84dad84d02887011031a62d660b65cf2f56624247d5",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-7f86e0f5c5718f6d",
+      "file": "packages/accounting/test/amount-in-words.test.ts",
+      "titleHash": "a67b223652c47e3b55bd6c98aff61d48abaf5347e92db5ae280ff8df55b27ba0",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-e9f9f90df8f819ea",
+      "file": "packages/accounting/test/amount-in-words.test.ts",
+      "titleHash": "00e311f4908c16ed69e9df63ee90694d7125c9fb356d84a7741a615ebcfd8292",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-d6d514f00421afb4",
+      "file": "packages/accounting/test/amount-in-words.test.ts",
+      "titleHash": "2b96677bd9d3df133bf9420995383ca9666238b7ef5f8be80bba1ecc218593fc",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-5dcb611505e5700b",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "c300afa3843dcdb3eb5d82ed091610ee110b881f4ba05d9f036c30662f282a2d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-cbd7db5edf7a4a9b",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "557684e37aab1cbc7a369cf8a26a48687a499b24945c5b4cd22004307eccbecc",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-a3b3ae64f6f6a800",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "960f8e6cb0e2ef22d0336ca96d9d78bcc6b84b5b7d33298b09eed576c42f91a0",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-9dfde4656f76c7ef",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "ae667289d66af83ef238c4e1ab4cd11581ef6a5ac194d9ebef4718ca04e3b210",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-3cb937fe8028e201",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "b570811f345930d960eadea55820c3c6e4d413e43426804adc4a8ab0e9696de9",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-b136e4a6ecffa1ed",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "baf02275336ce65b6ef454671764e2526a7ca358ebda9941f7d5fe648d4c2b2a",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-09a3733c4edf5b87",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "fa0832867cf82ca48e899c2291e4c2c454c4116d2a2653cb716813da1435126f",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-1f37ff3f2ee37f9c",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "a5e70bc40a452fa52de4c0cd3ff2922933b5911c9f201bf4cf71cd96fec6102e",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-bae5e98cc36f7494",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "63088da80e5e4c6eddd47bdbbafba7e9ae738f28d2025516db41ccc8f8adcc7c",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-1c6b81eccb9a671f",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "7dc02d5196daecd1f7950215f313b34af8880fdf05fc7c3890f46767df654d03",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-498582ee8f4027f5",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "31fd513165826158986582771854fcb4a6e25eb1cd3a0ad65c0d612e1cb1bc03",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-60c7df40a109ef84",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "b95590b4fa2891df5a121ca9c2a0966b0aa21ef02dffdfe8c6bfdcf01200ad90",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-8f28f0e8eb3383a8",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "2122c7d451d9b55aed78281a5f0c81f89ddc8965d25be6882b635af2e0460699",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-836e27491d9e1978",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "364d51389bcba12bda2b4cb5c9ddc5728a40d67cf6c093e815b7b9672b26131e",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-1dea852f3f4243ba",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "2f9e89f9bbf29ac7fc14c0010f1e24132500d5b33fc2bd72757efbf43b24e5a3",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-4bef6d9c72d7a1cb",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "433213bcc00e0de9107114f74ea551b4aa328a5eba1a78d6e9e6df9d6f150bdf",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-a237ceef1794c3f6",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "2715edce632e6787f57415360f03db5be4308c8d768940d448f6938c024c5662",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-7a72c6fdc6f6d303",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "7822bab557262c0838014cd17659e8fff3d882e76fb8510b8e1884cbfac56cee",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-70771b6c7fbc2c1f",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "c20c09c15000c281ee2765331cc983978805e9ccb713b3a17794eb1e32251e20",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-bf9849ef715b3860",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "d0e113b1b909881157276c0101156941acceeef263895663f677bfe85c8f383a",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-ea192c6cf254a5e3",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "5e52a6ea760727bac14d092564362699bca4eb7e82e23e750e0d29d72807e284",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-79582b5260bfa39c",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "c42f60d4fa5db399c3f247a6b2e428d53dcaf2d157d488fece7b78017b9ed709",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-63890a8e5af86baa",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "ef6cdb8c176a88f68b7f279d7c03d0fb0b97499becbdc812a38f64606b4e6f10",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-3328c2012d309b99",
+      "file": "packages/accounting/test/document-posting.test.ts",
+      "titleHash": "170bafeeb127621449ed80bcf265134008e1fc4c3680bf671421555d376805db",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-f9a5643601d8287c",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "e7c2c823735af660798e1cd06409a11970610cc021a53e5e925964fc7e496f39",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-f811c757be22cc30",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "8e20ba2d9664b577511b1e090872a5f2b47e5a3ccc42ead7592a9b22c02312c3",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-4b9f16fcc1108f63",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "bfb3ac3f421ea7290d02de0675f295ea2701d09d961fe038b07450d3ae3447f4",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-f1f8295fa7453765",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "182d516c5ef66949584145665e19a7c8ea72a84c020e1d60c755a3e43d073652",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-fa782a00c477f8e1",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "ee344a1f721c6979e75d591b70e889764360d3fb89e7407ad8c5e8fecde5548d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-bf5c789608d50ad0",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "b6a202daff50b89d86dfe3728768e6a1b485c3edde37016a7f0468e8f0b382b9",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-5f34a18c857062dd",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "cb5f0141c5427095a18885478af076e181341ff813cff2ca413c5c0e2a356c25",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-72225e16ab76c200",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "8111d7c8efca94ca0cf28873cc3f4cf4389acf54c7158c8d07b4d0c8ccad8552",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-4ecb6e0f47c9f892",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "477ea078b010dce0522af9cbb409d474227770e58173bbf6fe9f539d346aec83",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-113a45b63c2c23e2",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "08ac92ba99051cc11c3b6e6842e329ad332a00722d5e638a24056b742f937bda",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-64b1b8668278a7b6",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "c2448ea9094b99bfe00567989922b4b53ec7e3bf594d8fb1767c53108039add2",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-6f9b4d134be59038",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "4f0661cb21773d971603410729f157fffa8bc1a766b9e1aeb005816b05be1f9b",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-aed8b1d909b3821e",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "64b28c6a73726f6f26b21755a148148d86075ca96301c1e545265c917a47a94b",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-4ea1059ca9a9e401",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "89b17e84412e3db682183e30bfd2d20e53df1914d8503f4496fd980598340780",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-634465a235ddbcc6",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "b583122597b0a7dd49a7645baba49534634fd9d683ba70a5398c1667a717963e",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-a83365396a8dde5c",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "d26ec8ecca8318505442378dfaab61f4067be9715f2004b23f972783fb7d913a",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-387560427e605a1f",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "1e571246311d5421b5995ae464127358e98b1fb837f36bd7ed637eb74664d72d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-173af34d91b018a4",
+      "file": "packages/accounting/test/engine.test.ts",
+      "titleHash": "28c7d8a6084ee8396ff31c5f78dfa137750fb7791c761ef1bc22eb76fb486b53",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-bb32c4ebb388d10c",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "78070faf573fc3d73665095dce79d8ea552902aca2af7d7020738aeb0219ee42",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-6ee1abccd192514d",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "6bfb17893d67942d56d9b1afa793e5449a98701ef7482b669ac4e97650af0ff6",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-170720d868fe5fad",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "39ecbfef13dba04470be99ce75be42320bd12d6d164765a06f2def5a4ddc8c26",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-8fdf3e2314bbf266",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "128cceaf1ba4c50f253fcf78354fac63f30740e16ffd5655e38ff935ab1c34c7",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-b3f5e914962a7908",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "a94309f1ea123f81099a254a603b04978ffb64fe6b6f8b001c6344bc56f36306",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-549e0e5291768a5b",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "3ad47108a2ec862b8addca1ea7ca7140abcd218f240068f38d67ca281664bf04",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-87d5ae95a4f6cd4f",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "18b77f568d4c7ddde62855f860ab4218c31704e9eb67f40b1be3955bf625cf67",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-59643e7bd4c4dedb",
+      "file": "packages/accounting/test/qa-critical-postings.test.ts",
+      "titleHash": "e6bb4b2b2df151fa2629003bd12df61f1b3871dc620d7ea73d2b4dc0cf94bca0",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-b3b5248901640f8f",
+      "file": "packages/accounting/test/rental-availability.test.ts",
+      "titleHash": "b296e882c024b8ccb2f6f946b81d9d363e443975cb5c9d768c4a1a2b58075bc6",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-8d0ea3fecc172b49",
+      "file": "packages/accounting/test/rental-availability.test.ts",
+      "titleHash": "a251b3cf328c5787c8c3590a2e15df1822cb127fabb004b4e3002d26fdd3caba",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-06d5257bff39c1bf",
+      "file": "packages/accounting/test/rental-availability.test.ts",
+      "titleHash": "842e25387fa6678473fd9da53434441658abde295e9fb01662cdd21b3ead8c75",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-ad1530f91f283887",
+      "file": "packages/accounting/test/rental-availability.test.ts",
+      "titleHash": "64d8ddb695ccb47fd1163eef0383cc5e20ab10538ed9a3283ea152464d732a77",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-55330913ba8b2bde",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "372c8755eee2acbc74be6c9e251b0a4dd99ee1b3349c835061d0d0256e0aeec3",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-c22627c79431db86",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "1cf9d717a20015daeb9a26222d30991b4b40b7ce3e541d8b23b277c772f163df",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-46b90ab00ba5fa81",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "08bef2020840d77b6e9884c2bfc06540ac2b1164ab19b951bf22d8e45a30f87b",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-dcdf63df0a19621c",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "b1e67bb8de7ecddcd792c38f1d8bfe848c86b4e0966e0f18107b10675e569f07",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-5de89ca6030816fd",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "c8a7d60bdabdbb075020292ffd0af186cc3afee81419a365b0e4926c64f6f210",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-f2db13fa8d6478fd",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "fa575f2b9f0dfca740a6f7af5b7ec03d555c57bf1293e9d4d61054b1e8cc829d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-eb70394b956b1138",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "183e4a0cc35df124a6d06f05741fd9e9c27516bcdbac702d1a990251f32592a7",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-4902d449da6945e9",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "340122b339704668ba43a3b77da70db9438cc1225b9fc5ad4f206c11e3248706",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-c4cb76eb3e83a465",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "587f96af26e5fd23f496b9d83539009feabb51ddc8fd9b0f76891b0c5b2f906d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-79169c0b923d6b10",
+      "file": "packages/accounting/test/rental-invoice-timing.test.ts",
+      "titleHash": "4fbcf9c6b8f59661c8577b905f06c5687ebd0c3bc613eaec765af1c58a6b1223",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-c24e7aaad002700a",
+      "file": "packages/statement-import/test/bank-fixtures.test.ts",
+      "titleHash": "f2ebd849a4519266f3b8ed14fa36e8f956c5d72f4ddd207f47e1447d3aad6fe5",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-110183b7ceee502c",
+      "file": "packages/statement-import/test/bank-fixtures.test.ts",
+      "titleHash": "756da449714413b08ee14abc223a706705b2aefbc93b55f66afbc8c9aae75a09",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-cc034af587c2870d",
+      "file": "packages/statement-import/test/bank-fixtures.test.ts",
+      "titleHash": "1e6841ee605aea9dcb9367be8b7a1c1cfaf3361296fce25c25663196aa1df348",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-3c0bebd4a5e422be",
+      "file": "packages/statement-import/test/bank-fixtures.test.ts",
+      "titleHash": "383927d586bafbf4e99280ad03856c961d4ebf2d86c81a6074c6311dc77d8e3a",
+      "optionalFixture": true,
+      "note": "Inherited optional machine-fixture test; not executed, never a pass"
+    },
+    {
+      "id": "U-e7a83b087e9d7e06",
+      "file": "packages/statement-import/test/bank-fixtures.test.ts",
+      "titleHash": "f1b73c9ad4326c64d125705cb65abd9ccec483d706b1e02c9e60be0388b6d9fd",
+      "optionalFixture": true,
+      "note": "Inherited optional machine-fixture test; not executed, never a pass"
+    },
+    {
+      "id": "U-b1d059d478fc24df",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "88ee3c4f9d99caeb3d766db8f688992569b9517305d4ff02107e28e6ea05bfab",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-25314de0153fa0ac",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "23595d35e7a4bb38ff403b30d7b49ea32d639b7139451347bb806e0cdce75ebc",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-559652ee8b0fed08",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "f240f57ee77c4bcea15d2f71678e8c95ca8e3596abbd44da6a29d85c099a472f",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-2c0104abb6523248",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "702864a533ac2ba85df9c7ecf144859d5edc30a6437b588d8061b2cf5174fde4",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-5e3fc42b5d33122d",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "36f8faa6895ac90a6dcc77e2dc817d818d4b59140db5f368a536e9e71259614d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-b58156dc2e6232a5",
+      "file": "packages/statement-import/test/hardening.test.ts",
+      "titleHash": "9198952d2bb9e249d0910ebe1904518954c115b13bd2175cb039bd908c53dd6d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-013914f29218c39a",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "83d871dbcedd8b28faf8b016157dc5270c866b0179aefafa0fe7d67b17c49bef",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-6d5079de58a4c9c2",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "3f8ed92c338eb6da647f4392b7356abdd242bf7b8cc3d03c2d19f6683ed64034",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-fd795944edc76e78",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "54047a52df4719ded68aa10c3143f6e6ea8e3f113fa232a53adbea6f1ede659a",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-6c297b03ea9d4be4",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "0aecce3b7c4b82d8fbecc952c2fc5a277700a5be130172f43e2584249dd51305",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-212e906d3809292a",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "46efb0419e400c4d12840eb5ee8293fff8126412a0c6c1a4eec33d6ca26533a1",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-0a15d97cbb1316ed",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "c9b14da6e7f90605d1b8abbdd5418626b95088bf0c29c716564f6257ac34d568",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-1c8b374f11a558a8",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "8b4af19ce05af01176f8bcec682323332ebe146a13a7b539e88872d0bb9f40af",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-be33f3327d9ed8c9",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "f24ab6692aedfe6b7831aeaba37bcb28fc034574d9283ad9daddc8b799cde44e",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-ac5f1512e44c15b8",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "dce455615f02090a93a67f85a123836ff6e4924fec9b43a732f2206b508cc620",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-daa9441f86776b0a",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "83c6b9cd3f431c779e06afb788fefdb667c0d9d31cc546469e7ca6d03a35eb38",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-e998b54c734d29f4",
+      "file": "packages/statement-import/test/normalize.test.ts",
+      "titleHash": "126406c56b632a47ec7b4741a7501fe37af3b0bf3745244e5cf9e000b485ab7d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-8c44657e606d0425",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "c30c7d6b41ecac897a45e019fab13f9002f71c176a80e8f746c97c2ebb27929b",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-ef6f3341ffa18e26",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "2d02de254607bbb1a204b385882b6c43d5ab66376eb7749f2b3ae79e3cd35bdf",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-5d857d379507f08c",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "ef7d05b74bcede78d10e18a4498ecd908eb556edb7e223e931a92fb82d3210d9",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-88e13818b2d0a896",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "dacd562158196b4de8600897db988c832897b1edc3d4fe189486b8bd98dbd21f",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-119941fd379d7b9b",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "fde8da5e9cebdd498082ae218afd52664c87ca3d3955eb0e459ffc952a203d30",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-222d35eee3af2d85",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "19f96578207725e6843b4a57202bc134d82d2362c84fe4a3b1be0a627269695d",
+      "optionalFixture": false,
+      "note": "Retained source unit assertion"
+    },
+    {
+      "id": "U-43cfe3f176f76299",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "1ced9c236cd5b4c53664e089ab2adbdfb0c6130d4688d0838be410fd934cb229",
+      "optionalFixture": true,
+      "note": "Inherited optional machine-fixture test; not executed, never a pass"
+    },
+    {
+      "id": "U-ff7ca38eb902d3da",
+      "file": "packages/statement-import/test/studio-transform.test.ts",
+      "titleHash": "48e8cd0fa554c038fce2242c0c2259c709bd6565d9788b3caf99386ff31a3b65",
+      "optionalFixture": true,
+      "note": "Inherited optional machine-fixture test; not executed, never a pass"
+    }
+  ]
+}

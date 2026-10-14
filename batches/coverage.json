@@ -111,40 +111,52 @@
       "id": "B-106",
       "batch": "B",
       "slug": "retry",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Repeat invoice/conversion/payment request with same idempotency key creates one accepted operation; different keys follow explicit duplicate policy.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-107",
       "batch": "B",
       "slug": "concurrent-pay",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Two simultaneous receipts against the same open balance cannot overallocate; persisted AR and GL agree.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-108",
       "batch": "B",
       "slug": "invalid-states",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Draft/void/rejected/unposted/wrong-document allocation or edits are denied atomically; archived posted debt remains collectible per policy.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-109",
@@ -176,40 +188,52 @@
       "id": "B-111",
       "batch": "B",
       "slug": "closed-date",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Locked posting/payment/credit periods reject writes; permitted corrections preserve original locked facts.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-112",
       "batch": "B",
       "slug": "atomicity",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Inject failure between header/line/journal/allocation/audit writes; no partial business operation survives.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-113",
       "batch": "B",
       "slug": "history",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Rename customer/product and change price/tax after posting; historical amounts and party-as-recorded remain unchanged.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "B-114",
@@ -518,14 +542,18 @@
       "id": "C-109",
       "batch": "C",
       "slug": "locations",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Transfer between two locations conserves total quantity/value; source/target scopes and returns remain correct.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/transfer.test.ts"
     },
     {
       "id": "C-110",
@@ -583,14 +611,18 @@
       "id": "C-114",
       "batch": "C",
       "slug": "concurrent-issue",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Last unit sold simultaneously cannot be issued twice; count/value and both outcomes reconcile.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/transfer.test.ts"
     },
     {
       "id": "C-115",
@@ -664,40 +696,52 @@
       "id": "D-101",
       "batch": "D",
       "slug": "fixture",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Balanced fleet20; reserve10 across declared inclusive interval, owned20/committed10/free10; no revenue on reservation.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-102",
       "batch": "D",
       "slug": "deposit",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Collect refundable1000: cash+1000, liability+1000, revenue0; audit and payment link retained.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-103",
       "batch": "D",
       "slug": "dispatch",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Dispatch10 transfers fleet state/locations; owned fleet/value unchanged and no physical-sale COGS.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-104",
@@ -716,14 +760,18 @@
       "id": "D-105",
       "batch": "D",
       "slug": "return-buckets",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Good/dirty/repair/missing counts sum to dispatched quantity; no over-return, negative counts or lost units.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-106",
@@ -768,27 +816,35 @@
       "id": "D-109",
       "batch": "D",
       "slug": "deposit-apply-refund",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Hire/service invoice700; apply700 of1000 deposit, refund300: AR0, deposit liability0, cash700, revenue700.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-110",
       "batch": "D",
       "slug": "over-refund-retry",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Over-refund/duplicate collect/apply/refund are denied or idempotent without duplicate money journals.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-111",
@@ -872,27 +928,35 @@
       "id": "D-117",
       "batch": "D",
       "slug": "permissions-files",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Role/suspended/tenant/dimension denials cover dispatch/return/deposits/photos/documents and exports.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-118",
       "batch": "D",
       "slug": "atomicity",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Failure between booking/stock/deposit/journal/audit changes leaves no half-dispatched or half-refunded event.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "E-101",
@@ -989,14 +1053,18 @@
       "id": "E-108",
       "batch": "E",
       "slug": "role-revocation",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Revoke/change job while another tab stays open; stale writes denied and read scopes refreshed.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "E-109",
@@ -1054,14 +1122,18 @@
       "id": "E-113",
       "batch": "E",
       "slug": "invalid-settings",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Mandatory accounts missing/disabled/cross-tenant cannot yield apparently successful incomplete postings.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "New bounded DB assertion implemented; execute on the candidate, inspect exact depth and complete remaining required layers. No full workflow acceptance from this subset.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/commercial-deep.test.ts"
     },
     {
       "id": "E-114",

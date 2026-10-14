@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-14T05-44-05-076Z-archive-ef8e0a",
+  "fingerprint": {
+    "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "productStamp": "v2.5.3 · 5becb2d",
+    "qaSha": "9f7758d75d8b9d4d44042f0a0d6f2f704ae8832e",
+    "qaDirty": true,
+    "qaContentHash": "1ec0ba60709d92c957dd4a23795c46d05f40bd566a23ea0035f8cbad90f732a7",
+    "planHash": "fb3feae50bb9a08a4f79486660517c894abe3ff53c08840dd7d39af68ced3392",
+    "node": "v20.19.0",
+    "fixtureVersion": "archive-pure-v1",
+    "environment": "pinned-source-in-memory-helpers",
+    "liveStampObserved": false
+  },
+  "counts": {
+    "passed": 15,
+    "failed": 1,
+    "blocked": 0
+  },
+  "cases": [
+    {
+      "id": "S-0763",
+      "status": "passed"
+    },
+    {
+      "id": "S-0764",
+      "status": "failed"
+    },
+    {
+      "id": "S-0765",
+      "status": "passed"
+    },
+    {
+      "id": "S-0767",
+      "status": "passed"
+    },
+    {
+      "id": "S-0769",
+      "status": "passed"
+    },
+    {
+      "id": "S-0774",
+      "status": "passed"
+    },
+    {
+      "id": "S-0776",
+      "status": "passed"
+    },
+    {
+      "id": "S-0777",
+      "status": "passed"
+    },
+    {
+      "id": "S-0778",
+      "status": "passed"
+    },
+    {
+      "id": "S-0780",
+      "status": "passed"
+    },
+    {
+      "id": "S-0781",
+      "status": "passed"
+    },
+    {
+      "id": "S-0787",
+      "status": "passed"
+    },
+    {
+      "id": "S-0789",
+      "status": "passed"
+    },
+    {
+      "id": "S-0790",
+      "status": "passed"
+    },
+    {
+      "id": "S-0793",
+      "status": "passed"
+    },
+    {
+      "id": "S-0797",
+      "status": "passed"
+    }
+  ],
+  "unexpected": 0,
+  "infrastructureFailure": false,
+  "productAcceptance": "not-established",
+  "scope": "partial-pure-helpers-no-real-export-restore-HTTP-PG-MinIO-or-browser"
+}

@@ -1,3 +1,7 @@
+# Unified campaign implementation — 2026-10-14
+
+Current work: one coordinated campaign across all modules. Read docs/FULL_CAMPAIGN.md, campaigns/full.json and the latest CAMP run in memory/programme.json. First local orchestration preserved169 pass/1 archive-helper fail/81 runtime blocked (no local PG)/4 inherited optional unit skips. New isolated runtime manifest now82 assertions (original49 plus33); real execution remains pending CI. All137 defined full workflows remain unaccepted; missing adapters/layers and policies must remain visible. Do not reuse RUN-16 passes as proof of new cases.
+
 # Current candidate: tenant archive plan — 2026-10-14
 
 Candidate and live sidebar: **v2.5.3 · 5becb2d**. Read [RUN-16](runs/RUN-20261014-backup-plan-16.md), [backup guide](docs/TENANT_ARCHIVE_QA.md) and [coding handoff](handoffs/HANDOFF-20261014-backup-plan.md). Added45 dedicated scenarios and16 partial helper checks; first helper result15 pass/1 fail (S-0764 RBAC-off Admin resolver). Actual route exposure not established because a separate Owner guard exists. Full restore/browser acceptance remains unverified. All old60-source/49-runtime assertions retained; source60 now pass after a preserved first HEAD-adapter failure; runtime49 now pass, including bounded physical0018/19/20 fixes at both DB roles. BUG-0021 is the remaining source-helper finding. No staging writes/reset/downloads.

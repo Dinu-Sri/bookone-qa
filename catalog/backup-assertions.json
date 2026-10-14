@@ -314,7 +314,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -336,7 +336,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -358,7 +358,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -402,7 +402,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -446,7 +446,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -468,7 +468,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -490,7 +490,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -512,7 +512,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -534,7 +534,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -556,7 +556,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -600,7 +600,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -622,7 +622,7 @@
       "automation": {
         "helper": "backlog",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -644,7 +644,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
@@ -732,7 +732,7 @@
       "automation": {
         "helper": "tests/archive/contracts.test.ts",
         "browser": "backlog",
-        "runtime": "backlog"
+        "runtime": "tests/runtime/archive.test.ts"
       },
       "acceptance": "not-verified"
     },
