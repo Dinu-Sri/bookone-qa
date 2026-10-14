@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "All BookOne business modules and tenant archive",
   "sourceBatches": ["A", "B", "C", "D", "E", "F"],
-  "fixtureVersion": "campaign-v1",
+  "fixtureVersion": "campaign-v2",
   "guide": "docs/FULL_CAMPAIGN.md",
   "acceptance": "not-established",
   "constraints": ["No company-reset SQL or shared staging stress", "PostgreSQL is one isolated fixture and runs sequentially", "No pass from old results, discovery or omitted required layers", "No public secrets, backup files or raw artifacts"]

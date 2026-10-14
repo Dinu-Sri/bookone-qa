@@ -1,3 +1,29 @@
+# Latest executed customer-readiness checkpoint — 2026-10-14
+
+Candidate **v2.5.5 · 8e1a2b8**. [Fresh campaign](runs/CAMP-20261014-113321106-568961.json): **260 passed, four failed, zero skipped/blocked/not-run**. All98 retained units execute with deterministic synthetic fixtures; source60/helper16 and original85 PG assertions pass. New AP race passes. B-115/RT-025/RT-026/RT-027 remain red in two independent PG runs. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [gates](memory/customer-readiness.json) and AGENTS.md53–55.
+
+No customer-ready certification;137 full workflows remain unaccepted (58 partial bindings,79 unbound). Next: repair the three issue groups, pin/retest the new candidate, and complete fresh normal-role physical-first and deployed archive A→emptyB workflows. Exact test-account approval and Chrome popup dismissal remain pending. Only disposable source company created; no new users/financial records/archive writes. Historical checkpoints below retain earlier outcomes and pending notes.
+
+# Current readiness checkpoint — v2.5.5, 2026-10-14
+
+Goal active; customer readiness **not certified**. Original repairs pass at bounded source/PG/helper layers. Deeper campaign: **256 passed, four failed, four skipped**, no infrastructure blocks; PG86/90. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [campaign](runs/CAMP-20261014-111034220-9ed0bc.json) and [readiness gates](memory/customer-readiness.json). BUG-0031 batch partial effects, BUG-0032 changed-key payload false success and BUG-0024 current missing-checksum variant remain open. AP concurrency and all85 original PG cases pass.
+
+Portable synthetic bank fixtures execute all98 unit assertions locally with zero skips; campaign-v2 fingerprint now includes their byte hash. Fresh CI pending. Whole137-workflow acceptance remains zero (58 partial bindings,79 unbound). Staging stamp observed v2.5.5 · 8e1a2b8; normal-role/physical/real restore still pending. Specific account-role approval and Chrome extension popup dismissal are pending; company created, no new users/financial records/archives. No reset SQL.
+
+The entries below are historical checkpoints; use this checkpoint and immutable fingerprints for current state.
+
+# Customer-readiness wave2 — adjacent boundaries
+
+Original v2.5.5 unchanged campaign255pass0fail4optional skips; original85real-PG/16helper/60source assertions pass. Read CAMP-20261014-105045793-99e923 and CHG-payment-archive-boundaries. Added5adjacent cases, now90PG/264campaign slots; first execution pending. B-115 is one new partial binding, full137-workflow acceptance still0. Platform-admin fresh login/source company created; normal Owner/Admin/Viewer accounts awaiting specific access approval after browser auto-review rejected creation. No staging financial writes/archives/reset; credentials remain private.
+
+# v2.5.5 first retest — bounded repairs pass
+
+First unchanged CI campaign250pass/5fail/4optional skips. All85original real-PG commands and16archive helpers pass, including original13failed cases/0021–0030 repros; full bug closure still needs declared live/security/storage layers. Five source-B failures traced to missing pgClient adapter export, independently diagnosed. Added actual tagged SQL on same PGlite transaction with commit/rollback/nested controls (3pass) and explicit server-only framework marker. First aligned localB15/1 marker failure preserved; final localB16/0. No business expectation changed. Fresh whole-campaign CI pending; read CHG-v255-retest and customer-readiness ledger.
+
+# Customer-readiness goal active — v2.5.5 retest
+
+Owner asks to achieve customer readiness. Read memory/customer-readiness.json and changes/CHG-20261014-v255-retest.md. Source and required live stamp deliberately pinned **v2.5.5 · 8e1a2b8**; cumulative diff inspected. Existing259 slots and137-workflow scope preserved. First unchanged isolated campaign pending; no reported fix independently closed. No live mutations in this preparation.
+
 # Rulebook established — 2026-10-14
 
 Rulebook1.0.0:57 rules / 35 sources,27 inherited BR IDs retained. Read docs/rulebook/README.md and RULES.md before new expectations; owner delegated professional product defaults, with Sri Lankan source/applicability and independent expert status explicit. Ten POL topics now have rule links/defaults plus narrower review gaps. RF-01–10 remain for expert/implementation review. Existing product assertions/results and pin5becb2d were not changed. New master9b8e443/v2.5.4 archive diff observed, untested here; no live staging stamp/mutations. RULEBOOK source/governance validation only, not product acceptance.

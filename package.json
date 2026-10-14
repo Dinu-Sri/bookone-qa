@@ -13,7 +13,7 @@
     "test:guard": "node --test tests/infrastructure/target-policy.test.mjs",
     "product:prepare": "node scripts/prepare-product.mjs",
     "test:archive-helpers": "node scripts/archive-helpers.mjs",
-    "test:unit": "node scripts/verify-product.mjs && vitest run --config vitest.config.ts",
+    "test:unit": "node scripts/verify-product.mjs && node scripts/fixtures/unit.mjs",
     "test:e2e:list": "node apps/e2e-runner/scripts/run-suite.mjs full -- --list",
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
@@ -38,7 +38,8 @@
     "campaign:resume": "node scripts/campaign/run.mjs resume",
     "test:campaign-guard": "node --test tests/infrastructure/campaign-state.test.mjs",
     "rulebook:render": "node scripts/rulebook.mjs render",
-    "rulebook:check": "node scripts/rulebook.mjs check"
+    "rulebook:check": "node scripts/rulebook.mjs check",
+    "test:embedded-sql": "vitest run --config vitest.embedded.config.ts"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",

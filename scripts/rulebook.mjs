@@ -48,7 +48,7 @@ function validate(){
  // Keep all inherited BR IDs: stable mapping is not a new assertion or acceptance.
  for(const id of ['BR-ACC-01','BR-ACC-02','BR-ACC-03','BR-ACC-04','BR-ACC-05','BR-ACC-06','BR-ACC-07','BR-ACC-08','BR-SAL-01','BR-SAL-02','BR-SAL-03','BR-PUR-01','BR-PUR-02','BR-STK-01','BR-STK-02','BR-STK-03','BR-REN-01','BR-REN-02','BR-REN-03','BR-REN-04','BR-SEC-01','BR-SEC-02','BR-DAT-01','BR-DAT-02','BR-DAT-03','BR-IMP-01','BR-AUD-01'])assert.ok(ids.has(id),`Lost legacy rule ${id}`);
  assert.equal(readFileSync('docs/rulebook/RULES.md','utf8'),render(),'Rulebook view stale; run pnpm rulebook:render');
- return {rules:ids.size,sources:sourceMap.size,rulebookVersion:book.rulebookVersion,rulebookHash:hash,localSourcePaths:productPrepared?'baseline-present; newer-diff sources referenced separately':'not-prepared; metadata-only',productAcceptance:'not-established',expertApproval:'not-established'};
+ return {rules:ids.size,sources:sourceMap.size,rulebookVersion:book.rulebookVersion,rulebookHash:hash,localSourcePaths:productPrepared?'studied paths present; revision is checked separately by candidate guard':'not-prepared; metadata-only',productAcceptance:'not-established',expertApproval:'not-established'};
 }
 if(process.argv[2]==='render'){writeFileSync('docs/rulebook/RULES.md',render());console.log('Rulebook view regenerated.');}
 else console.log(JSON.stringify(validate(),null,2));

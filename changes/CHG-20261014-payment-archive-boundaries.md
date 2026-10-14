@@ -1,0 +1,9 @@
+# Customer readiness: adjacent payment and current-archive boundaries
+
+Candidate8e1a2b8/v2.5.5, rulebook1.0.0. Original coordinated retest now255pass0fail4optional skips on QA845dcfe, tested merge7d17456, content9477c86b1b0f951fd40df9ee79faf55f68881a0d6c4372cbfd37bc842f7f3643. Read CAMP-20261014-105045793-99e923; original asserted fixes pass at bounded source/helper/PG layers. Current browser only fresh platform-admin Owner; disposable source company created. Normal Owner/Viewer fixture creation waits for specific access approval after browser auto-review rejection; no new account creation completed.
+
+Add5adjacent assertions without altering original expectations: RT-024 AP competing350 against600, B-115 mixed valid/draft AR batch rollback+same-key failure replay, RT-025 changed payload cannot reuse completed key as success, RT-026 mixed valid bill/nonposting-order AP batch rollback, RT-027 current2.5.5 files pack missing dataSha256 must reject with zero writes/marker. Manifest90runtime/264campaign slots; original85/259remain. B-115 bound at partial actual product-command depth; full credential/browser acceptance remains open.
+
+Expected results come from BR-ACC-03/04, RB-PAY-01 and RB-ARCH-04. Whole-batch atomicity is an owner-delegated new default, so any failing case is an adoption gap rather than proof that a previous fixed bug regressed. Request-key integrity and strict current-pair checks retain mandatory rules. Legacy2.4.0 exception RF-06 stays separate; the new current-pack fixture explicitly uses2.5.5 metadata. Synthetic-role/runtime-helper/memory-store limits are retained. Only isolated ephemeral PG fault/races; no company-reset SQL or shared staging concurrency.
+
+Record results before any fixes or expectation changes. Release readiness and full137workflow acceptance remain unestablished.

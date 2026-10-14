@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "objective": "Customer readiness for all requested BookOne business types",
+  "status": "active-not-certified",
+  "updatedAt": "2026-10-14",
+  "scope": [
+    "physical",
+    "service",
+    "digital",
+    "rental",
+    "mixed",
+    "company/settings/modules",
+    "roles/scopes/tenants",
+    "uploads/imports",
+    "history/upgrade/recovery"
+  ],
+  "candidateSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+  "observedLiveStamp": "v2.5.5 · 8e1a2b8",
+  "rulebookVersion": "1.0.0",
+  "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "acceptedRelease": null,
+  "progressPolicy": "Report bound, executed and accepted separately. No overall readiness percentage from assertion counts or partially automated workflows.",
+  "gates": [
+    {
+      "id": "G-CORE",
+      "topic": "Current candidate regression and critical defect retest",
+      "status": "original-repros-bounded-pass; four-adjacent-assertions-failing",
+      "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
+    },
+    {
+      "id": "G-PHYSICAL",
+      "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
+      "status": "pending-full-acceptance",
+      "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
+    },
+    {
+      "id": "G-SERVICE",
+      "topic": "Service/digital sales and supported delivery/advance/credit behaviour",
+      "status": "pending-full-acceptance",
+      "required": "Independent accounts/tax/recognition/delivery expectations; unsupported advertised capabilities explicit"
+    },
+    {
+      "id": "G-RENTAL",
+      "topic": "Booking/dispatch/return/wash/repair/deposit/refund and availability",
+      "status": "pending-full-acceptance",
+      "required": "Timing/settings/overlap/roles, units/value/liability conservation and real UI/files evidence"
+    },
+    {
+      "id": "G-MIXED",
+      "topic": "Mixed business/POS/settings/entity/domain/history transitions",
+      "status": "pending-full-acceptance",
+      "required": "Supported combined workflows and mandatory financial/security combinations, not only pairwise plan integrity"
+    },
+    {
+      "id": "G-SECURITY",
+      "topic": "Real login, membership, scopes, tenant isolation and file/export access",
+      "status": "pending-full-acceptance",
+      "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
+      "dependency": "Specific staging Owner/Admin/Viewer creation approval requested after automatic browser review rejection."
+    },
+    {
+      "id": "G-ARCHIVE",
+      "topic": "Owner source-A to new-empty-B portable data/files restore",
+      "status": "current-files-integrity-defect; deployed-restore-pending",
+      "required": "Real exported encrypted pair, current-pair checksums, remapped data/roles, coherent books/stock, attachment bytes and repeat/failure guards"
+    },
+    {
+      "id": "G-RECOVERY",
+      "topic": "Historical upgrades and operator DB/files disaster recovery",
+      "status": "requires-isolated-operator-infrastructure",
+      "required": "Accepted prior-version fixtures, supported upgrade/rollback, measured isolated DB+files recovery and RPO/RTO; no production restore"
+    },
+    {
+      "id": "G-LK",
+      "topic": "Sri Lankan tax/format/framework and privacy applicability",
+      "status": "expert-review-gaps",
+      "required": "Applicable rule versions and RF-01–10 expert decisions; no statutory approval from delegated defaults"
+    },
+    {
+      "id": "G-RELEASE",
+      "topic": "Build-specific customer acceptance decision",
+      "status": "pending-other-gates",
+      "required": "No unresolved exposed P0/P1, all launch-critical declared layers accepted, risks/gaps disclosed and exact image/schema/config/rule/QA fingerprint"
+    }
+  ],
+  "nextActions": [
+    "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
+    "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
+    "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
+    "Fresh normal-role physical-first browser journey and deployed encrypted archive A to empty B with real attachment bytes.",
+    "Continue unbound business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
+  ],
+  "operatingLimits": [
+    "Disposable staging data only; no production access",
+    "No company-reset SQL or shared-staging stress",
+    "No public credentials, cookies, archive passwords/files or raw evidence",
+    "No old-run acceptance for changed candidate"
+  ],
+  "firstRetest": {
+    "campaign": "runs/CAMP-20261014-103005108-d85e2e.json",
+    "ci": 38549938743,
+    "totals": {
+      "passed": 250,
+      "failed": 5,
+      "skipped": 4
+    },
+    "runtime": "runs/RUN-2026-10-14T10-30-17-711Z-runtime.json",
+    "runtimeCases": 85,
+    "runtimePassed": 85,
+    "classification": "Five source-B failures from missing pgClient fixture export; diagnostic proved. First aligned local B15/1 then server-only marker fixed; B16/0. Business assertions unchanged."
+  },
+  "originalRetest": {
+    "record": "runs/CAMP-20261014-105045793-99e923.json",
+    "ci": 38552293241,
+    "assertionsPassed": 255,
+    "failed": 0,
+    "optionalSkipped": 4,
+    "originalRuntimePassed": 85,
+    "archiveHelpersPassed": 16,
+    "sourcePassed": 60
+  },
+  "adjacentRetest": {
+    "record": "runs/CAMP-20261014-111034220-9ed0bc.json",
+    "ci": 38554654364,
+    "passed": 256,
+    "failed": 4,
+    "skipped": 4,
+    "runtimePassed": 86,
+    "runtimeCases": 90,
+    "failures": [
+      "B-115",
+      "RT-025",
+      "RT-026",
+      "RT-027"
+    ],
+    "bugGroups": [
+      "BUG-0031",
+      "BUG-0032",
+      "BUG-0024-current-checksum-omission"
+    ],
+    "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
+  },
+  "latestCampaign": {
+    "record": "runs/CAMP-20261014-113321106-568961.json",
+    "ci": 38557308389,
+    "passed": 260,
+    "failed": 4,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-14T11-33-18-445Z-runtime.json",
+    "runtimeCi": 38557308352,
+    "unitPassed": 98,
+    "runtimePassed": 86,
+    "runtimeCases": 90,
+    "qaImplementation": "f266659cd4d39e63567d9f95cf1d61a7113071d8",
+    "qaTestedMerge": "a76f84ed6b11b3d80627d535f5abca4e6d51a0af",
+    "qaContentHash": "86dccfaa2fc0025412f0c645d2d36f72e6cde5848efec4f39a1dadb9f5c940b5",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+  }
+}

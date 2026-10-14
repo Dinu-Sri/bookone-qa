@@ -23,6 +23,7 @@ jobs:
       - run: pnpm check
       - run: pnpm product:prepare
       - run: pnpm rulebook:check
+      - run: pnpm test:embedded-sql
       - run: pnpm test:sensitivity
       - run: pnpm test:unit
       - run: pnpm test:e2e:list

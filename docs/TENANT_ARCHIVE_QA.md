@@ -1,3 +1,7 @@
+# Current retest candidate — 2026-10-14
+
+Execution candidate **v2.5.5 · 8e1a2b8**, source SHA 8e1a2b8b29e662940bfcfecc4230875c83e35b6d. Read changes/CHG-20261014-v255-retest.md and memory/customer-readiness.json. Unchanged assertions rerun first; earlier candidate notes/results below are historical. Legacy archive exception is still under rulebook RF-06 review.
+
 # Tenant archive and form overlay QA
 
 Candidate: **v2.5.3 · 5becb2d**, full product SHA `5becb2dcc768e056e34f8507fc2ecd2a3475e6a9`. Required live sidebar stamp and source identity are separate fields. Confirm the live stamp before every live phase and after deployment/navigation. A changed image invalidates live acceptance. Previous v2.2.4 passes do not certify this candidate.

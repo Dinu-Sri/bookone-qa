@@ -52,6 +52,11 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   for(const id of ['C-105','C-115','C-116','RT-018','RT-020'])observationKeys[id.replace(/-(\d+)$/,(_,n)=>'-'+String(Number(n)+100).padStart(3,'0'))]=observationKeys[id];
   observationKeys['B-107']=['accepted','payments','receiptCents','paidCents','balanceCents','arCents'];
   observationKeys['B-106']=['invoiceReplaySame','firstPaymentAccepted','replayAccepted','paymentCount','paidCents','balanceCents'];
+  observationKeys['RT-024']=['controlledWait','accepted','paymentCount','paymentCents','paidCents','balanceCents','cashCents','apCents'];
+  observationKeys['B-115']=['firstAccepted','replayAccepted','unchanged','replayUnchanged','paymentCount','paymentCents','paidCents','balanceCents'];
+  observationKeys['RT-025']=['differentAccepted','unchanged','paymentCount','paymentCents','secondPaidCents','secondBalanceCents'];
+  observationKeys['RT-026']=['accepted','unchanged','paymentCount','paymentCents','paidCents','balanceCents'];
+  observationKeys['RT-027']=['accepted','writtenObjects','marker','unchanged','sourceChecksumPresent','packChecksumPresent'];
   for(const id of ['D-103','D-105','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded'];
   observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];

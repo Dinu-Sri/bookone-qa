@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "unified259-slots:242-pass-13-fail-4-optional-skips;85-PG73-pass-12-fail; no-full-workflow-acceptance",
+  "implementationStatus": "264-slots:260-pass-4-fail-0-skip;90-PG86-pass-4-fail; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/RUN-20261014-full-campaign-17.md",
+  "lastRetestRecord": "runs/CAMP-20261014-113321106-568961.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-  "observedStagingStamp": "v2.5.3 Ã‚Â· 5becb2d",
+  "candidateProductSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+  "observedStagingStamp": "v2.5.5 · 8e1a2b8",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -49,16 +49,16 @@
     "BUG-0027",
     "BUG-0028",
     "BUG-0029",
-    "BUG-0030"
+    "BUG-0030",
+    "BUG-0031",
+    "BUG-0032"
   ],
   "nextActions": [
-    "Read rulebook1.0.0 and RF-01–10; adopt defaults for new specifications, preserve old evidence/settings, and request expert decisions only for remaining actual applicability conflicts.",
-    "Review/pin/retest v2.5.4 archive diff9b8e443 on a fresh run; source observation is not a deployed stamp or bug closure.",
-    "Coding agent repairs0022–0030 and existing0021 by shared permission/tender, lock/transaction, archive-integrity/pair and idempotency boundaries; preserve original assertions.",
-    "Read RUN17 and full-campaign handoff; examine product diff/CHGs, update pin+required stamp deliberately and rerun all259 slots on fresh isolated PostgreSQL.",
-    "Initial professional defaults are specified in rulebook1.0.0; resolve remaining RF-01–10 expert applicability/conflicts and implement policy-specific fixtures before acceptance.",
-    "Continue80 unbound workflows and remaining layers of57 partial workflows: actual credential/browser/MinIO, settings/scopes, varied costs, rental/mixed/POS/import, historical upgrades and operator recovery.",
-    "Before live writes freshly verify sidebar/actor; use supported run-owned fixtures/new empty restore target, no company reset SQL or payment replay."
+    "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
+    "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
+    "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
+    "Fresh normal-role physical-first browser journey and deployed encrypted archive A to empty B with real attachment bytes.",
+    "Continue unbound business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -266,7 +266,9 @@
     "partiallyBoundWorkflows": 57,
     "unboundWorkflows": 80,
     "acceptedFullWorkflows": 0,
-    "policyOwnershipQuestion": "pending-owner-response"
+    "policyOwnershipQuestion": "pending-owner-response",
+    "lastV255Unchanged": "runs/CAMP-20261014-105045793-99e923.json",
+    "v255UnchangedResult": "255pass0fail4optional skips; original85PG16helpers60source pass; full acceptance pending"
   },
   "rulebook": {
     "version": "1.0.0",
@@ -282,5 +284,46 @@
     "executionPinUnchanged": true,
     "publication": "memory/rulebook-publication.json",
     "productAgentIntegration": "https://github.com/Dinu-Sri/BookOne/pull/3"
+  },
+  "customerReadiness": "memory/customer-readiness.json",
+  "latestReadinessWave": "memory/customer-readiness.json",
+  "latestAdjacentRetest": {
+    "record": "runs/CAMP-20261014-111034220-9ed0bc.json",
+    "ci": 38554654364,
+    "passed": 256,
+    "failed": 4,
+    "skipped": 4,
+    "runtimePassed": 86,
+    "runtimeCases": 90,
+    "failures": [
+      "B-115",
+      "RT-025",
+      "RT-026",
+      "RT-027"
+    ],
+    "bugGroups": [
+      "BUG-0031",
+      "BUG-0032",
+      "BUG-0024-current-checksum-omission"
+    ],
+    "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
+  },
+  "latestCampaign": {
+    "record": "runs/CAMP-20261014-113321106-568961.json",
+    "ci": 38557308389,
+    "passed": 260,
+    "failed": 4,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-14T11-33-18-445Z-runtime.json",
+    "runtimeCi": 38557308352,
+    "unitPassed": 98,
+    "runtimePassed": 86,
+    "runtimeCases": 90,
+    "qaImplementation": "f266659cd4d39e63567d9f95cf1d61a7113071d8",
+    "qaTestedMerge": "a76f84ed6b11b3d80627d535f5abca4e6d51a0af",
+    "qaContentHash": "86dccfaa2fc0025412f0c645d2d36f72e6cde5848efec4f39a1dadb9f5c940b5",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   }
 }
