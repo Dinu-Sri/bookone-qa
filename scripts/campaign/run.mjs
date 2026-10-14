@@ -5,6 +5,7 @@ import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {atomicJSON,readJSON,hash} from '../batch/state.mjs';
 import {campaignPlan,campaignSummary,resumeGuard,caseOutcome,terminal} from './state.mjs';
+import {prepareBankFixtures,bankFixtureHash,fixtureEnvironment} from '../fixtures/bank.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');process.chdir(root);
 const args=process.argv.slice(2),command=args[0]??'plan';
 const option=(name,fallback)=>{const i=args.indexOf(name);return i<0?fallback:args[i+1];};
@@ -14,8 +15,9 @@ if(command==='plan'){console.log(JSON.stringify({stages:plan.stages.map(s=>({id:
 const git=(...xs)=>execFileSync('git',xs,{encoding:'utf8'}).trim();
 const ref=readJSON('product-ref.json');
 if(spawnSync(process.execPath,['scripts/verify-product.mjs'],{encoding:'utf8'}).status!==0)throw new Error('Pinned source verification failed');
+const bankFixtures=prepareBankFixtures();Object.assign(process.env,fixtureEnvironment(bankFixtures.paths));
 const content=()=>hash(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+hash(readFileSync(p))).join('\n'));
-const fingerprint={productSha:ref.commit,productStamp:`v${readFileSync('work/product/VERSION','utf8').trim()} · ${ref.commit.slice(0,7)}`,qaSha:git('rev-parse','HEAD'),qaDirty:Boolean(git('status','--porcelain')),qaContentHash:content(),planHash:plan.planHash,node:process.version,fixtureVersion:'campaign-v1',runtimeSelected:Boolean(process.env.QA_RUNTIME_ADMIN_URL&&process.env.QA_RUNTIME_ISOLATION)};
+const fingerprint={productSha:ref.commit,productStamp:`v${readFileSync('work/product/VERSION','utf8').trim()} · ${ref.commit.slice(0,7)}`,qaSha:git('rev-parse','HEAD'),qaDirty:Boolean(git('status','--porcelain')),qaContentHash:content(),planHash:plan.planHash,node:process.version,fixtureVersion:plan.config.fixtureVersion,bankFixtureHash:bankFixtures.hash,runtimeSelected:Boolean(process.env.QA_RUNTIME_ADMIN_URL&&process.env.QA_RUNTIME_ISOLATION)};
 let state;
 if(command==='resume'){
  if(!/^CAMP-\d{8}-\d{9}-[a-f0-9]{6}$/.test(args[1]??''))throw new Error('Invalid campaign ID');
@@ -32,7 +34,7 @@ const jobs=Number(option('--jobs','2'));if(!Number.isInteger(jobs)||jobs<1||jobs
 const dir=`.local/campaigns/${state.runId}`;mkdirSync(dir,{recursive:true});const checkpoint=()=>atomicJSON(dir+'/state.json',state);
 state.status='running';checkpoint();const children=new Set();let interrupted=false;
 process.on('SIGINT',()=>{interrupted=true;state.status='interrupted';checkpoint();for(const child of children)child.kill();});
-const unchanged=()=>content()===fingerprint.qaContentHash&&git('rev-parse','HEAD')===fingerprint.qaSha&&git('-C','work/product','rev-parse','HEAD')===fingerprint.productSha&&!git('-C','work/product','status','--porcelain','--untracked-files=no');
+const unchanged=()=>content()===fingerprint.qaContentHash&&bankFixtureHash(bankFixtures.paths)===fingerprint.bankFixtureHash&&git('rev-parse','HEAD')===fingerprint.qaSha&&git('-C','work/product','rev-parse','HEAD')===fingerprint.productSha&&!git('-C','work/product','status','--porcelain','--untracked-files=no');
 async function execute(s){
  const current=state.stages.find(x=>x.id===s.id);
  if(!unchanged()){interrupted=true;state.status='interrupted';current.reason='candidate-changed';checkpoint();return;}

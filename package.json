@@ -13,7 +13,7 @@
     "test:guard": "node --test tests/infrastructure/target-policy.test.mjs",
     "product:prepare": "node scripts/prepare-product.mjs",
     "test:archive-helpers": "node scripts/archive-helpers.mjs",
-    "test:unit": "node scripts/verify-product.mjs && vitest run --config vitest.config.ts",
+    "test:unit": "node scripts/verify-product.mjs && node scripts/fixtures/unit.mjs",
     "test:e2e:list": "node apps/e2e-runner/scripts/run-suite.mjs full -- --list",
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",

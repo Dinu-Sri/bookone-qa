@@ -9,6 +9,8 @@ test('campaign discovery rejects empty duplicate unknown and skipped assertions'
 test('resume cannot reuse completed or changed campaign evidence',()=>{
  const fp={productSha:'a'.repeat(40),qaContentHash:'b'.repeat(64)},state={schemaVersion:1,kind:'full-campaign',status:'interrupted',fingerprint:fp};
  assert.doesNotThrow(()=>resumeGuard(state,fp));assert.throws(()=>resumeGuard({...state,status:'completed'},fp));assert.throws(()=>resumeGuard(state,{...fp,qaContentHash:'c'.repeat(64)}));
+ const bankFp={...fp,fixtureVersion:'campaign-v2',bankFixtureHash:'d'.repeat(64)};
+ assert.throws(()=>resumeGuard({...state,fingerprint:bankFp},{...bankFp,bankFixtureHash:'e'.repeat(64)}));
 });
 test('a pass after an observed failure remains flaky in campaign aggregation',()=>{
  assert.equal(attemptStatus([{cases:[{id:'B-107',status:'failed'}]},{cases:[{id:'B-107',status:'passed'}]}],'B-107'),'flaky');

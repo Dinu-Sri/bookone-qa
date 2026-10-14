@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "original-critical-repros-bounded-pass; adjacent-and-live-layers-pending",
+      "status": "original-repros-bounded-pass; four-adjacent-assertions-failing",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -61,7 +61,7 @@
     {
       "id": "G-ARCHIVE",
       "topic": "Owner source-A to new-empty-B portable data/files restore",
-      "status": "pending-deployed-journey",
+      "status": "current-files-integrity-defect; deployed-restore-pending",
       "required": "Real exported encrypted pair, current-pair checksums, remapped data/roles, coherent books/stock, attachment bytes and repeat/failure guards"
     },
     {
@@ -84,12 +84,11 @@
     }
   ],
   "nextActions": [
-    "Normal staging fixture account creation pending exact access approval; continue isolated boundary checks independently.",
-    "Review/pin8e1 and execute unchanged coordinated campaign in fresh isolated PG",
-    "Resolve demonstrated harness prerequisites while preserving first run",
-    "Extend AP/concurrency and archive adjacent cases without weakening original repros",
-    "Fresh normal-Owner/Viewer browser journeys; physical first and real archive restore",
-    "Continue unbound workflows and external recovery/expert gaps"
+    "Publish and independently rerun campaign-v2 with deterministic synthetic bank fixtures; preserve earlier four product failures.",
+    "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
+    "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
+    "Fresh normal-role physical-first browser journey and deployed encrypted archive A to empty B with real attachment bytes.",
+    "Continue unbound business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -119,5 +118,26 @@
     "originalRuntimePassed": 85,
     "archiveHelpersPassed": 16,
     "sourcePassed": 60
+  },
+  "adjacentRetest": {
+    "record": "runs/CAMP-20261014-111034220-9ed0bc.json",
+    "ci": 38554654364,
+    "passed": 256,
+    "failed": 4,
+    "skipped": 4,
+    "runtimePassed": 86,
+    "runtimeCases": 90,
+    "failures": [
+      "B-115",
+      "RT-025",
+      "RT-026",
+      "RT-027"
+    ],
+    "bugGroups": [
+      "BUG-0031",
+      "BUG-0032",
+      "BUG-0024-current-checksum-omission"
+    ],
+    "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   }
 }

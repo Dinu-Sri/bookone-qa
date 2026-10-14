@@ -1,3 +1,11 @@
+# Current readiness checkpoint — v2.5.5, 2026-10-14
+
+Goal active; customer readiness **not certified**. Original repairs pass at bounded source/PG/helper layers. Deeper campaign: **256 passed, four failed, four skipped**, no infrastructure blocks; PG86/90. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [campaign](runs/CAMP-20261014-111034220-9ed0bc.json) and [readiness gates](memory/customer-readiness.json). BUG-0031 batch partial effects, BUG-0032 changed-key payload false success and BUG-0024 current missing-checksum variant remain open. AP concurrency and all85 original PG cases pass.
+
+Portable synthetic bank fixtures execute all98 unit assertions locally with zero skips; campaign-v2 fingerprint now includes their byte hash. Fresh CI pending. Whole137-workflow acceptance remains zero (58 partial bindings,79 unbound). Staging stamp observed v2.5.5 · 8e1a2b8; normal-role/physical/real restore still pending. Specific account-role approval and Chrome extension popup dismissal are pending; company created, no new users/financial records/archives. No reset SQL.
+
+The entries below are historical checkpoints; use this checkpoint and immutable fingerprints for current state.
+
 # Customer-readiness wave2 — adjacent boundaries
 
 Original v2.5.5 unchanged campaign255pass0fail4optional skips; original85real-PG/16helper/60source assertions pass. Read CAMP-20261014-105045793-99e923 and CHG-payment-archive-boundaries. Added5adjacent cases, now90PG/264campaign slots; first execution pending. B-115 is one new partial binding, full137-workflow acceptance still0. Platform-admin fresh login/source company created; normal Owner/Admin/Viewer accounts awaiting specific access approval after browser auto-review rejected creation. No staging financial writes/archives/reset; credentials remain private.
