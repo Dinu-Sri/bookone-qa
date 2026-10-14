@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "original-repros-bounded-pass; sixteen-adjacent-assertions-failing",
+      "status": "original-repros-bounded-pass; nineteen-adjacent-assertions-failing",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -54,7 +54,7 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "pending-full-acceptance",
+      "status": "restricted-detail disclosure/scope-read-error fail-open; real-auth/full-acceptance-pending",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Specific staging Owner/Admin/Viewer creation approval requested after automatic browser review rejection."
     },
@@ -84,12 +84,10 @@
     }
   ],
   "nextActions": [
-    "Coding agent: repair eleven groups across three handoffs, prioritising repeated cash payout/source budget, original discount/cost/tax and tender/state coherence; pin next candidate and retest all281 outcomes.",
-    "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
-    "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
-    "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
-    "Fresh normal-role physical-first browser journey and deployed encrypted archive A to empty B with real attachment bytes.",
-    "Continue unbound business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
+    "Coding agent: repair thirteen finding groups across the four current handoffs; retain original and adjacent expectations, then pin and independently retest the new candidate.",
+    "Exact synthetic staging Owner/Admin/Viewer account approval and Chrome popup dismissal remain pending; no new staging accounts created.",
+    "Complete fresh normal-role physical-first browser workflows and encrypted archive A to new empty B with real attachment bytes.",
+    "Complete remaining business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -142,20 +140,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-122046193-dc4024.json",
-    "ci": 38563023360,
-    "passed": 265,
-    "failed": 16,
+    "record": "runs/CAMP-20261014-131128650-2e5b74.json",
+    "ci": 38569613302,
+    "passed": 273,
+    "failed": 19,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
-    "runtimeCi": 38563023399,
+    "runtime": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
+    "runtimeCi": 38569613346,
     "unitPassed": 98,
-    "runtimePassed": 91,
-    "runtimeCases": 107,
-    "qaImplementation": "3ab4f6fa01b04a42e6517f01de118c0a891e3fe5",
-    "qaTestedMerge": "7a11169baeebf5de8e3a8e2ff19184e39c725719",
-    "qaContentHash": "936f52304e3e75ab58497b434b6e8699cd11604f1a5cd32ee0a14f06495b4b03",
+    "runtimePassed": 99,
+    "runtimeCases": 118,
+    "qaImplementation": "3da78860096e5f39b9f6bc2eedb083357da2a812",
+    "qaTestedMerge": "a2488edd483ba3c1f63356306d9b2c66862fb95d",
+    "qaContentHash": "cffd44e6273b20ec41b75fd8941e3d6f939db2b6b4da7bca555022e1b9328060",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   },
@@ -208,7 +206,9 @@
     "BUG-0037",
     "BUG-0038",
     "BUG-0039",
-    "BUG-0040"
+    "BUG-0040",
+    "BUG-0041",
+    "BUG-0042"
   ],
   "previousCampaigns": [
     {
@@ -244,6 +244,42 @@
       "qaImplementation": "945c10bfa011d396d2e0358ccd0be7af9d935715",
       "qaTestedMerge": "9431b4985e37f286fd47b2ed2ce20620d0087120",
       "qaContentHash": "8538e2d6abe167c60da9f00793f97cd7790b92287e3cac2ee829dd2b2e8079d3",
+      "fixtureVersion": "campaign-v2",
+      "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    },
+    {
+      "record": "runs/CAMP-20261014-122046193-dc4024.json",
+      "ci": 38563023360,
+      "passed": 265,
+      "failed": 16,
+      "skipped": 0,
+      "blocked": 0,
+      "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+      "runtimeCi": 38563023399,
+      "unitPassed": 98,
+      "runtimePassed": 91,
+      "runtimeCases": 107,
+      "qaImplementation": "3ab4f6fa01b04a42e6517f01de118c0a891e3fe5",
+      "qaTestedMerge": "7a11169baeebf5de8e3a8e2ff19184e39c725719",
+      "qaContentHash": "936f52304e3e75ab58497b434b6e8699cd11604f1a5cd32ee0a14f06495b4b03",
+      "fixtureVersion": "campaign-v2",
+      "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    },
+    {
+      "record": "runs/CAMP-20261014-125458746-6d35a7.json",
+      "ci": 38567416271,
+      "passed": 273,
+      "failed": 18,
+      "skipped": 0,
+      "blocked": 0,
+      "runtime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json",
+      "runtimeCi": 38567416315,
+      "unitPassed": 98,
+      "runtimePassed": 99,
+      "runtimeCases": 117,
+      "qaImplementation": "28072937af0758cd5fa788d18739f0d12994e98f",
+      "qaTestedMerge": "4756885ccb01e65db1d93e1ad2f91af97761684f",
+      "qaContentHash": "c316051c9f00d5ab080751894e3b4141f0d6f0dae57ff86075af5aa71d4180e0",
       "fixtureVersion": "campaign-v2",
       "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
     }
@@ -286,5 +322,29 @@
     "receiptEqualityObserved": 1,
     "receiptCaseOverall": "failed",
     "scope": "actual isolated owner command/synthetic sessions; no deployed/credential/full-workflow acceptance"
+  },
+  "roleScopeRetest": {
+    "record": "runs/CAMP-20261014-131128650-2e5b74.json",
+    "runtime": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
+    "handoff": "handoffs/HANDOFF-20261014-role-scope-readiness.md",
+    "passed": [
+      "B-109",
+      "RT-042",
+      "RT-043",
+      "RT-044",
+      "RT-047",
+      "RT-048",
+      "RT-049",
+      "RT-050"
+    ],
+    "failed": [
+      "RT-045",
+      "RT-046",
+      "RT-051"
+    ],
+    "followup": "RT-051 executed: Warehouse invoice-read grant absent, direct known invoice detail not refused; same BUG-0041, no new group. Real authentication/HTTP/browser acceptance pending.",
+    "scope": "non-owner/NOBYPASSRLS actual commands, synthetic identity; no real-login/HTTP/cache/browser acceptance",
+    "firstRecord": "runs/CAMP-20261014-125458746-6d35a7.json",
+    "firstRuntime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json"
   }
 }

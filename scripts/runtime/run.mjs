@@ -69,6 +69,17 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['B-105']=['cashCents','arCents','creditBalanceCents','creditPaidCents','receiptAllocationsBefore','receiptAllocationsAfter','receiptRowsUnchanged','revenueCents','returnRevenueCents'];
   observationKeys['RT-039']=['accepted','unchanged','cashCents','arCents'];
   observationKeys['RT-041']=['accepted','unchanged','returnCount','returnTotalCents','expectedMaxReturnCents','cashCents','expectedCashCents'];
+  observationKeys['B-109']=['invoiceAccepted','paymentAccepted','arCents','cashCents'];
+  observationKeys['RT-042']=['paymentAccepted','invoiceAccepted','unchanged','arCents','cashCents'];
+  observationKeys['RT-043']=['readTotalCents','invoiceAccepted','paymentAccepted','unchanged'];
+  observationKeys['RT-044']=['ownInvoiceAccepted','ownPaymentAccepted','otherInvoiceAccepted','otherPaymentAccepted','unchanged','arCents'];
+  observationKeys['RT-045']=['allowedListCount','allowedDetailTotalCents','restrictedReadDenied','unchanged'];
+  observationKeys['RT-046']=['scopeFaultVerified','scopeRecovered','accepted','unchanged','arCents'];
+  observationKeys['RT-047']=['invoiceAccepted','paymentAccepted','historyTotalCents','profitCents','invoiceReadGrant','unchanged'];
+  observationKeys['RT-048']=['accepted','unchanged','arCents'];
+  observationKeys['RT-049']=['invoiceAccepted','paymentAccepted','unchanged','arCents'];
+  observationKeys['RT-050']=['foreignFixtureReadPositive','ownReadPositive','foreignDetailDenied','foreignDimensionsAccepted','unchanged'];
+  observationKeys['RT-051']=['knownInvoicePositive','warehouseJobValid','inventoryReadGranted','invoiceReadGranted','invoiceDetailDenied','unchanged'];
   for(const id of ['D-103','D-105','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded'];
   observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];

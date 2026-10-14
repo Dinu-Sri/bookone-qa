@@ -206,6 +206,25 @@
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-product-command-synthetic-session"
+    },
+    {
+      "name": "role-scope-boundaries",
+      "file": "tests/runtime/role-scope-boundaries.test.ts",
+      "expected": [
+        "B-109",
+        "RT-042",
+        "RT-043",
+        "RT-044",
+        "RT-045",
+        "RT-046",
+        "RT-047",
+        "RT-048",
+        "RT-049",
+        "RT-050",
+        "RT-051"
+      ],
+      "credential": "runtime",
+      "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session"
     }
   ]
 }
