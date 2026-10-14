@@ -23,6 +23,8 @@ Source investigation and independent rules in each bug record and CHG-20261014-s
 
 RT-041 tests repeat **cash payout** after full paid-source refund; no cash-over-refund outcome claimed until execution. B-105 is strengthened to compare original receipt allocation, transaction, journal and lines with nonempty positive controls, not count alone. All earlier outcomes remain immutable. Fresh107PG/281campaign run pending; keep failures red, no expectation adjustment to match current output.
 
+Fixture validity correction: first RT-035 used unsupported product taxStatus=`taxable` and did not store the named customer's unregistered status. Pinned UI/schema review shows supported `standard` product and `unregistered` customer values. Follow-up seeds/asserts those actual classifications before interpreting the tax-style path. **BUG-0036 remains provisional until corrected execution**; first0VAT observation is retained, not used as accepted tax-classification evidence. Ten other groups remain independently demonstrated; all regulatory/expert gates open.
+
 ## Repair order and remaining scope
 
 Treat source return validation/discount/cost/tax/refund state and tender as one impacted subsystem with separately tracked bugs and regressions. Recommended order: source/quantity/refundable locks + original snapshots, exact header discount/tax/cost reversal, shared tender guard, coherent cash-credit state, then tax classification/style and input discount validation. Expand regressions to partials, races, paid/unpaid sources, physical/service/digital, master/settings changes, periods/roles/tenants, fault rollback and UI/print/export.

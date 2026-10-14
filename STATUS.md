@@ -1,3 +1,7 @@
+## Pending tax-fixture validity correction
+
+Initial RT-035 stored unsupported product taxStatus taxable and did not explicitly store customer unregistered status. Corrected supported standard/unregistered values now asserted. BUG-0036 is provisional until fresh281-case execution; initial observations remain immutable. Ten other finding groups demonstrated. Read current sales handoff.
+
 ## Current sales-value evidence and follow-up
 
 [First sales campaign](runs/CAMP-20261014-120513142-57ddba.json):280assertions265pass/15fail/0skip/0block, actualPG91/106. New lane3pass/7fail exposes six groups BUG-0035–0040; previous five groups still open. Read [sales handoff](handoffs/HANDOFF-20261014-sales-value-readiness.md). RT-041 cash-repeat and exact B-105 receipt-history checks now implemented;107PG/281campaign planned, not yet executed. Full137 workflows61partial/76unbound/zero accepted. Candidate still8e1a2b8/v2.5.5; no staging writes.

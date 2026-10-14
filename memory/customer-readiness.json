@@ -250,5 +250,11 @@
       "RT-039"
     ],
     "followup": "RT-041 cash-repeat and exact receipt preservation pending on107PG/281campaign cases"
+  },
+  "salesFixtureValidity": {
+    "initial": "RT-035 unsupported product taxable enum/customer status not explicitly stored; initial tax classification unverified",
+    "correction": "standard product + unregistered person/customer seeded/asserted; expected VAT unchanged",
+    "status": "corrected-107PG/281campaign execution pending",
+    "bug": "BUG-0036 provisional"
   }
 }

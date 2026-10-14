@@ -12,7 +12,8 @@ const DATE='2026-10-13',cent=(v:unknown)=>Math.round(Number(v)*100);
 async function setup(type='service',registered=true){
  await seed.insert(schema.accounts).values([{tenantId:TENANT_A,code:'2200',name:'Output VAT',type:'liability',normalSide:'credit'},{tenantId:TENANT_A,code:'4100',name:'Sales Returns',type:'revenue',normalSide:'debit'}]);
  await seed.insert(schema.salesSettings).values({tenantId:TENANT_A,vatRegistered:registered?'1':'0',vatRatePercent:'18.00',defaultInvoiceKind:'tax_invoice'});
- const [p]=await seed.insert(schema.inventoryProducts).values({tenantId:TENANT_A,sku:'QA-TAX-'+type,name:'Synthetic standard-rated supply',productType:type,taxStatus:'taxable',sellPrice:'200.00',unitCost:'50.00'}).returning();return p.id;
+ const [customer]=await seed.insert(schema.parties).values({tenantId:TENANT_A,name:'Synthetic unregistered customer',kind:'customer',isCustomer:'1',taxStatus:'unregistered',partyType:'person'}).returning();expect(customer.taxStatus).toBe('unregistered');
+ const [p]=await seed.insert(schema.inventoryProducts).values({tenantId:TENANT_A,sku:'QA-TAX-'+type,name:'Synthetic standard-rated supply',productType:type,taxStatus:'standard',sellPrice:'200.00',unitCost:'50.00'}).returning();expect(p.taxStatus).toBe('standard');return p.id;
 }
 const input=(p:string,type='sales_invoice',extra={})=>({documentType:type,partyName:'Synthetic unregistered customer',issueDate:DATE,invoiceKind:'tax_invoice',saleChannel:'local',lines:[{productId:p,description:'Synthetic standard-rated supply',quantity:1,unitPrice:100}],...extra}) as any;
 async function create(data:any){const r=await createCommercialDocument(data);expect(r,r.error).toMatchObject({ok:true});expect(r.id).toBeTruthy();return r.id!;}
@@ -46,7 +47,8 @@ it('[RT-034] full linked credit reverses original line/header discount and VAT a
 });
 it('[RT-035] standard taxable registered supply retains VAT when commercial invoice style is selected',async()=>{
  const p=await setup();const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));const d=await doc(invoice);
- observe('RT-035',{registered:1,taxableSupply:1,taxCents:cent(d.taxTotal),expectedTaxCents:1800,totalCents:cent(d.total),expectedTotalCents:11800,vatBalanceCents:await balance('2200'),arCents:await balance('1300')});
+ const [product]=await seed.select().from(schema.inventoryProducts).where(eq(schema.inventoryProducts.id,p)),[customer]=await seed.select().from(schema.parties).where(eq(schema.parties.id,d.partyId!));expect(product.taxStatus).toBe('standard');expect(customer.taxStatus).toBe('unregistered');
+ observe('RT-035',{registered:1,taxableSupply:1,productStandard:Number(product.taxStatus==='standard'),customerUnregistered:Number(customer.taxStatus==='unregistered'),taxCents:cent(d.taxTotal),expectedTaxCents:1800,totalCents:cent(d.total),expectedTotalCents:11800,vatBalanceCents:await balance('2200'),arCents:await balance('1300')});
  expect([cent(d.taxTotal),cent(d.total),cent(d.balanceDue)]).toEqual([1800,11800,11800]);expect(await balance('2200')).toBe(-1800);expect(await balance('1300')).toBe(11800);await noStockAndBalanced();
 });
 it.each([['RT-036','header'],['RT-037','line']])('[%s] excessive %s discount refuses with no business effects',async(id,kind)=>{
