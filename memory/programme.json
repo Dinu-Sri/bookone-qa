@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "264-slots:260-pass-4-fail-0-skip;90-PG86-pass-4-fail; no-full-workflow-acceptance",
+  "implementationStatus": "270-slots:262-pass-8-fail-0-skip;96-PG88-pass-8-fail; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261014-113321106-568961.json",
+  "lastRetestRecord": "runs/CAMP-20261014-114805477-fc2c22.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -51,9 +51,12 @@
     "BUG-0029",
     "BUG-0030",
     "BUG-0031",
-    "BUG-0032"
+    "BUG-0032",
+    "BUG-0033",
+    "BUG-0034"
   ],
   "nextActions": [
+    "Coding agent: repair five readiness finding groups across both handoffs; pin new product and retest original plus adjacent assertions. Current270 executed/8fail/0skip.",
     "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
     "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
     "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
@@ -309,21 +312,41 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-113321106-568961.json",
-    "ci": 38557308389,
-    "passed": 260,
-    "failed": 4,
+    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
+    "ci": 38559060658,
+    "passed": 262,
+    "failed": 8,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T11-33-18-445Z-runtime.json",
-    "runtimeCi": 38557308352,
+    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+    "runtimeCi": 38559060570,
     "unitPassed": 98,
-    "runtimePassed": 86,
-    "runtimeCases": 90,
-    "qaImplementation": "f266659cd4d39e63567d9f95cf1d61a7113071d8",
-    "qaTestedMerge": "a76f84ed6b11b3d80627d535f5abca4e6d51a0af",
-    "qaContentHash": "86dccfaa2fc0025412f0c645d2d36f72e6cde5848efec4f39a1dadb9f5c940b5",
+    "runtimePassed": 88,
+    "runtimeCases": 96,
+    "qaImplementation": "a15b7b9eb168cf88e470aff91ab72ddb4864c8c2",
+    "qaTestedMerge": "f6cf4fd4f545d546021228073f105ae85e96ae9c",
+    "qaContentHash": "f1af4c267c31504f45cc1c964394c0b4f846511d52f0c7b8155290e6638467a0",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+  },
+  "inventoryBoundaryRetest": {
+    "handoff": "handoffs/HANDOFF-20261014-variable-cost-readiness.md",
+    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
+    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+    "passed": [
+      "C-111",
+      "RT-032"
+    ],
+    "failed": [
+      "RT-028",
+      "RT-030",
+      "RT-031",
+      "RT-029"
+    ],
+    "bugs": [
+      "BUG-0033",
+      "BUG-0034"
+    ],
+    "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
   }
 }

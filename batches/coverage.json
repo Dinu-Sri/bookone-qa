@@ -710,14 +710,24 @@
       "id": "C-111",
       "batch": "C",
       "slug": "cost-backdate",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Two receipts at different prices, then sale/return/backdate follow approved costing; historical posted cost is preserved.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair original-cost return and adopt backdate guard; layer restoration identity, controlled corrections/closed-period, configuration/real auth/UI and full workflow remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+        "status": "passed",
+        "scope": "FIFO C-111 and average RT-032 differing-receipt command outcomes; linked return cases fail; full workflow not accepted"
+      }
     },
     {
       "id": "C-112",

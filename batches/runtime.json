@@ -173,6 +173,20 @@
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-payment-concurrency-batch-identity"
+    },
+    {
+      "name": "inventory-valuation",
+      "file": "tests/runtime/inventory-valuation.test.ts",
+      "expected": [
+        "C-111",
+        "RT-032",
+        "RT-028",
+        "RT-030",
+        "RT-031",
+        "RT-029"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-product-command-synthetic-session"
     }
   ]
 }
