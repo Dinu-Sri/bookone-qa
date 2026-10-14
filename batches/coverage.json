@@ -235,10 +235,17 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Execute explicit job/scope/fault/revocation controls; actual credential/HTTP/React request cache/browser and complete role/module/scopes/file layers remain open.",
+      "next": "Repair restricted-detail and scope-read fail-open; no-read Warehouse follow-up pending, real auth/cache/HTTP/browser/files/full scope matrix still required.",
       "implementedLayers": [
         "persisted-lifecycle-non-owner-db-synthetic-session"
-      ]
+      ],
+      "evidence": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json",
+        "status": "passed",
+        "scope": "Sales own command outcome only; other job/scope cases separate, two security failures; full role workflow not accepted"
+      }
     },
     {
       "id": "B-110",

@@ -11,3 +11,9 @@ Sales off denies actual invoice/payment writes; Owner still reads original docum
 All ten cases use actual non-owner PostgreSQL driver/RLS/action/query code, with synthetic authenticated identity and Next adapters. Seeded roles/users are ephemeral fixture rows, not new staging accounts or credentials. No real-login/HTTP/browser/file/export/MinIO certification. Scope-level action/control evidence is distinct from transport exposure or every report. No company-reset SQL, shared-staging fault injection, production access or public raw records/secrets.
 
 Graph discovery performed first; extraction is stale, so role templates, scope/load/dimension and commercial source verified against pinned checkout. New cases B-109,RT-042–050. Fixed numeric observation allowlist; source headers/details and DB fault logs stay private. Preserve first failed attempts and continue missing launch gates after fixes.
+
+## First outcomes and adjacent no-read job
+
+CI38567416271:291assertions273pass/18fail/0skip/0block; actual PG99/117pass. New lane8pass/2fail, no infrastructure failures. RT-045 known restricted same-company detail returns data despite filtered list; RT-046 verified isolated scope SELECT fault accepts forbidden branch invoice, AR100→200, scope restored. BUG-0041/0042 and coding handoff preserve exact observations. Prior107 cases remain91pass/16fail.
+
+Add RT-051 valid Warehouse job without invoice-read privilege against known invoice/Owner positive. One adjacent assertion,118PG/292campaign planned; no role-disclosure claim before execution. Thirteen demonstrated groups, full137workflow62partial/75unbound/zero accepted. No live staging/production grant, fault or data changes; real auth/cache/transport remain open.

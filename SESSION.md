@@ -1,3 +1,7 @@
+## Current non-owner role/scope evidence
+
+[First role campaign](runs/CAMP-20261014-125458746-6d35a7.json):291assertions273pass/18fail/0skip/0block, actualPG99/117. New lane8pass/2fail confirms restricted same-company detail disclosure and scope SELECT fail-open write (BUG-0041/0042). [Handoff](handoffs/HANDOFF-20261014-role-scope-readiness.md). RT-051 no-read Warehouse variant now implemented;118PG/292campaign planned, not executed. Thirteen demonstrated groups;137workflows62partial/75unbound/zero accepted. Candidate remains8e1a2b8; no staging changes.
+
 ## Active non-owner role/scope wave
 
 Ten new command/query cases planned on unchanged v2.5.5 · 8e1a2b8. Explicit Sales/Cashier/Accountant positives/denials, actual branch/brand scope, restricted detail read, isolated scope-table fault, Sales off/history, deny override/suspension and real foreign tenant fixtures. Original281 assertions preserved; new291/117PG planned. Read changes/CHG-20261014-role-scope-boundaries.md; no new pass/defect claimed before execution. Browser approval/popup remain pending.

@@ -9,7 +9,7 @@ import * as schema from '@product/schema/index';
 import {admin,seed,resetFixture,closeFixture} from './support/fixture';
 import {TENANT_A,TENANT_B,OWNER,SALES,setActor} from './support/session';
 import {observe} from './support/observations';
-const CASHIER='00000000-0000-4000-8000-000000000010',ACCOUNTANT='00000000-0000-4000-8000-000000000011',FOREIGN_OWNER='00000000-0000-4000-8000-000000000012',DATE='2026-10-13';
+const CASHIER='00000000-0000-4000-8000-000000000010',ACCOUNTANT='00000000-0000-4000-8000-000000000011',FOREIGN_OWNER='00000000-0000-4000-8000-000000000012',WAREHOUSE='00000000-0000-4000-8000-000000000013',DATE='2026-10-13';
 beforeEach(async()=>{await resetFixture();const [role]=await pgClient()`select rolsuper,rolbypassrls from pg_roles where rolname=current_user`;expect(role).toEqual({rolsuper:false,rolbypassrls:false});const [table]=await pgClient()`select relrowsecurity,pg_get_userbyid(relowner)=current_user as owned from pg_class where oid='accounts'::regclass`;expect(table).toEqual({relrowsecurity:true,owned:false});});afterAll(closeFixture);
 const cents=(n:unknown)=>Math.round(Number(n)*100);
 async function product(tenantId=TENANT_A){return(await seed.insert(schema.inventoryProducts).values({tenantId,sku:'QA-SCOPED',name:'Synthetic scoped service',productType:'service',sellPrice:'100.00'}).returning())[0].id;}
@@ -61,4 +61,8 @@ it('[RT-049] suspended membership denies both fresh invoice and allocation with 
 });
 it('[RT-050] real foreign company detail and dimensions deny with own and foreign positive controls',async()=>{
  const p=await product(),own=await create(p);await addIdentity(FOREIGN_OWNER,'owner',TENANT_B);const fp=await product(TENANT_B),[brand]=await seed.insert(schema.brands).values({tenantId:TENANT_B,name:'Synthetic real foreign brand'}).returning(),[location]=await seed.insert(schema.locations).values({tenantId:TENANT_B,brandId:brand.id,name:'Synthetic real foreign branch'}).returning();setActor(FOREIGN_OWNER,'owner',TENANT_B);const foreign=await create(fp,{brandId:brand.id,locationId:location.id});expect((await getCommercialDocument(foreign))?.total).toBe(100);setActor();expect((await getCommercialDocument(own))?.total).toBe(100);const before=await snapshot(),denied=await deniedRead(foreign),r=await createCommercialDocument(input(p,{brandId:brand.id,locationId:location.id})),after=await snapshot();observe('RT-050',{foreignFixtureReadPositive:1,ownReadPositive:1,foreignDetailDenied:Number(denied),foreignDimensionsAccepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after))});expect(denied).toBe(true);expect(r.ok).toBe(false);expect(after).toEqual(before);
+});
+it('[RT-051] Warehouse job without invoice-read privilege cannot fetch a known company invoice detail',async()=>{
+ const p=await product(),invoice=await create(p);expect((await getCommercialDocument(invoice))?.total).toBe(100);await addIdentity(WAREHOUSE,'warehouse');setActor(WAREHOUSE,'warehouse');const access=await loadAccessForUser(WAREHOUSE,TENANT_A,'user');expect(access?.jobSlug).toBe('warehouse');expect(access?.allows('inventory.products.read','read')).toBe(true);expect(access?.allows('sales.invoices.read','read')).toBe(false);
+ const before=await snapshot(),denied=await deniedRead(invoice),after=await snapshot();observe('RT-051',{knownInvoicePositive:1,warehouseJobValid:1,inventoryReadGranted:1,invoiceReadGranted:0,invoiceDetailDenied:Number(denied),unchanged:Number(JSON.stringify(before)===JSON.stringify(after))});expect(denied).toBe(true);expect(after).toEqual(before);
 });

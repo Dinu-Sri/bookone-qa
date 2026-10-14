@@ -220,7 +220,8 @@
         "RT-047",
         "RT-048",
         "RT-049",
-        "RT-050"
+        "RT-050",
+        "RT-051"
       ],
       "credential": "runtime",
       "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session"
