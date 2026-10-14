@@ -1,0 +1,45 @@
+name: Candidate tenant archive helper contracts
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - product-ref.json
+      - catalog/backup-assertions.json
+      - batches/backup-restore.json
+      - tests/archive/**
+      - scripts/archive-helpers.mjs
+      - vitest.archive.config.ts
+      - pnpm-lock.yaml
+      - .github/workflows/archive-helpers.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive-helpers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm backup:plan:check
+      - run: pnpm product:prepare
+      - name: Keep product failures red; partial helper coverage only
+        run: pnpm test:archive-helpers
+      - name: Sanitized summaries only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: archive-helper-summary
+          path: .local/archive-helpers/*/summary.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      # Never upload raw logs, encrypted backups, passwords or cookies.

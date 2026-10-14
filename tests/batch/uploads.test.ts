@@ -2,7 +2,7 @@ import { File } from 'node:buffer';
 import { beforeEach, afterEach, it, expect, vi } from 'vitest';
 import { uploadReceipt, getReceiptDownloadUrl } from '@product/web/app/actions/upload-receipt';
 import { TENANT_A,TENANT_B,setActor } from './support/actor';
-import { objects,signatures,resetStore } from './support/object-store';
+import { objects,signatures,heads,resetStore } from './support/object-store';
 beforeEach(()=>{
   vi.stubGlobal('File',File);resetStore();setActor();
   for(const [key,value] of Object.entries({S3_ENDPOINT:'https://objects.example.invalid',S3_ACCESS_KEY:'synthetic-only',S3_SECRET_KEY:'synthetic-only',S3_BUCKET:'qa-synthetic'}))vi.stubEnv(key,value);
@@ -33,4 +33,8 @@ it('F-008 known foreign receipt must not be signed; actual own object is a posit
   expect(await getReceiptDownloadUrl(own.receiptRef!)).toBeTruthy();expect(signatures).toHaveLength(1);expect(signatures[0]).toEqual({key:own.receiptRef,expiresIn:600});
   const signed=await getReceiptDownloadUrl(foreign.receiptRef!);
   expect({denied:signed===null,signerCalls:signatures.length}).toEqual({denied:true,signerCalls:1});
+  expect(heads).toEqual([own.receiptRef]); // Foreign namespace denies before storage or signing.
+  objects.delete(own.receiptRef!);
+  expect(await getReceiptDownloadUrl(own.receiptRef!)).toBeNull();expect(signatures).toHaveLength(1);
+  expect(heads).toEqual([own.receiptRef,own.receiptRef]); // Missing own object is not signed.
 });

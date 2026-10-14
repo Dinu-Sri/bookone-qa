@@ -35,12 +35,14 @@ function extractIds(text) {
 
 const scenarios = JSON.parse(readFileSync(catalogPath, 'utf8'));
 const catalogIds = new Set(scenarios.map((s) => s.id));
+const dedicatedIds = new Set(scenarios.filter(s=>s.executionPolicy==='dedicated-backup').map(s=>s.id));
 
 const scanRoots = [join(e2eRoot, 'tests'), join(e2eRoot, 'src')];
 const fileHits = new Map(); // id -> Set of files
 
 function addHit(id, rel) {
   if (!catalogIds.has(id)) return;
+  if (dedicatedIds.has(id)) return; // Plan/helper bindings are not legacy browser automation.
   if (!fileHits.has(id)) fileHits.set(id, new Set());
   fileHits.get(id).add(rel);
 }
@@ -119,6 +121,7 @@ for (const s of scenarios) {
     tags: s.tags || [],
     referenced_in: files,
     status: files.length ? 'referenced' : 'missing',
+    ...(dedicatedIds.has(s.id) ? { execution_policy: 'dedicated-backup', dedicated_assertions: 'catalog/backup-assertions.json', browser_automation: 'backlog' } : {}),
   };
   // "referenced" means ID appears in source — depth quality tracked separately later
   if (files.length) automated.push(row);

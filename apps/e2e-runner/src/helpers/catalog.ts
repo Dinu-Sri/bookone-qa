@@ -8,16 +8,14 @@ const CATALOG_PATH = join(here, '../catalog/scenarios.json');
 
 let cached: Scenario[] | null = null;
 
-/** Load the full E2E scenario catalog (698 IDs). Cached per process. */
-export function loadScenarios(): Scenario[] {
-  if (cached) return cached;
-  const raw = readFileSync(CATALOG_PATH, 'utf8');
-  const data = JSON.parse(raw) as Scenario[];
-  if (!Array.isArray(data)) {
-    throw new Error(`Invalid scenarios catalog at ${CATALOG_PATH}`);
+/** Dedicated backup workflows never enter inherited generic execution handlers. */
+export function loadScenarios(options: { includeDedicated?: boolean } = {}): Scenario[] {
+  if (!cached) {
+    const data = JSON.parse(readFileSync(CATALOG_PATH, 'utf8')) as Scenario[];
+    if (!Array.isArray(data)) throw new Error(`Invalid scenarios catalog at ${CATALOG_PATH}`);
+    cached = data;
   }
-  cached = data;
-  return data;
+  return options.includeDedicated ? cached : cached.filter(s=>s.executionPolicy!=='dedicated-backup');
 }
 
 export function loadScenariosBySection(sectionPrefix: string): Scenario[] {

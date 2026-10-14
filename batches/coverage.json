@@ -274,19 +274,28 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Owner approval/repeat and pending controls pass; Viewer approval fails RT020/120 (BUG0020). Approval authorization, wider jobs/scopes and live acceptance remain open.",
+      "next": "Owner approval/repeat and Viewer denial now pass at both DB roles; wider jobs/scopes, fresh credential HTTP and browser acceptance remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-201",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-201",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-102",
@@ -304,14 +313,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-202",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-202",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-103",
@@ -329,14 +347,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-203",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-203",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-104",
@@ -354,14 +381,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-204",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-204",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-105",
@@ -379,14 +415,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-205",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-205",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-106",
@@ -404,14 +449,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-206",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-206",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-107",
@@ -429,14 +483,23 @@
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
         "owner": "passed",
         "nonOwnerAlias": "C-207",
         "nonOwner": "passed"
-      }
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "passed",
+          "nonOwnerAlias": "C-207",
+          "nonOwner": "passed"
+        }
+      ]
     },
     {
       "id": "C-108",
@@ -540,19 +603,28 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Foreign SKU deny fails at both DB roles; repair BUG0018. Viewer create denies pass; locked-period finance denies but audit changes (BUG0019). Wider location/brand/read/revoked/browser boundaries remain open.",
+      "next": "Foreign SKU, Viewer create and locked-period zero-business-mutation denials now pass at both DB roles; wider location/brand/read/revoked/HTTP/browser boundaries remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
-        "owner": "failed",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+        "owner": "passed",
         "nonOwnerAlias": "C-215",
-        "nonOwner": "failed"
-      }
+        "nonOwner": "passed"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "failed",
+          "nonOwnerAlias": "C-215",
+          "nonOwner": "failed"
+        }
+      ]
     },
     {
       "id": "C-116",
@@ -565,19 +637,28 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Journal-line fault leaves orphan transaction/empty journal at both DB roles (BUG0019); repair before later stock/cost/audit faults, retries, historical void/recovery acceptance.",
+      "next": "Journal fault fully rolls back at both DB roles; later stock/cost/audit faults, retries, historical void/recovery and live acceptance remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection",
         "persisted-lifecycle-non-owner-connection-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
       "latestAttempt": {
-        "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-        "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
-        "owner": "failed",
+        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+        "evidence": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+        "owner": "passed",
         "nonOwnerAlias": "C-216",
-        "nonOwner": "failed"
-      }
+        "nonOwner": "passed"
+      },
+      "attemptHistory": [
+        {
+          "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
+          "evidence": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+          "owner": "failed",
+          "nonOwnerAlias": "C-216",
+          "nonOwner": "failed"
+        }
+      ]
     },
     {
       "id": "D-101",

@@ -41,7 +41,7 @@ const files = git('.', 'ls-files', '--cached', '--others', '--exclude-standard')
 return hash(files.map(p => `${p}\0${hash(readFileSync(p))}`).join('\n'));
 };
 const contentHash = currentContentHash();
-const fingerprint = { productSha: ref.commit, qaSha: git('.','rev-parse','HEAD'), qaContentHash: contentHash,
+const fingerprint = { productSha: ref.commit, productStamp: `v${readFileSync('work/product/VERSION','utf8').trim()} · ${ref.commit.slice(0,7)}`, qaSha: git('.','rev-parse','HEAD'), qaContentHash: contentHash,
   qaDirty: Boolean(git('.','status','--porcelain')), batchHash: hash(JSON.stringify(batch)),
   nodeVersion: process.version, fixtureVersion: batch.fixtureVersion ?? 'embedded-pg-v1', environment: batch.environment ?? 'embedded-postgresql-contract',
   authBoundary: batch.authBoundary ?? 'synthetic-session-real-product-permission-assertion', migrationsAndRuntimeRls: 'not-exercised' };

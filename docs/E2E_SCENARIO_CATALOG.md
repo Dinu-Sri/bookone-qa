@@ -6461,3 +6461,415 @@
 ---
 
 *Catalog complete. Next: implement Playwright specs mapped to these IDs/tags.*
+
+
+<!-- tenant-archive-catalog:start -->
+
+## 32. Tenant archive and form overlay
+
+### S-0761 — Stamp and owner page smoke
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@stamp`
+- **Execution policy:** dedicated-backup
+
+  1. Match the live sidebar to the exact required stamp before any live test; record observed stamp separately from source pin.
+  2. Owner Backup page loads; an existing prepared pair is not proof of export or restore.
+
+### S-0762 — Fresh primary Owner identity
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@access`
+- **Execution policy:** dedicated-backup
+
+  1. Sign out and explicitly log in as a normal primary Owner; record alias, loaded role and tenant context without secrets.
+  2. Backup read/write work for Owner; a platform super-admin session alone does not establish normal Owner access.
+
+### S-0763 — Viewer cannot read or write backup
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@access`
+- **Execution policy:** dedicated-backup
+
+  1. Fresh Viewer cannot see or use Backup; directly exercise page and all prepare/download/restore/restore-files routes with real owned and foreign fixture records.
+  2. Copied grants, extra Owner job and allow-overrides do not confer backup access; denied requests leave DB, business audit and S3 unchanged.
+
+### S-0764 — Company Admin cannot acquire owner-only backup
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@access`
+- **Execution policy:** dedicated-backup
+
+  1. Test company Admin with RBAC on and off, extra Owner job, copied backup grants and allow-overrides; resolver, navigation and actual server denial are separate evidence.
+  2. Primary Owner positive control passes; Admin direct export/download/data/files requests deny with zero business mutations, even if UI is hidden.
+
+### S-0765 — Control Room requires platform super-admin
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@access`
+- **Execution policy:** dedicated-backup
+
+  1. Platform super-admin sees Overview, Companies, Modules, Access and ERP Health Check; normal company Admin and Owner do not gain these from company jobs.
+  2. Fresh non-platform sessions cannot directly load protected routes/actions; a nav helper pass is not server authorization proof.
+
+### S-0766 — Password and confirmation validation
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Test missing, 7-character, mismatched confirmation and over-128-character passwords; no prepared pair or business success audit is created.
+  2. At least 8 matching characters succeed; private password is never recorded in Git, screenshots, public logs or summaries.
+
+### S-0767 — Paired encrypted downloads and checksums
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Create and download both actual files; decrypt privately and independently compare exportId, schemaVersion 1 and cross-checksums against tables and object metadata.
+  2. Both downloads work and ciphertext differs for independent encryptions; extension/magic alone does not prove encryption or pair integrity.
+
+### S-0768 — Tenant export isolation
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Seed real foreign-tenant row and object sentinels; exported rows all belong to source A and tenant S3 pack excludes foreign objects and tenants/A/_archive/.
+  2. Verify isolation under the actual runtime DB role and prepared-download authorization; absence of nonexistent IDs is insufficient.
+
+### S-0769 — Archive and telemetry omit secrets and operator data
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Privately inspect actual decrypted payload for users/password_hash, other auth secrets, invites, ops logs and platform-only logs; none are included.
+  2. Check request logs, audit and stored prepare metadata do not retain the archive password; whitelist inspection alone does not certify actual export.
+
+### S-0770 — Complete multi-business golden snapshot
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Cover physical products/stock/layers, service/digital documents, rental events, POS, bank recon, settings and document templates with an independently recorded source ledger.
+  2. Export counts, quantities, money and relevant configuration match the source; test enabled/disabled modules and transformed references without weakening existing policies.
+
+### S-0771 — Snapshot consistency during posting
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. In an isolated DB run controlled concurrent posting and export; snapshot is wholly before or after the committed transaction.
+  2. No half-journal, mismatched stock/settlement or foreign pooled tenant state; preserve timing/barrier evidence and both positive controls.
+
+### S-0772 — Per-company prepare rate limit
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. One prepare per 120 seconds per company; attempt parallel owners, distinct workers and boundary times in isolation.
+  2. A second company remains independent; rejected prepare creates no extra usable pair and password values never become public evidence.
+
+### S-0773 — Prepared download expiry and ownership
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@export`
+- **Execution policy:** dedicated-backup
+
+  1. Test valid download before roughly 15-minute expiry, expired/missing token and wrong actor/tenant against actual routes.
+  2. Expired or unauthorized requests return no bytes; local metadata survives no longer than the documented validity and refreshed downloads do not extend access accidentally.
+
+### S-0774 — All trading families enforce emptiness
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. For each of 14 non-voided trading families, independently seed a fresh isolated target and assert the real SQL emptiness predicate blocks restore.
+  2. Signup CoA/jobs/owner membership alone remain eligible; verify voided-row policy from the contract and do not reset a company to make it empty.
+
+### S-0775 — Non-empty restore refusal
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Restore source A into A and a separately traded target; require: This company already has records. Create a new company and restore into that.
+  2. Before/after DB, CoA, identity, business audit and S3 remain unchanged; owner authorization does not permit merge or overwrite.
+
+### S-0776 — Wrong password and corrupt archive fail safely
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Wrong password, altered ciphertext, truncation and invalid format refuse before target writes.
+  2. Target seed state and operational emptiness remain intact; error is usable and retry is possible without publishing payload/password.
+
+### S-0777 — Schema kind checksum and compatibility gates
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Data route rejects files kind, wrong checksums, malformed/unknown tables and future schema; v1 identity transformation preserves valid data.
+  2. No restore from newer archive into older app; old exports and missing metadata need explicit contract-compatible policy, not silently reduced validation.
+
+### S-0778 — Real source A to empty B restore
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Create a new empty company B through supported signup/create flow; restore A data in browser and verify persisted records through supported UI and isolated backend where available.
+  2. All PK/FK UUIDs are remapped consistently, target tenant differs, source unchanged, no foreign row or source tenant_id reused; helper remap is not this journey.
+
+### S-0779 — Seed CoA jobs and document sequences
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Restore replaces signup seed CoA/jobs as specified without duplicate account codes or orphaned roles; settings/templates remain usable.
+  2. Create the next supported document after restore; sequence uniqueness and references survive without editing stored IDs or resetting trading tables.
+
+### S-0780 — Restorer ownership and teammate identity
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Restorer remains the authenticated primary Owner in target B; extra archive users and their dependent membership/scope/team rows are skipped.
+  2. No teammate passwords/auth sessions are restored; invite teammates again through supported flow and verify future attribution.
+
+### S-0781 — Independent accounting stock and subledger integrity
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Compare independently expected debit=credit and trialBalanceHash before and after restore, not totals computed only by the implementation under test.
+  2. Verify per-document totals, AR/AP/settlements, stock quantities and cost-layer valuation; a balanced trial balance alone is insufficient.
+
+### S-0782 — Failed restore rolls back completely
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Inject invalid journals/FKs, stock-layer and AR/AP/document inconsistencies plus a mid-insert failure in an isolated DB.
+  2. Every failure preserves original seed CoA/jobs/owner and empty trading state; no success marker, partial audit or file applicability remains.
+
+### S-0783 — Second data restore refused
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. After successful A to B data restore, repeat same or different data archive into B and require refusal.
+  2. Records, counts, sequence, owner and restore marker remain unchanged; first matching files pack is still allowed.
+
+### S-0784 — Concurrent data restores serialize safely
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@data`
+- **Execution policy:** dedicated-backup
+
+  1. Controlled simultaneous restores into one isolated eligible target permit at most one complete committed restore.
+  2. Losing request fails closed; no mixed UUID map, duplicated rows or mismatched restore marker; preserve real multi-connection evidence.
+
+### S-0785 — Matching files restore and open real attachments
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. After data restore upload the matching files pack; inspect target object keys and privately compare byte hashes to source receipt and product/document image.
+  2. Open attachments through supported UI as the authorized target user; source owner and foreign user cannot use target receipt URLs.
+
+### S-0786 — Data-only books and missing attachment UI
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. After data only, reports and books open with correct values; a tenants/ receipt lacking an object displays Missing attachment.
+  2. After matching pack apply, the same receipt opens and warning clears; missing object is not a leaked foreign object or a general storage outage.
+
+### S-0787 — Pair mismatch prior-data and cross-checksum guards
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. No prior data restore, wrong exportId and wrong files/data cross-checksums refuse before storage writes.
+  2. Compare actual route behavior with pure guards; legacy data restore missing filesSha metadata is a contract question requiring explicit compatibility acceptance.
+
+### S-0788 — Files pack applies at most once
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. A successful files application records the matching export once; replay refuses even if the filename is changed.
+  2. No duplicate writes/audit/success marker; partial failures do not masquerade as completed application.
+
+### S-0789 — Fill missing objects without overwrite
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Put a distinct target sentinel object before files apply; existing bytes/content type remain unchanged while missing valid objects are filled.
+  2. Use real MinIO and owner/non-owner controls; the in-memory store test is only partial evidence.
+
+### S-0790 — Prefix-only storage identity rewrite
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Only leading tenants/source/ becomes tenants/target/; retain old user and source-looking UUIDs within opaque suffix/filename.
+  2. Every stored reference resolves in target namespace; foreign or malformed prefix cannot be rewritten into an authorized target path.
+
+### S-0791 — Large pack chunk boundary
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Generate incompressible synthetic attachments so the encrypted pack is really over 8 MiB; upload in 4 MiB chunks and compare final hashes/counts.
+  2. Cover at/below 8 MiB and final short chunk; record actual byte sizes and upload method without publishing archives.
+
+### S-0792 — Interrupted chunk and size protections
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Exercise duplicate/out-of-order/missing chunks, cancelled upload, expired upload ID, foreign-owned upload ID and documented per-object/pack limits.
+  2. No premature files-applied marker, cross-tenant staging objects or unbounded leftovers; tunnel limit is an explicit skip, not a product pass.
+
+### S-0793 — Invalid object paths and bytes
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Traversal, backslash/NUL, foreign namespace, _archive internals and wrong object hashes cause no unsafe writes.
+  2. Invalid/skipped pack entries must not yield a false complete restore; count and integrity mismatch are visible and recoverable according to contract.
+
+### S-0794 — Storage failure recovery
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@files`
+- **Execution policy:** dedicated-backup
+
+  1. Simulate failed put after some objects in isolated storage; no false completion, lost existing bytes or unauthorized overwrite.
+  2. Retry fills only missing objects and audit accurately distinguishes partial from completed apply; do not assume S3 and DB form one transaction.
+
+### S-0795 — Thirty-day reminder boundaries
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@reminder`
+- **Execution policy:** dedicated-backup
+
+  1. Never exported and older than 30 days show reminder; test 29 days, exactly 30 and older than 30 using isolated clock fixtures.
+  2. Successful export updates reminder; no email cron is expected in v1 and restore is not silently treated as export.
+
+### S-0796 — No prepared pair and real storage failure
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@smoke`
+- **Execution policy:** dedicated-backup
+
+  1. Fresh eligible company Backup page loads with no latest.json/NoSuchKey; show usable empty state.
+  2. Genuine storage/auth/outage errors remain visible rather than silently claiming zero files; existing prepared pair does not prove this regression.
+
+### S-0797 — withFormPending success and error cleanup
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Helper emits pending before await and clears in finally on success and error, preserving returned value/error.
+  2. Run actual client DOM behavior separately; mocked window events do not prove timer, overlap or visible dismissal.
+
+### S-0798 — Backup overlay dismisses promptly
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Actual Create backup overlay may appear after 1.5 seconds; dismiss once operation/page is ready and both download controls remain usable.
+  2. No refresh needed; reaching the 45-second watchdog after work finished is a failure, not normal success.
+
+### S-0799 — Reverse and login overlay regression
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Fresh explicit login and supported reverse-one transaction journey complete without stuck overlay; preserve exactly one reversal and balanced net-zero journals.
+  2. Failed login/reverse also clears client pending; UI completion never substitutes for checking financial state or active identity.
+
+### S-0800 — Invoice payment and conversion saves
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Test server forms/shared Button and client async save paths for invoice, payment and quote conversion; overlay clears on success/error and controls re-enable.
+  2. Repeated clicks cannot double-post; verify document/journal/settlement counts and no unauthorised write regression.
+
+### S-0801 — Filters search and cancel do not arm busy
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Transaction GET filters, search, Cancel and non-submit buttons must not trigger global document submit capture or leave an overlay.
+  2. Use keyboard and repeated navigation; values/results remain usable without refresh and no writes occur.
+
+### S-0802 — Delay watchdog and long operation semantics
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Controlled short operation below 1.5 seconds has no flashing overlay; long operation shows it and maximum 45-second safeguard is observed.
+  2. Watchdog does not declare backend success, hide an error or enable duplicate financial writes; completed operation must dismiss before watchdog.
+
+### S-0803 — Pathname unmount and shared form cleanup
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. Navigate/unmount during pending and test shared Button/useFormStatus cleanup; old pending event does not stick over a ready new page.
+  2. Check sequential and overlapping forms without duplicate writes; one operation ending must not falsely represent another unfinished operation.
+
+### S-0804 — Accessible error retry and overlapping forms
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@overlay`
+- **Execution policy:** dedicated-backup
+
+  1. After failed backup/login/save, error remains accessible, focus/keyboard reach retry and pending overlay dismisses.
+  2. Retry and concurrent client tasks preserve correct pending state and do not lose input or permit multiple financial commits.
+
+### S-0805 — Mandatory unchanged core and physical regressions
+
+- **Priority:** P0
+- **Tags:** `@tenant-archive` `@core`
+- **Execution policy:** dedicated-backup
+
+  1. Run all existing 60 source and 49 PostgreSQL cases on this exact new candidate with unchanged money/security expectations.
+  2. Fresh browser cash sale, Viewer denial, reverse once and fresh-company Backup load remain required; retain allocation/tender/date/SKU/atomicity/reserved-driver guards and do not reopen BUG-0010–0016.
+
+<!-- tenant-archive-catalog:end -->

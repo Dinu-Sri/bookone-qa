@@ -9791,5 +9791,680 @@
       "@platform"
     ],
     "steps": []
+  },
+  {
+    "id": "S-0761",
+    "title": "Stamp and owner page smoke",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@stamp"
+    ],
+    "steps": [
+      "Match the live sidebar to the exact required stamp before any live test; record observed stamp separately from source pin.",
+      "Owner Backup page loads; an existing prepared pair is not proof of export or restore."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0762",
+    "title": "Fresh primary Owner identity",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@access"
+    ],
+    "steps": [
+      "Sign out and explicitly log in as a normal primary Owner; record alias, loaded role and tenant context without secrets.",
+      "Backup read/write work for Owner; a platform super-admin session alone does not establish normal Owner access."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0763",
+    "title": "Viewer cannot read or write backup",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@access"
+    ],
+    "steps": [
+      "Fresh Viewer cannot see or use Backup; directly exercise page and all prepare/download/restore/restore-files routes with real owned and foreign fixture records.",
+      "Copied grants, extra Owner job and allow-overrides do not confer backup access; denied requests leave DB, business audit and S3 unchanged."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0764",
+    "title": "Company Admin cannot acquire owner-only backup",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@access"
+    ],
+    "steps": [
+      "Test company Admin with RBAC on and off, extra Owner job, copied backup grants and allow-overrides; resolver, navigation and actual server denial are separate evidence.",
+      "Primary Owner positive control passes; Admin direct export/download/data/files requests deny with zero business mutations, even if UI is hidden."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0765",
+    "title": "Control Room requires platform super-admin",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@access"
+    ],
+    "steps": [
+      "Platform super-admin sees Overview, Companies, Modules, Access and ERP Health Check; normal company Admin and Owner do not gain these from company jobs.",
+      "Fresh non-platform sessions cannot directly load protected routes/actions; a nav helper pass is not server authorization proof."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0766",
+    "title": "Password and confirmation validation",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Test missing, 7-character, mismatched confirmation and over-128-character passwords; no prepared pair or business success audit is created.",
+      "At least 8 matching characters succeed; private password is never recorded in Git, screenshots, public logs or summaries."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0767",
+    "title": "Paired encrypted downloads and checksums",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Create and download both actual files; decrypt privately and independently compare exportId, schemaVersion 1 and cross-checksums against tables and object metadata.",
+      "Both downloads work and ciphertext differs for independent encryptions; extension/magic alone does not prove encryption or pair integrity."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0768",
+    "title": "Tenant export isolation",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Seed real foreign-tenant row and object sentinels; exported rows all belong to source A and tenant S3 pack excludes foreign objects and tenants/A/_archive/.",
+      "Verify isolation under the actual runtime DB role and prepared-download authorization; absence of nonexistent IDs is insufficient."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0769",
+    "title": "Archive and telemetry omit secrets and operator data",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Privately inspect actual decrypted payload for users/password_hash, other auth secrets, invites, ops logs and platform-only logs; none are included.",
+      "Check request logs, audit and stored prepare metadata do not retain the archive password; whitelist inspection alone does not certify actual export."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0770",
+    "title": "Complete multi-business golden snapshot",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Cover physical products/stock/layers, service/digital documents, rental events, POS, bank recon, settings and document templates with an independently recorded source ledger.",
+      "Export counts, quantities, money and relevant configuration match the source; test enabled/disabled modules and transformed references without weakening existing policies."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0771",
+    "title": "Snapshot consistency during posting",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "In an isolated DB run controlled concurrent posting and export; snapshot is wholly before or after the committed transaction.",
+      "No half-journal, mismatched stock/settlement or foreign pooled tenant state; preserve timing/barrier evidence and both positive controls."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0772",
+    "title": "Per-company prepare rate limit",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "One prepare per 120 seconds per company; attempt parallel owners, distinct workers and boundary times in isolation.",
+      "A second company remains independent; rejected prepare creates no extra usable pair and password values never become public evidence."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0773",
+    "title": "Prepared download expiry and ownership",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@export"
+    ],
+    "steps": [
+      "Test valid download before roughly 15-minute expiry, expired/missing token and wrong actor/tenant against actual routes.",
+      "Expired or unauthorized requests return no bytes; local metadata survives no longer than the documented validity and refreshed downloads do not extend access accidentally."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0774",
+    "title": "All trading families enforce emptiness",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "For each of 14 non-voided trading families, independently seed a fresh isolated target and assert the real SQL emptiness predicate blocks restore.",
+      "Signup CoA/jobs/owner membership alone remain eligible; verify voided-row policy from the contract and do not reset a company to make it empty."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0775",
+    "title": "Non-empty restore refusal",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Restore source A into A and a separately traded target; require: This company already has records. Create a new company and restore into that.",
+      "Before/after DB, CoA, identity, business audit and S3 remain unchanged; owner authorization does not permit merge or overwrite."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0776",
+    "title": "Wrong password and corrupt archive fail safely",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Wrong password, altered ciphertext, truncation and invalid format refuse before target writes.",
+      "Target seed state and operational emptiness remain intact; error is usable and retry is possible without publishing payload/password."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0777",
+    "title": "Schema kind checksum and compatibility gates",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Data route rejects files kind, wrong checksums, malformed/unknown tables and future schema; v1 identity transformation preserves valid data.",
+      "No restore from newer archive into older app; old exports and missing metadata need explicit contract-compatible policy, not silently reduced validation."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0778",
+    "title": "Real source A to empty B restore",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Create a new empty company B through supported signup/create flow; restore A data in browser and verify persisted records through supported UI and isolated backend where available.",
+      "All PK/FK UUIDs are remapped consistently, target tenant differs, source unchanged, no foreign row or source tenant_id reused; helper remap is not this journey."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0779",
+    "title": "Seed CoA jobs and document sequences",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Restore replaces signup seed CoA/jobs as specified without duplicate account codes or orphaned roles; settings/templates remain usable.",
+      "Create the next supported document after restore; sequence uniqueness and references survive without editing stored IDs or resetting trading tables."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0780",
+    "title": "Restorer ownership and teammate identity",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Restorer remains the authenticated primary Owner in target B; extra archive users and their dependent membership/scope/team rows are skipped.",
+      "No teammate passwords/auth sessions are restored; invite teammates again through supported flow and verify future attribution."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0781",
+    "title": "Independent accounting stock and subledger integrity",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Compare independently expected debit=credit and trialBalanceHash before and after restore, not totals computed only by the implementation under test.",
+      "Verify per-document totals, AR/AP/settlements, stock quantities and cost-layer valuation; a balanced trial balance alone is insufficient."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0782",
+    "title": "Failed restore rolls back completely",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Inject invalid journals/FKs, stock-layer and AR/AP/document inconsistencies plus a mid-insert failure in an isolated DB.",
+      "Every failure preserves original seed CoA/jobs/owner and empty trading state; no success marker, partial audit or file applicability remains."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0783",
+    "title": "Second data restore refused",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "After successful A to B data restore, repeat same or different data archive into B and require refusal.",
+      "Records, counts, sequence, owner and restore marker remain unchanged; first matching files pack is still allowed."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0784",
+    "title": "Concurrent data restores serialize safely",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@data"
+    ],
+    "steps": [
+      "Controlled simultaneous restores into one isolated eligible target permit at most one complete committed restore.",
+      "Losing request fails closed; no mixed UUID map, duplicated rows or mismatched restore marker; preserve real multi-connection evidence."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0785",
+    "title": "Matching files restore and open real attachments",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "After data restore upload the matching files pack; inspect target object keys and privately compare byte hashes to source receipt and product/document image.",
+      "Open attachments through supported UI as the authorized target user; source owner and foreign user cannot use target receipt URLs."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0786",
+    "title": "Data-only books and missing attachment UI",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "After data only, reports and books open with correct values; a tenants/ receipt lacking an object displays Missing attachment.",
+      "After matching pack apply, the same receipt opens and warning clears; missing object is not a leaked foreign object or a general storage outage."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0787",
+    "title": "Pair mismatch prior-data and cross-checksum guards",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "No prior data restore, wrong exportId and wrong files/data cross-checksums refuse before storage writes.",
+      "Compare actual route behavior with pure guards; legacy data restore missing filesSha metadata is a contract question requiring explicit compatibility acceptance."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0788",
+    "title": "Files pack applies at most once",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "A successful files application records the matching export once; replay refuses even if the filename is changed.",
+      "No duplicate writes/audit/success marker; partial failures do not masquerade as completed application."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0789",
+    "title": "Fill missing objects without overwrite",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Put a distinct target sentinel object before files apply; existing bytes/content type remain unchanged while missing valid objects are filled.",
+      "Use real MinIO and owner/non-owner controls; the in-memory store test is only partial evidence."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0790",
+    "title": "Prefix-only storage identity rewrite",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Only leading tenants/source/ becomes tenants/target/; retain old user and source-looking UUIDs within opaque suffix/filename.",
+      "Every stored reference resolves in target namespace; foreign or malformed prefix cannot be rewritten into an authorized target path."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0791",
+    "title": "Large pack chunk boundary",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Generate incompressible synthetic attachments so the encrypted pack is really over 8 MiB; upload in 4 MiB chunks and compare final hashes/counts.",
+      "Cover at/below 8 MiB and final short chunk; record actual byte sizes and upload method without publishing archives."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0792",
+    "title": "Interrupted chunk and size protections",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Exercise duplicate/out-of-order/missing chunks, cancelled upload, expired upload ID, foreign-owned upload ID and documented per-object/pack limits.",
+      "No premature files-applied marker, cross-tenant staging objects or unbounded leftovers; tunnel limit is an explicit skip, not a product pass."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0793",
+    "title": "Invalid object paths and bytes",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Traversal, backslash/NUL, foreign namespace, _archive internals and wrong object hashes cause no unsafe writes.",
+      "Invalid/skipped pack entries must not yield a false complete restore; count and integrity mismatch are visible and recoverable according to contract."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0794",
+    "title": "Storage failure recovery",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@files"
+    ],
+    "steps": [
+      "Simulate failed put after some objects in isolated storage; no false completion, lost existing bytes or unauthorized overwrite.",
+      "Retry fills only missing objects and audit accurately distinguishes partial from completed apply; do not assume S3 and DB form one transaction."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0795",
+    "title": "Thirty-day reminder boundaries",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@reminder"
+    ],
+    "steps": [
+      "Never exported and older than 30 days show reminder; test 29 days, exactly 30 and older than 30 using isolated clock fixtures.",
+      "Successful export updates reminder; no email cron is expected in v1 and restore is not silently treated as export."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0796",
+    "title": "No prepared pair and real storage failure",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@smoke"
+    ],
+    "steps": [
+      "Fresh eligible company Backup page loads with no latest.json/NoSuchKey; show usable empty state.",
+      "Genuine storage/auth/outage errors remain visible rather than silently claiming zero files; existing prepared pair does not prove this regression."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0797",
+    "title": "withFormPending success and error cleanup",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Helper emits pending before await and clears in finally on success and error, preserving returned value/error.",
+      "Run actual client DOM behavior separately; mocked window events do not prove timer, overlap or visible dismissal."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0798",
+    "title": "Backup overlay dismisses promptly",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Actual Create backup overlay may appear after 1.5 seconds; dismiss once operation/page is ready and both download controls remain usable.",
+      "No refresh needed; reaching the 45-second watchdog after work finished is a failure, not normal success."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0799",
+    "title": "Reverse and login overlay regression",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Fresh explicit login and supported reverse-one transaction journey complete without stuck overlay; preserve exactly one reversal and balanced net-zero journals.",
+      "Failed login/reverse also clears client pending; UI completion never substitutes for checking financial state or active identity."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0800",
+    "title": "Invoice payment and conversion saves",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Test server forms/shared Button and client async save paths for invoice, payment and quote conversion; overlay clears on success/error and controls re-enable.",
+      "Repeated clicks cannot double-post; verify document/journal/settlement counts and no unauthorised write regression."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0801",
+    "title": "Filters search and cancel do not arm busy",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Transaction GET filters, search, Cancel and non-submit buttons must not trigger global document submit capture or leave an overlay.",
+      "Use keyboard and repeated navigation; values/results remain usable without refresh and no writes occur."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0802",
+    "title": "Delay watchdog and long operation semantics",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Controlled short operation below 1.5 seconds has no flashing overlay; long operation shows it and maximum 45-second safeguard is observed.",
+      "Watchdog does not declare backend success, hide an error or enable duplicate financial writes; completed operation must dismiss before watchdog."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0803",
+    "title": "Pathname unmount and shared form cleanup",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "Navigate/unmount during pending and test shared Button/useFormStatus cleanup; old pending event does not stick over a ready new page.",
+      "Check sequential and overlapping forms without duplicate writes; one operation ending must not falsely represent another unfinished operation."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0804",
+    "title": "Accessible error retry and overlapping forms",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@overlay"
+    ],
+    "steps": [
+      "After failed backup/login/save, error remains accessible, focus/keyboard reach retry and pending overlay dismisses.",
+      "Retry and concurrent client tasks preserve correct pending state and do not lose input or permit multiple financial commits."
+    ],
+    "executionPolicy": "dedicated-backup"
+  },
+  {
+    "id": "S-0805",
+    "title": "Mandatory unchanged core and physical regressions",
+    "section": "32. Tenant archive and form overlay",
+    "priority": "P0",
+    "tags": [
+      "@tenant-archive",
+      "@core"
+    ],
+    "steps": [
+      "Run all existing 60 source and 49 PostgreSQL cases on this exact new candidate with unchanged money/security expectations.",
+      "Fresh browser cash sale, Viewer denial, reverse once and fresh-company Backup load remain required; retain allocation/tender/date/SKU/atomicity/reserved-driver guards and do not reopen BUG-0010–0016."
+    ],
+    "executionPolicy": "dedicated-backup"
   }
 ]
