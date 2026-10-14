@@ -5,6 +5,7 @@ const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const book=read('rules/rulebook.json');
 const hash=createHash('sha256').update(readFileSync('rules/rulebook.json')).digest('hex');
 const sourceMap=new Map(book.sources.map(s=>[s.id,s]));
+const productPrepared=existsSync('work/product/VERSION');
 const esc=s=>String(s).replaceAll('|','\\|').replaceAll('\n',' ');
 function render(){
  let md=`# BookOne business rulebook ${book.rulebookVersion}\n\nGenerated from [the editable rule register](../../rules/rulebook.json). Edit the register, then run \`pnpm rulebook:render\`; do not maintain a second set of rule text here.\n\nJurisdiction: Sri Lanka. Policy baseline: ${book.effectivePolicyFrom}. Last reviewed for extraction: ${book.updatedAt}. **No independent expert approval or product acceptance is implied.**\n\nRead [how to use and change this book](README.md), [expert review queue](REVIEW.md) and [source study](STUDY.md). Product study: v2.5.3 ${book.productStudy.baselineSha.slice(0,7)} plus v2.5.4 ${book.productStudy.latestDiffSha.slice(0,7)} diff. Executed QA pin stays v2.5.3.\n\n## Status meanings\n\n- **product-contract**: extracted intended contract or preserved mandatory invariant. It may still fail in the product.\n- **adopted-default**: a non-statutory choice adopted under the owner's 2026-10-14 delegation. Effective for future specifications; compatibility and implementation review required.\n- **external-requirement**: short official-source requirement with qualified applicability; expert interpretation remains pending.\n- **open-review**: unresolved legal scope or contradictory contracts; no compliance acceptance inferred.\n\n## Rule index\n\n| ID | Topic | Status | Expert review |\n|---|---|---|---|\n`;
@@ -28,7 +29,7 @@ function validate(){
  for(const s of book.sources){
   assert.ok(s.id&&s.locator&&s.limitation);assert.match(s.checkedAt,/^\d{4}-\d{2}-\d{2}$/);
   if(s.url)assert.ok(/^https:\/\//.test(s.url),`Invalid source URL ${s.id}`);
-  if(s.kind==='product'){assert.match(s.productSha,/^[a-f0-9]{40}$/);assert.ok(s.url.includes(s.productSha));assert.ok(existsSync(`work/product/${s.path}`)||s.productSha===book.productStudy.latestDiffSha,`Missing studied source ${s.path}`);}
+  if(s.kind==='product'){assert.match(s.productSha,/^[a-f0-9]{40}$/);assert.ok(s.url.includes(s.productSha));assert.ok(s.path&&!s.path.startsWith('/')&&!s.path.split('/').includes('..'));if(productPrepared&&s.productSha===book.productStudy.baselineSha)assert.ok(existsSync(`work/product/${s.path}`),`Missing studied source ${s.path}`);}
  }
  for(const r of book.rules){
   assert.ok(!ids.has(r.id),`Duplicate rule ${r.id}`);ids.add(r.id);
@@ -47,7 +48,7 @@ function validate(){
  // Keep all inherited BR IDs: stable mapping is not a new assertion or acceptance.
  for(const id of ['BR-ACC-01','BR-ACC-02','BR-ACC-03','BR-ACC-04','BR-ACC-05','BR-ACC-06','BR-ACC-07','BR-ACC-08','BR-SAL-01','BR-SAL-02','BR-SAL-03','BR-PUR-01','BR-PUR-02','BR-STK-01','BR-STK-02','BR-STK-03','BR-REN-01','BR-REN-02','BR-REN-03','BR-REN-04','BR-SEC-01','BR-SEC-02','BR-DAT-01','BR-DAT-02','BR-DAT-03','BR-IMP-01','BR-AUD-01'])assert.ok(ids.has(id),`Lost legacy rule ${id}`);
  assert.equal(readFileSync('docs/rulebook/RULES.md','utf8'),render(),'Rulebook view stale; run pnpm rulebook:render');
- return {rules:ids.size,sources:sourceMap.size,rulebookVersion:book.rulebookVersion,rulebookHash:hash,productAcceptance:'not-established',expertApproval:'not-established'};
+ return {rules:ids.size,sources:sourceMap.size,rulebookVersion:book.rulebookVersion,rulebookHash:hash,localSourcePaths:productPrepared?'baseline-present; newer-diff sources referenced separately':'not-prepared; metadata-only',productAcceptance:'not-established',expertApproval:'not-established'};
 }
 if(process.argv[2]==='render'){writeFileSync('docs/rulebook/RULES.md',render());console.log('Rulebook view regenerated.');}
 else console.log(JSON.stringify(validate(),null,2));
