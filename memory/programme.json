@@ -163,7 +163,7 @@
     "releaseScope": "separate-owner-policy-pending"
   },
   "implementedRuntimeLayers": {
-    "physical": "Actual product commands at owner and non-owner NOBYPASSRLS DB role, seeded masters/settings and synthetic session;9 passing/4 failing patterns per role",
+    "physical": "Actual product commands at Owner and non-owner NOBYPASSRLS DB role, seeded masters/settings and synthetic session;13 passing scenarios per role on5becb2d; wider HTTP/browser/race/fault coverage open.",
     "commercial": "Existing service/digital/credit owner action lane; actual non-owner business depth remains partial",
     "reversal": "Existing owner action contention lane; non-owner concurrent reversal remains open"
   },
