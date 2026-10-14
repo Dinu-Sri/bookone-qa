@@ -4,7 +4,7 @@ P1, launch-critical tax applicability gate open. Candidate **v2.5.5 · 8e1a2b8**
 
 ## Fixture validity correction before acceptance
 
-Initial run stored unsupported product taxStatus=`taxable` and customer registration was a name/declaration, not an explicit stored status. Product UI supports `standard` and party status `unregistered`. First monetary observation below is preserved, but it does not confirm the properly classified tax-style finding. Follow-up corrects both fields and asserts actual stored source classifications; fresh execution pending. Treat this group as provisional until that supported fixture reproduces it. Other arithmetic failures do not certify tax classification either.
+Initial run stored unsupported product taxStatus=`taxable` and customer registration was a name/declaration, not an explicit stored status. Product UI supports `standard` and party status `unregistered`. The first result was provisional and stays immutable. Corrected [PG follow-up](../runs/RUN-2026-10-14T12-20-56-750Z-runtime.json) now asserts/observes productStandard1/customerUnregistered1 and still reproduces tax0/total100 versus18/118. Status: **confirmed at bounded command layer on supported fixture**, not a statutory eligibility/format or real-login certificate. Other initial arithmetic positives did not certify classification.
 
 Changing only invoiceKind to commercial creates total/AR100, tax0, output VAT0. Independently expected taxable result is100+18=118, output VAT credit18, AR118. Tax-invoice arithmetic positives pass; the style-selection path omits the liability. Source loadSalesVatConfig/effectiveVatRate gates VAT on invoiceKind rather than underlying taxable classification.
 

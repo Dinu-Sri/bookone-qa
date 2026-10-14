@@ -137,16 +137,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Repair sales-value bugs and rerun; exact receipt and repeated cash refund follow-up pending; real auth/UI/print/export/tax modes remain open.",
+      "next": "Repair source return/refund/tax/discount/tender defects and retest; real auth/UI/print/export and tax eligibility/price modes remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
       "latestAttempt": {
         "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
-        "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+        "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
         "status": "failed",
-        "scope": "bounded-owner-product-command; sales credits/refunds fail; no full workflow acceptance"
+        "scope": "bounded-owner product command; full61partial/76unbound workflows not accepted"
       }
     },
     {
@@ -336,16 +336,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Repair sales-value bugs and rerun; exact receipt and repeated cash refund follow-up pending; real auth/UI/print/export/tax modes remain open.",
+      "next": "Repair source return/refund/tax/discount/tender defects and retest; real auth/UI/print/export and tax eligibility/price modes remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
-      "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
       "latestAttempt": {
         "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
-        "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+        "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
         "status": "passed",
-        "scope": "bounded-owner-product-command; sales credits/refunds fail; no full workflow acceptance"
+        "scope": "bounded-owner product command; full61partial/76unbound workflows not accepted"
       }
     },
     {

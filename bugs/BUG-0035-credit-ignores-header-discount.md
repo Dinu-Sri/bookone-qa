@@ -9,3 +9,5 @@ Source: commercial-docs passes saleLines to buildSalesReturnPosting, whose input
 Required adjacent controls: partial returns/proportional header discount and remainder, multiple lines/rates if supported, changed tax/master settings, paid vs unpaid sources, repeat/full return limits, fault rollback and print/export agreement. Original VAT snapshot positive RT-033 passes.
 
 [PG](../runs/RUN-2026-10-14T12-05-27-247Z-runtime.json), [campaign](../runs/CAMP-20261014-120513142-57ddba.json). No live staging writes or statutory-format acceptance. Existing rulebook hash unchanged.
+
+Supported standard/unregistered fixture [follow-up](../runs/RUN-2026-10-14T12-20-56-750Z-runtime.json) reproduces the same448.40/35.40 excess; first evidence remains immutable.

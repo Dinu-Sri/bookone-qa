@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "executed280:265-pass-15-fail-0-skip;106PG91-pass-15-fail; planned281/107PG cash followup; no-full-workflow-acceptance",
+  "implementationStatus": "281executed:265pass-16fail-0skip;107PG91pass-16fail; eleven-bounded-findings; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261014-120513142-57ddba.json",
+  "lastRetestRecord": "runs/CAMP-20261014-122046193-dc4024.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -62,8 +62,7 @@
     "BUG-0040"
   ],
   "nextActions": [
-    "Execute RT-041 cash-repeat and stronger B-105 receipt-history follow-up; preserve initial280-case result.",
-    "Coding agent: repair eleven recorded readiness groups across three handoffs, pin next candidate and independently retest core+adjacent outcomes.",
+    "Coding agent: repair eleven groups across three handoffs, prioritising repeated cash payout/source budget, original discount/cost/tax and tender/state coherence; pin next candidate and retest all281 outcomes.",
     "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
     "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
     "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
@@ -319,20 +318,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-120513142-57ddba.json",
-    "ci": 38561135054,
+    "record": "runs/CAMP-20261014-122046193-dc4024.json",
+    "ci": 38563023360,
     "passed": 265,
-    "failed": 15,
+    "failed": 16,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
-    "runtimeCi": 38561135013,
+    "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+    "runtimeCi": 38563023399,
     "unitPassed": 98,
     "runtimePassed": 91,
-    "runtimeCases": 106,
-    "qaImplementation": "945c10bfa011d396d2e0358ccd0be7af9d935715",
-    "qaTestedMerge": "9431b4985e37f286fd47b2ed2ce20620d0087120",
-    "qaContentHash": "8538e2d6abe167c60da9f00793f97cd7790b92287e3cac2ee829dd2b2e8079d3",
+    "runtimeCases": 107,
+    "qaImplementation": "3ab4f6fa01b04a42e6517f01de118c0a891e3fe5",
+    "qaTestedMerge": "7a11169baeebf5de8e3a8e2ff19184e39c725719",
+    "qaContentHash": "936f52304e3e75ab58497b434b6e8699cd11604f1a5cd32ee0a14f06495b4b03",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   },
@@ -379,7 +378,20 @@
   "salesFixtureValidity": {
     "initial": "RT-035 unsupported product taxable enum/customer status not explicitly stored; initial tax classification unverified",
     "correction": "standard product + unregistered person/customer seeded/asserted; expected VAT unchanged",
-    "status": "corrected-107PG/281campaign execution pending",
-    "bug": "BUG-0036 provisional"
+    "status": "supported classification fields asserted in corrected PG; VAT omission reproduced; expert/format/credential acceptance still open",
+    "bug": "BUG-0036 bounded-confirmed"
+  },
+  "salesValueFollowup": {
+    "record": "runs/CAMP-20261014-122046193-dc4024.json",
+    "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+    "bugsConfirmed": [
+      "BUG-0036-supported-classification",
+      "BUG-0038-cash-repeat",
+      "BUG-0039-credit-state"
+    ],
+    "failedNewCase": "RT-041",
+    "receiptEqualityObserved": 1,
+    "receiptCaseOverall": "failed",
+    "scope": "actual isolated owner command/synthetic sessions; no deployed/credential/full-workflow acceptance"
   }
 }

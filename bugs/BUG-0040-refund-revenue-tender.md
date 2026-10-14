@@ -7,3 +7,5 @@ After paying a100 invoice in cash, submit linked full return with paymentAccount
 Commercial generic posting resolves the named account but ordinary refund needs the same purpose/ownership/state/scope guard as valid money operations. Repair shared authoritative guard before durable writes; keep cash/bank/card/custom liquid positives and Viewer/module/tenant/period denials.
 
 [PG](../runs/RUN-2026-10-14T12-05-27-247Z-runtime.json), [campaign](../runs/CAMP-20261014-120513142-57ddba.json). Actual isolated SQL/product commands with synthetic session; no actual credential/UI attribution or staging writes.
+
+Corrected fixture [follow-up](../runs/RUN-2026-10-14T12-20-56-750Z-runtime.json) reproduces acceptance and cash100 unchanged. Original cash-sale/payment4000 denial regressions still pass; keep this ordinary refund path separately tracked.
