@@ -9,3 +9,9 @@ Add six separately discoverable cases: C-111 FIFO and RT-032 average varying-pri
 Expected C-111/RT-032 inventory after issue: FIFO1100/average1050, qty15. RT-028/030/031 return1 source cost: FIFO60/average70/last80; total acquisitions2400, inventory2400 minus original issue plus original return; qty26, AR400. RT-029 refused late receipt leaves original FIFO300 issue and all snapshotted business rows unchanged, inventory1100/qty15. Controlled restatement/closed-period exceptions remain open, as do source layer restoration mapping and full credential/browser lifecycle. Rules BR-STK-02/BR-DAT-01 govern source-cost/history expectations.
 
 Keep original90 PG and264 campaign slots intact; total96 PG/270 campaign assertions. C-111 gains only a partial command binding, not full workflow acceptance. Execute fresh isolated CI, preserve results, then classify actual failure before writing a defect. No company-reset SQL or shared staging fault/race.
+
+## First independent outcomes
+
+CI38559060658 [campaign](../runs/CAMP-20261014-114805477-fc2c22.json):262pass/8fail/0skip/0block. CI38559060570 [PG](../runs/RUN-2026-10-14T11-48-13-404Z-runtime.json):88/96pass; new lane2pass/4fail. FIFO/average issue outcomes pass. All three source-cost return variants fail (BUG-0033); ordinary backdate accepts (BUG-0034 adoption gap). Original source sale cost remains unchanged. Snapshot diagnostic historyUnchanged is a whole-business equality check, not proof that old journal rows were rewritten. Read the new coding handoff and exact fingerprints. Original90 cases preserve86pass/4fail; no new infrastructure failure.
+
+Latest evidence-only update cleans STATUS/SESSION indexes and preserves full preceding text in memory/history; immutable reports and rulebook expectations are unchanged. Current137 workflow accounting:59partial bindings/78unbound/zero accepted. Actual browser/normal-role/restore and external expert/operator gates still pending.

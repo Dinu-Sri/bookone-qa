@@ -24,13 +24,13 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "original-repros-bounded-pass; four-adjacent-assertions-failing",
+      "status": "original-repros-bounded-pass; eight-adjacent-assertions-failing",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
       "id": "G-PHYSICAL",
       "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
-      "status": "pending-full-acceptance",
+      "status": "original-cost-return-defect; backdate-policy-adoption-gap; full-acceptance-pending",
       "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
     },
     {
@@ -84,7 +84,7 @@
     }
   ],
   "nextActions": [
-    "Execute new FIFO/average and linked historical return boundaries on pinned8e1a2b8; no previous positive establishes varied-price correctness.",
+    "Coding agent: repair five readiness finding groups across both handoffs; pin new product and retest original plus adjacent assertions. Current270 executed/8fail/0skip.",
     "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
     "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
     "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
@@ -142,6 +142,24 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
+    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
+    "ci": 38559060658,
+    "passed": 262,
+    "failed": 8,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+    "runtimeCi": 38559060570,
+    "unitPassed": 98,
+    "runtimePassed": 88,
+    "runtimeCases": 96,
+    "qaImplementation": "a15b7b9eb168cf88e470aff91ab72ddb4864c8c2",
+    "qaTestedMerge": "f6cf4fd4f545d546021228073f105ae85e96ae9c",
+    "qaContentHash": "f1af4c267c31504f45cc1c964394c0b4f846511d52f0c7b8155290e6638467a0",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+  },
+  "priorCampaign": {
     "record": "runs/CAMP-20261014-113321106-568961.json",
     "ci": 38557308389,
     "passed": 260,
@@ -158,5 +176,32 @@
     "qaContentHash": "86dccfaa2fc0025412f0c645d2d36f72e6cde5848efec4f39a1dadb9f5c940b5",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
-  }
+  },
+  "inventoryBoundaryRetest": {
+    "handoff": "handoffs/HANDOFF-20261014-variable-cost-readiness.md",
+    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
+    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
+    "passed": [
+      "C-111",
+      "RT-032"
+    ],
+    "failed": [
+      "RT-028",
+      "RT-030",
+      "RT-031",
+      "RT-029"
+    ],
+    "bugs": [
+      "BUG-0033",
+      "BUG-0034"
+    ],
+    "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
+  },
+  "activeReadinessFindings": [
+    "BUG-0031",
+    "BUG-0032",
+    "BUG-0024-current-checksum-omission",
+    "BUG-0033",
+    "BUG-0034"
+  ]
 }
