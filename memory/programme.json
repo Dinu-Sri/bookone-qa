@@ -4,11 +4,11 @@
   "strategyDecision": "decisions/ADR-20261013-batch-testing.md",
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
-  "currentBatch": "C",
-  "implementationStatus": "backup45-planned; source60-pass; PG49-pass; archive-helpers15-pass-1-fail; full-restore-unverified",
+  "currentBatch": "full-campaign",
+  "implementationStatus": "unified259-slots:242-pass-13-fail-4-optional-skips;85-PG73-pass-12-fail; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/RUN-20261014-backup-plan-16.md",
+  "lastRetestRecord": "runs/RUN-20261014-full-campaign-17.md",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -40,15 +40,23 @@
     "BUG-0018",
     "BUG-0019",
     "BUG-0020",
-    "BUG-0021"
+    "BUG-0021",
+    "BUG-0022",
+    "BUG-0023",
+    "BUG-0024",
+    "BUG-0025",
+    "BUG-0026",
+    "BUG-0027",
+    "BUG-0028",
+    "BUG-0029",
+    "BUG-0030"
   ],
   "nextActions": [
-    "Read backup contract, QA guide and plan; verify stamp again before each live phase.",
-    "All60 source and49 PostgreSQL pass on5becb2d at their explicit boundaries; preserve unchanged0010Ã¢â‚¬â€œ16 guards and completed physical bounded fixes.",
-    "Coding agent repairs BUG0021/S0764 owner-only RBAC-off resolver and clarifies archive integrity/legacy-checksum/incomplete-files risks; route exposure remains unestablished.",
-    "Implement isolated restore persistence, rollback, stock/AR/AP and races before acceptance.",
-    "Fresh verified normal Owner/Viewer/Admin with synthetic source A receipts/images and brand-new empty B; execute export/data/files browser journey privately.",
-    "Keep physical/service/digital/rental/mixed/settings/users/files/upgrade/recovery scope from existing programme."
+    "Coding agent repairs0022–0030 and existing0021 by shared permission/tender, lock/transaction, archive-integrity/pair and idempotency boundaries; preserve original assertions.",
+    "Read RUN17 and full-campaign handoff; examine product diff/CHGs, update pin+required stamp deliberately and rerun all259 slots on fresh isolated PostgreSQL.",
+    "Owner/coding agent define unresolved business policies before policy-specific acceptance; question remains pending.",
+    "Continue80 unbound workflows and remaining layers of57 partial workflows: actual credential/browser/MinIO, settings/scopes, varied costs, rental/mixed/POS/import, historical upgrades and operator recovery.",
+    "Before live writes freshly verify sidebar/actor; use supported run-owned fixtures/new empty restore target, no company reset SQL or payment replay."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -103,25 +111,35 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-    "qaImplementationSha": "a9d3cdd21cac02a70d9133babef8e93622f2e9e4",
-    "testedPrMergeSha": "bf95c9a699e06755614750999673ba42ac7be840",
-    "run": 38513838890,
-    "result": "49-pass-0-fail",
+    "qaImplementationSha": "e784308722853610ec6bcbad71b617fe8eff86d3",
+    "testedPrMergeSha": "026621dab661b0fcb21aa473338ce1eed10aa384",
+    "run": 38522803216,
+    "result": "73-pass-12-fail",
+    "originalCore": "49-pass-0-fail",
     "schema": "current-Drizzle-plus-all43-SQL-PostgreSQL16.15",
-    "scope": "core-and-physical-owner-nonowner; synthetic-login; no-archive-restore-or-deployed-acceptance"
+    "scope": "isolated-owner and original nonowner; synthetic login; archive files memory store; no deployed acceptance"
   },
   "configurationMatrix": "batches/configuration-matrix.json",
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261014-backup-plan.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261014-full-campaign-findings.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
-    "BUG-0021"
+    "BUG-0021",
+    "BUG-0022",
+    "BUG-0023",
+    "BUG-0024",
+    "BUG-0025",
+    "BUG-0026",
+    "BUG-0027",
+    "BUG-0028",
+    "BUG-0029",
+    "BUG-0030"
   ],
   "verifiedBoundedFixes": [
     "BUG-0010",
@@ -147,7 +165,19 @@
     "BUG-0020": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open."
   },
   "currentFailedExecutableCases": [
-    "S-0764"
+    "S-0764",
+    "B-106",
+    "B-107",
+    "S-0782",
+    "S-0787",
+    "S-0793",
+    "D-117",
+    "D-118",
+    "RT-023",
+    "E-104",
+    "C-109",
+    "RT-021",
+    "RT-022"
   ],
   "ownerTestingScope": {
     "businessTypes": [
@@ -202,7 +232,7 @@
     "guide": "docs/FULL_CAMPAIGN.md",
     "decision": "decisions/ADR-20261014-coordinated-campaign.md",
     "scope": "137-defined-workflows",
-    "status": "first-attempt-preserved; corrected-archive-import-and-configured-rental-locations;85-runtime-followup-pending",
+    "status": "executed-with-nine-new-defect-groups-plus-existing0021",
     "retainedUnitCases": 98,
     "sourceCases": 60,
     "runtimeCases": 85,
@@ -215,6 +245,25 @@
       "aggregate": "runs/CAMP-20261014-055217021-fa0574-observed.json",
       "runtime": "runs/RUN-2026-10-14T05-52-04-763Z-runtime.json",
       "result": "230-pass-8-fail-14-blocked-4-optional-skips"
-    }
+    },
+    "latestReviewed": "runs/CAMP-20261014-063301088-3efa1c.json",
+    "latestRuntime": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+    "workflow": 38522803612,
+    "implementationSha": "e784308722853610ec6bcbad71b617fe8eff86d3",
+    "testedMergeSha": "026621dab661b0fcb21aa473338ce1eed10aa384",
+    "assertionSlots": 259,
+    "totals": {
+      "passed": 242,
+      "failed": 13,
+      "blocked": 0,
+      "skipped": 4,
+      "flaky": 0,
+      "not-run": 0
+    },
+    "definedWorkflows": 137,
+    "partiallyBoundWorkflows": 57,
+    "unboundWorkflows": 80,
+    "acceptedFullWorkflows": 0,
+    "policyOwnershipQuestion": "pending-owner-response"
   }
 }

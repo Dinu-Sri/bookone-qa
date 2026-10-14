@@ -1,3 +1,7 @@
+# Full campaign findings — 2026-10-14
+
+Current reviewed campaign:259 slots,242 pass/13 fail/4 optional skips; no infrastructure blocks. Original60 source and49 DB core still pass; deeper tests expose nine new groups0022–0030 plus contained0021. Read RUN17, docs/FULL_CAMPAIGN.md, latest CAMP in programme and HANDOFF-20261014-full-campaign-findings. Full137 workflows remain unaccepted (57 partially bound,80 unbound); policy question pending. Current live image must be freshly verified; last tab text did not expose a stamp. No live mutations in this campaign.
+
 # Unified campaign implementation — 2026-10-14
 
 Current work: one coordinated campaign across all modules. Read docs/FULL_CAMPAIGN.md, campaigns/full.json and the latest CAMP run in memory/programme.json. First local orchestration preserved169 pass/1 archive-helper fail/81 runtime blocked (no local PG)/4 inherited optional unit skips. New isolated runtime manifest now82 assertions (original49 plus33); real execution remains pending CI. All137 defined full workflows remain unaccepted; missing adapters/layers and policies must remain visible. Do not reuse RUN-16 passes as proof of new cases.
