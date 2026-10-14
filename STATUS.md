@@ -1,3 +1,7 @@
+## Active sales-value boundary wave
+
+Ten new cases planned on unchanged v2.5.5 · 8e1a2b8: tax/discount service+digital, original VAT credit, discounted full return, standard taxable commercial style, excessive discounts, cumulative return, paid refund and invalid tender. Source plan: changes/CHG-20261014-sales-value-boundaries.md. Original270 assertions preserved;280 planned/106PG. No new pass/defect claimed before CI.
+
 # BookOne customer-readiness status
 
 Customer readiness is **not certified**. Requested scope remains physical, service/digital, rental, mixed, settings/roles/files/history/recovery, physical goods first.

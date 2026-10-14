@@ -187,6 +187,24 @@
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-product-command-synthetic-session"
+    },
+    {
+      "name": "sales-value-boundaries",
+      "file": "tests/runtime/sales-value-boundaries.test.ts",
+      "expected": [
+        "B-114",
+        "RT-040",
+        "RT-033",
+        "RT-034",
+        "RT-035",
+        "RT-036",
+        "RT-037",
+        "RT-038",
+        "B-105",
+        "RT-039"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-product-command-synthetic-session"
     }
   ]
 }
