@@ -1,6 +1,6 @@
 # Current candidate: tenant archive plan — 2026-10-14
 
-Candidate and live sidebar: **v2.5.3 · 5becb2d**. Read [RUN-16](runs/RUN-20261014-backup-plan-16.md), [backup guide](docs/TENANT_ARCHIVE_QA.md) and [coding handoff](handoffs/HANDOFF-20261014-backup-plan.md). Added45 dedicated scenarios and16 partial helper checks; first helper result15 pass/1 fail (S-0764 RBAC-off Admin resolver). Actual route exposure not established because a separate Owner guard exists. Full restore/browser acceptance remains unverified. All old60-source/49-runtime assertions retained; source60 now pass after a preserved first HEAD-adapter failure; runtime49 and physical-fix closure remain pending. No staging writes/reset/downloads.
+Candidate and live sidebar: **v2.5.3 · 5becb2d**. Read [RUN-16](runs/RUN-20261014-backup-plan-16.md), [backup guide](docs/TENANT_ARCHIVE_QA.md) and [coding handoff](handoffs/HANDOFF-20261014-backup-plan.md). Added45 dedicated scenarios and16 partial helper checks; first helper result15 pass/1 fail (S-0764 RBAC-off Admin resolver). Actual route exposure not established because a separate Owner guard exists. Full restore/browser acceptance remains unverified. All old60-source/49-runtime assertions retained; source60 now pass after a preserved first HEAD-adapter failure; runtime49 now pass, including bounded physical0018/19/20 fixes at both DB roles. BUG-0021 is the remaining source-helper finding. No staging writes/reset/downloads.
 
 # QA status — updated 2026-10-13
 

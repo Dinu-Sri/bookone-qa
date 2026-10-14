@@ -5,17 +5,18 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "C",
-  "implementationStatus": "backup-plan-45; source60-pass; archive-helpers15-pass-1-fail; runtime49-retest-pending",
+  "implementationStatus": "backup45-planned; source60-pass; PG49-pass; archive-helpers15-pass-1-fail; full-restore-unverified",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
   "lastRetestRecord": "runs/RUN-20261014-backup-plan-16.md",
   "lastCleanSourceCi": {
-    "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-    "qaSha": "3bd28e2a20478029f57583889239f2f13a7931d1",
-    "qaValidationRun": 38406075283,
-    "candidateBatchRun": 38406074753,
+    "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
+    "qaImplementationSha": "a9d3cdd21cac02a70d9133babef8e93622f2e9e4",
+    "qaValidationRun": 38513838872,
+    "candidateBatchRun": 38513838913,
     "candidateResult": "15-pass-0-fail",
-    "deepBatchRun": 38406075898,
+    "deepBatchRun": 38513838984,
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
@@ -38,12 +39,13 @@
     "BUG-0017",
     "BUG-0018",
     "BUG-0019",
-    "BUG-0020"
+    "BUG-0020",
+    "BUG-0021"
   ],
   "nextActions": [
     "Read backup contract, QA guide and plan; verify stamp again before each live phase.",
-    "All60 source passed after faithful HEAD SDK adapter update; exact-candidate49 PostgreSQL and credential/browser/restore remain pending.",
-    "Investigate S0764 RBAC-off company Admin resolver grant; independent route owner guard means actual exposure is not established.",
+    "All60 source and49 PostgreSQL pass on5becb2d at their explicit boundaries; preserve unchanged0010–16 guards and completed physical bounded fixes.",
+    "Coding agent repairs BUG0021/S0764 owner-only RBAC-off resolver and clarifies archive integrity/legacy-checksum/incomplete-files risks; route exposure remains unestablished.",
     "Implement isolated restore persistence, rollback, stock/AR/AP and races before acceptance.",
     "Fresh verified normal Owner/Viewer/Admin with synthetic source A receipts/images and brand-new empty B; execute export/data/files browser journey privately.",
     "Keep physical/service/digital/rental/mixed/settings/users/files/upgrade/recovery scope from existing programme."
@@ -101,16 +103,16 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-13T13-35-15-781Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-14T04-55-18-559Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
-    "productSha": "343d546ed41f7790e1fc45414d130012dab37a39",
-    "qaImplementationSha": "3bd28e2a20478029f57583889239f2f13a7931d1",
-    "testedPrMergeSha": "f0e5b6d267d4d9f8bb514ba3d7fc7abaf7a4ffdb",
-    "run": 38406074817,
-    "result": "41-pass-8-fail",
-    "schema": "current-Drizzle-plus-all42-SQL-PostgreSQL16.15",
-    "scope": "23-core-pass;13-physical-scenarios-owner-and-nonowner;synthetic-login;no-deployed-acceptance"
+    "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+    "qaImplementationSha": "a9d3cdd21cac02a70d9133babef8e93622f2e9e4",
+    "testedPrMergeSha": "bf95c9a699e06755614750999673ba42ac7be840",
+    "run": 38513838890,
+    "result": "49-pass-0-fail",
+    "schema": "current-Drizzle-plus-all43-SQL-PostgreSQL16.15",
+    "scope": "core-and-physical-owner-nonowner; synthetic-login; no-archive-restore-or-deployed-acceptance"
   },
   "configurationMatrix": "batches/configuration-matrix.json",
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
@@ -119,9 +121,7 @@
   "currentCodingHandoff": "handoffs/HANDOFF-20261014-backup-plan.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
-    "BUG-0018",
-    "BUG-0019",
-    "BUG-0020"
+    "BUG-0021"
   ],
   "verifiedBoundedFixes": [
     "BUG-0010",
@@ -131,24 +131,23 @@
     "BUG-0014",
     "BUG-0015",
     "BUG-0016",
-    "BUG-0017"
+    "BUG-0017",
+    "BUG-0018",
+    "BUG-0019",
+    "BUG-0020"
   ],
   "boundedFixLimits": {
     "BUG-0010/11": "Current source and owner-connected persisted-role payment/scope positives and denials pass; actual non-owner HTTP/login remains open.",
     "BUG-0012": "F-004/009/010 source calendars pass; real import/reconciliation remains open.",
     "BUG-0013": "F-008 source recorded-signer guard passes; real storage/HTTP remains open.",
     "BUG-0014/17": "Non-owner actual helper/query/transactions/nesting/overlap pass; existing-session navigation restored. Full non-owner business/login/pool-cancellation/recovery remains open.",
-    "BUG-0015/16": "Actual owner-connected credit report and concurrent reversal invariants pass; non-owner/HTTP races and historical upgrade/recovery remain open."
+    "BUG-0015/16": "Actual owner-connected credit report and concurrent reversal invariants pass; non-owner/HTTP races and historical upgrade/recovery remain open.",
+    "BUG-0018": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open.",
+    "BUG-0019": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open.",
+    "BUG-0020": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open."
   },
   "currentFailedExecutableCases": [
-    "C-115",
-    "C-116",
-    "RT-018",
-    "RT-020",
-    "C-215",
-    "C-216",
-    "RT-118",
-    "RT-120"
+    "S-0764"
   ],
   "ownerTestingScope": {
     "businessTypes": [
@@ -178,7 +177,7 @@
     "fullAcceptance": "not-verified",
     "sourceFinding": "S-0764-admin-RBAC-off-resolver",
     "routeExposure": "not-established",
-    "legacyPhysicalFixRetest": "pending-new-candidate",
+    "legacyPhysicalFixRetest": "bounded-Owner-and-nonowner-PG-pass",
     "coreSourceRuns": {
       "A": "runs/RUN-20261014-045022362-ff2d14.json",
       "B": "runs/RUN-20261014-045054591-3a276b.json",
@@ -188,6 +187,14 @@
       "F": "runs/RUN-20261014-045146451-984f97.json"
     },
     "coreSourceResult": "60-pass-0-fail",
-    "archiveHelperRun": "runs/RUN-2026-10-14T04-45-14-403Z-archive-144073.json"
+    "archiveHelperRun": "runs/RUN-2026-10-14T04-45-14-403Z-archive-144073.json",
+    "archiveHelperCi": {
+      "run": 38513838939,
+      "summary": "runs/RUN-2026-10-14T04-54-51-774Z-archive-885003.json",
+      "result": "15-pass-1-fail",
+      "bug": "BUG-0021",
+      "scope": "partial-pure-helpers"
+    },
+    "runtimeCoreResult": "49-pass-0-fail"
   }
 }

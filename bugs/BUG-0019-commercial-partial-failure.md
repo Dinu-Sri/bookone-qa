@@ -15,3 +15,7 @@ Acceptance: unchanged C-116/C-216 fault tests produce no orphan effects; RT-018/
 ## Actual non-owner follow-up
 
 [Final dual-role evidence](../runs/RUN-2026-10-13T13-35-15-781Z-runtime.json) repeats this failure through a genuine non-owner NOSUPERUSER/NOBYPASSRLS product connection, with per-case role/account-RLS metadata controls and passing own workflows. Owner/non-owner results agree. Identity remains synthetic; actual deployed credentials/HTTP/storage are not claimed. Original failures and financial expectations preserved.
+
+## Bounded fixed-candidate retest — 2026-10-14
+
+Product **v2.5.3 · 5becb2d**: original reproduction and adjacent physical positives pass at both Owner and non-owner DB boundaries in [runtime49](../runs/RUN-2026-10-14T04-55-18-559Z-runtime.json).43/43 SQL applied. See [RUN-16](../runs/RUN-20261014-backup-plan-16.md). This is a bounded fix; actual fresh-credential HTTP/browser/storage and broader fault/race scope remain open. Original failing RUN-15 evidence is retained.

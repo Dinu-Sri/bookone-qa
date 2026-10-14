@@ -17,3 +17,11 @@ Recommended repair: make owner-only privileged backup keys authoritative across 
 - `applyArchiveObjects` skips invalid objects. Ensure actual files route cannot mark a required pack complete with invalid/missing objects or partial S3 writes; S-0793/94 will exercise real storage and retry.
 
 No user confirmation is needed for planned staging fixtures under existing authorization. QA will not run reset SQL or restore into traded tenants. Operator DR remains separate from portable owner archives.
+
+## Completed core retest / next priority
+
+QA implementation a9d3cdd21cac02a70d9133babef8e93622f2e9e4, tested PR merge bf95c9a699e06755614750999673ba42ac7be840: metadata/unit/discovery validation, Batch A and B–F green; isolated PostgreSQL49 green; archive helper15/1 deliberately red (BUG-0021/S-0764).43/43 SQL files applied on PostgreSQL16.15. [Runtime evidence](../runs/RUN-2026-10-14T04-55-18-559Z-runtime.json).
+
+BUG-0018/19/20 reproductions now pass at both Owner and non-owner DB boundaries: foreign SKU leaves zero document/journal/cross-tenant line; injected journal fault leaves zero transaction/document/journal/lines; locked-period denial leaves zero business audit/stock/finance; Viewer purchase approval leaves zero journal. Physical positive ends stock9/value540, profit40/cash flow−500, with original AR/AP settlement assertions intact. These are bounded fixes, not fresh-credential HTTP/browser/MinIO acceptance. Keep old0010–16 records and assertions.
+
+Next coding priority is the contained BUG-0021 resolver inconsistency and clarification/implementation of the three restore contract review risks above. Next QA priority is actual persisted archive restore fault/race/storage depth, then fresh primary-owner A→empty-B browser data/files journey and overlay checks.
