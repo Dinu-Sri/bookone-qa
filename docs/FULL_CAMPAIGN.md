@@ -1,5 +1,7 @@
 # Current retest candidate — 2026-10-14
 
+Latest [supported sales/cash follow-up](../runs/CAMP-20261014-122046193-dc4024.json):281assertions265pass/16fail/0skip/0block. Sales source/discount/tax/refund boundaries add eleven demonstrated groups across all readiness waves; paid-source double cash refund fails. Initial tax-fixture validity error preserved, supported standard/unregistered values confirmed by fresh runtime. Full137workflows61partial/76unbound/zero accepted. Current STATUS/ledger supersede earlier pending-count notices below; all historical records unchanged.
+
 Inventory wave [CAMP-20261014-114805477-fc2c22](../runs/CAMP-20261014-114805477-fc2c22.json) now executes270 assertions:262pass/eightfail/zero skips/blocks. FIFO/average issues pass; source-cost returns and uncontrolled backdates fail. Current59partial/78unbound/zero accepted workflows. Read current STATUS, ledger and both readiness handoffs. Previous264-case campaign below stays immutable.
 
 Latest campaign-v2 [CAMP-20261014-113321106-568961](../runs/CAMP-20261014-113321106-568961.json) executes264 assertions:260 pass/four fail/zero skips. All98 retained units now receive portable synthetic bank fixtures. Fingerprint includes their byte hash. See current handoff and customer-readiness ledger; historical fixture-skip notes below remain evidence of earlier runs.

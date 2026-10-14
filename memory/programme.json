@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "270-slots:262-pass-8-fail-0-skip;96-PG88-pass-8-fail; no-full-workflow-acceptance",
+  "implementationStatus": "281executed:265pass-16fail-0skip;107PG91pass-16fail; eleven-bounded-findings; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261014-114805477-fc2c22.json",
+  "lastRetestRecord": "runs/CAMP-20261014-122046193-dc4024.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -53,10 +53,16 @@
     "BUG-0031",
     "BUG-0032",
     "BUG-0033",
-    "BUG-0034"
+    "BUG-0034",
+    "BUG-0035",
+    "BUG-0036",
+    "BUG-0037",
+    "BUG-0038",
+    "BUG-0039",
+    "BUG-0040"
   ],
   "nextActions": [
-    "Coding agent: repair five readiness finding groups across both handoffs; pin new product and retest original plus adjacent assertions. Current270 executed/8fail/0skip.",
+    "Coding agent: repair eleven groups across three handoffs, prioritising repeated cash payout/source budget, original discount/cost/tax and tender/state coherence; pin next candidate and retest all281 outcomes.",
     "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
     "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
     "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
@@ -312,20 +318,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
-    "ci": 38559060658,
-    "passed": 262,
-    "failed": 8,
+    "record": "runs/CAMP-20261014-122046193-dc4024.json",
+    "ci": 38563023360,
+    "passed": 265,
+    "failed": 16,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
-    "runtimeCi": 38559060570,
+    "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+    "runtimeCi": 38563023399,
     "unitPassed": 98,
-    "runtimePassed": 88,
-    "runtimeCases": 96,
-    "qaImplementation": "a15b7b9eb168cf88e470aff91ab72ddb4864c8c2",
-    "qaTestedMerge": "f6cf4fd4f545d546021228073f105ae85e96ae9c",
-    "qaContentHash": "f1af4c267c31504f45cc1c964394c0b4f846511d52f0c7b8155290e6638467a0",
+    "runtimePassed": 91,
+    "runtimeCases": 107,
+    "qaImplementation": "3ab4f6fa01b04a42e6517f01de118c0a891e3fe5",
+    "qaTestedMerge": "7a11169baeebf5de8e3a8e2ff19184e39c725719",
+    "qaContentHash": "936f52304e3e75ab58497b434b6e8699cd11604f1a5cd32ee0a14f06495b4b03",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   },
@@ -348,5 +354,44 @@
       "BUG-0034"
     ],
     "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
+  },
+  "salesValueRetest": {
+    "record": "runs/CAMP-20261014-120513142-57ddba.json",
+    "runtime": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+    "handoff": "handoffs/HANDOFF-20261014-sales-value-readiness.md",
+    "passed": [
+      "B-114",
+      "RT-040",
+      "RT-033"
+    ],
+    "failed": [
+      "RT-034",
+      "RT-035",
+      "RT-036",
+      "RT-037",
+      "RT-038",
+      "B-105",
+      "RT-039"
+    ],
+    "followup": "RT-041 cash-repeat and exact receipt preservation pending on107PG/281campaign cases"
+  },
+  "salesFixtureValidity": {
+    "initial": "RT-035 unsupported product taxable enum/customer status not explicitly stored; initial tax classification unverified",
+    "correction": "standard product + unregistered person/customer seeded/asserted; expected VAT unchanged",
+    "status": "supported classification fields asserted in corrected PG; VAT omission reproduced; expert/format/credential acceptance still open",
+    "bug": "BUG-0036 bounded-confirmed"
+  },
+  "salesValueFollowup": {
+    "record": "runs/CAMP-20261014-122046193-dc4024.json",
+    "runtime": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+    "bugsConfirmed": [
+      "BUG-0036-supported-classification",
+      "BUG-0038-cash-repeat",
+      "BUG-0039-credit-state"
+    ],
+    "failedNewCase": "RT-041",
+    "receiptEqualityObserved": 1,
+    "receiptCaseOverall": "failed",
+    "scope": "actual isolated owner command/synthetic sessions; no deployed/credential/full-workflow acceptance"
   }
 }

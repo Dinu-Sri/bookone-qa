@@ -130,14 +130,24 @@
       "id": "B-105",
       "batch": "B",
       "slug": "paid-refund",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Paid invoice credit/refund keeps original receipt; approved refund path settles customer credit once.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair source return/refund/tax/discount/tender defects and retest; real auth/UI/print/export and tax eligibility/price modes remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-owner product command; full61partial/76unbound workflows not accepted"
+      }
     },
     {
       "id": "B-106",
@@ -319,14 +329,24 @@
       "id": "B-114",
       "batch": "B",
       "slug": "tax-discount",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Approved inclusive/exclusive tax, rounding stage and discounts agree across preview/post/credit/print/export; pending policy blocks acceptance.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Repair source return/refund/tax/discount/tender defects and retest; real auth/UI/print/export and tax eligibility/price modes remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ],
+      "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T12-20-56-750Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-owner product command; full61partial/76unbound workflows not accepted"
+      }
     },
     {
       "id": "B-115",

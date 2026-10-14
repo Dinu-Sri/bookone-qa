@@ -1,7 +1,7 @@
 # Resume BookOne QA
 
 1. Read AGENTS.md, STATUS.md, memory/customer-readiness.json and memory/programme.json. Canonical source is reviewed QA main; inspect pending PRs before assuming work merged. Check local Git/product identities and graph extraction freshness.
-2. Pin product-ref.json; current8e1a2b8/v2.5.5 is not customer-ready. Latest270-case result and five finding groups are linked in STATUS. Use rules/rulebook.json and generated docs/rulebook/RULES.md for expectations; delegated defaults are not independent statutory sign-off.
+2. Pin product-ref.json; current8e1a2b8/v2.5.5 is not customer-ready. Latest281-case result and five finding groups are linked in STATUS. Use rules/rulebook.json and generated docs/rulebook/RULES.md for expectations; delegated defaults are not independent statutory sign-off.
 3. Read both current coding handoffs and relevant cases. Preserve original expectations and immutable failed attempts. A source/QA/fixture change requires a new fingerprint/run.
 4. Use pnpm session:start, pnpm product:prepare, pnpm check and campaign:plan. The full campaign requires verified fresh ephemeral loopback PostgreSQL16 named bookone_qa_runtime per docs/POSTGRES_RUNTIME.md. Never target staging with preparation/reset/fault/race commands. Runtime lanes are serial; source lanes may be parallel. Current inventory lane:pnpm runtime:run inventory-valuation.
 5. test:unit/campaign generates synthetic bank fixtures privately; record actual byte hash. Parser tests are not real-bank certification. Resume only interrupted work at identical fingerprint/private preparation. Do not replay live payments from public summaries.
@@ -10,3 +10,5 @@
 8. Record build-specific outcomes, actual creations/cleanup, rule hash, blockers and exact next actions in both indexes/ledger; publish only reviewed allowlisted summaries. No full acceptance from source helpers, synthetic sessions, in-memory files, balanced totals, green CI or screenshot existence.
 
 Historical checkpoints retained in [history](memory/history/SESSION-before-valuation-20261014.md); immutable runs govern contradictory old notes. Actor-attribution corrections remain linked from historical status, not valid Viewer acceptance. The full goal remains customer readiness for the declared scope, with operator DR and Sri Lankan expert gates outstanding.
+
+Current sales follow-up completed:281 assertions265pass/16fail/0skip, eleven bounded finding groups. Supported tax fixture now confirmed; repeated cash payout exceeds source. Read current sales handoff and readiness ledger. Previous sales checkpoints and invalid-fixture correction are retained in memory/history/SESSION-before-sales-20261014.md and immutable runs.
