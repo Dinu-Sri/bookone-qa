@@ -710,14 +710,17 @@
       "id": "C-111",
       "batch": "C",
       "slug": "cost-backdate",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Two receipts at different prices, then sale/return/backdate follow approved costing; historical posted cost is preserved.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Execute new varied receipt prices/linked historical return/backdated receipt boundaries; future-issue chronology, locked period, real auth/UI/settings and history acceptance remain open.",
+      "implementedLayers": [
+        "persisted-lifecycle-owner-connection"
+      ]
     },
     {
       "id": "C-112",

@@ -1,3 +1,7 @@
+# Active independent inventory boundary wave
+
+Product remains v2.5.5 · 8e1a2b8. Six new inventory checks planned: C-111/RT-032 receipt-price variation; RT-028/030/031 source-cost returns after new receipt; RT-029 late backdated history. Original264 slots preserved; new270 planned. Read changes/CHG-20261014-variable-cost-boundaries.md. No execution/pass or new defect claimed yet. Browser approval/popup dependencies remain pending.
+
 # Latest executed customer-readiness checkpoint — 2026-10-14
 
 Candidate **v2.5.5 · 8e1a2b8**. [Fresh campaign](runs/CAMP-20261014-113321106-568961.json): **260 passed, four failed, zero skipped/blocked/not-run**. All98 retained units execute with deterministic synthetic fixtures; source60/helper16 and original85 PG assertions pass. New AP race passes. B-115/RT-025/RT-026/RT-027 remain red in two independent PG runs. Read [coding handoff](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md), [gates](memory/customer-readiness.json) and AGENTS.md53–55.
