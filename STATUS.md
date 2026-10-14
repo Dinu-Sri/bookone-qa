@@ -1,3 +1,7 @@
+# v2.5.5 available for independent retest — 2026-10-14
+
+Live Dashboard sidebar observed **v2.5.5 · 8e1a2b8**; current UI identifies primary job Owner. Product commit8e1a2b8b29e662940bfcfecc4230875c83e35b6d and both CI workflows verified green. Read [the readiness observation](runs/OBS-20261014-v255-readiness.md). This is read-only deployment/source evidence, not verification of reported fixes. Execution pin remains5becb2d and old campaign outcomes remain immutable. Next deliberately review/pin the cumulative v2.5.4–5 diff, preserve original assertions and rerun the coordinated campaign on fresh isolated PostgreSQL, then real identity/tenant/browser/files and complete launch-critical workflows. Do not close BUG0021–0030 from coding-agent claims.
+
 # Rulebook publication verified — 2026-10-14
 
 [QA PR16](https://github.com/Dinu-Sri/bookone-qa/pull/16) and [product documentation PR3](https://github.com/Dinu-Sri/BookOne/pull/3) merged; QA validation38538221358 and product documentation CI38538400773 pass. Read memory/rulebook-publication.json for exact hashes and preserved first-attempt harness failure. Rulebook1.0.0 has57 rules/35 references, no independent expert approvals. Product execution pin and old red campaign evidence remain unchanged; current master archive/code fixes need a fresh pin/stamp/retest. No live inspection, archive handling or business/config writes in this study.
