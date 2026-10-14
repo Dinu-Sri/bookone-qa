@@ -18,3 +18,9 @@ RT-051 checks a valid Warehouse job (inventory read allowed, invoice read absent
 Use only fresh ephemeral PostgreSQL16 per docs/POSTGRES_RUNTIME.md, `pnpm runtime:run role-scope-boundaries`. This lane's DATABASE_URL is non-owner qa_runtime, independently verified nonsuper/nonbypass/not table-owner/RLS enabled. Admin connection only seeds/asserts/faults guarded fixture. Never point reset/revoke/fault harness at staging/production.
 
 Earlier [payment/archive](HANDOFF-20261014-v255-adjacent-readiness.md), [inventory](HANDOFF-20261014-variable-cost-readiness.md), and [sales](HANDOFF-20261014-sales-value-readiness.md) handoffs remain open: thirteen demonstrated finding groups across four waves. Existing BUG-0010–0016 originals stay untouched. Full137workflows62partial bindings/75unbound/zero accepted. Real normal-role/physical-first/backup restore and expert/operator gates still pending; raw data/secrets private. No new staging writes.
+
+## Final role follow-up evidence
+
+[Campaign](../runs/CAMP-20261014-131128650-2e5b74.json), CI38569613302:292assertions273pass/19fail/zero skips/blocks. [PostgreSQL](../runs/RUN-2026-10-14T13-11-19-113Z-runtime.json), CI38569613346:99/118pass, no infrastructure failures. QA implementation3da78860096e5f39b9f6bc2eedb083357da2a812; tested mergea2488edd483ba3c1f63356306d9b2c66862fb95d; contentcffd44e6273b20ec41b75fd8941e3d6f939db2b6b4da7bca555022e1b9328060.
+
+RT-051 executed: inventoryReadGranted1, invoiceReadGranted0, knownInvoicePositive1, invoiceDetailDenied0. Warehouse direct detail was not refused, confirming the missing read-job guard variant of BUG-0041; no new group. New role lane8pass/3fail. Earlier pending notes are superseded; first291-case evidence retained. Synthetic-auth/non-owner PostgreSQL only; actual credential/HTTP/browser exposure remains unverified. No new staging mutations.
