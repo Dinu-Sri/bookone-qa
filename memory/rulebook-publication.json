@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-14",
+  "rulebookVersion": "1.0.0",
+  "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "rules": 57,
+  "sources": 35,
+  "expertApprovals": 0,
+  "qa": {
+    "implementationSha": "008e2ae1e810abef4c2e2a2af083e528133926ef",
+    "mergeSha": "b83c79e43339b1b338ad1a461d43480ff7b0008a",
+    "pr": "https://github.com/Dinu-Sri/bookone-qa/pull/16",
+    "validation": "https://github.com/Dinu-Sri/bookone-qa/actions/runs/38538221358",
+    "validationResult": "success",
+    "firstAttempt": "https://github.com/Dinu-Sri/bookone-qa/actions/runs/38537859303",
+    "firstAttemptClassification": "QA checker required ignored product checkout before bootstrap prepared it; fixed order, preserved failure",
+    "negativeControls": "five invalid register/view inputs rejected; original valid register restored"
+  },
+  "productDocs": {
+    "pr": "https://github.com/Dinu-Sri/BookOne/pull/3",
+    "mergeSha": "3e4209c653b5e78b93fe10c42c07924609879e66",
+    "headSha": "b5ad0ae6fee703da4ebcd156d71478a94098ff78",
+    "ci": "https://github.com/Dinu-Sri/BookOne/actions/runs/38538400773",
+    "ciResult": "success",
+    "scope": "AGENTS and QA change-contract references only; no code/config/data change"
+  },
+  "productExecutionPin": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
+  "newSourceDiffReviewed": "9b8e443e4c7775eb601365e244939258225c751c",
+  "liveStampChecked": false,
+  "liveWrites": false,
+  "productRetest": false,
+  "productAcceptance": "not-established",
+  "next": "Use canonical rules in future coding/QA specs; resolve RF-01–10, deliberately pin/retest changed archive source and keep existing failure evidence immutable."
+}

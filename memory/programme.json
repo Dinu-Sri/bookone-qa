@@ -279,6 +279,8 @@
     "initialDelegation": "owner2026-10-14",
     "productStudyBaseline": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "newProductDiffObserved": "9b8e443e4c7775eb601365e244939258225c751c",
-    "executionPinUnchanged": true
+    "executionPinUnchanged": true,
+    "publication": "memory/rulebook-publication.json",
+    "productAgentIntegration": "https://github.com/Dinu-Sri/BookOne/pull/3"
   }
 }

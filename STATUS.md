@@ -1,3 +1,7 @@
+# Rulebook publication verified — 2026-10-14
+
+[QA PR16](https://github.com/Dinu-Sri/bookone-qa/pull/16) and [product documentation PR3](https://github.com/Dinu-Sri/BookOne/pull/3) merged; QA validation38538221358 and product documentation CI38538400773 pass. Read memory/rulebook-publication.json for exact hashes and preserved first-attempt harness failure. Rulebook1.0.0 has57 rules/35 references, no independent expert approvals. Product execution pin and old red campaign evidence remain unchanged; current master archive/code fixes need a fresh pin/stamp/retest. No live inspection, archive handling or business/config writes in this study.
+
 # Rulebook established — 2026-10-14
 
 Rulebook1.0.0:57 rules / 35 sources,27 inherited BR IDs retained. Read docs/rulebook/README.md and RULES.md before new expectations; owner delegated professional product defaults, with Sri Lankan source/applicability and independent expert status explicit. Ten POL topics now have rule links/defaults plus narrower review gaps. RF-01–10 remain for expert/implementation review. Existing product assertions/results and pin5becb2d were not changed. New master9b8e443/v2.5.4 archive diff observed, untested here; no live staging stamp/mutations. RULEBOOK source/governance validation only, not product acceptance.
