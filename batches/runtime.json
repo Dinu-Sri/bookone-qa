@@ -201,7 +201,8 @@
         "RT-037",
         "RT-038",
         "B-105",
-        "RT-039"
+        "RT-039",
+        "RT-041"
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-product-command-synthetic-session"

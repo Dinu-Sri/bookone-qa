@@ -22,3 +22,9 @@ Graph discovery found sale/return builders and tax helper first, but graph sourc
 ## Sri Lankan source refresh — 2026-10-14
 
 Rechecked [IRD VAT overview](https://www.ird.gov.lk/en/Type%20of%20Taxes/SitePages/Value%20Added%20Tax%20%28VAT%29.aspx?menuid=1204): ordinary standard rate18% from2024-01-01. [IRD consolidated Act through2025](https://www.ird.gov.lk/si/publications/Value%20Added%20Tax_Acts/VAT_Act_No_14%5BE%5D_2002_%28Consolidation_2025%29.pdf), section20(6)(a), requires a registered supplier's taxable sale invoice to an unregistered recipient to include tax; lack of tax-invoice status does not erase chargeability. [Amendment14of2026](https://www.ird.gov.lk/en/publications/Value%20Added%20Tax_Acts/VAT_Act_No_14-2026_E.PDF) inspected; no section20 amendment observed. RT-035's expected behaviour is the rulebook inference for the explicitly standard-taxable fixture, not a finding that all services/customers are taxable. Specialist eligibility, exempt/zero/export/digital regimes, dated classifications, invoice-format Gazettes and RF-01–10 remain open. No rulebook hash or authority was silently changed.
+
+## First outcomes and cash follow-up
+
+First independent CI38561135054:280 assertions265pass/15fail/0skip/0block. PG91/106pass; ten new cases3pass/7fail, old96 unchanged88/8. New BUG-0035–0040 documented, exact records/amounts in sales-value handoff. Service/digital tax-discount positives and source-rate credit pass. Full61partial/76unbound/zero accepted workflows.
+
+Add RT-041 paid-source repeat cash payout denial as an adjacent requirement to cumulative unpaid credit RT-038. Strengthen B-105 receipt-preservation evidence to exact original allocation/transaction/journal/line equality; count alone was insufficient. Existing failed outcomes/expectations retained. Now107PG/281campaign assertions; fresh follow-up CI pending. No cash overspend/receipt-equality claim before that run.

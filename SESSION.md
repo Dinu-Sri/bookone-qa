@@ -1,3 +1,7 @@
+## Current sales-value evidence and follow-up
+
+[First sales campaign](runs/CAMP-20261014-120513142-57ddba.json):280assertions265pass/15fail/0skip/0block, actualPG91/106. New lane3pass/7fail exposes six groups BUG-0035–0040; previous five groups still open. Read [sales handoff](handoffs/HANDOFF-20261014-sales-value-readiness.md). RT-041 cash-repeat and exact B-105 receipt-history checks now implemented;107PG/281campaign planned, not yet executed. Full137 workflows61partial/76unbound/zero accepted. Candidate still8e1a2b8/v2.5.5; no staging writes.
+
 ## Active sales-value boundary wave
 
 Ten new cases planned on unchanged v2.5.5 · 8e1a2b8: tax/discount service+digital, original VAT credit, discounted full return, standard taxable commercial style, excessive discounts, cumulative return, paid refund and invalid tender. Source plan: changes/CHG-20261014-sales-value-boundaries.md. Original270 assertions preserved;280 planned/106PG. No new pass/defect claimed before CI.

@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "270-slots:262-pass-8-fail-0-skip;96-PG88-pass-8-fail; no-full-workflow-acceptance",
+  "implementationStatus": "executed280:265-pass-15-fail-0-skip;106PG91-pass-15-fail; planned281/107PG cash followup; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261014-114805477-fc2c22.json",
+  "lastRetestRecord": "runs/CAMP-20261014-120513142-57ddba.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -53,11 +53,17 @@
     "BUG-0031",
     "BUG-0032",
     "BUG-0033",
-    "BUG-0034"
+    "BUG-0034",
+    "BUG-0035",
+    "BUG-0036",
+    "BUG-0037",
+    "BUG-0038",
+    "BUG-0039",
+    "BUG-0040"
   ],
   "nextActions": [
-    "Execute ten sales-value boundaries on unchanged8e1a2b8; inspect actual first outcomes before classifying defects.",
-    "Coding agent: repair five readiness finding groups across both handoffs; pin new product and retest original plus adjacent assertions. Current270 executed/8fail/0skip.",
+    "Execute RT-041 cash-repeat and stronger B-105 receipt-history follow-up; preserve initial280-case result.",
+    "Coding agent: repair eleven recorded readiness groups across three handoffs, pin next candidate and independently retest core+adjacent outcomes.",
     "Repair/retest the three recorded issue groups against a newly pinned product candidate; current264 executed with four product failures and zero skips.",
     "Coding agent: address payment batch atomicity, changed-payload key false success and current archive checksum omission without weakening original assertions.",
     "Pending exact synthetic staging Owner/Admin/Viewer creation approval and Chrome popup dismissal; no account creation completed.",
@@ -313,20 +319,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-114805477-fc2c22.json",
-    "ci": 38559060658,
-    "passed": 262,
-    "failed": 8,
+    "record": "runs/CAMP-20261014-120513142-57ddba.json",
+    "ci": 38561135054,
+    "passed": 265,
+    "failed": 15,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T11-48-13-404Z-runtime.json",
-    "runtimeCi": 38559060570,
+    "runtime": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+    "runtimeCi": 38561135013,
     "unitPassed": 98,
-    "runtimePassed": 88,
-    "runtimeCases": 96,
-    "qaImplementation": "a15b7b9eb168cf88e470aff91ab72ddb4864c8c2",
-    "qaTestedMerge": "f6cf4fd4f545d546021228073f105ae85e96ae9c",
-    "qaContentHash": "f1af4c267c31504f45cc1c964394c0b4f846511d52f0c7b8155290e6638467a0",
+    "runtimePassed": 91,
+    "runtimeCases": 106,
+    "qaImplementation": "945c10bfa011d396d2e0358ccd0be7af9d935715",
+    "qaTestedMerge": "9431b4985e37f286fd47b2ed2ce20620d0087120",
+    "qaContentHash": "8538e2d6abe167c60da9f00793f97cd7790b92287e3cac2ee829dd2b2e8079d3",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   },
@@ -349,5 +355,25 @@
       "BUG-0034"
     ],
     "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
+  },
+  "salesValueRetest": {
+    "record": "runs/CAMP-20261014-120513142-57ddba.json",
+    "runtime": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+    "handoff": "handoffs/HANDOFF-20261014-sales-value-readiness.md",
+    "passed": [
+      "B-114",
+      "RT-040",
+      "RT-033"
+    ],
+    "failed": [
+      "RT-034",
+      "RT-035",
+      "RT-036",
+      "RT-037",
+      "RT-038",
+      "B-105",
+      "RT-039"
+    ],
+    "followup": "RT-041 cash-repeat and exact receipt preservation pending on107PG/281campaign cases"
   }
 }

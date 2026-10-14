@@ -137,10 +137,17 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Execute sales-value-boundaries lane; preview/print/export, mixed tax/inclusive mode, real auth/UI and full acceptance remain open.",
+      "next": "Repair sales-value bugs and rerun; exact receipt and repeated cash refund follow-up pending; real auth/UI/print/export/tax modes remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
-      ]
+      ],
+      "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+        "status": "failed",
+        "scope": "bounded-owner-product-command; sales credits/refunds fail; no full workflow acceptance"
+      }
     },
     {
       "id": "B-106",
@@ -329,10 +336,17 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Execute sales-value-boundaries lane; preview/print/export, mixed tax/inclusive mode, real auth/UI and full acceptance remain open.",
+      "next": "Repair sales-value bugs and rerun; exact receipt and repeated cash refund follow-up pending; real auth/UI/print/export/tax modes remain open.",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
-      ]
+      ],
+      "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+      "latestAttempt": {
+        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+        "evidence": "runs/RUN-2026-10-14T12-05-27-247Z-runtime.json",
+        "status": "passed",
+        "scope": "bounded-owner-product-command; sales credits/refunds fail; no full workflow acceptance"
+      }
     },
     {
       "id": "B-115",

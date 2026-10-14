@@ -66,8 +66,9 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['RT-035']=['registered','taxableSupply','taxCents','expectedTaxCents','totalCents','expectedTotalCents','vatBalanceCents','arCents'];
   for(const id of ['RT-036','RT-037'])observationKeys[id]=['accepted','unchanged','arCents','vatBalanceCents'];
   observationKeys['RT-038']=['accepted','unchanged','returnCount','returnTotalCents','expectedMaxReturnCents','arCents'];
-  observationKeys['B-105']=['cashCents','arCents','creditBalanceCents','creditPaidCents','receiptAllocationsBefore','receiptAllocationsAfter','revenueCents','returnRevenueCents'];
+  observationKeys['B-105']=['cashCents','arCents','creditBalanceCents','creditPaidCents','receiptAllocationsBefore','receiptAllocationsAfter','receiptRowsUnchanged','revenueCents','returnRevenueCents'];
   observationKeys['RT-039']=['accepted','unchanged','cashCents','arCents'];
+  observationKeys['RT-041']=['accepted','unchanged','returnCount','returnTotalCents','expectedMaxReturnCents','cashCents','expectedCashCents'];
   for(const id of ['D-103','D-105','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded'];
   observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];

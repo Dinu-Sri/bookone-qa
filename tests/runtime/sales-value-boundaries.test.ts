@@ -19,6 +19,12 @@ async function create(data:any){const r=await createCommercialDocument(data);exp
 async function doc(id:string){return(await seed.select().from(schema.businessDocuments).where(eq(schema.businessDocuments.id,id)))[0];}
 async function balance(code:string){const [r]=await admin`select coalesce(sum(case when l.side='debit' then l.amount else -l.amount end),0)::text as value from journal_lines l join accounts a on a.id=l.account_id where a.tenant_id=${TENANT_A} and a.code=${code}`;return cent(r.value);}
 async function snapshot(){const out={};for(const t of ['parties','business_documents','business_document_lines','transactions','journal_entries','journal_lines','settlement_allocations','audit_log','inventory_movements','inventory_stock_levels','inventory_cost_layers','inventory_cost_layer_consumptions'])out[t]=await admin.unsafe(`select * from ${t} order by id`);return out;}
+async function receiptState(invoiceTransactionId:string){return{
+ allocations:await admin`select * from settlement_allocations where invoice_transaction_id=${invoiceTransactionId} order by id`,
+ transactions:await admin`select t.* from transactions t where t.id in(select payment_transaction_id from settlement_allocations where invoice_transaction_id=${invoiceTransactionId}) order by t.id`,
+ journals:await admin`select j.* from journal_entries j where j.transaction_id in(select payment_transaction_id from settlement_allocations where invoice_transaction_id=${invoiceTransactionId}) order by j.id`,
+ lines:await admin`select l.* from journal_lines l join journal_entries j on j.id=l.journal_entry_id where j.transaction_id in(select payment_transaction_id from settlement_allocations where invoice_transaction_id=${invoiceTransactionId}) order by l.id`,
+};}
 async function noStockAndBalanced(){for(const t of ['inventory_movements','inventory_stock_levels','inventory_cost_layers','inventory_cost_layer_consumptions']){const [r]=await admin.unsafe(`select count(*)::int as n from ${t}`);expect(r.n,t).toBe(0);}const js=await admin`select j.id,count(l.id)::int as n,sum(case when l.side='debit' then l.amount else -l.amount end)::text as net from journal_entries j left join journal_lines l on l.journal_entry_id=j.id group by j.id`;for(const j of js){expect(j.n).toBeGreaterThan(0);expect(cent(j.net)).toBe(0);}}
 it.each([['B-114','service'],['RT-040','digital']])('[%s] %s configured VAT and valid line/header discounts reconcile document and journal',async(id,type)=>{
  const p=await setup(type);const invoice=await create(input(p,'sales_invoice',{headerDiscount:30,lines:[{productId:p,description:'Discounted standard supply',quantity:2,unitPrice:200,discountAmount:20}]}));const d=await doc(invoice),report=await getReports('2026-10');
@@ -54,12 +60,19 @@ it('[RT-038] cumulative linked returns cannot exceed original source quantity an
 });
 it('[B-105] fully paid invoice cash refund retains receipt and settles credit once',async()=>{
  const p=await setup('service',false);const invoice=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
- const [before]=await admin`select count(*)::int as n from settlement_allocations`;const credit=await create(input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'1000'}));const d=await doc(credit),[after]=await admin`select count(*)::int as n from settlement_allocations`;
- observe('B-105',{cashCents:await balance('1000'),arCents:await balance('1300'),creditBalanceCents:cent(d.balanceDue),creditPaidCents:cent(d.paidAmount),receiptAllocationsBefore:before.n,receiptAllocationsAfter:after.n,revenueCents:await balance('4000'),returnRevenueCents:await balance('4100')});
- expect(await balance('1000')).toBe(0);expect(await balance('1300')).toBe(0);expect(cent(d.balanceDue)).toBe(0);expect(cent(d.paidAmount)).toBe(10000);expect(after.n).toBe(before.n);expect(await balance('4000')).toBe(-10000);expect(await balance('4100')).toBe(10000);await noStockAndBalanced();
+ const invoiceTx=(await doc(invoice)).transactionId!;const receiptBefore=await receiptState(invoiceTx);expect(receiptBefore.allocations).toHaveLength(1);expect(receiptBefore.transactions).toHaveLength(1);expect(receiptBefore.journals).toHaveLength(1);expect(receiptBefore.lines).toHaveLength(2);
+ const credit=await create(input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'1000'}));const d=await doc(credit),receiptAfter=await receiptState(invoiceTx);
+ observe('B-105',{cashCents:await balance('1000'),arCents:await balance('1300'),creditBalanceCents:cent(d.balanceDue),creditPaidCents:cent(d.paidAmount),receiptAllocationsBefore:receiptBefore.allocations.length,receiptAllocationsAfter:receiptAfter.allocations.length,receiptRowsUnchanged:Number(JSON.stringify(receiptBefore)===JSON.stringify(receiptAfter)),revenueCents:await balance('4000'),returnRevenueCents:await balance('4100')});
+ expect(await balance('1000')).toBe(0);expect(await balance('1300')).toBe(0);expect(cent(d.balanceDue)).toBe(0);expect(cent(d.paidAmount)).toBe(10000);expect(receiptAfter).toEqual(receiptBefore);expect(await balance('4000')).toBe(-10000);expect(await balance('4100')).toBe(10000);await noStockAndBalanced();
 });
 it('[RT-039] linked paid-invoice refund denies revenue tender with zero mutations',async()=>{
  const p=await setup('service',false);const invoice=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
  const before=await snapshot(),r=await createCommercialDocument(input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'4000'})),after=await snapshot();
  observe('RT-039',{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),cashCents:await balance('1000'),arCents:await balance('1300')});expect(r.ok).toBe(false);expect(after).toEqual(before);
+});
+it('[RT-041] second linked cash refund cannot exceed the paid source refundable amount',async()=>{
+ const p=await setup('service',false);const invoice=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
+ const payload=input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'1000'});await create(payload);expect(await balance('1000')).toBe(0);
+ const before=await snapshot(),r=await createCommercialDocument(payload),after=await snapshot();const [returns]=await admin`select count(*)::int as n,coalesce(sum(total),0)::text as value from business_documents where source_document_id=${invoice} and document_type='sales_return' and voided_at is null`;
+ observe('RT-041',{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),returnCount:returns.n,returnTotalCents:cent(returns.value),expectedMaxReturnCents:10000,cashCents:await balance('1000'),expectedCashCents:0});expect(r.ok).toBe(false);expect(after).toEqual(before);expect(await balance('1000')).toBe(0);
 });
