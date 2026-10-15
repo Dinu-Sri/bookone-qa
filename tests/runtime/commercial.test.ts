@@ -161,3 +161,18 @@ it('[B-104] actual invoice receipt250 and credit100 reconcile AR250 cash250 reve
   await noStock();
   await ledger({'1000':25000,'1300':25000,'4000':-60000,'4100':10000},3);
 });
+
+it('[RT-060] balance sheet includes unclosed earnings without changing journals',async()=>{
+  const p=await product();await create(input(p));
+  await ledger({'1300':60000,'4000':-60000},1);
+  const report=await getReports('2026-10');
+  const assetCents=Math.round(report.balanceSheet.totalAssets*100);
+  const liabilityCents=Math.round(report.balanceSheet.totalLiabilities*100);
+  const equityCents=Math.round(report.balanceSheet.totalEquity*100);
+  const profitCents=Math.round(report.income.netIncome*100);
+  observe('RT-060',{assetCents,liabilityCents,equityCents,profitCents,expectedAssetCents:60000,expectedEquityCents:60000});
+  expect([assetCents,liabilityCents,profitCents]).toEqual([60000,0,60000]);
+  expect(equityCents,'unclosed current earnings belong in report equity, not a forced balancing journal').toBe(60000);
+  expect(assetCents).toBe(liabilityCents+equityCents);
+  await ledger({'1300':60000,'4000':-60000},1);
+});
