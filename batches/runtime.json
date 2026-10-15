@@ -36,7 +36,8 @@
         "RT-010",
         "RT-011",
         "B-104",
-        "RT-060"
+        "RT-060",
+        "RT-061"
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading"

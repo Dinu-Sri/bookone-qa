@@ -176,3 +176,34 @@ it('[RT-060] balance sheet includes unclosed earnings without changing journals'
   expect(assetCents).toBe(liabilityCents+equityCents);
   await ledger({'1300':60000,'4000':-60000},1);
 });
+
+it('[RT-061] balance sheet carries earlier balances to each cutoff while income stays period-specific',async()=>{
+  // Independent two-period model: September credit sale600, October credit sale200.
+  // Receivables and accumulated unclosed earnings remain800 in a quiet November.
+  // These are actual product posting commands; no direct balancing/report seed.
+  const p=await product();
+  await create(input(p,'sales_invoice',{issueDate:'2026-09-15'}));
+  await create(input(p,'sales_invoice',{issueDate:'2026-10-13',lines:[{productId:p,description:'October service',quantity:1,unitPrice:200}]}));
+  const before=await businessSnapshot();
+  const rows=await admin`select a.code,sum(case when l.side='debit' then l.amount else -l.amount end)::text as balance from journal_lines l join accounts a on a.id=l.account_id group by a.code order by a.code`;
+  expect(Object.fromEntries(rows.map(r=>[r.code,Math.round(Number(r.balance)*100)]))).toEqual({'1300':80000,'4000':-80000});
+  const journals=await admin`select j.entry_date,sum(case when l.side='debit' then l.amount else -l.amount end)::text as net,count(l.id)::int as lines from journal_entries j join journal_lines l on l.journal_entry_id=j.id group by j.id,j.entry_date order by j.entry_date`;
+  expect(journals.map(j=>[j.entry_date,Number(j.net),j.lines])).toEqual([['2026-09-15',0,2],['2026-10-13',0,2]]);
+  const amounts:Record<string,number>={};
+  for(const [month,tag,assets,profit] of [['2026-09','september',60000,60000],['2026-10','october',80000,20000],['2026-11','november',80000,0]] as const) {
+    const report=await getReports(month);
+    const actualAssets=Math.round(report.balanceSheet.totalAssets*100);
+    const actualEquity=Math.round(report.balanceSheet.totalEquity*100);
+    const actualLiabilities=Math.round(report.balanceSheet.totalLiabilities*100);
+    const actualProfit=Math.round(report.income.netIncome*100);
+    Object.assign(amounts,{[tag+'AssetCents']:actualAssets,[tag+'EquityCents']:actualEquity,[tag+'ProfitCents']:actualProfit});
+    expect.soft(actualAssets,month+' assets include every posting through cutoff and exclude later postings').toBe(assets);
+    expect.soft(actualEquity,month+' equity retains earlier unclosed earnings').toBe(assets);
+    expect.soft(actualLiabilities).toBe(0);
+    expect.soft(actualProfit,month+' income includes this period only').toBe(profit);
+    expect.soft(actualAssets).toBe(actualLiabilities+actualEquity);
+  }
+  observe('RT-061',{...amounts,expectedSeptemberAssetCents:60000,expectedOctoberAssetCents:80000,expectedNovemberAssetCents:80000});
+  expect(await businessSnapshot(),'report reads cannot create or rewrite postings').toEqual(before);
+  await noStock();
+});

@@ -1,5 +1,13 @@
 # BookOne customer-readiness status
 
+## Latest v2.5.8 checkpoint — 2026-10-15
+
+Live/source cf35da1 confirmed. [Unchanged301](runs/CAMP-20261015-083605456-919da8.json) and [included127PG](runs/RUN-2026-10-15T08-36-12-574Z-runtime.json) all pass, no skips/infrastructure failures. [Current live record](runs/RUN-20261015-v258-live-fix-retest.md), [current handoff](handoffs/HANDOFF-20261015-v258-retest-progress.md). Original same-month Balance Sheet repro is fixed live and RT-060; receipt read-only render and SO labels/navigation pass bounded checks. Native PO alternative relaxes required, but its saved positive remains blocked by new-company investigation INV258-01. Wider adjacent checks and complete bug closure pending. Historical v2.5.7 failures below stay immutable.
+
+Additional company P258-Entry created via supported Owner Add company; fresh Owner login, one warehouse. Optional suites show View only, PO60 attempted once yields empty list/vendors/journal0. Actual stored module configuration/denial message not yet verified; source suggests module-default mismatch, not proven root cause. No Admin change. Browser currently blocked by another Chrome extension UI; logout unconfirmed. Do not replay the PO or existing payments blindly.
+
+New RT-061 cross-month reporting case specified; preflight/plan pass, fresh302/128PG execution pending. Source monthly filtering concern is not accepted as a passing balance sheet. Full137 workflows62partial/75unbound/zero accepted, expert RF-01–10/operator recovery and wider business/role/file/history gates remain open. Backup LAST. Customer readiness NOT certified. Statements below describe prior checkpoints, not a failure of the passing301 on cf35da1.
+
 Customer readiness **NOT certified**. Current candidate source/live **v2.5.8 /cf35da1**, retest in progress. Previous v2.5.7 findings and evidence follow. [Current coding handoff](handoffs/HANDOFF-20261015-v257-physical-browser-findings.md), [actual browser run](runs/RUN-20261015-v257-physical-browser.md).
 
 New physical-browser slice: **23 bounded manual assertions,19pass/4fail**. Posted business figures reconcile: cash950/AR150/AP400/stock7/value420/profit120, six balanced journals. Purchase receipt/bill does not double stock; source-linked return restores60cost; AR/AP aging and+10/-4/+1stock movements agree. Oversell/overpayment attempts leave checked state unchanged. This is one non-VAT uniform-cost/qty-only-GRN Owner fixture, not complete physical or137-workflow acceptance.
