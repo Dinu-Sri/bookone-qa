@@ -54,7 +54,7 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "bounded-Viewer/module/scope-denials-hold;new-company-false-deny-BUG0050;broader-real-credential/HTTP/files-pending",
+      "status": "P1BUG0051-profile-write/P1BUG0052-session-promotion-confirmed-ownerDB-real-HTTP;restricted-identity-blocks-acceptance",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Chrome recovered; fresh actual Owner and Inventory-only setup observed. Other role/HTTP/file boundaries remain pending; earlier Admin grant not attempted."
     },
@@ -966,9 +966,9 @@
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v258-bootstrap-findings.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
   "httpRuntime": {
-    "status": "first-build/setup-passed;18blocked-before-login;diagnostic-fresh-attempt-pending",
+    "status": "diagnostic-executed6pass7fail5blocked;P1BUG0051/0052;restricted-identity-and-redirect-diagnosis-open",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
@@ -976,9 +976,9 @@
     "expectedSlots": 18,
     "perDatabaseBoundary": 9,
     "localGuardTestsPassed": 5,
-    "realServerCasesPassed": 0,
+    "realServerCasesPassed": 6,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
-    "acceptance": "not-established;separate-from303-until-reviewed",
+    "acceptance": "not-established;two-confirmed-P1-ownerDB-findings;not-deployed/restricted-role/full-workflow-certification",
     "pendingApprovalUnaffected": true,
     "firstAttempt": {
       "record": "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
@@ -1010,6 +1010,52 @@
       "interpretation": "first anonymous request unclassified runner exception;identity-prerequisites blocked;no product finding/financial HTTP execution",
       "finalPaidCents": 15000,
       "finalBalanceCents": 45000
+    },
+    "latestAttempt": {
+      "record": "runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json",
+      "ci": 38717742247,
+      "job": 116364447463,
+      "totals": {
+        "passed": 6,
+        "failed": 7,
+        "blocked": 5
+      },
+      "fingerprint": {
+        "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+        "productStamp": "v2.5.8 · cf35da1",
+        "qaSha": "c130b49f0540791d27acaea4fe506639d2c0b3f6",
+        "qaDirty": false,
+        "qaContentHash": "eadeeedbe640e91bf0a6c308d64e1f11874323e78d3e11581cb320b8f7247185",
+        "node": "v22.23.3",
+        "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+        "fixtureVersion": "http-v1",
+        "schemaMigrations": 43,
+        "nextBuildId": "_4UQUksdMNHB26ec5FtLT",
+        "nextVersion": "15.5.19",
+        "betterAuthVersion": "1.6.20"
+      },
+      "qaImplementation": "fc97fafc66869edbfbf99a0b2861e4fd1d4bef75",
+      "confirmedProductBugs": [
+        "BUG-0051",
+        "BUG-0052"
+      ],
+      "companion": "runs/RUN-2026-10-15T10-06-00-736Z-runtime.json",
+      "companionCi": 38717742263,
+      "companionPassed": 127,
+      "companionFailed": 2,
+      "handoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
+      "remaining": "Anonymous redirect origin;foreign safe-fallback classification;restricted ERP identity positives;five dependent blocked cases"
     }
+  },
+  "liveContinuation": {
+    "date": "2026-10-15",
+    "actor": "P257-Owner",
+    "stamp": "v2.5.8 /cf35da1",
+    "company": "P258-Entry",
+    "login": "fresh explicit credential login succeeded;Owner loaded",
+    "lastAction": "Selected P257-Physical in switch menu;display stayed P258;Logout started;extension UI blocked completion",
+    "state": "current authenticated actor/company uncertain after pending logout;do not mutate until fresh verification",
+    "financialWrites": 0,
+    "moduleApproval": "unchanged-pending;no successful save"
   }
 }

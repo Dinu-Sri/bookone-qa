@@ -1,0 +1,14 @@
+# Coding handoff: two confirmed real HTTP permission failures
+
+Product pinned v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. No product edits by QA. New isolated real Next15.5.19 /BetterAuth1.6.20 credential/TLS/Server Action lane supplements the existing303 assertions; it does not certify every deployed workflow.
+
+1. **P1 BUG-0051 /HTTP-004:** correctly assigned Viewer persists Company Details legal-name changes through the actual rendered form Server Action. Same-action Owner positive works. Add the authoritative server write guard before any mutation; check adjacent company mutators explicitly. [Evidence and repair requirements](../bugs/BUG-0051-viewer-company-profile-server-write.md).
+2. **P1 BUG-0052 /HTTP-009:** valid legacy Viewer with null primary job becomes Owner during ERP session loading and posts receipt10. Assigned Viewer denial still passes. Preserve legitimate legacy Owner repair while preventing promotion. [Evidence and exact money](../bugs/BUG-0052-credential-session-promotes-legacy-viewer.md).
+
+[Executed HTTP summary](../runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json), [CI38717742247](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38717742247): setup passed;6pass/7fail/5blocked across18 slots. This is not seven confirmed product bugs. Anonymous redirect origin and foreign-invoice safe fallback classification need QA harness diagnosis. The non-owner NOBYPASSRLS lane authenticates six credentials but fails ERP own-invoice/role positives; five dependent cases block. Root cause unproven; do not grant BYPASSRLS, inject a global tenant context, or call those blocks secure denials. Keep owner-DB evidence distinct from actual runtime-role acceptance.
+
+Companion [129 PostgreSQL checks](../runs/RUN-2026-10-15T10-06-00-736Z-runtime.json), [CI38717742263](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38717742263):127pass/2fail, RT-061/BUG-0049 cross-month Balance Sheet and RT-062/BUG-0050 additional-company capabilities still fail. Existing [handoff](HANDOFF-20261015-v258-bootstrap-findings.md) remains applicable. All original301 expectations unchanged; do not reopen BUG-0010–0043 without new evidence.
+
+After fixes: provide product SHA/version, changed files/CHG/migrations and compatibility decisions; QA independently reviews and reruns unchanged303 plus real HTTP on fresh isolated DB, with same-action controls and both DB boundaries. Keep legal-name/membership/money expectations intact. Deployed/browser checks, GRNI/variable-cost/settings/roles, service/digital/rental/mixed and expert rule review remain. Actual backup/restore LAST. BookOne is not customer-ready.
+
+No passwords, cookies, raw responses, archive files or live customer data accompany this public handoff. No staging reset or module grant performed. QA PR32 contains this layer and preserved first attempts; its merge/check status must be checked before use.

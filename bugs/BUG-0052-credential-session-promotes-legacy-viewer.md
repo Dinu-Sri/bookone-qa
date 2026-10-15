@@ -1,0 +1,15 @@
+# BUG-0052: Credential session repairs an unassigned Viewer into Owner
+
+**P1 open; customer-readiness blocker.** Product v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. Confirmed real credential/compiled Next HTTPS owner-DB baseline. A valid legacy Viewer membership with no primary job becomes Owner during authenticated ERP session loading and can then post money.
+
+HTTP-009 starts with persisted active membership role=viewer /primary job=null, signs in with that user's actual credentials, then opens a protected invoice. Membership changes to role=owner /job=owner (legacyViewerBecameOwner=1). Its actual financial Server Action posts an unauthorized receipt10. This is session-boundary privilege escalation; the correctly assigned Viewer remains Viewer in HTTP-002 and its payment is denied in HTTP-008. Do not describe this as reopening the old payment-handler BUG-0010.
+
+Independent controls: invoice600 starts paid150/due450. HTTP-008 denies assigned Viewer/foreign actions and posts Owner25 with exact cash/AR journal and allocation, leaving175/425. The legacy Viewer then changes paid175 to185. Legitimate legacy Owner membership repair succeeds and its25 posts, leaving **paid210/due390** rather than independently expected **paid200/due400**. Five journals/four allocations persist instead of the four journals/three allocations expected without the unauthorized10. No request replay or staging money involved.
+
+[Immutable summary](../runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json), [CI38717742247](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38717742247). QA implementation fc97fafc66869edbfbf99a0b2861e4fd1d4bef75; tested merge c130b49f0540791d27acaea4fe506639d2c0b3f6; content eadeeedbe640e91bf0a6c308d64e1f11874323e78d3e11581cb320b8f7247185. Full fingerprint in JSON.
+
+Graph discovery followed by pinned-source verification: packages/auth/src/session.ts ensureBookOneUser calls ensureOwnerMembership for every existing user. packages/auth/src/permissions/seed-jobs.ts ensureOwnerMembership fills any existing null primaryRoleId with Owner and role=owner without checking that the membership was an Owner. This source path matches the observed persisted transition. Additional missing/inactive/voided membership paths require investigation; they are not yet proven regressions.
+
+Repair only from authoritative existing ownership; a missing job must never grant broader authority. Keep legitimate legacy Owner repair working. Add unchanged credential-to-session-to-money regressions for Viewer/null job, assigned Viewer, custom jobs, inactive/voided/foreign memberships, fresh login and repeated reads. Assert membership/job and all financial/audit effects remain unchanged for denied users; preserve Owner positive. Do not add a global bypass, disable RLS, or remove the positive control. BR-SEC-01/02 /BR-ACC-04; expert review pending.
+
+Restricted-role HTTP-109 cannot complete its Owner repair/payment positive, so it provides no certification of this boundary. Deployed browser and actual deployed DB-role behavior remain unverified.
