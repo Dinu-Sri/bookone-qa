@@ -1,3 +1,7 @@
+## v2.5.7 comprehensive programme active
+
+Live sidebar v2.5.7 · 7ffafab observed; source pin7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6. Unchanged292 regression planned, no new result yet. Read changes/CHG-20261015-v257-comprehensive-retest.md. Owner authorises synthetic-company signup/login; record private credentials and actual creations. Physical first, then remaining non-backup workflows; real backup/restore LAST. Earlier specific Admin grant rejection is not bypassed. Historical results below remain unchanged.
+
 # BookOne customer-readiness status
 
 Customer readiness is **not certified**. Candidate source **v2.5.6 /d5377d8**; live sidebar now confirmed v2.5.6 /d5377d8. [Read-only live smoke](runs/RUN-20261015-v256-live-read-smoke.md) confirms Backup loads and traded-company restore is disabled in the UI. Existing administrative session only; full deployed workflow acceptance remains open.

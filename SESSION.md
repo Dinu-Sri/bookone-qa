@@ -1,3 +1,7 @@
+## v2.5.7 comprehensive programme active
+
+Live sidebar v2.5.7 · 7ffafab observed; source pin7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6. Unchanged292 regression planned, no new result yet. Read changes/CHG-20261015-v257-comprehensive-retest.md. Owner authorises synthetic-company signup/login; record private credentials and actual creations. Physical first, then remaining non-backup workflows; real backup/restore LAST. Earlier specific Admin grant rejection is not bypassed. Historical results below remain unchanged.
+
 # Resume BookOne QA
 
 1. Read AGENTS.md, STATUS.md, memory/customer-readiness.json and memory/programme.json. Verify canonical QA main/pending PRs and exact product/QA identities; graph is stale Desktop source, so verify pinned diffs after graph discovery.
