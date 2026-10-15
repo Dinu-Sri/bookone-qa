@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
-  "observedStagingStamp": "v2.5.7 · 7ffafab",
+  "candidateProductSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+  "observedStagingStamp": "v2.5.8 /cf35da1",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -70,7 +70,7 @@
     "BUG-0048"
   ],
   "nextActions": [
-    "RT-060 failed independently in fresh isolated CI; preserve the1failure and300positives. Coding fix/new product stamp required before rerun.",
+    "Execute unchanged301 on pinnedcf35da1 and finish live fix/adjacent checks before closing BUG0045-0048.",
     "Coding handoff handoffs/HANDOFF-20261015-v257-physical-browser-findings.md; fix P1 Balance Sheet and receipt rendering; preserve exact final posted fixture and read-only retest payments.",
     "Continue separate physical GRNI-on configured before receipt, variable-cost/partials/locks and actual role/tenant boundary workflows.",
     "Then service/digital/rental/mixed/settings/files/history; actual backup/restore LAST.",
@@ -408,17 +408,14 @@
     "firstRuntime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json"
   },
   "pendingCandidate": {
-    "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
-    "version": "2.5.7",
-    "status": "301executed-300pass1fail; new-P1-report-defect",
-    "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
-    "expectedAssertions": 300,
-    "liveObservedStamp": "v2.5.7 · 7ffafab",
-    "browserAcceptance": "not-established",
-    "runtimeAssertions": 126,
-    "latestRecord": "runs/CAMP-20261015-030413695-b7f7f0.json",
-    "latestRuntime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
-    "handoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md"
+    "sha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+    "version": "2.5.8",
+    "status": "independent-retest-in-progress",
+    "change": "changes/CHG-20261015-v258-independent-retest.md",
+    "expectedAssertions": 301,
+    "expectedRuntimeAssertions": 127,
+    "liveObservedStamp": "v2.5.8 /cf35da1",
+    "browserAcceptance": "in-progress"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -692,7 +689,7 @@
     "newCompanyMethod": "supported logout/signup/login with synthetic credentials; owner says no email verification",
     "privateState": ".local/live-v257/",
     "earlierExistingCompanyAdminGrant": "still-not-approved; no bypass",
-    "status": "physical-anchor-posted-reconciled; new-P1-report-defect",
+    "status": "v258-fix-retest-in-progress; existing-physical-read-only; new-empty-company-next",
     "newAccountCreated": true,
     "pendingSignupAlias": null,
     "backupPhase": "LAST; no real archive export/restore executed",
@@ -905,5 +902,16 @@
       "requiredEquityCents": 60000
     },
     "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
+  },
+  "v258Retest": {
+    "status": "in-progress",
+    "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+    "observedStamp": "v2.5.8 /cf35da1",
+    "expectedAssertions": 301,
+    "expectedPostgres": 127,
+    "record": "runs/RUN-20261015-v258-live-fix-retest.md",
+    "change": "changes/CHG-20261015-v258-independent-retest.md",
+    "baselineUnchanged": true,
+    "bugClosure": "pending-independent-301-and-live-adjacent-controls"
   }
 }
