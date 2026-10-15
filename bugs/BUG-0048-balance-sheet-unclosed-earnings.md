@@ -2,6 +2,8 @@
 
 Current v2.5.8 checkpoint: **original same-period repro verified fixed**, live1520=400+1120 including120 earnings; unchanged RT-060 passes600=0+600 with journal immutability. [Retest](../runs/RUN-20261015-v258-live-fix-retest.md). No blanket reporting closure: broader as-of/cutoff scope is still pending new RT-061, expert review/closed-books/history dimensions incomplete. The historical P1/failed v2.5.7 evidence below is preserved and is not the current RT-060 result.
 
+RT-061 subsequently confirmed the distinct cross-month carry defect [BUG-0049](BUG-0049-balance-sheet-period-only-balances.md). Keep BUG-0048's same-month repro verified fixed; BUG-0049 remains the current executable P1 reporting blocker. Broader reporting/adjacent acceptance remains partial.
+
 **P1 open, release blocker.** Observed v2.5.7 /7ffafab, synthetic company with no pre-run trading balances. [Run](../runs/RUN-20261015-v257-physical-browser.md), LP257-021. Current October journals balance individually and activity debits=credits2750.
 
 Repro via supported UI: capital1000; qty-onlyGRN10at60 and bill600; quote/order/invoice4at100; cash receipt150; linked credit1at100/cost60; supplier cash payment200. Final Cash950+AR150+Inventory420=Assets1520. AP400, OwnerEquity1000, grossSales400-returns100-COGS180=profit120. P&L correctly shows120. Balance Sheet displays Total assets1520 but Liabilities+equity1400, with only OwnerEquity1000/Drawings0 under Equity and no current earnings.
