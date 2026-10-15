@@ -24,13 +24,13 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "all300-selected-pass; full-business-workflow-acceptance-pending",
+      "status": "new-P1-BUG-0048-live-report-failure; prior300selected-pass; RT-060-not-executed",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
       "id": "G-PHYSICAL",
       "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
-      "status": "source-cost-return/backdate-repros-bounded-pass; full-acceptance-pending",
+      "status": "live-posting-anchor-reconciled; receipt-and-balance-sheet-fail; wider-layers-pending",
       "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
     },
     {
@@ -56,7 +56,7 @@
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
       "status": "module-off-owner/Viewer/Warehouse/scope/deny/member/entity/tenant-print-controls-bounded-pass; real-credential-HTTP-browser-pending",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
-      "dependency": "Fresh normal Owner login and Control Room route denial observed; other role/HTTP/file boundaries pending. Current browser extension popup must be dismissed; no existing-company Admin grant attempted."
+      "dependency": "Chrome recovered; fresh actual Owner and Inventory-only setup observed. Other role/HTTP/file boundaries remain pending; earlier Admin grant not attempted."
     },
     {
       "id": "G-ARCHIVE",
@@ -84,11 +84,11 @@
     }
   ],
   "nextActions": [
-    "Dismiss the browser-extension popup, then continue the same approved Owner session at /company/details; signup and onboarding are complete.",
-    "Verify actual entity/country/currency/tax/modules/CoA/costing and empty baseline; activate synthetic-company modules through supported admin UI if needed, then fresh Owner login.",
-    "Live physical anchor with1000 opening capital:10units at60, sale4at100, receipt150, return1at100/cost60, supplier payment200; expected cash950/AR150/AP400/stock7/value420/profit120. These are planned, not observations.",
-    "Continue service/digital/rental/mixed/settings/users/files/history workflows; real backup/restore LAST by owner instruction.",
-    "Keep137-workflow full acceptance, expert RF-01-10 and isolated operator recovery open. Do not repeat300 unchanged tests without a relevant change."
+    "Validate and run fresh RT-060/301 campaign; preserve report-equity failure without weakening expectations.",
+    "Coding handoff handoffs/HANDOFF-20261015-v257-physical-browser-findings.md; fix P1 Balance Sheet and receipt rendering; preserve exact final posted fixture and read-only retest payments.",
+    "Continue separate physical GRNI-on configured before receipt, variable-cost/partials/locks and actual role/tenant boundary workflows.",
+    "Then service/digital/rental/mixed/settings/files/history; actual backup/restore LAST.",
+    "Keep137-workflow and expert/operator gates open; prior300allpass is not customer readiness."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -614,7 +614,7 @@
     "newCompanyMethod": "supported logout/signup/login with synthetic credentials; owner says no email verification",
     "privateState": ".local/live-v257/",
     "earlierExistingCompanyAdminGrant": "still-not-approved; no bypass",
-    "status": "owner-company-created; company-details-open; browser-popup-block",
+    "status": "physical-anchor-posted-reconciled; new-P1-report-defect",
     "newAccountCreated": true,
     "pendingSignupAlias": null,
     "backupPhase": "LAST; no real archive export/restore executed",
@@ -622,11 +622,12 @@
     "newCompanyCreated": true,
     "actorAlias": "P257-Owner",
     "companyAlias": "P257-Physical",
-    "latestRecord": "runs/RUN-20261015-v257-owner-onboarding.md",
-    "businessTransactionsCreated": 0,
+    "latestRecord": "runs/RUN-20261015-v257-physical-browser.md",
+    "businessTransactionsCreated": 6,
     "actualTradingEmptiness": "not-yet-observed",
-    "browserDependency": "dismiss extension popup; same session; no bypass",
-    "moduleSetup": "source: company starter flags; actual UI configuration pending"
+    "browserDependency": null,
+    "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
+    "receiptFailure": "payment150 committed; receipt page crashes; do not replay"
   },
   "v257UnchangedRetest": {
     "record": "runs/CAMP-20261015-025711060-016ee2.json",
@@ -705,5 +706,45 @@
     "directControlRoom": "redirected-to-denied-root; no-platform-data",
     "boundedAssertionsPassed": 5,
     "fullWorkflowAcceptance": "not-established"
+  },
+  "livePhysicalBrowser": {
+    "record": "runs/RUN-20261015-v257-physical-browser.md",
+    "observedStamp": "v2.5.7 /7ffafab",
+    "qaBase": "5ae37b8f9ca135394e90e00269f950b43b71f8b8",
+    "manualAssertions": 23,
+    "passed": 19,
+    "failed": 4,
+    "bugs": [
+      "BUG-0045",
+      "BUG-0046",
+      "BUG-0047",
+      "BUG-0048"
+    ],
+    "final": {
+      "cash": 950,
+      "AR": 150,
+      "AP": 400,
+      "stockQty": 7,
+      "stockValue": 420,
+      "profit": 120,
+      "journals": 6
+    },
+    "balanceSheet": {
+      "assets": 1520,
+      "reportedLiabilitiesEquity": 1400,
+      "expectedLiabilitiesEquity": 1520,
+      "status": "failed"
+    },
+    "acceptance": "bounded manual slice; full workflow not-established",
+    "environment502": "first failure preserved; recovered one reload",
+    "handoff": "handoffs/HANDOFF-20261015-v257-physical-browser-findings.md"
+  },
+  "pendingReportRegression": {
+    "case": "RT-060",
+    "status": "implemented-not-executed",
+    "expectedCampaign": 301,
+    "expectedPostgres": 127,
+    "bug": "BUG-0048",
+    "unchangedExistingAssertions": 300
   }
 }
