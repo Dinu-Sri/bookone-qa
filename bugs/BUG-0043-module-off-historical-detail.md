@@ -15,3 +15,7 @@ Final [campaign](../runs/CAMP-20261015-015814708-878549.json), CI38668445673:291
 ## v2.5.7 original reproduction passes - 2026-10-15
 
 [Retained292 campaign](../runs/CAMP-20261015-025711060-016ee2.json)292pass/zero failures/skips; [PostgreSQL](../runs/RUN-2026-10-15T02-57-18-913Z-runtime.json)118/118pass, no infrastructure failures. RT-047 historyDenied0, invoiceReadGrant1, historical total100/report profit100, new invoice/payment denied, snapshot unchanged1. Product7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6. Bounded repro resolved; new adjacent RT-052-059 and real actor/browser/history acceptance pending. Keep earlier failure unchanged; no full customer certification.
+
+## v2.5.7 adjacent retest completed
+
+[Expanded campaign](../runs/CAMP-20261015-030413695-b7f7f0.json)300pass/zero fail/skip/block; [PostgreSQL](../runs/RUN-2026-10-15T03-04-19-509Z-runtime.json)126/126pass, no infrastructure failures. RT-052-059 all pass: Viewer history/print allowed but writes denied; Warehouse denied; branch restrictions preserved; explicit read deny and suspended membership deny; stored personal/pending entities excluded; actual foreign-tenant detail/print denied with both tenant positive controls. Snapshots unchanged after denied commands. Original RT-047 still passes. Bounded fix verified with these adjacent controls; real credential/HTTP/browser/full history workflow acceptance and independent wider mutation sensitivity remain pending.

@@ -107,16 +107,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Real credential/browser/settings/history/full lifecycle acceptance remains pending.",
-      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "next": "Complete fresh supported credential/browser/settings/history layers; partial DB evidence is not full workflow acceptance.",
+      "evidence": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
       "latestAttempt": {
-        "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-        "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+        "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+        "evidence": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
         "status": "passed",
-        "scope": "source-consistent partial credit100/receipt250/AR250/profit500 bounded; first invalid fixture retained; full workflow pending"
+        "scope": "source-consistent credit100/receipt250/AR250/profit500; full browser workflow pending"
       },
       "attemptHistory": [
         {
@@ -235,16 +235,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Repair RT-047 without losing read-job/scope denials; real credential/cache/HTTP/browser/files/full scope matrix pending.",
+      "next": "Complete fresh supported credential/browser/settings/history layers; partial DB evidence is not full workflow acceptance.",
       "implementedLayers": [
         "persisted-lifecycle-non-owner-db-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
       "latestAttempt": {
-        "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-        "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+        "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+        "evidence": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
         "status": "passed",
-        "scope": "Sales own command and normal job/scope controls bounded; module-off history RT-047 fails separately; full role workflow pending"
+        "scope": "actual non-owner DB module-on and module-off detail/print role/scope/deny/entity/tenant controls; synthetic identity, real credential/browser acceptance pending"
       }
     },
     {

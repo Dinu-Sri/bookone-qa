@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "retained292-pass; adjacent300-pending; full-acceptance-pending",
+      "status": "all300-selected-pass; full-business-workflow-acceptance-pending",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -54,9 +54,9 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "RT-047-bounded-pass; module-off-adjacent-and-real-auth-workflows-pending",
+      "status": "module-off-owner/Viewer/Warehouse/scope/deny/member/entity/tenant-print-controls-bounded-pass; real-credential-HTTP-browser-pending",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
-      "dependency": "Specific staging Owner/Admin/Viewer creation approval requested after automatic browser review rejection."
+      "dependency": "Prepared new-company signup requires pending browser action-time legal-policy approval; no existing-company Admin grant attempted."
     },
     {
       "id": "G-ARCHIVE",
@@ -84,10 +84,11 @@
     }
   ],
   "nextActions": [
-    "Run new RT-052-059 module-off controls with all retained292 assertions; expected300/126PG, not yet executed.",
-    "Submit prepared P257-Owner signup only after the pending at-action legal-policy approval; own new empty company signup is owner-authorised, not the earlier rejected existing-company Admin grant.",
-    "Execute supported live physical-goods anchor, then service/digital/rental/mixed/settings/roles/files/history; real backup/restore LAST.",
-    "Keep expert RF-01-10 and isolated operator recovery gates open; no readiness percentage or full acceptance from passing selected assertions."
+    "Obtain the pending at-action approval for the prepared P257-Owner signup accepting the displayed Terms/Privacy/Cookies; no account created yet.",
+    "Submit exactly the prepared signup after approval, complete supported company onboarding, verify actual identity/entity/module/CoA/settings and record private credentials/IDs.",
+    "Live physical anchor with1000 opening capital:10units at60, sale4at100, receipt150, return1at100/cost60, supplier payment200; expected cash950/AR150/AP400/stock7/value420/profit120. These are planned, not observations.",
+    "Continue service/digital/rental/mixed/settings/users/files/history workflows; real backup/restore LAST by owner instruction.",
+    "Keep137-workflow full acceptance, expert RF-01-10 and isolated operator recovery open. Do not repeat300 unchanged tests without a relevant change."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -140,20 +141,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261015-025711060-016ee2.json",
-    "ci": 38673649100,
-    "passed": 292,
+    "record": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "ci": 38674272156,
+    "passed": 300,
     "failed": 0,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
-    "runtimeCi": 38673649168,
+    "runtime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "runtimeCi": 38674272336,
     "unitPassed": 98,
-    "runtimePassed": 118,
-    "runtimeCases": 118,
-    "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
-    "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
-    "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
+    "runtimePassed": 126,
+    "runtimeCases": 126,
+    "qaImplementation": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
+    "qaTestedMerge": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
+    "qaContentHash": "9e4e7cc0d826a4cb304356bb800b743a5934d94879e705861fb5dcd43323c907",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
@@ -196,7 +197,9 @@
     ],
     "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
   },
-  "activeReadinessFindings": [],
+  "activeReadinessFindings": [
+    "BUG-0044"
+  ],
   "previousCampaigns": [
     {
       "record": "runs/CAMP-20261014-114805477-fc2c22.json",
@@ -305,6 +308,25 @@
       "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
       "fixtureVersion": "campaign-v2",
       "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    },
+    {
+      "record": "runs/CAMP-20261015-025711060-016ee2.json",
+      "ci": 38673649100,
+      "passed": 292,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
+      "runtimeCi": 38673649168,
+      "unitPassed": 98,
+      "runtimePassed": 118,
+      "runtimeCases": 118,
+      "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
+      "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
+      "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
+      "fixtureVersion": "campaign-v2",
+      "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+      "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
     }
   ],
   "salesValueRetest": {
@@ -373,14 +395,15 @@
   "pendingCandidate": {
     "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
     "version": "2.5.7",
-    "status": "retained292-pass; adjacent300-planned-not-run",
+    "status": "300selected-pass; full-live-workflows-pending",
     "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
     "expectedAssertions": 300,
     "liveObservedStamp": "v2.5.7 · 7ffafab",
     "browserAcceptance": "not-established",
     "runtimeAssertions": 126,
-    "latestRecord": "runs/CAMP-20261015-025711060-016ee2.json",
-    "latestRuntime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json"
+    "latestRecord": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "latestRuntime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "handoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -591,10 +614,10 @@
     "newCompanyMethod": "supported logout/signup/login with synthetic credentials; owner says no email verification",
     "privateState": ".local/live-v257/",
     "earlierExistingCompanyAdminGrant": "still-not-approved; no bypass",
-    "status": "signup-prepared-terms-approval-pending; no-new-creations",
+    "status": "signup-prepared-awaiting-at-action-legal-policy-approval",
     "newAccountCreated": false,
     "pendingSignupAlias": "P257-Owner",
-    "backupPhase": "deferred-last-by-owner",
+    "backupPhase": "LAST; no real archive export/restore executed",
     "signupLegalConfirmation": "requested-for-P257-Owner; pending"
   },
   "v257UnchangedRetest": {
@@ -621,5 +644,47 @@
     "newInvoiceAccepted": 0,
     "newPaymentAccepted": 0,
     "unchanged": 1
+  },
+  "v257ExpandedRetest": {
+    "record": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "ci": 38674272156,
+    "passed": 300,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "runtimeCi": 38674272336,
+    "unitPassed": 98,
+    "runtimePassed": 126,
+    "runtimeCases": 126,
+    "qaImplementation": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
+    "qaTestedMerge": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
+    "qaContentHash": "9e4e7cc0d826a4cb304356bb800b743a5934d94879e705861fb5dcd43323c907",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established",
+    "handoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md",
+    "newCases": [
+      "RT-052",
+      "RT-053",
+      "RT-054",
+      "RT-055",
+      "RT-056",
+      "RT-057",
+      "RT-058",
+      "RT-059"
+    ],
+    "result": "all8passed; own/foreign positive controls and unchanged snapshots",
+    "independentMutationSensitivity": "not-established; no full security certification"
+  },
+  "manualSignupChecks": {
+    "record": "runs/RUN-20261015-v257-signup-policy-links.md",
+    "passed": 0,
+    "failed": 3,
+    "bug": "BUG-0044",
+    "severity": "P2",
+    "separateFromAutomated300": true,
+    "legalImpact": "not-assessed",
+    "newAccountCreated": false
   }
 }
