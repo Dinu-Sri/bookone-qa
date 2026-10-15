@@ -1,3 +1,5 @@
+Current disposition (2026-10-15): v2.5.9 five original owner-DB HTTP Viewer settings denials and distinct Owner positives pass; posted facts unchanged. Restricted role cases blocked by0053; adjacent Admin/brand/location/year/rental not accepted. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
+
 # BUG-0051: Assigned Viewer can persist company profile and finance settings
 
 **P1 open; customer-readiness blocker.** Product v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. Confirmed in the real compiled Next HTTPS owner-DB baseline, not yet reproduced through the deployed browser or restricted DB role.

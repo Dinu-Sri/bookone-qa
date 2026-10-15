@@ -1,3 +1,5 @@
+Current disposition (2026-10-15): Still OPEN on v2.5.9: HTTP102 own pages307 for Owner/Viewer/foreignOwner, ten dependent cases blocked. Legitimate Owner repair now observed, so lookup/session work progressed; complete protected ERP route remains broken. Source suggests getTenantInfo unscoped tenants read after tenant-context callback exits; request-specific SQL trace not obtained. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
+
 # BUG-0053: Real credential login cannot establish ERP session with restricted DB role
 
 **P1 open for the required non-owner/NOBYPASSRLS runtime boundary.** Product v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. This is an availability/session-bootstrap failure, not demonstrated cross-tenant disclosure. The deployed staging DB role is unknown; no claim that every current staging login fails.

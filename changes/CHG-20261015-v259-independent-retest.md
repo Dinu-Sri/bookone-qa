@@ -26,4 +26,6 @@ First attempts are immutable; a harness incompatibility requires diagnosis and a
 
 Rulebook 1.0.0 remains unchanged, JSON SHA256 `abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc`; expert review and launch gates remain open. Applicable established reporting/authorization/atomicity invariants are unchanged.
 
+Local preflight first failed because backup-plan/catalog candidate metadata still pinned v2.5.8. Both future-plan SHA/stamp fields were deliberately aligned to v2.5.9; no scenario, assertion or past result changed, and no backup was executed. Repeat preflight is a new metadata state, not a product retest.
+
 Next: publish this candidate pin in a QA PR, inspect all first CI attempts, preserve sanitized summaries, and update bug dispositions only from executed evidence.

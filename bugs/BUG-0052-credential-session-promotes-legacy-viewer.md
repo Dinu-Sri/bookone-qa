@@ -1,3 +1,5 @@
+Current disposition (2026-10-15): v2.5.9 owner-DB original real credential repro passes: Viewer not promoted/no receipt10; legitimate Owner repair works; paid200/due400/fourjournals/threeallocations. Restricted financial positive blocked; no blanket session/security certification. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
+
 # BUG-0052: Credential session repairs an unassigned Viewer into Owner
 
 **P1 open; customer-readiness blocker.** Product v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. Confirmed real credential/compiled Next HTTPS owner-DB baseline. A valid legacy Viewer membership with no primary job becomes Owner during authenticated ERP session loading and can then post money.

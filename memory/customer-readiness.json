@@ -14,7 +14,7 @@
     "uploads/imports",
     "history/upgrade/recovery"
   ],
-  "candidateSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+  "candidateSha": "2e105cd443ce01e31220bfe2d4b4637cdc737b75",
   "observedLiveStamp": "v2.5.8 /cf35da1",
   "rulebookVersion": "1.0.0",
   "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "303executed301pass2fail;RT061P1BUG0049/RT062P2BUG0050",
+      "status": "303implemented-assertions-pass;HTTP102-fails10-dependent-blocks;full-acceptance-open",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -54,7 +54,7 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "P1BUG0051/0052-ownerDB-real-HTTP;P1BUG0053-restricted-session-unavailable;acceptance-blocked",
+      "status": "0051/0052-original-ownerDB-repros-fixed;0053-restricted-own-route-still-fails",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Chrome recovered; fresh actual Owner and Inventory-only setup observed. Other role/HTTP/file boundaries remain pending; earlier Admin grant not attempted."
     },
@@ -75,6 +75,24 @@
       "topic": "Sri Lankan tax/format/framework and privacy applicability",
       "status": "expert-review-gaps",
       "required": "Applicable rule versions and RF-01–10 expert decisions; no statutory approval from delegated defaults"
+    },
+    {
+      "id": "G-PERFORMANCE",
+      "topic": "Representative volume, concurrency and interruption behaviour",
+      "status": "targets-and-isolated-execution-pending",
+      "required": "Agreed workload/latency/error thresholds before execution; no shared stress"
+    },
+    {
+      "id": "G-OPERATIONS",
+      "topic": "Deployment, monitoring, incident support and safe release recovery",
+      "status": "operator-rehearsal-pending",
+      "required": "Actual alert/deployment/upgrade/recovery evidence; no production operations inferred"
+    },
+    {
+      "id": "G-USABILITY",
+      "topic": "Representative customer daily-work acceptance",
+      "status": "representative-user-review-pending",
+      "required": "Supported journeys completed independently on declared browsers/devices"
     },
     {
       "id": "G-RELEASE",
@@ -908,9 +926,12 @@
     "BUG-0046": "native-repro-fixed;persisted-positive-blocked-by-distinct-BUG0050",
     "BUG-0047": "SO-label/no-invalid-Edit-repro-fixed;generic-adjacent-pending",
     "BUG-0048": "verified-fixed-in-original-same-period-scope;full-reporting-fails-distinct-BUG0049",
-    "BUG-0049": "P1-open-RT061-cross-month-balances",
+    "BUG-0049": "v259-RT061-original-repro-fixed;broader-reporting-and-live-pending",
     "INV258-01": "confirmed-as-BUG0050-via-supported-create/permission-command",
-    "BUG-0050": "P2-open-RT062-additional-company-Starter-capabilities"
+    "BUG-0050": "v259-corrected-adapter-RT062-original-repro-fixed;live-pending",
+    "BUG-0051": "v259-five-ownerDB-Viewer-denials-and-Owner-positives-pass;restricted-blocked",
+    "BUG-0052": "v259-ownerDB-no-promotion-and-legitimate-repair-pass;restricted-financial-positive-blocked",
+    "BUG-0053": "v259-open-HTTP102-own-invoices307;10-dependent-blocks"
   },
   "pendingBootstrapRegression": {
     "case": "RT-062",
@@ -966,7 +987,7 @@
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v259-retest.md",
   "httpRuntime": {
     "status": "canonical-v4-executed9pass8fail9blocked;harness-origin-resolved;BUG0051/0052/0053-open",
     "manifest": "batches/http-runtime.json",
@@ -1086,5 +1107,38 @@
     "lastPage": "original product stock ledger",
     "moduleApproval": "P258 exact setup unchanged-pending;no save",
     "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
+  },
+  "launchRegister": "docs/LAUNCH_ACCEPTANCE.md",
+  "v259Retest": {
+    "status": "executed303pass;HTTP15pass1fail10blocked;not-customer-ready",
+    "productSha": "2e105cd443ce01e31220bfe2d4b4637cdc737b75",
+    "qaImplementation": "81c34b0e4507ffba6b67b1e07a04a160b652914e",
+    "qaTestedMerge": "7d5ff9257718944383e0f17485168220c62aed86",
+    "qaContentHash": "a581735bad83b8417d584783d747b9bb2b47de02e44ff523b41eb2e09441e0d6",
+    "pr": 33,
+    "campaignCi": 38754155102,
+    "httpCi": 38754155274,
+    "postgresCi": 38754154954,
+    "campaign": "runs/CAMP-20261015-144528741-07d4ec.json",
+    "postgres": "runs/RUN-2026-10-15T14-45-32-116Z-runtime.json",
+    "http": "runs/HTTP-2026-10-15T14-45-42-865Z-125b6e.json",
+    "record": "runs/RUN-20261015-v259-first-retest.md",
+    "change": "changes/CHG-20261015-v259-independent-retest.md",
+    "observedLiveStamp": "not-observed-browser-tooling-network-failure",
+    "campaignCounts": {
+      "passed": 303,
+      "failed": 0,
+      "blocked": 0
+    },
+    "postgresCounts": {
+      "passed": 129,
+      "failed": 0
+    },
+    "httpCounts": {
+      "passed": 15,
+      "failed": 1,
+      "blocked": 10
+    },
+    "bugs": "0049/0050-original-isolated-repros-fixed;0051/0052-ownerDB-original-repros-fixed;0053-remains-open;deployed-and-adjacent-acceptance-pending"
   }
 }
