@@ -968,17 +968,17 @@
   },
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
   "httpRuntime": {
-    "status": "v3-executed7pass10fail9blocked;BUG0051-expanded-four-settings;canonical-v4-pending",
+    "status": "canonical-v4-executed9pass8fail9blocked;harness-origin-resolved;BUG0051/0052/0053-open",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
     "record": "runs/RUN-20261015-http-runtime-first.md",
     "expectedSlots": 26,
     "perDatabaseBoundary": 13,
-    "localGuardTestsPassed": 5,
-    "realServerCasesPassed": 7,
+    "localGuardTestsPassed": 7,
+    "realServerCasesPassed": 9,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
-    "acceptance": "not-established;two-confirmed-P1-ownerDB-findings;not-deployed/restricted-role/full-workflow-certification",
+    "acceptance": "failed-product;no-release-certification;HTTP-separate-from303",
     "pendingApprovalUnaffected": true,
     "firstAttempt": {
       "record": "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
@@ -1012,30 +1012,30 @@
       "finalBalanceCents": 45000
     },
     "latestAttempt": {
-      "record": "runs/HTTP-2026-10-15T13-00-44-761Z-8d1cb1.json",
-      "ci": 38739011909,
-      "job": 116435581156,
+      "record": "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json",
+      "ci": 38740136839,
+      "job": 116439371572,
       "totals": {
-        "passed": 7,
-        "failed": 10,
+        "passed": 9,
+        "failed": 8,
         "blocked": 9
       },
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
         "productStamp": "v2.5.8 · cf35da1",
-        "qaSha": "4ce27d4828438911bd8b5cac9abf24e6146cc85c",
+        "qaSha": "90804160c2d26405cb2deaa70e359e32dba48f37",
         "qaDirty": false,
-        "qaContentHash": "2f67be2e24a90c19284311a8d16ade3505e5167c42532cee2986d19b9d9dae71",
+        "qaContentHash": "46ad917306e71e5fa13e9f9d99d318a318efaf08e025926bdbe65617ad19aa02",
         "node": "v22.23.3",
         "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
-        "fixtureVersion": "http-v3-settings",
-        "transport": "direct-local-TLS-Next-custom-server",
+        "fixtureVersion": "http-v4-canonical-loopback",
+        "transport": "canonical-localhost-TLS-pinned-IPv4-Next-custom-server",
         "schemaMigrations": 43,
-        "nextBuildId": "jt0_pnn2mQJFoY1MdCRY5",
+        "nextBuildId": "1PZ0WsB8Rdy40691SqzPg",
         "nextVersion": "15.5.19",
         "betterAuthVersion": "1.6.20"
       },
-      "qaImplementation": "90a785b1f6edbf24fafdcaa858abbb08a1871bf0",
+      "qaImplementation": "da40ee9683632eb3ef11cff0662e202e370b8f1e",
       "confirmedProductBugs": [
         "BUG-0051",
         "BUG-0052",
@@ -1048,13 +1048,14 @@
         "HTTP-012",
         "HTTP-013"
       ],
-      "companion": "runs/RUN-2026-10-15T13-00-36-299Z-runtime.json",
-      "companionCi": 38739011904,
+      "companion": "runs/RUN-2026-10-15T13-08-42-693Z-runtime.json",
+      "companionCi": 38740136795,
       "companionPassed": 127,
       "companionFailed": 2,
-      "remaining": "Restricted role9 dependent blocks;known product bugs;canonical loopback fix needs actual run"
+      "anonymousAndCredentialControls": "passed-both-roles;canonical-host-correction-executed",
+      "remaining": "three-product-groups;restricted9-blocks;deployed-role/proxy/browser/storage/full-workflows-unverified"
     },
-    "nextDiagnostic": {
+    "completedDiagnostic": {
       "status": "implemented-not-executed",
       "fixtureVersion": "http-v4-canonical-loopback",
       "target": "https://localhost:3443/",
@@ -1062,7 +1063,16 @@
       "localGuardTestsPassed": 7,
       "cause": "Pinned NextURL.parseURL normalizes127.0.0.1 to localhost;v3 actual redirectHTTPS/localhost/3443 observed",
       "scope": "same26 cases/unchanged expected finance/roles;not deployed proxy acceptance"
-    }
+    },
+    "nextAction": "Review coding fixes/new product pin;unchanged303 plus26 actual HTTP;company Admin/other settings/receipt-query/scopes/files/history remain open;real backup LAST",
+    "attemptRecords": [
+      "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
+      "runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json",
+      "runs/HTTP-2026-10-15T12-40-06-795Z-360298.json",
+      "runs/HTTP-2026-10-15T12-51-34-870Z-415340.json",
+      "runs/HTTP-2026-10-15T13-00-44-761Z-8d1cb1.json",
+      "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json"
+    ]
   },
   "liveContinuation": {
     "date": "2026-10-15",
