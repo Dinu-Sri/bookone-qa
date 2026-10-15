@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "new-P1-BUG-0048-live-report-failure; prior300selected-pass; RT-060-not-executed",
+      "status": "P1-BUG-0048-confirmed-live-and-isolated-RT060;301selected300pass1fail",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -84,7 +84,7 @@
     }
   ],
   "nextActions": [
-    "Validate and run fresh RT-060/301 campaign; preserve report-equity failure without weakening expectations.",
+    "RT-060 failed independently in fresh isolated CI; preserve the1failure and300positives. Coding fix/new product stamp required before rerun.",
     "Coding handoff handoffs/HANDOFF-20261015-v257-physical-browser-findings.md; fix P1 Balance Sheet and receipt rendering; preserve exact final posted fixture and read-only retest payments.",
     "Continue separate physical GRNI-on configured before receipt, variable-cost/partials/locks and actual role/tenant boundary workflows.",
     "Then service/digital/rental/mixed/settings/files/history; actual backup/restore LAST.",
@@ -198,7 +198,11 @@
     "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
   },
   "activeReadinessFindings": [
-    "BUG-0044"
+    "BUG-0044",
+    "BUG-0045",
+    "BUG-0046",
+    "BUG-0047",
+    "BUG-0048"
   ],
   "previousCampaigns": [
     {
@@ -395,7 +399,7 @@
   "pendingCandidate": {
     "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
     "version": "2.5.7",
-    "status": "300selected-pass; full-live-workflows-pending",
+    "status": "301executed-300pass1fail; new-P1-report-defect",
     "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
     "expectedAssertions": 300,
     "liveObservedStamp": "v2.5.7 · 7ffafab",
@@ -624,7 +628,7 @@
     "companyAlias": "P257-Physical",
     "latestRecord": "runs/RUN-20261015-v257-physical-browser.md",
     "businessTransactionsCreated": 6,
-    "actualTradingEmptiness": "not-yet-observed",
+    "actualTradingEmptiness": "initial journal/account zero observed; no table-wide emptiness claim; company now traded",
     "browserDependency": null,
     "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
     "receiptFailure": "payment150 committed; receipt page crashes; do not replay"
@@ -741,10 +745,54 @@
   },
   "pendingReportRegression": {
     "case": "RT-060",
-    "status": "implemented-not-executed",
-    "expectedCampaign": 301,
-    "expectedPostgres": 127,
-    "bug": "BUG-0048",
-    "unchangedExistingAssertions": 300
+    "status": "executed-failed",
+    "campaign": "runs/CAMP-20261015-070624689-f091fa.json",
+    "runtime": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
+    "campaignCi": 38696490949,
+    "runtimeCi": 38696491048,
+    "qaImplementation": "ec441b210e19c7b8c35710cfef3e0f77d1a2a442",
+    "qaTestedMerge": "ed269a4a2624ecc7c7d1ef57796c163b3419c27f",
+    "qaContentHash": "ea3c5e0da6c72944bbcfd3477b648b7f1658f277d07c233a157ff0563e49f252",
+    "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+    "passed": 300,
+    "failed": 1,
+    "postgresPassed": 126,
+    "postgresFailed": 1,
+    "postgresTotal": 127,
+    "infrastructureFailures": 0,
+    "observation": {
+      "assetsCents": 60000,
+      "profitCents": 60000,
+      "liabilityCents": 0,
+      "reportedEquityCents": 0,
+      "requiredEquityCents": 60000
+    },
+    "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
+  },
+  "v257PhysicalFollowupRegression": {
+    "case": "RT-060",
+    "status": "executed-failed",
+    "campaign": "runs/CAMP-20261015-070624689-f091fa.json",
+    "runtime": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
+    "campaignCi": 38696490949,
+    "runtimeCi": 38696491048,
+    "qaImplementation": "ec441b210e19c7b8c35710cfef3e0f77d1a2a442",
+    "qaTestedMerge": "ed269a4a2624ecc7c7d1ef57796c163b3419c27f",
+    "qaContentHash": "ea3c5e0da6c72944bbcfd3477b648b7f1658f277d07c233a157ff0563e49f252",
+    "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+    "passed": 300,
+    "failed": 1,
+    "postgresPassed": 126,
+    "postgresFailed": 1,
+    "postgresTotal": 127,
+    "infrastructureFailures": 0,
+    "observation": {
+      "assetsCents": 60000,
+      "profitCents": 60000,
+      "liabilityCents": 0,
+      "reportedEquityCents": 0,
+      "requiredEquityCents": 60000
+    },
+    "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
   }
 }

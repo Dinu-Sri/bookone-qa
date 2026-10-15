@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "300selected-pass;126PG-pass; no-full-workflow-acceptance",
+  "implementationStatus": "301executed:300pass/1fail;127PG:126pass/1fail;P1BUG0048; no-release-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261015-030413695-b7f7f0.json",
+  "lastRetestRecord": "runs/CAMP-20261015-070624689-f091fa.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -70,7 +70,7 @@
     "BUG-0048"
   ],
   "nextActions": [
-    "Validate and run fresh RT-060/301 campaign; preserve report-equity failure without weakening expectations.",
+    "RT-060 failed independently in fresh isolated CI; preserve the1failure and300positives. Coding fix/new product stamp required before rerun.",
     "Coding handoff handoffs/HANDOFF-20261015-v257-physical-browser-findings.md; fix P1 Balance Sheet and receipt rendering; preserve exact final posted fixture and read-only retest payments.",
     "Continue separate physical GRNI-on configured before receipt, variable-cost/partials/locks and actual role/tenant boundary workflows.",
     "Then service/digital/rental/mixed/settings/files/history; actual backup/restore LAST.",
@@ -129,7 +129,7 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
@@ -148,7 +148,11 @@
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
-    "BUG-0044"
+    "BUG-0044",
+    "BUG-0045",
+    "BUG-0046",
+    "BUG-0047",
+    "BUG-0048"
   ],
   "verifiedBoundedFixes": [
     "BUG-0010",
@@ -406,7 +410,7 @@
   "pendingCandidate": {
     "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
     "version": "2.5.7",
-    "status": "300selected-pass; full-live-workflows-pending",
+    "status": "301executed-300pass1fail; new-P1-report-defect",
     "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
     "expectedAssertions": 300,
     "liveObservedStamp": "v2.5.7 · 7ffafab",
@@ -618,7 +622,11 @@
     "BUG-0030"
   ],
   "activeReadinessFindings": [
-    "BUG-0044"
+    "BUG-0044",
+    "BUG-0045",
+    "BUG-0046",
+    "BUG-0047",
+    "BUG-0048"
   ],
   "previousFullCampaignCheckpoint": {
     "manifest": "campaigns/full.json",
@@ -694,7 +702,7 @@
     "companyAlias": "P257-Physical",
     "latestRecord": "runs/RUN-20261015-v257-physical-browser.md",
     "businessTransactionsCreated": 6,
-    "actualTradingEmptiness": "not-yet-observed",
+    "actualTradingEmptiness": "initial journal/account zero observed; no table-wide emptiness claim; company now traded",
     "browserDependency": null,
     "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
     "receiptFailure": "payment150 committed; receipt page crashes; do not replay"
@@ -848,10 +856,54 @@
   },
   "pendingReportRegression": {
     "case": "RT-060",
-    "status": "implemented-not-executed",
-    "expectedCampaign": 301,
-    "expectedPostgres": 127,
-    "bug": "BUG-0048",
-    "unchangedExistingAssertions": 300
+    "status": "executed-failed",
+    "campaign": "runs/CAMP-20261015-070624689-f091fa.json",
+    "runtime": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
+    "campaignCi": 38696490949,
+    "runtimeCi": 38696491048,
+    "qaImplementation": "ec441b210e19c7b8c35710cfef3e0f77d1a2a442",
+    "qaTestedMerge": "ed269a4a2624ecc7c7d1ef57796c163b3419c27f",
+    "qaContentHash": "ea3c5e0da6c72944bbcfd3477b648b7f1658f277d07c233a157ff0563e49f252",
+    "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+    "passed": 300,
+    "failed": 1,
+    "postgresPassed": 126,
+    "postgresFailed": 1,
+    "postgresTotal": 127,
+    "infrastructureFailures": 0,
+    "observation": {
+      "assetsCents": 60000,
+      "profitCents": 60000,
+      "liabilityCents": 0,
+      "reportedEquityCents": 0,
+      "requiredEquityCents": 60000
+    },
+    "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
+  },
+  "v257PhysicalFollowupRegression": {
+    "case": "RT-060",
+    "status": "executed-failed",
+    "campaign": "runs/CAMP-20261015-070624689-f091fa.json",
+    "runtime": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
+    "campaignCi": 38696490949,
+    "runtimeCi": 38696491048,
+    "qaImplementation": "ec441b210e19c7b8c35710cfef3e0f77d1a2a442",
+    "qaTestedMerge": "ed269a4a2624ecc7c7d1ef57796c163b3419c27f",
+    "qaContentHash": "ea3c5e0da6c72944bbcfd3477b648b7f1658f277d07c233a157ff0563e49f252",
+    "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+    "passed": 300,
+    "failed": 1,
+    "postgresPassed": 126,
+    "postgresFailed": 1,
+    "postgresTotal": 127,
+    "infrastructureFailures": 0,
+    "observation": {
+      "assetsCents": 60000,
+      "profitCents": 60000,
+      "liabilityCents": 0,
+      "reportedEquityCents": 0,
+      "requiredEquityCents": 60000
+    },
+    "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
   }
 }
