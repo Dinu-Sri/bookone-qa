@@ -151,7 +151,9 @@ it('[B-104] actual invoice receipt250 and credit100 reconcile AR250 cash250 reve
   await seed.insert(schema.accounts).values({tenantId:TENANT_A,code:'4100',name:'Sales Returns',type:'revenue',normalSide:'debit'});
   const p=await product();const id=await create(input(p));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:id,amount:250}]})).ok).toBe(true);
   await ledger({'1000':25000,'1300':35000,'4000':-60000},2);
-  const credit=await create(input(p,'sales_return',{sourceDocumentId:id,lines:[{productId:p,description:'Synthetic partial service credit',quantity:1,unitPrice:100}]}));
+  // First v2.5.6 attempt changed source description/price and stopped at creation. Preserve it.
+  // Use a copied source line: half a service unit at original200 still credits the independently expected100.
+  const credit=await create(input(p,'sales_return',{sourceDocumentId:id,lines:[{productId:p,description:'QA three units',quantity:0.5,unitPrice:200}]}));
   const original=await doc(id),returned=await doc(credit);expect([Number(original.total),Number(original.paidAmount),Number(original.balanceDue),original.status]).toEqual([600,350,250,'partial']);
   expect([returned.sourceDocumentId,Number(returned.total),Number(returned.paidAmount),Number(returned.balanceDue)]).toEqual([id,100,100,0]);
   await exactJournal(returned.transactionId!,[['4100','debit',10000],['1300','credit',10000]]);

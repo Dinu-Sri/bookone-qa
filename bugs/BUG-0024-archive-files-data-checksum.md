@@ -15,3 +15,7 @@ The original S-0787 nonempty mismatching-checksum case passes on 8e1a2b8. RT-027
 Status: original reproduction bounded-fixed; adjacent current-format omission open, P0 integrity gate. [Current PG evidence](../runs/RUN-2026-10-14T11-10-44-786Z-runtime.json). Memory object-store adapter and synthetic sessions do not establish deployed S3/browser restore acceptance.
 
 [Reviewed runtime evidence](../runs/RUN-2026-10-14T06-33-03-250Z-runtime.json); [full campaign](../runs/CAMP-20261014-063301088-3efa1c.json); [coding handoff](../handoffs/HANDOFF-20261014-full-campaign-findings.md). Original0010–16 assertions/history are retained. No live staging writes or real archive/password publication.
+
+## v2.5.6 bounded retest - 2026-10-15
+
+RT-027 pass on d5377d89d2bd9d27c52a6e9c43376f2d03255bd0. [Latest campaign](../runs/CAMP-20261015-015814708-878549.json)291/292pass, [PostgreSQL](../runs/RUN-2026-10-15T01-58-15-584Z-runtime.json)117/118pass, zero skips or infrastructure failures. All19 earlier failure cases pass. This is bounded original/selected-adjacent reproduction evidence; full feature/credential/browser/storage acceptance remains pending. Retain historical failure and expectations. BUG-0043 module-off historical detail denial is a new adjacent access regression; do not undo scope/read-job protections to repair it. See [current handoff](../handoffs/HANDOFF-20261015-v256-retest.md).

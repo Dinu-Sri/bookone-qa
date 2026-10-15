@@ -1,0 +1,1169 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-2026-10-15T01-51-27-828Z-runtime",
+  "fingerprint": {
+    "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+    "productStamp": "v2.5.6 · d5377d8",
+    "qaSha": "70cdcc1661dade2b094a882849a2e33afea59dbc",
+    "qaDirty": false,
+    "node": "v22.23.3",
+    "qaContentHash": "725578279b4b7bc38b537b3a5040a1b8d071a571ff365770af0e0e271aa47b23",
+    "preparationHash": "4ae081726c02b4db073ceb90ae34a4722d9a10dc42e67b579b794b8bd49633ba",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "results": [
+    {
+      "lane": "postgres-rls",
+      "boundary": "real-PostgreSQL-non-owner-product-helper",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "passed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "passed"
+        },
+        {
+          "id": "RT-012",
+          "status": "passed"
+        },
+        {
+          "id": "RT-013",
+          "status": "passed"
+        },
+        {
+          "id": "RT-014",
+          "status": "passed"
+        },
+        {
+          "id": "RT-015",
+          "status": "passed"
+        },
+        {
+          "id": "RT-016",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-002": {
+          "expectedOwnRows": 3,
+          "observedRows": 3
+        },
+        "RT-004": {
+          "tenantACount": 1,
+          "afterFailureCount": 0,
+          "tenantBCount": 1,
+          "expectedACount": 1,
+          "expectedAfterFailureCount": 0,
+          "expectedBCount": 1
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-synthetic-login-real-permission-loading",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "passed"
+        },
+        {
+          "id": "B-102",
+          "status": "passed"
+        },
+        {
+          "id": "B-103",
+          "status": "passed"
+        },
+        {
+          "id": "E-115",
+          "status": "passed"
+        },
+        {
+          "id": "E-116",
+          "status": "passed"
+        },
+        {
+          "id": "E-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-008",
+          "status": "passed"
+        },
+        {
+          "id": "RT-009",
+          "status": "passed"
+        },
+        {
+          "id": "RT-010",
+          "status": "passed"
+        },
+        {
+          "id": "RT-011",
+          "status": "passed"
+        },
+        {
+          "id": "B-104",
+          "status": "failed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {},
+      "diagnostics": {},
+      "failureLocations": {
+        "B-104": [
+          {
+            "line": 18,
+            "column": 114
+          },
+          {
+            "line": 154,
+            "column": 16
+          }
+        ]
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "reversal-concurrency",
+      "boundary": "real-PostgreSQL-owner-connection-overlapping-actions-isolated-delay",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "passed"
+        },
+        {
+          "id": "RT-006",
+          "status": "passed"
+        },
+        {
+          "id": "RT-007",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-006": {
+          "acceptedRequests": 1,
+          "reversalCount": 1,
+          "journalCount": 2,
+          "netCashCents": 0,
+          "netIncomeCents": 0,
+          "expectedAccepted": 1,
+          "expectedReversals": 1,
+          "expectedJournals": 2,
+          "expectedNetCashCents": 0,
+          "expectedNetIncomeCents": 0
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "physical-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-physical-settings-permissions-isolated-fault",
+      "cases": [
+        {
+          "id": "C-101",
+          "status": "passed"
+        },
+        {
+          "id": "C-102",
+          "status": "passed"
+        },
+        {
+          "id": "C-103",
+          "status": "passed"
+        },
+        {
+          "id": "C-104",
+          "status": "passed"
+        },
+        {
+          "id": "C-105",
+          "status": "passed"
+        },
+        {
+          "id": "C-106",
+          "status": "passed"
+        },
+        {
+          "id": "C-107",
+          "status": "passed"
+        },
+        {
+          "id": "C-115",
+          "status": "passed"
+        },
+        {
+          "id": "C-116",
+          "status": "passed"
+        },
+        {
+          "id": "RT-017",
+          "status": "passed"
+        },
+        {
+          "id": "RT-018",
+          "status": "passed"
+        },
+        {
+          "id": "RT-019",
+          "status": "passed"
+        },
+        {
+          "id": "RT-020",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "C-105": {
+          "stockQty": 9,
+          "inventoryValueCents": 54000,
+          "reportedProfitCents": 4000,
+          "expectedProfitCents": 4000,
+          "reportedCashCents": -50000,
+          "expectedCashCents": -50000
+        },
+        "C-115": {
+          "accepted": 0,
+          "newDocumentCount": 0,
+          "newJournalCount": 0,
+          "foreignLinkedLineCount": 0
+        },
+        "C-116": {
+          "accepted": 0,
+          "newTransactionCount": 0,
+          "newJournalCount": 0,
+          "newDocumentCount": 0,
+          "newJournalLineCount": 0
+        },
+        "RT-018": {
+          "accepted": 0,
+          "newTransactionCount": 0,
+          "newJournalCount": 0,
+          "newDocumentCount": 0,
+          "newAuditCount": 0,
+          "newMovementCount": 0
+        },
+        "RT-020": {
+          "accepted": 0,
+          "newJournalCount": 0
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "physical-nonowner",
+      "boundary": "real-PostgreSQL-non-owner-physical-actions-persisted-permissions-isolated-fault",
+      "cases": [
+        {
+          "id": "C-201",
+          "status": "passed"
+        },
+        {
+          "id": "C-202",
+          "status": "passed"
+        },
+        {
+          "id": "C-203",
+          "status": "passed"
+        },
+        {
+          "id": "C-204",
+          "status": "passed"
+        },
+        {
+          "id": "C-205",
+          "status": "passed"
+        },
+        {
+          "id": "C-206",
+          "status": "passed"
+        },
+        {
+          "id": "C-207",
+          "status": "passed"
+        },
+        {
+          "id": "C-215",
+          "status": "passed"
+        },
+        {
+          "id": "C-216",
+          "status": "passed"
+        },
+        {
+          "id": "RT-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-118",
+          "status": "passed"
+        },
+        {
+          "id": "RT-119",
+          "status": "passed"
+        },
+        {
+          "id": "RT-120",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "C-205": {
+          "stockQty": 9,
+          "inventoryValueCents": 54000,
+          "reportedProfitCents": 4000,
+          "expectedProfitCents": 4000,
+          "reportedCashCents": -50000,
+          "expectedCashCents": -50000
+        },
+        "C-215": {
+          "accepted": 0,
+          "newDocumentCount": 0,
+          "newJournalCount": 0,
+          "foreignLinkedLineCount": 0
+        },
+        "C-216": {
+          "accepted": 0,
+          "newTransactionCount": 0,
+          "newJournalCount": 0,
+          "newDocumentCount": 0,
+          "newJournalLineCount": 0
+        },
+        "RT-118": {
+          "accepted": 0,
+          "newTransactionCount": 0,
+          "newJournalCount": 0,
+          "newDocumentCount": 0,
+          "newAuditCount": 0,
+          "newMovementCount": 0
+        },
+        "RT-120": {
+          "accepted": 0,
+          "newJournalCount": 0
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "commercial-deep",
+      "boundary": "real-PostgreSQL-owner-connection-controlled-race-fault-stale-membership",
+      "cases": [
+        {
+          "id": "B-106",
+          "status": "passed"
+        },
+        {
+          "id": "B-107",
+          "status": "passed"
+        },
+        {
+          "id": "B-108",
+          "status": "passed"
+        },
+        {
+          "id": "B-111",
+          "status": "passed"
+        },
+        {
+          "id": "B-112",
+          "status": "passed"
+        },
+        {
+          "id": "B-113",
+          "status": "passed"
+        },
+        {
+          "id": "E-108",
+          "status": "passed"
+        },
+        {
+          "id": "E-113",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "B-107": {
+          "accepted": 1,
+          "payments": 1,
+          "receiptCents": 35000,
+          "paidCents": 35000,
+          "balanceCents": 25000,
+          "arCents": 25000
+        },
+        "B-106": {
+          "invoiceReplaySame": 1,
+          "firstPaymentAccepted": 1,
+          "replayAccepted": 1,
+          "paymentCount": 1,
+          "paidCents": 25000,
+          "balanceCents": 35000
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "archive-persistence",
+      "boundary": "real-PostgreSQL-owner-connection-encrypted-archive-synthetic-memory-storage",
+      "cases": [
+        {
+          "id": "S-0774",
+          "status": "passed"
+        },
+        {
+          "id": "S-0775",
+          "status": "passed"
+        },
+        {
+          "id": "S-0776",
+          "status": "passed"
+        },
+        {
+          "id": "S-0778",
+          "status": "passed"
+        },
+        {
+          "id": "S-0780",
+          "status": "passed"
+        },
+        {
+          "id": "S-0781",
+          "status": "passed"
+        },
+        {
+          "id": "S-0782",
+          "status": "passed"
+        },
+        {
+          "id": "S-0783",
+          "status": "passed"
+        },
+        {
+          "id": "S-0784",
+          "status": "passed"
+        },
+        {
+          "id": "S-0785",
+          "status": "passed"
+        },
+        {
+          "id": "S-0787",
+          "status": "passed"
+        },
+        {
+          "id": "S-0788",
+          "status": "passed"
+        },
+        {
+          "id": "S-0789",
+          "status": "passed"
+        },
+        {
+          "id": "S-0793",
+          "status": "passed"
+        },
+        {
+          "id": "RT-027",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-027": {
+          "accepted": 0,
+          "writtenObjects": 0,
+          "marker": 0,
+          "unchanged": 1,
+          "sourceChecksumPresent": 1,
+          "packChecksumPresent": 0
+        },
+        "S-0781": {
+          "matchesDeclaredSqlZero": 1,
+          "matchesFixedScaleZero": 0
+        },
+        "S-0782": {
+          "acceptedIncoherent": 0,
+          "targetDocuments": 0,
+          "targetJournalLines": 0,
+          "unchanged": 1
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "rental-lifecycle",
+      "boundary": "real-PostgreSQL-owner-connection-rental-money-fleet-permissions-fault",
+      "cases": [
+        {
+          "id": "D-101",
+          "status": "passed"
+        },
+        {
+          "id": "D-102",
+          "status": "passed"
+        },
+        {
+          "id": "D-103",
+          "status": "passed"
+        },
+        {
+          "id": "D-105",
+          "status": "passed"
+        },
+        {
+          "id": "D-109",
+          "status": "passed"
+        },
+        {
+          "id": "D-110",
+          "status": "passed"
+        },
+        {
+          "id": "D-117",
+          "status": "passed"
+        },
+        {
+          "id": "D-118",
+          "status": "passed"
+        },
+        {
+          "id": "RT-023",
+          "status": "passed"
+        },
+        {
+          "id": "E-104",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "D-117": {
+          "unchanged": 1,
+          "beforeTransactions": 1,
+          "afterTransactions": 1,
+          "beforeJournals": 1,
+          "afterJournals": 1,
+          "beforeLines": 2,
+          "afterLines": 2,
+          "beforeAudit": 3,
+          "afterAudit": 3,
+          "collected": 0,
+          "refunded": 0
+        },
+        "D-118": {
+          "accepted": 0,
+          "unchanged": 1,
+          "beforeTransactions": 0,
+          "afterTransactions": 0,
+          "beforeJournals": 0,
+          "afterJournals": 0,
+          "beforeLines": 0,
+          "afterLines": 0,
+          "beforeAudit": 2,
+          "afterAudit": 2
+        },
+        "RT-023": {
+          "accepted": 0,
+          "unchanged": 1,
+          "beforeTransactions": 0,
+          "afterTransactions": 0,
+          "beforeJournals": 0,
+          "afterJournals": 0,
+          "beforeLines": 0,
+          "afterLines": 0,
+          "beforeAudit": 2,
+          "afterAudit": 2
+        },
+        "E-104": {
+          "accepted": 0,
+          "unchanged": 1,
+          "beforeTransactions": 0,
+          "afterTransactions": 0,
+          "beforeJournals": 0,
+          "afterJournals": 0,
+          "beforeLines": 0,
+          "afterLines": 0,
+          "beforeAudit": 2,
+          "afterAudit": 2
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "stock-transfer",
+      "boundary": "real-PostgreSQL-owner-connection-location-transfer-permissions-race",
+      "cases": [
+        {
+          "id": "C-109",
+          "status": "passed"
+        },
+        {
+          "id": "RT-021",
+          "status": "passed"
+        },
+        {
+          "id": "RT-022",
+          "status": "passed"
+        },
+        {
+          "id": "C-114",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "C-109": {
+          "accepted": 0,
+          "unchanged": 1,
+          "beforeAudit": 1,
+          "afterAudit": 1
+        },
+        "RT-022": {
+          "accepted": 0,
+          "unchanged": 1,
+          "newStockDocs": 0,
+          "newStockLines": 0,
+          "newCostLayers": 0,
+          "newConsumptions": 0
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "payment-boundaries",
+      "boundary": "real-PostgreSQL-owner-connection-payment-concurrency-batch-identity",
+      "cases": [
+        {
+          "id": "RT-024",
+          "status": "passed"
+        },
+        {
+          "id": "B-115",
+          "status": "passed"
+        },
+        {
+          "id": "RT-025",
+          "status": "passed"
+        },
+        {
+          "id": "RT-026",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "RT-024": {
+          "controlledWait": 1,
+          "accepted": 1,
+          "paymentCount": 1,
+          "paymentCents": 35000,
+          "paidCents": 35000,
+          "balanceCents": 25000,
+          "cashCents": -35000,
+          "apCents": 25000
+        },
+        "B-115": {
+          "firstAccepted": 0,
+          "replayAccepted": 0,
+          "unchanged": 1,
+          "replayUnchanged": 1,
+          "paymentCount": 0,
+          "paymentCents": 0,
+          "paidCents": 0,
+          "balanceCents": 60000
+        },
+        "RT-025": {
+          "differentAccepted": 0,
+          "unchanged": 1,
+          "paymentCount": 1,
+          "paymentCents": 25000,
+          "secondPaidCents": 0,
+          "secondBalanceCents": 60000
+        },
+        "RT-026": {
+          "accepted": 0,
+          "unchanged": 1,
+          "paymentCount": 0,
+          "paymentCents": 0,
+          "paidCents": 0,
+          "balanceCents": 60000
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "inventory-valuation",
+      "boundary": "real-PostgreSQL-owner-product-command-synthetic-session",
+      "cases": [
+        {
+          "id": "C-111",
+          "status": "passed"
+        },
+        {
+          "id": "RT-032",
+          "status": "passed"
+        },
+        {
+          "id": "RT-028",
+          "status": "passed"
+        },
+        {
+          "id": "RT-030",
+          "status": "passed"
+        },
+        {
+          "id": "RT-031",
+          "status": "passed"
+        },
+        {
+          "id": "RT-029",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "C-111": {
+          "methodFifo": 1,
+          "issueCents": 30000,
+          "expectedIssueCents": 30000,
+          "inventoryCents": 110000,
+          "expectedInventoryCents": 110000,
+          "stockQty": 15,
+          "reportedProfitCents": 20000,
+          "expectedProfitCents": 20000
+        },
+        "RT-032": {
+          "methodFifo": 0,
+          "issueCents": 35000,
+          "expectedIssueCents": 35000,
+          "inventoryCents": 105000,
+          "expectedInventoryCents": 105000,
+          "stockQty": 15,
+          "reportedProfitCents": 15000,
+          "expectedProfitCents": 15000
+        },
+        "RT-028": {
+          "methodFifo": 1,
+          "methodAverage": 0,
+          "returnCostCents": 6000,
+          "expectedReturnCostCents": 6000,
+          "inventoryCents": 216000,
+          "expectedInventoryCents": 216000,
+          "stockQty": 26,
+          "historicalIssueCents": 30000,
+          "expectedHistoricalIssueCents": 30000
+        },
+        "RT-030": {
+          "methodFifo": 0,
+          "methodAverage": 1,
+          "returnCostCents": 7000,
+          "expectedReturnCostCents": 7000,
+          "inventoryCents": 212000,
+          "expectedInventoryCents": 212000,
+          "stockQty": 26,
+          "historicalIssueCents": 35000,
+          "expectedHistoricalIssueCents": 35000
+        },
+        "RT-031": {
+          "methodFifo": 0,
+          "methodAverage": 0,
+          "returnCostCents": 8000,
+          "expectedReturnCostCents": 8000,
+          "inventoryCents": 208000,
+          "expectedInventoryCents": 208000,
+          "stockQty": 26,
+          "historicalIssueCents": 40000,
+          "expectedHistoricalIssueCents": 40000
+        },
+        "RT-029": {
+          "accepted": 0,
+          "historyUnchanged": 1,
+          "issueCents": 30000,
+          "expectedIssueCents": 30000,
+          "inventoryCents": 110000,
+          "expectedInventoryCents": 110000,
+          "stockQty": 15
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "sales-value-boundaries",
+      "boundary": "real-PostgreSQL-owner-product-command-synthetic-session",
+      "cases": [
+        {
+          "id": "B-114",
+          "status": "passed"
+        },
+        {
+          "id": "RT-040",
+          "status": "passed"
+        },
+        {
+          "id": "RT-033",
+          "status": "passed"
+        },
+        {
+          "id": "RT-034",
+          "status": "passed"
+        },
+        {
+          "id": "RT-035",
+          "status": "passed"
+        },
+        {
+          "id": "RT-036",
+          "status": "passed"
+        },
+        {
+          "id": "RT-037",
+          "status": "passed"
+        },
+        {
+          "id": "RT-038",
+          "status": "passed"
+        },
+        {
+          "id": "B-105",
+          "status": "passed"
+        },
+        {
+          "id": "RT-039",
+          "status": "passed"
+        },
+        {
+          "id": "RT-041",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 0,
+      "observations": {
+        "B-114": {
+          "netCents": 35000,
+          "expectedNetCents": 35000,
+          "taxCents": 6300,
+          "expectedTaxCents": 6300,
+          "totalCents": 41300,
+          "expectedTotalCents": 41300,
+          "revenueCents": 35000,
+          "vatCents": 6300,
+          "arCents": 41300,
+          "profitCents": 35000
+        },
+        "RT-040": {
+          "netCents": 35000,
+          "expectedNetCents": 35000,
+          "taxCents": 6300,
+          "expectedTaxCents": 6300,
+          "totalCents": 41300,
+          "expectedTotalCents": 41300,
+          "revenueCents": 35000,
+          "vatCents": 6300,
+          "arCents": 41300,
+          "profitCents": 35000
+        },
+        "RT-033": {
+          "taxCents": 1800,
+          "expectedTaxCents": 1800,
+          "totalCents": 11800,
+          "expectedTotalCents": 11800,
+          "vatBalanceCents": 0,
+          "arCents": 0,
+          "originalTaxUnchanged": 1
+        },
+        "RT-034": {
+          "netCents": 35000,
+          "taxCents": 6300,
+          "expectedTaxCents": 6300,
+          "totalCents": 41300,
+          "expectedTotalCents": 41300,
+          "arCents": 0,
+          "vatBalanceCents": 0,
+          "returnRevenueCents": 35000
+        },
+        "RT-035": {
+          "registered": 1,
+          "taxableSupply": 1,
+          "productStandard": 1,
+          "customerUnregistered": 1,
+          "taxCents": 1800,
+          "expectedTaxCents": 1800,
+          "totalCents": 11800,
+          "expectedTotalCents": 11800,
+          "vatBalanceCents": -1800,
+          "arCents": 11800
+        },
+        "RT-036": {
+          "accepted": 0,
+          "unchanged": 1,
+          "arCents": 0,
+          "vatBalanceCents": 0
+        },
+        "RT-037": {
+          "accepted": 0,
+          "unchanged": 1,
+          "arCents": 0,
+          "vatBalanceCents": 0
+        },
+        "RT-038": {
+          "accepted": 0,
+          "unchanged": 1,
+          "returnCount": 1,
+          "returnTotalCents": 10000,
+          "expectedMaxReturnCents": 10000,
+          "arCents": 0
+        },
+        "B-105": {
+          "cashCents": 0,
+          "arCents": 0,
+          "creditBalanceCents": 0,
+          "creditPaidCents": 10000,
+          "receiptAllocationsBefore": 1,
+          "receiptAllocationsAfter": 1,
+          "receiptRowsUnchanged": 1,
+          "revenueCents": -10000,
+          "returnRevenueCents": 10000
+        },
+        "RT-039": {
+          "accepted": 0,
+          "unchanged": 1,
+          "cashCents": 10000,
+          "arCents": 0
+        },
+        "RT-041": {
+          "accepted": 0,
+          "unchanged": 1,
+          "returnCount": 1,
+          "returnTotalCents": 10000,
+          "expectedMaxReturnCents": 10000,
+          "cashCents": 0,
+          "expectedCashCents": 0
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {},
+      "status": "passed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    },
+    {
+      "lane": "role-scope-boundaries",
+      "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session",
+      "cases": [
+        {
+          "id": "B-109",
+          "status": "passed"
+        },
+        {
+          "id": "RT-042",
+          "status": "passed"
+        },
+        {
+          "id": "RT-043",
+          "status": "passed"
+        },
+        {
+          "id": "RT-044",
+          "status": "passed"
+        },
+        {
+          "id": "RT-045",
+          "status": "passed"
+        },
+        {
+          "id": "RT-046",
+          "status": "passed"
+        },
+        {
+          "id": "RT-047",
+          "status": "failed"
+        },
+        {
+          "id": "RT-048",
+          "status": "passed"
+        },
+        {
+          "id": "RT-049",
+          "status": "passed"
+        },
+        {
+          "id": "RT-050",
+          "status": "passed"
+        },
+        {
+          "id": "RT-051",
+          "status": "passed"
+        }
+      ],
+      "subprocessExit": 1,
+      "observations": {
+        "B-109": {
+          "invoiceAccepted": 1,
+          "paymentAccepted": 1,
+          "arCents": 7500,
+          "cashCents": 2500
+        },
+        "RT-042": {
+          "paymentAccepted": 1,
+          "invoiceAccepted": 0,
+          "unchanged": 1,
+          "arCents": 7500,
+          "cashCents": 2500
+        },
+        "RT-043": {
+          "readTotalCents": 10000,
+          "invoiceAccepted": 0,
+          "paymentAccepted": 0,
+          "unchanged": 1
+        },
+        "RT-044": {
+          "ownInvoiceAccepted": 1,
+          "ownPaymentAccepted": 1,
+          "otherInvoiceAccepted": 0,
+          "otherPaymentAccepted": 0,
+          "unchanged": 1,
+          "arCents": 17500
+        },
+        "RT-045": {
+          "allowedListCount": 1,
+          "allowedDetailTotalCents": 10000,
+          "restrictedReadDenied": 1,
+          "unchanged": 1
+        },
+        "RT-046": {
+          "scopeFaultVerified": 1,
+          "scopeRecovered": 1,
+          "accepted": 0,
+          "unchanged": 1,
+          "arCents": 10000
+        },
+        "RT-048": {
+          "accepted": 0,
+          "unchanged": 1,
+          "arCents": 10000
+        },
+        "RT-049": {
+          "invoiceAccepted": 0,
+          "paymentAccepted": 0,
+          "unchanged": 1,
+          "arCents": 10000
+        },
+        "RT-050": {
+          "foreignFixtureReadPositive": 1,
+          "ownReadPositive": 1,
+          "foreignDetailDenied": 1,
+          "foreignDimensionsAccepted": 0,
+          "unchanged": 1
+        },
+        "RT-051": {
+          "knownInvoicePositive": 1,
+          "warehouseJobValid": 1,
+          "inventoryReadGranted": 1,
+          "invoiceReadGranted": 0,
+          "invoiceDetailDenied": 1,
+          "unchanged": 1
+        }
+      },
+      "diagnostics": {},
+      "failureLocations": {
+        "RT-047": [
+          {
+            "line": 53,
+            "column": 535
+          }
+        ]
+      },
+      "status": "failed",
+      "evidenceComplete": true,
+      "infrastructureFailure": false,
+      "unexpected": 0
+    }
+  ],
+  "productAcceptance": "not-established",
+  "schemaPreparation": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 43,
+    "migrationsExpected": 43
+  },
+  "missing": [
+    "credential-login",
+    "Next-server-HTTP",
+    "deployed-browser",
+    "full-upgrade",
+    "recovery",
+    "object-storage",
+    "non-owner-concurrent-reversal",
+    "broader-races-and-faults"
+  ]
+}

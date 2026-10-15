@@ -13,3 +13,7 @@ Rule inference is supported by [IRD VAT overview](https://www.ird.gov.lk/en/Type
 Repair separates legal supply classification/rate/price mode from invoice presentation. Preserve explicit exempt/zero/out-of-scope distinctions, effective dates, original credit tax snapshots and registered/unregistered positives. Unsupported classifications/price modes need explicit rejection/support decisions, never silent zero VAT. Do not declare this fixed by globally taxing exempt/export supplies or deleting the commercial mode without a reviewed scope/contract change.
 
 [PG](../runs/RUN-2026-10-14T12-05-27-247Z-runtime.json), [campaign](../runs/CAMP-20261014-120513142-57ddba.json). Isolated real SQL/product commands, synthetic session/owner connection; credential/UI and specialist applicability remain open. No staging writes.
+
+## v2.5.6 bounded retest - 2026-10-15
+
+RT-035 pass on d5377d89d2bd9d27c52a6e9c43376f2d03255bd0. [Latest campaign](../runs/CAMP-20261015-015814708-878549.json)291/292pass, [PostgreSQL](../runs/RUN-2026-10-15T01-58-15-584Z-runtime.json)117/118pass, zero skips or infrastructure failures. All19 earlier failure cases pass. This is bounded original/selected-adjacent reproduction evidence; full feature/credential/browser/storage acceptance remains pending. Retain historical failure and expectations. BUG-0043 module-off historical detail denial is a new adjacent access regression; do not undo scope/read-job protections to repair it. See [current handoff](../handoffs/HANDOFF-20261015-v256-retest.md).

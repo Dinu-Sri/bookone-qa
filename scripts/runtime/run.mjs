@@ -75,7 +75,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['RT-044']=['ownInvoiceAccepted','ownPaymentAccepted','otherInvoiceAccepted','otherPaymentAccepted','unchanged','arCents'];
   observationKeys['RT-045']=['allowedListCount','allowedDetailTotalCents','restrictedReadDenied','unchanged'];
   observationKeys['RT-046']=['scopeFaultVerified','scopeRecovered','accepted','unchanged','arCents'];
-  observationKeys['RT-047']=['invoiceAccepted','paymentAccepted','historyTotalCents','profitCents','invoiceReadGrant','unchanged'];
+  observationKeys['RT-047']=['historyDenied','invoiceAccepted','paymentAccepted','historyTotalCents','profitCents','invoiceReadGrant','unchanged'];
   observationKeys['RT-048']=['accepted','unchanged','arCents'];
   observationKeys['RT-049']=['invoiceAccepted','paymentAccepted','unchanged','arCents'];
   observationKeys['RT-050']=['foreignFixtureReadPositive','ownReadPositive','foreignDetailDenied','foreignDimensionsAccepted','unchanged'];
