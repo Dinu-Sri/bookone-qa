@@ -1,0 +1,9 @@
+# Real Next / HTTPS / credential testing layer
+
+Productcf35da1244e902e4a41291bc409eb0d994ed4e01, QA basefab81550bbf8b80e46b6a94444762ace620b3370. Rulebook1.0.0/hashabcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc; BR-SEC-01/02, BR-ACC-04, BR-DAT-01/RB-UI-01. No original303 assertions, two demonstrated defects or pending P258 exact-scope approval changed.
+
+Objective: replace a missing evidence layer with actual pinned Next production build, real credential sign-in/session cookies, authorized/foreign HTTP views and real Server Action write outcomes on completely separate ephemeral data. Not a substitute for deployed browser/files/full workflow acceptance. See docs/HTTP_RUNTIME.md and batches/http-runtime.json for18 required assertion slots, owner/non-owner boundaries, independent finance/role expectations, TLS/target/data guards and private evidence rules.
+
+Graph-first discovery of auth/session/routes/actions then pinned-source verification. Current source getSession calls ensureOwnerMembership for existing users; null primary jobs require a Viewer fail-closed case and genuine legacy Owner repair positive. saveCompanyProfile requires context but its source body has no explicit permission assertion; only real Viewer request plus persisted state can establish a runtime failure. Receipt query values are also source concerns for future independent integrity/contract cases, not a claimed current HTTP failure. Retain these hypotheses separately from executed results.
+
+Initial implementation and preflight only; first CI build/fixture/HTTP result pending. Missing build, fixture, cookie, form or action-codec prerequisites must be explicit blocks with immutable first attempt, not product passes or swallowed failures. No product code, staging record, module configuration, real password or role grant is changed. No backup run. Keep full customer readiness unaccepted and prior bugs red.

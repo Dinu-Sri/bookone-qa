@@ -2,6 +2,8 @@
 
 Customer readiness **NOT certified**. Product source/live **v2.5.8 · cf35da1**, SHA cf35da1244e902e4a41291bc409eb0d994ed4e01. [Current handoff](handoffs/HANDOFF-20261015-v258-bootstrap-findings.md), [latest live/isolated investigation](runs/RUN-20261015-v258-bootstrap-investigation.md). Source master checked unchanged on2026-10-15; no product edits by QA.
 
+Independent [real credential/Next HTTPS layer](docs/HTTP_RUNTIME.md) implemented:18 required slots across owner/non-owner DB boundaries; four local target/cookie guards and repository preflight pass, **first server/HTTP execution pending**. [Intent](runs/RUN-20261015-http-runtime-first.md). This is separate from the303 evidence below, not18 new passes or full workflow acceptance. No staging setup change or approval bypass.
+
 ## Current executed evidence
 
 [303-check campaign](runs/CAMP-20261015-091325948-860ae3.json): **301pass/2fail**, zero skipped/blocked/flaky/not-run. [Included129 PostgreSQL checks](runs/RUN-2026-10-15T09-13-33-663Z-runtime.json): **127pass/2fail**, no infrastructure failure,43/43 migrations/PostgreSQL16.15. Only RT-061 and RT-062 fail; all original301 assertions pass unchanged. QA implementation78d4f986081032988090f9e46de03768e83301a0, tested merge92a4bfc6b277eae1250ab1f94dde49237af17728; full fingerprints in JSON. Tests/maintenance PR30 merged b08b413a6155b12e0234b4a41d64666becbd8c7b.

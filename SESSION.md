@@ -2,6 +2,8 @@
 
 Read AGENTS.md, STATUS.md, memory/customer-readiness.json, memory/programme.json, docs/rulebook/README.md and applicable rules. Current handoff: [v2.5.8 two findings](handoffs/HANDOFF-20261015-v258-bootstrap-findings.md). These indexes describe current state; immutable runs/bug history retain earlier attempts.
 
+Current independent work: docs/HTTP_RUNTIME.md, batches/http-runtime.json and scripts/http/run.mjs implement real Next production build/credential/TLS/Server Action checks on NEW ephemeral CI data,18 required slots. First execution pending; preflight/four target-cookie guards passed. See runs/RUN-20261015-http-runtime-first.md and CHG-20261015-real-next-http-runtime. The compiled app must use actual auth, not seeder aliases. No P258/staging access change; pending approval still applies. Preserve first build/fixture/case blocks/failures rather than weakening assertions, then publish only allowlisted summaries. Original303/BUG0049/0050 stay unchanged and red where documented below.
+
 ## Verified source and execution
 
 - Product pinned cf35da1244e902e4a41291bc409eb0d994ed4e01 /VERSION2.5.8; observed live v2.5.8 · cf35da1. Check actual master/live identity again before any new run; no source fix has yet been observed.

@@ -1,0 +1,57 @@
+name: Isolated real-login Next HTTPS runtime
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - scripts/http/**
+      - tests/http/**
+      - tests/infrastructure/http-target.test.mjs
+      - vitest.http-seed.config.ts
+      - batches/http-runtime.json
+      - product-ref.json
+      - .github/workflows/http-runtime.yml
+permissions:
+  contents: read
+jobs:
+  next-https-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: bookone_qa_runtime
+          POSTGRES_USER: qa_fixture_admin
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    env:
+      QA_RUNTIME_ISOLATION: ephemeral-local-postgres
+      QA_HTTP_ISOLATION: ephemeral-ci-next
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test:http-guard
+      - run: pnpm product:prepare
+      - name: Install pinned product dependencies for the real Next server
+        run: pnpm --dir work/product install --frozen-lockfile
+      - run: node scripts/runtime/ci-target.mjs
+      - run: pnpm runtime:prepare
+      - run: pnpm http:run
+      - name: Preserve allowlisted summary only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-next-https-sanitized
+          path: .local/http/latest-summary.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      # Never upload fixture credentials, TLS keys, cookies, raw responses or server/build logs.

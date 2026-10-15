@@ -84,6 +84,7 @@
     }
   ],
   "nextActions": [
+    "Execute and review the first18-slot real Next HTTPS job; preserve build/fixture/codec blocks and actual role/money failures independently of303.",
     "Coding agent fix P1BUG0049 cumulative Balance Sheet and P2BUG0050 additional-company bootstrap; preserve original expectations/access ceilings.",
     "New source/live pin: independent diff review and unchanged303/129PG fresh rerun, retaining all historical first attempts.",
     "Resolve exact P258 module-setup user approval before Save; no bypass. Clear Chrome extension UI and explicitly verify actor/PO state.",
@@ -965,5 +966,19 @@
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v258-bootstrap-findings.md"
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v258-bootstrap-findings.md",
+  "httpRuntime": {
+    "status": "implemented-first-execution-pending",
+    "manifest": "batches/http-runtime.json",
+    "guide": "docs/HTTP_RUNTIME.md",
+    "change": "changes/CHG-20261015-real-next-http-runtime.md",
+    "record": "runs/RUN-20261015-http-runtime-first.md",
+    "expectedSlots": 18,
+    "perDatabaseBoundary": 9,
+    "localGuardTestsPassed": 4,
+    "realServerCasesPassed": 0,
+    "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
+    "acceptance": "not-established;separate-from303-until-reviewed",
+    "pendingApprovalUnaffected": true
+  }
 }
