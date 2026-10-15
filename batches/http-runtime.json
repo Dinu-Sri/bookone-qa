@@ -1,23 +1,85 @@
 {
-  "version":1,
-  "fixtureVersion":"http-v1",
-  "productAcceptance":"not-established",
-  "target":"https://127.0.0.1:3443/",
-  "guide":"docs/HTTP_RUNTIME.md",
-  "lanes":[
-    {"name":"owner-db-baseline","credential":"admin","expected":["HTTP-001","HTTP-002","HTTP-003","HTTP-004","HTTP-005","HTTP-006","HTTP-007","HTTP-008","HTTP-009"]},
-    {"name":"nonowner-nobypassrls","credential":"runtime","expected":["HTTP-101","HTTP-102","HTTP-103","HTTP-104","HTTP-105","HTTP-106","HTTP-107","HTTP-108","HTTP-109"]}
+  "version": 1,
+  "fixtureVersion": "http-v2-direct-tls",
+  "productAcceptance": "not-established",
+  "target": "https://127.0.0.1:3443/",
+  "guide": "docs/HTTP_RUNTIME.md",
+  "lanes": [
+    {
+      "name": "owner-db-baseline",
+      "credential": "admin",
+      "expected": [
+        "HTTP-001",
+        "HTTP-002",
+        "HTTP-003",
+        "HTTP-004",
+        "HTTP-005",
+        "HTTP-006",
+        "HTTP-007",
+        "HTTP-008",
+        "HTTP-009"
+      ]
+    },
+    {
+      "name": "nonowner-nobypassrls",
+      "credential": "runtime",
+      "expected": [
+        "HTTP-101",
+        "HTTP-102",
+        "HTTP-103",
+        "HTTP-104",
+        "HTTP-105",
+        "HTTP-106",
+        "HTTP-107",
+        "HTTP-108",
+        "HTTP-109"
+      ]
+    }
   ],
-  "cases":[
-    {"suffix":"001","name":"anonymous/wrong-password denial; real credential sign-in and secure session cookies"},
-    {"suffix":"002","name":"known Owner/Viewer/foreign Owner identity and own invoice read"},
-    {"suffix":"003","name":"known existing foreign invoice read denied with own positive controls"},
-    {"suffix":"004","name":"actual rendered profile Server Action denies Viewer without business effects; Owner positive"},
-    {"suffix":"005","name":"normal Owner/Viewer Control Room deny; real platform-admin positive"},
-    {"suffix":"006","name":"sign-out revokes session and stale cookie replay is denied"},
-    {"suffix":"007","name":"existing receipt150 renders through real server route with no duplicate posting"},
-    {"suffix":"008","name":"real financial Server Action denies Viewer/foreign target; Owner receipt25 posts exact delta"},
-    {"suffix":"009","name":"legacy Viewer with missing primary job is not promoted at login; legacy Owner positive repair and payment control"}
+  "cases": [
+    {
+      "suffix": "001",
+      "name": "anonymous/wrong-password denial; real credential sign-in and secure session cookies"
+    },
+    {
+      "suffix": "002",
+      "name": "known Owner/Viewer/foreign Owner identity and own invoice read"
+    },
+    {
+      "suffix": "003",
+      "name": "known existing foreign invoice read denied with own positive controls"
+    },
+    {
+      "suffix": "004",
+      "name": "actual rendered profile Server Action denies Viewer without business effects; Owner positive"
+    },
+    {
+      "suffix": "005",
+      "name": "normal Owner/Viewer Control Room deny; real platform-admin positive"
+    },
+    {
+      "suffix": "006",
+      "name": "sign-out revokes session and stale cookie replay is denied"
+    },
+    {
+      "suffix": "007",
+      "name": "existing receipt150 renders through real server route with no duplicate posting"
+    },
+    {
+      "suffix": "008",
+      "name": "real financial Server Action denies Viewer/foreign target; Owner receipt25 posts exact delta"
+    },
+    {
+      "suffix": "009",
+      "name": "legacy Viewer with missing primary job is not promoted at login; legacy Owner positive repair and payment control"
+    }
   ],
-  "limits":["No Chrome/browser automation or staging credentials","No production/tunnel target or shared staging reset","No real backup/restore phase","Local TLS validation stays on; cookie protections unchanged","Owner DB baseline and non-owner lane are separate boundaries, not separate business coverage","No browser hydration/overlay, deployment proxy or full workflow acceptance from HTTP alone"]
+  "limits": [
+    "No Chrome/browser automation or staging credentials",
+    "No production/tunnel target or shared staging reset",
+    "No real backup/restore phase",
+    "Local TLS validation stays on; cookie protections unchanged",
+    "Owner DB baseline and non-owner lane are separate boundaries, not separate business coverage",
+    "No browser hydration/overlay, deployment proxy or full workflow acceptance from HTTP alone"
+  ]
 }

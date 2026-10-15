@@ -54,7 +54,7 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "P1BUG0051-profile-write/P1BUG0052-session-promotion-confirmed-ownerDB-real-HTTP;restricted-identity-blocks-acceptance",
+      "status": "P1BUG0051/0052-ownerDB-real-HTTP;P1BUG0053-restricted-session-unavailable;acceptance-blocked",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Chrome recovered; fresh actual Owner and Inventory-only setup observed. Other role/HTTP/file boundaries remain pending; earlier Admin grant not attempted."
     },
@@ -968,7 +968,7 @@
   },
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
   "httpRuntime": {
-    "status": "diagnostic-executed6pass7fail5blocked;P1BUG0051/0052;restricted-identity-and-redirect-diagnosis-open",
+    "status": "latest-v1-executed7pass6fail5blocked;P1BUG0051/0052/0053;direct-TLS-v2-next",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
@@ -976,7 +976,7 @@
     "expectedSlots": 18,
     "perDatabaseBoundary": 9,
     "localGuardTestsPassed": 5,
-    "realServerCasesPassed": 6,
+    "realServerCasesPassed": 7,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
     "acceptance": "not-established;two-confirmed-P1-ownerDB-findings;not-deployed/restricted-role/full-workflow-certification",
     "pendingApprovalUnaffected": true,
@@ -1012,50 +1012,48 @@
       "finalBalanceCents": 45000
     },
     "latestAttempt": {
-      "record": "runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json",
-      "ci": 38717742247,
-      "job": 116364447463,
+      "record": "runs/HTTP-2026-10-15T12-40-06-795Z-360298.json",
+      "ci": 38736302033,
+      "job": 116426352653,
       "totals": {
-        "passed": 6,
-        "failed": 7,
+        "passed": 7,
+        "failed": 6,
         "blocked": 5
       },
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
         "productStamp": "v2.5.8 · cf35da1",
-        "qaSha": "c130b49f0540791d27acaea4fe506639d2c0b3f6",
+        "qaSha": "04292bbb31b340fbffc162d81302f03b116674ad",
         "qaDirty": false,
-        "qaContentHash": "eadeeedbe640e91bf0a6c308d64e1f11874323e78d3e11581cb320b8f7247185",
+        "qaContentHash": "648b25f3d8f562614279298316ba2cb4435f0033ccccb473bffa98c0d3817dfa",
         "node": "v22.23.3",
         "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
         "fixtureVersion": "http-v1",
         "schemaMigrations": 43,
-        "nextBuildId": "_4UQUksdMNHB26ec5FtLT",
+        "nextBuildId": "oPAmpC0SBpe34lmmPF70P",
         "nextVersion": "15.5.19",
         "betterAuthVersion": "1.6.20"
       },
-      "qaImplementation": "fc97fafc66869edbfbf99a0b2861e4fd1d4bef75",
+      "qaImplementation": "62bd649d119d80b6fac9e0f75ff2d254fa30507d",
       "confirmedProductBugs": [
         "BUG-0051",
-        "BUG-0052"
+        "BUG-0052",
+        "BUG-0053"
       ],
-      "companion": "runs/RUN-2026-10-15T10-06-00-736Z-runtime.json",
-      "companionCi": 38717742263,
+      "companion": "runs/RUN-2026-10-15T12-39-59-629Z-runtime.json",
+      "companionCi": 38736301845,
       "companionPassed": 127,
       "companionFailed": 2,
       "handoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
-      "remaining": "Anonymous redirect origin;foreign safe-fallback classification;restricted ERP identity positives;five dependent blocked cases"
+      "remaining": "Anonymous localhost-backend origin mismatch;restricted ERP identity/five blocks;deployed DB role unknown"
     },
     "nextDiagnostic": {
       "status": "implemented-not-executed",
+      "fixtureVersion": "http-v2-direct-tls",
+      "transport": "same-origin direct TLS supported pinned Next production API;no product config override",
       "localGuardTestsPassed": 6,
-      "changes": [
-        "case-specific source-declared same-origin foreign-invoice-list fallback",
-        "numeric anonymous redirect HTTPS-backend/path categories",
-        "read-only role users visibility before/local-tenant/foreign/after transaction;separate closed probe connection"
-      ],
-      "securityUnchanged": "no running-app tenant injection/TLS relaxation/BYPASS grant/finance expectation change",
-      "requires": "fresh isolated CI;preserve all completed first runs"
+      "requires": "fresh CI actual summary;keep prior v1 origin failures and security expectations",
+      "scope": "not actual Cloudflare/Traefik acceptance"
     }
   },
   "liveContinuation": {
@@ -1068,6 +1066,7 @@
     "boundedObservationsPassed": 8,
     "financialWrites": 0,
     "lastPage": "original product stock ledger",
-    "moduleApproval": "P258 exact setup unchanged-pending;no save"
+    "moduleApproval": "P258 exact setup unchanged-pending;no save",
+    "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
   }
 }

@@ -1,4 +1,4 @@
-# Coding handoff: two confirmed real HTTP permission failures
+# Coding handoff: real HTTP permission and restricted-role session failures
 
 Product pinned v2.5.8 /cf35da1244e902e4a41291bc409eb0d994ed4e01. No product edits by QA. New isolated real Next15.5.19 /BetterAuth1.6.20 credential/TLS/Server Action lane supplements the existing303 assertions; it does not certify every deployed workflow.
 
@@ -12,3 +12,11 @@ Companion [129 PostgreSQL checks](../runs/RUN-2026-10-15T10-06-00-736Z-runtime.j
 After fixes: provide product SHA/version, changed files/CHG/migrations and compatibility decisions; QA independently reviews and reruns unchanged303 plus real HTTP on fresh isolated DB, with same-action controls and both DB boundaries. Keep legal-name/membership/money expectations intact. Deployed/browser checks, GRNI/variable-cost/settings/roles, service/digital/rental/mixed and expert rule review remain. Actual backup/restore LAST. BookOne is not customer-ready.
 
 No passwords, cookies, raw responses, archive files or live customer data accompany this public handoff. No staging reset or module grant performed. QA PR32 contains this layer and preserved first attempts; its merge/check status must be checked before use.
+
+## Fresh diagnostic and third runtime finding
+
+[CI38736302033](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38736302033), [immutable summary](../runs/HTTP-2026-10-15T12-40-06-795Z-360298.json):7pass/6fail/5blocked. Known-foreign read now passes the source-declared same-origin /sales/invoices fallback with own positives/no foreign data/no effects; the earlier classification failure is preserved. BUG0051/0052 reproduce unchanged. Anonymous307 goes to a localhost backend-origin login with the expected from-path, exposing the local two-port fixture mismatch; no off-target redirect was followed and no product vulnerability assigned from it.
+
+**P1 BUG-0053 /HTTP-102/109:** real credential auth works with NOSUPERUSER/NOBYPASSRLS, but ERP own-session positives fail. Separate read-only role probe sees own user0 unscoped,1 with transaction-local correct tenant, foreign0, then own0 after scope ends. Pinned session.ts performs its initial users lookup before tenant context, while users RLS requires it. [Finding and repair boundaries](../bugs/BUG-0053-nonowner-credential-erp-session.md). Actual staging DB role remains unknown; do not grant bypass or treat blocked financial cases as denials. Companion [129PG](../runs/RUN-2026-10-15T12-39-59-629Z-runtime.json), [CI38736301845](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38736301845):127pass2fail RT061/62 only.
+
+Deployed read-only [adjacent physical checks](../runs/RUN-20261015-v258-live-adjacent-readonly.md) now pass under fresh normal Owner/P257-Physical/v2.5.8: invoice400/settled250/due150, AR150/AP400, remittance200, stock7/value420, journal6/debits=credits2750, movements+10/-4/+1. No live financial replay or module change. Browser-filter match/no-match/clear also worked without stuck overlay; this is bounded evidence only.
