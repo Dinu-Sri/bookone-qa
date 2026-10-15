@@ -21,7 +21,7 @@
     "scope": "60-source-contracts-no-release-acceptance"
   },
   "candidateProductSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-  "observedStagingStamp": "v2.5.5 · 8e1a2b8",
+  "observedStagingStamp": "v2.5.6 · d5377d8",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -67,8 +67,7 @@
   "nextActions": [
     "Coding agent: repair BUG-0043 historical Owner detail denial after Sales-off; preserve all read-job/scope/explicit-deny/foreign-tenant and write-denial protections.",
     "Pin and review the next candidate, then rerun RT-047 and the full original/adjacent292-check campaign on fresh isolated PostgreSQL.",
-    "Confirm deployed sidebar v2.5.6 /d5377d8 or the deliberately reviewed newer candidate; last observed page was v2.5.5 and refresh/read timed out.",
-    "Exact synthetic Owner/Admin/Viewer role approval and Chrome popup dismissal remain pending; no new staging accounts created.",
+    "Exact synthetic Owner/Admin/Viewer role approval remain pending; no new staging accounts created.",
     "Complete real normal-role physical-first UI and encrypted archive A-to-new-empty-B with attachment bytes, then remaining business/settings/expert/operator recovery gates."
   ],
   "missingAcceptance": [
@@ -406,8 +405,8 @@
     "change": "changes/CHG-20261015-v256-independent-retest.md",
     "expectedAssertions": 292,
     "baselineRecord": "runs/CAMP-20261014-131128650-2e5b74.json",
-    "liveObservedStamp": "v2.5.5 / 8e1a2b8",
-    "browserAcceptance": "not-run",
+    "liveObservedStamp": "v2.5.6 · d5377d8",
+    "browserAcceptance": "read-only administrative smoke; full-workflows-not-verified",
     "handoff": "handoffs/HANDOFF-20261015-v256-retest.md",
     "openFinding": "BUG-0043",
     "latestRecord": "runs/CAMP-20261015-015814708-878549.json",
@@ -657,5 +656,17 @@
     "policyOwnershipQuestion": "pending-owner-response",
     "lastV255Unchanged": "runs/CAMP-20261014-105045793-99e923.json",
     "v255UnchangedResult": "255pass0fail4optional skips; original85PG16helpers60source pass; full acceptance pending"
+  },
+  "liveReadSmoke": {
+    "record": "runs/RUN-20261015-v256-live-read-smoke.md",
+    "date": "2026-10-15",
+    "observedStamp": "v2.5.6 · d5377d8",
+    "checksPassed": 3,
+    "scope": "displayed stamp + administrative Backup page-load + traded-company restore disabled UI only",
+    "freshNormalRoleLogin": false,
+    "newStagingBusinessMutations": 0,
+    "fullAcceptance": "not-established",
+    "popup": "no longer blocks current navigation",
+    "specificRoleGrantApproval": "pending"
   }
 }
