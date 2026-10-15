@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "executed292:291pass-1fail-0skip;118PG117pass-1fail; no-full-workflow-acceptance",
+  "implementationStatus": "retained292pass; new300-planned-not-run; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261015-015814708-878549.json",
+  "lastRetestRecord": "runs/CAMP-20261015-025711060-016ee2.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-  "observedStagingStamp": "v2.5.6 · d5377d8",
+  "candidateProductSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+  "observedStagingStamp": "v2.5.7 · 7ffafab",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -65,10 +65,10 @@
     "BUG-0043"
   ],
   "nextActions": [
-    "Coding agent: repair BUG-0043 historical Owner detail denial after Sales-off; preserve all read-job/scope/explicit-deny/foreign-tenant and write-denial protections.",
-    "Pin and review the next candidate, then rerun RT-047 and the full original/adjacent292-check campaign on fresh isolated PostgreSQL.",
-    "Exact synthetic Owner/Admin/Viewer role approval remain pending; no new staging accounts created.",
-    "Complete real normal-role physical-first UI and encrypted archive A-to-new-empty-B with attachment bytes, then remaining business/settings/expert/operator recovery gates."
+    "Run new RT-052-059 module-off controls with all retained292 assertions; expected300/126PG, not yet executed.",
+    "Submit prepared P257-Owner signup only after the pending at-action legal-policy approval; own new empty company signup is owner-authorised, not the earlier rejected existing-company Admin grant.",
+    "Execute supported live physical-goods anchor, then service/digital/rental/mixed/settings/roles/files/history; real backup/restore LAST.",
+    "Keep expert RF-01-10 and isolated operator recovery gates open; no readiness percentage or full acceptance from passing selected assertions."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -141,9 +141,7 @@
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-v256-retest.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
-  "activeFindings": [
-    "BUG-0043"
-  ],
+  "activeFindings": [],
   "verifiedBoundedFixes": [
     "BUG-0010",
     "BUG-0011",
@@ -167,9 +165,7 @@
     "BUG-0019": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open.",
     "BUG-0020": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open."
   },
-  "currentFailedExecutableCases": [
-    "RT-047"
-  ],
+  "currentFailedExecutableCases": [],
   "ownerTestingScope": {
     "businessTypes": [
       "physical",
@@ -298,22 +294,23 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261015-015814708-878549.json",
-    "ci": 38668445673,
-    "passed": 291,
-    "failed": 1,
+    "record": "runs/CAMP-20261015-025711060-016ee2.json",
+    "ci": 38673649100,
+    "passed": 292,
+    "failed": 0,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
-    "runtimeCi": 38668445532,
+    "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
+    "runtimeCi": 38673649168,
     "unitPassed": 98,
-    "runtimePassed": 117,
+    "runtimePassed": 118,
     "runtimeCases": 118,
-    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
-    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
-    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
+    "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
+    "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
+    "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
     "fixtureVersion": "campaign-v2",
-    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
   },
   "inventoryBoundaryRetest": {
     "handoff": "handoffs/HANDOFF-20261014-variable-cost-readiness.md",
@@ -401,11 +398,14 @@
   "pendingCandidate": {
     "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
     "version": "2.5.7",
-    "status": "pinned-independent-retest-not-executed",
+    "status": "retained292-pass; adjacent300-planned-not-run",
     "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
-    "expectedAssertions": 292,
+    "expectedAssertions": 300,
     "liveObservedStamp": "v2.5.7 · 7ffafab",
-    "browserAcceptance": "not-established"
+    "browserAcceptance": "not-established",
+    "runtimeAssertions": 126,
+    "latestRecord": "runs/CAMP-20261015-025711060-016ee2.json",
+    "latestRuntime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -678,6 +678,50 @@
     "status": "signup-prepared-terms-approval-pending; no-new-creations",
     "newAccountCreated": false,
     "pendingSignupAlias": "P257-Owner",
-    "backupPhase": "deferred-last-by-owner"
+    "backupPhase": "deferred-last-by-owner",
+    "signupLegalConfirmation": "requested-for-P257-Owner; pending"
+  },
+  "v256LatestCampaign": {
+    "record": "runs/CAMP-20261015-015814708-878549.json",
+    "ci": 38668445673,
+    "passed": 291,
+    "failed": 1,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+    "runtimeCi": 38668445532,
+    "unitPassed": 98,
+    "runtimePassed": 117,
+    "runtimeCases": 118,
+    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
+    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
+    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+  },
+  "v257UnchangedRetest": {
+    "record": "runs/CAMP-20261015-025711060-016ee2.json",
+    "ci": 38673649100,
+    "passed": 292,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
+    "runtimeCi": 38673649168,
+    "unitPassed": 98,
+    "runtimePassed": 118,
+    "runtimeCases": 118,
+    "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
+    "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
+    "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established",
+    "historyDenied": 0,
+    "historyTotalCents": 10000,
+    "profitCents": 10000,
+    "newInvoiceAccepted": 0,
+    "newPaymentAccepted": 0,
+    "unchanged": 1
   }
 }

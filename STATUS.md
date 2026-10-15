@@ -1,3 +1,7 @@
+## v2.5.7 retained292 passed; adjacent/live phases pending
+
+[Retained campaign](runs/CAMP-20261015-025711060-016ee2.json)292pass/zero fail/skip/block; PostgreSQL118/118pass, no infrastructure failures. BUG-0043 original RT-047 now passes with history100/profit100, writes denied and snapshot unchanged. Coordinated CI remains intentionally nonzero because full137 workflows/policies are incomplete. New module-off RT-052-059 implemented:300campaign/126PG planned, NOT executed. Existing admin signed out; P257-Owner signup prepared, awaiting at-action agreement confirmation. User authorises new empty synthetic-company signup/login; backup/restore LAST. Read current CHG; historical checkpoints below are superseded by this note.
+
 ## v2.5.7 comprehensive programme active
 
 Live sidebar v2.5.7 · 7ffafab observed; source pin7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6. Unchanged292 regression planned, no new result yet. Read changes/CHG-20261015-v257-comprehensive-retest.md. Owner authorises synthetic-company signup/login; record private credentials and actual creations. Physical first, then remaining non-backup workflows; real backup/restore LAST. Earlier specific Admin grant rejection is not bypassed. Historical results below remain unchanged.

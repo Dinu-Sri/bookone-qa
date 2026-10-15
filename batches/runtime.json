@@ -221,7 +221,15 @@
         "RT-048",
         "RT-049",
         "RT-050",
-        "RT-051"
+        "RT-051",
+        "RT-052",
+        "RT-053",
+        "RT-054",
+        "RT-055",
+        "RT-056",
+        "RT-057",
+        "RT-058",
+        "RT-059"
       ],
       "credential": "runtime",
       "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session"
