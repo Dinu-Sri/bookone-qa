@@ -8,7 +8,7 @@ import {createRequire} from 'node:module';
 import {httpTarget} from './target.mjs';
 assert.equal(process.env.GITHUB_ACTIONS,'true');
 assert.equal(process.env.NODE_ENV,'production');
-const base=httpTarget('https://127.0.0.1:3443/',process.env.QA_HTTP_ISOLATION);
+const base=httpTarget('https://localhost:3443/',process.env.QA_HTTP_ISOLATION);
 const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const web=join(root,'work/product/apps/web'),privateRoot=join(root,'.local/http')+sep;
 function privateFile(raw){assert.ok(raw,'Private TLS path required');const p=resolve(raw);assert.ok(p.startsWith(privateRoot),'TLS files must stay in the private fixture');return readFileSync(p);}
@@ -31,7 +31,7 @@ const server=createServer({key,cert},(req,res)=>{
   res.end('Local fixture request failed');
  });
 });
-await new Promise((ok,bad)=>{server.once('error',bad);server.listen(Number(base.port),base.hostname,ok);});
+await new Promise((ok,bad)=>{server.once('error',bad);server.listen(Number(base.port),'127.0.0.1',ok);});
 console.log('Pinned Next TLS fixture ready');
 let closing=false;
 async function close(){if(closing)return;closing=true;server.closeAllConnections();await new Promise(ok=>server.close(ok));await app.close();process.exit(0);}

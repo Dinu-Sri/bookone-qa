@@ -18,3 +18,9 @@ Fixture http-v3-settings retains actual direct TLS/compiled Next/auth/config fro
 Before extension, [direct v2 summary](../runs/HTTP-2026-10-15T12-51-34-870Z-415340.json), [CI38737766985](https://github.com/Dinu-Sri/bookone-qa/actions/runs/38737766985) executed7pass6fail5blocked, setup passed. It did NOT resolve anonymous origin mismatch. BUG0051/0052/0053 reproduce unchanged. [Companion129PG](../runs/RUN-2026-10-15T12-51-16-344Z-runtime.json), CI38737767259:127pass2fail RT061/62, no infrastructure failure. Both immutable; full fingerprints in JSON.
 
 Local syntax/six guards pass; metadata validation required before publication. Fresh26-slot CI pending, not a pass claim. No product code, staging data or pending P258 permission setup changed. No additional defects assigned before execution. Real backup/restore LAST; customer readiness unconfirmed.
+
+## Executed breadth and harness origin correction
+
+CI38739011909 /HTTP-2026-10-15T13-00-44-761Z-8d1cb1 =7pass10fail9blocked. HTTP010–013 each ViewerSettingChanged1/OwnerSettingSaved1/postedFactsUnchanged1; confirmed variants expand BUG0051. Restricted110–113 block; BUG0052/0053 unchanged. Companion129PG127pass2fail RT061/62. Preserve v3 immutable summary.
+
+Actual anonymous destination categories HTTPS/localhost/3443 plus official pinned NextURL.parseURL prove loopback canonicalization mismatch. V4 changes only the QA permitted origin to https://localhost:3443, independently pins socket127.0.0.1 and verifies certificate localhost, canonical Host. No DNS/response rewriting/global trust-host, no weakening of cookie/TLS/origin checks, no product change. Seven guards/syntax pass; fresh26-slot execution pending. All money/role/zero-effect expectations intact.

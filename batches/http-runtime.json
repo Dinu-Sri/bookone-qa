@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fixtureVersion": "http-v3-settings",
+  "fixtureVersion": "http-v4-canonical-loopback",
   "productAcceptance": "not-established",
-  "target": "https://127.0.0.1:3443/",
+  "target": "https://localhost:3443/",
   "guide": "docs/HTTP_RUNTIME.md",
   "lanes": [
     {

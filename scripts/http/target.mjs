@@ -4,11 +4,17 @@ export function httpTarget(raw,consent) {
   assert.equal(consent,'ephemeral-ci-next','Explicit isolated Next target required');
   const u=new URL(raw);
   assert.equal(u.protocol,'https:','Local TLS is mandatory; never disable secure cookies');
-  assert.equal(u.hostname,'127.0.0.1');assert.equal(u.port,'3443');
+  assert.equal(u.hostname,'localhost');assert.equal(u.port,'3443');
   assert.equal(u.pathname,'/');assert.equal(u.username,'');assert.equal(u.password,'');
   assert.equal(u.search,'');assert.equal(u.hash,'');return u;
 }
 export function httpDatabase(raw,consent) { return runtimeTarget(raw,consent); }
+export function localTlsTransport(raw,consent) {
+  const u=httpTarget(raw,consent);
+  // NextURL canonicalizes loopback literals to localhost. Keep one origin,
+  // pin TCP independently, and verify the certificate for that hostname.
+  return {hostname:'127.0.0.1',port:Number(u.port),servername:u.hostname};
+}
 export function localPath(base,path) {
   const u=new URL(path,base);assert.equal(u.origin,new URL(base).origin,'Cross-origin request/redirect forbidden');
   assert.ok(!u.username&&!u.password);return u;

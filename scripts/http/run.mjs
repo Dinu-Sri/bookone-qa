@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync,openSync,closeSync,copyFileSync} from 'node:fs';
 import {resolve,join} from 'node:path';import {spawn,spawnSync,execFileSync} from 'node:child_process';
 import {createHash,randomBytes,randomUUID} from 'node:crypto';import https from 'node:https';import {createRequire} from 'node:module';
-import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,deniedHttpResponse,CookieJar} from './target.mjs';
-const ROOT=process.cwd(),BASE='https://127.0.0.1:3443/',WEB=resolve('work/product/apps/web');
+import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,localTlsTransport,deniedHttpResponse,CookieJar} from './target.mjs';
+const ROOT=process.cwd(),BASE='https://localhost:3443/',WEB=resolve('work/product/apps/web');
 const manifest=JSON.parse(readFileSync('batches/http-runtime.json','utf8'));
 const runId='HTTP-'+new Date().toISOString().replace(/[:.]/g,'-')+'-'+randomBytes(3).toString('hex');
 const dir=join('.local/http',runId);mkdirSync(dir,{recursive:true});
@@ -20,10 +20,10 @@ async function child(args,cwd,env,label,timeout=600_000){
 async function stopNext(){if(!next)return;const p=next;if(p.exitCode!==null||p.signalCode!==null){next=null;return;}await new Promise((ok,bad)=>{const kill=setTimeout(()=>p.kill('SIGKILL'),5000),limit=setTimeout(()=>bad(new Incomplete('server-stop-unconfirmed')),10000);p.once('exit',()=>{clearTimeout(kill);clearTimeout(limit);ok();});p.kill('SIGTERM');});next=null;}
 function request(path,actor={},options={}){
  const url=localPath(BASE,path);httpTarget(BASE,process.env.QA_HTTP_ISOLATION);
- const jar=actor.jar;const headers={...(options.headers??{})};const cookie=options.cookie??jar?.header(url.href);if(cookie)headers.Cookie=cookie;
+ const jar=actor.jar;const headers={...(options.headers??{}),Host:new URL(BASE).host};const cookie=options.cookie??jar?.header(url.href);if(cookie)headers.Cookie=cookie;
  if(options.body)headers['Content-Length']=Buffer.byteLength(options.body);
  return new Promise((ok,bad)=>{
-  const req=https.request(url,{method:options.method??'GET',headers,ca,rejectUnauthorized:true,localAddress:actor.ip??'127.0.0.20',timeout:25000},res=>{
+  const req=https.request(url,{...localTlsTransport(BASE,process.env.QA_HTTP_ISOLATION),method:options.method??'GET',headers,ca,rejectUnauthorized:true,localAddress:actor.ip??'127.0.0.20',timeout:25000},res=>{
    const chunks=[];let length=0;res.on('data',c=>{length+=c.length;if(length>10_000_000){req.destroy(new Incomplete('response-size'));return;}chunks.push(c);});
    res.on('end',()=>{try{jar?.receive(res.headers['set-cookie'],url.href);ok({status:res.statusCode,headers:res.headers,body:Buffer.concat(chunks).toString('utf8')});}catch(e){bad(e);}});res.on('error',bad);
   });req.once('timeout',()=>req.destroy(new Incomplete('request-timeout')));req.on('error',bad);if(options.body)req.write(options.body);req.end();
@@ -139,7 +139,7 @@ try{
  assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
  sql=postgres(process.env.QA_RUNTIME_ADMIN_URL,{max:1});const [guard]=await sql`select * from qa_runtime_guard`;assert.equal(guard.marker,'isolated-bookone-qa-v1');assert.equal(guard.product_sha,ref.commit);
  const runtime=JSON.parse(readFileSync('.local/runtime/connection.json','utf8')).url;httpDatabase(runtime,process.env.QA_RUNTIME_ISOLATION);
- summary.fingerprint={productSha:ref.commit,productStamp:'v'+readFileSync('work/product/VERSION','utf8').trim()+' · '+ref.commit.slice(0,7),qaSha:git('rev-parse','HEAD'),qaDirty:!!git('status','--porcelain'),qaContentHash:digest(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+digest(readFileSync(p))).join('\n')),node:process.version,productLockHash:digest(readFileSync('work/product/pnpm-lock.yaml')),fixtureVersion:manifest.fixtureVersion,transport:'direct-local-TLS-Next-custom-server',schemaMigrations:preparation.migrations.length};
+ summary.fingerprint={productSha:ref.commit,productStamp:'v'+readFileSync('work/product/VERSION','utf8').trim()+' · '+ref.commit.slice(0,7),qaSha:git('rev-parse','HEAD'),qaDirty:!!git('status','--porcelain'),qaContentHash:digest(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+digest(readFileSync(p))).join('\n')),node:process.version,productLockHash:digest(readFileSync('work/product/pnpm-lock.yaml')),fixtureVersion:manifest.fixtureVersion,transport:'canonical-localhost-TLS-pinned-IPv4-Next-custom-server',schemaMigrations:preparation.migrations.length};
  stage='local-tls';const key=resolve(dir,'tls.key'),cert=resolve(dir,'tls.crt');const openssl=spawnSync('openssl',['req','-x509','-nodes','-newkey','rsa:2048','-days','1','-subj','/CN=localhost','-addext','subjectAltName=IP:127.0.0.1,DNS:localhost','-keyout',key,'-out',cert],{encoding:'utf8',timeout:30000});writeFileSync(join(dir,'tls.log'),(openssl.stdout??'')+(openssl.stderr??''));assert.equal(openssl.status,0);ca=readFileSync(cert);
  const env={...process.env,NODE_ENV:'production',NEXT_TELEMETRY_DISABLED:'1',BETTER_AUTH_SECRET:randomBytes(32).toString('hex'),BETTER_AUTH_URL:BASE.slice(0,-1),AUTH_URL:BASE.slice(0,-1),APP_URL:BASE.slice(0,-1),NEXT_PUBLIC_BOOKONE_BUILD:ref.commit,RESEND_API_KEY:'',GOOGLE_CLIENT_ID:'',GOOGLE_CLIENT_SECRET:'',PLATFORM_ADMIN_EMAIL:'platform.admin@http.example.invalid'};
  const nextBin=join(WEB,'node_modules/next/dist/bin/next');stage='build';assert.equal(await child([nextBin,'build'],WEB,{...env,DATABASE_URL:process.env.QA_RUNTIME_ADMIN_URL},'build'),0);

@@ -1086,7 +1086,7 @@
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
   "httpRuntime": {
-    "status": "v2-direct-executed7pass6fail5blocked;three-product-defects-unchanged;settings-extension-pending",
+    "status": "v3-executed7pass10fail9blocked;BUG0051-expanded-four-settings;canonical-v4-pending",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
@@ -1130,58 +1130,56 @@
       "finalBalanceCents": 45000
     },
     "latestAttempt": {
-      "record": "runs/HTTP-2026-10-15T12-51-34-870Z-415340.json",
-      "ci": 38737766985,
-      "job": 116431328752,
+      "record": "runs/HTTP-2026-10-15T13-00-44-761Z-8d1cb1.json",
+      "ci": 38739011909,
+      "job": 116435581156,
       "totals": {
         "passed": 7,
-        "failed": 6,
-        "blocked": 5
+        "failed": 10,
+        "blocked": 9
       },
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
         "productStamp": "v2.5.8 · cf35da1",
-        "qaSha": "faa897d22fec62a5a3ec1c62e6dd639ca10c44ec",
+        "qaSha": "4ce27d4828438911bd8b5cac9abf24e6146cc85c",
         "qaDirty": false,
-        "qaContentHash": "bf53cb7d3b9da18e708e2cc2cdb50cea06aaa476d0556f40ac39b8064fb65ed9",
+        "qaContentHash": "2f67be2e24a90c19284311a8d16ade3505e5167c42532cee2986d19b9d9dae71",
         "node": "v22.23.3",
         "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
-        "fixtureVersion": "http-v2-direct-tls",
+        "fixtureVersion": "http-v3-settings",
         "transport": "direct-local-TLS-Next-custom-server",
         "schemaMigrations": 43,
-        "nextBuildId": "80ZssDh_Aw2Aj5ECS6rNq",
+        "nextBuildId": "jt0_pnn2mQJFoY1MdCRY5",
         "nextVersion": "15.5.19",
         "betterAuthVersion": "1.6.20"
       },
-      "qaImplementation": "df275880fa18c80908b69e4d5e52bb866296571e",
+      "qaImplementation": "90a785b1f6edbf24fafdcaa858abbb08a1871bf0",
       "confirmedProductBugs": [
         "BUG-0051",
         "BUG-0052",
         "BUG-0053"
       ],
-      "companion": "runs/RUN-2026-10-15T12-51-16-344Z-runtime.json",
-      "companionCi": 38737767259,
-      "companionPassed": 127,
-      "companionFailed": 2,
-      "remaining": "Anonymous origin still mismatches;restricted own ERP positives/five blocks unchanged"
-    },
-    "nextDiagnostic": {
-      "status": "implemented-not-executed",
-      "fixtureVersion": "http-v3-settings",
-      "localGuardTestsPassed": 6,
-      "change": "changes/CHG-20261015-http-settings-permissions.md",
-      "newCases": [
+      "confirmedSettingsVariants": [
+        "HTTP-004",
         "HTTP-010",
         "HTTP-011",
         "HTTP-012",
-        "HTTP-013",
-        "HTTP-110",
-        "HTTP-111",
-        "HTTP-112",
-        "HTTP-113"
+        "HTTP-013"
       ],
-      "scope": "real rendered tax/sales/purchase/inventory forms;Viewer zero effects/Owner persisted positive/posted facts unchanged;settings last",
-      "remaining": "fresh26-slot CI;source concerns not new defects until execution;fixed numeric loopback-origin categories"
+      "companion": "runs/RUN-2026-10-15T13-00-36-299Z-runtime.json",
+      "companionCi": 38739011904,
+      "companionPassed": 127,
+      "companionFailed": 2,
+      "remaining": "Restricted role9 dependent blocks;known product bugs;canonical loopback fix needs actual run"
+    },
+    "nextDiagnostic": {
+      "status": "implemented-not-executed",
+      "fixtureVersion": "http-v4-canonical-loopback",
+      "target": "https://localhost:3443/",
+      "network": "TCP pinned127.0.0.1:3443;TLS servername localhost/rejectUnauthorized true;Host canonical;no DNS lookup/redirect follow",
+      "localGuardTestsPassed": 7,
+      "cause": "Pinned NextURL.parseURL normalizes127.0.0.1 to localhost;v3 actual redirectHTTPS/localhost/3443 observed",
+      "scope": "same26 cases/unchanged expected finance/roles;not deployed proxy acceptance"
     }
   },
   "liveContinuation": {
