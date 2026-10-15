@@ -1,3 +1,7 @@
+## Candidate v2.5.6 independent retest in progress
+
+Product source pinned d5377d89d2bd9d27c52a6e9c43376f2d03255bd0 /VERSION2.5.6; prior292 assertions unchanged. No new result or bug closure yet. Read changes/CHG-20261015-v256-independent-retest.md. Live page still displays v2.5.5 /8e1a2b8; browser/restore acceptance must wait for the matching stamp and pending access/popup dependencies. Historical candidate/results below remain immutable.
+
 # Resume BookOne QA
 
 1. Read AGENTS.md, STATUS.md, memory/customer-readiness.json and memory/programme.json. Check canonical QA main and pending PRs; verify product/QA identities and graph freshness.

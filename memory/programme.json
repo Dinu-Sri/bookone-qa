@@ -417,5 +417,15 @@
     "scope": "non-owner/NOBYPASSRLS actual commands, synthetic identity; no real-login/HTTP/cache/browser acceptance",
     "firstRecord": "runs/CAMP-20261014-125458746-6d35a7.json",
     "firstRuntime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json"
+  },
+  "pendingCandidate": {
+    "sha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+    "version": "2.5.6",
+    "status": "pinned-independent-retest-not-executed",
+    "change": "changes/CHG-20261015-v256-independent-retest.md",
+    "expectedAssertions": 292,
+    "baselineRecord": "runs/CAMP-20261014-131128650-2e5b74.json",
+    "liveObservedStamp": "v2.5.5 / 8e1a2b8",
+    "browserAcceptance": "not-run"
   }
 }

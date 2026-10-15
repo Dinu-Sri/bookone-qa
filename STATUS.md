@@ -1,3 +1,7 @@
+## Candidate v2.5.6 independent retest in progress
+
+Product source pinned d5377d89d2bd9d27c52a6e9c43376f2d03255bd0 /VERSION2.5.6; prior292 assertions unchanged. No new result or bug closure yet. Read changes/CHG-20261015-v256-independent-retest.md. Live page still displays v2.5.5 /8e1a2b8; browser/restore acceptance must wait for the matching stamp and pending access/popup dependencies. Historical candidate/results below remain immutable.
+
 # BookOne customer-readiness status
 
 Customer readiness is **not certified**. Candidate source **v2.5.5 / 8e1a2b8**; last observed live stamp matched, but new results are isolated source/runtime evidence, not deployed acceptance.
