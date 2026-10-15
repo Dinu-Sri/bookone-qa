@@ -1,0 +1,11 @@
+# v2.5.9 independent QA follow-up
+
+Candidate2e105cd443ce01e31220bfe2d4b4637cdc737b75. First executed evidence: [record](../runs/RUN-20261015-v259-first-retest.md). Not customer-ready; live stamp not independently observed.
+
+Reporting RT061 passes with unchanged600/800/800 cumulative expectations and600/200/0 monthly income. All13 owner-DB real HTTPS checks pass: five Viewer settings denials with Owner positives, assigned Viewer deny, legacy Viewer no-promotion, legitimate Owner repair, payment200/due400. Keep these invariants unchanged.
+
+Remaining BUG0053: restricted credentials work but own invoice pages still307; HTTP102 fails and ten dependent cases remain blocked. Legitimate legacy Owner membership repair now occurs, so identity work progressed; do not claim the complete ERP route is repaired. Source suggests getTenantInfo's unscoped tenants query after requireTenantContext returns; migration001 requires tenant context. Invoice detail catches route dependencies and redirects/login. Inspect all route/action dependencies with the real restricted DB role; preserve permission denials, no global context or BYPASSRLS. Exact cause remains source-supported hypothesis until request-specific evidence.
+
+RT062 first attempt was harness-inconclusive: synthetic adapter lacked newly imported real seedJobsForTenant. QA forwards the actual product implementation in81c34b0. Corrected campaign38754155102 has303pass/zero assertion failures; companionPG38754154954 has129pass, including actual first Starter PO60 and Inventory/POS off. BUG0050 original isolated repro passes. HTTP38754155274 remains15pass1fail10blocked; BUG0053 unresolved. All jobs terminal. The campaign's nonzero workflow is deliberate for missing full workflows/policies, not a product assertion failure. Do not weaken this full-acceptance gate.
+
+Migration042 PUBLIC function execution/returned identity scope and search-path/ownership still need dedicated security acceptance. Fresh44-migration application is not an upgrade or recovery rehearsal. Owner-DB passing settings do not certify restricted or Company Admin/adjacent guards. BUG0044 and expert/operational/full workflow gaps remain. Backup stays last. No product edits, staging reset, record replay or access grant by QA.

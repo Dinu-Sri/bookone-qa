@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "303executed301pass2fail;HTTP26executed9pass8fail9blocked;no-release-acceptance",
+  "implementationStatus": "executed303pass;HTTP15pass1fail10blocked;not-customer-ready",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261015-091325948-860ae3.json",
+  "lastRetestRecord": "runs/CAMP-20261015-144528741-07d4ec.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -20,7 +20,7 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+  "candidateProductSha": "2e105cd443ce01e31220bfe2d4b4637cdc737b75",
   "observedStagingStamp": "v2.5.8 /cf35da1",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
@@ -150,7 +150,7 @@
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v259-retest.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
     "BUG-0044",
@@ -1027,9 +1027,12 @@
     "BUG-0046": "native-repro-fixed;persisted-positive-blocked-by-distinct-BUG0050",
     "BUG-0047": "SO-label/no-invalid-Edit-repro-fixed;generic-adjacent-pending",
     "BUG-0048": "verified-fixed-in-original-same-period-scope;full-reporting-fails-distinct-BUG0049",
-    "BUG-0049": "P1-open-RT061-cross-month-balances",
+    "BUG-0049": "v259-RT061-original-repro-fixed;broader-reporting-and-live-pending",
     "INV258-01": "confirmed-as-BUG0050-via-supported-create/permission-command",
-    "BUG-0050": "P2-open-RT062-additional-company-Starter-capabilities"
+    "BUG-0050": "v259-corrected-adapter-RT062-original-repro-fixed;live-pending",
+    "BUG-0051": "v259-five-ownerDB-Viewer-denials-and-Owner-positives-pass;restricted-blocked",
+    "BUG-0052": "v259-ownerDB-no-promotion-and-legitimate-repair-pass;restricted-financial-positive-blocked",
+    "BUG-0053": "v259-open-HTTP102-own-invoices307;10-dependent-blocks"
   },
   "pendingBootstrapRegression": {
     "case": "RT-062",
@@ -1204,5 +1207,37 @@
     "lastPage": "original product stock ledger",
     "moduleApproval": "P258 exact setup unchanged-pending;no save",
     "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
+  },
+  "v259Retest": {
+    "status": "executed303pass;HTTP15pass1fail10blocked;not-customer-ready",
+    "productSha": "2e105cd443ce01e31220bfe2d4b4637cdc737b75",
+    "qaImplementation": "81c34b0e4507ffba6b67b1e07a04a160b652914e",
+    "qaTestedMerge": "7d5ff9257718944383e0f17485168220c62aed86",
+    "qaContentHash": "a581735bad83b8417d584783d747b9bb2b47de02e44ff523b41eb2e09441e0d6",
+    "pr": 33,
+    "campaignCi": 38754155102,
+    "httpCi": 38754155274,
+    "postgresCi": 38754154954,
+    "campaign": "runs/CAMP-20261015-144528741-07d4ec.json",
+    "postgres": "runs/RUN-2026-10-15T14-45-32-116Z-runtime.json",
+    "http": "runs/HTTP-2026-10-15T14-45-42-865Z-125b6e.json",
+    "record": "runs/RUN-20261015-v259-first-retest.md",
+    "change": "changes/CHG-20261015-v259-independent-retest.md",
+    "observedLiveStamp": "not-observed-browser-tooling-network-failure",
+    "campaignCounts": {
+      "passed": 303,
+      "failed": 0,
+      "blocked": 0
+    },
+    "postgresCounts": {
+      "passed": 129,
+      "failed": 0
+    },
+    "httpCounts": {
+      "passed": 15,
+      "failed": 1,
+      "blocked": 10
+    },
+    "bugs": "0049/0050-original-isolated-repros-fixed;0051/0052-ownerDB-original-repros-fixed;0053-remains-open;deployed-and-adjacent-acceptance-pending"
   }
 }

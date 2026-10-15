@@ -4,6 +4,7 @@ export { SCREEN_DEFS, screenKeyFromHref } from '@product/auth/permissions/catalo
 export { isReadOnlyJob } from '@product/auth/permissions/resolve';
 export { inDimensionScope } from '@product/auth/permissions/scope';
 export { loadAccessForUser, getRequestAccess } from '@product/auth/permissions/load';
+export { seedJobsForTenant, ensureOwnerMembership } from '@product/auth/permissions/seed-jobs';
 export { TENANT_A, TENANT_B } from '../../batch/support/actor';
 export const OWNER = '00000000-0000-4000-8000-000000000003';
 export const VIEWER = '00000000-0000-4000-8000-000000000004';

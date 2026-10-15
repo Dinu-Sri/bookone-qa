@@ -1,3 +1,5 @@
+Current disposition (2026-10-15): v2.5.9 original RT062 repro passes after explicit QA adapter correction forwarding real seedJobsForTenant. Starter Sales/Purchase positive, Inventory/POS off, actual first PO60 saved with no journal/transaction. Live existing P258 remains unverified/unrepaired; pending exact approval unchanged. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
+
 # BUG-0050: Additional company's Owner cannot use included Starter modules
 
 **P2 open.** Productcf35da1244e902e4a41291bc409eb0d994ed4e01 /v2.5.8. Supported Company Details Add company path creates a valid Owner membership, but included Sales/Purchase cannot write. This is additional-company bootstrap, not the initial signup/onboarding path, not BUG-0046 native name validation, and not a Viewer access bypass.

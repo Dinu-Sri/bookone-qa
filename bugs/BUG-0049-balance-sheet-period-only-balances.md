@@ -1,3 +1,5 @@
+Current disposition (2026-10-15): v2.5.9 original RT061 repro independently verified fixed, alongside RT060 and unchanged posting/read-immutability controls. Broader reporting and deployed acceptance pending. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
+
 # BUG-0049: Balance Sheet drops balances from earlier periods
 
 **P1 open, release blocker.** Productcf35da1244e902e4a41291bc409eb0d994ed4e01 /v2.5.8. Independent real-PostgreSQL product-command failure, not yet repeated in deployed UI because another Chrome extension UI blocks browser control. This is distinct from BUG-0048: its same-month earnings repro now passes unchanged. No demonstrated deletion/loss of stored postings.
