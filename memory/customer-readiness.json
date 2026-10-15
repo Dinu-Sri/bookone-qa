@@ -54,7 +54,7 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "bounded-Viewer/module/scope-denials-hold;new-company-false-deny-BUG0050;broader-real-credential/HTTP/files-pending",
+      "status": "P1BUG0051/0052-ownerDB-real-HTTP;P1BUG0053-restricted-session-unavailable;acceptance-blocked",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Chrome recovered; fresh actual Owner and Inventory-only setup observed. Other role/HTTP/file boundaries remain pending; earlier Admin grant not attempted."
     },
@@ -84,6 +84,7 @@
     }
   ],
   "nextActions": [
+    "Review fresh diagnostic HTTP attempt after preserving first18blocked record; do not weaken origin/permission/money expectations or infer product defects from missing prerequisites.",
     "Coding agent fix P1BUG0049 cumulative Balance Sheet and P2BUG0050 additional-company bootstrap; preserve original expectations/access ceilings.",
     "New source/live pin: independent diff review and unchanged303/129PG fresh rerun, retaining all historical first attempts.",
     "Resolve exact P258 module-setup user approval before Save; no bypass. Clear Chrome extension UI and explicitly verify actor/PO state.",
@@ -965,5 +966,125 @@
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v258-bootstrap-findings.md"
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
+  "httpRuntime": {
+    "status": "canonical-v4-executed9pass8fail9blocked;harness-origin-resolved;BUG0051/0052/0053-open",
+    "manifest": "batches/http-runtime.json",
+    "guide": "docs/HTTP_RUNTIME.md",
+    "change": "changes/CHG-20261015-real-next-http-runtime.md",
+    "record": "runs/RUN-20261015-http-runtime-first.md",
+    "expectedSlots": 26,
+    "perDatabaseBoundary": 13,
+    "localGuardTestsPassed": 7,
+    "realServerCasesPassed": 9,
+    "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
+    "acceptance": "failed-product;no-release-certification;HTTP-separate-from303",
+    "pendingApprovalUnaffected": true,
+    "firstAttempt": {
+      "record": "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
+      "ci": 38716542016,
+      "job": 116360497909,
+      "totals": {
+        "passed": 0,
+        "failed": 0,
+        "blocked": 18
+      },
+      "setup": {
+        "status": "passed",
+        "stage": "complete"
+      },
+      "fingerprint": {
+        "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+        "productStamp": "v2.5.8 · cf35da1",
+        "qaSha": "ddaaa8d46ecee1fa91d51a59d30257d2c8e1e68b",
+        "qaDirty": false,
+        "qaContentHash": "3ab0732b73d36c09cdae4f74729266369b5c662122b9e06f4d5bf016ce2195d8",
+        "node": "v22.23.3",
+        "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+        "fixtureVersion": "http-v1",
+        "schemaMigrations": 43,
+        "nextBuildId": "dKX_SgZm-bNwQIpHVtkB_",
+        "nextVersion": "15.5.19",
+        "betterAuthVersion": "1.6.20"
+      },
+      "interpretation": "first anonymous request unclassified runner exception;identity-prerequisites blocked;no product finding/financial HTTP execution",
+      "finalPaidCents": 15000,
+      "finalBalanceCents": 45000
+    },
+    "latestAttempt": {
+      "record": "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json",
+      "ci": 38740136839,
+      "job": 116439371572,
+      "totals": {
+        "passed": 9,
+        "failed": 8,
+        "blocked": 9
+      },
+      "fingerprint": {
+        "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+        "productStamp": "v2.5.8 · cf35da1",
+        "qaSha": "90804160c2d26405cb2deaa70e359e32dba48f37",
+        "qaDirty": false,
+        "qaContentHash": "46ad917306e71e5fa13e9f9d99d318a318efaf08e025926bdbe65617ad19aa02",
+        "node": "v22.23.3",
+        "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+        "fixtureVersion": "http-v4-canonical-loopback",
+        "transport": "canonical-localhost-TLS-pinned-IPv4-Next-custom-server",
+        "schemaMigrations": 43,
+        "nextBuildId": "1PZ0WsB8Rdy40691SqzPg",
+        "nextVersion": "15.5.19",
+        "betterAuthVersion": "1.6.20"
+      },
+      "qaImplementation": "da40ee9683632eb3ef11cff0662e202e370b8f1e",
+      "confirmedProductBugs": [
+        "BUG-0051",
+        "BUG-0052",
+        "BUG-0053"
+      ],
+      "confirmedSettingsVariants": [
+        "HTTP-004",
+        "HTTP-010",
+        "HTTP-011",
+        "HTTP-012",
+        "HTTP-013"
+      ],
+      "companion": "runs/RUN-2026-10-15T13-08-42-693Z-runtime.json",
+      "companionCi": 38740136795,
+      "companionPassed": 127,
+      "companionFailed": 2,
+      "anonymousAndCredentialControls": "passed-both-roles;canonical-host-correction-executed",
+      "remaining": "three-product-groups;restricted9-blocks;deployed-role/proxy/browser/storage/full-workflows-unverified"
+    },
+    "completedDiagnostic": {
+      "status": "implemented-not-executed",
+      "fixtureVersion": "http-v4-canonical-loopback",
+      "target": "https://localhost:3443/",
+      "network": "TCP pinned127.0.0.1:3443;TLS servername localhost/rejectUnauthorized true;Host canonical;no DNS lookup/redirect follow",
+      "localGuardTestsPassed": 7,
+      "cause": "Pinned NextURL.parseURL normalizes127.0.0.1 to localhost;v3 actual redirectHTTPS/localhost/3443 observed",
+      "scope": "same26 cases/unchanged expected finance/roles;not deployed proxy acceptance"
+    },
+    "nextAction": "Review coding fixes/new product pin;unchanged303 plus26 actual HTTP;company Admin/other settings/receipt-query/scopes/files/history remain open;real backup LAST",
+    "attemptRecords": [
+      "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
+      "runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json",
+      "runs/HTTP-2026-10-15T12-40-06-795Z-360298.json",
+      "runs/HTTP-2026-10-15T12-51-34-870Z-415340.json",
+      "runs/HTTP-2026-10-15T13-00-44-761Z-8d1cb1.json",
+      "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json"
+    ]
+  },
+  "liveContinuation": {
+    "date": "2026-10-15",
+    "actor": "P257-Owner",
+    "stamp": "v2.5.8 /cf35da1",
+    "company": "P257-Physical",
+    "login": "fresh explicit credential login;Owner/current company verified",
+    "record": "runs/RUN-20261015-v258-live-adjacent-readonly.md",
+    "boundedObservationsPassed": 8,
+    "financialWrites": 0,
+    "lastPage": "original product stock ledger",
+    "moduleApproval": "P258 exact setup unchanged-pending;no save",
+    "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
+  }
 }
