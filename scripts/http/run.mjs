@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync,openSync,closeSync,copyFileSync} from 'node:fs';
 import {resolve,join} from 'node:path';import {spawn,spawnSync,execFileSync} from 'node:child_process';
 import {createHash,randomBytes,randomUUID} from 'node:crypto';import https from 'node:https';import http from 'node:http';import {createRequire} from 'node:module';
-import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,CookieJar} from './target.mjs';
+import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,deniedHttpResponse,CookieJar} from './target.mjs';
 const ROOT=process.cwd(),BASE='https://127.0.0.1:3443/',WEB=resolve('work/product/apps/web');
 const manifest=JSON.parse(readFileSync('batches/http-runtime.json','utf8'));
 const runId='HTTP-'+new Date().toISOString().replace(/[:.]/g,'-')+'-'+randomBytes(3).toString('hex');
@@ -30,7 +30,7 @@ function request(path,actor={},options={}){
  });
 }
 async function postJSON(path,actor,data){return request(path,actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Content-Type':'application/json'},body:JSON.stringify(data)});}
-function denied(r){return [401,403,404].includes(r.status)||[302,303,307,308].includes(r.status)&&r.headers.location&&['/','/login','/onboarding'].includes(localPath(BASE,r.headers.location).pathname);}
+function denied(r){return deniedHttpResponse(BASE,r.status,r.headers.location);}
 function json(r){try{return JSON.parse(r.body);}catch{return null;}}
 function loadedJob(body){return body.match(/<p\b[^>]*class="[^"]*sidebar-user-job[^"]*"[^>]*>([^<]*)<\/p>/i)?.[1]?.trim().toLowerCase();}
 function formFields(html,needle){
@@ -63,11 +63,11 @@ async function laneCases(lane,f){
  async function test(n,fn){const row={id:'HTTP-'+String(n+offset).padStart(3,'0'),status:'not-run',failedAssertions:[],observations:{},missing:[]};
   const check=(yes,key)=>{if(!yes)row.failedAssertions.push(key);};const obs=(key,n)=>{assert.ok(Number.isSafeInteger(n));row.observations[key]=n;};
   try{await fn(check,obs,row);row.status=row.failedAssertions.length?'failed':row.missing.length?'blocked':'passed';}
-  catch(e){privateError(lane.name+'-'+row.id,e);if(e instanceof Incomplete)row.missing.push(e.code);else row.missing.push('unclassified-runner-error');row.status=row.failedAssertions.length?'failed':'blocked';}
+  catch(e){privateError(lane.name+'-'+row.id,e);const categories={ERR_ASSERTION:'client-guard-assertion',ECONNREFUSED:'local-connection-refused',ECONNRESET:'local-connection-reset',ETIMEDOUT:'local-connection-timeout',ERR_TLS_CERT_ALTNAME_INVALID:'local-tls-name-mismatch',DEPTH_ZERO_SELF_SIGNED_CERT:'local-tls-ca-missing',ERR_INVALID_CHAR:'invalid-header-character'};if(e instanceof Incomplete)row.missing.push(e.code);else row.missing.push(categories[e?.code]??'unclassified-runner-error');row.status=row.failedAssertions.length?'failed':'blocked';}
   row.evidenceComplete=row.missing.length===0;rows.push(row);console.log(JSON.stringify({lane:lane.name,id:row.id,status:row.status}));
  }
  await test(1,async(c,o)=>{
-  const anon=await request('/sales/invoices/'+f.own.id);c(denied(anon),'anonymous-protected-route-denied');c(!anon.body.includes(f.own.marker),'anonymous-no-invoice-data');
+  const anon=await request('/sales/invoices/'+f.own.id);o('anonymousStatus',anon.status);if(anon.headers.location){const u=new URL(anon.headers.location,BASE);o('anonymousRedirectSameOrigin',Number(u.origin===new URL(BASE).origin));o('anonymousRedirectBackendOrigin',Number(u.origin==='http://127.0.0.1:3300'));}c(denied(anon),'anonymous-protected-route-denied');c(!anon.body.includes(f.own.marker),'anonymous-no-invoice-data');
   const bad=await postJSON('/api/auth/sign-in/email',{jar:new CookieJar(),ip:'127.0.0.21'},{email:f.actors.owner.email,password:'intentionally-wrong-password'});c([400,401,403].includes(bad.status),'wrong-password-denied');
   for(const a of Object.values(actors)){const r=await postJSON('/api/auth/sign-in/email',a,{email:a.email,password:a.password,rememberMe:false});const identity=await request('/api/auth/get-session',a);a.verified=r.status===200&&json(identity)?.user?.email===a.email;c(a.verified,'credential-identity-matches');const attrs=a.jar.sessionAttributes();c(attrs.length>0&&attrs.every(x=>x.secure&&x.httpOnly&&['lax','strict'].includes(x.sameSite)),'secure-httponly-session-cookie');}
   o('verifiedActors',Object.values(actors).filter(a=>a.verified).length);o('expectedActors',6);o('anonymousStatus',anon.status);o('wrongPasswordStatus',bad.status);

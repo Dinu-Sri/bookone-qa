@@ -13,6 +13,13 @@ export function localPath(base,path) {
   const u=new URL(path,base);assert.equal(u.origin,new URL(base).origin,'Cross-origin request/redirect forbidden');
   assert.ok(!u.username&&!u.password);return u;
 }
+export function deniedHttpResponse(base,status,location) {
+  if([401,403,404].includes(status))return true;
+  if(![302,303,307,308].includes(status)||!location)return false;
+  // Inspect a redirect without following it. A foreign/internal origin fails
+  // the expected denial contract rather than throwing and masking all logins.
+  try{const u=new URL(location,base);return u.origin===new URL(base).origin&&!u.username&&!u.password&&['/','/login','/onboarding'].includes(u.pathname);}catch{return false;}
+}
 export class CookieJar {
   #cookies=new Map();
   receive(lines,url) {

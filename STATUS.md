@@ -2,7 +2,7 @@
 
 Customer readiness **NOT certified**. Product source/live **v2.5.8 · cf35da1**, SHA cf35da1244e902e4a41291bc409eb0d994ed4e01. [Current handoff](handoffs/HANDOFF-20261015-v258-bootstrap-findings.md), [latest live/isolated investigation](runs/RUN-20261015-v258-bootstrap-investigation.md). Source master checked unchanged on2026-10-15; no product edits by QA.
 
-Independent [real credential/Next HTTPS layer](docs/HTTP_RUNTIME.md) implemented:18 required slots across owner/non-owner DB boundaries; four local target/cookie guards and repository preflight pass, **first server/HTTP execution pending**. [Intent](runs/RUN-20261015-http-runtime-first.md). This is separate from the303 evidence below, not18 new passes or full workflow acceptance. No staging setup change or approval bypass.
+Independent [real credential/Next HTTPS layer](docs/HTTP_RUNTIME.md): first build/TLS/fixtures/both DB roles started, but [all18 assertions blocked before login evidence](runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json),0passes. [Run/diagnostic follow-up](runs/RUN-20261015-http-runtime-first.md). Added safe error/origin diagnostics and a guard proving off-origin redirect inspection cannot pass or trigger requests; five local guards pass, fresh HTTP attempt pending. Separate from303 below; no HTTP/full-workflow acceptance, staging setup change or approval bypass.
 
 ## Current executed evidence
 

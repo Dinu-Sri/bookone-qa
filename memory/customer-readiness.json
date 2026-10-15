@@ -84,7 +84,7 @@
     }
   ],
   "nextActions": [
-    "Execute and review the first18-slot real Next HTTPS job; preserve build/fixture/codec blocks and actual role/money failures independently of303.",
+    "Review fresh diagnostic HTTP attempt after preserving first18blocked record; do not weaken origin/permission/money expectations or infer product defects from missing prerequisites.",
     "Coding agent fix P1BUG0049 cumulative Balance Sheet and P2BUG0050 additional-company bootstrap; preserve original expectations/access ceilings.",
     "New source/live pin: independent diff review and unchanged303/129PG fresh rerun, retaining all historical first attempts.",
     "Resolve exact P258 module-setup user approval before Save; no bypass. Clear Chrome extension UI and explicitly verify actor/PO state.",
@@ -968,17 +968,48 @@
   },
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-v258-bootstrap-findings.md",
   "httpRuntime": {
-    "status": "implemented-first-execution-pending",
+    "status": "first-build/setup-passed;18blocked-before-login;diagnostic-fresh-attempt-pending",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
     "record": "runs/RUN-20261015-http-runtime-first.md",
     "expectedSlots": 18,
     "perDatabaseBoundary": 9,
-    "localGuardTestsPassed": 4,
+    "localGuardTestsPassed": 5,
     "realServerCasesPassed": 0,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
     "acceptance": "not-established;separate-from303-until-reviewed",
-    "pendingApprovalUnaffected": true
+    "pendingApprovalUnaffected": true,
+    "firstAttempt": {
+      "record": "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
+      "ci": 38716542016,
+      "job": 116360497909,
+      "totals": {
+        "passed": 0,
+        "failed": 0,
+        "blocked": 18
+      },
+      "setup": {
+        "status": "passed",
+        "stage": "complete"
+      },
+      "fingerprint": {
+        "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+        "productStamp": "v2.5.8 · cf35da1",
+        "qaSha": "ddaaa8d46ecee1fa91d51a59d30257d2c8e1e68b",
+        "qaDirty": false,
+        "qaContentHash": "3ab0732b73d36c09cdae4f74729266369b5c662122b9e06f4d5bf016ce2195d8",
+        "node": "v22.23.3",
+        "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+        "fixtureVersion": "http-v1",
+        "schemaMigrations": 43,
+        "nextBuildId": "dKX_SgZm-bNwQIpHVtkB_",
+        "nextVersion": "15.5.19",
+        "betterAuthVersion": "1.6.20"
+      },
+      "interpretation": "first anonymous request unclassified runner exception;identity-prerequisites blocked;no product finding/financial HTTP execution",
+      "finalPaidCents": 15000,
+      "finalBalanceCents": 45000
+    }
   }
 }

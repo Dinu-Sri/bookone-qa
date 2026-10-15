@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "kind": "real-Next-HTTPS-runtime",
+  "runId": "HTTP-2026-10-15T09-56-23-454Z-c57f36",
+  "fixtureVersion": "http-v1",
+  "fingerprint": {
+    "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+    "productStamp": "v2.5.8 · cf35da1",
+    "qaSha": "ddaaa8d46ecee1fa91d51a59d30257d2c8e1e68b",
+    "qaDirty": false,
+    "qaContentHash": "3ab0732b73d36c09cdae4f74729266369b5c662122b9e06f4d5bf016ce2195d8",
+    "node": "v22.23.3",
+    "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+    "fixtureVersion": "http-v1",
+    "schemaMigrations": 43,
+    "nextBuildId": "dKX_SgZm-bNwQIpHVtkB_",
+    "nextVersion": "15.5.19",
+    "betterAuthVersion": "1.6.20"
+  },
+  "setup": {
+    "status": "passed",
+    "stage": "complete"
+  },
+  "results": [
+    {
+      "lane": "owner-db-baseline",
+      "boundary": "real-credential-TLS-Next-ownerDB-functional-baseline",
+      "databaseRole": {
+        "superuser": true,
+        "bypassRls": true
+      },
+      "serverDiagnostics": [],
+      "finalAccounting": {
+        "paidCents": 15000,
+        "balanceCents": 45000,
+        "journals": 2,
+        "allocations": 1
+      },
+      "cases": [
+        {
+          "id": "HTTP-001",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "unclassified-runner-error"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-002",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-003",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "own-record-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-004",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-005",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-006",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-007",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-008",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-009",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        }
+      ]
+    },
+    {
+      "lane": "nonowner-nobypassrls",
+      "boundary": "real-credential-TLS-Next-nonowner-NOBYPASSRLS",
+      "databaseRole": {
+        "superuser": false,
+        "bypassRls": false
+      },
+      "serverDiagnostics": [],
+      "finalAccounting": {
+        "paidCents": 15000,
+        "balanceCents": 45000,
+        "journals": 2,
+        "allocations": 1
+      },
+      "cases": [
+        {
+          "id": "HTTP-101",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "unclassified-runner-error"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-102",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-103",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "own-record-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-104",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-105",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-106",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-107",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-108",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-109",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "credential-identity-prerequisite"
+          ],
+          "evidenceComplete": false
+        }
+      ]
+    }
+  ],
+  "productAcceptance": "not-established",
+  "missing": [
+    "deployed-Chrome/hydration/overlay",
+    "real-proxy-deployment",
+    "object-storage-and-uploads",
+    "complete-business-workflows",
+    "full-upgrade/recovery",
+    "expert-policy-review"
+  ],
+  "totals": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 18
+  }
+}
