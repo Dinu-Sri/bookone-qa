@@ -1045,17 +1045,29 @@
       "companionFailed": 2,
       "handoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
       "remaining": "Anonymous redirect origin;foreign safe-fallback classification;restricted ERP identity positives;five dependent blocked cases"
+    },
+    "nextDiagnostic": {
+      "status": "implemented-not-executed",
+      "localGuardTestsPassed": 6,
+      "changes": [
+        "case-specific source-declared same-origin foreign-invoice-list fallback",
+        "numeric anonymous redirect HTTPS-backend/path categories",
+        "read-only role users visibility before/local-tenant/foreign/after transaction;separate closed probe connection"
+      ],
+      "securityUnchanged": "no running-app tenant injection/TLS relaxation/BYPASS grant/finance expectation change",
+      "requires": "fresh isolated CI;preserve all completed first runs"
     }
   },
   "liveContinuation": {
     "date": "2026-10-15",
     "actor": "P257-Owner",
     "stamp": "v2.5.8 /cf35da1",
-    "company": "P258-Entry",
-    "login": "fresh explicit credential login succeeded;Owner loaded",
-    "lastAction": "Selected P257-Physical in switch menu;display stayed P258;Logout started;extension UI blocked completion",
-    "state": "current authenticated actor/company uncertain after pending logout;do not mutate until fresh verification",
+    "company": "P257-Physical",
+    "login": "fresh explicit credential login;Owner/current company verified",
+    "record": "runs/RUN-20261015-v258-live-adjacent-readonly.md",
+    "boundedObservationsPassed": 8,
     "financialWrites": 0,
-    "moduleApproval": "unchanged-pending;no successful save"
+    "lastPage": "original product stock ledger",
+    "moduleApproval": "P258 exact setup unchanged-pending;no save"
   }
 }

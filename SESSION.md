@@ -37,3 +37,9 @@ Already committed and privately logged: capital1000, PO600, GRN10at60, bill600, 
 5. Full137 workflows62partial/75unbound/zero accepted; real credential/HTTP/browser/storage, scopes/races, full upgrade/recovery and expert RF-01–10/policies remain open. Rulebook1.0.0/hashabcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc, expert review pending. Do not claim customer readiness or a readiness percentage from assertion totals.
 
 End each phase by updating both ledgers/current indexes, immutable sanitized summaries, bug disposition and exact next action. Keep private first attempts and preserve/* branches; never reset/delete them. Prior v2.5.7/v2.5.8 evidence links are in STATUS and their full historical records remain in Git.
+
+## Latest deployed continuation and next HTTP diagnostic
+
+Chrome resumed after the user requested another check. Fresh normal P257-Owner login loaded **P257-Physical /Owner/v2.5.8 cf35da1**. [Eight bounded read-only observations](runs/RUN-20261015-v258-live-adjacent-readonly.md) pass: invoice400/settled250/due150; remittance200; AR150/AP400; stock7/value420; journal6/debits=credits2750; movements+10/-4/+1. No financial/module writes, no backup; browser on stock ledger. Previous company switch is now verified across fresh login. This supersedes prior actor-uncertain notes for that completed transition. P258 setup approval stays pending.
+
+Next HTTP harness revision retains all first results and security/finance expectations: known-foreign detail explicitly permits only source-declared same-origin invoice-list fallback, adds numeric redirect categories and separate read-only exact-role users visibility probes. Probe transaction-local tenant setting never reaches Next. Six local guards and syntax pass; fresh CI still required. BUG0051/0052 remain confirmed owner-DB P1s; restricted identity and proxy-origin acceptance unresolved. No customer-readiness certification.
