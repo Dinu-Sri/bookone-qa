@@ -1,3 +1,7 @@
+## v2.5.6 first run completed; follow-up required
+
+First292-case rerun290pass/2fail/zero skips/blocks; all19 previously failing cases pass. B-104 stopped on source-inconsistent credit fixture before financial observations; corrected to original description and0.5 at200 while preserving credit100 and all financial assertions. RT-047 historical Owner read after Sales-off fails; numeric denial observation added without changing expectations. Preserve first reports; new fingerprint/retest required. See changes/CHG-20261015-v256-independent-retest.md. No product bug closure or live acceptance yet.
+
 ## Candidate v2.5.6 independent retest in progress
 
 Product source pinned d5377d89d2bd9d27c52a6e9c43376f2d03255bd0 /VERSION2.5.6; prior292 assertions unchanged. No new result or bug closure yet. Read changes/CHG-20261015-v256-independent-retest.md. Live page still displays v2.5.5 /8e1a2b8; browser/restore acceptance must wait for the matching stamp and pending access/popup dependencies. Historical candidate/results below remain immutable.

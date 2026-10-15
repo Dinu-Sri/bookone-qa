@@ -61,7 +61,8 @@
     "BUG-0039",
     "BUG-0040",
     "BUG-0041",
-    "BUG-0042"
+    "BUG-0042",
+    "BUG-0043"
   ],
   "nextActions": [
     "Coding agent: repair thirteen finding groups across the four current handoffs; retain original and adjacent expectations, then pin and independently retest the new candidate.",
@@ -421,11 +422,29 @@
   "pendingCandidate": {
     "sha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
     "version": "2.5.6",
-    "status": "pinned-independent-retest-not-executed",
+    "status": "first-run290pass2fail-followup-fixture-and-diagnostics",
     "change": "changes/CHG-20261015-v256-independent-retest.md",
     "expectedAssertions": 292,
     "baselineRecord": "runs/CAMP-20261014-131128650-2e5b74.json",
     "liveObservedStamp": "v2.5.5 / 8e1a2b8",
-    "browserAcceptance": "not-run"
+    "browserAcceptance": "not-run",
+    "handoff": "handoffs/HANDOFF-20261015-v256-retest.md",
+    "openFinding": "BUG-0043"
+  },
+  "v256InitialRetest": {
+    "record": "runs/CAMP-20261015-015120720-373e0d.json",
+    "runtime": "runs/RUN-2026-10-15T01-51-27-828Z-runtime.json",
+    "ci": 38667833810,
+    "runtimeCi": 38667833917,
+    "passed": 290,
+    "failed": 2,
+    "skipped": 0,
+    "failedCases": [
+      "B-104",
+      "RT-047"
+    ],
+    "previousFailureCasesPassing": 19,
+    "interpretation": "B-104 source-line fixture validity correction pending rerun; RT-047 historical read regression requires repair; no wrong B-104 report amount observed",
+    "productAcceptance": "not-established"
   }
 }
