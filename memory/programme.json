@@ -5,10 +5,10 @@
   "sessionProtocol": "SESSION.md",
   "implementationGuide": "docs/BATCH_TESTING.md",
   "currentBatch": "full-campaign",
-  "implementationStatus": "executed292:291pass-1fail-0skip;118PG117pass-1fail; no-full-workflow-acceptance",
+  "implementationStatus": "300selected-pass;126PG-pass; no-full-workflow-acceptance",
   "lastVerifiedRelease": null,
   "lastSourceContractRun": "runs/RUN-20261014-045054591-3a276b.json",
-  "lastRetestRecord": "runs/CAMP-20261015-015814708-878549.json",
+  "lastRetestRecord": "runs/CAMP-20261015-030413695-b7f7f0.json",
   "lastCleanSourceCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
     "qaSha": "bf95c9a699e06755614750999673ba42ac7be840",
@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-  "observedStagingStamp": "v2.5.6 · d5377d8",
+  "candidateProductSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+  "observedStagingStamp": "v2.5.7 · 7ffafab",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -62,13 +62,15 @@
     "BUG-0040",
     "BUG-0041",
     "BUG-0042",
-    "BUG-0043"
+    "BUG-0043",
+    "BUG-0044"
   ],
   "nextActions": [
-    "Coding agent: repair BUG-0043 historical Owner detail denial after Sales-off; preserve all read-job/scope/explicit-deny/foreign-tenant and write-denial protections.",
-    "Pin and review the next candidate, then rerun RT-047 and the full original/adjacent292-check campaign on fresh isolated PostgreSQL.",
-    "Exact synthetic Owner/Admin/Viewer role approval remain pending; no new staging accounts created.",
-    "Complete real normal-role physical-first UI and encrypted archive A-to-new-empty-B with attachment bytes, then remaining business/settings/expert/operator recovery gates."
+    "Obtain the pending at-action approval for the prepared P257-Owner signup accepting the displayed Terms/Privacy/Cookies; no account created yet.",
+    "Submit exactly the prepared signup after approval, complete supported company onboarding, verify actual identity/entity/module/CoA/settings and record private credentials/IDs.",
+    "Live physical anchor with1000 opening capital:10units at60, sale4at100, receipt150, return1at100/cost60, supplier payment200; expected cash950/AR150/AP400/stock7/value420/profit120. These are planned, not observations.",
+    "Continue service/digital/rental/mixed/settings/users/files/history workflows; real backup/restore LAST by owner instruction.",
+    "Keep137-workflow full acceptance, expert RF-01-10 and isolated operator recovery open. Do not repeat300 unchanged tests without a relevant change."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -123,7 +125,7 @@
     "F-121",
     "F-123"
   ],
-  "lastRuntimeRun": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+  "lastRuntimeRun": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
   "lastUploadSourceRun": "runs/RUN-20261013-095902771-f8dbeb.json",
   "lastRuntimeCi": {
     "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
@@ -139,10 +141,10 @@
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v256-retest.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
-    "BUG-0043"
+    "BUG-0044"
   ],
   "verifiedBoundedFixes": [
     "BUG-0010",
@@ -167,9 +169,7 @@
     "BUG-0019": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open.",
     "BUG-0020": "Original49-runtime reproduction passes on5becb2d at Owner and non-owner role; synthetic credential context; fresh HTTP/browser/MinIO remains open."
   },
-  "currentFailedExecutableCases": [
-    "RT-047"
-  ],
+  "currentFailedExecutableCases": [],
   "ownerTestingScope": {
     "businessTypes": [
       "physical",
@@ -223,7 +223,7 @@
     "guide": "docs/FULL_CAMPAIGN.md",
     "decision": "decisions/ADR-20261014-coordinated-campaign.md",
     "scope": "137-defined-workflows",
-    "status": "selected292-executed-one-history-access-failure; full137-workflow-acceptance-pending",
+    "status": "300selected-pass; full137-workflow-acceptance-pending",
     "retainedUnitCases": 98,
     "sourceCases": 60,
     "runtimeCases": 85,
@@ -237,15 +237,15 @@
       "runtime": "runs/RUN-2026-10-14T05-52-04-763Z-runtime.json",
       "result": "230-pass-8-fail-14-blocked-4-optional-skips"
     },
-    "latestReviewed": "runs/CAMP-20261015-015814708-878549.json",
-    "latestRuntime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
-    "workflow": 38668445673,
-    "implementationSha": "04f5b860c36a93b557ed4d146b2f3b362223f794",
-    "testedMergeSha": "aedfbfbd1ca848984e39460d42a7678513b25be8",
-    "assertionSlots": 292,
+    "latestReviewed": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "latestRuntime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "workflow": 38674272156,
+    "implementationSha": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
+    "testedMergeSha": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
+    "assertionSlots": 300,
     "totals": {
-      "passed": 291,
-      "failed": 1,
+      "passed": 300,
+      "failed": 0,
       "blocked": 0,
       "skipped": 0,
       "flaky": 0,
@@ -298,22 +298,23 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261015-015814708-878549.json",
-    "ci": 38668445673,
-    "passed": 291,
-    "failed": 1,
+    "record": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "ci": 38674272156,
+    "passed": 300,
+    "failed": 0,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
-    "runtimeCi": 38668445532,
+    "runtime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "runtimeCi": 38674272336,
     "unitPassed": 98,
-    "runtimePassed": 117,
-    "runtimeCases": 118,
-    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
-    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
-    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
+    "runtimePassed": 126,
+    "runtimeCases": 126,
+    "qaImplementation": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
+    "qaTestedMerge": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
+    "qaContentHash": "9e4e7cc0d826a4cb304356bb800b743a5934d94879e705861fb5dcd43323c907",
     "fixtureVersion": "campaign-v2",
-    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
   },
   "inventoryBoundaryRetest": {
     "handoff": "handoffs/HANDOFF-20261014-variable-cost-readiness.md",
@@ -399,18 +400,17 @@
     "firstRuntime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json"
   },
   "pendingCandidate": {
-    "sha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-    "version": "2.5.6",
-    "status": "executed291pass1fail-not-accepted",
-    "change": "changes/CHG-20261015-v256-independent-retest.md",
-    "expectedAssertions": 292,
-    "baselineRecord": "runs/CAMP-20261014-131128650-2e5b74.json",
-    "liveObservedStamp": "v2.5.6 · d5377d8",
-    "browserAcceptance": "read-only administrative smoke; full-workflows-not-verified",
-    "handoff": "handoffs/HANDOFF-20261015-v256-retest.md",
-    "openFinding": "BUG-0043",
-    "latestRecord": "runs/CAMP-20261015-015814708-878549.json",
-    "latestRuntime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json"
+    "sha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+    "version": "2.5.7",
+    "status": "300selected-pass; full-live-workflows-pending",
+    "change": "changes/CHG-20261015-v257-comprehensive-retest.md",
+    "expectedAssertions": 300,
+    "liveObservedStamp": "v2.5.7 · 7ffafab",
+    "browserAcceptance": "not-established",
+    "runtimeAssertions": 126,
+    "latestRecord": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "latestRuntime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "handoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -614,7 +614,7 @@
     "BUG-0030"
   ],
   "activeReadinessFindings": [
-    "BUG-0043"
+    "BUG-0044"
   ],
   "previousFullCampaignCheckpoint": {
     "manifest": "campaigns/full.json",
@@ -668,5 +668,126 @@
     "fullAcceptance": "not-established",
     "popup": "no longer blocks current navigation",
     "specificRoleGrantApproval": "pending"
+  },
+  "liveProgramme": {
+    "ownerInstructionDate": "2026-10-15",
+    "ordering": [
+      "physical",
+      "service/digital",
+      "rental/mixed/settings/roles/files/history",
+      "backup/restore-last"
+    ],
+    "newCompanyMethod": "supported logout/signup/login with synthetic credentials; owner says no email verification",
+    "privateState": ".local/live-v257/",
+    "earlierExistingCompanyAdminGrant": "still-not-approved; no bypass",
+    "status": "signup-prepared-awaiting-at-action-legal-policy-approval",
+    "newAccountCreated": false,
+    "pendingSignupAlias": "P257-Owner",
+    "backupPhase": "LAST; no real archive export/restore executed",
+    "signupLegalConfirmation": "requested-for-P257-Owner; pending"
+  },
+  "v256LatestCampaign": {
+    "record": "runs/CAMP-20261015-015814708-878549.json",
+    "ci": 38668445673,
+    "passed": 291,
+    "failed": 1,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+    "runtimeCi": 38668445532,
+    "unitPassed": 98,
+    "runtimePassed": 117,
+    "runtimeCases": 118,
+    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
+    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
+    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+  },
+  "v257UnchangedRetest": {
+    "record": "runs/CAMP-20261015-025711060-016ee2.json",
+    "ci": 38673649100,
+    "passed": 292,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
+    "runtimeCi": 38673649168,
+    "unitPassed": 98,
+    "runtimePassed": 118,
+    "runtimeCases": 118,
+    "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
+    "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
+    "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established",
+    "historyDenied": 0,
+    "historyTotalCents": 10000,
+    "profitCents": 10000,
+    "newInvoiceAccepted": 0,
+    "newPaymentAccepted": 0,
+    "unchanged": 1
+  },
+  "v257RetainedCampaign": {
+    "record": "runs/CAMP-20261015-025711060-016ee2.json",
+    "ci": 38673649100,
+    "passed": 292,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T02-57-18-913Z-runtime.json",
+    "runtimeCi": 38673649168,
+    "unitPassed": 98,
+    "runtimePassed": 118,
+    "runtimeCases": 118,
+    "qaImplementation": "9cfd7ef1467a0e14c7977eb309f9bdee9e583505",
+    "qaTestedMerge": "6c8be78e98c0df7b96d4941b9a4e29db3e0ad101",
+    "qaContentHash": "72bef317bfaa3262fe12bf7f986c243e70d6c04f02618edd713f8deded2da277",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
+  },
+  "v257ExpandedRetest": {
+    "record": "runs/CAMP-20261015-030413695-b7f7f0.json",
+    "ci": 38674272156,
+    "passed": 300,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
+    "runtimeCi": 38674272336,
+    "unitPassed": 98,
+    "runtimePassed": 126,
+    "runtimeCases": 126,
+    "qaImplementation": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
+    "qaTestedMerge": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
+    "qaContentHash": "9e4e7cc0d826a4cb304356bb800b743a5934d94879e705861fb5dcd43323c907",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established",
+    "handoff": "handoffs/HANDOFF-20261015-v257-regression-and-live-next.md",
+    "newCases": [
+      "RT-052",
+      "RT-053",
+      "RT-054",
+      "RT-055",
+      "RT-056",
+      "RT-057",
+      "RT-058",
+      "RT-059"
+    ],
+    "result": "all8passed; own/foreign positive controls and unchanged snapshots",
+    "independentMutationSensitivity": "not-established; no full security certification"
+  },
+  "manualSignupChecks": {
+    "record": "runs/RUN-20261015-v257-signup-policy-links.md",
+    "passed": 0,
+    "failed": 3,
+    "bug": "BUG-0044",
+    "severity": "P2",
+    "separateFromAutomated300": true,
+    "legalImpact": "not-assessed",
+    "newAccountCreated": false
   }
 }

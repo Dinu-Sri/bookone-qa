@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
-  "requiredLiveStamp": "v2.5.6 · d5377d8",
+  "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
+  "requiredLiveStamp": "v2.5.7 · 7ffafab",
   "contract": "docs/TENANT_BACKUP_ARCHIVE.md",
   "contractRepository": "Dinu-Sri/BookOne",
   "freeze": "docs/changes/CHG-20261012-tenant-backup-archive.md",

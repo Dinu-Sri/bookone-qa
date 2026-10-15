@@ -84,6 +84,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];
   observationKeys['S-0782']=['acceptedIncoherent','targetDocuments','targetJournalLines','unchanged'];
+  for(const id of ['RT-052','RT-053','RT-054','RT-055','RT-056','RT-057','RT-058','RT-059'])observationKeys[id]=['historyTotalCents','printTotalCents','readGrant','writeGrant','inventoryReadGranted','historyDetailDenied','historyPrintDenied','foreignFixturePositive','ownFixturePositive','invoiceAccepted','paymentAccepted','unchanged','allowedCount','excludedEntityVerified','membershipInactive','arCents'];
   const rawObservations=existsSync(observationFile)?JSON.parse(readFileSync(observationFile,'utf8')):{};
   const observations={};
   for(const [id,keys] of Object.entries(observationKeys))if(lane.expected.includes(id) && rawObservations[id]) {
