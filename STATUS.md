@@ -1,5 +1,7 @@
 # BookOne customer-readiness status
 
+Current continuation: browser recovered; P258-Entry Owner cannot save PO despite admin UI displaying enabled modules. [Investigation](runs/RUN-20261015-v258-bootstrap-investigation.md), [change](changes/CHG-20261015-additional-company-bootstrap.md). Scoped module save was automatically rejected; exact approval requested/pending, no successful configuration change. New RT-062 independent ephemeral-company bootstrap test specified, fresh303/129PG pending. Existing302 result and P1 BUG0049 below stay unchanged. No source/product changes, no staging replay, backup LAST.
+
 **Current priority: P1 [BUG-0049](bugs/BUG-0049-balance-sheet-period-only-balances.md).** Fresh [302 campaign](runs/CAMP-20261015-085116788-c232dc.json)301pass/1fail; [128PG](runs/RUN-2026-10-15T08-51-22-798Z-runtime.json)127pass/1fail, onlyRT-061, zero skips/blocks/infrastructure failures. September600 plus October200 yields correct stored AR800, but October Balance Sheet shows200 and quiet November0 instead of800. Monthly income remains correct and report reads preserve postings. All original301 including same-month RT-060 pass. Do not turn balanced-but-incomplete reports into acceptance. Current [coding handoff](handoffs/HANDOFF-20261015-v258-retest-progress.md). Live adjacent work remains blocked by another Chrome extension UI; backup LAST, customer readiness NOT certified. Earlier checkpoint text below is historical.
 
 ## Latest v2.5.8 checkpoint — 2026-10-15

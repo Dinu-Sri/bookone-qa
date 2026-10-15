@@ -71,6 +71,7 @@
     "BUG-0049"
   ],
   "nextActions": [
+    "Execute new RT-062 on isolated new-company fixture; preserve first303/129 attempt and existing RT061 failure.",
     "Coding agent fix P1 BUG-0049 without changing period income, stored journals or original302 expectations.",
     "On next source/live candidate: independently review diff, pin and rerun unchanged302/128PG; preserve both v258 attempts.",
     "Dismiss other Chrome extension UI and inspect current Owner session/PO state before any retry; INV258-01 module/default discrepancy remains under investigation.",
@@ -237,7 +238,7 @@
     "status": "302executed301pass1fail;P1BUG0049",
     "retainedUnitCases": 98,
     "sourceCases": 60,
-    "runtimeCases": 128,
+    "runtimeCases": 129,
     "archiveHelperCases": 16,
     "latestLocal": "runs/CAMP-20261014-054320952-275531.json",
     "firstLocal": "169-pass-1-fail-81-runtime-blocked-4-optional-skips",
@@ -253,7 +254,7 @@
     "workflow": 38674272156,
     "implementationSha": "3f32fc8a5240f955294cb20cc6172e0be6137378",
     "testedMergeSha": "961c09c77c8e34d7b68eafc7f2880b5272b2f3fe",
-    "assertionSlots": 302,
+    "assertionSlots": 303,
     "totals": {
       "passed": 301,
       "failed": 1,
@@ -415,8 +416,8 @@
     "version": "2.5.8",
     "status": "tested-current;P1BUG0049-reporting-blocker",
     "change": "changes/CHG-20261015-v258-independent-retest.md",
-    "expectedAssertions": 302,
-    "expectedRuntimeAssertions": 128,
+    "expectedAssertions": 303,
+    "expectedRuntimeAssertions": 129,
     "liveObservedStamp": "v2.5.8 /cf35da1",
     "browserAcceptance": "partial-not-certified"
   },
@@ -713,7 +714,7 @@
     "latestRecord": "runs/RUN-20261015-v258-live-fix-retest.md",
     "businessTransactionsCreated": 6,
     "actualTradingEmptiness": "initial journal/account zero observed; no table-wide emptiness claim; company now traded",
-    "browserDependency": "another Chrome extension UI currently blocks automation; last confirmed P258-Entry Owner Company Details; logout not confirmed",
+    "browserDependency": "recovered;actual Owner logout/Admin login verified",
     "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
     "receiptFailure": "payment150 committed; receipt page crashes; do not replay",
     "additionalCompany": {
@@ -721,7 +722,9 @@
       "actor": "P257-Owner",
       "status": "supported-created;fresh-owner-login;warehouse-created;PO60-submitted-once-no-visible-record",
       "investigation": "INV258-01 raw module defaults/write-ceiling hypothesis; actual stored config/denial pending; no admin intervention",
-      "financialJournalsObserved": 0
+      "financialJournalsObserved": 0,
+      "adminDisplay": "Starter;Sales/Purchase/Inventory/POS enabled;Rental/HR disabled;raw flags not visible",
+      "setupStatus": "exact-scoped-module-save-auto-review-rejected;user-approval-pending;no-successful-save"
     }
   },
   "v256LatestCampaign": {
@@ -1018,5 +1021,16 @@
     "BUG-0048": "verified-fixed-in-original-same-period-scope;full-reporting-fails-distinct-BUG0049",
     "BUG-0049": "P1-open-RT061-cross-month-balances",
     "INV258-01": "additional-company-bootstrap/write-default-investigation;root-cause-not-proven"
+  },
+  "pendingBootstrapRegression": {
+    "case": "RT-062",
+    "status": "specified;first303/129-run-pending",
+    "change": "changes/CHG-20261015-additional-company-bootstrap.md",
+    "liveRecord": "runs/RUN-20261015-v258-bootstrap-investigation.md",
+    "boundary": "new-ephemeral-PG-company-only;not-staging-config-bypass",
+    "approval": {
+      "scope": "synthetic P258-Entry only;Starter/environment unchanged;Sales/Purchase/Inventory ON;POS/Rental/HR OFF",
+      "status": "automatic-review-rejected;explicit-user-input-request-pending;no-successful-save"
+    }
   }
 }

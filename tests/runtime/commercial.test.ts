@@ -1,7 +1,8 @@
 import { beforeEach, afterAll, it, expect } from 'vitest';
 import { createCommercialDocument } from '@product/web/app/actions/commercial-docs';
 import { receiveCustomerPayments, allocateDocumentPayment } from '@product/web/app/actions/documents';
-import { getReports } from '@product/web/app/actions/workspace';
+import { getReports, getTenantInfo } from '@product/web/app/actions/workspace';
+import { createCompany } from '@product/web/app/actions/company-settings';
 import { loadAccessForUser } from '@product/auth/permissions/load';
 import { admin, seed, resetFixture, closeFixture } from './support/fixture';
 import * as schema from '@product/schema/index';
@@ -205,5 +206,48 @@ it('[RT-061] balance sheet carries earlier balances to each cutoff while income 
   }
   observe('RT-061',{...amounts,expectedSeptemberAssetCents:60000,expectedOctoberAssetCents:80000,expectedNovemberAssetCents:80000});
   expect(await businessSnapshot(),'report reads cannot create or rewrite postings').toEqual(before);
+  await noStock();
+});
+
+it('[RT-062] supported additional company gives its Owner the advertised Starter capabilities',async()=>{
+  const tables=['tenants','tenant_memberships','company_profiles','tax_profiles','accounts','business_documents','transactions','journal_entries','journal_lines','audit_log'];
+  const snapshot=async()=>{const out={};for(const table of tables)out[table]=await admin.unsafe(`select * from ${table} order by id`);return out;};
+  const form=()=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Synthetic additional company',slug:'qa-additional-company-runtime',country:'Sri Lanka',baseCurrency:'LKR'}))f.set(k,v);return f;};
+  const baseline=await snapshot();
+  setActor(VIEWER,'viewer');
+  expect((await loadAccessForUser(VIEWER,TENANT_A,'user'))?.allows('company.lifecycle.write','write')).toBe(false);
+  await expect(createCompany(form())).rejects.toThrow();
+  expect(await snapshot(),'denied Viewer creation has zero company/membership/account/audit effects').toEqual(baseline);
+  setActor();await createCompany(form());
+  const [created]=await seed.select().from(schema.tenants).where(eq(schema.tenants.slug,'qa-additional-company-runtime'));
+  expect(created).toBeTruthy();expect([created.plan,created.entityKind]).toEqual(['starter','company']);
+  const [membership]=await seed.select().from(schema.tenantMemberships).where(eq(schema.tenantMemberships.tenantId,created.id));
+  expect([membership.userId,membership.role,membership.status]).toEqual([OWNER,'owner','active']);
+  const [profile]=await seed.select().from(schema.companyProfiles).where(eq(schema.companyProfiles.tenantId,created.id));
+  expect([profile.country,profile.baseCurrency,profile.timezone]).toEqual(['Sri Lanka','LKR','Asia/Colombo']);
+  const [original]=await seed.select().from(schema.tenants).where(eq(schema.tenants.id,TENANT_A));
+  expect(original.modules).toEqual({sales:true,inventory:true,purchase:true,rental:true,pos:true});
+  setActor(OWNER,'owner',created.id); // Explicit synthetic equivalent of the separately observed live switch/login.
+  const access=await loadAccessForUser(OWNER,created.id,'user');expect(access).toBeTruthy();
+  const info=await getTenantInfo();
+  const salesWrite=access!.allows('sales.invoices.write','write');
+  const purchaseWrite=access!.allows('purchase.orders.write','write');
+  const inventoryWrite=access!.allows('inventory.products.write','write');
+  const posWrite=access!.allows('pos.terminal.write','write');
+  expect.soft(salesWrite,'fresh Starter Owner can use included Sales').toBe(true);
+  expect.soft(purchaseWrite,'fresh Starter Owner can use included Purchase').toBe(true);
+  expect.soft(info.modules.sales).toBe(true);expect.soft(info.modules.purchase).toBe(true);
+  expect.soft(info.accessByLabel['Sales Invoices']).toBe('write');
+  expect.soft(info.accessByLabel['Purchase Orders']).toBe('write');
+  expect.soft(inventoryWrite,'optional Inventory is not Starter default').toBe(false);
+  expect.soft(posWrite,'optional POS is not Starter default').toBe(false);
+  expect.soft(info.modules.inventory,'new Starter must not inherit legacy full-suite visibility').toBe(false);
+  expect.soft(info.modules.pos,'new Starter must not inherit legacy full-suite visibility').toBe(false);
+  const result=await createCommercialDocument({documentType:'purchase_order',partyName:'Synthetic first supplier',issueDate:DATE,lines:[{productId:null,description:'Synthetic service order',quantity:1,unitPrice:60}]} as any);
+  const [counts]=await admin`select (select count(*)::int from business_documents where tenant_id=${created.id}) as docs,(select count(*)::int from parties where tenant_id=${created.id}) as parties,(select count(*)::int from transactions where tenant_id=${created.id}) as tx,(select count(*)::int from journal_entries where tenant_id=${created.id}) as journals`;
+  observe('RT-062',{ownerMembership:Number(membership.role==='owner'),starterPlan:Number(created.plan==='starter'),salesWrite:Number(salesWrite),purchaseWrite:Number(purchaseWrite),inventoryWrite:Number(inventoryWrite),posWrite:Number(posWrite),displaySales:Number(info.modules.sales),displayPurchase:Number(info.modules.purchase),displayInventory:Number(info.modules.inventory),displayPos:Number(info.modules.pos),orderAccepted:Number(result.ok),documentCount:counts.docs,partyCount:counts.parties,transactionCount:counts.tx,journalCount:counts.journals});
+  expect.soft(result.ok,'first service PO is usable without an operator repairing company flags').toBe(true);
+  expect.soft(counts).toEqual({docs:1,parties:1,tx:0,journals:0});
+  if(result.ok&&result.id){const d=await doc(result.id);const [party]=await seed.select().from(schema.parties).where(eq(schema.parties.id,d.partyId!));expect([d.tenantId,party.name,Number(d.total),d.transactionId]).toEqual([created.id,'Synthetic first supplier',60,null]);}
   await noStock();
 });
