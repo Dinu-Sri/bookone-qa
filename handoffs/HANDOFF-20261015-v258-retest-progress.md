@@ -1,5 +1,7 @@
 # v2.5.8 independent QA progress
 
+Latest follow-up: [two confirmed findings and303 execution](HANDOFF-20261015-v258-bootstrap-findings.md). This checkpoint's BUG-0049 remains open; additional-company investigation below is now independently confirmed BUG-0050. Preserve original evidence and use the linked current handoff for next actions.
+
 ## New confirmed priority: BUG-0049
 
 [BUG-0049](../bugs/BUG-0049-balance-sheet-period-only-balances.md) /RT-061 is P1: September invoice600 plus October invoice200 persist AR800 and two balanced journals. September Balance Sheet600 is correct; October wrongly shows assets/equity200 instead of800; quiet November wrongly shows0 instead of800. Monthly income600/200/0 remains correct, and report reads preserve all business rows. No demonstrated data loss. Source getReports reuses period-only computeAccountBalances for financial position. Separate cumulative as-of snapshots from period income/cash movement; preserve tenant/scope/void/history and no double-counting closed earnings. Never repair by changing journals or carrying all800 into October income.
