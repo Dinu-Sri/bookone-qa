@@ -52,6 +52,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   for(const id of ['C-105','C-115','C-116','RT-018','RT-020'])observationKeys[id.replace(/-(\d+)$/,(_,n)=>'-'+String(Number(n)+100).padStart(3,'0'))]=observationKeys[id];
   observationKeys['RT-060']=['assetCents','liabilityCents','equityCents','profitCents','expectedAssetCents','expectedEquityCents'];
     observationKeys['RT-061']=['septemberAssetCents','septemberEquityCents','septemberProfitCents','octoberAssetCents','octoberEquityCents','octoberProfitCents','novemberAssetCents','novemberEquityCents','novemberProfitCents','expectedSeptemberAssetCents','expectedOctoberAssetCents','expectedNovemberAssetCents'];
+  observationKeys['RT-062']=['ownerMembership','starterPlan','salesWrite','purchaseWrite','inventoryWrite','posWrite','displaySales','displayPurchase','displayInventory','displayPos','orderAccepted','documentCount','partyCount','transactionCount','journalCount'];
   observationKeys['B-107']=['accepted','payments','receiptCents','paidCents','balanceCents','arCents'];
   observationKeys['B-106']=['invoiceReplaySame','firstPaymentAccepted','replayAccepted','paymentCount','paidCents','balanceCents'];
   observationKeys['RT-024']=['controlledWait','accepted','paymentCount','paymentCents','paidCents','balanceCents','cashCents','apCents'];
