@@ -27,7 +27,7 @@ Do not reopen BUG-0010–0043 without a fresh demonstrated regression. BUG-0052 
 
 ## Active work and live state
 
-PR32 owns the new HTTP layer and evidence. Next fixture **http-v2-direct-tls** uses supported pinned Next production API with direct loopback TLS3443, same actual build/config/auth/actions, no Location rewrite or trust-host bypass. Six target/cookie/redirect guards, syntax and metadata checks pass. Actual v2 runtime pending until a fresh CI summary exists. [Guide](docs/HTTP_RUNTIME.md). It does not certify actual Cloudflare/Traefik, browser hydration/files or full recovery.
+PR32 owns the new HTTP layer and evidence. Next fixture **http-v2-direct-tls** uses supported pinned Next production API with direct loopback TLS3443, same actual build/config/auth/actions, no Location rewrite or trust-host bypass. Six target/cookie/redirect guards, syntax and metadata checks pass. Direct v2 actually executed7pass6fail5blocked; see latest section below. [Guide](docs/HTTP_RUNTIME.md). It does not certify actual Cloudflare/Traefik, browser hydration/files or full recovery.
 
 Chrome is available; last confirmed normal Owner/P257-Physical stock ledger. Preserve existing fixture: cash950/AR150/AP400/stock7/value420/profit120; six journals/debits2750. Do not replay PO/GRN/bill/invoice/credit/receipt150/supplier200. Credentials/actual IDs are ignored private .local files only.
 
@@ -38,3 +38,9 @@ P258-Entry exact setup remains **automatic-review rejected /specific approval pe
 Coding agent fixes0049/0050/0051/0052/0053; QA independently reviews the new diff/pin and reruns unchanged303 plus real HTTP with positive controls/both DB boundaries. Finish physical GRNI-on/variable-cost/partials/locks/roles, service/digital/rental/mixed/settings/files/history. **Real backup/restore LAST**, new empty target only. Keep operator recovery and expert RF01–10 open.
 
 Full137 workflows:62partial/75unbound/**zero fully accepted**. Rulebook1.0.0/hashabcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc,57rules/35sources, independent expert review pending. No customer-readiness percentage from assertions. Read SESSION.md and both memory ledgers to continue; historical runs/bugs/Git stay preserved.
+
+## Latest executed direct TLS and next settings extension
+
+[Direct v2 summary](runs/HTTP-2026-10-15T12-51-34-870Z-415340.json), CI38737766985:7pass6fail5blocked, setup passed. Direct transport did NOT resolve anonymous redirect origin; BUG0051/0052/0053 unchanged. Implementationdf275880fa18c80908b69e4d5e52bb866296571e; tested mergefaa897d22fec62a5a3ec1c62e6dd639ca10c44ec; contentbf53cb7d3b9da18e708e2cc2cdb50cea06aaa476d0556f40ac39b8064fb65ed9. Companion [129PG](runs/RUN-2026-10-15T12-51-16-344Z-runtime.json), CI38737767259:127pass2fail RT061/62, no infrastructure failure. Immutable first results retained.
+
+Next fixture http-v3-settings adds actual rendered tax/sales/purchase/inventory Server Action cases HTTP010–013/110–113 (26 total slots). Each requires Viewer zero effects, working Owner distinct field persistence and unchanged posted finance/stock. Settings run last on service-only fixtures; source missing guards are hypotheses until execution. Original303 and18 HTTP expectations unchanged; anonymous origin remains failed, with only numeric loopback-host/protocol/port diagnostics added. Six guards/syntax pass; fresh26-slot CI pending. [Intent](changes/CHG-20261015-http-settings-permissions.md). No staging writes, reset, permission grant or backup.

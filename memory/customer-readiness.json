@@ -968,13 +968,13 @@
   },
   "currentCodingHandoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
   "httpRuntime": {
-    "status": "latest-v1-executed7pass6fail5blocked;P1BUG0051/0052/0053;direct-TLS-v2-next",
+    "status": "v2-direct-executed7pass6fail5blocked;three-product-defects-unchanged;settings-extension-pending",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
     "record": "runs/RUN-20261015-http-runtime-first.md",
-    "expectedSlots": 18,
-    "perDatabaseBoundary": 9,
+    "expectedSlots": 26,
+    "perDatabaseBoundary": 13,
     "localGuardTestsPassed": 5,
     "realServerCasesPassed": 7,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
@@ -1012,9 +1012,9 @@
       "finalBalanceCents": 45000
     },
     "latestAttempt": {
-      "record": "runs/HTTP-2026-10-15T12-40-06-795Z-360298.json",
-      "ci": 38736302033,
-      "job": 116426352653,
+      "record": "runs/HTTP-2026-10-15T12-51-34-870Z-415340.json",
+      "ci": 38737766985,
+      "job": 116431328752,
       "totals": {
         "passed": 7,
         "failed": 6,
@@ -1023,37 +1023,47 @@
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
         "productStamp": "v2.5.8 · cf35da1",
-        "qaSha": "04292bbb31b340fbffc162d81302f03b116674ad",
+        "qaSha": "faa897d22fec62a5a3ec1c62e6dd639ca10c44ec",
         "qaDirty": false,
-        "qaContentHash": "648b25f3d8f562614279298316ba2cb4435f0033ccccb473bffa98c0d3817dfa",
+        "qaContentHash": "bf53cb7d3b9da18e708e2cc2cdb50cea06aaa476d0556f40ac39b8064fb65ed9",
         "node": "v22.23.3",
         "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
-        "fixtureVersion": "http-v1",
+        "fixtureVersion": "http-v2-direct-tls",
+        "transport": "direct-local-TLS-Next-custom-server",
         "schemaMigrations": 43,
-        "nextBuildId": "oPAmpC0SBpe34lmmPF70P",
+        "nextBuildId": "80ZssDh_Aw2Aj5ECS6rNq",
         "nextVersion": "15.5.19",
         "betterAuthVersion": "1.6.20"
       },
-      "qaImplementation": "62bd649d119d80b6fac9e0f75ff2d254fa30507d",
+      "qaImplementation": "df275880fa18c80908b69e4d5e52bb866296571e",
       "confirmedProductBugs": [
         "BUG-0051",
         "BUG-0052",
         "BUG-0053"
       ],
-      "companion": "runs/RUN-2026-10-15T12-39-59-629Z-runtime.json",
-      "companionCi": 38736301845,
+      "companion": "runs/RUN-2026-10-15T12-51-16-344Z-runtime.json",
+      "companionCi": 38737767259,
       "companionPassed": 127,
       "companionFailed": 2,
-      "handoff": "handoffs/HANDOFF-20261015-real-http-permissions.md",
-      "remaining": "Anonymous localhost-backend origin mismatch;restricted ERP identity/five blocks;deployed DB role unknown"
+      "remaining": "Anonymous origin still mismatches;restricted own ERP positives/five blocks unchanged"
     },
     "nextDiagnostic": {
       "status": "implemented-not-executed",
-      "fixtureVersion": "http-v2-direct-tls",
-      "transport": "same-origin direct TLS supported pinned Next production API;no product config override",
+      "fixtureVersion": "http-v3-settings",
       "localGuardTestsPassed": 6,
-      "requires": "fresh CI actual summary;keep prior v1 origin failures and security expectations",
-      "scope": "not actual Cloudflare/Traefik acceptance"
+      "change": "changes/CHG-20261015-http-settings-permissions.md",
+      "newCases": [
+        "HTTP-010",
+        "HTTP-011",
+        "HTTP-012",
+        "HTTP-013",
+        "HTTP-110",
+        "HTTP-111",
+        "HTTP-112",
+        "HTTP-113"
+      ],
+      "scope": "real rendered tax/sales/purchase/inventory forms;Viewer zero effects/Owner persisted positive/posted facts unchanged;settings last",
+      "remaining": "fresh26-slot CI;source concerns not new defects until execution;fixed numeric loopback-origin categories"
     }
   },
   "liveContinuation": {

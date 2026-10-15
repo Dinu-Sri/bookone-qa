@@ -39,8 +39,9 @@ function formFields(html,needle){
  if(!fields.length)throw new Incomplete('server-form-action-unavailable');return fields;
 }
 async function postForm(path,actor,fields){const form=new FormData();for(const [k,v] of fields)form.append(k,v);const encoded=new Request(BASE,{method:'POST',body:form});return request(path,actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Content-Type':encoded.headers.get('content-type')},body:Buffer.from(await encoded.arrayBuffer())});}
-const businessTables=['company_profiles','business_documents','business_document_lines','transactions','journal_entries','journal_lines','settlement_allocations','inventory_movements','audit_log'];
-async function snapshot(){const out={};for(const t of businessTables)out[t]=await sql.unsafe('select * from '+t+' order by id');return JSON.stringify(out);}
+const postedTables=['business_documents','business_document_lines','transactions','journal_entries','journal_lines','settlement_allocations','inventory_movements','inventory_stock_levels','inventory_cost_layers','inventory_cost_layer_consumptions'];
+const businessTables=['tenants','company_profiles','tax_profiles','sales_settings','purchase_settings','inventory_settings',...postedTables,'audit_log'];
+async function snapshot(tables=businessTables){const out={};for(const t of tables)out[t]=await sql.unsafe('select * from '+t+' order by id');return JSON.stringify(out);}
 async function doc(id){const [d]=await sql`select paid_amount::text as paid,balance_due::text as due,total::text as total from business_documents where id=${id}`;return d;}
 async function membership(id,tenant){const [r]=await sql`select m.role,r.slug as job from tenant_memberships m left join tenant_roles r on r.id=m.primary_role_id where m.user_id=${id} and m.tenant_id=${tenant} and m.voided_at is null`;return r;}
 async function requireLogin(actor){if(!actor.verified)throw new Incomplete('credential-identity-prerequisite');}
@@ -67,7 +68,7 @@ async function laneCases(lane,f){
   row.evidenceComplete=row.missing.length===0;rows.push(row);console.log(JSON.stringify({lane:lane.name,id:row.id,status:row.status}));
  }
  await test(1,async(c,o)=>{
-  const anon=await request('/sales/invoices/'+f.own.id);o('anonymousStatus',anon.status);if(anon.headers.location){const u=new URL(anon.headers.location,BASE);o('anonymousRedirectSameOrigin',Number(u.origin===new URL(BASE).origin));o('anonymousRedirectBackendOrigin',Number(u.origin==='http://127.0.0.1:3300'));o('anonymousRedirectBackendTlsOrigin',Number(u.origin==='https://127.0.0.1:3300'));o('anonymousRedirectLoginPath',Number(u.pathname==='/login'));o('anonymousRedirectExpectedFrom',Number(u.searchParams.get('from')==='/sales/invoices/'+f.own.id));o('anonymousRedirectLocalhostBackend',Number(['http://localhost:3300','https://localhost:3300'].includes(u.origin)));}c(denied(anon),'anonymous-protected-route-denied');c(!anon.body.includes(f.own.marker),'anonymous-no-invoice-data');
+  const anon=await request('/sales/invoices/'+f.own.id);o('anonymousStatus',anon.status);if(anon.headers.location){const u=new URL(anon.headers.location,BASE);o('anonymousRedirectSameOrigin',Number(u.origin===new URL(BASE).origin));o('anonymousRedirectBackendOrigin',Number(u.origin==='http://127.0.0.1:3300'));o('anonymousRedirectBackendTlsOrigin',Number(u.origin==='https://127.0.0.1:3300'));o('anonymousRedirectLoginPath',Number(u.pathname==='/login'));o('anonymousRedirectExpectedFrom',Number(u.searchParams.get('from')==='/sales/invoices/'+f.own.id));o('anonymousRedirectLocalhostBackend',Number(['http://localhost:3300','https://localhost:3300'].includes(u.origin)));o('anonymousRedirectHostLocalhost',Number(u.hostname==='localhost'));o('anonymousRedirectHttps',Number(u.protocol==='https:'));o('anonymousRedirectLoopbackPort',['localhost','127.0.0.1'].includes(u.hostname)&&/^\d+$/.test(u.port)?Number(u.port):0);}c(denied(anon),'anonymous-protected-route-denied');c(!anon.body.includes(f.own.marker),'anonymous-no-invoice-data');
   const bad=await postJSON('/api/auth/sign-in/email',{jar:new CookieJar(),ip:'127.0.0.21'},{email:f.actors.owner.email,password:'intentionally-wrong-password'});c([400,401,403].includes(bad.status),'wrong-password-denied');
   for(const a of Object.values(actors)){const r=await postJSON('/api/auth/sign-in/email',a,{email:a.email,password:a.password,rememberMe:false});const identity=await request('/api/auth/get-session',a);a.verified=r.status===200&&json(identity)?.user?.email===a.email;c(a.verified,'credential-identity-matches');const attrs=a.jar.sessionAttributes();c(attrs.length>0&&attrs.every(x=>x.secure&&x.httpOnly&&['lax','strict'].includes(x.sameSite)),'secure-httponly-session-cookie');}
   o('verifiedActors',Object.values(actors).filter(a=>a.verified).length);o('expectedActors',6);o('anonymousStatus',anon.status);o('wrongPasswordStatus',bad.status);
@@ -109,13 +110,33 @@ async function laneCases(lane,f){
   const before=await snapshot();await financial(a,handle,input(10));c(await snapshot()===before,'legacy-viewer-financial-write-zero-business-effects');const denied=await doc(f.own.id);o('paidAfterLegacyViewerCents',Math.round(Number(denied.paid)*100));
   await financial(b,handle,input(25));const d=await doc(f.own.id);c(Number(d.paid)===200&&Number(d.due)===400,'legacy-owner-receipt25-positive-with-no-viewer-money');o('finalPaidCents',Math.round(Number(d.paid)*100));o('expectedFinalPaidCents',20000);
  });
+ const settingsCases=[
+  {n:10,path:'/company/tax',needle:'taxOffice',table:'tax_profiles',column:'tax_office',denied:'HTTP forbidden tax office',allowed:'HTTP Owner tax office',fields:[['defaultTaxRate','0'],['taxBasis','standard'],['invoicePrefix','INV'],['billPrefix','BILL']]},
+  {n:11,path:'/company/sales',needle:'taxInvoiceDeptCode',table:'sales_settings',column:'tax_invoice_dept_code',denied:'HTTP-FORBIDDEN',allowed:'HTTP-OWNER',fields:[['vatRatePercent','18'],['exportVatRatePercent','0'],['defaultSaleChannel','local'],['defaultInvoiceKind','commercial'],['editLockDays','0']]},
+  {n:12,path:'/company/purchase',needle:'defaultPaymentTerms',table:'purchase_settings',column:'default_payment_terms',denied:'HTTP forbidden terms',allowed:'HTTP Owner terms',fields:[['blockDuplicateBills','on'],['defaultExpenseAccount','6800']]},
+  {n:13,path:'/company/inventory',needle:'costingMethod',table:'inventory_settings',column:'costing_method',denied:'fifo',allowed:'average',fields:[['negativeStockPolicy','block']]},
+ ];
+ for(const spec of settingsCases)await test(spec.n,async(c,o)=>{
+  if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  const page=await request(spec.path,actors.owner);if(page.status!==200)throw new Incomplete('settings-owner-page-unavailable');
+  const fields=formFields(page.body,spec.needle),before=await snapshot(),posted=await snapshot(postedTables);
+  await postForm(spec.path,actors.viewer,[...fields,...spec.fields,[spec.needle,spec.denied]]);
+  const values=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
+  const changed=values.some(r=>r.value===spec.denied);
+  c(await snapshot()===before,'viewer-settings-write-zero-business-effects');c(!changed,'viewer-settings-field-unchanged');o('viewerSettingChanged',Number(changed));
+  const response=await postForm(spec.path,actors.owner,[...fields,...spec.fields,[spec.needle,spec.allowed]]);
+  const positive=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
+  const saved=positive.length===1&&positive[0].value===spec.allowed&&[200,302,303,307,308].includes(response.status);
+  c(saved,'same-form-owner-settings-positive-persisted');o('ownerSettingSaved',Number(saved));
+  const historyUnchanged=await snapshot(postedTables)===posted;c(historyUnchanged,'settings-save-preserves-posted-finance-and-stock');o('postedFactsUnchanged',Number(historyUnchanged));
+ });
  return rows;
 }
 try{
  assert.equal(process.env.GITHUB_ACTIONS,'true','Only ephemeral CI may launch/reset this HTTP fixture');httpTarget(BASE,process.env.QA_HTTP_ISOLATION);httpDatabase(process.env.QA_RUNTIME_ADMIN_URL,process.env.QA_RUNTIME_ISOLATION);
  stage='source-guard';const verify=spawnSync(process.execPath,['scripts/verify-product.mjs'],{encoding:'utf8'});assert.equal(verify.status,0);
  const ref=JSON.parse(readFileSync('product-ref.json','utf8'));const preparation=JSON.parse(readFileSync('.local/runtime/preparation.json','utf8'));assert.equal(preparation.productSha,ref.commit);assert.equal(preparation.complete,true);
- assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:9},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:9},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
+ assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
  sql=postgres(process.env.QA_RUNTIME_ADMIN_URL,{max:1});const [guard]=await sql`select * from qa_runtime_guard`;assert.equal(guard.marker,'isolated-bookone-qa-v1');assert.equal(guard.product_sha,ref.commit);
  const runtime=JSON.parse(readFileSync('.local/runtime/connection.json','utf8')).url;httpDatabase(runtime,process.env.QA_RUNTIME_ISOLATION);
  summary.fingerprint={productSha:ref.commit,productStamp:'v'+readFileSync('work/product/VERSION','utf8').trim()+' · '+ref.commit.slice(0,7),qaSha:git('rev-parse','HEAD'),qaDirty:!!git('status','--porcelain'),qaContentHash:digest(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+digest(readFileSync(p))).join('\n')),node:process.version,productLockHash:digest(readFileSync('work/product/pnpm-lock.yaml')),fixtureVersion:manifest.fixtureVersion,transport:'direct-local-TLS-Next-custom-server',schemaMigrations:preparation.migrations.length};

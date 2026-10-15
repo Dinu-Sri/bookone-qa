@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fixtureVersion": "http-v2-direct-tls",
+  "fixtureVersion": "http-v3-settings",
   "productAcceptance": "not-established",
   "target": "https://127.0.0.1:3443/",
   "guide": "docs/HTTP_RUNTIME.md",
@@ -17,7 +17,11 @@
         "HTTP-006",
         "HTTP-007",
         "HTTP-008",
-        "HTTP-009"
+        "HTTP-009",
+        "HTTP-010",
+        "HTTP-011",
+        "HTTP-012",
+        "HTTP-013"
       ]
     },
     {
@@ -32,7 +36,11 @@
         "HTTP-106",
         "HTTP-107",
         "HTTP-108",
-        "HTTP-109"
+        "HTTP-109",
+        "HTTP-110",
+        "HTTP-111",
+        "HTTP-112",
+        "HTTP-113"
       ]
     }
   ],
@@ -72,6 +80,22 @@
     {
       "suffix": "009",
       "name": "legacy Viewer with missing primary job is not promoted at login; legacy Owner positive repair and payment control"
+    },
+    {
+      "suffix": "010",
+      "name": "Tax settings real form denies assigned Viewer; Owner persisted positive and posted facts unchanged"
+    },
+    {
+      "suffix": "011",
+      "name": "Sales settings real form denies assigned Viewer; Owner persisted positive and posted facts unchanged"
+    },
+    {
+      "suffix": "012",
+      "name": "Purchase settings real form denies assigned Viewer; Owner persisted positive and posted facts unchanged"
+    },
+    {
+      "suffix": "013",
+      "name": "Inventory settings real form denies assigned Viewer; Owner persisted positive and posted facts unchanged"
     }
   ],
   "limits": [

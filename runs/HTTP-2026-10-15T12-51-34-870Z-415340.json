@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "kind": "real-Next-HTTPS-runtime",
+  "runId": "HTTP-2026-10-15T12-51-34-870Z-415340",
+  "fixtureVersion": "http-v2-direct-tls",
+  "fingerprint": {
+    "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
+    "productStamp": "v2.5.8 · cf35da1",
+    "qaSha": "faa897d22fec62a5a3ec1c62e6dd639ca10c44ec",
+    "qaDirty": false,
+    "qaContentHash": "bf53cb7d3b9da18e708e2cc2cdb50cea06aaa476d0556f40ac39b8064fb65ed9",
+    "node": "v22.23.3",
+    "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+    "fixtureVersion": "http-v2-direct-tls",
+    "transport": "direct-local-TLS-Next-custom-server",
+    "schemaMigrations": 43,
+    "nextBuildId": "80ZssDh_Aw2Aj5ECS6rNq",
+    "nextVersion": "15.5.19",
+    "betterAuthVersion": "1.6.20"
+  },
+  "setup": {
+    "status": "passed",
+    "stage": "complete"
+  },
+  "results": [
+    {
+      "lane": "owner-db-baseline",
+      "boundary": "real-credential-TLS-Next-ownerDB-functional-baseline",
+      "databaseRole": {
+        "superuser": true,
+        "bypassRls": true
+      },
+      "serverDiagnostics": [],
+      "identityVisibility": {
+        "unscopedOwnUser": 1,
+        "scopedOwnUser": 1,
+        "scopedForeignUser": 1,
+        "afterTransactionOwnUser": 1
+      },
+      "finalAccounting": {
+        "paidCents": 21000,
+        "balanceCents": 39000,
+        "journals": 5,
+        "allocations": 4
+      },
+      "cases": [
+        {
+          "id": "HTTP-001",
+          "status": "failed",
+          "failedAssertions": [
+            "anonymous-protected-route-denied"
+          ],
+          "observations": {
+            "anonymousStatus": 307,
+            "anonymousRedirectSameOrigin": 0,
+            "anonymousRedirectBackendOrigin": 0,
+            "anonymousRedirectBackendTlsOrigin": 0,
+            "anonymousRedirectLoginPath": 1,
+            "anonymousRedirectExpectedFrom": 1,
+            "anonymousRedirectLocalhostBackend": 0,
+            "verifiedActors": 6,
+            "expectedActors": 6,
+            "wrongPasswordStatus": 401
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-002",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "ownerStatus": 200,
+            "viewerStatus": 200,
+            "foreignStatus": 200
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-003",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "foreignStatus": 307
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-004",
+          "status": "failed",
+          "failedAssertions": [
+            "viewer-profile-write-zero-business-effects",
+            "viewer-cannot-change-legal-name"
+          ],
+          "observations": {
+            "viewerProfileChanged": 1,
+            "ownerProfileSaved": 1
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-005",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "ownerControlStatus": 307,
+            "viewerControlStatus": 307,
+            "platformControlStatus": 200
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-006",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "staleSessionAuthenticated": 0
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-007",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "ownerReceiptStatus": 200,
+            "viewerReceiptStatus": 200
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-008",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "paidCents": 17500,
+            "balanceCents": 42500,
+            "expectedPaidCents": 17500,
+            "newJournalLines": 2,
+            "actionTransportVerified": 1
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-009",
+          "status": "failed",
+          "failedAssertions": [
+            "credential-session-never-promotes-viewer-to-owner",
+            "legacy-viewer-financial-write-zero-business-effects",
+            "legacy-owner-receipt25-positive-with-no-viewer-money"
+          ],
+          "observations": {
+            "legacyViewerBecameOwner": 1,
+            "legacyOwnerRepair": 1,
+            "paidAfterLegacyViewerCents": 18500,
+            "finalPaidCents": 21000,
+            "expectedFinalPaidCents": 20000
+          },
+          "missing": [],
+          "evidenceComplete": true
+        }
+      ]
+    },
+    {
+      "lane": "nonowner-nobypassrls",
+      "boundary": "real-credential-TLS-Next-nonowner-NOBYPASSRLS",
+      "databaseRole": {
+        "superuser": false,
+        "bypassRls": false
+      },
+      "serverDiagnostics": [],
+      "identityVisibility": {
+        "unscopedOwnUser": 0,
+        "scopedOwnUser": 1,
+        "scopedForeignUser": 0,
+        "afterTransactionOwnUser": 0
+      },
+      "finalAccounting": {
+        "paidCents": 15000,
+        "balanceCents": 45000,
+        "journals": 2,
+        "allocations": 1
+      },
+      "cases": [
+        {
+          "id": "HTTP-101",
+          "status": "failed",
+          "failedAssertions": [
+            "anonymous-protected-route-denied"
+          ],
+          "observations": {
+            "anonymousStatus": 307,
+            "anonymousRedirectSameOrigin": 0,
+            "anonymousRedirectBackendOrigin": 0,
+            "anonymousRedirectBackendTlsOrigin": 0,
+            "anonymousRedirectLoginPath": 1,
+            "anonymousRedirectExpectedFrom": 1,
+            "anonymousRedirectLocalhostBackend": 0,
+            "verifiedActors": 6,
+            "expectedActors": 6,
+            "wrongPasswordStatus": 401
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-102",
+          "status": "failed",
+          "failedAssertions": [
+            "authenticated-own-invoice-and-role",
+            "authenticated-own-invoice-and-role",
+            "authenticated-own-invoice-and-role"
+          ],
+          "observations": {
+            "ownerStatus": 307,
+            "viewerStatus": 307,
+            "foreignStatus": 307
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-103",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "own-record-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-104",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-105",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-106",
+          "status": "passed",
+          "failedAssertions": [],
+          "observations": {
+            "staleSessionAuthenticated": 0
+          },
+          "missing": [],
+          "evidenceComplete": true
+        },
+        {
+          "id": "HTTP-107",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-108",
+          "status": "blocked",
+          "failedAssertions": [],
+          "observations": {},
+          "missing": [
+            "known-role-positive-prerequisite"
+          ],
+          "evidenceComplete": false
+        },
+        {
+          "id": "HTTP-109",
+          "status": "failed",
+          "failedAssertions": [
+            "legacy-owner-positive-membership-repair"
+          ],
+          "observations": {
+            "legacyViewerBecameOwner": 0,
+            "legacyOwnerRepair": 0
+          },
+          "missing": [
+            "financial-action-control-prerequisite"
+          ],
+          "evidenceComplete": false
+        }
+      ]
+    }
+  ],
+  "productAcceptance": "not-established",
+  "missing": [
+    "deployed-Chrome/hydration/overlay",
+    "real-proxy-deployment",
+    "object-storage-and-uploads",
+    "complete-business-workflows",
+    "full-upgrade/recovery",
+    "expert-policy-review"
+  ],
+  "totals": {
+    "passed": 7,
+    "failed": 6,
+    "blocked": 5
+  }
+}
