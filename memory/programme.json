@@ -66,8 +66,8 @@
     "BUG-0044"
   ],
   "nextActions": [
-    "Obtain the pending at-action approval for the prepared P257-Owner signup accepting the displayed Terms/Privacy/Cookies; no account created yet.",
-    "Submit exactly the prepared signup after approval, complete supported company onboarding, verify actual identity/entity/module/CoA/settings and record private credentials/IDs.",
+    "Dismiss the browser-extension popup, then continue the same approved Owner session at /company/details; signup and onboarding are complete.",
+    "Verify actual entity/country/currency/tax/modules/CoA/costing and empty baseline; activate synthetic-company modules through supported admin UI if needed, then fresh Owner login.",
     "Live physical anchor with1000 opening capital:10units at60, sale4at100, receipt150, return1at100/cost60, supplier payment200; expected cash950/AR150/AP400/stock7/value420/profit120. These are planned, not observations.",
     "Continue service/digital/rental/mixed/settings/users/files/history workflows; real backup/restore LAST by owner instruction.",
     "Keep137-workflow full acceptance, expert RF-01-10 and isolated operator recovery open. Do not repeat300 unchanged tests without a relevant change."
@@ -680,11 +680,19 @@
     "newCompanyMethod": "supported logout/signup/login with synthetic credentials; owner says no email verification",
     "privateState": ".local/live-v257/",
     "earlierExistingCompanyAdminGrant": "still-not-approved; no bypass",
-    "status": "signup-prepared-awaiting-at-action-legal-policy-approval",
-    "newAccountCreated": false,
-    "pendingSignupAlias": "P257-Owner",
+    "status": "owner-company-created; company-details-open; browser-popup-block",
+    "newAccountCreated": true,
+    "pendingSignupAlias": null,
     "backupPhase": "LAST; no real archive export/restore executed",
-    "signupLegalConfirmation": "requested-for-P257-Owner; pending"
+    "signupLegalConfirmation": "explicitly-approved-by-user-and-submitted",
+    "newCompanyCreated": true,
+    "actorAlias": "P257-Owner",
+    "companyAlias": "P257-Physical",
+    "latestRecord": "runs/RUN-20261015-v257-owner-onboarding.md",
+    "businessTransactionsCreated": 0,
+    "actualTradingEmptiness": "not-yet-observed",
+    "browserDependency": "dismiss extension popup; same session; no bypass",
+    "moduleSetup": "source: company starter flags; actual UI configuration pending"
   },
   "v256LatestCampaign": {
     "record": "runs/CAMP-20261015-015814708-878549.json",
@@ -789,5 +797,16 @@
     "separateFromAutomated300": true,
     "legalImpact": "not-assessed",
     "newAccountCreated": false
+  },
+  "liveOwnerOnboarding": {
+    "record": "runs/RUN-20261015-v257-owner-onboarding.md",
+    "observedStamp": "v2.5.7 /7ffafab",
+    "actorAlias": "P257-Owner",
+    "companyAlias": "P257-Physical",
+    "freshLogin": true,
+    "role": "Owner",
+    "directControlRoom": "redirected-to-denied-root; no-platform-data",
+    "boundedAssertionsPassed": 5,
+    "fullWorkflowAcceptance": "not-established"
   }
 }
