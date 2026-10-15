@@ -17,3 +17,7 @@ Pinned source commercial-docs.ts enriches nonpurchase cost from current product.
 Adjacent controls required: multiple source lines for the same SKU, partial and repeated returns up to original quantity, full return, source master price/cost edits, settings changes, multi-layer FIFO, return after stock exhausted, foreign source/product denial and fault rollback. Initial different-price FIFO/average issue checks C-111/RT-032 pass; do not alter their expectations.
 
 [PG evidence](../runs/RUN-2026-10-14T11-48-13-404Z-runtime.json), [campaign](../runs/CAMP-20261014-114805477-fc2c22.json), `tests/runtime/inventory-valuation.test.ts`. Actual credential/UI/MinIO exposure and full workflow acceptance remain open. No staging writes.
+
+## v2.5.6 bounded retest - 2026-10-15
+
+RT-028, RT-030, RT-031 pass on d5377d89d2bd9d27c52a6e9c43376f2d03255bd0. [Latest campaign](../runs/CAMP-20261015-015814708-878549.json)291/292pass, [PostgreSQL](../runs/RUN-2026-10-15T01-58-15-584Z-runtime.json)117/118pass, zero skips or infrastructure failures. All19 earlier failure cases pass. This is bounded original/selected-adjacent reproduction evidence; full feature/credential/browser/storage acceptance remains pending. Retain historical failure and expectations. BUG-0043 module-off historical detail denial is a new adjacent access regression; do not undo scope/read-job protections to repair it. See [current handoff](../handoffs/HANDOFF-20261015-v256-retest.md).

@@ -8,4 +8,6 @@ The pinned diff adds assertCanReadCommercialDocument, which requires sales.invoi
 
 First [campaign](../runs/CAMP-20261015-015120720-373e0d.json)290pass/2fail; [PostgreSQL](../runs/RUN-2026-10-15T01-51-27-828Z-runtime.json)116/118pass, no infrastructure failures. The other failure B-104 stopped at a source-inconsistent credit fixture and is under a preserved fixture-validity correction; no report arithmetic defect established by it.
 
-Follow-up pending: capture only the known permission denial as historyDenied, still expect0 and all original detail/report/write-deny/snapshot invariants. Product source and rule expectations remain unchanged. No staging mutations, company reset or real account creation.
+Follow-up confirmed: historyDenied1 versus required0, invoiceAccepted0, paymentAccepted0, profitCents10000, invoiceReadGrant0, unchanged1. The historical detail is denied; report values survive and business snapshot is unchanged. No deleted-record inference. All original expected detail/report/write-deny/snapshot invariants remain. Product source and rule expectations remain unchanged. No staging mutations, company reset or real account creation.
+
+Final [campaign](../runs/CAMP-20261015-015814708-878549.json), CI38668445673:291pass/1fail/zero skips/blocks; [PostgreSQL](../runs/RUN-2026-10-15T01-58-15-584Z-runtime.json), CI38668445532:117/118pass with no infrastructure failures. Sole failure RT-047. B-104 source-consistent partial credit now passes, income500/cash250 exactly.

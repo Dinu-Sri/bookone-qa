@@ -1,28 +1,17 @@
-## v2.5.6 first run completed; follow-up required
-
-First292-case rerun290pass/2fail/zero skips/blocks; all19 previously failing cases pass. B-104 stopped on source-inconsistent credit fixture before financial observations; corrected to original description and0.5 at200 while preserving credit100 and all financial assertions. RT-047 historical Owner read after Sales-off fails; numeric denial observation added without changing expectations. Preserve first reports; new fingerprint/retest required. See changes/CHG-20261015-v256-independent-retest.md. No product bug closure or live acceptance yet.
-
-## Candidate v2.5.6 independent retest in progress
-
-Product source pinned d5377d89d2bd9d27c52a6e9c43376f2d03255bd0 /VERSION2.5.6; prior292 assertions unchanged. No new result or bug closure yet. Read changes/CHG-20261015-v256-independent-retest.md. Live page still displays v2.5.5 /8e1a2b8; browser/restore acceptance must wait for the matching stamp and pending access/popup dependencies. Historical candidate/results below remain immutable.
-
 # BookOne customer-readiness status
 
-Customer readiness is **not certified**. Candidate source **v2.5.5 / 8e1a2b8**; last observed live stamp matched, but new results are isolated source/runtime evidence, not deployed acceptance.
+Customer readiness is **not certified**. Candidate source **v2.5.6 /d5377d8**; last open-page observation was v2.5.5 /8e1a2b8 and the subsequent browser-context read did not return. These are isolated source/runtime results, not deployed acceptance.
 
-[Latest campaign](runs/CAMP-20261014-131128650-2e5b74.json): **292 assertions: 273 passed, 19 failed, zero skipped/blocked/flaky/not-run**. CI38569613302. [PostgreSQL](runs/RUN-2026-10-14T13-11-19-113Z-runtime.json):99/118 passed, no infrastructure failures. All98 retained units,60 source contracts and16 archive helpers pass. Original repaired repros retain expected outcomes; deeper adjacent paths fail.
+[Latest campaign](runs/CAMP-20261015-015814708-878549.json): **292 checks:291 passed,1 failed,zero skipped/blocked/flaky/not-run**. CI38668445673. [PostgreSQL](runs/RUN-2026-10-15T01-58-15-584Z-runtime.json):117/118pass, no infrastructure failures,43/43 migrations. All98 retained units,60 source contracts and16 archive helpers pass.
 
-Thirteen open finding groups across four coding handoffs:
+**[BUG-0043 /RT-047](bugs/BUG-0043-module-off-historical-detail.md)** is the sole failing selected check: Owner historical invoice detail is denied after Sales-off. New invoice/payment writes are denied correctly, report profit100 is preserved, business snapshot unchanged. [Coding handoff](handoffs/HANDOFF-20261015-v256-retest.md). Retain fixed read-job/scope/tenant protections while restoring permitted historical reads.
 
-- [Payment/archive](handoffs/HANDOFF-20261014-v255-adjacent-readiness.md): BUG-0031 batch partial effects, BUG-0032 key/payload false success, BUG-0024 current checksum omission.
-- [Inventory](handoffs/HANDOFF-20261014-variable-cost-readiness.md): BUG-0033 original return-cost drift, BUG-0034 backdate policy adoption.
-- [Sales/service/digital](handoffs/HANDOFF-20261014-sales-value-readiness.md): BUG-0035 discounted-credit excess, BUG-0036 supported VAT/style omission, BUG-0037 excessive discounts, BUG-0038 cumulative credit/cash over-refund, BUG-0039 cash-credit state, BUG-0040 revenue refund tender.
-- [Roles/scopes](handoffs/HANDOFF-20261014-role-scope-readiness.md): BUG-0041 same-company restricted/no-read invoice detail, BUG-0042 scope-read failure permits forbidden branch write. Warehouse RT-051 now reproduced; same finding, no new group. Actual foreign-tenant positive/deny controls pass in this lane.
+All19 previous failure cases now pass across the thirteen groups (0031/0032/0024 omission/0033-0042); current bug files and ledger record bounded results. Full feature/credential/browser/storage acceptance remains pending. First v2.5.6 run290pass/2fail is preserved: B-104 stopped on a source-inconsistent credit fixture before reporting amounts. Corrected to copied source description,0.5 at original200; same independent100 credit,250 receipt,250 remaining AR,500 income and all prior assertions pass. No expectation or rule change, no original defect reopened from that failed prerequisite.
 
-[Readiness ledger](memory/customer-readiness.json):137 defined workflows,62 partial bindings,75 unbound,zero fully accepted. Assertion counts are not a readiness percentage. Full physical/service/digital/rental/mixed/settings/roles/files/history/recovery scope remains. Rulebook1.0.0/hash fixed; expert RF-01-10 and operator recovery gates open.
+[Readiness ledger](memory/customer-readiness.json):137 workflows62partial bindings/75unbound/zero fully accepted. Counts are not customer-readiness percentages. Full physical/service/digital/rental/mixed/settings/roles/files/history/recovery scope and expert RF-01-10 remain open.
 
-Next: coding fixes for thirteen groups, deliberate candidate diff/pin review, then original and adjacent regression. Complete actual normal-role browser/physical-first and encrypted A-to-empty-B restore acceptance. Synthetic sessions/in-memory files do not prove credential/HTTP/browser/MinIO behaviour. No company-reset SQL or shared-staging stress.
+Next: coding fix/CHG for BUG-0043, deliberate candidate review/pin, then RT-047 plus full292 regression. Confirm live image/stamp, complete normal-role physical-first UI and real encrypted archive A-to-new-empty-B with attachment bytes, then remaining business/expert/operator recovery gates.
 
-Browser dependencies: exact synthetic Owner/Admin/Viewer recipient/role approval and Chrome popup dismissal pending. Automatic review rejected the new Admin grant; do not bypass. Only disposable source company created through supported flow; no new staging users/trade/stock/archive writes. Private journal/secrets retain setup; no production access or public credentials/cookies/raw logs/archives.
+Browser dependencies: exact synthetic Owner/Admin/Viewer account/role approval and Chrome popup dismissal remain pending. Automatic review rejected the unapproved specific Admin grant; do not bypass. Only disposable source-company setup was created earlier through the supported flow; no new staging users/trade/stock/files/archives in this retest. Private journal/secrets retained. No product source edits, production access, company-reset SQL, shared-staging faults or public secrets/raw evidence.
 
-Read SESSION.md, AGENTS.md and memory/programme.json. Previous exact indexes retained in memory/history/STATUS-before-role-followup-20261014.md and SESSION-before-role-followup-20261014.md. Immutable first attempts remain authoritative historical evidence; historical pending notes are not current state.
+Read SESSION.md, AGENTS.md and memory/programme.json. Prior exact indexes retained in memory/history/STATUS-before-v256-result-20261015.md and SESSION-before-v256-result-20261015.md; all first attempts and fixture corrections remain in immutable evidence.

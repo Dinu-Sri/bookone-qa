@@ -107,16 +107,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Passing bounded DB assertion; full required credential/browser/settings/history layers remain open.",
-      "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+      "next": "Real credential/browser/settings/history/full lifecycle acceptance remains pending.",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
       "implementedLayers": [
         "persisted-lifecycle-owner-connection"
       ],
       "latestAttempt": {
-        "productSha": "5becb2dcc768e056e34f8507fc2ecd2a3475e6a9",
-        "evidence": "runs/RUN-2026-10-14T06-33-03-250Z-runtime.json",
+        "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+        "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
         "status": "passed",
-        "scope": "bounded-product-command; required layers remain open"
+        "scope": "source-consistent partial credit100/receipt250/AR250/profit500 bounded; first invalid fixture retained; full workflow pending"
       },
       "attemptHistory": [
         {
@@ -235,16 +235,16 @@
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Repair restricted/no-read detail and scope-read fail-open; real auth/cache/HTTP/browser/files/full scope matrix remains required.",
+      "next": "Repair RT-047 without losing read-job/scope denials; real credential/cache/HTTP/browser/files/full scope matrix pending.",
       "implementedLayers": [
         "persisted-lifecycle-non-owner-db-synthetic-session"
       ],
-      "evidence": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
       "latestAttempt": {
-        "productSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
-        "evidence": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
+        "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+        "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
         "status": "passed",
-        "scope": "Sales own command outcome only; three job/scope assertions fail; full role workflow not accepted"
+        "scope": "Sales own command and normal job/scope controls bounded; module-off history RT-047 fails separately; full role workflow pending"
       }
     },
     {

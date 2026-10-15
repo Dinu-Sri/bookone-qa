@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "objective": "Customer readiness for all requested BookOne business types",
   "status": "active-not-certified",
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-15",
   "scope": [
     "physical",
     "service",
@@ -14,7 +14,7 @@
     "uploads/imports",
     "history/upgrade/recovery"
   ],
-  "candidateSha": "8e1a2b8b29e662940bfcfecc4230875c83e35b6d",
+  "candidateSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
   "observedLiveStamp": "v2.5.5 · 8e1a2b8",
   "rulebookVersion": "1.0.0",
   "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
@@ -24,19 +24,19 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "original-repros-bounded-pass; nineteen-adjacent-assertions-failing",
+      "status": "291selected-pass; RT-047-history-denial-failing; full-acceptance-pending",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
       "id": "G-PHYSICAL",
       "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
-      "status": "original-cost-return-defect; backdate-policy-adoption-gap; full-acceptance-pending",
+      "status": "source-cost-return/backdate-repros-bounded-pass; full-acceptance-pending",
       "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
     },
     {
       "id": "G-SERVICE",
       "topic": "Service/digital sales and supported delivery/advance/credit behaviour",
-      "status": "tax/credit/refund/input defects; full-acceptance-pending",
+      "status": "selected-tax/credit/refund/reconciliation-bounded-pass; full-acceptance-pending",
       "required": "Independent accounts/tax/recognition/delivery expectations; unsupported advertised capabilities explicit"
     },
     {
@@ -54,14 +54,14 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "restricted-detail disclosure/scope-read-error fail-open; real-auth/full-acceptance-pending",
+      "status": "scope/read-job-fixes-bounded-pass; module-off-history-denied; real-auth/full-acceptance-pending",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
       "dependency": "Specific staging Owner/Admin/Viewer creation approval requested after automatic browser review rejection."
     },
     {
       "id": "G-ARCHIVE",
       "topic": "Owner source-A to new-empty-B portable data/files restore",
-      "status": "current-files-integrity-defect; deployed-restore-pending",
+      "status": "current-checksum-repro-bounded-pass; deployed-restore-pending",
       "required": "Real exported encrypted pair, current-pair checksums, remapped data/roles, coherent books/stock, attachment bytes and repeat/failure guards"
     },
     {
@@ -84,10 +84,11 @@
     }
   ],
   "nextActions": [
-    "Coding agent: repair thirteen finding groups across the four current handoffs; retain original and adjacent expectations, then pin and independently retest the new candidate.",
-    "Exact synthetic staging Owner/Admin/Viewer account approval and Chrome popup dismissal remain pending; no new staging accounts created.",
-    "Complete fresh normal-role physical-first browser workflows and encrypted archive A to new empty B with real attachment bytes.",
-    "Complete remaining business/settings/security workflows, isolated operator recovery and Sri Lankan expert-review gates."
+    "Coding agent: repair BUG-0043 historical Owner detail denial after Sales-off; preserve all read-job/scope/explicit-deny/foreign-tenant and write-denial protections.",
+    "Pin and review the next candidate, then rerun RT-047 and the full original/adjacent292-check campaign on fresh isolated PostgreSQL.",
+    "Confirm deployed sidebar v2.5.6 /d5377d8 or the deliberately reviewed newer candidate; last observed page was v2.5.5 and refresh/read timed out.",
+    "Exact synthetic Owner/Admin/Viewer role approval and Chrome popup dismissal remain pending; no new staging accounts created.",
+    "Complete real normal-role physical-first UI and encrypted archive A-to-new-empty-B with attachment bytes, then remaining business/settings/expert/operator recovery gates."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -140,20 +141,20 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261014-131128650-2e5b74.json",
-    "ci": 38569613302,
-    "passed": 273,
-    "failed": 19,
+    "record": "runs/CAMP-20261015-015814708-878549.json",
+    "ci": 38668445673,
+    "passed": 291,
+    "failed": 1,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
-    "runtimeCi": 38569613346,
+    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+    "runtimeCi": 38668445532,
     "unitPassed": 98,
-    "runtimePassed": 99,
+    "runtimePassed": 117,
     "runtimeCases": 118,
-    "qaImplementation": "3da78860096e5f39b9f6bc2eedb083357da2a812",
-    "qaTestedMerge": "a2488edd483ba3c1f63356306d9b2c66862fb95d",
-    "qaContentHash": "cffd44e6273b20ec41b75fd8941e3d6f939db2b6b4da7bca555022e1b9328060",
+    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
+    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
+    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
   },
@@ -196,19 +197,7 @@
     "scope": "bounded-owner-product-command/synthetic-session; no live auth/UI/full-workflow acceptance"
   },
   "activeReadinessFindings": [
-    "BUG-0031",
-    "BUG-0032",
-    "BUG-0024-current-checksum-omission",
-    "BUG-0033",
-    "BUG-0034",
-    "BUG-0035",
-    "BUG-0036",
-    "BUG-0037",
-    "BUG-0038",
-    "BUG-0039",
-    "BUG-0040",
-    "BUG-0041",
-    "BUG-0042"
+    "BUG-0043"
   ],
   "previousCampaigns": [
     {
@@ -282,6 +271,24 @@
       "qaContentHash": "c316051c9f00d5ab080751894e3b4141f0d6f0dae57ff86075af5aa71d4180e0",
       "fixtureVersion": "campaign-v2",
       "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
+    },
+    {
+      "record": "runs/CAMP-20261014-131128650-2e5b74.json",
+      "ci": 38569613302,
+      "passed": 273,
+      "failed": 19,
+      "skipped": 0,
+      "blocked": 0,
+      "runtime": "runs/RUN-2026-10-14T13-11-19-113Z-runtime.json",
+      "runtimeCi": 38569613346,
+      "unitPassed": 98,
+      "runtimePassed": 99,
+      "runtimeCases": 118,
+      "qaImplementation": "3da78860096e5f39b9f6bc2eedb083357da2a812",
+      "qaTestedMerge": "a2488edd483ba3c1f63356306d9b2c66862fb95d",
+      "qaContentHash": "cffd44e6273b20ec41b75fd8941e3d6f939db2b6b4da7bca555022e1b9328060",
+      "fixtureVersion": "campaign-v2",
+      "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc"
     }
   ],
   "salesValueRetest": {
@@ -350,14 +357,16 @@
   "pendingCandidate": {
     "sha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
     "version": "2.5.6",
-    "status": "first-run290pass2fail-followup-fixture-and-diagnostics",
+    "status": "executed291pass1fail-not-accepted",
     "change": "changes/CHG-20261015-v256-independent-retest.md",
     "expectedAssertions": 292,
     "baselineRecord": "runs/CAMP-20261014-131128650-2e5b74.json",
     "liveObservedStamp": "v2.5.5 / 8e1a2b8",
     "browserAcceptance": "not-run",
     "handoff": "handoffs/HANDOFF-20261015-v256-retest.md",
-    "openFinding": "BUG-0043"
+    "openFinding": "BUG-0043",
+    "latestRecord": "runs/CAMP-20261015-015814708-878549.json",
+    "latestRuntime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -374,5 +383,175 @@
     "previousFailureCasesPassing": 19,
     "interpretation": "B-104 source-line fixture validity correction pending rerun; RT-047 historical read regression requires repair; no wrong B-104 report amount observed",
     "productAcceptance": "not-established"
-  }
+  },
+  "v256Retest": {
+    "record": "runs/CAMP-20261015-015814708-878549.json",
+    "ci": 38668445673,
+    "passed": 291,
+    "failed": 1,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+    "runtimeCi": 38668445532,
+    "unitPassed": 98,
+    "runtimePassed": 117,
+    "runtimeCases": 118,
+    "qaImplementation": "04f5b860c36a93b557ed4d146b2f3b362223f794",
+    "qaTestedMerge": "aedfbfbd1ca848984e39460d42a7678513b25be8",
+    "qaContentHash": "a2d4412ae8392dab664eedf3def0ed4a3510bd0cf8137c4dba65ce1c632d0cca",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "handoff": "handoffs/HANDOFF-20261015-v256-retest.md",
+    "all19PreviousFailureCases": "passed",
+    "openFinding": "BUG-0043",
+    "historyDenied": 1,
+    "historyReportProfitCents": 10000,
+    "historyBusinessSnapshotUnchanged": 1,
+    "sourceConsistentPartialCredit": {
+      "creditCents": 10000,
+      "reportedIncomeCents": 50000,
+      "reportedCashCents": 25000
+    },
+    "fullAcceptance": "not-established"
+  },
+  "boundedPassingReadinessFindings": [
+    {
+      "id": "BUG-0031",
+      "cases": [
+        "B-115",
+        "RT-026"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0032",
+      "cases": [
+        "RT-025"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0024",
+      "cases": [
+        "RT-027"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0033",
+      "cases": [
+        "RT-028",
+        "RT-030",
+        "RT-031"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0034",
+      "cases": [
+        "RT-029"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0035",
+      "cases": [
+        "RT-034"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0036",
+      "cases": [
+        "RT-035"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0037",
+      "cases": [
+        "RT-036",
+        "RT-037"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0038",
+      "cases": [
+        "RT-038",
+        "RT-041"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0039",
+      "cases": [
+        "B-105"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0040",
+      "cases": [
+        "RT-039"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0041",
+      "cases": [
+        "RT-045",
+        "RT-051"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    },
+    {
+      "id": "BUG-0042",
+      "cases": [
+        "RT-046"
+      ],
+      "productSha": "d5377d89d2bd9d27c52a6e9c43376f2d03255bd0",
+      "evidence": "runs/RUN-2026-10-15T01-58-15-584Z-runtime.json",
+      "status": "bounded-repro-pass; broader-workflow-acceptance-pending"
+    }
+  ],
+  "v255ActiveReadinessFindings": [
+    "BUG-0031",
+    "BUG-0032",
+    "BUG-0024-current-checksum-omission",
+    "BUG-0033",
+    "BUG-0034",
+    "BUG-0035",
+    "BUG-0036",
+    "BUG-0037",
+    "BUG-0038",
+    "BUG-0039",
+    "BUG-0040",
+    "BUG-0041",
+    "BUG-0042"
+  ]
 }
