@@ -24,13 +24,13 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "P1-BUG-0048-confirmed-live-and-isolated-RT060;301selected300pass1fail",
+      "status": "original301/127PG allpass;RT060-fixed;RT061-asof-expansion-pending;live-adjacent-incomplete",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
       "id": "G-PHYSICAL",
       "topic": "Purchase/receipt/bill/sale/payment/return and quantity/value/GL reports",
-      "status": "live-posting-anchor-reconciled; receipt-and-balance-sheet-fail; wider-layers-pending",
+      "status": "prior-anchor-reconciled;v258-earnings/receipt/SO-repros-improved;GRNI/variable-cost/wider-layers-pending",
       "required": "Actual supported lifecycle, variable cost boundaries, settings/scope/fault/race and deployed browser/credential evidence"
     },
     {
@@ -84,11 +84,11 @@
     }
   ],
   "nextActions": [
-    "Execute unchanged301 on pinnedcf35da1 and finish live fix/adjacent checks before closing BUG0045-0048.",
-    "Coding handoff handoffs/HANDOFF-20261015-v257-physical-browser-findings.md; fix P1 Balance Sheet and receipt rendering; preserve exact final posted fixture and read-only retest payments.",
-    "Continue separate physical GRNI-on configured before receipt, variable-cost/partials/locks and actual role/tenant boundary workflows.",
-    "Then service/digital/rental/mixed/settings/files/history; actual backup/restore LAST.",
-    "Keep137-workflow and expert/operator gates open; prior300allpass is not customer readiness."
+    "Run new RT-061 on fresh isolated PostgreSQL; retain unchanged301 passing fingerprint.",
+    "Dismiss other Chrome extension UI; inspect current Owner session before any logout/replay.",
+    "Preserve P258-Entry defaults and resolve INV258-01; check no PO persisted, then verify alternate supplier positive under actual enabled Purchase policy.",
+    "Read-only original-fixture invoice/remittance/AR/AP/stock checks; then GRNI-on/variable-cost/roles and service/digital/rental/mixed/settings/files/history.",
+    "Real encrypted backup/restore LAST; expert RF-01–10/operator recovery and all137 workflow acceptance remain open."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -141,23 +141,23 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261015-030413695-b7f7f0.json",
-    "ci": 38674272156,
-    "passed": 300,
+    "record": "runs/CAMP-20261015-083605456-919da8.json",
+    "ci": 38706760340,
+    "passed": 301,
     "failed": 0,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-15T03-04-19-509Z-runtime.json",
-    "runtimeCi": 38674272336,
+    "runtime": "runs/RUN-2026-10-15T08-36-12-574Z-runtime.json",
+    "runtimeCi": 38706760504,
     "unitPassed": 98,
-    "runtimePassed": 126,
-    "runtimeCases": 126,
-    "qaImplementation": "1ce6f790847b2b9bd8dbde689cecc55017e6f2ab",
-    "qaTestedMerge": "a63400a64d6b6dc18d5952e0f60f43d5435bae4f",
-    "qaContentHash": "9e4e7cc0d826a4cb304356bb800b743a5934d94879e705861fb5dcd43323c907",
+    "runtimePassed": 127,
+    "runtimeCases": 127,
+    "qaImplementation": "9009cbf6041975a943c49152bd5e0bfdcd424344",
+    "qaTestedMerge": "41fd8a09ef5da11165fa4d6d70a810d9f5be7435",
+    "qaContentHash": "8117446ef43500daf4d270f206f0032a5b4c88885e1b34f15bf8c8887ce48f27",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
-    "acceptance": "selected-assertions-pass; full137-workflow-acceptance-not-established"
+    "acceptance": "executed-gate-passed;full-workflows-not-established"
   },
   "priorCampaign": {
     "record": "runs/CAMP-20261014-113321106-568961.json",
@@ -399,12 +399,12 @@
   "pendingCandidate": {
     "sha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
     "version": "2.5.8",
-    "status": "independent-retest-in-progress",
+    "status": "301 original assertions passed; RT-061 expansion and live adjacent continuation pending",
     "change": "changes/CHG-20261015-v258-independent-retest.md",
-    "expectedAssertions": 301,
-    "expectedRuntimeAssertions": 127,
+    "expectedAssertions": 302,
+    "expectedRuntimeAssertions": 128,
     "liveObservedStamp": "v2.5.8 /cf35da1",
-    "browserAcceptance": "in-progress"
+    "browserAcceptance": "partial;not-certified"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -623,12 +623,19 @@
     "newCompanyCreated": true,
     "actorAlias": "P257-Owner",
     "companyAlias": "P257-Physical",
-    "latestRecord": "runs/RUN-20261015-v257-physical-browser.md",
+    "latestRecord": "runs/RUN-20261015-v258-live-fix-retest.md",
     "businessTransactionsCreated": 6,
     "actualTradingEmptiness": "initial journal/account zero observed; no table-wide emptiness claim; company now traded",
-    "browserDependency": null,
+    "browserDependency": "another Chrome extension UI currently blocks automation; last confirmed P258-Entry Owner Company Details; logout not confirmed",
     "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
-    "receiptFailure": "payment150 committed; receipt page crashes; do not replay"
+    "receiptFailure": "payment150 committed; receipt page crashes; do not replay",
+    "additionalCompany": {
+      "alias": "P258-Entry",
+      "actor": "P257-Owner",
+      "status": "supported-created;fresh-owner-login;warehouse-created;PO60-submitted-once-no-visible-record",
+      "investigation": "INV258-01 raw module defaults/write-ceiling hypothesis; actual stored config/denial pending; no admin intervention",
+      "financialJournalsObserved": 0
+    }
   },
   "v257UnchangedRetest": {
     "record": "runs/CAMP-20261015-025711060-016ee2.json",
@@ -742,29 +749,18 @@
   },
   "pendingReportRegression": {
     "case": "RT-060",
-    "status": "executed-failed",
-    "campaign": "runs/CAMP-20261015-070624689-f091fa.json",
-    "runtime": "runs/RUN-2026-10-15T07-06-31-692Z-runtime.json",
-    "campaignCi": 38696490949,
-    "runtimeCi": 38696491048,
-    "qaImplementation": "ec441b210e19c7b8c35710cfef3e0f77d1a2a442",
-    "qaTestedMerge": "ed269a4a2624ecc7c7d1ef57796c163b3419c27f",
-    "qaContentHash": "ea3c5e0da6c72944bbcfd3477b648b7f1658f277d07c233a157ff0563e49f252",
-    "productSha": "7ffafab14e0ac0b6c3e6150cec1c2c227fee87e6",
-    "passed": 300,
-    "failed": 1,
-    "postgresPassed": 126,
-    "postgresFailed": 1,
-    "postgresTotal": 127,
-    "infrastructureFailures": 0,
+    "status": "original same-month repro fixed at cf35da1; broader as-of pending RT-061",
+    "campaign": "runs/CAMP-20261015-083605456-919da8.json",
+    "runtime": "runs/RUN-2026-10-15T08-36-12-574Z-runtime.json",
+    "campaignCi": 38706760340,
+    "runtimeCi": 38706760504,
     "observation": {
-      "assetsCents": 60000,
-      "profitCents": 60000,
+      "assetCents": 60000,
+      "equityCents": 60000,
       "liabilityCents": 0,
-      "reportedEquityCents": 0,
-      "requiredEquityCents": 60000
+      "profitCents": 60000
     },
-    "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
+    "acceptance": "bounded only;no full reporting certification"
   },
   "v257PhysicalFollowupRegression": {
     "case": "RT-060",
@@ -793,7 +789,7 @@
     "acceptance": "failed; P1 BUG-0048; full137workflow-acceptance-not-established"
   },
   "v258Retest": {
-    "status": "in-progress",
+    "status": "unchanged301pass;live-repro-fixes-partial;browser-extension-ui-block",
     "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
     "observedStamp": "v2.5.8 /cf35da1",
     "expectedAssertions": 301,
@@ -801,6 +797,27 @@
     "record": "runs/RUN-20261015-v258-live-fix-retest.md",
     "change": "changes/CHG-20261015-v258-independent-retest.md",
     "baselineUnchanged": true,
-    "bugClosure": "pending-independent-301-and-live-adjacent-controls"
+    "bugClosure": "original repros improved; wider adjacent/persisted PO acceptance incomplete",
+    "handoff": "handoffs/HANDOFF-20261015-v258-retest-progress.md",
+    "newReportCase": "RT-061 specified;302/128 next run pending"
+  },
+  "v258UnchangedRetest": {
+    "record": "runs/CAMP-20261015-083605456-919da8.json",
+    "ci": 38706760340,
+    "passed": 301,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "runtime": "runs/RUN-2026-10-15T08-36-12-574Z-runtime.json",
+    "runtimeCi": 38706760504,
+    "unitPassed": 98,
+    "runtimePassed": 127,
+    "runtimeCases": 127,
+    "qaImplementation": "9009cbf6041975a943c49152bd5e0bfdcd424344",
+    "qaTestedMerge": "41fd8a09ef5da11165fa4d6d70a810d9f5be7435",
+    "qaContentHash": "8117446ef43500daf4d270f206f0032a5b4c88885e1b34f15bf8c8887ce48f27",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "acceptance": "executed-gate-passed;full-workflows-not-established"
   }
 }
