@@ -1,6 +1,6 @@
 # WB-CORE — Shared accounting, access and document controls
 
-Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 1; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 2; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01, BP-02, BP-03, BP-04, BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -131,7 +131,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Type: history; execution: **not run**; adapter: **unbound**.
 - Given: Invoice600 on14Oct; payment250 on16Oct.
 - Action: Report aging as-of15Oct.
-- Expected: AR600 at cutoff, not current350; payment date matters as well as invoice issue date.
+- Expected: AR600 at cutoff, not current350; payment date matters as well as invoice issue date. Additional boundary: invoice256.50 issued16Oct, receipt75.50 on16Oct and DISTINCT receipt1 on17Oct gives AR181 as-of16Oct and180 currently; aggregate with old positive70 is251/250. Preserve credit-balance bridge separately.
 
 ### WB-CORE.J03.C03 — Future credit
 
@@ -183,7 +183,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Type: history; execution: **not run**; adapter: **unbound**.
 - Given: Issued snapshot styleV1.
 - Action: Edit current styleV2 and print old invoice.
-- Expected: Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview.
+- Expected: Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview. Detail arithmetic must also reconcile: line net270, header discount13.50, displayed subtotal270 and total256.50; do not label net total256.50 as pre-header subtotal.
 
 ### WB-CORE.J04.C03 — Archive posted unpaid invoice
 

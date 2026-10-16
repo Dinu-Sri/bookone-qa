@@ -1,6 +1,6 @@
 # WB-HYB — Hybrid businesses and cross-module jobs
 
-Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 1; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 2; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -106,7 +106,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Type: history; execution: **not run**; adapter: **unbound**.
 - Given: Stored original net275.50 including header discount.
 - Action: Open linked return preview then post permitted full return.
-- Expected: Preview/post/credit all275.50; do not omit header discount or use changed master default.
+- Expected: Preview/post/credit all275.50; do not omit header discount or use changed master default. Partial-source variant: separate source3x100, line10%, header5%, total256.50, cost180. Qty1 preview AND post85.50/cost60; remaining2 preview AND post171/cost120; cumulative256.50/cost180. UI previews must use source proportions rather than fixed copied discounts30/13.50.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
