@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "tenant-archive",
-  "productSha": "2e105cd443ce01e31220bfe2d4b4637cdc737b75",
-  "requiredLiveStamp": "v2.5.9 · 2e105cd",
+  "productSha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
+  "requiredLiveStamp": "v2.5.10 · 81a505c",
   "sourceContract": "docs/TENANT_BACKUP_ARCHIVE.md",
   "catalog": "catalog/backup-assertions.json",
   "guide": "docs/TENANT_ARCHIVE_QA.md",
