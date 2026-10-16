@@ -1,6 +1,6 @@
 # v2.5.10 independent QA retest
 
-Status: intent recorded; execution pending.
+Status: executed;303campaign/129PGpass;HTTP23pass2fail1blocked;not-customer-ready.
 
 Product 81a505c4e39c71f5019eea5de0bc7c5fffc50a1f (v2.5.10), previous 2e105cd443ce01e31220bfe2d4b4637cdc737b75 (v2.5.9). QA baseline 40a7bc2503b0bae03dc50d4f1b3de14571409cf1. Rulebook 1.0.0/hash abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc.
 
@@ -13,3 +13,5 @@ Selected unchanged checks: all303 campaign assertions, independent129 PostgreSQL
 Impact: shared workspace access/nav and cashbook reporting/export expand adjacent scope. Actual cashbook query/export positives and known-foreign denials, migration042 function grants/owner/search-path, Company Admin/settings and wider physical GRNI/cost/partial/lock workflows remain required beyond unchanged baseline. No global tenant context or BYPASSRLS workaround.
 
 Synthetic fixtures are CI-owned ephemeral PostgreSQL16 bookone_qa_runtime only; resets serial and guarded, real auth in HTTP app. Source, seeded-session PostgreSQL, actual credential HTTPS and deployed browser evidence remain separate. Preserve first attempts, exact QA/product/content/schema/fixture fingerprints and terminal job handles. Real encrypted backup/restore LAST. No product edits, release merge or deployment.
+
+Final evidence: [run](../runs/RUN-20261016-v2510-independent-retest.md), [coding handoff](../handoffs/HANDOFF-20261016-v2510-findings.md). First QAmetadata failure preserved, candidate declarations aligned without assertion edits. BUG0053originalfixed;0054/0055adjacentfailures and042boundedsecurityinvestigation remain. All referenced jobs terminal; no stagingwrites.

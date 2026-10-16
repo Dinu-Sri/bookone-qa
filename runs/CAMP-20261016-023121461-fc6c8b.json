@@ -1,0 +1,3647 @@
+{
+  "schemaVersion": 1,
+  "kind": "full-campaign",
+  "runId": "CAMP-20261016-023121461-fc6c8b",
+  "fingerprint": {
+    "productSha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
+    "productStamp": "v2.5.10 · 81a505c",
+    "qaSha": "de608eee26bfbc8588fc5f8df925e328f205fb9d",
+    "qaContentHash": "8af0bb8e9b7b66eca2d72ff30ebdc60b249c55b393b85d40003b6c6978b3c8cb",
+    "planHash": "78a786b058e8b1e12560f2d5aaa63a8d9eb8fbce7ab6bd1452fccc4dc95a8abd",
+    "node": "v22.23.3",
+    "fixtureVersion": "campaign-v2",
+    "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+    "qaDirty": false,
+    "runtimeSelected": true
+  },
+  "seed": 261013,
+  "profile": "quick",
+  "stages": [
+    {
+      "id": "qa-check",
+      "status": "failed",
+      "reason": "subprocess-failed",
+      "cases": []
+    },
+    {
+      "id": "unit-retained",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "U-9be5244c63042781",
+          "status": "blocked"
+        },
+        {
+          "id": "U-7f86e0f5c5718f6d",
+          "status": "blocked"
+        },
+        {
+          "id": "U-e9f9f90df8f819ea",
+          "status": "blocked"
+        },
+        {
+          "id": "U-d6d514f00421afb4",
+          "status": "blocked"
+        },
+        {
+          "id": "U-5dcb611505e5700b",
+          "status": "blocked"
+        },
+        {
+          "id": "U-cbd7db5edf7a4a9b",
+          "status": "blocked"
+        },
+        {
+          "id": "U-a3b3ae64f6f6a800",
+          "status": "blocked"
+        },
+        {
+          "id": "U-9dfde4656f76c7ef",
+          "status": "blocked"
+        },
+        {
+          "id": "U-3cb937fe8028e201",
+          "status": "blocked"
+        },
+        {
+          "id": "U-b136e4a6ecffa1ed",
+          "status": "blocked"
+        },
+        {
+          "id": "U-09a3733c4edf5b87",
+          "status": "blocked"
+        },
+        {
+          "id": "U-1f37ff3f2ee37f9c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-bae5e98cc36f7494",
+          "status": "blocked"
+        },
+        {
+          "id": "U-1c6b81eccb9a671f",
+          "status": "blocked"
+        },
+        {
+          "id": "U-498582ee8f4027f5",
+          "status": "blocked"
+        },
+        {
+          "id": "U-60c7df40a109ef84",
+          "status": "blocked"
+        },
+        {
+          "id": "U-8f28f0e8eb3383a8",
+          "status": "blocked"
+        },
+        {
+          "id": "U-836e27491d9e1978",
+          "status": "blocked"
+        },
+        {
+          "id": "U-1dea852f3f4243ba",
+          "status": "blocked"
+        },
+        {
+          "id": "U-4bef6d9c72d7a1cb",
+          "status": "blocked"
+        },
+        {
+          "id": "U-a237ceef1794c3f6",
+          "status": "blocked"
+        },
+        {
+          "id": "U-7a72c6fdc6f6d303",
+          "status": "blocked"
+        },
+        {
+          "id": "U-70771b6c7fbc2c1f",
+          "status": "blocked"
+        },
+        {
+          "id": "U-bf9849ef715b3860",
+          "status": "blocked"
+        },
+        {
+          "id": "U-ea192c6cf254a5e3",
+          "status": "blocked"
+        },
+        {
+          "id": "U-79582b5260bfa39c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-63890a8e5af86baa",
+          "status": "blocked"
+        },
+        {
+          "id": "U-3328c2012d309b99",
+          "status": "blocked"
+        },
+        {
+          "id": "U-f9a5643601d8287c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-f811c757be22cc30",
+          "status": "blocked"
+        },
+        {
+          "id": "U-4b9f16fcc1108f63",
+          "status": "blocked"
+        },
+        {
+          "id": "U-f1f8295fa7453765",
+          "status": "blocked"
+        },
+        {
+          "id": "U-fa782a00c477f8e1",
+          "status": "blocked"
+        },
+        {
+          "id": "U-bf5c789608d50ad0",
+          "status": "blocked"
+        },
+        {
+          "id": "U-5f34a18c857062dd",
+          "status": "blocked"
+        },
+        {
+          "id": "U-72225e16ab76c200",
+          "status": "blocked"
+        },
+        {
+          "id": "U-4ecb6e0f47c9f892",
+          "status": "blocked"
+        },
+        {
+          "id": "U-113a45b63c2c23e2",
+          "status": "blocked"
+        },
+        {
+          "id": "U-64b1b8668278a7b6",
+          "status": "blocked"
+        },
+        {
+          "id": "U-6f9b4d134be59038",
+          "status": "blocked"
+        },
+        {
+          "id": "U-aed8b1d909b3821e",
+          "status": "blocked"
+        },
+        {
+          "id": "U-4ea1059ca9a9e401",
+          "status": "blocked"
+        },
+        {
+          "id": "U-634465a235ddbcc6",
+          "status": "blocked"
+        },
+        {
+          "id": "U-a83365396a8dde5c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-387560427e605a1f",
+          "status": "blocked"
+        },
+        {
+          "id": "U-173af34d91b018a4",
+          "status": "blocked"
+        },
+        {
+          "id": "U-bb32c4ebb388d10c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-6ee1abccd192514d",
+          "status": "blocked"
+        },
+        {
+          "id": "U-170720d868fe5fad",
+          "status": "blocked"
+        },
+        {
+          "id": "U-8fdf3e2314bbf266",
+          "status": "blocked"
+        },
+        {
+          "id": "U-b3f5e914962a7908",
+          "status": "blocked"
+        },
+        {
+          "id": "U-549e0e5291768a5b",
+          "status": "blocked"
+        },
+        {
+          "id": "U-87d5ae95a4f6cd4f",
+          "status": "blocked"
+        },
+        {
+          "id": "U-59643e7bd4c4dedb",
+          "status": "blocked"
+        },
+        {
+          "id": "U-b3b5248901640f8f",
+          "status": "blocked"
+        },
+        {
+          "id": "U-8d0ea3fecc172b49",
+          "status": "blocked"
+        },
+        {
+          "id": "U-06d5257bff39c1bf",
+          "status": "blocked"
+        },
+        {
+          "id": "U-ad1530f91f283887",
+          "status": "blocked"
+        },
+        {
+          "id": "U-55330913ba8b2bde",
+          "status": "blocked"
+        },
+        {
+          "id": "U-c22627c79431db86",
+          "status": "blocked"
+        },
+        {
+          "id": "U-46b90ab00ba5fa81",
+          "status": "blocked"
+        },
+        {
+          "id": "U-dcdf63df0a19621c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-5de89ca6030816fd",
+          "status": "blocked"
+        },
+        {
+          "id": "U-f2db13fa8d6478fd",
+          "status": "blocked"
+        },
+        {
+          "id": "U-eb70394b956b1138",
+          "status": "blocked"
+        },
+        {
+          "id": "U-4902d449da6945e9",
+          "status": "blocked"
+        },
+        {
+          "id": "U-c4cb76eb3e83a465",
+          "status": "blocked"
+        },
+        {
+          "id": "U-79169c0b923d6b10",
+          "status": "blocked"
+        },
+        {
+          "id": "U-c24e7aaad002700a",
+          "status": "blocked"
+        },
+        {
+          "id": "U-110183b7ceee502c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-cc034af587c2870d",
+          "status": "blocked"
+        },
+        {
+          "id": "U-3c0bebd4a5e422be",
+          "status": "blocked"
+        },
+        {
+          "id": "U-e7a83b087e9d7e06",
+          "status": "blocked"
+        },
+        {
+          "id": "U-b1d059d478fc24df",
+          "status": "blocked"
+        },
+        {
+          "id": "U-25314de0153fa0ac",
+          "status": "blocked"
+        },
+        {
+          "id": "U-559652ee8b0fed08",
+          "status": "blocked"
+        },
+        {
+          "id": "U-2c0104abb6523248",
+          "status": "blocked"
+        },
+        {
+          "id": "U-5e3fc42b5d33122d",
+          "status": "blocked"
+        },
+        {
+          "id": "U-b58156dc2e6232a5",
+          "status": "blocked"
+        },
+        {
+          "id": "U-013914f29218c39a",
+          "status": "blocked"
+        },
+        {
+          "id": "U-6d5079de58a4c9c2",
+          "status": "blocked"
+        },
+        {
+          "id": "U-fd795944edc76e78",
+          "status": "blocked"
+        },
+        {
+          "id": "U-6c297b03ea9d4be4",
+          "status": "blocked"
+        },
+        {
+          "id": "U-212e906d3809292a",
+          "status": "blocked"
+        },
+        {
+          "id": "U-0a15d97cbb1316ed",
+          "status": "blocked"
+        },
+        {
+          "id": "U-1c8b374f11a558a8",
+          "status": "blocked"
+        },
+        {
+          "id": "U-be33f3327d9ed8c9",
+          "status": "blocked"
+        },
+        {
+          "id": "U-ac5f1512e44c15b8",
+          "status": "blocked"
+        },
+        {
+          "id": "U-daa9441f86776b0a",
+          "status": "blocked"
+        },
+        {
+          "id": "U-e998b54c734d29f4",
+          "status": "blocked"
+        },
+        {
+          "id": "U-8c44657e606d0425",
+          "status": "blocked"
+        },
+        {
+          "id": "U-ef6f3341ffa18e26",
+          "status": "blocked"
+        },
+        {
+          "id": "U-5d857d379507f08c",
+          "status": "blocked"
+        },
+        {
+          "id": "U-88e13818b2d0a896",
+          "status": "blocked"
+        },
+        {
+          "id": "U-119941fd379d7b9b",
+          "status": "blocked"
+        },
+        {
+          "id": "U-222d35eee3af2d85",
+          "status": "blocked"
+        },
+        {
+          "id": "U-43cfe3f176f76299",
+          "status": "blocked"
+        },
+        {
+          "id": "U-ff7ca38eb902d3da",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-a",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "A-001",
+          "status": "blocked"
+        },
+        {
+          "id": "A-002",
+          "status": "blocked"
+        },
+        {
+          "id": "A-003",
+          "status": "blocked"
+        },
+        {
+          "id": "A-004",
+          "status": "blocked"
+        },
+        {
+          "id": "A-005",
+          "status": "blocked"
+        },
+        {
+          "id": "A-006",
+          "status": "blocked"
+        },
+        {
+          "id": "A-007",
+          "status": "blocked"
+        },
+        {
+          "id": "A-008",
+          "status": "blocked"
+        },
+        {
+          "id": "A-009",
+          "status": "blocked"
+        },
+        {
+          "id": "A-010",
+          "status": "blocked"
+        },
+        {
+          "id": "A-011",
+          "status": "blocked"
+        },
+        {
+          "id": "A-012",
+          "status": "blocked"
+        },
+        {
+          "id": "A-013",
+          "status": "blocked"
+        },
+        {
+          "id": "A-014",
+          "status": "blocked"
+        },
+        {
+          "id": "A-015",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-b",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "B-001",
+          "status": "blocked"
+        },
+        {
+          "id": "B-002",
+          "status": "blocked"
+        },
+        {
+          "id": "B-003",
+          "status": "blocked"
+        },
+        {
+          "id": "B-004",
+          "status": "blocked"
+        },
+        {
+          "id": "B-005",
+          "status": "blocked"
+        },
+        {
+          "id": "B-006",
+          "status": "blocked"
+        },
+        {
+          "id": "B-007",
+          "status": "blocked"
+        },
+        {
+          "id": "B-008",
+          "status": "blocked"
+        },
+        {
+          "id": "B-009",
+          "status": "blocked"
+        },
+        {
+          "id": "B-010",
+          "status": "blocked"
+        },
+        {
+          "id": "B-011",
+          "status": "blocked"
+        },
+        {
+          "id": "B-012",
+          "status": "blocked"
+        },
+        {
+          "id": "B-013",
+          "status": "blocked"
+        },
+        {
+          "id": "B-014",
+          "status": "blocked"
+        },
+        {
+          "id": "B-015",
+          "status": "blocked"
+        },
+        {
+          "id": "B-016",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-c",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "C-001",
+          "status": "blocked"
+        },
+        {
+          "id": "C-002",
+          "status": "blocked"
+        },
+        {
+          "id": "C-003",
+          "status": "blocked"
+        },
+        {
+          "id": "C-004",
+          "status": "blocked"
+        },
+        {
+          "id": "C-005",
+          "status": "blocked"
+        },
+        {
+          "id": "C-006",
+          "status": "blocked"
+        },
+        {
+          "id": "C-007",
+          "status": "blocked"
+        },
+        {
+          "id": "C-008",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-d",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "D-001",
+          "status": "blocked"
+        },
+        {
+          "id": "D-002",
+          "status": "blocked"
+        },
+        {
+          "id": "D-003",
+          "status": "blocked"
+        },
+        {
+          "id": "D-004",
+          "status": "blocked"
+        },
+        {
+          "id": "D-005",
+          "status": "blocked"
+        },
+        {
+          "id": "D-006",
+          "status": "blocked"
+        },
+        {
+          "id": "D-007",
+          "status": "blocked"
+        },
+        {
+          "id": "D-008",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-e",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "E-001",
+          "status": "blocked"
+        },
+        {
+          "id": "E-002",
+          "status": "blocked"
+        },
+        {
+          "id": "E-003",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "source-f",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "F-001",
+          "status": "blocked"
+        },
+        {
+          "id": "F-002",
+          "status": "blocked"
+        },
+        {
+          "id": "F-003",
+          "status": "blocked"
+        },
+        {
+          "id": "F-004",
+          "status": "blocked"
+        },
+        {
+          "id": "F-005",
+          "status": "blocked"
+        },
+        {
+          "id": "F-006",
+          "status": "blocked"
+        },
+        {
+          "id": "F-007",
+          "status": "blocked"
+        },
+        {
+          "id": "F-008",
+          "status": "blocked"
+        },
+        {
+          "id": "F-009",
+          "status": "blocked"
+        },
+        {
+          "id": "F-010",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "archive-helpers",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "S-0763",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0764",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0765",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0767",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0769",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0774",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0776",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0777",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0778",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0780",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0781",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0787",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0789",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0790",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0793",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0797",
+          "status": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "runtime-prepare",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": []
+    },
+    {
+      "id": "postgres-runtime",
+      "status": "blocked",
+      "reason": "prerequisite-failed",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-002",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-003",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-004",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-012",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-013",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-014",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-015",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-016",
+          "status": "blocked"
+        },
+        {
+          "id": "B-101",
+          "status": "blocked"
+        },
+        {
+          "id": "B-102",
+          "status": "blocked"
+        },
+        {
+          "id": "B-103",
+          "status": "blocked"
+        },
+        {
+          "id": "E-115",
+          "status": "blocked"
+        },
+        {
+          "id": "E-116",
+          "status": "blocked"
+        },
+        {
+          "id": "E-117",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-008",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-009",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-010",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-011",
+          "status": "blocked"
+        },
+        {
+          "id": "B-104",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-060",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-061",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-062",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-005",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-006",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-007",
+          "status": "blocked"
+        },
+        {
+          "id": "C-101",
+          "status": "blocked"
+        },
+        {
+          "id": "C-102",
+          "status": "blocked"
+        },
+        {
+          "id": "C-103",
+          "status": "blocked"
+        },
+        {
+          "id": "C-104",
+          "status": "blocked"
+        },
+        {
+          "id": "C-105",
+          "status": "blocked"
+        },
+        {
+          "id": "C-106",
+          "status": "blocked"
+        },
+        {
+          "id": "C-107",
+          "status": "blocked"
+        },
+        {
+          "id": "C-115",
+          "status": "blocked"
+        },
+        {
+          "id": "C-116",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-017",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-018",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-019",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-020",
+          "status": "blocked"
+        },
+        {
+          "id": "C-201",
+          "status": "blocked"
+        },
+        {
+          "id": "C-202",
+          "status": "blocked"
+        },
+        {
+          "id": "C-203",
+          "status": "blocked"
+        },
+        {
+          "id": "C-204",
+          "status": "blocked"
+        },
+        {
+          "id": "C-205",
+          "status": "blocked"
+        },
+        {
+          "id": "C-206",
+          "status": "blocked"
+        },
+        {
+          "id": "C-207",
+          "status": "blocked"
+        },
+        {
+          "id": "C-215",
+          "status": "blocked"
+        },
+        {
+          "id": "C-216",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-117",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-118",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-119",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-120",
+          "status": "blocked"
+        },
+        {
+          "id": "B-106",
+          "status": "blocked"
+        },
+        {
+          "id": "B-107",
+          "status": "blocked"
+        },
+        {
+          "id": "B-108",
+          "status": "blocked"
+        },
+        {
+          "id": "B-111",
+          "status": "blocked"
+        },
+        {
+          "id": "B-112",
+          "status": "blocked"
+        },
+        {
+          "id": "B-113",
+          "status": "blocked"
+        },
+        {
+          "id": "E-108",
+          "status": "blocked"
+        },
+        {
+          "id": "E-113",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0774",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0775",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0776",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0778",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0780",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0781",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0782",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0783",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0784",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0785",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0787",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0788",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0789",
+          "status": "blocked"
+        },
+        {
+          "id": "S-0793",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-027",
+          "status": "blocked"
+        },
+        {
+          "id": "D-101",
+          "status": "blocked"
+        },
+        {
+          "id": "D-102",
+          "status": "blocked"
+        },
+        {
+          "id": "D-103",
+          "status": "blocked"
+        },
+        {
+          "id": "D-105",
+          "status": "blocked"
+        },
+        {
+          "id": "D-109",
+          "status": "blocked"
+        },
+        {
+          "id": "D-110",
+          "status": "blocked"
+        },
+        {
+          "id": "D-117",
+          "status": "blocked"
+        },
+        {
+          "id": "D-118",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-023",
+          "status": "blocked"
+        },
+        {
+          "id": "E-104",
+          "status": "blocked"
+        },
+        {
+          "id": "C-109",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-021",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-022",
+          "status": "blocked"
+        },
+        {
+          "id": "C-114",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-024",
+          "status": "blocked"
+        },
+        {
+          "id": "B-115",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-025",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-026",
+          "status": "blocked"
+        },
+        {
+          "id": "C-111",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-032",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-028",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-030",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-031",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-029",
+          "status": "blocked"
+        },
+        {
+          "id": "B-114",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-040",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-033",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-034",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-035",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-036",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-037",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-038",
+          "status": "blocked"
+        },
+        {
+          "id": "B-105",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-039",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-041",
+          "status": "blocked"
+        },
+        {
+          "id": "B-109",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-042",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-043",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-044",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-045",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-046",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-047",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-048",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-049",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-050",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-051",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-052",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-053",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-054",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-055",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-056",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-057",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-058",
+          "status": "blocked"
+        },
+        {
+          "id": "RT-059",
+          "status": "blocked"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 303,
+    "skipped": 0,
+    "flaky": 0,
+    "not-run": 0
+  },
+  "tasks": [
+    {
+      "id": "B-101",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-101",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-102",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-102",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-103",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-103",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-104",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-104",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-105",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-105",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-106",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-106",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-107",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-107",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-108",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-108",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-109",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-109",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-110",
+      "batch": "B",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "B-111",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-111",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-112",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-112",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-113",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-113",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-114",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-114",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-115",
+      "batch": "B",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "B-115",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "B-116",
+      "batch": "B",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "B-117",
+      "batch": "B",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "C-101",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-101",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-102",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-102",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-103",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-103",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-104",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-104",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-105",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-105",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-106",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-106",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-107",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-107",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-108",
+      "batch": "C",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "C-109",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-109",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-110",
+      "batch": "C",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "C-111",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-111",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-112",
+      "batch": "C",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "C-113",
+      "batch": "C",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "C-114",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-114",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-115",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-115",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "C-116",
+      "batch": "C",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "C-116",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-101",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-101",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-102",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-102",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-103",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-103",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-104",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-105",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-105",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-106",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-107",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-108",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-109",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-109",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-110",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-110",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-111",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-112",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-113",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-114",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-115",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-116",
+      "batch": "D",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "D-117",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-117",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "D-118",
+      "batch": "D",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "D-118",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-101",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-102",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-103",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-104",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-104",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-105",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-106",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-107",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-108",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-108",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-109",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-110",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-111",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-112",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-113",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-113",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-114",
+      "batch": "E",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-101",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-102",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-103",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-104",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-105",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-106",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-107",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-108",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-109",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-110",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-111",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-112",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-113",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-114",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-115",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-116",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-117",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-118",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "persisted-lifecycle",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "E-115",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-115",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-116",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-116",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "E-117",
+      "batch": "E",
+      "implementation": "implemented-awaiting-evidence",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "E-117",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "persisted-permission-load",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "F-119",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-120",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-121",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-122",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-123",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "F-124",
+      "batch": "F",
+      "implementation": "specified-not-implemented",
+      "observations": [],
+      "requiredLayers": [
+        "actual-storage",
+        "runtime-auth-rls",
+        "browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0761",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0762",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0763",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0763",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0764",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0764",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0765",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0765",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0766",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0767",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0767",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0768",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0769",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0769",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0770",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0771",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0772",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0773",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0774",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0774",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0774",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0775",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0775",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0776",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0776",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0776",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0777",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0777",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0778",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0778",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0778",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0779",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0780",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0780",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0780",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0781",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0781",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0781",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0782",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0782",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0783",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0783",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0784",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0784",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0785",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0785",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0786",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0787",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0787",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0787",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0788",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0788",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0789",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0789",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0789",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0790",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0790",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0791",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0792",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0793",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0793",
+          "status": "blocked"
+        },
+        {
+          "stage": "postgres-runtime",
+          "id": "S-0793",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0794",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0795",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0796",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0797",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [
+        {
+          "stage": "archive-helpers",
+          "id": "S-0797",
+          "status": "blocked"
+        }
+      ],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "complete-required-layers"
+    },
+    {
+      "id": "S-0798",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0799",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0800",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0801",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0802",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0803",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0804",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "deployed-browser"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    },
+    {
+      "id": "S-0805",
+      "batch": "archive",
+      "implementation": "dedicated-full-workflow-not-verified",
+      "observations": [],
+      "requiredLayers": [
+        "credential-HTTP",
+        "deployed-browser",
+        "PostgreSQL-or-object-storage-as-applicable"
+      ],
+      "fullWorkflow": "not-accepted",
+      "evidence": "partial-only",
+      "next": "implement-workflow"
+    }
+  ],
+  "policyBlockers": [
+    "POL-01",
+    "POL-02",
+    "POL-03",
+    "POL-04",
+    "POL-05",
+    "POL-06",
+    "POL-07",
+    "POL-08",
+    "POL-09",
+    "POL-10"
+  ],
+  "coverage": {
+    "definedWorkflows": 137,
+    "withPartialBindings": 62,
+    "withoutBindings": 75,
+    "acceptedFullWorkflows": 0
+  },
+  "executedGate": "failed",
+  "campaignAcceptance": "not-established",
+  "scope": "isolated-implemented-checks-plus-explicit-unfinished-workflows; no-live-browser-or-release-acceptance"
+}
