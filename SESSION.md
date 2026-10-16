@@ -10,3 +10,5 @@ Retain synthetic failing fixtures;do not replay saved payments or use contaminat
 
 Read [workflow protocol](docs/workflows/PROTOCOL.md) and [business playbooks](docs/workflows/README.md). Five starters remain draft/unbound:27golden steps,44variants;no new business execution/acceptance. Use change/edge/review/run templates and metadata checks. Hybrid depends on physical/service/digital/rental. [Adoption handoff](handoffs/HANDOFF-20261016-workflow-governance.md). The prior broad run/defects remain unchanged.
 
+
+Owner clarification2026-10-16: workbook maintenance/editing/expansion/correction/audit are mandatory under AGENTS73–81. Apply the rulebook→business expected outcomes→immutable ERP evidence chain. Audit semantics/references/history and update definitions/change records/handoff for every relevant task; preserve unrun/review gaps. This adopts QA working procedures, not product/business-case acceptance.

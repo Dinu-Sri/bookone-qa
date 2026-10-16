@@ -10,3 +10,5 @@ Publish reviewed sanitized QA records under standing owner approval;exclude cred
 
 Read [the maintained library](docs/workflows/LIBRARY.md), [execution guide](docs/workflows/EXECUTION_GUIDE.md) and applicable business book. Edit canonical `workflows/casebooks` JSON, retain stable IDs and increment affected revisions. New features/edges need change/intake and policy review as applicable. Run `pnpm library:render`, `pnpm library:check` and `pnpm test:business-library`. Source/task mappings and structural validation do not establish executed coverage. Bind real actor/configuration, independent expected outcomes and required evidence layers before testing.
 
+
+**Mandatory maintenance:** every relevant feature, defect, edge case or correction must follow [AGENTS rules 73–81](AGENTS.md#mandatory-workbook-maintenance-correction-and-audit). Maintain canonical definitions and independent expected outputs, audit semantics and mappings, version/review changes, validate generated views, preserve history and publish the updated handoff. Structural checks and specification counts are separate from actual ERP test evidence.

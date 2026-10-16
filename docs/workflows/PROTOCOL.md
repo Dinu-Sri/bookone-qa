@@ -1,6 +1,6 @@
 # Workflow definition and change protocol —1.0.0
 
-Owner requested continuous,shared standards on2026-10-16. Applies to QA agents,coding agents,product/business owners,reviewers and human testers. Protocol is proposed in the accompanying PR and becomes the repository's working procedure when adopted;no automatic release authority,access grant or product deployment follows.
+Owner requested continuous,shared standards on2026-10-16. Applies to QA agents,coding agents,product/business owners,reviewers and human testers. The owner explicitly requires these as mandatory QA working procedures (2026-10-16), including maintenance, editing, expansion, correction and audit under AGENTS rules73–81. Draft business specifications still require independent review;no automatic release authority,access grant or product deployment follows.
 
 ## 1. Specification hierarchy
 
