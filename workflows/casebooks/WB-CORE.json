@@ -1,0 +1,891 @@
+{
+  "id": "WB-CORE",
+  "revision": 1,
+  "title": "Shared accounting, access and document controls",
+  "profileIds": [
+    "BP-01",
+    "BP-02",
+    "BP-03",
+    "BP-04",
+    "BP-05"
+  ],
+  "familyRefs": [
+    "WF-PHY-001",
+    "WF-SVC-001",
+    "WF-DIG-001",
+    "WF-REN-001",
+    "WF-HYB-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-CORE.J01",
+      "revision": 1,
+      "title": "Payment batches, tender and allocation identity",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Two same-party posted invoices100 and200; bank0; valid liquid bank; default all-or-nothing batch policy.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-PAY-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-PAY-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-103",
+        "B-107",
+        "B-115"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "settlementAllocations",
+        "transactions",
+        "accounts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Valid two-document batch",
+          "given": "AR300; balances100/200.",
+          "action": "Receive100+200 in one batch.",
+          "expected": "AR0; bank300; total allocations300; receipts match actual completed effects.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "batch cents",
+              "operation": "add",
+              "operands": [
+                10000,
+                20000
+              ],
+              "equals": 30000
+            }
+          ],
+          "id": "WB-CORE.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mixed valid and invalid",
+          "given": "Invoice100 valid; second UUID is real foreign record.",
+          "action": "Submit payment batch100+200.",
+          "expected": "Default whole batch rolls back; bank0; own AR100 unchanged; no success print for first payment.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-CORE.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Overallocate240",
+          "given": "Bill240 balance; bank1000.",
+          "action": "Attempt pay300.",
+          "expected": "Reject with actionable error; AP240/bank1000 unchanged; no partial240 payment unless explicitly confirmed separate contract.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Nonliquid tender",
+          "given": "Revenue/AR/AP account selected.",
+          "action": "Pay or receive100.",
+          "expected": "Deny unsupported tender; no unbalanced or apparently settled invoice.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-CORE.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Print amount tampering",
+          "given": "Actual persisted payment80.",
+          "action": "Alter print URL amount/total to999.",
+          "expected": "Print80 and source document facts from persisted allocation; untrusted query cannot invent paid999.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J02",
+      "revision": 1,
+      "title": "Period lock, reversal and correcting date",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Posted service invoice100 dated10Oct; October lock; approved authorized correction in November.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-05",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-06",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-111",
+        "C-115",
+        "C-116"
+      ],
+      "entityRefs": [
+        "transactions",
+        "journalEntries",
+        "journalLines",
+        "periodLocks"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/record-entry.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Locked writes denied",
+          "given": "October locked.",
+          "action": "Post invoice, payment, credit or stock adjustment datedOctober.",
+          "expected": "Each denied at authoritative write; no transactions/journals/allocations/stock business mutations.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-CORE.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Permitted later correction",
+          "given": "Original100 locked; November open.",
+          "action": "Use supported correcting reversal datedNovember.",
+          "expected": "Original retained; inverse100 on permitted date; source links/reason/actor retained; no October history rewrite.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-CORE.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Double reversal race",
+          "given": "One reversible posted transaction100.",
+          "action": "Reverse concurrently from independent sessions.",
+          "expected": "One accepted inverse100; duplicate denied/idempotent; original+inverse net0, not-100.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-CORE.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invalid reversal target",
+          "given": "Draft, already reversed or foreign transaction.",
+          "action": "Attempt reverse.",
+          "expected": "Reject with own posted positive; no inverse orphan entries.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-CORE.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Lock changed midform",
+          "given": "Open form while October open, lock before submit.",
+          "action": "Submit cached form.",
+          "expected": "Fresh server check denies; client-loaded date status not sufficient.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-CORE.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J03",
+      "revision": 1,
+      "title": "Reports, aging, control accounts and current earnings",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Opening cash10000/equity10000; service invoice600; receipt250; expense200 unpaid; no tax.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-07",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-08",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-116",
+        "E-106"
+      ],
+      "entityRefs": [
+        "journalLines",
+        "accounts",
+        "businessDocuments",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/documents.ts",
+        "apps/web/src/app/actions/record-entry.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Basic financial reconciliation",
+          "given": "Income600, expense200, AR350, AP200, cash10250.",
+          "action": "Run trial balance/P&L/BS and AR/AP.",
+          "expected": "Profit400; assets10600; liabilities200/equity10400; AR350/AP200 agree with allocations and GL.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "assets cents",
+              "operation": "add",
+              "operands": [
+                1025000,
+                35000
+              ],
+              "equals": 1060000
+            },
+            {
+              "label": "liabilities equity cents",
+              "operation": "add",
+              "operands": [
+                20000,
+                1000000,
+                40000
+              ],
+              "equals": 1060000
+            }
+          ],
+          "id": "WB-CORE.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Payment after cutoff",
+          "given": "Invoice600 on14Oct; payment250 on16Oct.",
+          "action": "Report aging as-of15Oct.",
+          "expected": "AR600 at cutoff, not current350; payment date matters as well as invoice issue date.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Future credit",
+          "given": "Invoice600 on14Oct; credit100 on16Oct.",
+          "action": "Report as-of15Oct then16Oct.",
+          "expected": "600 then500 if otherwise unchanged; future credit cannot leak backward.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Closed retained earnings",
+          "given": "Prior profit400 already closed into retained earnings.",
+          "action": "Run next-year BS.",
+          "expected": "Include retained400 once; do not add closed historical P&L again as unclosed earnings.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Date/scope symmetry",
+          "given": "Brand A and domain business filters selected.",
+          "action": "Compare TB/P&L/BS/AR/AP/export.",
+          "expected": "Same declared date/scope filters consistently applied or explicit bridge; totals cannot reconcile by silently dropping rows.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J04",
+      "revision": 1,
+      "title": "Master data, document snapshots and safe archive",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Posted invoice has customerOld, price100 and approved print style; open debt100; synthetic IDs.",
+      "ruleRefs": [
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-CONFIG-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-108",
+        "B-113",
+        "E-112"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "parties",
+        "inventoryProducts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Master rename and reprice",
+          "given": "Original partyOld and unit100 stored.",
+          "action": "Rename partyNew and price120.",
+          "expected": "New transactions may use120/New; historical issued document retains100 and party-as-recorded under contract.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Print style change",
+          "given": "Issued snapshot styleV1.",
+          "action": "Edit current styleV2 and print old invoice.",
+          "expected": "Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Archive posted unpaid invoice",
+          "given": "Debt100 exists.",
+          "action": "Archive where supported.",
+          "expected": "Archive does not erase debt, GL or permitted collection; visibility/read policy explicit; no hidden bad debt writeoff.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Delete referenced master",
+          "given": "Product/party has posted records.",
+          "action": "Attempt delete.",
+          "expected": "Soft retirement or safe refusal; issued source/accounting references remain valid.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-CORE.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Edit posted totals",
+          "given": "Invoice100 posted and partially paid40.",
+          "action": "Try change total to50 directly.",
+          "expected": "Require supported correction/versioned path; no silent AR10/revenue rewrite or overwritten audit trail.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-CORE.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J05",
+      "revision": 1,
+      "title": "Roles, tenant records and permission revocation",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Real own and foreign invoices100; verified Owner/Sales/Viewer sessions; known party/location/file sentinels.",
+      "ruleRefs": [
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-AUD-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-109",
+        "B-110",
+        "E-108",
+        "E-115",
+        "E-117",
+        "F-112"
+      ],
+      "entityRefs": [
+        "tenantMemberships",
+        "tenantRoles",
+        "tenantRolePermissions",
+        "tenantMembershipScopes"
+      ],
+      "sourcePaths": [
+        "packages/auth/src/permissions/catalog.ts",
+        "packages/auth/src/permissions/ceiling.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Authorized same-action positive",
+          "given": "Fresh intended Owner identity and own invoice.",
+          "action": "Perform supported create/read/payment in isolated fixture.",
+          "expected": "Positive executes complete expected effect; record actual role context before interpreting negative control.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-CORE.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Viewer write family",
+          "given": "Viewer can read own invoice.",
+          "action": "Create/edit/pay/credit/reverse/archive using actual actions.",
+          "expected": "Each unauthorized write denied; financial/doc/allocation/business CREATE audit snapshot unchanged. Hidden buttons alone insufficient.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-CORE.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Known foreign records",
+          "given": "Tenant B invoice/file exists and is accessible to B.",
+          "action": "Attempt A list/detail/pay/export/file lookup using actual B ID.",
+          "expected": "Deny all covered boundaries; no metadata leak/signing; own-A controls work.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-CORE.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Suspended/revoked session",
+          "given": "Session active, membership then suspended/revoked.",
+          "action": "Submit stale form and fetch cached report/file.",
+          "expected": "Authoritative fresh authorization denies; stale page cannot confer continued write/read rights.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-CORE.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Pooled context reuse",
+          "given": "Isolated non-bypass runtime role; separate A/B callbacks.",
+          "action": "Alternate concurrent connections, nested calls and exception recovery.",
+          "expected": "No tenant context bleed; outer context restored; actual business positives/foreign denies remain valid.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-CORE.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J06",
+      "revision": 1,
+      "title": "Forms, retries, concurrency and ambiguous success",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Own synthetic invoice100; supported actor and idempotency contract; clock/build pinned.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-04",
+          "revision": 1
+        },
+        {
+          "id": "RB-UI-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-106",
+        "B-107",
+        "B-112",
+        "E-111",
+        "F-113",
+        "F-114"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "transactions",
+        "journalLines",
+        "auditLog"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Slow double submit",
+          "given": "One valid invoice100 form.",
+          "action": "Double click, Enter twice and retry after slow response.",
+          "expected": "At most one accepted operation per declared intent identity; disabled spinner is not proof; persisted count/value100 inspected.",
+          "kind": "retry",
+          "oracle": [],
+          "id": "WB-CORE.J06.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Timeout after commit",
+          "given": "Payment100 may already have committed.",
+          "action": "Lose display response; recover via read-only state.",
+          "expected": "Inspect persisted balance/allocation before any replay; print failure does not prove rollback. Same-key retry returns original result.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-CORE.J06.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Failure between durable writes",
+          "given": "Ephemeral fault injection at header/line/journal/audit boundaries.",
+          "action": "Execute each failing boundary.",
+          "expected": "No partial business mutation survives; first failure preserved; telemetry is separately allowed.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-CORE.J06.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Deployment crossing",
+          "given": "Build stamp changes midjourney.",
+          "action": "Continue observation only if safe; assess acceptance.",
+          "expected": "Preserve observations but invalidate single-candidate acceptance; start fresh fingerprint for retest; never relabel old result.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J06.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Validation and busy-state recovery",
+          "given": "Invalid amount or server error.",
+          "action": "Submit, correct fields and resubmit.",
+          "expected": "Actionable error and retained inputs; busy overlay clears on supported completion; no second hidden request.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-CORE.J06.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-CORE.J07",
+      "revision": 1,
+      "title": "Tax profiles, numbering and statutory boundaries",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Synthetic tax profiles only; valid entities/registrations/effective dates require expert verification before compliance acceptance.",
+      "ruleRefs": [
+        {
+          "id": "RB-LK-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-04",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-05",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-06",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-114",
+        "E-102",
+        "E-103"
+      ],
+      "entityRefs": [
+        "taxProfiles",
+        "companyProfiles",
+        "taxInvoiceSequences",
+        "salesSettings"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "No legal sources were refreshed in this workbook-authoring run. Existing expert-pending rulebook remains authoritative; examples are not current tax or filing advice."
+      ],
+      "cases": [
+        {
+          "title": "Exclusive arithmetic fixture",
+          "given": "Net1000, synthetic rate18%, eligible profile explicitly selected.",
+          "action": "Preview/post/reload/print.",
+          "expected": "Tax180,total1180 consistently; eligibility is separate pending evidence.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "exclusive cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                18000
+              ],
+              "equals": 118000
+            }
+          ],
+          "id": "WB-CORE.J07.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Unknown or unregistered status",
+          "given": "Stored product/party/company classification not confirmed.",
+          "action": "Attempt statutory tax-invoice acceptance.",
+          "expected": "Stop applicability claim; verify stored supported enums, registration, date and required fields; name/comment insufficient.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J07.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Numbering race and reset",
+          "given": "Two authorized tax invoices same period; reset policy known.",
+          "action": "Post concurrently across configured reset boundary.",
+          "expected": "Unique permitted serials; no duplicate or silent overwrite; stored issued numbers not regenerated on print.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-CORE.J07.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Other taxes",
+          "given": "SSCL/withholding/other charge not contracted.",
+          "action": "Try represent as generic VAT percentage.",
+          "expected": "Reject unsupported equivalence; capability and separate tax basis/accounts required; not automatic supported filing.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-CORE.J07.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Effective-date or currency boundary",
+          "given": "Transaction on either side of approved policy date; base currencyLKR.",
+          "action": "Post with pinned dates/timezone and selected rate record.",
+          "expected": "Use applicable dated profile; unsupported foreign-currency/rounding treatment explicit; issued history preserved.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-CORE.J07.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

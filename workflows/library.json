@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "protocolVersion": "1.0.0",
+  "rulebookVersion": "1.0.0",
+  "rulebookSha256": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "executionProductPinUnchanged": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+  "books": [
+    "workflows/casebooks/WB-BANK.json",
+    "workflows/casebooks/WB-CORE.json",
+    "workflows/casebooks/WB-DIG.json",
+    "workflows/casebooks/WB-HYB.json",
+    "workflows/casebooks/WB-OPS.json",
+    "workflows/casebooks/WB-PHY.json",
+    "workflows/casebooks/WB-REN.json",
+    "workflows/casebooks/WB-SVC.json"
+  ],
+  "businessMap": "workflows/business-map.json",
+  "controls": "workflows/control-contracts.json",
+  "workedExamples": "workflows/worked-examples.json",
+  "archiveCoverage": "Existing S-0761\u20130805;45 retained dedicated scenarios; actual encrypted backup/restore LAST.",
+  "boundaries": "Static specification publication only. Draft, independent review pending, no new product execution/acceptance."
+}

@@ -15,6 +15,6 @@
     "BP-08",
     "BP-09"
   ],
-  "note": "Workflow families compose existing task IDs;they do not replace batches/coverage.json or inherited S IDs. Five starters are not exhaustive."
+  "note": "Workflow families compose existing task IDs;they do not replace batches/coverage.json or inherited S IDs. Five starters are not exhaustive.",
+  "detailedLibrary": "workflows/library.json"
 }
-

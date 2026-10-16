@@ -35,5 +35,7 @@ Supported physical/service/digital/rental/mixed scope is retained. Payroll, spec
 
 ## Business workflow applications
 
+The [expanded maintained workbook library](../workflows/LIBRARY.md) applies these rules through eight business/shared books,source-linked entities,field decisions and independent worked examples. Definitions and mappings remain draft evidence targets;they do not certify rule satisfaction or change expert-pending dispositions.
+
 Use [workflow protocol](../workflows/PROTOCOL.md) and [business playbooks](../workflows/README.md) to apply these shared rules to physical,service,digital,rental and hybrid journeys. Canonical workflow JSON references rule IDs/revisions;do not copy divergent intended rules into business books. New features/edges use versioned workflow change and rule-change review where applicable. Draft examples and metadata validation do not establish rule satisfaction or expert approval.
 

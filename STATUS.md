@@ -1,5 +1,7 @@
 # BookOne QA current status
 
+**Current workbook publication:** [eight maintained business books](docs/workflows/LIBRARY.md), [map](docs/workflows/BUSINESS_MAP.md), [handoff](handoffs/HANDOFF-20261016-expanded-business-workbooks.md), [validation](runs/RUN-20261016-expanded-business-workbooks.md).52draft journeys/260cases;18worked examples/51steps;all92existing lifecycle tasks mapped;26infrastructure tests passed. New cases remain unbound/not-run. Source study v2.5.12 ead3a82 is separate from unchanged execution pin0bcdf4d;no live/fix acceptance added. Next:review/bind physical J01–06, execute required layers, then extend the remaining books. Actual encrypted backup/restore LAST.
+
 **NOT customer-ready.** Latest browser batch v2.5.11 ·0bcdf4d:62boundedmanualchecks,45pass/17fail,9groups(5P1/4P2). [Current handoff](handoffs/HANDOFF-20261016-broad-workflows.md),[run](runs/RUN-20261016-broad-workflows.md),[checks](runs/CHECKS-20261016-broad-workflows.json). Eight new BUG0056–0063;BUG0037 draft follow-up. Previous303/129/26 automated evidence was not rerun.
 
 Read SESSION.md for continuation. Earlier history remains in Git and immutable prior runs. Extensive memory ledgers were excluded from this publication after automatic review;they describe earlier checkpoint and do not supersede this browser handoff. Standing sanitized-publication approval recorded in decisions/AUTH-20261016-sanitized-qa-publication.md. No product merge/deploy.
