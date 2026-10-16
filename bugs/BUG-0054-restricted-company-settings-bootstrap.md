@@ -1,5 +1,7 @@
 # BUG-0054 — Restricted DB cannot load existing company profile/tax settings
 
+Current disposition (2026-10-16): **original reproduction verified fixed at v2.5.11 isolated real-credential restricted-DB boundary**. See [new run](../runs/RUN-20261016-v2511-independent-retest.md). HTTP104/110 profile/tax and105 known-company platform positive pass, alongside all26HTTPS and303/129 regressions. Broader platform/least-privilege/upgrade acceptance stays open. Original failure record follows unchanged.
+
 P1 open for the required non-owner/NOBYPASSRLS runtime boundary. Product v2.5.10/81a505c. Deployed database role/exposure unknown; not a claim all staging users fail.
 
 Reproduce using the unchanged real compiled Next HTTPS workflow and existing six-identity fixture. Fresh credential Owner login and HTTP102 own invoice/role200 must pass first. GET /company/details: HTTP104 fails owner-profile-page-loaded and cannot obtain rendered-form fields. GET /company/tax: HTTP110 blocks settings-owner-page-unavailable. Owner-DB same cases pass; other restricted settings111–113 pass. Reproduced in two independent run fingerprints. See [current run](../runs/RUN-20261016-v2510-independent-retest.md), CI38840967841/job116780703299 and first CI38840800383/job116780174292.

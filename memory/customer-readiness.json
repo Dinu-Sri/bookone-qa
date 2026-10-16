@@ -24,7 +24,7 @@
     {
       "id": "G-CORE",
       "topic": "Current candidate regression and critical defect retest",
-      "status": "303implemented-pass;HTTP23pass2fail1blocked;0054/0055-open;fullacceptance-open",
+      "status": "303/129/26-bounded-pass;fullacceptance-open",
       "required": "Original failure repros plus adjacent finance/access/atomicity positives; retained skips explicit; product fixes independently verified"
     },
     {
@@ -54,9 +54,9 @@
     {
       "id": "G-SECURITY",
       "topic": "Real login, membership, scopes, tenant isolation and file/export access",
-      "status": "0053-original-fixed;0054/0055-adjacent-positives-fail;042-bounded-negative-control-fails;fullsecurity-open",
+      "status": "original0053/0054/0055-bounded-fixed;043leastprivilege/fullPG16/upgrade-open",
       "required": "Fresh known actors, real foreign records, authoritative direct requests and non-bypassRLS/storage controls; no inference from hidden nav",
-      "dependency": "Browser extension failed on newPC;livebuild/actor unverified;no stagingmutations"
+      "dependency": "browser-recovered;one-freshQAOwner-created;stablePO62nonposting-pass;deployedDBrole-not-established"
     },
     {
       "id": "G-ARCHIVE",
@@ -102,9 +102,11 @@
     }
   ],
   "nextActions": [
-    "Execute unchanged303/129/26 on pinned0bcdf4d; preserve first attempts and restricted HTTP104/105/110 outcomes.",
-    "Review043 PUBLIC catalog execute/owner/caller boundaries; fullPG16 TEMP negative control and historical upgrade remain pending.",
-    "Resume stable-build fresh-company bootstrap after mixed-build PO interruption; no automatic retry; physical first, encrypted backup/restore LAST."
+    "Coding: review043 PUBLIC catalog execute and trusted database caller boundary; preserve working login/platform positives.",
+    "QA: fullPG16 separate caller TEMP/schema/ACL/owner controls and prior042→043 upgrade/data preservation; no deployed exposure inferred.",
+    "Continue physical GRNI/variable-cost/partial/locks and cashbook/domain/export, CompanyAdmin/settings/roles; remaining service/digital/rental/mixed/files/history.",
+    "Investigate preserved login/onboarding/navigation/React418 observation; stablePO62 succeeded, earlierPO60 deployment-interrupted.",
+    "Actual encrypted backup/restore LAST;137fullworkflows and10policyrecords remain unaccepted."
   ],
   "operatingLimits": [
     "Disposable staging data only; no production access",
@@ -157,23 +159,23 @@
     "handoff": "handoffs/HANDOFF-20261014-v255-adjacent-readiness.md"
   },
   "latestCampaign": {
-    "record": "runs/CAMP-20261016-023313259-9b11b6.json",
-    "ci": 38840967869,
+    "record": "runs/CAMP-20261016-042926463-fa610a.json",
+    "ci": 38850831487,
     "passed": 303,
     "failed": 0,
     "skipped": 0,
     "blocked": 0,
-    "runtime": "runs/RUN-2026-10-16T02-33-15-821Z-runtime.json",
-    "runtimeCi": 38840967888,
+    "runtime": "runs/RUN-2026-10-16T04-29-38-803Z-runtime.json",
+    "runtimeCi": 38850831227,
     "unitPassed": 98,
     "runtimePassed": 129,
     "runtimeCases": 129,
-    "qaImplementation": "9a8aeff926c500686af8d97c418bd13583e28b31",
-    "qaTestedMerge": "eb7e22daf495e76d61e15f2dbe4ee6f6d1f4a9b7",
-    "qaContentHash": "6df4f542d0b18ee0fc8df864e44e82025736d32aa78f92c5b850d8daa476490c",
+    "qaImplementation": "8a0bfa3574bb8ea26766f1f657b5f79123fd3573",
+    "qaTestedMerge": "8c81f9bcdc7468987a327f519ae62c3ba9e0493b",
+    "qaContentHash": "15457b9f1e10d0cf0374d2307c87c46dc17b94a212a69c234c2046ea00927d4d",
     "fixtureVersion": "campaign-v2",
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
-    "acceptance": "executed-gate-passed;full137workflow-acceptance-not-established"
+    "acceptance": "executed-gate-passed;137fullworkflows-not-accepted"
   },
   "priorCampaign": {
     "record": "runs/CAMP-20261014-113321106-568961.json",
@@ -215,9 +217,7 @@
   },
   "activeReadinessFindings": [
     "BUG-0044",
-    "BUG-0054",
-    "BUG-0055",
-    "INV-20261016-042"
+    "INV-20261016-043"
   ],
   "previousCampaigns": [
     {
@@ -414,13 +414,13 @@
   "pendingCandidate": {
     "sha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
     "version": "2.5.11",
-    "status": "independently-reviewed;pinned;execution-pending",
+    "status": "303campaign/129PG/26HTTPS-pass;not-customer-ready",
     "change": "changes/CHG-20261016-v2511-independent-retest.md",
     "expectedAssertions": 303,
     "expectedRuntimeAssertions": 129,
     "expectedHttpAssertions": 26,
     "liveObservedStamp": "v2.5.11 · 0bcdf4d",
-    "browserAcceptance": "onboarding-crossed-deployment;not-release-acceptance"
+    "browserAcceptance": "stablePO62-bounded-pass;hydration/navigation-observations-preserved"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -919,18 +919,19 @@
   "findingDispositions": {
     "BUG-0044": "open-policy-links",
     "BUG-0045": "receipt150-read-only-repro-fixed;adjacent/full-multi-receipt-pending",
-    "BUG-0046": "native-repro-fixed;persisted-positive-blocked-by-distinct-BUG0050",
+    "BUG-0046": "original-alternative-vendor-field-stable-livePO62-persisted-positive-pass",
     "BUG-0047": "SO-label/no-invalid-Edit-repro-fixed;generic-adjacent-pending",
     "BUG-0048": "verified-fixed-in-original-same-period-scope;full-reporting-fails-distinct-BUG0049",
     "BUG-0049": "v259-RT061-original-repro-fixed;broader-reporting-and-live-pending",
     "INV258-01": "confirmed-as-BUG0050-via-supported-create/permission-command",
-    "BUG-0050": "v259-corrected-adapter-RT062-original-repro-fixed;live-pending",
-    "BUG-0051": "ownerDB-five-repros-pass;restricted-three-settings-pass;profile/tax-prerequisites-fail0054",
+    "BUG-0050": "RT062-original-pass-and-newOwner-livePO62-bootstrap-bounded-pass;rawflags/fullplan-unaccepted",
+    "BUG-0051": "all-five-settings-original-guard-repros-pass-bothDB-boundaries;broadersecurity-open",
     "BUG-0052": "original-real-credential-repro-pass-bothDB-boundaries;fullsecurity-open",
     "BUG-0053": "original-own-invoice-repro-fixed;broader-acceptance-open",
-    "BUG-0054": "P1restricted-company-profile/tax-prerequisite-failure",
-    "BUG-0055": "P2restricted-platformAdmin-known-company-positive-failure",
-    "INV-20261016-042": "minimal-PGlitePG17.5-negative-control-failure;fullPG16/deployment/HTTP-exposure-unproven"
+    "BUG-0054": "original-repro-bounded-verified-fixed",
+    "BUG-0055": "original-repro-bounded-verified-fixed",
+    "INV-20261016-042": "TEMP-shadow-bounded-fixed-by043;fullPG16pending",
+    "INV-20261016-043": "PUBLICcatalog-execute-confirmed-minimal;leastprivilege-acceptance-open;no-deployedHTTPexploit"
   },
   "pendingBootstrapRegression": {
     "case": "RT-062",
@@ -986,9 +987,9 @@
     "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
     "acceptance": "failed-RT061-RT062;P1BUG0049-P2BUG0050;full-workflows-not-established"
   },
-  "currentCodingHandoff": "handoffs/HANDOFF-20261016-v2510-findings.md",
+  "currentCodingHandoff": "handoffs/HANDOFF-20261016-v2511-results.md",
   "httpRuntime": {
-    "status": "v2510-executed23pass2fail1blocked;0053-original-fixed;0054/0055-open",
+    "status": "v2511-executed26pass;original0054/0055bounded-fixed;fullsecurity-open",
     "manifest": "batches/http-runtime.json",
     "guide": "docs/HTTP_RUNTIME.md",
     "change": "changes/CHG-20261015-real-next-http-runtime.md",
@@ -996,9 +997,9 @@
     "expectedSlots": 26,
     "perDatabaseBoundary": 13,
     "localGuardTestsPassed": 7,
-    "realServerCasesPassed": 23,
+    "realServerCasesPassed": 26,
     "scope": "actual compiled Next/credential/TLS/actions on new isolated CI data;not Chrome/staging;no auth substitution",
-    "acceptance": "failed-product;no-release-certification;HTTP-separate-from303",
+    "acceptance": "bounded-pass;no-release-certification;HTTP-separate-from303",
     "pendingApprovalUnaffected": true,
     "firstAttempt": {
       "record": "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
@@ -1032,22 +1033,31 @@
       "finalBalanceCents": 45000
     },
     "latestAttempt": {
-      "record": "runs/HTTP-2026-10-16T02-33-23-263Z-49897a.json",
-      "ci": 38840967841,
-      "job": 116780703299,
+      "record": "runs/HTTP-2026-10-16T04-29-36-612Z-e2ba08.json",
+      "ci": 38850831264,
+      "job": 116811442783,
       "totals": {
-        "passed": 23,
-        "failed": 2,
-        "blocked": 1
+        "passed": 26,
+        "failed": 0,
+        "blocked": 0
       },
-      "qaImplementation": "9a8aeff926c500686af8d97c418bd13583e28b31",
-      "qaTestedMerge": "eb7e22daf495e76d61e15f2dbe4ee6f6d1f4a9b7",
-      "qaContentHash": "6df4f542d0b18ee0fc8df864e44e82025736d32aa78f92c5b850d8daa476490c",
-      "confirmedProductBugs": [
-        "BUG-0054",
-        "BUG-0055"
-      ],
-      "boundary": "actual-compiled-Next-credential-TLS;ownerDB13/13;restricted10/2/1",
+      "fingerprint": {
+        "productSha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+        "productStamp": "v2.5.11 · 0bcdf4d",
+        "qaSha": "8c81f9bcdc7468987a327f519ae62c3ba9e0493b",
+        "qaDirty": false,
+        "qaContentHash": "15457b9f1e10d0cf0374d2307c87c46dc17b94a212a69c234c2046ea00927d4d",
+        "node": "v22.23.3",
+        "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+        "fixtureVersion": "http-v4-canonical-loopback",
+        "transport": "canonical-localhost-TLS-pinned-IPv4-Next-custom-server",
+        "schemaMigrations": 45,
+        "nextBuildId": "fGCDAghdIxkSK6d1Uj6aU",
+        "nextVersion": "15.5.19",
+        "betterAuthVersion": "1.6.20"
+      },
+      "qaImplementation": "8a0bfa3574bb8ea26766f1f657b5f79123fd3573",
+      "boundary": "real-compiledNext-credentialTLS;ownerDB13/13;restricted13/13",
       "acceptance": "not-customer-ready"
     },
     "completedDiagnostic": {
@@ -1059,14 +1069,15 @@
       "cause": "Pinned NextURL.parseURL normalizes127.0.0.1 to localhost;v3 actual redirectHTTPS/localhost/3443 observed",
       "scope": "same26 cases/unchanged expected finance/roles;not deployed proxy acceptance"
     },
-    "nextAction": "Coding: fix0054 companysettings authoritative-context loading without Viewer promotion; diagnose0055 platform positive with narrow authorization.",
+    "nextAction": "043leastprivilege/fullPG16separatecaller/upgrade;broaderplatform/settings/browsercoverage",
     "attemptRecords": [
       "runs/HTTP-2026-10-15T09-56-23-454Z-c57f36.json",
       "runs/HTTP-2026-10-15T10-06-08-201Z-b7f9e8.json",
       "runs/HTTP-2026-10-15T12-40-06-795Z-360298.json",
       "runs/HTTP-2026-10-15T12-51-34-870Z-415340.json",
       "runs/HTTP-2026-10-15T13-00-44-761Z-8d1cb1.json",
-      "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json"
+      "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json",
+      "runs/HTTP-2026-10-16T04-29-36-612Z-e2ba08.json"
     ],
     "previousAttemptBeforeV2510": {
       "record": "runs/HTTP-2026-10-15T13-08-49-991Z-e76d96.json",
@@ -1111,20 +1122,45 @@
       "companionFailed": 2,
       "anonymousAndCredentialControls": "passed-both-roles;canonical-host-correction-executed",
       "remaining": "three-product-groups;restricted9-blocks;deployed-role/proxy/browser/storage/full-workflows-unverified"
+    },
+    "previousAttemptBeforeV2511": {
+      "record": "runs/HTTP-2026-10-16T02-33-23-263Z-49897a.json",
+      "ci": 38840967841,
+      "job": 116780703299,
+      "totals": {
+        "passed": 23,
+        "failed": 2,
+        "blocked": 1
+      },
+      "qaImplementation": "9a8aeff926c500686af8d97c418bd13583e28b31",
+      "qaTestedMerge": "eb7e22daf495e76d61e15f2dbe4ee6f6d1f4a9b7",
+      "qaContentHash": "6df4f542d0b18ee0fc8df864e44e82025736d32aa78f92c5b850d8daa476490c",
+      "confirmedProductBugs": [
+        "BUG-0054",
+        "BUG-0055"
+      ],
+      "boundary": "actual-compiled-Next-credential-TLS;ownerDB13/13;restricted10/2/1",
+      "acceptance": "not-customer-ready"
     }
   },
   "liveContinuation": {
-    "date": "2026-10-15",
-    "actor": "P257-Owner",
-    "stamp": "v2.5.8 /cf35da1",
-    "company": "P257-Physical",
-    "login": "fresh explicit credential login;Owner/current company verified",
-    "record": "runs/RUN-20261015-v258-live-adjacent-readonly.md",
-    "boundedObservationsPassed": 8,
-    "financialWrites": 0,
-    "lastPage": "original product stock ledger",
-    "moduleApproval": "P258 exact setup unchanged-pending;no save",
-    "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
+    "date": "2026-10-16",
+    "actor": "P261016-Owner",
+    "company": "P261016-Company",
+    "stamp": "v2.5.11 · 0bcdf4d",
+    "login": "fresh-explicit-fixture-signin+loadedQA/Owner-company;no separate-email-surface",
+    "record": "runs/RUN-20261016-v2511-independent-retest.md",
+    "createdAccounts": 1,
+    "createdCompanies": 1,
+    "savedNonpostingPurchaseOrders": 1,
+    "purchaseOrderTotalLKR": 62,
+    "financialWritesSubmitted": 0,
+    "transactionsVisible": 0,
+    "journalEntriesVisible": 0,
+    "period": "2026-10",
+    "lastPage": "Transactions",
+    "cleanup": "retain-run-owned-account/company/vendor/PO;credentials-private",
+    "priorInterruptedPurchaseOrder": "PO60;not-replayed"
   },
   "launchRegister": "docs/LAUNCH_ACCEPTANCE.md",
   "v259Retest": {
@@ -1266,13 +1302,8 @@
     ],
     "currentFailedExecutableCases": null
   },
-  "currentFailedExecutableCases": [
-    "HTTP-104",
-    "HTTP-105"
-  ],
-  "currentBlockedExecutableCases": [
-    "HTTP-110"
-  ],
+  "currentFailedExecutableCases": [],
+  "currentBlockedExecutableCases": [],
   "handoffDelivery": {
     "channel": "QA repository",
     "ownerRelay": "detailed copyable message plus links to each handoff document",
@@ -1298,7 +1329,7 @@
     "record": "runs/RUN-20261016-owner-onboarding-executed.md",
     "actorAlias": "P261016-Owner",
     "companyAlias": "P261016-Company",
-    "status": "created-and-loaded;PO-submit-deployment-interrupted;no-replay",
+    "status": "one-account/one-company-created;stablePO62-bounded-pass;oldPO60-interruption-preserved",
     "accountCreated": true,
     "companyCreated": true,
     "createdAccounts": 1,
@@ -1312,7 +1343,11 @@
     "liveStampBefore": "v2.5.10 · 81a505c",
     "liveStampAfter": "v2.5.11 · 0bcdf4d",
     "credentials": "private-ignored-only",
-    "next": "newcandidate isolated regression;stable-build bootstrap retest after preserved interruption"
+    "next": "physical/settings/role coverage;no oldPO replay",
+    "stableBootstrapRecord": "runs/RUN-20261016-v2511-independent-retest.md",
+    "stablePurchaseOrder": "PO-20261016-0001",
+    "stableOrderTotalLKR": 62,
+    "stableVendor": "VEN-0001"
   },
   "previousPointersBeforeV2511": {
     "pendingCandidate": {
@@ -1338,6 +1373,95 @@
       "credentials": "private-ignored-only",
       "ownerSignupAuthorization": "2026-10-16 explicit unlimited synthetic accounts on staging",
       "next": "confirm exact agreement-accepting signup submission;then explicit fixture sign-in/role/company/initialstate"
+    }
+  },
+  "previousCurrentPointersBeforeV2511": {
+    "latestCampaign": {
+      "record": "runs/CAMP-20261016-023313259-9b11b6.json",
+      "ci": 38840967869,
+      "passed": 303,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "runtime": "runs/RUN-2026-10-16T02-33-15-821Z-runtime.json",
+      "runtimeCi": 38840967888,
+      "unitPassed": 98,
+      "runtimePassed": 129,
+      "runtimeCases": 129,
+      "qaImplementation": "9a8aeff926c500686af8d97c418bd13583e28b31",
+      "qaTestedMerge": "eb7e22daf495e76d61e15f2dbe4ee6f6d1f4a9b7",
+      "qaContentHash": "6df4f542d0b18ee0fc8df864e44e82025736d32aa78f92c5b850d8daa476490c",
+      "fixtureVersion": "campaign-v2",
+      "bankFixtureHash": "1a6e0581380277584a2318d851ee3eb7f2cf4b0c330230725cb5fd00ff5149fc",
+      "acceptance": "executed-gate-passed;full137workflow-acceptance-not-established"
+    },
+    "currentCodingHandoff": "handoffs/HANDOFF-20261016-v2510-findings.md",
+    "currentFailedExecutableCases": [
+      "HTTP-104",
+      "HTTP-105"
+    ],
+    "currentBlockedExecutableCases": [
+      "HTTP-110"
+    ],
+    "liveContinuation": {
+      "date": "2026-10-15",
+      "actor": "P257-Owner",
+      "stamp": "v2.5.8 /cf35da1",
+      "company": "P257-Physical",
+      "login": "fresh explicit credential login;Owner/current company verified",
+      "record": "runs/RUN-20261015-v258-live-adjacent-readonly.md",
+      "boundedObservationsPassed": 8,
+      "financialWrites": 0,
+      "lastPage": "original product stock ledger",
+      "moduleApproval": "P258 exact setup unchanged-pending;no save",
+      "filter": "SKU match/no-match/clear restored3 movements;no stuck overlay in observed states"
+    }
+  },
+  "v2511Retest": {
+    "status": "303campaign/129PG/26HTTPS-pass;not-customer-ready",
+    "productSha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+    "qaImplementation": "8a0bfa3574bb8ea26766f1f657b5f79123fd3573",
+    "qaTestedMerge": "8c81f9bcdc7468987a327f519ae62c3ba9e0493b",
+    "qaContentHash": "15457b9f1e10d0cf0374d2307c87c46dc17b94a212a69c234c2046ea00927d4d",
+    "observedLiveStamp": "v2.5.11 · 0bcdf4d",
+    "campaign": "runs/CAMP-20261016-042926463-fa610a.json",
+    "postgres": "runs/RUN-2026-10-16T04-29-38-803Z-runtime.json",
+    "http": "runs/HTTP-2026-10-16T04-29-36-612Z-e2ba08.json",
+    "record": "runs/RUN-20261016-v2511-independent-retest.md",
+    "handoff": "handoffs/HANDOFF-20261016-v2511-results.md",
+    "campaignCi": 38850831487,
+    "campaignJob": 116811443687,
+    "postgresCi": 38850831227,
+    "postgresJob": 116811444064,
+    "httpCi": 38850831264,
+    "httpJob": 116811442783,
+    "campaignCounts": {
+      "passed": 303,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "not-run": 0
+    },
+    "postgresCounts": {
+      "passed": 129,
+      "failed": 0
+    },
+    "httpCounts": {
+      "passed": 26,
+      "failed": 0,
+      "blocked": 0
+    },
+    "terminalJobs": true,
+    "fullWorkflowsAccepted": 0,
+    "migrationCount": 45,
+    "migrationAcceptance": "fresh-install-only;not-prior-upgrade",
+    "securityFollowup": "runs/INV-20261016-migration043-followup.md",
+    "findingDispositions": {
+      "BUG-0054": "original-repro-bounded-verified-fixed",
+      "BUG-0055": "original-repro-bounded-verified-fixed",
+      "INV-20261016-042": "TEMP-shadow-bounded-fixed-by043;fullPG16pending",
+      "INV-20261016-043": "PUBLICcatalog-execute-confirmed-minimal;leastprivilege-acceptance-open;no-deployedHTTPexploit"
     }
   }
 }
