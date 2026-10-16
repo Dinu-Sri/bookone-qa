@@ -21,7 +21,7 @@
     "scope": "60-source-contracts-no-release-acceptance"
   },
   "candidateProductSha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
-  "observedStagingStamp": "v2.5.8 /cf35da1",
+  "observedStagingStamp": "v2.5.10 ·81a505c",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -80,7 +80,7 @@
     "Coding: fix0054 companysettings authoritative-context loading without Viewer promotion; diagnose0055 platform positive with narrow authorization.",
     "Complete migration042 security acceptance on fullguardedPG16 (owner/grants/searchpath/caller boundaries); bounded minimal-engine negative control failed, no HTTPexploit/deployed exposure claim.",
     "Newcandidate: independent actualdiff review/pin then unchanged303campaign/129PG/26HTTP, preserving first attempts and exact fingerprints.",
-    "Restore selected Browser extension connection; verify actualstagingstamp and freshactor before livewrites. Oldprivatecredentials/checkpoints absent; no financial replay.",
+    "Browser read/capture recovered; verify fresh intended QA fixture login before role-specific livewrites. Oldprivatecredentials/checkpoints absent; no financial replay.",
     "Execute affectedcashbook entity/domain/period/export outputs and CompanyAdmin/adjacentsettings; continuephysicalGRNI/cost/partials/locks/roles, thenservice/digital/rental/mixed/files/history.",
     "P258exactmoduleSave/existingcompanyAdmin grants remain approval-dependent; no bypass. Actualencryptedbackup/restore LAST; expertRF01–10/operatorrecovery/all137workflow gates open."
   ],
@@ -720,7 +720,7 @@
     "latestRecord": "runs/RUN-20261015-v258-bootstrap-investigation.md",
     "businessTransactionsCreated": 6,
     "actualTradingEmptiness": "initial journal/account zero observed; no table-wide emptiness claim; company now traded",
-    "browserDependency": "another extension UI blocks observation after Admin Logout began;logout/current actor unverified;fresh login required",
+    "browserDependency": "Read/capture connection recovered;fresh intended QA fixture sign-in required;no livewrites",
     "moduleSetup": "actual: Starter retained; Inventory enabled only; POS/Rental/HR off; Owner fresh-login verified",
     "receiptFailure": "payment150 committed; receipt page crashes; do not replay",
     "additionalCompany": {
@@ -1313,6 +1313,20 @@
       "previousReview": "initial publication rejected;owner subsequently explicitly authorized repository publication",
       "privateEvidenceExcluded": true,
       "mergeOrDeploymentAuthorized": false
+    },
+    "subsequentBrowserVerification": {
+      "record": "runs/RUN-20261016-browser-connection-recovered.md",
+      "date": "2026-10-16",
+      "localTimeApprox": "09:20Asia/Colombo",
+      "browser": "connected-Chrome-extension",
+      "observedLiveStamp": "v2.5.10 ·81a505c",
+      "pageRead": true,
+      "screenshot": true,
+      "businessMutations": 0,
+      "freshQAActorLogin": false,
+      "clickTypingTest": "not-executed",
+      "imageSchemaDatabaseIdentity": "not-established",
+      "privateEvidencePublished": false
     }
   },
   "previousCurrentPointersBeforeV2510": {
@@ -1367,5 +1381,19 @@
     "sanitizedPublicationAuthorized": true,
     "instructionDate": "2026-10-16",
     "credentialsAndRawEvidence": "private-only"
+  },
+  "browserRecovery": {
+    "record": "runs/RUN-20261016-browser-connection-recovered.md",
+    "date": "2026-10-16",
+    "localTimeApprox": "09:20Asia/Colombo",
+    "browser": "connected-Chrome-extension",
+    "observedLiveStamp": "v2.5.10 ·81a505c",
+    "pageRead": true,
+    "screenshot": true,
+    "businessMutations": 0,
+    "freshQAActorLogin": false,
+    "clickTypingTest": "not-executed",
+    "imageSchemaDatabaseIdentity": "not-established",
+    "privateEvidencePublished": false
   }
 }

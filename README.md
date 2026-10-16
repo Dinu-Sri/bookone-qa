@@ -1,6 +1,6 @@
 # Current checkpoint — 2026-10-16
 
-Product v2.5.10/81a505c:303 campaign assertions and129 PostgreSQL checks pass; real credential HTTPS23passed/2failed/1blocked. BUG0053 original own-invoice case fixed; BUG0054/0055 and migration042 security review remain open. Not customer-ready;0/137full workflows accepted. Live v2.5.10 is owner-reported, not independently stamped. Start with [STATUS](STATUS.md), [SESSION](SESSION.md), [current run](runs/RUN-20261016-v2510-independent-retest.md) and [coding handoff](handoffs/HANDOFF-20261016-v2510-findings.md). `product-ref.json` is the execution pin.
+Product v2.5.10/81a505c:303 campaign assertions and129 PostgreSQL checks pass; real credential HTTPS23passed/2failed/1blocked. BUG0053 original own-invoice case fixed; BUG0054/0055 and migration042 security review remain open. Not customer-ready;0/137full workflows accepted. Live UI v2.5.10 ·81a505c independently observed after [browser read/capture recovery](runs/RUN-20261016-browser-connection-recovered.md); fresh QA actor sign-in remains required. Start with [STATUS](STATUS.md), [SESSION](SESSION.md), [current run](runs/RUN-20261016-v2510-independent-retest.md) and [coding handoff](handoffs/HANDOFF-20261016-v2510-findings.md). `product-ref.json` is the execution pin.
 
 The older snapshots below are historical; their candidate/count/next-step fields do not override this checkpoint or immutable run fingerprints.
 

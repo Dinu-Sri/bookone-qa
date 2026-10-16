@@ -25,3 +25,7 @@ QA implementation `9a8aeff926c500686af8d97c418bd13583e28b31`; tested merge `eb7e
 Live v2.5.10 is owner-reported, not independently stamped; Browser extension failed twice before page access. No staging mutation. New PC lacks ignored old credentials/checkpoints. Verify supported browser/actual build and freshly signed-in actor before any role mutation. Preserve P257 cash950/AR150/AP400/stock7/value420/profit120/sixjournals/debits2750; never replay its payments. Pending exactP258 module/access changes remain unapproved/untouched.
 
 Next QA scope beyond fixes: actual cashbook entity/domain/period/export outputs affected by diff, Company Admin/adjacent settings/scopes, then physicalGRNI/cost/partials/locks/roles and remainingservice/digital/rental/mixed/files/history. Full137workflows62partial/75unbound/0accepted, policies/expertRF01–10, real storage, historical upgrade/operator recovery, performance/operations/user acceptance and frozen release gates stay open. Actual encrypted A→new-empty-B backup/restore LAST. Do not use passing303 as customer-readiness percentage.
+
+## Subsequent browser recovery
+
+2026-10-16 at09:20Asia/Colombo: connected Chrome page reading and screenshot capture recovered; actual live UI v2.5.10 ·81a505c observed. [Recovery record](../runs/RUN-20261016-browser-connection-recovered.md). No fresh QA fixture sign-in, click/type test or business mutation yet; prior isolated test outcomes/findings unchanged.
