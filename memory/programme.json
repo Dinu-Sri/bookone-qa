@@ -20,8 +20,8 @@
     "deepResult": "B16/0-C8/0-D8/0-E3/0-F10/0",
     "scope": "60-source-contracts-no-release-acceptance"
   },
-  "candidateProductSha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
-  "observedStagingStamp": "v2.5.10 ·81a505c",
+  "candidateProductSha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+  "observedStagingStamp": "v2.5.11 · 0bcdf4d",
   "cleanupBaseline": "Owner cleared old staging records; October zero observed; new QA-261013-V220 sale offset by supported reversal, two journals retained",
   "knownBugGroups": [
     "BUG-0005",
@@ -77,12 +77,9 @@
     "BUG-0055"
   ],
   "nextActions": [
-    "Coding: fix0054 companysettings authoritative-context loading without Viewer promotion; diagnose0055 platform positive with narrow authorization.",
-    "Complete migration042 security acceptance on fullguardedPG16 (owner/grants/searchpath/caller boundaries); bounded minimal-engine negative control failed, no HTTPexploit/deployed exposure claim.",
-    "Newcandidate: independent actualdiff review/pin then unchanged303campaign/129PG/26HTTP, preserving first attempts and exact fingerprints.",
-    "Browser read/capture recovered; verify fresh intended QA fixture login before role-specific livewrites. Oldprivatecredentials/checkpoints absent; no financial replay.",
-    "Execute affectedcashbook entity/domain/period/export outputs and CompanyAdmin/adjacentsettings; continuephysicalGRNI/cost/partials/locks/roles, thenservice/digital/rental/mixed/files/history.",
-    "P258exactmoduleSave/existingcompanyAdmin grants remain approval-dependent; no bypass. Actualencryptedbackup/restore LAST; expertRF01–10/operatorrecovery/all137workflow gates open."
+    "Execute unchanged303/129/26 on pinned0bcdf4d; preserve first attempts and restricted HTTP104/105/110 outcomes.",
+    "Review043 PUBLIC catalog execute/owner/caller boundaries; fullPG16 TEMP negative control and historical upgrade remain pending.",
+    "Resume stable-build fresh-company bootstrap after mixed-build PO interruption; no automatic retry; physical first, encrypted backup/restore LAST."
   ],
   "missingAcceptance": [
     "full-non-owner-business-actions",
@@ -418,15 +415,15 @@
     "firstRuntime": "runs/RUN-2026-10-14T12-55-07-908Z-runtime.json"
   },
   "pendingCandidate": {
-    "sha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
-    "version": "2.5.10",
-    "status": "executed303pass;HTTP23pass2fail1blocked;not-customer-ready",
-    "change": "changes/CHG-20261016-v2510-independent-retest.md",
+    "sha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+    "version": "2.5.11",
+    "status": "independently-reviewed;pinned;execution-pending",
+    "change": "changes/CHG-20261016-v2511-independent-retest.md",
     "expectedAssertions": 303,
     "expectedRuntimeAssertions": 129,
     "expectedHttpAssertions": 26,
-    "liveObservedStamp": "unobserved;owner-reported-v2.5.10",
-    "browserAcceptance": "blocked-tooling"
+    "liveObservedStamp": "v2.5.11 · 0bcdf4d",
+    "browserAcceptance": "onboarding-crossed-deployment;not-release-acceptance"
   },
   "v256InitialRetest": {
     "record": "runs/CAMP-20261015-015120720-373e0d.json",
@@ -1397,16 +1394,49 @@
     "privateEvidencePublished": false
   },
   "freshOwnerOnboarding20261016": {
-    "record": "runs/RUN-20261016-fresh-owner-onboarding.md",
+    "record": "runs/RUN-20261016-owner-onboarding-executed.md",
     "actorAlias": "P261016-Owner",
-    "status": "signup-prepared-not-submitted;agreement-confirmation-pending",
-    "logoutConfirmed": true,
-    "accountCreated": false,
-    "companyCreated": false,
-    "financialWrites": 0,
-    "liveStamp": "v2.5.10 ·81a505c",
+    "companyAlias": "P261016-Company",
+    "status": "created-and-loaded;PO-submit-deployment-interrupted;no-replay",
+    "accountCreated": true,
+    "companyCreated": true,
+    "createdAccounts": 1,
+    "createdCompanies": 1,
+    "financialWritesSubmitted": 0,
+    "purchaseOrderSubmissions": 1,
+    "purchaseOrdersVisibleAfter": 0,
+    "vendorsVisibleAfter": 0,
+    "journalEntriesVisibleAfter": 0,
+    "journalPeriod": "2026-10",
+    "liveStampBefore": "v2.5.10 · 81a505c",
+    "liveStampAfter": "v2.5.11 · 0bcdf4d",
     "credentials": "private-ignored-only",
-    "ownerSignupAuthorization": "2026-10-16 explicit unlimited synthetic accounts on staging",
-    "next": "confirm exact agreement-accepting signup submission;then explicit fixture sign-in/role/company/initialstate"
+    "next": "newcandidate isolated regression;stable-build bootstrap retest after preserved interruption"
+  },
+  "previousPointersBeforeV2511": {
+    "pendingCandidate": {
+      "sha": "81a505c4e39c71f5019eea5de0bc7c5fffc50a1f",
+      "version": "2.5.10",
+      "status": "executed303pass;HTTP23pass2fail1blocked;not-customer-ready",
+      "change": "changes/CHG-20261016-v2510-independent-retest.md",
+      "expectedAssertions": 303,
+      "expectedRuntimeAssertions": 129,
+      "expectedHttpAssertions": 26,
+      "liveObservedStamp": "unobserved;owner-reported-v2.5.10",
+      "browserAcceptance": "blocked-tooling"
+    },
+    "freshOwnerOnboarding20261016": {
+      "record": "runs/RUN-20261016-fresh-owner-onboarding.md",
+      "actorAlias": "P261016-Owner",
+      "status": "signup-prepared-not-submitted;agreement-confirmation-pending",
+      "logoutConfirmed": true,
+      "accountCreated": false,
+      "companyCreated": false,
+      "financialWrites": 0,
+      "liveStamp": "v2.5.10 ·81a505c",
+      "credentials": "private-ignored-only",
+      "ownerSignupAuthorization": "2026-10-16 explicit unlimited synthetic accounts on staging",
+      "next": "confirm exact agreement-accepting signup submission;then explicit fixture sign-in/role/company/initialstate"
+    }
   }
 }
