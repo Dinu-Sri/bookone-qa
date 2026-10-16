@@ -1,0 +1,1663 @@
+{
+  "id": "WB-PHY",
+  "revision": 1,
+  "title": "Physical retail and wholesale",
+  "profileIds": [
+    "BP-01"
+  ],
+  "familyRefs": [
+    "WF-PHY-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-PHY.J01",
+      "revision": 1,
+      "title": "Create products, suppliers and stock opening",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Fresh physical tenant; no tax; each-unit SKU P; opening cash 10000 and equity 10000; no stock.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-INV-04",
+          "revision": 1
+        },
+        {
+          "id": "BR-AUD-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-110",
+        "C-112"
+      ],
+      "entityRefs": [
+        "inventoryProducts",
+        "parties",
+        "inventoryStockLevels",
+        "accounts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/inventory.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Opening quantity and value",
+          "given": "Opening stock zero; approved opening adjustment account.",
+          "action": "Enter 10 units at 60 using supported opening flow.",
+          "expected": "Quantity 10, inventory 600; approved opening-equity bridge 600; zero sales/COGS. Opening journal and movement share source.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "opening value cents",
+              "operation": "mul",
+              "operands": [
+                10,
+                6000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-PHY.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same SKU within tenant",
+          "given": "SKU P already exists.",
+          "action": "Create another active P.",
+          "expected": "Apply declared uniqueness policy; no ambiguous duplicated SKU or overwritten existing stock. If uniqueness is not contracted, record policy gap before acceptance.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cross-tenant same SKU",
+          "given": "Tenant B independently owns SKU P.",
+          "action": "Create P in tenant A with A permissions.",
+          "expected": "A creation cannot resolve to B product; independent own IDs and balances; B unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Wrong product class",
+          "given": "Service and digital products exist.",
+          "action": "Attempt opening quantity through stock flow.",
+          "expected": "Non-stock products cannot acquire physical stock or inventory asset through this flow.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Opening versus repeat",
+          "given": "Opening document has saved.",
+          "action": "Reload and re-submit its original accepted identity.",
+          "expected": "No second opening movement/journal. Missing replay identity is a contract gap, not permission to double opening.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J02",
+      "revision": 1,
+      "title": "Approve PO and enforce supplier invoice policy",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Vendor V; SKU P at 60; PO quantity10; approval and supplier invoice requirement enabled.",
+      "ruleRefs": [
+        {
+          "id": "BR-PUR-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-PUR-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-101",
+        "C-113"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "purchaseSettings",
+        "parties"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Nonposting purchase order",
+          "given": "No AP or stock.",
+          "action": "Save PO 10x60 then approve under authorized role.",
+          "expected": "PO total600; no AP, stock or GL until supported receipt/bill transitions. Approval actor/time recorded.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "PO cents",
+              "operation": "mul",
+              "operands": [
+                10,
+                6000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-PHY.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Pending or rejected bill",
+          "given": "Bill approval required.",
+          "action": "Submit bill then reject.",
+          "expected": "Pending/rejected stage does not capitalize or create AP; no payment eligibility; reason preserved.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-PHY.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Supplier invoice mandatory",
+          "given": "Required invoice number enabled.",
+          "action": "Post bill with empty reference.",
+          "expected": "Deny without bill/journal/stock writes; error identifies missing reference.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Duplicate sequential and parallel",
+          "given": "First bill V/reference X posted600.",
+          "action": "Submit same supplier/reference again sequentially and in parallel.",
+          "expected": "At most one accepted reference under blocking policy; original600 and source links survive; second no monetary effect.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-PHY.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same reference different supplier",
+          "given": "V/reference X exists; vendor W is distinct.",
+          "action": "Post W/reference X with legitimate documents.",
+          "expected": "Supplier-scoped duplicate policy does not conflate V and W; own AP600 each; tenant identity remains part of key.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J03",
+      "revision": 1,
+      "title": "Partial receipt, partial bill and GRNI clearing",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "PO10x60; postGrniOnReceipt on; stock0; AP0; GRNI0; authorized location A.",
+      "ruleRefs": [
+        {
+          "id": "BR-PUR-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-102",
+        "C-103",
+        "C-104"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryStockLevels",
+        "inventoryMovements",
+        "journalLines",
+        "purchaseSettings"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Receive6 then bill4",
+          "given": "PO10; empty stock.",
+          "action": "Receive6; bill4 of received units.",
+          "expected": "After receipt stock6/value360/GRNI credit360. Bill4 clears GRNI240 to AP240; final GRNI120; stock remains6/value360.",
+          "kind": "partial",
+          "oracle": [
+            {
+              "label": "receipt cents",
+              "operation": "mul",
+              "operands": [
+                6,
+                6000
+              ],
+              "equals": 36000
+            },
+            {
+              "label": "GRNI remaining cents",
+              "operation": "sub",
+              "operands": [
+                36000,
+                24000
+              ],
+              "equals": 12000
+            }
+          ],
+          "id": "WB-PHY.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Complete receipt and bills",
+          "given": "Prior state stock6/AP240/GRNI120.",
+          "action": "Receive4; bill remaining6 across correct sources.",
+          "expected": "Stock10/value600; AP600; GRNI0; received10/billed10; no duplicate capitalization.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "AP final cents",
+              "operation": "add",
+              "operands": [
+                24000,
+                36000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-PHY.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Receive above remaining",
+          "given": "PO10; already received4.",
+          "action": "Attempt receipt7.",
+          "expected": "Reject; remaining receive6. Stock4/value240 and all existing source links unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Count GRN-sourced bill against PO",
+          "given": "PO10; GRN4 billed via its GRN.",
+          "action": "Open PO bill conversion and attempt7.",
+          "expected": "Remaining bill6; descendant GRN bill4 included once; attempted7 denied; no second bill.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Receive zero or negative",
+          "given": "PO has remaining6.",
+          "action": "Submit quantity0 or -1 using UI and actual action.",
+          "expected": "Explicit validation; no header/movement/journal. Preserve pending user inputs.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-PHY.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J04",
+      "revision": 1,
+      "title": "Direct bill and cash purchase without double stock",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "P has no stock; no VAT; GRNI posting off; supplier invoice A for10x60; liquid bank available.",
+      "ruleRefs": [
+        {
+          "id": "BR-PUR-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-102",
+        "C-106"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryMovements",
+        "transactions",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "GRNI-off timing must be independently reconciled for receipt-before-bill; do not assume an unposted receipt has already capitalized value."
+      ],
+      "cases": [
+        {
+          "title": "Direct physical credit purchase",
+          "given": "No receipt or source bill.",
+          "action": "Post credit purchase10x60.",
+          "expected": "Stock10/value600; Dr inventory600 Cr AP600; cash0 delta; bill unpaid600.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "purchase cents",
+              "operation": "mul",
+              "operands": [
+                10,
+                6000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-PHY.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Bill already received stock",
+          "given": "Receipt10 exists with declared GRNI-off model.",
+          "action": "Bill source receipt10.",
+          "expected": "Stock remains10; stock quantity is not added again. Inventory recognition and AP follow reviewed GRNI-off contract, not an invented clearing entry.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cash purchase",
+          "given": "Separate empty fixture; bank1000.",
+          "action": "Post cash purchase10x60.",
+          "expected": "Bank400; stock10/value600; no open AP600; one accepted stock and cash transaction.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "sub",
+              "operands": [
+                100000,
+                60000
+              ],
+              "equals": 40000
+            }
+          ],
+          "id": "WB-PHY.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invalid tender",
+          "given": "Revenue, AP or foreign-tenant account chosen.",
+          "action": "Attempt cash purchase600.",
+          "expected": "Reject tender before any stock, cash, AP or audit CREATE effect.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Supplier payment after cash purchase",
+          "given": "Cash purchase settled in full.",
+          "action": "Attempt pay again from AP workflow.",
+          "expected": "Deny or show no eligible remaining debt; stock10 and bank400 remain unchanged.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-PHY.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J05",
+      "revision": 1,
+      "title": "Credit sale, partial receipt and customer return",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Opening stock10 at60; sell price100; tax off; cash0; customer C.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-105",
+        "B-103",
+        "B-104"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryCostLayers",
+        "settlementAllocations",
+        "journalLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Sell two physical units",
+          "given": "Stock10/value600.",
+          "action": "Post invoice2x100.",
+          "expected": "AR200; revenue200; COGS120; stock8/value480; profit80; cash0.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "COGS cents",
+              "operation": "mul",
+              "operands": [
+                2,
+                6000
+              ],
+              "equals": 12000
+            },
+            {
+              "label": "profit cents",
+              "operation": "sub",
+              "operands": [
+                20000,
+                12000
+              ],
+              "equals": 8000
+            }
+          ],
+          "id": "WB-PHY.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Receive partial payment",
+          "given": "Invoice200 unpaid.",
+          "action": "Receive80 using supported bank.",
+          "expected": "AR120; bank80; revenue200 and stock8 unchanged; allocation80 links receipt to invoice.",
+          "kind": "partial",
+          "oracle": [],
+          "id": "WB-PHY.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return one after partial payment",
+          "given": "Prior AR120/bank80; sold original cost60.",
+          "action": "Credit one unit at original sale100 and cost60.",
+          "expected": "AR20; revenue100; COGS60; stock9/value540; bank80; profit40; source sale and original-cost layer retained.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "AR after credit cents",
+              "operation": "sub",
+              "operands": [
+                12000,
+                10000
+              ],
+              "equals": 2000
+            }
+          ],
+          "id": "WB-PHY.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Settle remaining20",
+          "given": "AR20 after credit.",
+          "action": "Receive20.",
+          "expected": "AR0; bank100; net revenue100/COGS60/profit40; receipts80+20 retained, no second revenue.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "add",
+              "operands": [
+                8000,
+                2000
+              ],
+              "equals": 10000
+            }
+          ],
+          "id": "WB-PHY.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return over sold remainder",
+          "given": "One of original two units already returned.",
+          "action": "Attempt additional return2.",
+          "expected": "Deny; remaining returnable1; no third unit added or extra credit. Existing customer balance unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J06",
+      "revision": 1,
+      "title": "Supplier return and vendor settlement",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Posted purchase10x60; stock10/value600; AP600; bank1000; no tax.",
+      "ruleRefs": [
+        {
+          "id": "BR-PUR-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-106",
+        "C-107",
+        "C-113"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryMovements",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Return2 to supplier",
+          "given": "Original10 remain in warehouse.",
+          "action": "Post linked supplier return2.",
+          "expected": "Stock8/value480; AP480 after approved120 credit; bank1000; no sales revenue.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "remaining value cents",
+              "operation": "mul",
+              "operands": [
+                8,
+                6000
+              ],
+              "equals": 48000
+            }
+          ],
+          "id": "WB-PHY.J06.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Pay remaining liability",
+          "given": "AP480 due.",
+          "action": "Pay480 to vendor once.",
+          "expected": "AP0; bank520; stock8/value480 unchanged; remittance sourced from persisted allocation.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "sub",
+              "operands": [
+                100000,
+                48000
+              ],
+              "equals": 52000
+            }
+          ],
+          "id": "WB-PHY.J06.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Repeat full return",
+          "given": "Separate fixture purchase4x60; all4 returned.",
+          "action": "Request second full return of same source.",
+          "expected": "Reject; stock0, total credited240 once; preserve original return and source.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J06.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return paid supplier bill",
+          "given": "Purchase600 paid; stock10.",
+          "action": "Return2 then seek supplier refund120.",
+          "expected": "Credit creates recoverable supplier balance120 until authorized refund; bank remains400 until refund; stock8. Refund support/policy must be explicit.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J06.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Different vendor payment",
+          "given": "Bill belongs vendor V; vendor W selected.",
+          "action": "Allocate W payment to V bill.",
+          "expected": "Deny mismatch; no cross-party offset or cash movement.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-PHY.J06.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J07",
+      "revision": 1,
+      "title": "Variable cost, sale return and backdated receipts",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Product P; tax off; separate fixtures FIFO and moving average; receipts10@60 then10@80.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-INV-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-INV-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-111",
+        "C-116"
+      ],
+      "entityRefs": [
+        "inventoryCostLayers",
+        "inventoryCostLayerConsumptions",
+        "inventoryProducts",
+        "journalLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/inventory.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Statutory costing applicability and backdate/method-change migration require rule-owner/expert review. Last-cost implementation is not automatic statutory approval."
+      ],
+      "cases": [
+        {
+          "title": "Moving average issue",
+          "given": "20 units/value1400; unit average70.",
+          "action": "Sell5 at100.",
+          "expected": "COGS350; remaining15/value1050; revenue500/profit150.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "opening value cents",
+              "operation": "add",
+              "operands": [
+                60000,
+                80000
+              ],
+              "equals": 140000
+            },
+            {
+              "label": "average issue cents",
+              "operation": "mul",
+              "operands": [
+                5,
+                7000
+              ],
+              "equals": 35000
+            }
+          ],
+          "id": "WB-PHY.J07.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "FIFO issue",
+          "given": "Same opening receipts; FIFO policy.",
+          "action": "Sell5 at100.",
+          "expected": "Consume5 of60 layer; COGS300; remain5@60+10@80=value1100; profit200.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "remaining FIFO cents",
+              "operation": "add",
+              "operands": [
+                30000,
+                80000
+              ],
+              "equals": 110000
+            }
+          ],
+          "id": "WB-PHY.J07.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return after master-cost change",
+          "given": "FIFO sale cost60; master cost now90.",
+          "action": "Return one original sold unit.",
+          "expected": "Restore60 original cost, not90; credited sale100; remaining valuation increases60; linked consumption reverses once.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-PHY.J07.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Backdated receipt",
+          "given": "Sale already posted under reviewed policy.",
+          "action": "Insert earlier-dated receipt at another cost.",
+          "expected": "No silent rewrite of issued journal/return cost. Apply declared revaluation/restriction policy with explicit adjustment/history; unresolved policy blocks.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J07.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Change costing method",
+          "given": "Existing layers and sales present.",
+          "action": "Switch FIFO to average.",
+          "expected": "Versioned migration or explicit refusal; no dropping layers or reinterpretation of historical COGS; settings alone do not establish completed conversion.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J07.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J08",
+      "revision": 1,
+      "title": "Location transfers and stock adjustments",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Location A has10@60, B0; total stock10/value600; scoped Warehouse user for A only.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-INV-04",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-109",
+        "C-110",
+        "C-115"
+      ],
+      "entityRefs": [
+        "inventoryStockDocs",
+        "inventoryStockDocLines",
+        "inventoryStockLevels",
+        "locations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/inventory.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Transfer4 A to B",
+          "given": "A10/B0.",
+          "action": "Authorized actor transfers4.",
+          "expected": "A6/B4; global10/value600; source and destination movements same transfer; no revenue/COGS/global inventory journal.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "conserved qty",
+              "operation": "add",
+              "operands": [
+                6,
+                4
+              ],
+              "equals": 10
+            }
+          ],
+          "id": "WB-PHY.J08.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same location",
+          "given": "A selected as source and destination.",
+          "action": "Attempt transfer4.",
+          "expected": "Reject or explicit nonposting no-op under declared contract; never double quantity/value.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J08.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Insufficient source",
+          "given": "After transfer A6.",
+          "action": "Attempt transfer7.",
+          "expected": "Block under configured negative-stock block; A6/B4 unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J08.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Adjustment loss",
+          "given": "Fresh A10 at60; approved loss account.",
+          "action": "Count9 and post adjustment -1 with reason.",
+          "expected": "A9/value540; Dr approved inventory loss60 Cr inventory60; source count/audit retained.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "count loss cents",
+              "operation": "mul",
+              "operands": [
+                1,
+                6000
+              ],
+              "equals": 6000
+            }
+          ],
+          "id": "WB-PHY.J08.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Location-scope denial",
+          "given": "Warehouse role authorized A only.",
+          "action": "Read/export B or transfer from B using known record.",
+          "expected": "Deny disallowed B access with own-A positive control; no movements or audit CREATE.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-PHY.J08.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J09",
+      "revision": 1,
+      "title": "Fractional goods, negative stock and unit precision",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Meter SKU permits four quantity decimals; discrete unit SKU disallows fractions under reviewed unit policy; negative stock block.",
+      "ruleRefs": [
+        {
+          "id": "RB-INV-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-112",
+        "C-114"
+      ],
+      "entityRefs": [
+        "inventoryProducts",
+        "inventoryStockLevels",
+        "inventoryMovements"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/inventory.ts",
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Fractional units, negative-stock cost and later receipt correction need reviewed applicability; no blanket policy inferred from product defaults."
+      ],
+      "cases": [
+        {
+          "title": "Fractional issue",
+          "given": "Meter stock2.5000 at40 per meter.",
+          "action": "Sell0.7500 at100.",
+          "expected": "Stock1.7500/value70; COGS30; revenue75/profit45; retain four-decimal quantity.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "COGS cents",
+              "operation": "mul",
+              "operands": [
+                75,
+                40
+              ],
+              "equals": 3000
+            }
+          ],
+          "id": "WB-PHY.J09.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Excess scale",
+          "given": "Stock quantity2.5000.",
+          "action": "Input0.00001.",
+          "expected": "Reject excess precision or present reviewed explicit normalization before posting; cannot silently create/loss units.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J09.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Fractional serial or discrete item",
+          "given": "Serial-tracked unit each.",
+          "action": "Dispatch/sell0.5 unit.",
+          "expected": "Deny under declared discrete-unit policy; no half serial or half movement.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J09.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Last-unit race",
+          "given": "P stock1; two separate authorized clients.",
+          "action": "Post simultaneous sales of1 each.",
+          "expected": "Under block policy one succeeds, one denies; final0; one COGS event. Independent connections required.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-PHY.J09.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Explicit negative policy",
+          "given": "Owner deliberately allows negative physical stock.",
+          "action": "Sell1 from0 then receive replacement stock.",
+          "expected": "Record negative state and reviewed provisional cost/revaluation policy; never claim valuation accepted from a permissive flag.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J09.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J10",
+      "revision": 1,
+      "title": "POS sale, change, return and shift close",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Register R; shift opening float100; stock10@60; retail price100; cash tender; POS enabled.",
+      "ruleRefs": [
+        {
+          "id": "RB-POS-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-110",
+        "E-111",
+        "E-112"
+      ],
+      "entityRefs": [
+        "posRegisters",
+        "posShifts",
+        "businessDocuments",
+        "inventoryStockLevels"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/pos-session.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Cash tender and change",
+          "given": "Shift float100; sell2x100.",
+          "action": "Tender250, return change50.",
+          "expected": "Net cash intake200; drawer300; revenue200/COGS120; stock8; receipt shows tender250/change50/paid200.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "net tender cents",
+              "operation": "sub",
+              "operands": [
+                25000,
+                5000
+              ],
+              "equals": 20000
+            },
+            {
+              "label": "drawer cents",
+              "operation": "add",
+              "operands": [
+                10000,
+                20000
+              ],
+              "equals": 30000
+            }
+          ],
+          "id": "WB-PHY.J10.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Partial item return",
+          "given": "Sale2 paid200; drawer300.",
+          "action": "Return1 and refund100.",
+          "expected": "Stock9; revenue100/COGS60; drawer200; original sale receipt preserved; return linked.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-PHY.J10.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Closed shift or wrong register",
+          "given": "Shift closed or belongs another register.",
+          "action": "Submit cached POS ticket.",
+          "expected": "Deny stale posting; no journal/stock/ticket allocation against closed/foreign shift.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-PHY.J10.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Shift close variance",
+          "given": "Expected drawer200; cashier counts195.",
+          "action": "Close shift with declared reason.",
+          "expected": "Z report expected200/actual195/short5; no unexplained balancing posting; any approved variance journal separately linked.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "shortage cents",
+              "operation": "sub",
+              "operands": [
+                20000,
+                19500
+              ],
+              "equals": 500
+            }
+          ],
+          "id": "WB-PHY.J10.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Duplicate checkout",
+          "given": "First checkout accepted; print fails.",
+          "action": "Reload receipt read-only, then submit same accepted checkout identity.",
+          "expected": "Recover stored receipt; one sale/COGS/stock/tender effect; never replay payment solely to repair print.",
+          "kind": "retry",
+          "oracle": [],
+          "id": "WB-PHY.J10.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J11",
+      "revision": 1,
+      "title": "Import purchase and attributable landed cost",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "10 physical units total1000; freight100; duty50; recoverable input VAT180 excluded from cost; reviewed allocation basis.",
+      "ruleRefs": [
+        {
+          "id": "RB-PUR-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-108"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "inventoryCostLayers"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Full customs, recoverability, foreign exchange and late-cost allocation require support/expert decisions; these are expected acceptance targets, not claimed current features."
+      ],
+      "cases": [
+        {
+          "title": "Allocate acquisition costs",
+          "given": "All10 units same eligible physical SKU.",
+          "action": "Post supported reviewed landed-cost flow.",
+          "expected": "Inventory1150/unit115; eligible inputVAT180 separately; total supplier/clearing liabilities1330 under explicit payee model; freight/duty once.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "landed cost cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                10000,
+                5000
+              ],
+              "equals": 115000
+            },
+            {
+              "label": "total credits cents",
+              "operation": "add",
+              "operands": [
+                115000,
+                18000
+              ],
+              "equals": 133000
+            }
+          ],
+          "id": "WB-PHY.J11.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mixed service line",
+          "given": "Physical goods1000 plus service200; freight100.",
+          "action": "Allocate freight by approved eligible-goods basis.",
+          "expected": "Physical inventory1100; service expense200; freight never creates service stock; rule-owner confirms service treatment.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J11.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Recoverable versus nonrecoverable tax",
+          "given": "Input VAT eligibility differs between fixtures.",
+          "action": "Post same nominal tax180.",
+          "expected": "Recoverable180 stays separate; nonrecoverable treatment follows approved capitalization/expense policy; never both claim credit and capitalize same180.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J11.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "FX not supported",
+          "given": "Foreign-currency supplier invoice and settlement.",
+          "action": "Attempt import workflow with exchange differences.",
+          "expected": "If unsupported, explicit capability gap and no claim of FX accounting. Preserve original currency/rate evidence when supported.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J11.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Extra-cost edit after sale",
+          "given": "Receipt costs already partly consumed.",
+          "action": "Add late freight adjustment.",
+          "expected": "Reviewed allocation to remaining inventory/issued cost with dated adjustment or explicit block; do not silently change original posted COGS.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J11.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-PHY.J12",
+      "revision": 1,
+      "title": "Physical month-end reconciliation and reorder signals",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Complete physical cycle: stock10@60; sell2@100; receive80; return1; receive20; vendor purchase600 unpaid.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-07",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-08",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "C-105",
+        "B-116",
+        "E-106"
+      ],
+      "entityRefs": [
+        "inventoryStockLevels",
+        "inventoryCostLayers",
+        "businessDocuments",
+        "journalLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Stock, AR/AP and profit agree",
+          "given": "Cycle ends stock9/value540, AR0, AP600, cash100.",
+          "action": "Reconcile stock ledger, valuation, GL, party subledgers and P&L.",
+          "expected": "Net revenue100; COGS60; profit40; stock asset540; all subledgers match GL or explicit manual-control bridge.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "profit cents",
+              "operation": "sub",
+              "operands": [
+                10000,
+                6000
+              ],
+              "equals": 4000
+            }
+          ],
+          "id": "WB-PHY.J12.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Unclosed earnings in balance sheet",
+          "given": "Opening cash10000/equity10000 plus completed cycle and vendor paid600.",
+          "action": "Run balance sheet before year close.",
+          "expected": "Cash9500+inventory540=assets10040; liabilities0; opening equity10000+current profit40=10040; no balancing journal.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "assets cents",
+              "operation": "add",
+              "operands": [
+                950000,
+                54000
+              ],
+              "equals": 1004000
+            }
+          ],
+          "id": "WB-PHY.J12.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "As-of date excludes future trade",
+          "given": "Invoice690 dated14 Oct; invoice275.50 dated16 Oct.",
+          "action": "Run AR aging as-of15 Oct.",
+          "expected": "Include690 only, with allocations/credits dated by cutoff; current275.50 must not leak into historical debt.",
+          "kind": "history",
+          "oracle": [
+            {
+              "label": "as-of cents",
+              "operation": "add",
+              "operands": [
+                69000
+              ],
+              "equals": 69000
+            }
+          ],
+          "id": "WB-PHY.J12.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Reorder threshold boundary",
+          "given": "P on-hand9; reorder level10; declared availability basis.",
+          "action": "Open low-stock view then receive1.",
+          "expected": "9 is below threshold; boundary10 follows explicit comparator; display cannot count another location/tenant stock without declared scope.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-PHY.J12.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Manual AR control entry",
+          "given": "Commercial AR0; authorized manual DrAR50/Cr opening bridge50.",
+          "action": "Run commercial and GL reconciliation.",
+          "expected": "Report explicit manual-control difference50; do not hide entry or claim AR reconciliation0 merely by excluding manual ledger.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-PHY.J12.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

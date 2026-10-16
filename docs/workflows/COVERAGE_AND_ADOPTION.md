@@ -1,5 +1,7 @@
 # Coverage,ownership and adoption
 
+Current expansion: [LIBRARY.md](LIBRARY.md) adds eight detailed books,52journeys/260cases,14controls and18worked examples, all draft/unbound/not-run. [Expanded handoff](../../handoffs/HANDOFF-20261016-expanded-business-workbooks.md) is the current workbook continuation. The five starter families below are retained anchors; their counts are not added to overlapping detailed/inherited coverage. All92lifecycle tasks are mapped, with their original execution registers unchanged.
+
 ## Starter scope
 
 Five families are draft specifications with27golden steps and44variants. Their task links compose the existing92-task lifecycle register and45archive scenarios;they do not replace or accept them. No new business adapter is bound. This is the foundation of a growing library,not a finished exhaustive catalogue.

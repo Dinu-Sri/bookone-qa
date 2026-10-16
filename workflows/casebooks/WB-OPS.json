@@ -1,0 +1,610 @@
+{
+  "id": "WB-OPS",
+  "revision": 1,
+  "title": "Onboarding, files, history and operational continuity",
+  "profileIds": [
+    "BP-01",
+    "BP-02",
+    "BP-03",
+    "BP-04",
+    "BP-05"
+  ],
+  "familyRefs": [],
+  "journeys": [
+    {
+      "id": "WB-OPS.J01",
+      "revision": 1,
+      "title": "Fresh signup, company bootstrap and first transaction",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "New synthetic supported signup; no existing company trading; plan/country/domain chosen explicitly.",
+      "ruleRefs": [
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-CONFIG-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-107",
+        "E-103",
+        "E-116"
+      ],
+      "entityRefs": [
+        "users",
+        "tenants",
+        "tenantMemberships",
+        "accounts",
+        "companyProfiles"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/entity-onboarding.ts",
+        "apps/web/src/lib/platform-modules.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Fresh company creation",
+          "given": "New account authorized by owner staging scope.",
+          "action": "Complete supported signup/onboarding.",
+          "expected": "Correct Owner membership, CoA, job/module defaults and chosen entity; zero trading; record actual created versus merely prepared.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-OPS.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "First included operation",
+          "given": "Fresh loaded Owner; sales included.",
+          "action": "Post completed service100 and receive100.",
+          "expected": "AR0/bank100/revenue100; included module works without manual hidden repair; broken bootstrap retained as failure.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Add company with custom existing tenant",
+          "given": "Tenant A has custom flags and history.",
+          "action": "Add empty tenant B and switch backA.",
+          "expected": "B correctly bootstrapped; A flags/history untouched; active actor verified on both.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-OPS.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invalid or partial onboarding",
+          "given": "Missing required entity/profile data.",
+          "action": "Submit then reload/resume.",
+          "expected": "No falsely completed unusable company; recoverable explicit state; no duplicate memberships/CoA on retry.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-OPS.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Company type versus business model",
+          "given": "Physical sole-proprietor and service limited company.",
+          "action": "Choose supported profiles independently.",
+          "expected": "Entity legal/domain ceiling separate from product business type; unsupported combination explicitly explained.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-OPS.J02",
+      "revision": 1,
+      "title": "Receipt, product image and rental photo lifecycle",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Synthetic small valid supported image/PDF; hash known privately; own expense/product/event and real foreign records.",
+      "ruleRefs": [
+        {
+          "id": "RB-FILE-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-FILE-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-119",
+        "F-120",
+        "F-121",
+        "F-122",
+        "F-123",
+        "F-124"
+      ],
+      "entityRefs": [
+        "inventoryProducts",
+        "rentalReturnPhotos",
+        "businessDocuments"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/upload-receipt.ts",
+        "apps/web/src/app/actions/inventory.ts",
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Authorized upload and readback",
+          "given": "Own valid record; supported synthetic bytes.",
+          "action": "Upload/reload/download own receipt/image/photo through each applicable adapter.",
+          "expected": "Bytes or documented transform/hash, MIME, actor, tenant, record link and metadata agree; upload does not post extra money.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-OPS.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Wrong magic or truncated bytes",
+          "given": "Filename.png with harmless text or truncated fixture.",
+          "action": "Upload.",
+          "expected": "Validate actual content/bounds; reject without replacing old valid object or creating dangling DB pointer.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-OPS.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Size, dimension and empty bounds",
+          "given": "Below/at/above actual documented byte/pixel limits; zero-byte fixture.",
+          "action": "Upload each in isolated bounded tests.",
+          "expected": "Explicit supported limits enforced; noncrashing errors; no unbounded decoding; exact limits discovered/pinned before run.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Replace with storage failure",
+          "given": "Existing valid attachment; injected isolated storage/DB failure.",
+          "action": "Attempt replacement then retry/cancel.",
+          "expected": "Old valid attachment remains or recoverable explicit state; no published dangling link/orphan accumulation; cleanup scoped.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-OPS.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Foreign link and stale permission",
+          "given": "Real foreign record/object plus role revoked after valid upload.",
+          "action": "Attempt attach/download/sign/export.",
+          "expected": "Authorization checked against tenant/record/current scope before signing; own current positive control works.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-OPS.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-OPS.J03",
+      "revision": 1,
+      "title": "Fresh schema, prior-release upgrade and compatible rollback",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Ephemeral isolated PostgreSQL16 and synthetic golden DB/files; current and prior product SHAs explicitly pinned.",
+      "ruleRefs": [
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-107",
+        "F-108",
+        "F-109",
+        "F-111"
+      ],
+      "entityRefs": [
+        "tenants",
+        "businessDocuments",
+        "inventoryCostLayers",
+        "journalLines"
+      ],
+      "sourcePaths": [
+        "packages/db/src/schema/business-documents.ts",
+        "packages/db/src/schema/inventory.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "This is an isolated execution plan. No migrations, restores or production operations are authorized by publication itself."
+      ],
+      "cases": [
+        {
+          "title": "Fresh migrations",
+          "given": "Empty authorized isolated DB.",
+          "action": "Apply complete migration chain and bootstrap first transaction.",
+          "expected": "Schema/version/RLS runtime roles and basic finance work; direct owner migration success alone not nonowner business proof.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-OPS.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Upgrade populated prior release",
+          "given": "Golden invoices/allocations/stock/rental/files exist.",
+          "action": "Upgrade through actual supported migrations.",
+          "expected": "Counts/checksums and semantic balances/source links preserved; authenticate roles and read/download after upgrade.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-OPS.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Interrupted migration",
+          "given": "Ephemeral fault before/after designated migration boundary.",
+          "action": "Restart via supported procedure.",
+          "expected": "No silently half-version accepted service; safe idempotent completion or documented recovery; first failure retained.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-OPS.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Code rollback compatibility",
+          "given": "New schema/data and prior app version.",
+          "action": "Run explicitly supported rollback scenario.",
+          "expected": "Code rollback compatibility verified separately; never assert data restored merely by reverting image.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Unsupported downgrade",
+          "given": "Prior app cannot safely read new data.",
+          "action": "Attempt downgrade plan review.",
+          "expected": "Explicit operational block and recovery requirements; no destructive table drop/recreate or unapproved production restore.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-OPS.J04",
+      "revision": 1,
+      "title": "Audit, release evidence and fixture cleanup",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Synthetic run-owned tenants; exact product/QA/config/fixture fingerprints; public artifacts allowlisted.",
+      "ruleRefs": [
+        {
+          "id": "BR-AUD-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-GOV-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-115",
+        "F-116",
+        "F-117",
+        "F-118"
+      ],
+      "entityRefs": [
+        "auditLog",
+        "transactions",
+        "tenantMemberships"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/record-entry.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Attributable accepted event",
+          "given": "Own invoice100 posted by known actor.",
+          "action": "Inspect audit and sanitized handoff.",
+          "expected": "Who/what/when/reason/correlation/source retained; no credentials/cookies/customer records/raw trace in public content.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-OPS.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Missing or cancelled release check",
+          "given": "Required same-SHA check absent/skipped/cancelled.",
+          "action": "Evaluate release gate in separate authorized setup.",
+          "expected": "Fail closed; green discovery or workbook metadata cannot promote candidate.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-OPS.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Artifact mismatch",
+          "given": "Tested image/config differs from deployment.",
+          "action": "Assess acceptance.",
+          "expected": "Invalidate affected acceptance; preserve original record; require exact artifact revalidation.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-OPS.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Bounded load",
+          "given": "Explicit isolated infrastructure and agreed budget.",
+          "action": "Measure representative reads/writes plus integrity.",
+          "expected": "Record p95/errors/integrity with declared workload; no claim from average-only result or shared staging stress.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cleanup twice",
+          "given": "Run-owned unneeded fixtures identified; issued history retained per policy.",
+          "action": "Execute permitted cleanup then repeat.",
+          "expected": "Idempotent and tenant/run-scoped; other runs and required first-failure evidence survive; no broad reset.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-OPS.J05",
+      "revision": 1,
+      "title": "Company archive and recovery — execution last",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Owner; synthetic completed business fixture; newly created operationally empty target; no real archives in Git.",
+      "ruleRefs": [
+        {
+          "id": "RB-ARCH-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-ARCH-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-ARCH-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-ARCH-04",
+          "revision": 1
+        },
+        {
+          "id": "RB-ARCH-05",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-110"
+      ],
+      "entityRefs": [
+        "tenants",
+        "businessDocuments",
+        "inventoryStockLevels",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "packages/db/src/schema/business-documents.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Actual encrypted backup/restore remains LAST; no archive operation executed during workbook construction. Existing45 scenarios retain their original IDs and acceptance gaps."
+      ],
+      "cases": [
+        {
+          "title": "Export contract review",
+          "given": "Owner export capability; source golden identities.",
+          "action": "Plan DB+files export only after other workflow execution.",
+          "expected": "Preserve existing45 archive scenarios; this five-case summary does not replace them; private encrypted files/passwords never public.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-OPS.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Empty-target restore precondition",
+          "given": "Target trading/nonempty or identity unknown.",
+          "action": "Attempt restore selection.",
+          "expected": "Refuse unsafe target; supported new empty tenant required; never merge/overwrite trading company.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-OPS.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Semantic roundtrip",
+          "given": "Authorized isolated empty target and complete matched DB/files pair.",
+          "action": "Execute actual encrypted restore LAST.",
+          "expected": "Remapped IDs valid; journals/AR/AP/stock/layers/fleet/deposits/source links/files/roles and own-login match expected semantics; checksums alone insufficient.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-OPS.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Wrong pair, password or interruption",
+          "given": "Wrong files pair/secret or isolated interrupted restore.",
+          "action": "Exercise retained archive scenarios under supported recovery.",
+          "expected": "No falsely complete target or leaked secret; explicit safe recovery; original source untouched.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-OPS.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Operator recovery distinct",
+          "given": "Separate DR/RPO/RTO scope not authorized by staging data permission.",
+          "action": "Assess broader recovery claim.",
+          "expected": "Record as separate infrastructure requirement; tenant archive pass is not operator disaster-recovery certification.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-OPS.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

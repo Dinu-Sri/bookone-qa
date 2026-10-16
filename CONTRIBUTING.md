@@ -6,3 +6,7 @@ For a new feature,edge case or changed expected behaviour,use WORKFLOW_CHANGE/ED
 
 Publish reviewed sanitized QA records under standing owner approval;exclude credentials,rawtraces,realcustomerdata/privatearchives. No product merge/deploy authority from a QA contribution. Existing failing evidence remains immutable. Actual encrypted backup/restore LAST.
 
+# Expanded workbook authoring and execution
+
+Read [the maintained library](docs/workflows/LIBRARY.md), [execution guide](docs/workflows/EXECUTION_GUIDE.md) and applicable business book. Edit canonical `workflows/casebooks` JSON, retain stable IDs and increment affected revisions. New features/edges need change/intake and policy review as applicable. Run `pnpm library:render`, `pnpm library:check` and `pnpm test:business-library`. Source/task mappings and structural validation do not establish executed coverage. Bind real actor/configuration, independent expected outcomes and required evidence layers before testing.
+

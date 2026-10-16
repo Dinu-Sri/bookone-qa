@@ -1,0 +1,640 @@
+{
+  "id": "WB-BANK",
+  "revision": 1,
+  "title": "Banking, cashbook, imports and reconciliation",
+  "profileIds": [
+    "BP-01",
+    "BP-02",
+    "BP-03",
+    "BP-04",
+    "BP-05"
+  ],
+  "familyRefs": [],
+  "journeys": [
+    {
+      "id": "WB-BANK.J01",
+      "revision": 1,
+      "title": "Cashbook income, expense and bank transfer",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "BankA1000, BankB0; authorized business domain; no commercial invoice for simple income/expense.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-07",
+          "revision": 1
+        },
+        {
+          "id": "RB-CONFIG-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-116",
+        "E-105"
+      ],
+      "entityRefs": [
+        "transactions",
+        "journalEntries",
+        "journalLines",
+        "accounts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/record-entry.ts",
+        "apps/web/src/app/actions/cashbook.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Simple income and expense",
+          "given": "BankA1000.",
+          "action": "Record service income200 then expense50.",
+          "expected": "BankA1150; revenue200/expense50/profit150; no AR/AP unless explicitly selected accounting event.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                20000,
+                -5000
+              ],
+              "equals": 115000
+            }
+          ],
+          "id": "WB-BANK.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Transfer between banks",
+          "given": "BankA1150, B0.",
+          "action": "Transfer300 A to B.",
+          "expected": "A850/B300; total1150; no income/expense; linked balanced transfer once.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank conservation cents",
+              "operation": "add",
+              "operands": [
+                85000,
+                30000
+              ],
+              "equals": 115000
+            }
+          ],
+          "id": "WB-BANK.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Personal owner movement",
+          "given": "Business domain cash; owner injection100.",
+          "action": "Record approved capital contribution.",
+          "expected": "Cash+100/equity+100; no service revenue; legal entity/domain treatment reviewed.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Commercial receipt duplicated as income",
+          "given": "Invoice200 already posted.",
+          "action": "Receive through simple-entry route.",
+          "expected": "Correct bridge/allocation or explicit disallow; cannot credit revenue a second time while leaving AR200 hidden.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invalid account or domain",
+          "given": "Foreign/inactive bank or personal domain selected.",
+          "action": "Submit business transfer.",
+          "expected": "Deny or require explicit supported interdomain accounting; no accidental tenant/domain mixing.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-BANK.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-BANK.J02",
+      "revision": 1,
+      "title": "Portable statement parsing and duplicate import",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Synthetic bank rows: opening1000, credit250, debit100, closing1150; no customer files.",
+      "ruleRefs": [
+        {
+          "id": "BR-IMP-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-FILE-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-101",
+        "F-102",
+        "F-103",
+        "F-104"
+      ],
+      "entityRefs": [
+        "bankStatementProfiles",
+        "bankStatementImports",
+        "bankStatementLines",
+        "bankImportIssues"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/statement-import.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Normalize known synthetic statement",
+          "given": "CSV/XLSX/PDF support verified separately; explicit mapping/sign conventions.",
+          "action": "Preview and import rows250in/100out.",
+          "expected": "Two normalized lines; close1150; import alone not duplicate ledger income/expense; source hashes/profile version retained.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "statement close cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                25000,
+                -10000
+              ],
+              "equals": 115000
+            }
+          ],
+          "id": "WB-BANK.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same file and same rows twice",
+          "given": "First import accepted.",
+          "action": "Reupload same bytes then same rows reordered.",
+          "expected": "Declared per-account duplicate identity prevents second accepted bank lines/postings; row/file decisions visible.",
+          "kind": "retry",
+          "oracle": [],
+          "id": "WB-BANK.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invalid date",
+          "given": "Rows29Feb2025 or31Apr2026; valid29Feb2024 control.",
+          "action": "Preview import.",
+          "expected": "Reject impossible dates; preserve valid leap-date control; no JS date rollover invention.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-BANK.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Ambiguous sign and amount",
+          "given": "Debit/credit columns conflict or amount1,2.3.",
+          "action": "Preview with declared locale.",
+          "expected": "Actionable mapping/validation block; no silent sign/cents fabrication; stored raw/private evidence not published.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-BANK.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same row in another account",
+          "given": "BankA/B legitimately share date/amount/reference.",
+          "action": "Import into B.",
+          "expected": "Account/tenant-specific identity does not discard B line merely because A already has same visible text.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-BANK.J03",
+      "revision": 1,
+      "title": "Match, partial/group allocation and missing entry",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Bank inflow250; book receipts100 and150; separate unmatched charge20; no tax.",
+      "ruleRefs": [
+        {
+          "id": "BR-IMP-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-04",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-105",
+        "F-113"
+      ],
+      "entityRefs": [
+        "bankReconciliationCases",
+        "bankReconciliationCaseBankLines",
+        "bankReconciliationCaseBookTransactions"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/bank-reconciliation.ts",
+        "apps/web/src/app/actions/statement-import.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "One bank to many book",
+          "given": "Bank250; book100+150.",
+          "action": "Confirm approved group match.",
+          "expected": "Matched250 exactly; no new income/cash journal from matching existing entries; audit links all three.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "group cents",
+              "operation": "add",
+              "operands": [
+                10000,
+                15000
+              ],
+              "equals": 25000
+            }
+          ],
+          "id": "WB-BANK.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Many bank to one book",
+          "given": "Bank100+150; book250.",
+          "action": "Confirm supported group match.",
+          "expected": "No duplicate book allocation; all matched once; total250 both sides.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mismatch",
+          "given": "Bank250; candidate books100+140.",
+          "action": "Attempt confirm group.",
+          "expected": "Reject unexplained10 difference or require separately approved adjustment; no silent balancing entry.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Create missing bank charge",
+          "given": "Bank debit20 missing in books.",
+          "action": "Create approved bank-fee expense20.",
+          "expected": "Dr bank fee20 Cr bank20 once; reconcile created transaction; retry does not create second fee.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-BANK.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Undo match",
+          "given": "Previously matched250.",
+          "action": "Undo matching decision.",
+          "expected": "Restore unmatched status/links as contracted; original book receipt250 remains; undo match is not reversal of actual money.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-BANK.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-BANK.J04",
+      "revision": 1,
+      "title": "Outstanding items, reconciliation close and period lock",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Books bank1000; statement900; deposit in transit100; one unreviewed case initially.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-07",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-06",
+          "revision": 1
+        },
+        {
+          "id": "BR-IMP-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-105",
+        "B-111"
+      ],
+      "entityRefs": [
+        "bankReconciliationSessions",
+        "bankReconciliationOutstandingItems",
+        "periodLocks"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/bank-reconciliation.ts",
+        "apps/web/src/app/actions/reconciliation.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Outstanding bridge",
+          "given": "Bank statement900, legitimate deposit in transit100.",
+          "action": "Mark item still waiting with evidence and reconcile.",
+          "expected": "Adjusted bank1000 matches book1000; outstanding100 carried with identity/date; no fake income100.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "adjusted bank cents",
+              "operation": "add",
+              "operands": [
+                90000,
+                10000
+              ],
+              "equals": 100000
+            }
+          ],
+          "id": "WB-BANK.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Unreviewed cases block finish",
+          "given": "One needs_review case remains.",
+          "action": "Attempt finish session.",
+          "expected": "Explicit block; no completed snapshot or implied period acceptance.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-BANK.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Waiting decision required",
+          "given": "Outstanding candidate exists but not confirmed still waiting.",
+          "action": "Attempt finish.",
+          "expected": "Require actual decision; merely classifying outstanding does not finish review.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Lock after completion",
+          "given": "Reconciled October accepted under policy.",
+          "action": "Lock period then attempt datedOctober posting.",
+          "expected": "Authoritative lock denies new posted mutation; reconcile snapshot preserved; unlock authority/reason separately enforced.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-BANK.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Reopen",
+          "given": "Completed session with carried100.",
+          "action": "Authorized reopen/change decision.",
+          "expected": "New attributable state/history; previous snapshot retained; no duplicate carried item next period.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-BANK.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-BANK.J05",
+      "revision": 1,
+      "title": "Import cancellation, transfer matching and account privacy",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Own and foreign bank accounts; synthetic import2 rows; supported account transferA→B300.",
+      "ruleRefs": [
+        {
+          "id": "BR-IMP-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "F-102",
+        "F-104",
+        "F-106",
+        "F-115"
+      ],
+      "entityRefs": [
+        "bankStatementImportEvents",
+        "bankReconciliationEvents",
+        "bankStatementLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/bank-reconciliation.ts",
+        "apps/web/src/app/actions/statement-import.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Transfer pair",
+          "given": "BankA-300 and BankB+300 correspond to same actual transfer.",
+          "action": "Confirm transfer case.",
+          "expected": "One transfer accounting effect300; two statement sides matched; no income/expense600 or second cash movement.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-BANK.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Void imported file",
+          "given": "Import has matches and a created fee20.",
+          "action": "Use supported void workflow.",
+          "expected": "Explicitly preserve/undo linked creations according to policy; never silently erase unrelated posted money; audit remains.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-BANK.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Interruption retry",
+          "given": "Isolated import fails after some durable boundary.",
+          "action": "Retry same accepted identity.",
+          "expected": "Atomic rollback or declared resumable state; no duplicated rows/fees or false whole-batch success.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-BANK.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Foreign account export",
+          "given": "Known tenant B import/report exists.",
+          "action": "Export as A with own export positive.",
+          "expected": "Foreign denied; no original bank bytes/metadata or signed URL exposure.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-BANK.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Formula-like memo",
+          "given": "Inert memo begins =1+1 or HTML-like text.",
+          "action": "Preview/render/export.",
+          "expected": "Safe text handling; no spreadsheet execution on supported export; file/row errors bounded and nonsecret.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-BANK.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}
