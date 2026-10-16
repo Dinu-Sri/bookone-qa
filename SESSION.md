@@ -1,5 +1,7 @@
 # Resume BookOne QA
 
+Current browser continuation: prior session signed out; fresh P261016-Owner signup form prepared but **not submitted**. Exact agreement-accepting signup awaits action-time confirmation. No account/company created or money posted. [Onboarding checkpoint](runs/RUN-20261016-fresh-owner-onboarding.md).
+
 Repository handoff instruction (owner, 2026-10-16): all reviewed, sanitized QA handoffs and documents go through this repository. Return a detailed message with repository links for the owner to relay to the coding agent. Publication of this checkpoint is explicitly authorized; the earlier automatic review block is resolved by that instruction. PR #34 remains draft; no merge or deployment is authorized by this publication. Credentials, raw evidence and detailed private security reproduction remain excluded.
 
 Read AGENTS.md, STATUS.md, memory/customer-readiness.json, memory/programme.json and relevant rulebook rules. All-business customer-readiness scope remains active; physical first, actual backup/restore LAST.

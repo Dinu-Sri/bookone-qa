@@ -1395,5 +1395,18 @@
     "clickTypingTest": "not-executed",
     "imageSchemaDatabaseIdentity": "not-established",
     "privateEvidencePublished": false
+  },
+  "freshOwnerOnboarding20261016": {
+    "record": "runs/RUN-20261016-fresh-owner-onboarding.md",
+    "actorAlias": "P261016-Owner",
+    "status": "signup-prepared-not-submitted;agreement-confirmation-pending",
+    "logoutConfirmed": true,
+    "accountCreated": false,
+    "companyCreated": false,
+    "financialWrites": 0,
+    "liveStamp": "v2.5.10 ·81a505c",
+    "credentials": "private-ignored-only",
+    "ownerSignupAuthorization": "2026-10-16 explicit unlimited synthetic accounts on staging",
+    "next": "confirm exact agreement-accepting signup submission;then explicit fixture sign-in/role/company/initialstate"
   }
 }

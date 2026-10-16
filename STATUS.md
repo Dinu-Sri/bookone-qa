@@ -1,5 +1,7 @@
 # BookOne customer-readiness status
 
+Current browser continuation: prior session signed out; fresh P261016-Owner signup form prepared but **not submitted**. Exact agreement-accepting signup awaits action-time confirmation. No account/company created or money posted. [Onboarding checkpoint](runs/RUN-20261016-fresh-owner-onboarding.md).
+
 Repository handoff instruction (owner, 2026-10-16): all reviewed, sanitized QA handoffs and documents go through this repository. Return a detailed message with repository links for the owner to relay to the coding agent. Publication of this checkpoint is explicitly authorized; the earlier automatic review block is resolved by that instruction. PR #34 remains draft; no merge or deployment is authorized by this publication. Credentials, raw evidence and detailed private security reproduction remain excluded.
 
 **NOT customer-ready.** Current tested source v2.5.10/81a505c4e39c71f5019eea5de0bc7c5fffc50a1f. Browser connection recovered at09:20Asia/Colombo; live UI stamp independently observed **v2.5.10 · 81a505c**. [Read/capture recovery](runs/RUN-20261016-browser-connection-recovered.md); fresh intended QA actor sign-in still required. [Current run](runs/RUN-20261016-v2510-independent-retest.md), [coding handoff](handoffs/HANDOFF-20261016-v2510-findings.md), [launch gates](docs/LAUNCH_ACCEPTANCE.md). QA PR34 draft, no merge/deploy.
