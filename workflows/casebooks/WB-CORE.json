@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 1,
+  "revision": 2,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -260,7 +260,7 @@
     },
     {
       "id": "WB-CORE.J03",
-      "revision": 1,
+      "revision": 2,
       "title": "Reports, aging, control accounts and current earnings",
       "status": "draft",
       "risk": "P1",
@@ -331,7 +331,7 @@
           "title": "Payment after cutoff",
           "given": "Invoice600 on14Oct; payment250 on16Oct.",
           "action": "Report aging as-of15Oct.",
-          "expected": "AR600 at cutoff, not current350; payment date matters as well as invoice issue date.",
+          "expected": "AR600 at cutoff, not current350; payment date matters as well as invoice issue date. Additional boundary: invoice256.50 issued16Oct, receipt75.50 on16Oct and DISTINCT receipt1 on17Oct gives AR181 as-of16Oct and180 currently; aggregate with old positive70 is251/250. Preserve credit-balance bridge separately.",
           "kind": "history",
           "oracle": [],
           "id": "WB-CORE.J03.C02",
@@ -393,7 +393,7 @@
     },
     {
       "id": "WB-CORE.J04",
-      "revision": 1,
+      "revision": 2,
       "title": "Master data, document snapshots and safe archive",
       "status": "draft",
       "risk": "P1",
@@ -444,7 +444,7 @@
           "title": "Print style change",
           "given": "Issued snapshot styleV1.",
           "action": "Edit current styleV2 and print old invoice.",
-          "expected": "Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview.",
+          "expected": "Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview. Detail arithmetic must also reconcile: line net270, header discount13.50, displayed subtotal270 and total256.50; do not label net total256.50 as pre-header subtotal.",
           "kind": "history",
           "oracle": [],
           "id": "WB-CORE.J04.C02",

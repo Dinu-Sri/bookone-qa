@@ -1,6 +1,6 @@
 {
   "id": "WB-HYB",
-  "revision": 1,
+  "revision": 2,
   "title": "Hybrid businesses and cross-module jobs",
   "profileIds": [
     "BP-05"
@@ -146,7 +146,7 @@
     },
     {
       "id": "WB-HYB.J02",
-      "revision": 1,
+      "revision": 2,
       "title": "Shared discounts, mixed returns and tax buckets",
       "status": "draft",
       "risk": "P1",
@@ -269,7 +269,7 @@
           "title": "Source header discount preview",
           "given": "Stored original net275.50 including header discount.",
           "action": "Open linked return preview then post permitted full return.",
-          "expected": "Preview/post/credit all275.50; do not omit header discount or use changed master default.",
+          "expected": "Preview/post/credit all275.50; do not omit header discount or use changed master default. Partial-source variant: separate source3x100, line10%, header5%, total256.50, cost180. Qty1 preview AND post85.50/cost60; remaining2 preview AND post171/cost120; cumulative256.50/cost180. UI previews must use source proportions rather than fixed copied discounts30/13.50.",
           "kind": "history",
           "oracle": [],
           "id": "WB-HYB.J02.C05",
