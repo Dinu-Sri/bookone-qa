@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "1.0.0",
+  "rulebookVersion": "1.0.0",
+  "specs": [
+    "workflows/specs/WF-PHY-001.json",
+    "workflows/specs/WF-SVC-001.json",
+    "workflows/specs/WF-DIG-001.json",
+    "workflows/specs/WF-REN-001.json",
+    "workflows/specs/WF-HYB-001.json"
+  ],
+  "overlays": [
+    "BP-06",
+    "BP-07",
+    "BP-08",
+    "BP-09"
+  ],
+  "note": "Workflow families compose existing task IDs;they do not replace batches/coverage.json or inherited S IDs. Five starters are not exhaustive."
+}
+
