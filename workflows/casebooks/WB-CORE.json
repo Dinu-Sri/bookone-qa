@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 2,
+  "revision": 3,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -260,7 +260,7 @@
     },
     {
       "id": "WB-CORE.J03",
-      "revision": 2,
+      "revision": 3,
       "title": "Reports, aging, control accounts and current earnings",
       "status": "draft",
       "risk": "P1",
@@ -368,6 +368,37 @@
           "kind": "boundary",
           "oracle": [],
           "id": "WB-CORE.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-CORE.J03.C06",
+          "title": "Currently closed debts remain visible before future settlements",
+          "given": "AR source297 issued17Oct,paid150/credit112.50 same17Oct leaves34.50; future18Octcredit184.50 closesit. AP source100 issued17Oct fullypaid18Oct, current0. Separate APsource256.50 paid50/17Oct andfullycredited18Oct, current0.",
+          "action": "Compare current payment lists and aging17Oct/18Oct independently for each source.",
+          "expected": "Currentlists excludeclosedrecords;AR17Oct34.50 then18Oct0;AP100source17Oct100 then18Oct0;AP256.50source17Oct206.50 then18Oct0. Reconstruct closed obligations rather than filtering current-open list;future credits andpayments cannot erase prior debt. Credit balances bridge to netGL separately.",
+          "kind": "history",
+          "oracle": [
+            {
+              "label": "prior AR cents",
+              "operation": "sub",
+              "operands": [
+                29700,
+                15000,
+                11250
+              ],
+              "equals": 3450
+            },
+            {
+              "label": "prior AP cents",
+              "operation": "sub",
+              "operands": [
+                25650,
+                5000
+              ],
+              "equals": 20650
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }
@@ -623,7 +654,7 @@
     },
     {
       "id": "WB-CORE.J06",
-      "revision": 1,
+      "revision": 2,
       "title": "Forms, retries, concurrency and ambiguous success",
       "status": "draft",
       "risk": "P1",
@@ -715,6 +746,17 @@
           "kind": "invalid-input",
           "oracle": [],
           "id": "WB-CORE.J06.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Server validation preserves long invoice entry for correction",
+          "given": "Unsaved new invoice with entered customer,dates,SKU,qty3,price1; linepercent150 invalid.",
+          "action": "Submit via Post and inspect destination,feedback,values and mutation counts; correct percent0 in same entry context.",
+          "expected": "Actionable excessive-percent error; preserve customer,lines,prices,dates and other entered fields for correction; no invoice/journal/party side effects from rejection. Do not redirect to list and reopen an empty form. Busy state clears and corrected valid submission posts once.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-CORE.J06.C06",
           "execution": "not-run",
           "binding": null
         }

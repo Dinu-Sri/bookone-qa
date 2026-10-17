@@ -1,17 +1,17 @@
-# BookOne maintained business workbooks — library 1.0.0
+# BookOne maintained business workbooks — library 1.1.0
 
 This is the expanded publication requested by the owner on 16 October 2026: business journeys and edge cases that humans and agents can maintain and use to test BookOne. It applies the [shared protocol](PROTOCOL.md) and canonical rulebook; it does not create a second policy authority.
 
-**Eight books, 52 journeys, 260 case definitions, 14 reusable control contracts, and 18 independent financial examples containing 51 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
+**Eight books, 52 journeys, 266 case definitions, 14 reusable control contracts, and 18 independent financial examples containing 51 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
 
 | Workbook | Journeys | Cases | Main coverage |
 |---|---:|---:|---|
-| [Physical](books/WB-PHY.md) | 12 | 60 | Masters/opening, PO approval, partial GRN/bills, GRNI, cash purchases, sales, payments, both returns, costs, locations, POS, imports, close |
+| [Physical](books/WB-PHY.md) | 12 | 62 | Masters/opening, PO approval, partial GRN/bills, GRNI, cash purchases, sales, payments, both returns, costs, locations, POS, imports, close |
 | [Service](books/WB-SVC.md) | 5 | 25 | Quote to earned invoice, collections/credits/refunds, discounts/tax arithmetic, costs, advance/cancellation/milestone boundaries |
 | [Digital](books/WB-DIG.md) | 4 | 20 | Non-stock accounting, delivery/licence support boundary, refunds, historical price, mixed bundles |
 | [Rental](books/WB-REN.md) | 9 | 45 | Fleet/reservation, dispatch/partial returns, buckets/wash, deposits, invoice timing, extension/cancellation, kits/serials, charges, photos/history |
-| [Hybrid](books/WB-HYB.md) | 5 | 25 | Four product classes, shared discounts/returns, plans/modules/entities, scopes/domains/switching, contention/atomicity |
-| [Shared accounting/access](books/WB-CORE.md) | 7 | 35 | Allocation batches, tender, locks/reversals, financial statements/as-of, historical masters, roles/tenants, forms/retries/faults, tax boundaries |
+| [Hybrid](books/WB-HYB.md) | 5 | 27 | Four product classes, shared discounts/returns, plans/modules/entities, scopes/domains/switching, contention/atomicity |
+| [Shared accounting/access](books/WB-CORE.md) | 7 | 37 | Allocation batches, tender, locks/reversals, financial statements/as-of, historical masters, roles/tenants, forms/retries/faults, tax boundaries |
 | [Banking/reconciliation](books/WB-BANK.md) | 5 | 25 | Cashbook/transfers, portable imports/deduplication, group matches, missing fees, outstanding/close/locks, cancellation/privacy |
 | [Data/operations](books/WB-OPS.md) | 5 | 25 | Fresh company bootstrap, file lifecycle, upgrades/rollback, audit/evidence/cleanup, retained archive programme executed last |
 
@@ -53,3 +53,8 @@ These books cover a broad first library for the current product; they do not enu
 Manufacturing/BOM production, batch/expiry/serial stock-sale tracking, full payroll, subscriptions/recurring automation, complex project costing, multi-currency FX, leases, depreciation, specialized statutory filing, e-commerce fulfilment and industry-specific regulation remain discovery/support backlog unless separately contracted and mapped. HR is explicitly marked coming soon in the current module catalogue. Rental serials/kits do not establish serialised retail assets or manufacturing.
 
 A new capability must add its entity/state model, rules, valid/invalid transitions, fixture/oracle, roles/scopes, history/upgrade effects and test bindings before acceptance. An unknown source change broadens regression until its dependencies are mapped. Actual encrypted backup/restore stays LAST.
+
+
+## 2026-10-17 maintenance
+
+Library1.1.0 adds six stable cases from the v2.5.13 browser wave: linked supplier/customer identity, source-price preview consistency, sequential residual-cent returns and retained input on validation and closed-debt historical reconstruction. See [change and adoption record](../../changes/WCHG-20261017-v2513-next-wave.md).266cases remain draft/unbound/not-run; [95 bounded manual assertions](../../runs/CHECKS-20261017-v2513-next-wave.json) are separate evidence, not full canonical case acceptance. Original source map remains a pinned2.5.12 study; current1a10201 actual-diff overlay is recorded separately, with no silent execution pin advance.

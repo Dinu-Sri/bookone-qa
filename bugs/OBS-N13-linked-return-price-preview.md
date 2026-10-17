@@ -1,0 +1,7 @@
+# OBS-N13-PRICE — source price edits still produce a misleading return preview
+
+P2/open; deployed v2.5.13 ·1a10201, full1a1020127c4ff0f11ccd9d84d736c6b18b235fca. Adjacent BUG0062 variant; original quantity-only reproduction passes. Synthetic staging D2513ReturnCustomer source INV0005,3physicalunits@100,line10%,header5%=256.50,cost180. Full preview256.50, first1 preview/post85.50/cost60, remaining2preview171 all pass.
+
+On remaining2, edit copied unitprice100→200 using the exposed textbox. Preview becomes line380/header19/total361. Save once: **SR0005 persists171**, using original price100/source prorated discounts and cost120. Source settled0 with SR0004/5. Expected source economics locked or unsupported edit explicitly rejected, with truthful preview and accepted amount. Do not silently preview361 and post171. No wrong ledger171 allegation; posting preserves source correctly. Related editable discount/header fields should be reviewed, not assumed tested.
+
+Owner coding agent; maintain WB-HYB.J02.C06, inspect actual source-field/preview/post contracts, add independent source-price edit and unchanged valid partial/full regressions. No source snapshot/ledger correction required by this observation. Rulebook1.0.0 unchanged. Full actor/stock/role/race acceptance remains open. See consolidated run/register for fingerprint and exact assertions; no credentials/raw traces/real customer data published.

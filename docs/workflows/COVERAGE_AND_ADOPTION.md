@@ -1,6 +1,6 @@
 # Coverage,ownership and adoption
 
-Current expansion: [LIBRARY.md](LIBRARY.md) adds eight detailed books,52journeys/260cases,14controls and18worked examples, all draft/unbound/not-run. [Expanded handoff](../../handoffs/HANDOFF-20261016-expanded-business-workbooks.md) is the current workbook continuation. The five starter families below are retained anchors; their counts are not added to overlapping detailed/inherited coverage. All92lifecycle tasks are mapped, with their original execution registers unchanged.
+Current expansion: [LIBRARY.md](LIBRARY.md) adds eight detailed books,52journeys/266cases,14controls and18worked examples, all draft/unbound/not-run. [Expanded handoff](../../handoffs/HANDOFF-20261016-expanded-business-workbooks.md) is the original workbook publication; current maintenance and live evidence are in [next-wave handoff](../../handoffs/HANDOFF-20261017-v2513-next-wave.md). The five starter families below are retained anchors; their counts are not added to overlapping detailed/inherited coverage. All92lifecycle tasks are mapped, with their original execution registers unchanged.
 
 ## Starter scope
 
