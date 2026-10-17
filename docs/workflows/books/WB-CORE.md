@@ -1,6 +1,6 @@
 # WB-CORE — Shared accounting, access and document controls
 
-Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 2; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 3; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01, BP-02, BP-03, BP-04, BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -153,6 +153,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Brand A and domain business filters selected.
 - Action: Compare TB/P&L/BS/AR/AP/export.
 - Expected: Same declared date/scope filters consistently applied or explicit bridge; totals cannot reconcile by silently dropping rows.
+
+### WB-CORE.J03.C06 — Currently closed debts remain visible before future settlements
+
+- Type: history; execution: **not run**; adapter: **unbound**.
+- Given: AR source297 issued17Oct,paid150/credit112.50 same17Oct leaves34.50; future18Octcredit184.50 closesit. AP source100 issued17Oct fullypaid18Oct, current0. Separate APsource256.50 paid50/17Oct andfullycredited18Oct, current0.
+- Action: Compare current payment lists and aging17Oct/18Oct independently for each source.
+- Expected: Currentlists excludeclosedrecords;AR17Oct34.50 then18Oct0;AP100source17Oct100 then18Oct0;AP256.50source17Oct206.50 then18Oct0. Reconstruct closed obligations rather than filtering current-open list;future credits andpayments cannot erase prior debt. Credit balances bridge to netGL separately.
+- Independent numeric checks: prior AR cents: sub(29700, 15000, 11250) = 3450; prior AP cents: sub(25650, 5000) = 20650.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
@@ -308,6 +316,13 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Invalid amount or server error.
 - Action: Submit, correct fields and resubmit.
 - Expected: Actionable error and retained inputs; busy overlay clears on supported completion; no second hidden request.
+
+### WB-CORE.J06.C06 — Server validation preserves long invoice entry for correction
+
+- Type: invalid-input; execution: **not run**; adapter: **unbound**.
+- Given: Unsaved new invoice with entered customer,dates,SKU,qty3,price1; linepercent150 invalid.
+- Action: Submit via Post and inspect destination,feedback,values and mutation counts; correct percent0 in same entry context.
+- Expected: Actionable excessive-percent error; preserve customer,lines,prices,dates and other entered fields for correction; no invoice/journal/party side effects from rejection. Do not redirect to list and reopen an empty form. Busy state clears and corrected valid submission posts once.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
