@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 2,
+  "revision": 3,
   "convention": "Signed ledger: debit positive, credit negative. All posting amounts integer LKR cents. Account names identify purpose, not hardcoded product codes.",
   "examples": [
     {
@@ -1585,6 +1585,33 @@
             "priorAcceptedCents": 891,
             "requiredFinalCreditCents": 104,
             "finalUnitLineNetCents": 100
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-14-01",
+      "title": "Unchanged draft discount roundtrip",
+      "caseRefs": [
+        "WB-CORE.J04.C06"
+      ],
+      "policy": "No tax; independent integer-cent state example; draft is not a posted receivable. Full draft save/post and cost policy require separately bound runtime evidence.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Save draft3x100/line10percent/header5percent, then open Edit without changing it",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "grossCents": 30000,
+            "lineDiscountCents": 3000,
+            "lineNetCents": 27000,
+            "headerDiscountCents": 1350,
+            "draftTotalCents": 25650,
+            "postedJournalCount": 0
           }
         }
       ],

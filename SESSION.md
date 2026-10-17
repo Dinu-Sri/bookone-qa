@@ -1,3 +1,11 @@
+# Resume current browser continuation
+
+Latest publication is follow-up on PR40 branchqa/v2514-retest. ReadSTATUS and live handoff. AccountQA N141710actuallycreated; own companyOwnercontext verified. Privatefixture file still .local/planned-qa-account.json,createdtrue. Earlier pending-signup text below is historical, superseded by this section.
+
+Browser tab1455173440 wasatNewSalesReturntransition whenconnectiontimedout; no returnsubmitted. Browserruntimeexistingagent/browser/bookTab/n14InvoiceUrl(draft)/n14StockPurchaseUrl(PUR0002) maypersist, but don'ttruststaleDOM. Reuse selectedsession, inspectcurrentpage/stamp/actorbeforeactions. Don't replay purchases/returns/invoice; financialfixtures andexactnextstep in livehandoff. Browserconnectionunavailable preventedfinalscreenshot/handoffmark.
+
+UnchangeddraftEditlossnewP2; cancelledwithoutsave. KeepdraftINV0001. PostedINV0002isvalidsource3units/256.50/cost180. Prior3sourceconcernsstillpendinglive.32/1/2/1boundedchecks;26governancepasses. Books1.3.0/270draftcases. Newdeploymentinvalidatescandidateacceptance,notoldimmutableevidence. Ownerrelayssanitizedrepohandoff;no directmessage/merge/deploy. BackuprestoreLAST.
+
 # Continuation checkpoint — v2.5.14
 
 Read STATUS then current handoff/run/plan and AGENTS73–81. Public source tests remain red24/28; governance26/26. Setup failures retained in run: extra materializer newline failed hash before discovery; parent-directory launch errors corrected. No expected values changed. Credentials/raw logs/product source excluded.

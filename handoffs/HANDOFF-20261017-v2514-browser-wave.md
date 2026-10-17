@@ -1,0 +1,13 @@
+# Owner-relayed live continuation — v2.5.14
+
+QA continued independently on exacta36af042753f3ad8b40246d6cd579deac9233ba7. Fresh synthetic signup and own company actually created after exact terms confirmation; fresh credential login/Companypurpose/Owner context observed. Initial settings preserved, no access grant/operatorrepair. Browser connection then timed out during first sales-return form inspection. No sales-return submission; resume from saved fixtures, do not replay financial actions.
+
+Read [live report](../runs/RUN-20261017-v2514-browser-wave.md), [individual checks](../runs/CHECKS-20261017-v2514-browser-wave.json), [new draft bug](../bugs/OBS-N14-DRAFT-DISCOUNT.md), [workbook maintenance](../changes/WCHG-20261017-v2514-browser-wave.md). Prior [source handoff](HANDOFF-20261017-v2514-retest.md) with24/28sourcechecks and3sourceconcerns remains separately open.
+
+New P2: savedINV0001qty3@100/line10%/header5%=256.50. Edit without changes drops line discount, keepsheaderfixed13.50,shows286.50. Cancelled; originaldraftpreserved, noinflatedpost. Pinned InvoiceDocumentForm draft.lines.map omits discountfields. Please repair hydration/roundtrip and add lasting unchanged-save/Post regressions, including equivalent quotation/order paths as applicable. Preserve independent256.50 expectation and excessive-discount rejection.
+
+Bounded positives:150% invoice rejection now retains inputs;270/13.50/256.50 preview; draft createszerojournal; physicalpurchase600 postsInventory/AP correctly; fullreturn600 reversesboth; freshsourceqty1purchase-returnpreview/post60/sourceAP540,correctsupplier/priceUIlocked; directpostedinvoice256.50 includesCOGS180. These do not close original P1 server-party invariant or certify complete stock/security/history workflow.
+
+Fixtures to preserve: ownQA N141710company; physicalN14Widget; INV0001draft256.50; INV0002posted256.50; PUR0001+fullPR0001each600/settled; PUR0002 600+partialPR0002 60,remainingAP540. Latestverified5journals/debitscredits2296.50. NetexpectedAR256.50/inventory360/AP540/profit76.50; report/stockquantityreadbackpending. No final screenshot because connection unavailable. Private credentials/rawtrace/productsource excluded.
+
+Booksnow1.3.0/270draftcases; newCORE.J04.C06 and EX-CORE-14-01.26infrastructuretestspassed; mandatorymaintenanceAGENTS73–81 still applies. Original rulebook/expertpending unchanged. QA next reconnects same browser, inspects currentreturnpage/stamp/actor, executesINV0002partial85.50+171 withcost60+120, then source concerns/residual ladders/taxconditional/duplicateqty and broader business scope. If deploymentchanged, newfingerprintrequired. Actual encryptedbackup/restore LAST. Owner manually relays this handoff; no directmessage, merge or deployment.

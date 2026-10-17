@@ -792,3 +792,22 @@ Expected signed ledger: {}.
 
 Expected business state: {"sourceGrossCents":995,"priorAcceptedCents":891,"requiredFinalCreditCents":104,"finalUnitLineNetCents":100}.
 
+
+## EX-CORE-14-01 — Unchanged draft discount roundtrip
+
+Cases: WB-CORE.J04.C06.
+
+Assumptions: No tax; independent integer-cent state example; draft is not a posted receivable. Full draft save/post and cost policy require separately bound runtime evidence.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Save draft3x100/line10percent/header5percent, then open Edit without changing it
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"grossCents":30000,"lineDiscountCents":3000,"lineNetCents":27000,"headerDiscountCents":1350,"draftTotalCents":25650,"postedJournalCount":0}.
+
