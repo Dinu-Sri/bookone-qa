@@ -26,7 +26,7 @@ Account names in worked examples are account purposes. Bind actual approved CoA 
 
 Each journey names ten common control contracts. Resolve applicability and concrete inputs for each; add FILE/TAX/UPGRADE/BOUNDARY where relevant. A read-only step may have no posting or idempotency effect: state why, rather than claim a denial/race executed. Numeric thresholds, file limits, grace periods, role overrides and policy gaps must be pinned before affected acceptance.
 
-The 266 authored cases are not 266×14 executed combinations. Mandatory critical intersections are separately selected and recorded. Use pairwise sampling only for documented lower-risk combinations after critical money/access/conservation/history checks are explicitly planned. Preserve known regression identities and all 92 lifecycle tasks; task-to-journey mapping does not replace existing adapters or assertions.
+The 269 authored cases are not 269×14 executed combinations. Mandatory critical intersections are separately selected and recorded. Use pairwise sampling only for documented lower-risk combinations after critical money/access/conservation/history checks are explicitly planned. Preserve known regression identities and all 92 lifecycle tasks; task-to-journey mapping does not replace existing adapters or assertions.
 
 ## Execute a normal transition deeply
 

@@ -735,3 +735,60 @@ Expected signed ledger: {"bankA":85000,"bankB":30000}.
 
 Expected business state: {"totalCashCents":115000,"additionalMoneyJournalCount":0}.
 
+
+## EX-RET-14-01 — Duplicate quantity refusal
+
+Cases: WB-HYB.J02.C08.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceQty":3,"attemptedQty":4,"newReturnCount":0,"additionalMoneyJournalCount":0}.
+
+
+## EX-RET-14-02 — Hypothetical taxable full-return arithmetic
+
+Cases: WB-HYB.J02.C09.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceNetCents":25650,"sourceTaxCents":4617,"sourceGrossCents":30267,"requiredFullCreditCents":30267}.
+
+
+## EX-RET-14-03 — Residual beyond one unit line value
+
+Cases: WB-HYB.J02.C10.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceGrossCents":995,"priorAcceptedCents":891,"requiredFinalCreditCents":104,"finalUnitLineNetCents":100}.
+

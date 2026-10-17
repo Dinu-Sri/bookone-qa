@@ -1,6 +1,6 @@
 # BookOne business workflow playbooks
 
-**Expanded maintained library:** start with [eight business workbooks](LIBRARY.md): 52 journeys, 266 cases, a source-linked business map, field matrix and independent worked examples. These detailed books apply the protocol below; all new cases remain draft/unbound/not run. The five starter families below remain retained anchors.
+**Expanded maintained library:** start with [eight business workbooks](LIBRARY.md): 52 journeys, 269 cases, a source-linked business map, field matrix and independent worked examples. These detailed books apply the protocol below; all new cases remain draft/unbound/not run. The five starter families below remain retained anchors.
 
 **One shared rulebook; five business playbooks; one maintenance protocol.** This is internal QA standard1.0.0,not a claim of ISO certification or product readiness.
 
