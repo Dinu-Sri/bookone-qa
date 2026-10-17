@@ -1,0 +1,282 @@
+{
+  "run": "RUN-20261017-v2514-browser-wave",
+  "productSha": "a36af042753f3ad8b40246d6cd579deac9233ba7",
+  "observedStamp": "v2.5.14 \u00b7 a36af04",
+  "qaBase": "16df6ca6f72365ad3598ff7c105a4b1517d63e2e",
+  "actorAlias": "QA N141710",
+  "role": "Owner",
+  "environment": "owner-authorized disposable staging",
+  "counts": {
+    "passed": 32,
+    "failed": 1,
+    "inconclusive": 2,
+    "blocked": 1
+  },
+  "checks": [
+    {
+      "id": "B14-001",
+      "status": "passed",
+      "name": "Synthetic signup",
+      "expected": "Supported account creation succeeds after action-time terms confirmation",
+      "actual": "Account created message; fresh account later reached onboarding"
+    },
+    {
+      "id": "B14-002",
+      "status": "inconclusive",
+      "name": "Immediate signin transition",
+      "expected": "Login gives clear stable authenticated destination or actionable error",
+      "actual": "Once submitted, loading then login without error; home navigation later reached onboarding"
+    },
+    {
+      "id": "B14-003",
+      "status": "passed",
+      "name": "Authenticated bootstrap",
+      "expected": "Fresh credentials reach supported new-user setup",
+      "actual": "Home navigation timed out at command boundary; fresh snapshot /onboarding"
+    },
+    {
+      "id": "B14-004",
+      "status": "passed",
+      "name": "Company purpose",
+      "expected": "Selecting Company creates company context",
+      "actual": "QA N141710 company landed"
+    },
+    {
+      "id": "B14-005",
+      "status": "passed",
+      "name": "Loaded actor role",
+      "expected": "Fresh intended actor with loaded Owner",
+      "actual": "QA / Owner sidebar and expected company"
+    },
+    {
+      "id": "B14-006",
+      "status": "passed",
+      "name": "Initial membership",
+      "expected": "Own sole active Owner; no unintended access change",
+      "actual": "Team soleQA N141710/Owner/active; no accesschanges"
+    },
+    {
+      "id": "B14-007",
+      "status": "passed",
+      "name": "Inventory control read",
+      "expected": "Record actual selected cost/negative policy before testing",
+      "actual": "last/allow"
+    },
+    {
+      "id": "B14-008",
+      "status": "passed",
+      "name": "Purchase control read",
+      "expected": "Record actual approval/GRNI/duplicate/default settings",
+      "actual": "approvalfalse/GRNIfalse/requireGRNfalse/suppliernumberfalse/duplicateblocktrue/Net30/expense6800"
+    },
+    {
+      "id": "B14-009",
+      "status": "passed",
+      "name": "Tax baseline read",
+      "expected": "Bind actual tax profile without assuming eligibility",
+      "actual": "default0/standard/blankidentifiers; VATregisteredfalse"
+    },
+    {
+      "id": "B14-010",
+      "status": "inconclusive",
+      "name": "Advertised full ERP module access",
+      "expected": "Compare company capability claim with actual operations",
+      "actual": "Inventory/POSnavabsent; sales/purchaseoperationswork; rawflags/stockmastercapabilityunverified"
+    },
+    {
+      "id": "B14-011",
+      "status": "passed",
+      "name": "Invalid150percent rejection",
+      "expected": "Reject before posting",
+      "actual": "Explicit percentage cannot exceed100 message"
+    },
+    {
+      "id": "B14-012",
+      "status": "passed",
+      "name": "Retained invalid customer",
+      "expected": "Keep customer on failed submit",
+      "actual": "N14PhysicalCustomer remains"
+    },
+    {
+      "id": "B14-013",
+      "status": "passed",
+      "name": "Retained invalid lines",
+      "expected": "Keep description/qty/price/discount on failed submit",
+      "actual": "Widget/3/100/150 retained at same URL"
+    },
+    {
+      "id": "B14-014",
+      "status": "passed",
+      "name": "Correct line-net subtotal",
+      "expected": "3x100 less10%=270",
+      "actual": "270"
+    },
+    {
+      "id": "B14-015",
+      "status": "passed",
+      "name": "Correct header and total",
+      "expected": "270 less5%=13.50; total256.50",
+      "actual": "13.50/256.50"
+    },
+    {
+      "id": "B14-016",
+      "status": "passed",
+      "name": "Catalog quick creation",
+      "expected": "Save chosen Physical fixture as product",
+      "actual": "SKUQ-N14-WIDGET-2CTK/Linked; selectedPhysical; rawmastertypenotasserted"
+    },
+    {
+      "id": "B14-017",
+      "status": "passed",
+      "name": "Draft saved totals",
+      "expected": "Draft256.50 without Post",
+      "actual": "INV0001draft256.50"
+    },
+    {
+      "id": "B14-018",
+      "status": "passed",
+      "name": "Draft zero journal",
+      "expected": "Draft creates0journals",
+      "actual": "Journal0/debits0/accounts0"
+    },
+    {
+      "id": "B14-019",
+      "status": "passed",
+      "name": "Physical purchase persisted",
+      "expected": "qty10x60,total/AP600,correctsupplier/date/reference",
+      "actual": "PUR0001open600/N14StockSupplier/17Oct/N14-STOCK-001/Net30"
+    },
+    {
+      "id": "B14-020",
+      "status": "passed",
+      "name": "Physical purchase account purposes",
+      "expected": "DrInventory600/CrAP600; noexpense6800",
+      "actual": "5100debit600/2100credit600"
+    },
+    {
+      "id": "B14-021",
+      "status": "passed",
+      "name": "Immediate full purchase return",
+      "expected": "Fullreturn10units/600 tocorrectsupplier",
+      "actual": "PR0001paid600/applied600/due0; fixturedeviationfromintendededitorpreserved"
+    },
+    {
+      "id": "B14-022",
+      "status": "passed",
+      "name": "Full purchase return journal",
+      "expected": "DrAP600/CrInventory600",
+      "actual": "Journal2/debits1200; exactreturnaccounts"
+    },
+    {
+      "id": "B14-023",
+      "status": "passed",
+      "name": "Original bill full settlement",
+      "expected": "Fullreturnsettlesoriginal600",
+      "actual": "PUR0001subsequentlistpaid"
+    },
+    {
+      "id": "B14-024",
+      "status": "passed",
+      "name": "Fresh purchase source",
+      "expected": "Newqty10x60/open600withuniquereference",
+      "actual": "PUR0002open600/N14-STOCK-002"
+    },
+    {
+      "id": "B14-025",
+      "status": "passed",
+      "name": "Purchase source-party UI lock",
+      "expected": "Correct copiedsupplier disabled",
+      "actual": "N14StockSupplier disabled/copiedhint; no servermismatchdenytest"
+    },
+    {
+      "id": "B14-026",
+      "status": "passed",
+      "name": "Purchase source-price UI lock",
+      "expected": "Sourceunit60readonly",
+      "actual": "lineunitPrice60/readOnlytrue"
+    },
+    {
+      "id": "B14-027",
+      "status": "passed",
+      "name": "Purchase partial preview",
+      "expected": "qty1of10at60 previews60",
+      "actual": "60"
+    },
+    {
+      "id": "B14-028",
+      "status": "passed",
+      "name": "Purchase partial posting",
+      "expected": "Credit60 correctsupplier",
+      "actual": "PR0002paid60"
+    },
+    {
+      "id": "B14-029",
+      "status": "passed",
+      "name": "Purchase source readback",
+      "expected": "600 lesscredit60 leaves540",
+      "actual": "PUR0002partial/paid60/due540"
+    },
+    {
+      "id": "B14-030",
+      "status": "passed",
+      "name": "Draft persisted detail",
+      "expected": "Original270/header13.50/total256.50,notposted",
+      "actual": "Exactdetailvalues/GLNotposted"
+    },
+    {
+      "id": "B14-031",
+      "status": "failed",
+      "name": "Unchanged draft edit hydration",
+      "expected": "Line10% retained,preview256.50",
+      "actual": "Line discount blank/subtotal300/headerfixed13.50/preview286.50; OBS-N14-DRAFT-DISCOUNT"
+    },
+    {
+      "id": "B14-032",
+      "status": "passed",
+      "name": "Cancel preserves draft",
+      "expected": "No save/Post of changededitvalues",
+      "actual": "ReturnedlistdraftINV0001still256.50"
+    },
+    {
+      "id": "B14-033",
+      "status": "passed",
+      "name": "Fresh direct invoice posting",
+      "expected": "3x100,line10%,header5%,open256.50",
+      "actual": "INV0002open256.50; draftstilldraft"
+    },
+    {
+      "id": "B14-034",
+      "status": "passed",
+      "name": "Invoice economic journal",
+      "expected": "DrAR256.50/CrRevenue256.50 andDrCOGS180/CrInventory180",
+      "actual": "Exact5thjournalaccounts/amounts"
+    },
+    {
+      "id": "B14-035",
+      "status": "passed",
+      "name": "Ledger cumulative count/amount",
+      "expected": "Fivefinancialjournals,debitscredits2296.50",
+      "actual": "5entries/2296.50/balanced; notreportorquantityacceptance"
+    },
+    {
+      "id": "B14-036",
+      "status": "blocked",
+      "name": "Sales return form inspection",
+      "expected": "Inspectsourcepicker/party/price before submitting",
+      "actual": "BrowserconnectiontimedoutafterNewreturn; no returnsubmitted"
+    }
+  ],
+  "unexecuted": [
+    "sales-sourceparty/price fullfixretests",
+    "85.50/171partialsalesreturn",
+    "last0.99/excessfourthunit",
+    "historicalARcutoff",
+    "threeprior source concerns live",
+    "stockquantities/layers/locations",
+    "financialstatementreadback",
+    "roles/foreigntenant/locks/retry/fault/audit",
+    "remaining businessbooks",
+    "backup/restore LAST"
+  ],
+  "acceptance": "not-established"
+}

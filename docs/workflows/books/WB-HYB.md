@@ -1,6 +1,6 @@
 # WB-HYB — Hybrid businesses and cross-module jobs
 
-Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 3; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 4; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -123,6 +123,30 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Action: Return finalremainingunit through source-linked form.
 - Expected: Preview/post residual0.99 under declared cumulative rounding rule; cumulative3units/2.99 and sourcebalance0. Do not preview1 and reject legitimate finalunit as valueexcess. Other valid stable allocations may put the cent earlier but must conserve exact full source amount.
 - Independent numeric checks: remaining cents: sub(299, 100, 100) = 99; cumulative source cents: add(100, 100, 99) = 299.
+
+### WB-HYB.J02.C08 — Aggregate duplicate return lines before enforcing source quantity
+
+- Type: invalid-input; execution: **not run**; adapter: **unbound**.
+- Given: Sourceqty3 of one stable SKU/description; priorreturned0; submitted current linesqty2+2 with the same key.
+- Action: Attempt source-linked sales and purchase returns, then inspect source/return/audit/ledger/stock snapshots.
+- Expected: Reject aggregate4>3 atomically. No return, credit, inventory movement or business CREATE history; sourcebalance and original party unchanged. Also test legitimate duplicate source lines and prior+current totals; individual line checks cannot establish conservation.
+- Independent numeric checks: current total units: add(2, 2) = 4.
+
+### WB-HYB.J02.C09 — Closing taxable return preserves net discount and tax exactly
+
+- Type: boundary; execution: **not run**; adapter: **unbound**.
+- Given: Separate source3x100,linefixed30,header13.50: net256.50; hypothetical supported18% tax46.17; gross302.67; no priorreturns. Verify stored eligible tax configuration before live use; this fixture does not establish statutory applicability.
+- Action: Preview/post permitted full return on both sides; repeat partial1+remaining2 and compare tax/source allocations.
+- Expected: Full return retains line discount30 and header13.50; net256.50,tax46.17,gross302.67. Sales reverses source AR/revenue/tax and restores physical cost180; purchase reverses AP/inputtax/inventory as applicable. Do not treat gross302.67 as net residual or erase header13.50 and then tax270. Assert source party/date/quantity, audit and unchanged unrelated records; unresolved tax support blocks live tax acceptance.
+- Independent numeric checks: gross cents: add(25650, 4617) = 30267.
+
+### WB-HYB.J02.C10 — Closing residual above final unit line value stays representable
+
+- Type: boundary; execution: **not run**; adapter: **unbound**.
+- Given: No tax digital sources:7x1/header0.05,total6.95 and10x1/header0.05,total9.95. Declared rounding gives accepted first6x0.99=5.94 or9x0.99=8.91.
+- Action: Return finalunit; compare preview, net line/discount arithmetic, persisted credit, sourcebalance and audit.
+- Expected: Conserve source value: final1.01 or1.04 under this declared prior allocation. Represent residual through an explicit valid allocation adjustment, or allocate prior returns differently so final credit is representable; never claim helper total1.01/1.04 while line1 minus nonnegative discount gives1.00. No unexplained revenue/stock/party changes. New regression includes both existing3unit last0.99 and fullsource anchors.
+- Independent numeric checks: seven-unit residual cents: sub(695, 594) = 101; ten-unit residual cents: sub(995, 891) = 104.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 

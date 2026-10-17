@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 3,
+  "revision": 4,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -424,7 +424,7 @@
     },
     {
       "id": "WB-CORE.J04",
-      "revision": 2,
+      "revision": 3,
       "title": "Master data, document snapshots and safe archive",
       "status": "draft",
       "risk": "P1",
@@ -440,6 +440,10 @@
         },
         {
           "id": "RB-CONFIG-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-03",
           "revision": 1
         }
       ],
@@ -512,6 +516,36 @@
           "kind": "invalid-state",
           "oracle": [],
           "id": "WB-CORE.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-CORE.J04.C06",
+          "title": "Draft edit roundtrip preserves line and header discounts",
+          "given": "Draft invoice3x100 with line10%=30 and header5%of270=13.50; stored line-net270,total256.50; no posted journal. Product catalog may change later; bind declared draft repricing policy separately.",
+          "action": "Save draft, reload detail, open Edit without changes, cancel; repeat save unchanged and supported Post on separate fixtures.",
+          "expected": "Unchanged edit must hydrate original discount semantics or equivalent explicit amounts and preview270-13.50=256.50. It must not blank line discount and show286.50. Cancel preserves draft facts/no GL; save preserves original totals and discounts; Post exactly once under valid current cost/stock policy, no duplicate draft/source and attributable audit. Changes in master price cannot silently change saved draft economics; original draft and posted controls remain distinct.",
+          "kind": "history",
+          "oracle": [
+            {
+              "label": "line net cents",
+              "operation": "sub",
+              "operands": [
+                30000,
+                3000
+              ],
+              "equals": 27000
+            },
+            {
+              "label": "draft total cents",
+              "operation": "sub",
+              "operands": [
+                27000,
+                1350
+              ],
+              "equals": 25650
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }

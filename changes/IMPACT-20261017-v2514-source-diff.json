@@ -1,0 +1,125 @@
+{
+  "productSha": "a36af042753f3ad8b40246d6cd579deac9233ba7",
+  "parentSha": "1a1020127c4ff0f11ccd9d84d736c6b18b235fca",
+  "source": "Exact pinned candidate GitHub diff inventory; historical map remains ead3a82",
+  "files": [
+    {
+      "path": "VERSION",
+      "gitBlobSha": "ffd9a9bab6b173f8cb0d4c79c467cb8089ce8cc3",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "gitBlobSha": "335395c1050b06fa24cfc66ba0f569be9b35ba72",
+      "status": "modified",
+      "additions": 117,
+      "deletions": 50
+    },
+    {
+      "path": "apps/web/src/app/purchase/returns/new/page.tsx",
+      "gitBlobSha": "194ad5bf4f732419d5180c4f0c53b0b452f73dfc",
+      "status": "modified",
+      "additions": 21,
+      "deletions": 2
+    },
+    {
+      "path": "apps/web/src/components/module/commercial-doc-screens.tsx",
+      "gitBlobSha": "a9ca48d0fce98f990cf6ee1dc083989c77d4a999",
+      "status": "modified",
+      "additions": 57,
+      "deletions": 3
+    },
+    {
+      "path": "apps/web/src/components/module/document-lines-editor.tsx",
+      "gitBlobSha": "709b3bc8f46be99883b3a495b0b74511b8daebd5",
+      "status": "modified",
+      "additions": 43,
+      "deletions": 3
+    },
+    {
+      "path": "apps/web/src/components/module/party-name-fields.tsx",
+      "gitBlobSha": "49e0adc9a4ae61e3b07dfb2998678547993fc07e",
+      "status": "modified",
+      "additions": 31,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/components/sales/invoice-document-form.tsx",
+      "gitBlobSha": "cbeac614c6930c7bcfcf421808983b1ab22cbea2",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/components/sales/quotation-form.tsx",
+      "gitBlobSha": "30cb2f60b025a88d2ed2512c8a6777cf46138ab3",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/components/sales/sales-document-form.tsx",
+      "gitBlobSha": "4cc3c14c81c907df35c5d0508dbb1e845e2fb176",
+      "status": "modified",
+      "additions": 69,
+      "deletions": 4
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "gitBlobSha": "1ab3b32a5e256c92d09b1f7555117e9b7d464a24",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 0
+    },
+    {
+      "path": "docs/TASK_LOG.md",
+      "gitBlobSha": "800565b7ed60d4f9890a63393da87291a2c599ce",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0
+    },
+    {
+      "path": "docs/changes/CHG-20261017-return-party-rounding-validation.md",
+      "gitBlobSha": "95f8ddd293f68459cd8ad812fdb3ef9c48dab404",
+      "status": "added",
+      "additions": 27,
+      "deletions": 0
+    },
+    {
+      "path": "packages/accounting/src/document-guards.ts",
+      "gitBlobSha": "c13acd102065be99eaad9623fd62dbb27a9fc2de",
+      "status": "modified",
+      "additions": 86,
+      "deletions": 2
+    },
+    {
+      "path": "packages/accounting/src/index.ts",
+      "gitBlobSha": "8f20e2c9dbec2219cac7e34abef13b39877d79df",
+      "status": "modified",
+      "additions": 14,
+      "deletions": 1
+    },
+    {
+      "path": "packages/accounting/test/document-guards.test.ts",
+      "gitBlobSha": "7f6c2092509e784f0c6d0773e8f8860d650e24f5",
+      "status": "modified",
+      "additions": 90,
+      "deletions": 0
+    }
+  ],
+  "reviewScope": "Executable patch review and pinned posting caller snippet; documentation diffs inventoried, complete runtime graph not claimed",
+  "directJourneys": [
+    "WB-HYB.J02",
+    "WB-PHY.J05",
+    "WB-PHY.J06",
+    "WB-CORE.J01",
+    "WB-CORE.J02",
+    "WB-CORE.J03",
+    "WB-CORE.J04",
+    "WB-CORE.J06"
+  ],
+  "dependents": "All business books share invoice/source/identity/accounting controls. Unknown mapping broadens; no runtime acceptance.",
+  "automatedProductRefUnchanged": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c"
+}

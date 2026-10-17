@@ -1,3 +1,21 @@
+# Latest live continuation — v2.5.14
+
+[Live run](runs/RUN-20261017-v2514-browser-wave.md), [checks](runs/CHECKS-20261017-v2514-browser-wave.json), [owner-relayed handoff](handoffs/HANDOFF-20261017-v2514-browser-wave.md). Fresh syntheticQA N141710signup/owncompany/freshOwnercontext actuallycreated after exacttermsapproval. Earlier signup block resolved; verificationmessage was not proof of an enforced gate. Browser connection later timed out during firstsalesreturn inspection; recoveryalso stalled. NoSalesreturnsubmitted.
+
+36boundedmanualchecks:32passed/1failed/2inconclusive/1blocked; not36fullworkflows. NewP2 [draft discount hydration](bugs/OBS-N14-DRAFT-DISCOUNT.md):saved256.50→Edit286.50withoutchanges;cancelled,preserveddraft.150%errorretention,correct270/13.50/256.50preview,purchase/fullreturn/partialreturn/AP andfreshinvoiceCOGSpositivesexecuted. OriginalP1serverpartyandremainingreturn/aging/sourceconcernsnotclosed. Producta36af042753f3ad8b40246d6cd579deac9233ba7;QA base16df6ca6f72365ad3598ff7c105a4b1517d63e2e,PR40.
+
+Preserveowncompanyphysicalproduct,INV0001draft256.50,INV0002posted256.50,PUR0001/fullPR0001 600eachsettled,PUR0002 600/PR0002 60/sourceAP540. Latest5journals/debitscredits2296.50. NetexpectedAR256.50/inventory360/AP540/profit76.50; report/stockqtyreadbacknotexecuted. No settings/grants/resets/merge/deploy. Privatecredentials/rawtracesexcluded.
+
+Library1.3.0:8books/52journeys/270draft-unbound-notrun cases/22examples/55steps. CORE.J04.C06added;26infrastructuretestspassed. Rulebookunchanged1.0.0expertpending;historicalsourcegraph/automatedproductpinunchanged. Nextreconnectsamebrowser/inspectpage,stamp,actor;existingINV0002sourcepartial85.50/cost60 thenremaining171/cost120;adjacentcontrolsandall3sourceconcernsthensupportedremainingbooks. Newdeploymentrequiresnewrunfingerprint. Actualencryptedbackup/restoreLAST.
+
+# BookOne QA current status
+
+Latest continuation: **v2.5.14 · a36af04**, exacta36af042753f3ad8b40246d6cd579deac9233ba7. [Source retest](runs/RUN-20261017-v2514-retest.md):28assertions,24pass/4fail in3groups (residual representability, duplicate quantity aggregation, gross/net taxable closing). [Handoff](handoffs/HANDOFF-20261017-v2514-retest.md), [outcomes](runs/CHECKS-20261017-v2514-retest.json), [workbook change](changes/WCHG-20261017-v2514-retest.md). Source-level evidence only; original live fixes unclosed, candidate unapproved. No live accounting/account/company mutations. Saved sign-in rejected; synthetic signup prepared privately, not submitted; legal-terms action-time confirmation pending. Earlier denied existing-company grants remain untouched.
+
+Library1.2.0:8books/52journeys/269draft,unbound,not-run cases;21independent examples/54steps. HYB.J02.C08–C10 added; book/journeyrevision4. Library render/check and26infrastructure tests passed. Rulebook1.0.0/expert-pending unchanged; historical source map ead3a82 and automated product-ref0bcdf4d remain explicit. Full pnpm check/product111tests/compiled runtime/DB/roles/stock layers not executed here.
+
+Next: resolve actual signup terms confirmation or restore valid authorized actor login, verify role/company/build/configuration, observe bootstrap without repair, retest original N13 fixes and all3new source concerns through both supported return workflows, then physical stock/settings/locks and remaining business books. Preserve INV0003/INV0009/wrong-party fixtures; no reset/grants/merge/deploy. Actual encrypted backup/restore LAST. Owner manually relays public sanitized handoff.
+
 # BookOne QA current status
 
 **Latest QA: v2.5.13 · 1a10201** — [95 browser assertions](runs/CHECKS-20261017-v2513-next-wave.json): **88 passed, 6 failed, 1 inconclusive**; four finding groups (one P1, three P2s). [Current handoff](handoffs/HANDOFF-20261017-v2513-next-wave.md), [full report](runs/RUN-20261017-v2513-next-wave.md), [workbook maintenance](changes/WCHG-20261017-v2513-next-wave.md). Candidate remains unapproved. Source-linked sales and purchase returns accept mismatching parties; other findings cover price-edit preview, residual-cent returns and discarded validation inputs. Original reported aging/subtotal/quantity-preview fixes passed scoped retests.

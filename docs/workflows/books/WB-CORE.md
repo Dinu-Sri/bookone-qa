@@ -1,6 +1,6 @@
 # WB-CORE — Shared accounting, access and document controls
 
-Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 3; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 4; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01, BP-02, BP-03, BP-04, BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -173,7 +173,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 
 **Fixture:** Posted invoice has customerOld, price100 and approved print style; open debt100; synthetic IDs.
 
-Rules: BR-DAT-01@1, BR-SAL-02@1, RB-CONFIG-01@1. Retained tasks: B-108, B-113, E-112.
+Rules: BR-DAT-01@1, BR-SAL-02@1, RB-CONFIG-01@1, BR-SAL-03@1. Retained tasks: B-108, B-113, E-112.
 
 Entities: businessDocuments, businessDocumentLines, parties, inventoryProducts. Support: source-observed-contract; acceptance-unverified.
 
@@ -213,6 +213,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Invoice100 posted and partially paid40.
 - Action: Try change total to50 directly.
 - Expected: Require supported correction/versioned path; no silent AR10/revenue rewrite or overwritten audit trail.
+
+### WB-CORE.J04.C06 — Draft edit roundtrip preserves line and header discounts
+
+- Type: history; execution: **not run**; adapter: **unbound**.
+- Given: Draft invoice3x100 with line10%=30 and header5%of270=13.50; stored line-net270,total256.50; no posted journal. Product catalog may change later; bind declared draft repricing policy separately.
+- Action: Save draft, reload detail, open Edit without changes, cancel; repeat save unchanged and supported Post on separate fixtures.
+- Expected: Unchanged edit must hydrate original discount semantics or equivalent explicit amounts and preview270-13.50=256.50. It must not blank line discount and show286.50. Cancel preserves draft facts/no GL; save preserves original totals and discounts; Post exactly once under valid current cost/stock policy, no duplicate draft/source and attributable audit. Changes in master price cannot silently change saved draft economics; original draft and posted controls remain distinct.
+- Independent numeric checks: line net cents: sub(30000, 3000) = 27000; draft total cents: sub(27000, 1350) = 25650.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 

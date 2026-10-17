@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 1,
+  "revision": 3,
   "convention": "Signed ledger: debit positive, credit negative. All posting amounts integer LKR cents. Account names identify purpose, not hardcoded product codes.",
   "examples": [
     {
@@ -1510,6 +1510,108 @@
           "assertBusinessState": {
             "totalCashCents": 115000,
             "additionalMoneyJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-01",
+      "title": "Duplicate quantity refusal",
+      "caseRefs": [
+        "WB-HYB.J02.C08"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceQty": 3,
+            "attemptedQty": 4,
+            "newReturnCount": 0,
+            "additionalMoneyJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-02",
+      "title": "Hypothetical taxable full-return arithmetic",
+      "caseRefs": [
+        "WB-HYB.J02.C09"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceNetCents": 25650,
+            "sourceTaxCents": 4617,
+            "sourceGrossCents": 30267,
+            "requiredFullCreditCents": 30267
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-03",
+      "title": "Residual beyond one unit line value",
+      "caseRefs": [
+        "WB-HYB.J02.C10"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceGrossCents": 995,
+            "priorAcceptedCents": 891,
+            "requiredFinalCreditCents": 104,
+            "finalUnitLineNetCents": 100
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-14-01",
+      "title": "Unchanged draft discount roundtrip",
+      "caseRefs": [
+        "WB-CORE.J04.C06"
+      ],
+      "policy": "No tax; independent integer-cent state example; draft is not a posted receivable. Full draft save/post and cost policy require separately bound runtime evidence.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Save draft3x100/line10percent/header5percent, then open Edit without changing it",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "grossCents": 30000,
+            "lineDiscountCents": 3000,
+            "lineNetCents": 27000,
+            "headerDiscountCents": 1350,
+            "draftTotalCents": 25650,
+            "postedJournalCount": 0
           }
         }
       ],

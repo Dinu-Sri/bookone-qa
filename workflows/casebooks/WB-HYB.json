@@ -1,6 +1,6 @@
 {
   "id": "WB-HYB",
-  "revision": 3,
+  "revision": 4,
   "title": "Hybrid businesses and cross-module jobs",
   "profileIds": [
     "BP-05"
@@ -146,7 +146,7 @@
     },
     {
       "id": "WB-HYB.J02",
-      "revision": 3,
+      "revision": 4,
       "title": "Shared discounts, mixed returns and tax buckets",
       "status": "draft",
       "risk": "P1",
@@ -326,6 +326,78 @@
             }
           ],
           "id": "WB-HYB.J02.C07",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C08",
+          "title": "Aggregate duplicate return lines before enforcing source quantity",
+          "given": "Sourceqty3 of one stable SKU/description; priorreturned0; submitted current linesqty2+2 with the same key.",
+          "action": "Attempt source-linked sales and purchase returns, then inspect source/return/audit/ledger/stock snapshots.",
+          "expected": "Reject aggregate4>3 atomically. No return, credit, inventory movement or business CREATE history; sourcebalance and original party unchanged. Also test legitimate duplicate source lines and prior+current totals; individual line checks cannot establish conservation.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "current total units",
+              "operation": "add",
+              "operands": [
+                2,
+                2
+              ],
+              "equals": 4
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C09",
+          "title": "Closing taxable return preserves net discount and tax exactly",
+          "given": "Separate source3x100,linefixed30,header13.50: net256.50; hypothetical supported18% tax46.17; gross302.67; no priorreturns. Verify stored eligible tax configuration before live use; this fixture does not establish statutory applicability.",
+          "action": "Preview/post permitted full return on both sides; repeat partial1+remaining2 and compare tax/source allocations.",
+          "expected": "Full return retains line discount30 and header13.50; net256.50,tax46.17,gross302.67. Sales reverses source AR/revenue/tax and restores physical cost180; purchase reverses AP/inputtax/inventory as applicable. Do not treat gross302.67 as net residual or erase header13.50 and then tax270. Assert source party/date/quantity, audit and unchanged unrelated records; unresolved tax support blocks live tax acceptance.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "gross cents",
+              "operation": "add",
+              "operands": [
+                25650,
+                4617
+              ],
+              "equals": 30267
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C10",
+          "title": "Closing residual above final unit line value stays representable",
+          "given": "No tax digital sources:7x1/header0.05,total6.95 and10x1/header0.05,total9.95. Declared rounding gives accepted first6x0.99=5.94 or9x0.99=8.91.",
+          "action": "Return finalunit; compare preview, net line/discount arithmetic, persisted credit, sourcebalance and audit.",
+          "expected": "Conserve source value: final1.01 or1.04 under this declared prior allocation. Represent residual through an explicit valid allocation adjustment, or allocate prior returns differently so final credit is representable; never claim helper total1.01/1.04 while line1 minus nonnegative discount gives1.00. No unexplained revenue/stock/party changes. New regression includes both existing3unit last0.99 and fullsource anchors.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "seven-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                695,
+                594
+              ],
+              "equals": 101
+            },
+            {
+              "label": "ten-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                995,
+                891
+              ],
+              "equals": 104
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }
