@@ -15,7 +15,7 @@
     "history/upgrade/recovery"
   ],
   "candidateSha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
-  "observedLiveStamp": "v2.5.11 · 0bcdf4d",
+  "observedLiveStamp": "v2.5.11 \u00b7 0bcdf4d",
   "rulebookVersion": "1.0.0",
   "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
   "acceptedRelease": null,
@@ -74,7 +74,7 @@
       "id": "G-LK",
       "topic": "Sri Lankan tax/format/framework and privacy applicability",
       "status": "expert-review-gaps",
-      "required": "Applicable rule versions and RF-01–10 expert decisions; no statutory approval from delegated defaults"
+      "required": "Applicable rule versions and RF-01\u201310 expert decisions; no statutory approval from delegated defaults"
     },
     {
       "id": "G-PERFORMANCE",
@@ -103,7 +103,7 @@
   ],
   "nextActions": [
     "Coding: review043 PUBLIC catalog execute and trusted database caller boundary; preserve working login/platform positives.",
-    "QA: fullPG16 separate caller TEMP/schema/ACL/owner controls and prior042→043 upgrade/data preservation; no deployed exposure inferred.",
+    "QA: fullPG16 separate caller TEMP/schema/ACL/owner controls and prior042\u2192043 upgrade/data preservation; no deployed exposure inferred.",
     "Continue physical GRNI/variable-cost/partial/locks and cashbook/domain/export, CompanyAdmin/settings/roles; remaining service/digital/rental/mixed/files/history.",
     "Investigate preserved login/onboarding/navigation/React418 observation; stablePO62 succeeded, earlierPO60 deployment-interrupted.",
     "Actual encrypted backup/restore LAST;137fullworkflows and10policyrecords remain unaccepted."
@@ -419,7 +419,7 @@
     "expectedAssertions": 303,
     "expectedRuntimeAssertions": 129,
     "expectedHttpAssertions": 26,
-    "liveObservedStamp": "v2.5.11 · 0bcdf4d",
+    "liveObservedStamp": "v2.5.11 \u00b7 0bcdf4d",
     "browserAcceptance": "stablePO62-bounded-pass;hydration/navigation-observations-preserved"
   },
   "v256InitialRetest": {
@@ -621,7 +621,7 @@
   "liveReadSmoke": {
     "record": "runs/RUN-20261015-v256-live-read-smoke.md",
     "date": "2026-10-15",
-    "observedStamp": "v2.5.6 · d5377d8",
+    "observedStamp": "v2.5.6 \u00b7 d5377d8",
     "checksPassed": 3,
     "scope": "displayed stamp + administrative Backup page-load + traded-company restore disabled UI only",
     "freshNormalRoleLogin": false,
@@ -1016,7 +1016,7 @@
       },
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
-        "productStamp": "v2.5.8 · cf35da1",
+        "productStamp": "v2.5.8 \u00b7 cf35da1",
         "qaSha": "ddaaa8d46ecee1fa91d51a59d30257d2c8e1e68b",
         "qaDirty": false,
         "qaContentHash": "3ab0732b73d36c09cdae4f74729266369b5c662122b9e06f4d5bf016ce2195d8",
@@ -1043,7 +1043,7 @@
       },
       "fingerprint": {
         "productSha": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
-        "productStamp": "v2.5.11 · 0bcdf4d",
+        "productStamp": "v2.5.11 \u00b7 0bcdf4d",
         "qaSha": "8c81f9bcdc7468987a327f519ae62c3ba9e0493b",
         "qaDirty": false,
         "qaContentHash": "15457b9f1e10d0cf0374d2307c87c46dc17b94a212a69c234c2046ea00927d4d",
@@ -1090,7 +1090,7 @@
       },
       "fingerprint": {
         "productSha": "cf35da1244e902e4a41291bc409eb0d994ed4e01",
-        "productStamp": "v2.5.8 · cf35da1",
+        "productStamp": "v2.5.8 \u00b7 cf35da1",
         "qaSha": "90804160c2d26405cb2deaa70e359e32dba48f37",
         "qaDirty": false,
         "qaContentHash": "46ad917306e71e5fa13e9f9d99d318a318efaf08e025926bdbe65617ad19aa02",
@@ -1147,7 +1147,7 @@
     "date": "2026-10-16",
     "actor": "P261016-Owner",
     "company": "P261016-Company",
-    "stamp": "v2.5.11 · 0bcdf4d",
+    "stamp": "v2.5.11 \u00b7 0bcdf4d",
     "login": "fresh-explicit-fixture-signin+loadedQA/Owner-company;no separate-email-surface",
     "record": "runs/RUN-20261016-v2511-independent-retest.md",
     "createdAccounts": 1,
@@ -1252,7 +1252,7 @@
       "date": "2026-10-16",
       "localTimeApprox": "09:20Asia/Colombo",
       "browser": "connected-Chrome-extension",
-      "observedLiveStamp": "v2.5.10 ·81a505c",
+      "observedLiveStamp": "v2.5.10 \u00b781a505c",
       "pageRead": true,
       "screenshot": true,
       "businessMutations": 0,
@@ -1316,7 +1316,7 @@
     "date": "2026-10-16",
     "localTimeApprox": "09:20Asia/Colombo",
     "browser": "connected-Chrome-extension",
-    "observedLiveStamp": "v2.5.10 ·81a505c",
+    "observedLiveStamp": "v2.5.10 \u00b781a505c",
     "pageRead": true,
     "screenshot": true,
     "businessMutations": 0,
@@ -1340,8 +1340,8 @@
     "vendorsVisibleAfter": 0,
     "journalEntriesVisibleAfter": 0,
     "journalPeriod": "2026-10",
-    "liveStampBefore": "v2.5.10 · 81a505c",
-    "liveStampAfter": "v2.5.11 · 0bcdf4d",
+    "liveStampBefore": "v2.5.10 \u00b7 81a505c",
+    "liveStampAfter": "v2.5.11 \u00b7 0bcdf4d",
     "credentials": "private-ignored-only",
     "next": "physical/settings/role coverage;no oldPO replay",
     "stableBootstrapRecord": "runs/RUN-20261016-v2511-independent-retest.md",
@@ -1369,7 +1369,7 @@
       "accountCreated": false,
       "companyCreated": false,
       "financialWrites": 0,
-      "liveStamp": "v2.5.10 ·81a505c",
+      "liveStamp": "v2.5.10 \u00b781a505c",
       "credentials": "private-ignored-only",
       "ownerSignupAuthorization": "2026-10-16 explicit unlimited synthetic accounts on staging",
       "next": "confirm exact agreement-accepting signup submission;then explicit fixture sign-in/role/company/initialstate"
@@ -1423,7 +1423,7 @@
     "qaImplementation": "8a0bfa3574bb8ea26766f1f657b5f79123fd3573",
     "qaTestedMerge": "8c81f9bcdc7468987a327f519ae62c3ba9e0493b",
     "qaContentHash": "15457b9f1e10d0cf0374d2307c87c46dc17b94a212a69c234c2046ea00927d4d",
-    "observedLiveStamp": "v2.5.11 · 0bcdf4d",
+    "observedLiveStamp": "v2.5.11 \u00b7 0bcdf4d",
     "campaign": "runs/CAMP-20261016-042926463-fa610a.json",
     "postgres": "runs/RUN-2026-10-16T04-29-38-803Z-runtime.json",
     "http": "runs/HTTP-2026-10-16T04-29-36-612Z-e2ba08.json",
@@ -1470,7 +1470,7 @@
     "handoff": "handoffs/HANDOFF-20261018-v2516-results.md",
     "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
     "qaExecutionSha": "4cb309158dc6405f61bfce09e45386919c6875b0",
-    "liveStamp": "v2.5.16 · b2c5205",
+    "liveStamp": "v2.5.16 \u00b7 b2c5205",
     "counts": {
       "passed": 9,
       "failed": 2,
@@ -1506,5 +1506,36 @@
     "status": "reviewed;source-risk-red;nextmissionplanned-not-run;candidateunapproved",
     "closingJournals": 80,
     "closingTurnover": 10475.51
+  },
+  "v2516Light02Results": {
+    "run": "runs/CHECKS-20261018-light02.json",
+    "handoff": "handoffs/HANDOFF-20261018-light02-results.md",
+    "codingMission": "handoffs/CODING-MISSION-20261018-light02.md",
+    "qaBase": "8a37a1e37b74ad378089bc8a704982fb03058b5e",
+    "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+    "liveStamp": "v2.5.16 \u00b7 b2c5205",
+    "counts": {
+      "passed": 12,
+      "failed": 2,
+      "blocked": 4
+    },
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "stockValue": 540,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "COGS": 420,
+      "profit": 539.5,
+      "assets": 1426.21
+    },
+    "settingsRestoredReloaded": true,
+    "noAmbiguousFinancialIntent": true,
+    "canonicalAcceptance": false,
+    "releaseAcceptance": false,
+    "nextAction": "Medium review live pending-key failure/partial-return UI; coding fixes; new reviewed exactcandidate queue; authentic upgrades blocked; backuprestoreLAST"
   }
 }
