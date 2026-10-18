@@ -1,3 +1,11 @@
+Latest execution: **v2.5.16 · b2c5205**, all18 mission slots disposed: **9passed,2failed,3blocked,4inconclusive**. One failed slot is an invalid quote-date fixture, not a confirmed product defect; read appended corrections. [Run](runs/RUN-20261018-v2516-light.md), [checks](runs/CHECKS-20261018-v2516-light.json), [handoff](handoffs/HANDOFF-20261018-v2516-results.md). Candidate unapproved.
+
+Final78journals/debits=credits10,455.51; AR1006.21/AP540/inventoryGL120/VAT46.71/profit539.50/assets1126.21;stock4×60=240;inherited120gap unchanged. Only unclosed new sale is denial INV0025=300/cost180. Draft0018 retained after unsuccessful Post. All settings restored/reloaded: VATfalse18/export0/dept01, negativeAllow,lastcost. No ambiguous financial submit remains. Medium review draft Post, date entry fixture, return-header visibility, missed E01 toast, duplicate preview cap and reachable purchase refusal. Do not replay preserved sources. Backup/restore LAST.
+
+Resume at the results handoff, not the completed queue. All terminal cases require a fresh reviewed fixture/run for retest. Last browser BalanceSheet; ownQA N141710/Owner; freshlogin originally recorded, samecontext/build rechecked aftercreditpause.
+
+Prior continuation retained:
+
 # Resume BookOne QA — completed v2.5.15 pilot
 
 Read STATUS.md, docs/COST_AWARE_QA.md, [handoff](handoffs/HANDOFF-20261018-v2515-pilot.md), and [results/corrections](runs/CHECKS-20261018-v2515-pilot.json). All 12 queue scenarios have dispositions: 10 passed, 1 failed, 1 blocked. No unresolved running intent. Do not replay terminal cases; retests require a new run.
@@ -37,3 +45,4 @@ New queues/RESIDUAL-REVIEW-v2515.json has eight planned slots, separate from fro
 ## Immediate continuation — v2.5.16 Light mission
 
 Start handoffs/HANDOFF-20261018-v2516-light-mission.md and docs/missions/MISSION-v2516-LIGHT-01.md from the newly published branch, not stale scratch files. Queue MISSION-v2516-LIGHT-01 has18slots,2isolatedupgrade blockers,90minutes including15closing. Fullproduct b2c5205a1bf52fbd327a948325810670467d21b4; live stamp still unverified. New source preflight13pass, old expectations/evidence preserved. Runtime/ReactDOM/upgrade acceptance not implied. Revalidate private credential availability and intended fresh login; do not guess credentials or bypass identity checks. Prior45journals/balances/settings remain historical anchors, not current observations. No browser actions in planning. Execute only after exactbuild/actor/openingstate checks, checkpoint allsubmissions, continue independentcases, preserve failures and close with restoredsettings/reconciliation. Backup/restore LAST.
+
