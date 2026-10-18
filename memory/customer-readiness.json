@@ -1495,5 +1495,16 @@
       "stockValue": 240
     },
     "correction": "Q01 invalidfixture not confirmed product defect; first record retained"
+  },
+  "pr46Review": {
+    "record": "reviews/REVIEW-20261018-pr46.md",
+    "results": "runs/CHECKS-20261018-pr46-review.json",
+    "lightQueue": "queues/MISSION-v2516-LIGHT-02.json",
+    "lightHandoff": "handoffs/HANDOFF-20261018-light02-mission.md",
+    "codingHandoff": "handoffs/CODING-MISSION-20261018-pr46.md",
+    "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+    "status": "reviewed;source-risk-red;nextmissionplanned-not-run;candidateunapproved",
+    "closingJournals": 80,
+    "closingTurnover": 10475.51
   }
 }
