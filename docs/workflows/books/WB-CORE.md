@@ -1,6 +1,6 @@
 # WB-CORE — Shared accounting, access and document controls
 
-Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 4; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 5; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01, BP-02, BP-03, BP-04, BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -331,6 +331,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Unsaved new invoice with entered customer,dates,SKU,qty3,price1; linepercent150 invalid.
 - Action: Submit via Post and inspect destination,feedback,values and mutation counts; correct percent0 in same entry context.
 - Expected: Actionable excessive-percent error; preserve customer,lines,prices,dates and other entered fields for correction; no invoice/journal/party side effects from rejection. Do not redirect to list and reopen an empty form. Busy state clears and corrected valid submission posts once.
+
+### WB-CORE.J06.C07 — Stock-rule rejection preserves a valid invoice form
+
+- Type: invalid-state; execution: **not run**; adapter: **unbound**.
+- Given: Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/date/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.
+- Action: Submit once; inspect actionable shortage, retained fields and before/after document,AR,GL,stock and audit snapshots. Receive goods through separate authorized workflow before retrying the retained invoice.
+- Expected: Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback.
+- Independent numeric checks: short units: sub(1, 0) = 1.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 

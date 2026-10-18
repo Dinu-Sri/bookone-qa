@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 4,
+  "revision": 5,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -688,7 +688,7 @@
     },
     {
       "id": "WB-CORE.J06",
-      "revision": 2,
+      "revision": 3,
       "title": "Forms, retries, concurrency and ambiguous success",
       "status": "draft",
       "risk": "P1",
@@ -791,6 +791,27 @@
           "kind": "invalid-input",
           "oracle": [],
           "id": "WB-CORE.J06.C06",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-CORE.J06.C07",
+          "title": "Stock-rule rejection preserves a valid invoice form",
+          "given": "Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/date/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.",
+          "action": "Submit once; inspect actionable shortage, retained fields and before/after document,AR,GL,stock and audit snapshots. Receive goods through separate authorized workflow before retrying the retained invoice.",
+          "expected": "Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback.",
+          "kind": "invalid-state",
+          "oracle": [
+            {
+              "label": "short units",
+              "operation": "sub",
+              "operands": [
+                1,
+                0
+              ],
+              "equals": 1
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }

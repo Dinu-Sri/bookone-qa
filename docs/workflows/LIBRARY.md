@@ -1,8 +1,8 @@
-# BookOne maintained business workbooks — library 1.3.0
+# BookOne maintained business workbooks — library 1.4.0
 
 This is the expanded publication requested by the owner on 16 October 2026: business journeys and edge cases that humans and agents can maintain and use to test BookOne. It applies the [shared protocol](PROTOCOL.md) and canonical rulebook; it does not create a second policy authority.
 
-**Eight books, 52 journeys, 270 case definitions, 14 reusable control contracts, and 22 independent financial/state examples containing 55 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
+**Eight books, 52 journeys, 271 case definitions, 14 reusable control contracts, and 23 independent financial/state examples containing 56 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
 
 | Workbook | Journeys | Cases | Main coverage |
 |---|---:|---:|---|
@@ -11,7 +11,7 @@ This is the expanded publication requested by the owner on 16 October 2026: busi
 | [Digital](books/WB-DIG.md) | 4 | 20 | Non-stock accounting, delivery/licence support boundary, refunds, historical price, mixed bundles |
 | [Rental](books/WB-REN.md) | 9 | 45 | Fleet/reservation, dispatch/partial returns, buckets/wash, deposits, invoice timing, extension/cancellation, kits/serials, charges, photos/history |
 | [Hybrid](books/WB-HYB.md) | 5 | 30 | Four product classes, shared discounts/returns, plans/modules/entities, scopes/domains/switching, contention/atomicity |
-| [Shared accounting/access](books/WB-CORE.md) | 7 | 38 | Allocation batches, tender, locks/reversals, financial statements/as-of, historical masters, roles/tenants, forms/retries/faults, tax boundaries |
+| [Shared accounting/access](books/WB-CORE.md) | 7 | 39 | Allocation batches, tender, locks/reversals, financial statements/as-of, historical masters, roles/tenants, forms/retries/faults, tax boundaries |
 | [Banking/reconciliation](books/WB-BANK.md) | 5 | 25 | Cashbook/transfers, portable imports/deduplication, group matches, missing fees, outstanding/close/locks, cancellation/privacy |
 | [Data/operations](books/WB-OPS.md) | 5 | 25 | Fresh company bootstrap, file lifecycle, upgrades/rollback, audit/evidence/cleanup, retained archive programme executed last |
 
@@ -68,3 +68,8 @@ Library1.2.0 adds WB-HYB.J02.C08–C10: aggregate duplicate quantity, taxable gr
 ## Fresh-account browser wave maintenance
 
 Library1.3.0 adds WB-CORE.J04.C06 for draft line/header discount hydration; bookrevision4,journeyrevision3. Current270draft/unbound/not-run definitions,22independent examples/55steps. The saved256.50→editable286.50 discrepancy is a separate immutable live observation, not full canonical-case execution. See [live run](../../runs/RUN-20261017-v2514-browser-wave.md) and [change record](../../changes/WCHG-20261017-v2514-browser-wave.md).
+
+
+## 18 October live-wave maintenance
+
+Library1.4.0 adds WB-CORE.J06.C07 and EX-CORE-18-01 for retained inputs after a stock-rule refusal. Current271draft/unbound/not-run cases,23examples/56steps; COREbookrevision5,J06revision3. HYB.J02.C08–C10 already specify the three newly reproduced live return defects; no expectations changed to fit output. Case execution and immutable live assertions remain separate. Net30-without-due-date semantics remain an explicit owner review item, not invented approved policy. See [live handoff](../../handoffs/HANDOFF-20261018-v2514-resume.md).
