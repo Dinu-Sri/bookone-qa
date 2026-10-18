@@ -1,0 +1,2805 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-18",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied.",
+  "entries": [
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "ENV01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P07",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P08",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P09",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P10",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY04",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET02",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S02",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S06",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S08",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY05",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY07",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET04",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "C01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "C02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A05",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-008",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-029",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-031",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-035",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-036",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-037",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-038",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-039",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-041",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-043",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-044",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-047",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-048",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-054",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-055",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-067",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-016",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-031",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-036",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-037",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-038",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-039",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-041",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-043",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-044",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-047",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-048",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-054",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-055",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-067",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-068",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-069",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-070",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-071",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-072",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-073",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-074",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-075",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-076",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-077",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-078",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-079",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-080",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-081",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-082",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-083",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-084",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-085",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-086",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-087",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-088",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-089",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-090",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-091",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-092",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-093",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-094",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-095",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-002",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-010",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-031",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-036",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-001",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-023",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-031",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-032",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-033",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-034",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-036",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-037",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-038",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-039",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-041",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-043",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-044",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-047",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-048",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-054",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-055",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-067",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-068",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-069",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-070",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-071",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-072",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-073",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-074",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-075",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-076",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-077",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-078",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-079",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-080",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-081",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-082",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-083",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-084",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-085",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-086",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-087",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    }
+  ]
+}

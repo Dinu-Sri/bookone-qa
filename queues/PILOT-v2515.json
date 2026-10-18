@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "PILOT-v2515",
+  "candidate": "v2.5.15",
+  "reportedShortSha": "158ddc2",
+  "status": "specified-not-executed",
+  "cases": [
+    {
+      "id": "P15-01",
+      "title": "Seven-unit closing residual",
+      "precondition": "Fresh digital invoice7x1; fixed header.05; VAT registration false. Own matched customer. Never reuse INV0003.",
+      "expected": "Invoice6.95; six one-unit returns.99 each; last preview/post1.01; cumulative6.95; source due0/fully returned; no inventory/COGS.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-02",
+      "title": "Three-unit rounding control",
+      "precondition": "Separate fresh digital invoice3x1; fixed header.01; VAT off.",
+      "expected": "Invoice2.99; sequential credits1,1,.99; cumulative2.99/source0; final no overcredit.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-03",
+      "title": "Duplicate aggregate denial",
+      "precondition": "Separate physical source3x100/cost60 each; sufficient verified stock; return copied row2 then Add product same SKU2. Capture snapshots before submit.",
+      "expected": "Aggregate4 exceeds source3; supported UI refuses; no saved return/journal/stock/source balance change. Server guard remains untested unless independently exercised.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-04",
+      "title": "Legitimate duplicate rows",
+      "precondition": "Separate physical source3x100/cost60; three matching SKU rows1+1+1.",
+      "expected": "All lines retain source price100; full return300; DrReturns300/CrAR300; DrInventory180/CrCOGS180; quantity+3; source0. Compare independent stock/layers; missing layer remains inconclusive.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-05",
+      "title": "Tax and header discount",
+      "precondition": "Fresh explicit TAX invoice3x100/line10%/header5%; registered18%; matching customer. Preserve old INV0005.",
+      "expected": "Net256.50/VAT46.17/gross302.67; full return header13.50, net256.50/VAT46.17/gross302.67; persisted source0; DrReturns256.50/DrVAT46.17/CrAR302.67.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-06",
+      "title": "Original partial return control",
+      "precondition": "Fresh physical source3x100/line10%/header5%; VAT off; verified stock/cost60.",
+      "expected": "Invoice256.50; qty1 credit85.50/cost60; remaining2 credit171/cost120; source0; cumulative256.50; exact stock/layer restoration.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-07",
+      "title": "No-header historical VAT",
+      "precondition": "Fresh registered18% TAX invoice1x100/no discounts; post118 then VAT registration false before return; snapshot other settings.",
+      "expected": "Full linked return remains118 (net100/VAT18); correct journal; source0; current flag does not rewrite historical tax.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-08",
+      "title": "Server business refusal retains inputs",
+      "precondition": "Fresh physical SKU zero stock; negative stock block; enter valid invoice1x10 and identifiable synthetic field values; snapshot documents/journals/stock.",
+      "expected": "Stock refusal stays on form; all entered values retained; clear shortage message; no new invoice/journal/stock mutation. Digital allowed positive runs separately.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "stockUnchanged",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-09",
+      "title": "Client invalid percentage control",
+      "precondition": "Fresh unsaved invoice; enter discount150% with other synthetic fields filled.",
+      "expected": "Client rejects150%; form and fields retained; no invoice/journal created.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-10",
+      "title": "Matching-party source lock",
+      "precondition": "Fresh own-party source; inspect supported linked return party/price/discount editing.",
+      "expected": "Valid own-party return supported; linked source fields retain source identity/prices/discount. UI lock is not server/foreign authorization proof.",
+      "relatedWorkbookCases": [],
+      "evidence": [
+        "loadedActor",
+        "sourceIdentity",
+        "formLocks",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-11",
+      "title": "Digital stock-policy positive",
+      "precondition": "Fresh digital SKU; negative stock block; invoice1x1 then full return.",
+      "expected": "Invoice1 and return1 accepted; source0; no inventory/COGS lines; physical shortage policy does not deny digital.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ]
+    },
+    {
+      "id": "P15-12",
+      "title": "Final reconciliation and restoration",
+      "precondition": "Run all independent cases possible; record all created aliases and deltas including failed/ambiguous fixtures; restore VAT and negative-stock flags to captured opening values.",
+      "expected": "GL debit=credit and exact delta reconciliation with AR/AP/tax/inventory/profit; reload restored flags; end candidate equals start; no reset/writeoff/payment/repair of historical failures.",
+      "relatedWorkbookCases": [],
+      "evidence": [
+        "trialBalance",
+        "controlAccountDeltas",
+        "fixtureRegister",
+        "settingsReload",
+        "endStamp"
+      ]
+    }
+  ]
+}

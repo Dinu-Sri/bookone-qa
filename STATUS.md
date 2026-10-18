@@ -13,3 +13,7 @@ Library **1.4.0: eight books, 52 journeys, 271 draft/unbound/not-run definitions
 Next: coding agent fixes four groups with exact SHA/CHG and regressions; QA retests fresh candidate and adjacent paths, then continues PO/partial GRN/bill/GRNI/approval/stock layers and the other business/shared books. Actual encrypted backup/restore LAST. Owner manually relays the sanitized repository handoff. Read SESSION.md before resuming; do not replay financial actions or repair failure fixtures.
 
 Previous immutable evidence: [17 October live batch](runs/RUN-20261017-v2514-browser-wave.md), [v2.5.14 source checks](runs/RUN-20261017-v2514-retest.md), [v2.5.13 browser batch](runs/RUN-20261017-v2513-next-wave.md). Earlier results retain their original fingerprints and limitations.
+
+## Execution protocol update — 18 October
+
+Cost-aware pilot is prepared in docs/COST_AWARE_QA.md and queues/PILOT-v2515.json:12 browser scenarios, checkpoint CLI and harness checks. No new ERP execution or closure claimed. v2.5.15/158ddc2 is coding-agent-reported, not live verified. Coverage inventory347assertions:11related-partial mappings/336unmapped; zero full-case acceptance inferred. Next: verify candidate/diff/actor and bind pilot fixtures, then execute/checkpoint.
