@@ -1,6 +1,6 @@
 # WB-HYB — Hybrid businesses and cross-module jobs
 
-Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 4; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-HYB.json. Edit JSON and run pnpm library:render. Revision 5; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -147,6 +147,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Action: Return finalunit; compare preview, net line/discount arithmetic, persisted credit, sourcebalance and audit.
 - Expected: Conserve source value: final1.01 or1.04 under this declared prior allocation. Represent residual through an explicit valid allocation adjustment, or allocate prior returns differently so final credit is representable; never claim helper total1.01/1.04 while line1 minus nonnegative discount gives1.00. No unexplained revenue/stock/party changes. New regression includes both existing3unit last0.99 and fullsource anchors.
 - Independent numeric checks: seven-unit residual cents: sub(695, 594) = 101; ten-unit residual cents: sub(995, 891) = 104.
+
+### WB-HYB.J02.C11 — Non-closing return respects exhausted header budget in preview and posting
+
+- Type: boundary; execution: **not run**; adapter: **unbound**.
+- Given: Fresh digital source7x1/header0.05/net6.95. Declared round-half-up per-unit capped-header fixture: five accepted one-unit credits0.99 consume all0.05 header; source has2units/value2.00 left. Also source10x1/header0.05 withfive0.99priorcredits.
+- Action: Return one more unit before closing; compare displayed header/total, persisted lines/header/net, source remainingqty/value, GL and unchanged state; then close remainingunits.
+- Expected: Under this declared allocation, no header discount remains: sixth-unit preview and posting both1.00/header0; every subsequent preview equals its accepted credit. Fresh totals conserve6.95 or9.95 and sourceclosesat0; no undocumented adjustment or retroactive rewrite of prior credits. This fixture profile is not a universal rounding policy. Existing legacy residual1.01/1.04 expectations remain in C10.
+- Independent numeric checks: remaining header cents: sub(5, 5) = 0; sixth credit cents: sub(100, 0) = 100; seven-unit fresh cumulative cents: add(99, 99, 99, 99, 99, 100, 100) = 695.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 

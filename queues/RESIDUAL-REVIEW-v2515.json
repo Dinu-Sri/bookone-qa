@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "id": "RESIDUAL-REVIEW-v2515",
+  "candidate": "v2.5.15",
+  "reportedShortSha": "158ddc2",
+  "status": "reviewed-technical-plan-not-executed",
+  "predecessor": "queues/PILOT-v2515.json#P15-01 remains blocked and unchanged",
+  "environmentNotice": "Operator ledger does not enforce isolated environment or spec review. Verify prerequisites independently; upgrade slots remain blocked until genuine infrastructure exists.",
+  "cases": [
+    {
+      "id": "R43-F07",
+      "title": "Fresh seven-unit capped-header ladder",
+      "precondition": "New digital7x1/header0.05/VAToff/ownparty; no payments; immutable opening snapshots. Declared independent fixture allocation uses per-unit round-half-up capped by unused header.",
+      "expected": "Expected credits in cents99,99,99,99,99,100,100. Everypreview=itscredit; consumed header never exceeds5c; persisted line sums/header/total/journal reconcile; cumulative695c/source0. Stop dependent submission after unexplained preview mismatch, preserve first failure.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "readiness": "source-failure-known; live-pending"
+    },
+    {
+      "id": "R43-F10",
+      "title": "Fresh ten-unit capped-header ladder",
+      "precondition": "Separate fresh digital10x1/header0.05/VAToff; identical declared allocation profile.",
+      "expected": "Credits99,99,99,99,99,100,100,100,100,100c; eachpreview=posting; total995c/source0; line/header representation correct.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "readiness": "source-failure-known; live-pending"
+    },
+    {
+      "id": "R43-U07",
+      "title": "Legacy upgrade closing residual 101c",
+      "precondition": "AUTHORIZED ISOLATED runtime only; legitimate oldv2.5.14/a36af04source7x1/header0.05. Post6oneunitcredits0.99 each underoldbuild; verifypriorcredit594c/qty6. Stopoldapp and preserveDB/fixturestate usingin-placeupgrade; keepserverisolated. Upgrade to pinnedcandidatewithoutSQLrecordedits. No sharedstagingdowngrade/reset/backuprestore.",
+      "expected": "Beforefinalsubmission sourcehas1unit/101c due. Finalpreview/credit=101c; explicit valid allocation adjustment reconciles line amounts/header/net/gross; no unexplained lift of helpertotal above persisted lines. Totalcredit695c/source0. Priorissuedfacts/IDs/journalsunchanged; old consumed staging fixture untouched.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "readiness": "blocked-isolated-upgrade-environment-not-prepared"
+    },
+    {
+      "id": "R43-U10",
+      "title": "Legacy upgrade closing residual 104c",
+      "precondition": "AUTHORIZED ISOLATED runtime only; legitimate oldv2.5.14/a36af04source10x1/header0.05. Post9oneunitcredits0.99 each underoldbuild; verifypriorcredit891c/qty9. Stopoldapp and preserveDB/fixturestate usingin-placeupgrade; keepserverisolated. Upgrade to pinnedcandidatewithoutSQLrecordedits. No sharedstagingdowngrade/reset/backuprestore.",
+      "expected": "Beforefinalsubmission sourcehas1unit/104c due. Finalpreview/credit=104c; explicit valid allocation adjustment reconciles line amounts/header/net/gross; no unexplained lift of helpertotal above persisted lines. Totalcredit995c/source0. Priorissuedfacts/IDs/journalsunchanged; old consumed staging fixture untouched.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "readiness": "blocked-isolated-upgrade-environment-not-prepared"
+    },
+    {
+      "id": "R43-C03",
+      "title": "Fresh 2.99 rounding control",
+      "precondition": "Separate fresh digital3x1/header0.01/VAToff, exactdeclaredcontrolprofile.",
+      "expected": "Credits100,100,99c; everypreview=posting; representedtotals and cumulativetotal299c/source0; noinventory/COGS.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "readiness": "planned-not-executed"
+    },
+    {
+      "id": "R43-E01",
+      "title": "Server refusal retains complete invoice entry",
+      "precondition": "Fresh ownPhysicalSKUonhand0/negativeblock; no default-equal entered values. Issue17Oct/delivery19Oct/due25Oct/notes unique; paymentOther as headerlabel only, not tender/payment. Record all applicable dates/selects/dimensions/tax/export fields. Existingowncustomer. SnapshotbeforePost.",
+      "expected": "Onsinglestockrefusal, actionableerror and EVERY submittedfieldretained, no newinvoice/journal/AR/stockmutation; catalogcreatedseparatelypreserved. Compareallvalues, not merely lines; busyclears. No ambiguous financial replay.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "stockUnchanged",
+        "endStamp"
+      ],
+      "readiness": "live-failure-known; fix-retest-pending"
+    },
+    {
+      "id": "R43-E02",
+      "title": "Client refusal retains complete invoice entry",
+      "precondition": "Separatefreshunsavedinvoice/line150%; distinctdatesandnotes; snapshotallvalues.",
+      "expected": "Clear100%error; allfieldvaluespreserved; no invoice/journal. This client pass cannot certifyserver path.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "endStamp"
+      ],
+      "readiness": "planned-not-executed"
+    },
+    {
+      "id": "R43-END",
+      "title": "Reconciliation and restoration",
+      "precondition": "Endallavailableindependentcases; preserveeverycreatedfixtureandfailedattempt; capturecurrentstagingopeningbalancesfreshratherthanassumingemptyDB.",
+      "expected": "Exactdeltafinancial/quantityreconciliation, restoreactualopeningflagsandreload, endcandidate=startingcandidate. Upgradeenvironmentoutcomeskeptseparatefromsharedstaging. Missingupgradecasesstayblocked; no repair/writeoff/financialreplay. ActualbackuprestoreLAST.",
+      "relatedWorkbookCases": [],
+      "evidence": [
+        "trialBalance",
+        "controlAccountDeltas",
+        "fixtureRegister",
+        "settingsReload",
+        "endStamp"
+      ],
+      "readiness": "planned-not-executed"
+    }
+  ]
+}

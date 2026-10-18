@@ -18,7 +18,7 @@
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/catalog/sync-backup.mjs && node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
-    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue",
+    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue && pnpm test:review43-guard",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs tests/infrastructure/runtime-diagnostics.test.mjs",
     "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
@@ -51,7 +51,9 @@
     "library:plan": "node scripts/business-library.mjs plan",
     "test:business-library": "node --test tests/infrastructure/business-library.test.mjs",
     "queue": "node scripts/operator-queue.mjs",
-    "test:operator-queue": "node --test tests/infrastructure/operator-queue.test.mjs"
+    "test:operator-queue": "node --test tests/infrastructure/operator-queue.test.mjs",
+    "review:pr43": "node scripts/review43-source.mjs",
+    "test:review43-guard": "node --test tests/infrastructure/review43-source.test.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",

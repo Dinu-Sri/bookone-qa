@@ -62,3 +62,5 @@ Continue BookOne QA using docs/COST_AWARE_QA.md and queues/PILOT-v2515.json on b
 ## First pilot outcome — 18 October 2026
 
 The [v2.5.15 run](../runs/RUN-20261018-v2515-pilot.md) completed all 12 dispositions: 10 passed, 1 failed, 1 blocked, with no additional user prompt. Checkpointed execution took 33.1 minutes; model setting and credits were not observable, so cost savings are not established. Medium review is required for incomplete server-error retention, the residual fixture conflict and pilot evidence before broader rollout. Do not rerun the frozen queue against consumed fixtures. Use STATUS/SESSION and the latest handoff as the continuation point.
+
+The [PR43 technical review](../reviews/REVIEW-20261018-pr43.md) completes the source investigation and fixture design. It preserves the original pilot results and identifies two additional source-level residual concerns. Follow the new versioned queue only after its prerequisites are verified; the legacy upgrade environment remains unavailable. Review completion does not close product findings.

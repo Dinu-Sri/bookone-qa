@@ -23,3 +23,11 @@ P15-08 server stock refusal retains the line but resets delivery 19→18 October
 P15-01 is blocked: a fresh six-times-0.99 pre-state conflicts with the new cap. The old source is quantity-consumed and must not be altered. Medium must design separate fresh/upgrade fixtures; closing 1.01 is not live verified.
 
 Execution library 1.4.0; post-run 1.4.1 clarifies existing CORE C07 dates/notes. All 271 definitions remain draft/unbound/not-run. Thirty-five harness checks and generated consistency checks pass; full repository check was not run. Execution took 33.1 minutes with no extra user prompt; credits/model setting unavailable. Review before broader Light rollout. Next: fix/fixture triage and retests, then PO/partial GRN/GRNI/approval and other books. Backup/restore LAST. Owner relays sanitized links; no direct message, merge or deployment.
+
+## Next continuation after PR43 review
+
+Read reviews/REVIEW-20261018-pr43.md and handoffs/HANDOFF-20261018-pr43-review.md. Technical source investigation and fixture design are complete; product fixes and runtime acceptance are not. Existing browser state/balances above are the previous run's checkpoint, not freshly observed in this review.
+
+Private exact source snapshot is under .local/review43/snapshot; the committed manifest records full product SHA and hashes. Source diagnostics execute extracted pure calculations/control flow and stay red:13checks/7pass/6fail. No React packages were available, so no local DOM lifecycle test was run; framework semantics plus actual wrapper and prior live observation identify the field-reset mechanism. No new staging actions.
+
+New queues/RESIDUAL-REVIEW-v2515.json has eight planned slots, separate from frozen P15. Fresh7/10-unit ladders reveal non-closing preview cap mismatch; legacy1.01/1.04 helper line representation also fails. Upgrades require legitimate old-version-created unconsumed fixtures in an isolated real app/auth/DB environment, which is not prepared. Never alter the consumed staging source or fake prior credits. Library1.5.0/272cases/HYBrev5/J02rev5; all draft/unbound/not-run. First await coding fixes, update a source manifest deliberately, rerun diagnostics then browser/upgrade cases. Preserve all prior evidence and settings; backup/restore LAST.
