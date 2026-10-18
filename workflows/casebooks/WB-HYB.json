@@ -1,6 +1,6 @@
 {
   "id": "WB-HYB",
-  "revision": 4,
+  "revision": 5,
   "title": "Hybrid businesses and cross-module jobs",
   "profileIds": [
     "BP-05"
@@ -146,7 +146,7 @@
     },
     {
       "id": "WB-HYB.J02",
-      "revision": 4,
+      "revision": 5,
       "title": "Shared discounts, mixed returns and tax buckets",
       "status": "draft",
       "risk": "P1",
@@ -396,6 +396,50 @@
                 891
               ],
               "equals": 104
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C11",
+          "title": "Non-closing return respects exhausted header budget in preview and posting",
+          "given": "Fresh digital source7x1/header0.05/net6.95. Declared round-half-up per-unit capped-header fixture: five accepted one-unit credits0.99 consume all0.05 header; source has2units/value2.00 left. Also source10x1/header0.05 withfive0.99priorcredits.",
+          "action": "Return one more unit before closing; compare displayed header/total, persisted lines/header/net, source remainingqty/value, GL and unchanged state; then close remainingunits.",
+          "expected": "Under this declared allocation, no header discount remains: sixth-unit preview and posting both1.00/header0; every subsequent preview equals its accepted credit. Fresh totals conserve6.95 or9.95 and sourceclosesat0; no undocumented adjustment or retroactive rewrite of prior credits. This fixture profile is not a universal rounding policy. Existing legacy residual1.01/1.04 expectations remain in C10.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "remaining header cents",
+              "operation": "sub",
+              "operands": [
+                5,
+                5
+              ],
+              "equals": 0
+            },
+            {
+              "label": "sixth credit cents",
+              "operation": "sub",
+              "operands": [
+                100,
+                0
+              ],
+              "equals": 100
+            },
+            {
+              "label": "seven-unit fresh cumulative cents",
+              "operation": "add",
+              "operands": [
+                99,
+                99,
+                99,
+                99,
+                99,
+                100,
+                100
+              ],
+              "equals": 695
             }
           ],
           "execution": "not-run",

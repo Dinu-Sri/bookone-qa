@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "productSha": "158ddc2043b5d12f85124f77adf9bd7e36492838",
+  "sourceHashes": {
+    "apps/web/src/components/module/commercial-doc-screens.tsx": "5d106333663fd0c8041b68186768db97c4f2ece609bf4e387ed7a58f7a56a03d",
+    "apps/web/src/components/module/document-lines-editor.tsx": "11b4e2efae3190510af90ce22ea1d68a0450fdca726870e360f5b9e0e74becec",
+    "apps/web/src/components/sales/invoice-document-form.tsx": "412331746266954efc44ef8a8a4048728781207364f333c9d73d368a17b7327d",
+    "apps/web/src/components/sales/sales-document-form.tsx": "44540f46fbe6a1f06709e2da7e7f704d916fb19122f5a0453e1cf1b7780367e7",
+    "packages/accounting/src/document-guards.ts": "fca191d949ae7f20a96dc9205fcae4972b6ec2492334ad5a9e4a77f4f8158d7b"
+  },
+  "layer": "Pinned product source calculation/control-flow diagnostics; no browser, database, credential or release acceptance",
+  "checks": [
+    {
+      "id": "F7-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "failed"
+    },
+    {
+      "id": "F7-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "failed"
+    },
+    {
+      "id": "F7-conservation",
+      "expectedCents": 695,
+      "actualCents": 695,
+      "status": "passed"
+    },
+    {
+      "id": "F10-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "failed"
+    },
+    {
+      "id": "F10-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "failed"
+    },
+    {
+      "id": "F10-conservation",
+      "expectedCents": 995,
+      "actualCents": 995,
+      "status": "passed"
+    },
+    {
+      "id": "F3-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F3-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F3-conservation",
+      "expectedCents": 299,
+      "actualCents": 299,
+      "status": "passed"
+    },
+    {
+      "id": "U7-total",
+      "expectedCents": 101,
+      "actualCents": 101,
+      "status": "passed"
+    },
+    {
+      "id": "U7-line-representation",
+      "expected": "Line amounts minus header reconcile to returned credit without unexplained adjustment",
+      "status": "failed"
+    },
+    {
+      "id": "U10-total",
+      "expectedCents": 104,
+      "actualCents": 104,
+      "status": "passed"
+    },
+    {
+      "id": "U10-line-representation",
+      "expected": "Line amounts minus header reconcile to returned credit without unexplained adjustment",
+      "status": "failed"
+    }
+  ],
+  "ladders": [
+    {
+      "quantity": 7,
+      "headerCents": 5,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 99,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 198,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 4,
+          "priorCents": 297,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 5,
+          "priorCents": 396,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 6,
+          "priorCents": 495,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 7,
+          "priorCents": 595,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 695
+    },
+    {
+      "quantity": 10,
+      "headerCents": 5,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 99,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 198,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 4,
+          "priorCents": 297,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 5,
+          "priorCents": 396,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 6,
+          "priorCents": 495,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 7,
+          "priorCents": 595,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 8,
+          "priorCents": 695,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 9,
+          "priorCents": 795,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 10,
+          "priorCents": 895,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 995
+    },
+    {
+      "quantity": 3,
+      "headerCents": 1,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 100,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 200,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 299
+    }
+  ],
+  "upgrades": [
+    {
+      "quantity": 7,
+      "priorCents": 594,
+      "expectedCents": 101,
+      "postingCents": 101,
+      "lineNetCents": 101,
+      "persistableLineSumCents": 100,
+      "headerCents": 0
+    },
+    {
+      "quantity": 10,
+      "priorCents": 891,
+      "expectedCents": 104,
+      "postingCents": 104,
+      "lineNetCents": 104,
+      "persistableLineSumCents": 100,
+      "headerCents": 0
+    }
+  ],
+  "actionObservation": {
+    "boundary": "Actual extracted client wrapper/toast; substituted server returns a business error; no React DOM execution",
+    "resolvesUndefined": true,
+    "toastCount": 1,
+    "uncontrolledFieldNames": [
+      "issueDate",
+      "deliveryDate",
+      "dueDate",
+      "notes",
+      "paymentMode"
+    ]
+  },
+  "productGate": "failed",
+  "releaseAcceptance": "not-established",
+  "run": "RUN-20261018-pr43-source-review",
+  "qaBase": "ee67161111704688c6b76f5693c9ff20fd386c87",
+  "nodeVersion": "v24.19.0",
+  "adapterSha256": "0a97783e4c2df1effc049fad1a6d87330f92e619df5258e591dadf7b6ad5064b",
+  "oracleGuardTestSha256": "11eede596c415f90d9d96ca4f0bbfd258425dee0eb0ff7c755e477265f78379b",
+  "sourceManifestSha256": "0dd2302223eb48e277b95178d052c5620f97d0cc0f1742636a2e2ea8ee2384b8",
+  "origin": "Exact-commit GitHub connector source; extra snapshot terminal newline normalized to fetched bytes; original private attempts retained",
+  "runtimeBrowser": "not-exercised",
+  "reactDOM": "not-exercised",
+  "processExitCode": 1,
+  "totalChecks": 13,
+  "passed": 7,
+  "failed": 6
+}

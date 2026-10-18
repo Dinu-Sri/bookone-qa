@@ -1,8 +1,8 @@
-# BookOne maintained business workbooks — library 1.4.1
+# BookOne maintained business workbooks — library 1.5.0
 
 This is the expanded publication requested by the owner on 16 October 2026: business journeys and edge cases that humans and agents can maintain and use to test BookOne. It applies the [shared protocol](PROTOCOL.md) and canonical rulebook; it does not create a second policy authority.
 
-**Eight books, 52 journeys, 271 case definitions, 14 reusable control contracts, and 23 independent financial/state examples containing 56 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
+**Eight books, 52 journeys, 272 case definitions, 14 reusable control contracts, and 23 independent financial/state examples containing 56 posting/state steps. All new specifications are draft; all new cases are unbound and not run.** These counts exclude the five earlier starter families and their 44 variants to avoid presenting overlaps as distinct accepted coverage. Existing case/task IDs and evidence remain intact.
 
 | Workbook | Journeys | Cases | Main coverage |
 |---|---:|---:|---|
@@ -10,7 +10,7 @@ This is the expanded publication requested by the owner on 16 October 2026: busi
 | [Service](books/WB-SVC.md) | 5 | 25 | Quote to earned invoice, collections/credits/refunds, discounts/tax arithmetic, costs, advance/cancellation/milestone boundaries |
 | [Digital](books/WB-DIG.md) | 4 | 20 | Non-stock accounting, delivery/licence support boundary, refunds, historical price, mixed bundles |
 | [Rental](books/WB-REN.md) | 9 | 45 | Fleet/reservation, dispatch/partial returns, buckets/wash, deposits, invoice timing, extension/cancellation, kits/serials, charges, photos/history |
-| [Hybrid](books/WB-HYB.md) | 5 | 30 | Four product classes, shared discounts/returns, plans/modules/entities, scopes/domains/switching, contention/atomicity |
+| [Hybrid](books/WB-HYB.md) | 5 | 31 | Four product classes, shared discounts/returns, plans/modules/entities, scopes/domains/switching, contention/atomicity |
 | [Shared accounting/access](books/WB-CORE.md) | 7 | 39 | Allocation batches, tender, locks/reversals, financial statements/as-of, historical masters, roles/tenants, forms/retries/faults, tax boundaries |
 | [Banking/reconciliation](books/WB-BANK.md) | 5 | 25 | Cashbook/transfers, portable imports/deduplication, group matches, missing fees, outstanding/close/locks, cancellation/privacy |
 | [Data/operations](books/WB-OPS.md) | 5 | 25 | Fresh company bootstrap, file lifecycle, upgrades/rollback, audit/evidence/cleanup, retained archive programme executed last |
@@ -78,3 +78,7 @@ Library1.4.0 adds WB-CORE.J06.C07 and EX-CORE-18-01 for retained inputs after a 
 ## v2.5.15 pilot maintenance
 
 Library1.4.1 clarifies existingCORE.J06.C07 with distinct issue/delivery/due dates and notes; COREbook6/J06revision4. Controlled product lines surviving a server rejection do not satisfy retention when dates/notes reset. No rule changed or new case/binding invented;271definitions remain draft/unbound/not-run. See runs/RUN-20261018-v2515-pilot.md and changes/WCHG-20261018-v2515-pilot.md.
+
+## PR43 source review and residual fixture resolution
+
+Library **1.5.0** adds **WB-HYB.J02.C11**, the non-closing return boundary after the header budget is exhausted. HYB book/journey revisions become 5; C10's original legacy 1.01/1.04 expectations remain unchanged. There are now **272 draft/unbound/not-run cases**, still 52 journeys and 23 worked examples/56 steps. The new case has independent integer-cent checks. See the [technical review](../../reviews/REVIEW-20261018-pr43.md) and [fixture plan](RESIDUAL_FIXTURE_PLAN.md). Source diagnostics and planning do not establish browser, upgrade or canonical-case acceptance.
