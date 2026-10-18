@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -3049,6 +3049,223 @@
       "mapping": "unmapped-read-only-settings",
       "fullCaseAcceptance": false,
       "boundary": "Approvalfalse,requiredsupplierfalse,duplicateblocktrue,requireGRNfalse,postGRNIfalse,termsNet30/expense6800. No settings saved."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Exactlivecandidate/remoteQAverified;sourceprobe2pass1failknownsource-onlyrisk;deploymentcrossingforbidden."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshintendedlogin/Owner,openingsread;testprofilesavedandverifiedreload."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-E01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Stockrefusalexactshortage1,17fieldsretained,busycleared,noinvoiceGLstock."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-QUOTE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Clientrefusalretain16fields;correctedquote10savedoncewith17Oct/25Oct/notes;zeroGL."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-D18",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshcatalog18Octdraft/post/return10correct;sourcepaid;allentereddatefieldsretained."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-D17",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshcatalog17Octdraft/post/credit10correct;oldfailureunresolvednotreplayed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-DDISC",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "SavedDraft256.50reopensEdit286.50 because line10percentdiscountmissing;header13.50fixedretained. StoppedwithoutSave/Post;sourcepreserved."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-SUPPLIER",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Liveconfirmed:validbusinessrefusalretainsall16fields;reference-onlysameformcorrectionblockedThis save is already running;noacceptedpurchase/GL. No3rdattempt."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-PO",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "FreshphysicalPO300confirmed,productlinked/stock0,zeroGLAP."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GRN2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Receipt2correctstock/GRNI,POpartial."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-BILL2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "GRN2bill120clearsGRNItoAPwithoutdoublestock;POcountsGRNsourcedbill."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GRN3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining3receivedcorrectstockGRNI;POreceived5."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-BILL3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02",
+        "WB-PHY.J03.C04"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "SecondGRNbill180clearsGRNItoAP;all5receivedandbilledwithoutdoublestock."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-RET1",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "No supported UI source-linked partial-return entry exposed; no return submitted; source bills retained."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "RET1 dependency blocked; fully billed PO hides conversion controls in current pre-return state only."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-U07",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "blocked-isolated-upgrade",
+      "boundary": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "blocked-isolated-upgrade",
+      "boundary": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Actual deltas reconcile; all opening settings restored and reloaded; no unresolved financial intent; publication prepared as sanitized immutable run."
     }
   ]
 }

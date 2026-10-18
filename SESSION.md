@@ -1,3 +1,11 @@
+## Light02 completed — 18 October 2026
+
+All18 fixed slots disposed: **12passed,2failed,4blocked**, exact livev2.5.16 · b2c5205 start/end. [Run](runs/RUN-20261018-light02.md), [checks](runs/CHECKS-20261018-light02.json), [results handoff](handoffs/HANDOFF-20261018-light02-results.md), [coding/Medium mission](handoffs/CODING-MISSION-20261018-light02.md). Candidate unapproved. Supplier error→same-form correction deadlock now live-confirmed; discounted draft hydration still fails. Stock-refusal full retention, quote dates/correction, catalog17/18Oct drafts and PO/GRN2+3/bills/GRNI passed bounded checks. Partial purchase-return UI/dependent over-receipt blocked; two authentic upgrades blocked. No pending/ambiguous submission.
+
+Closing88journals11115.51balanced;AR1006.21/AP840/inventoryGL420/GRNI0/VAT46.71/COGS420/profit539.50/assets1426.21. NewSKU5value300;Widget4value240;inherited120gap unchanged. All actual opening purchase/VAT/inventory settings restored/reloaded. Draft0030 and unpaidPUR0003/0004 preserved. Original0018 remains unresolved; do not replay. Next Medium review/coding fixes and fresh exactcandidate queue; no terminal-case rerun. Canonical272cases remain draft/unbound; no readiness percentage. Backup/restore LAST.
+
+Prior records below are historical.
+
 ## PR46 review and next missions — 18 October 2026
 
 Review completed with preserved evidence: [review](reviews/REVIEW-20261018-pr46.md), [Light02](handoffs/HANDOFF-20261018-light02-mission.md), [coding mission](handoffs/CODING-MISSION-20261018-pr46.md). Original18-slot outcomes unchanged. New manualdraft positiveINV-20261018-0027 andSR0051net0: final80journals10475.51;allcontrolbalances/stock/settingsasPR46. Quote fill issue reproduced and keyboard workaround verified; return UIgap confirmed; source-level stuck-idempotency risk2pass/1fail (notliveDB). Originaldraft0018causeopen.
