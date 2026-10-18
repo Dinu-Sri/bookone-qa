@@ -15,3 +15,7 @@ Final27journals/debitscredits4097.07; AR406.21/AP540/inventoryGL480/outputVAT46.
 Library1.4.0/271draft cases; COREbook5/J06revision3/newC07; 23examples/56steps; rulebook1.0.0 expertpending; 26infrastructuretests passed. Historical graph/automated product pin unchanged. Source concerns cases HYB.J02.C08–C10 retain expectations; manual results do not create canonical bindings or independent review.
 
 Next action: inspect coding fix SHA/CHG and diff, retest exact four reproductions plus adjacent controls, then PO → partial GRN → billing/GRNI/approval/stock master/layers and remaining business/shared layers. Duplicate-bill feedback remains inconclusive; Net30 due-date derivation has an owner review intake. No blind financial replay; read persisted source/journal first. Actual encrypted backup/restore LAST. Publish only reviewed sanitized repo files and give owner links for manual relay; no direct messages/merge/deploy.
+
+## Cost-aware continuation
+
+Read docs/COST_AWARE_QA.md. New queue queues/PILOT-v2515.json has12specified-not-executed scenarios; initialize a private fingerprinted operator run only after verifying reported v2.5.15/158ddc2 live. No new browser mutation in this protocol setup. Existing immutable balances/fixtures above remain current. Medium plans/reviews/escalates; Light executes the exact queue; existing runners handle supported deterministic tests. No automatic model switch. Preserve unresolved intent checkpoints and historical failures.
