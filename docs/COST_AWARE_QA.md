@@ -58,3 +58,7 @@ For each pilot record model/setting, wall time, cases with complete required evi
 ## Prompt to use after selecting Light
 
 Continue BookOne QA using docs/COST_AWARE_QA.md and queues/PILOT-v2515.json on branch qa/cost-aware-pilot. Read STATUS/SESSION and only relevant rules/evidence. Verify candidate and actor before mutation. Run the entire fixed queue with independent fixtures and checkpoint each case/submission; preserve first failures, continue independent cases, and do not stop after one case or a few bugs. Inspect persisted state before any uncertain replay. Escalate unknowns with evidence for Medium. Finish with sanitized run/handoff, exact remaining scope, settings restoration and financial reconciliation. Do not deploy, reset, repair historical failure fixtures or claim missing evidence passed. If infrastructure or context limits stop execution, publish a precise checkpoint and next action.
+
+## First pilot outcome — 18 October 2026
+
+The [v2.5.15 run](../runs/RUN-20261018-v2515-pilot.md) completed all 12 dispositions: 10 passed, 1 failed, 1 blocked, with no additional user prompt. Checkpointed execution took 33.1 minutes; model setting and credits were not observable, so cost savings are not established. Medium review is required for incomplete server-error retention, the residual fixture conflict and pilot evidence before broader rollout. Do not rerun the frozen queue against consumed fixtures. Use STATUS/SESSION and the latest handoff as the continuation point.

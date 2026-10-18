@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 5,
+  "revision": 6,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -688,7 +688,7 @@
     },
     {
       "id": "WB-CORE.J06",
-      "revision": 3,
+      "revision": 4,
       "title": "Forms, retries, concurrency and ambiguous success",
       "status": "draft",
       "risk": "P1",
@@ -797,9 +797,9 @@
         {
           "id": "WB-CORE.J06.C07",
           "title": "Stock-rule rejection preserves a valid invoice form",
-          "given": "Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/date/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.",
+          "given": "Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/issue18Oct/delivery19Oct/due25Oct/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.",
           "action": "Submit once; inspect actionable shortage, retained fields and before/after document,AR,GL,stock and audit snapshots. Receive goods through separate authorized workflow before retrying the retained invoice.",
-          "expected": "Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback.",
+          "expected": "Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/issue date/delivery date/due date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback. Retaining controlled product lines while resetting dates or notes is a failure; compare every submitted field before/after. Client-only validation must retain the same fields as a separate control.",
           "kind": "invalid-state",
           "oracle": [
             {
