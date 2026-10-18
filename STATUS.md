@@ -1,3 +1,9 @@
+Latest execution: **v2.5.16 · b2c5205**, all18 mission slots disposed: **9passed,2failed,3blocked,4inconclusive**. One failed slot is an invalid quote-date fixture, not a confirmed product defect; read appended corrections. [Run](runs/RUN-20261018-v2516-light.md), [checks](runs/CHECKS-20261018-v2516-light.json), [handoff](handoffs/HANDOFF-20261018-v2516-results.md). Candidate unapproved.
+
+Final78journals/debits=credits10,455.51; AR1006.21/AP540/inventoryGL120/VAT46.71/profit539.50/assets1126.21;stock4×60=240;inherited120gap unchanged. Only unclosed new sale is denial INV0025=300/cost180. Draft0018 retained after unsuccessful Post. All settings restored/reloaded: VATfalse18/export0/dept01, negativeAllow,lastcost. No ambiguous financial submit remains. Medium review draft Post, date entry fixture, return-header visibility, missed E01 toast, duplicate preview cap and reachable purchase refusal. Do not replay preserved sources. Backup/restore LAST.
+
+Prior records below are historical and remain immutable.
+
 # BookOne QA current status
 
 **Latest: v2.5.15 · 158ddc2, 18 October 2026.** Cost-aware pilot: **10 passed, 1 failed, 1 blocked; all 12 scenarios have dispositions. Candidate remains unapproved.** [Run](runs/RUN-20261018-v2515-pilot.md), [exact evidence/corrections](runs/CHECKS-20261018-v2515-pilot.json), [handoff](handoffs/HANDOFF-20261018-v2515-pilot.md).
@@ -25,3 +31,4 @@ Prior immutable evidence: [87-assertion v2.5.14 batch](runs/RUN-20261018-v2514-r
 ## Next Light mission prepared — v2.5.16
 
 Coding update b2c5205a1bf52fbd327a948325810670467d21b4 is pinned and its actual diff reviewed. The unchanged13 source assertions now pass on the new manifest; earlier red evidence remains intact. Live deployment and real form retention are not verified yet. Read [mission handoff](handoffs/HANDOFF-20261018-v2516-light-mission.md), [instructions](docs/missions/MISSION-v2516-LIGHT-01.md) and [18-slot queue](queues/MISSION-v2516-LIGHT-01.json). Two upgrade slots remain blocked;90-minute budget includes15minutes for closing. Seven focused planning/oracle tests pass; no full-repository/browser/upgrade approval. No new staging mutations or changes to prior45-journal checkpoint. First Light action: fetch this published branch, verify livev2.5.16·b2c5205 and fresh actor, then run independent cases/checkpoints. Backup/restore LAST.
+

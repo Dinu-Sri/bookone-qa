@@ -1463,5 +1463,37 @@
       "INV-20261016-042": "TEMP-shadow-bounded-fixed-by043;fullPG16pending",
       "INV-20261016-043": "PUBLICcatalog-execute-confirmed-minimal;leastprivilege-acceptance-open;no-deployedHTTPexploit"
     }
+  },
+  "v2516LightMission": {
+    "record": "runs/RUN-20261018-v2516-light.md",
+    "checks": "runs/CHECKS-20261018-v2516-light.json",
+    "handoff": "handoffs/HANDOFF-20261018-v2516-results.md",
+    "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+    "qaExecutionSha": "4cb309158dc6405f61bfce09e45386919c6875b0",
+    "liveStamp": "v2.5.16 · b2c5205",
+    "counts": {
+      "passed": 9,
+      "failed": 2,
+      "blocked": 3,
+      "inconclusive": 4,
+      "pending": 0,
+      "running": 0
+    },
+    "acceptance": "not-established",
+    "settingsRestored": true,
+    "closing": {
+      "journals": 78,
+      "debitCredit": 10455.51,
+      "AR": 1006.21,
+      "AP": 540,
+      "inventoryGL": 120,
+      "VAT": 46.71,
+      "COGS": 420,
+      "profit": 539.5,
+      "assets": 1126.21,
+      "stockQty": 4,
+      "stockValue": 240
+    },
+    "correction": "Q01 invalidfixture not confirmed product defect; first record retained"
   }
 }

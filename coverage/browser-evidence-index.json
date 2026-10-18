@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -2799,6 +2799,185 @@
       "originalStatus": "passed",
       "relatedWorkbookCases": [],
       "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-E01",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-E02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-I01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "One draft Post did not reach posted state; journal unchanged and draft remains. Error message missed. No diagnosis or replay. Missing displayed SKU is an observation, not proof of lost product identity."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-Q01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "Captured pre-submit DOM already had default18Oct/17Nov. Date17/25 fills did not stick. Saved quote matches captured dates; no save-time date loss demonstrated. Client refusal retained16fields and valid correction saved one quote10. Original failed disposition preserved; distinct-date obligation needs fresh retest."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-F07",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-F10",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-C03",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-PART",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-HVAT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-DENY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "Invalid rows2+2 show line subtotal400, computed discount100,total300 before refusal. Earlier intent called total400 incorrectly. No accepted return. Medium assess misleading cap display; expectations unchanged."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-SPLIT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-PO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-U07",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
       "fullCaseAcceptance": false
     }
   ]
