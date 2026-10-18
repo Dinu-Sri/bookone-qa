@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -2979,6 +2979,76 @@
       ],
       "mapping": "related-partial-mission-slot",
       "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DRAFT-READ",
+      "originalStatus": "inconclusive",
+      "observedDisposition": "observed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "Original0018stilldraft10;allvisiblefieldvaliditytrue,SKUdash;notresubmitted"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-MANUAL-POSITIVE",
+      "originalStatus": "passed",
+      "observedDisposition": "passed-bounded",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "NewmanualServiceINV0027draft10reopened/onePost10;DrAR10CrSales10;fullSR0051credit10/DrReturns10CrAR10;sourcepaid;noCOGSstock"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DATE-FILL",
+      "originalStatus": "failed",
+      "observedDisposition": "harness-failure-reproduced",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "fill+Tab changedDOMtemporarily but line rerender resetcontrolledquote dates todefaults;no save-time date-lossclaim"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DATE-KEY",
+      "originalStatus": "passed",
+      "observedDisposition": "passed-unsaved-control",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "fill+ArrowUp+ArrowDown onissue then due retained17Oct/25Oct2026afterlineedit;noquotesaved"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-RETURN-VIEW",
+      "originalStatus": "inconclusive",
+      "observedDisposition": "evidence-gap-confirmed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "ReturnsroutehasView/Actions;noPrint/detail config. Snapshotdialogshowslines/total,notheader/tax/allocation breakdown. No hiddenAPIused."
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-PURCHASE-PROFILE",
+      "originalStatus": "passed",
+      "observedDisposition": "read-only-observed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-read-only-settings",
+      "fullCaseAcceptance": false,
+      "boundary": "Approvalfalse,requiredsupplierfalse,duplicateblocktrue,requireGRNfalse,postGRNIfalse,termsNet30/expense6800. No settings saved."
     }
   ]
 }
