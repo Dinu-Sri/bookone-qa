@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2516-LIGHT-01",
+  "candidate": "v2.5.16",
+  "reportedShortSha": "b2c5205",
+  "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "status": "planned-not-executed",
+  "budget": {
+    "totalMinutes": 90,
+    "executionMinutes": 75,
+    "closingReserveMinutes": 15
+  },
+  "note": "18 execution slots, not18acceptedworkflows. Twoisolatedupgrade slotsblocked. Operatorledgerdoesnotenforcedependencies,budgetoractor:operatorverifiesbeforestart. Stalebuildgloballyblocksmutations. Eachfinancialsubmitneedsintent/readback.",
+  "cases": [
+    {
+      "id": "M16-GATE",
+      "title": "Exact candidate and source preflight",
+      "precondition": "Read latest remote STATUS/SESSION and this mission at published branch; product b2c5205a1bf52fbd327a948325810670467d21b4. Current source preflight has13passes; live not yet verified.",
+      "expected": "Record live v2.5.16 \u00b7 b2c5205 before mutations. Verify13sourcechecks from fresh exactmanifest or cite unchanged publishedpreflight with its boundary. If live differs, global mutationblock; do not deploy. Never substitute oldsourcepin.",
+      "relatedWorkbookCases": [],
+      "evidence": [
+        "liveStamp",
+        "sourceManifest",
+        "sourceResult",
+        "qaRevision"
+      ],
+      "dependsOn": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-ACTOR",
+      "title": "Fresh actor and opening snapshots",
+      "precondition": "Exact livecandidate; intendedprivateQAcredentials available, else supportedlogin prerequisite needed. Prior45journals is onlyhistoricalbaseline.",
+      "expected": "Explicitlogout/login intendedfixture; loadedowncompany/Owner; openingjournal/TB/stocklevels/settings snapshots. Recordactualcurrentbaselines. No guessingcredentials/grantbypass/reset.",
+      "relatedWorkbookCases": [],
+      "evidence": [
+        "freshLogin",
+        "loadedActor",
+        "openingBalances",
+        "openingStock",
+        "openingSettings",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-GATE"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-E01",
+      "title": "Server refusal retains every submitted field",
+      "precondition": "Newrun-ownedPhysicalzeroSKU, stockblock, VAToff. Invoice1x10/owncustomer. Allapplicablefields distinctfromdefaults: issue17Oct2026/delivery19Oct/due25Oct/notesunique/paymentOther(headerlabelonly). Capturefieldnames/values, dimensionswhereexistingvalidchoices.",
+      "expected": "SinglePostrefusedforstockshortage1; sameform, everyfieldunchanged, clearerror, busyclears, noinvoices/AR/journals/stockmovement. Quickcreatedcatalogproductseparateandpreserved. No auto retry.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "stockUnchanged",
+        "busyCleared",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-E02",
+      "title": "Client150 percent retains fields",
+      "precondition": "SeparateunsavedDigitalinvoiceqty1price10/line150%; distinctdates/notes/paymentlabel; recordallvalues.",
+      "expected": "Clear100%error; no serverposting; everyvalueunchanged, busyclears; no invoice/journal. Doesnotcertifyservererrorpath.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "documentAbsence",
+        "journalAbsence",
+        "busyCleared",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-I01",
+      "title": "Draft intent then single post and credit",
+      "precondition": "FreshDigital1x10/noVAT/no discounts; recordnotesanddates. UseSave draft (notPost).",
+      "expected": "Savedraftcreatesonedraftwithallfields, zeronewjournals/stock/AR. Reopen/Editpreservesvalues; onePostcreatesoneinvoice10/DrAR10CrSales10 andsuccessredirect. Fullreturn10leavessource0/noinventory/COGS. Stopdependentpostifdraftfieldswrong; preservefirstfailure. Testsbuttonintent/keyandredirectwithoutcashpayment.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-Q01",
+      "title": "Quotation shared submitter intent",
+      "precondition": "FreshquotewithDigital1x10/owncustomer/distinctnotesanddate. Attempt150%once, thenonlyafterclearclientrefusalcorrectto0%.",
+      "expected": "Validationretainsallfields. SupportedSavequote/draftcreatessinglequote10withcorrectfields, successnavigationandnoAR/GL/stockposting. Recordactualbuttonintent. No conversionorcustomeremail.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "savedQuote",
+        "zeroFinancialDelta",
+        "busyCleared",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-F07",
+      "title": "Fresh 7-unit sequential ladder",
+      "precondition": "SeparatefreshDigital7x1/fixedheader.05/VAToff, ownparty. Binddeclaredcappedround-half-upfixture. Neverreuseoldconsumedsources.",
+      "expected": "Expectedcreditscents99,99,99,99,99,100,100. Captureeverypreviewandonepersistedcreditperstep, remainingqty/value/headerbudget, completejournalandline/header/netrepresentation. Everypreview=posting. Sum695c/source0; noinventory/COGS. Checkparty/price/linediscountlocks. Unexpectedstepblocksitsdependentsteps; continueindependentcases.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-F10",
+      "title": "Fresh 10-unit sequential ladder",
+      "precondition": "SeparatefreshDigital10x1/fixedheader.05/VAToff, ownparty. Binddeclaredcappedround-half-upfixture. Neverreuseoldconsumedsources.",
+      "expected": "Expectedcreditscents99,99,99,99,99,100,100,100,100,100. Captureeverypreviewandonepersistedcreditperstep, remainingqty/value/headerbudget, completejournalandline/header/netrepresentation. Everypreview=posting. Sum995c/source0; noinventory/COGS. Checkparty/price/linediscountlocks. Unexpectedstepblocksitsdependentsteps; continueindependentcases.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-C03",
+      "title": "Fresh 3-unit sequential ladder",
+      "precondition": "SeparatefreshDigital3x1/fixedheader.01/VAToff, ownparty. Binddeclaredcappedround-half-upfixture. Neverreuseoldconsumedsources.",
+      "expected": "Expectedcreditscents100,100,99. Captureeverypreviewandonepersistedcreditperstep, remainingqty/value/headerbudget, completejournalandline/header/netrepresentation. Everypreview=posting. Sum299c/source0; noinventory/COGS. Checkparty/price/linediscountlocks. Unexpectedstepblocksitsdependentsteps; continueindependentcases.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-PART",
+      "title": "Physical85.50 and171 control",
+      "precondition": "OwnPhysicalsource3x100/line10%/header5%, VAToff, actualverifiedcost60/sufficientstock. Freshsource; baselineqtyandledger.",
+      "expected": "Invoice256.50/cost180; qty1credit85.50/cost60, qty2credit171/cost120; exactqty/value restored/source0. Sourceprice/party/discountlocks; capturemovementledger. Insufficientfixture staysblocked, noSQL/masterrepair.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-TAX",
+      "title": "DiscountedfullTAX return302.67",
+      "precondition": "FreshmanualService3x100/line10%/header5%, explicitTAXinvoice, registration18%, ownparty. Capturetemporarysettingsandrestore.",
+      "expected": "Net256.50/VAT46.17/gross302.67; returnpreview270/header13.50/gross302.67, acceptedexactcredit; DrReturns256.50/DrVAT46.17/CrAR302.67; source0; noinventory. Notstatutorycertification.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-HVAT",
+      "title": "HistoricalVAT118 afterflagoff",
+      "precondition": "SeparateTAXsource1x100/no discounts atregistered18%, post118; thenregistrationfalseandverifyreloadbeforelinkedreturn.",
+      "expected": "Fullreturn118/net100/VAT18 despitecurrentflagoff; correctjournal/source0. Historicalsourceunchanged; otherVATsettingspreserved.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-DENY",
+      "title": "Duplicate2+2 guard atomicity",
+      "precondition": "FreshPhysicalsource3x100/cost60, verifiedsufficientstock. Preparecopiedrow2plusAddsameSKU2; snapshotsbeforeattempt.",
+      "expected": "UIrefuses4against3; rowsandfieldsretained; noacceptedreturn/journal/stock/sourcebalancechange. Leavefreshsourceopen300andrecordexpectedclosingdelta. UIguardnotserver/foreignsecurityproof.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-SPLIT",
+      "title": "Legitimate1+1+1 source prices",
+      "precondition": "SeparatePhysicalsource3x100/cost60, verifiedstock. Returnrows1+1+1sameSKU.",
+      "expected": "Eachrowprice100; fullcredit300/cost180; source0, exactstockquantity/ledger/GLrestoration. Nosilentzeropricedrow.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-PO",
+      "title": "Purchase shared server-error retention",
+      "precondition": "NewPOform/ownexistingvendoravailable. ThroughsupportedUIselectnewvendorbutleaveitsnamerequiredblank; qty1price10/distinctdate/notes. Do notusehiddenfieldtampering.",
+      "expected": "Supportedservermissingvendorrefusalretainsallfieldsandclearerror; nodocument/GL/stock. ThenchooseexistingownvendorandSaveonePO10, successredirectandzeroAR/AP/journal/stockdelta. IfUIcannotreachthislegitimatelystate, markblocked/escalatewithoutinventingserverdenial.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "formBeforeAfter",
+        "error",
+        "savedPurchaseOrder",
+        "zeroFinancialDelta",
+        "busyCleared",
+        "endStamp"
+      ],
+      "dependsOn": [
+        "M16-ACTOR"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M16-U07",
+      "title": "Isolatedlegacy101c upgrade",
+      "precondition": "Isolatedoldv2.5.14a36af04compiledapp/auth/DBenvironmentNOTPREPARED. FollowRESIDUAL_FIXTURE_PLAN; noexistingstagingrecordedits.",
+      "expected": "Markblocked-environmentunlessgenuinereviewedinfraexists. Sourcehelper101c passisnotupgradeacceptance. PreserveP15-01andoldconsumedfixtures. NoSQLfabrication/reset/downgrade/backuprestore.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlanReference",
+        "nextAction"
+      ],
+      "dependsOn": [],
+      "lane": "isolated-upgrade",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M16-U10",
+      "title": "Isolatedlegacy104c upgrade",
+      "precondition": "Isolatedoldv2.5.14a36af04compiledapp/auth/DBenvironmentNOTPREPARED. FollowRESIDUAL_FIXTURE_PLAN; noexistingstagingrecordedits.",
+      "expected": "Markblocked-environmentunlessgenuinereviewedinfraexists. Sourcehelper104c passisnotupgradeacceptance. PreserveP15-01andoldconsumedfixtures. NoSQLfabrication/reset/downgrade/backuprestore.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlanReference",
+        "nextAction"
+      ],
+      "dependsOn": [],
+      "lane": "isolated-upgrade",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M16-END",
+      "title": "Close run and reconcile all deltas",
+      "precondition": "Allavailablecaseshaveoutcomesorbudgetrequiresclosing. Reservelast15minutes. Actualopeningbaselineandallcreated/failed/ambiguousfixturesregistered.",
+      "expected": "Exactjournaldebit=credit/controlaccount/stock/tax/profitdeltas; distinguishinherited120stockGLgapfromnewvariance. Verifypriorrecordsunchangedwherebound, restoreactualopeningVAT/negative/costflagsandreload; start=endcandidate. Publishsanitizedreport/handoffwithremainingblocks/firstfailures. No balancingentry/payment/writeoff/reset.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "evidence": [
+        "trialBalance",
+        "controlAccountDeltas",
+        "stockDeltas",
+        "fixtureRegister",
+        "settingsReload",
+        "endStamp"
+      ],
+      "dependsOn": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    }
+  ]
+}
