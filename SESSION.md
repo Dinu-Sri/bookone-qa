@@ -1,21 +1,25 @@
-# Resume BookOne QA — 18 October checkpoint
+# Resume BookOne QA — completed v2.5.15 pilot
 
-Read STATUS.md and handoffs/HANDOFF-20261018-v2514-resume.md first. Latest batch: 87 bounded assertions, 70 pass / 11 fail / 6 inconclusive; three live P1 return groups plus one P2 input-retention group. Source-only concerns now have sales UI reachability, but purchase analogues and full runtime/security/stock layers remain open. Prior draft-edit bug is still open, not retested today.
+Read STATUS.md, docs/COST_AWARE_QA.md, [handoff](handoffs/HANDOFF-20261018-v2515-pilot.md), and [results/corrections](runs/CHECKS-20261018-v2515-pilot.json). All 12 queue scenarios have dispositions: 10 passed, 1 failed, 1 blocked. No unresolved running intent. Do not replay terminal cases; retests require a new run.
 
-Product a36af042753f3ad8b40246d6cd579deac9233ba7, observed v2.5.14 · a36af04 throughout. QA base3691a4bbd7b6fa63dd8b8fb0bc582c1628475249/PR40; publication branch qa/v2514-resume-20261018. New candidate requires a new run; never relabel old results.
+Live `v2.5.15 · 158ddc2`, full product SHA `158ddc2043b5d12f85124f77adf9bd7e36492838`, verified start/end. QA execution base `ab0a997e7b5004693e761407172c9cd661ca2727`. Explicit fresh login used intended private QA N141710 fixture; own company/Owner loaded. Credentials stay private. Browser bookTab ended on Balance Sheet as of 31 October; the secondary stock tab read levels. Inspect fresh actor/build before actions.
 
-Existing fresh synthetic account QA N141710 and its own company remain usable. Credentials stay private in the prior local fixture file; never publish, reset or guess them. Explicit logout/login and loaded Owner verified today. No new account or access grant. Prior denied existing-company grants must not be bypassed.
+Preserve older bad INV-0003/SR-0003–0009, INV-0004/SR-0010, INV-0005, invalid VAT-on INV-0006, and all older wrong-party/historical fixtures. Fresh sources:
 
-Browser binding agent/browser/bookTab may persist; tab1455173440 was left on the final Balance Sheet and marked for handoff. Inspect fresh UI, actor and stamp before actions. Initial client chunk failure recovered by reload. Do not treat prior network timeout or ambiguous duplicate-bill click as established product accounting failures.
+- INV-0010 paid 2.99 via SR-0016/17/18 = 1/1/0.99.
+- INV-0011 open 300: duplicate 2+2 UI refusal source; no accepted return.
+- INV-0012 paid 300 via SR-0019, three rows of 1 at 100.
+- INV-0013/TAX serial 3 paid 302.67 via SR-0020.
+- INV-0014 paid 256.50 via SR-0021 = 85.50 and SR-0022 = 171.
+- INV-0015/TAX serial 4 paid 118 via SR-0023.
+- INV-0016 paid 1 via SR-0024; INV-0017 paid 1 via SR-0025.
 
-Preserve all data. Original INV0001 draft256.50; INV0002 paid after SR0001=85.50 and SR0002=171. Bad fixtures: INV0003 seven units/6.95, SR0003–0008 .99 each and SR0009 1.00, source due.01; INV0004 three units/300 with SR0010 accepted2+2units/200, source due100; INV0005/TAX26OCT_01/1 untouched/open302.67, valid full return rejected. Invalid first control INV0006 open3.53 was created under VAT on; retain and exclude from no-tax2.99control. Controls INV0007 paid118 via SR0011; INV0008 paid2.99 via SR0012/13/14=1/1/.99; INV0009 paid1 via SR0015. Earlier PUR0001/fullPR0001 600 settled; PUR0002 600 lessPR0002 60 leaves540. Older tenant fixtures remain untouched.
+Fresh document date prefix is 20261018. Quick-created Physical Q-P15-ZERO-STO-AWZW remains at zero; Digital Q-P15-DIGITAL--H5BZ remains. No cleanup requested.
 
-Final27journals/debitscredits4097.07; AR406.21/AP540/inventoryGL480/outputVAT46.71/profit299.50/assets886.21=liabilitiesequity. Actual stock/layer quantities not read. VATregisteredfalse and negativepolicyallow restored and reloaded; last costing/rate18 unchanged. Separate physical zero-stock catalog fixture persists from authorized quickcreation; denied invoice not created. No balancing entry/payment/writeoff/cleanup.
+Final 45 journals/debits = credits 7,261.39; AR 706.21; AP 540; inventory GL 300; VAT 46.71; profit 419.50; assets 1,006.21. Stock 7/value 420 at last cost 60; the inherited 120 gap traces to SR-0010 adding +2@60/+2@0. VAT registration false/rate 18/export zero/dept 01; negative stock Allow and last cost restored/confirmed by reload. No payment/reset/writeoff/balancing entry.
 
-Library1.4.0/271draft cases; COREbook5/J06revision3/newC07; 23examples/56steps; rulebook1.0.0 expertpending; 26infrastructuretests passed. Historical graph/automated product pin unchanged. Source concerns cases HYB.J02.C08–C10 retain expectations; manual results do not create canonical bindings or independent review.
+P15-08 server stock refusal retains the line but resets delivery 19→18 October, clears due 25 October, and clears notes. First toast wording was not captured. No invoice/journal/stock mutation; client 150% refusal retains all fields. Original typed P15-08 turnover 7,277.39 is preserved with appended correction to actual 7,257.39. Medium/coding agent should investigate the uncontrolled-field/action-reset hypothesis and broaden shared-form coverage.
 
-Next action: inspect coding fix SHA/CHG and diff, retest exact four reproductions plus adjacent controls, then PO → partial GRN → billing/GRNI/approval/stock master/layers and remaining business/shared layers. Duplicate-bill feedback remains inconclusive; Net30 due-date derivation has an owner review intake. No blind financial replay; read persisted source/journal first. Actual encrypted backup/restore LAST. Publish only reviewed sanitized repo files and give owner links for manual relay; no direct messages/merge/deploy.
+P15-01 is blocked: a fresh six-times-0.99 pre-state conflicts with the new cap. The old source is quantity-consumed and must not be altered. Medium must design separate fresh/upgrade fixtures; closing 1.01 is not live verified.
 
-## Cost-aware continuation
-
-Read docs/COST_AWARE_QA.md. New queue queues/PILOT-v2515.json has12specified-not-executed scenarios; initialize a private fingerprinted operator run only after verifying reported v2.5.15/158ddc2 live. No new browser mutation in this protocol setup. Existing immutable balances/fixtures above remain current. Medium plans/reviews/escalates; Light executes the exact queue; existing runners handle supported deterministic tests. No automatic model switch. Preserve unresolved intent checkpoints and historical failures.
+Execution library 1.4.0; post-run 1.4.1 clarifies existing CORE C07 dates/notes. All 271 definitions remain draft/unbound/not-run. Thirty-five harness checks and generated consistency checks pass; full repository check was not run. Execution took 33.1 minutes with no extra user prompt; credits/model setting unavailable. Review before broader Light rollout. Next: fix/fixture triage and retests, then PO/partial GRN/GRNI/approval and other books. Backup/restore LAST. Owner relays sanitized links; no direct message, merge or deployment.

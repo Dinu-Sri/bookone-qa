@@ -1,4 +1,4 @@
-# BookOne maintained business workbooks — library 1.4.0
+# BookOne maintained business workbooks — library 1.4.1
 
 This is the expanded publication requested by the owner on 16 October 2026: business journeys and edge cases that humans and agents can maintain and use to test BookOne. It applies the [shared protocol](PROTOCOL.md) and canonical rulebook; it does not create a second policy authority.
 
@@ -73,3 +73,8 @@ Library1.3.0 adds WB-CORE.J04.C06 for draft line/header discount hydration; book
 ## 18 October live-wave maintenance
 
 Library1.4.0 adds WB-CORE.J06.C07 and EX-CORE-18-01 for retained inputs after a stock-rule refusal. Current271draft/unbound/not-run cases,23examples/56steps; COREbookrevision5,J06revision3. HYB.J02.C08–C10 already specify the three newly reproduced live return defects; no expectations changed to fit output. Case execution and immutable live assertions remain separate. Net30-without-due-date semantics remain an explicit owner review item, not invented approved policy. See [live handoff](../../handoffs/HANDOFF-20261018-v2514-resume.md).
+
+
+## v2.5.15 pilot maintenance
+
+Library1.4.1 clarifies existingCORE.J06.C07 with distinct issue/delivery/due dates and notes; COREbook6/J06revision4. Controlled product lines surviving a server rejection do not satisfy retention when dates/notes reset. No rule changed or new case/binding invented;271definitions remain draft/unbound/not-run. See runs/RUN-20261018-v2515-pilot.md and changes/WCHG-20261018-v2515-pilot.md.
