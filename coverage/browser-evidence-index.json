@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -3266,6 +3266,273 @@
       "fullCaseAcceptance": false,
       "layer": "staging-browser",
       "boundary": "Actual deltas reconcile; all opening settings restored and reloaded; no unresolved financial intent; publication prepared as sanitized immutable run."
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Exact live candidate and published QA revision verified.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Fresh intended login and openings verified; required profile cannot be established because checkbox interactions do not change state.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-PO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Zero trading delta; no settings save; all actual openings reloaded unchanged; no ambiguous financial intent.",
+      "businessOperationExecuted": false
     }
   ]
 }

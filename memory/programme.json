@@ -1638,5 +1638,34 @@
     "canonicalAcceptance": false,
     "settingsChanged": false,
     "nextAction": "User sign-in; thenfresh actor/build/openings and execute22fixedslots; restore/reconcile/publish"
+  },
+  "light03BlockedExecution": {
+    "run": "runs/CHECKS-20261019-light03-blocked.json",
+    "handoff": "handoffs/HANDOFF-20261019-light03-blocked.md",
+    "mediumMission": "handoffs/MEDIUM-MISSION-20261019-light03-ui.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaBase": "bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+    "counts": {
+      "passed": 2,
+      "failed": 0,
+      "blocked": 20
+    },
+    "businessSubmissions": 0,
+    "classification": "Interaction anomaly; product versus browser/control cause unknown; Medium review required",
+    "settingsSaved": false,
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "profit": 539.5,
+      "assets": 1426.21,
+      "stockValue": 540
+    },
+    "nextAction": "Medium classify UI interaction failure;newreviewedattempt after reliableprofile;nohistoricalrepair",
+    "releaseAcceptance": false
   }
 }
