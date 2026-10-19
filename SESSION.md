@@ -1,3 +1,9 @@
+## v2.5.18 preflight and fixed Light03 — 19 October 2026
+
+Login stamp **v2.5.18 · a4a6d65** verified; business testing **blocked for user sign-in**. Actual v2.5.17/18 diff reviewed, focused source12checks passed (memory-store/purefunction boundary, no realDB/auth/React). [Review](reviews/REVIEW-20261019-v2518.md), [checks](reviews/CHECKS-20261019-v2518-source.json), [22slot queue](queues/MISSION-v2518-LIGHT-03.json), [handoff](handoffs/HANDOFF-20261019-v2518-light03.md). Fullcandidatea4a6d65fa0f8ecc116b728b99d70e86f1b2b577f. No business/settings mutations or live bug closure. Prior Light02 outcomes12pass2fail4blocked unchanged. Fresh fixtures/new fingerprint required; no replay/historical repair. Next user signs in intended QA N141710/owncompany; verify actor/build/openings then execute120active-minute queue with checkpoints/restoration/reconciliation/publication. Legacyupgradesblocked; backuprestoreLAST.
+
+Prior records follow.
+
 ## Light02 completed — 18 October 2026
 
 All18 fixed slots disposed: **12passed,2failed,4blocked**, exact livev2.5.16 · b2c5205 start/end. [Run](runs/RUN-20261018-light02.md), [checks](runs/CHECKS-20261018-light02.json), [results handoff](handoffs/HANDOFF-20261018-light02-results.md), [coding/Medium mission](handoffs/CODING-MISSION-20261018-light02.md). Candidate unapproved. Supplier error→same-form correction deadlock now live-confirmed; discounted draft hydration still fails. Stock-refusal full retention, quote dates/correction, catalog17/18Oct drafts and PO/GRN2+3/bills/GRNI passed bounded checks. Partial purchase-return UI/dependent over-receipt blocked; two authentic upgrades blocked. No pending/ambiguous submission.

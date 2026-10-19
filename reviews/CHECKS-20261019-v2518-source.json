@@ -1,0 +1,71 @@
+{
+  "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+  "scope": "actual pinned pure functions; native TS type stripping; data-URL import remap; in-memory idempotency store; no real DB/auth/React/browser business execution",
+  "cases": [
+    {
+      "id": "S18-DRAFT-PERCENT",
+      "status": "passed"
+    },
+    {
+      "id": "S18-DRAFT-AMOUNT",
+      "status": "passed"
+    },
+    {
+      "id": "S18-PARTIALS",
+      "status": "passed"
+    },
+    {
+      "id": "S18-TAX",
+      "status": "passed"
+    },
+    {
+      "id": "S18-INVALID",
+      "status": "passed"
+    },
+    {
+      "id": "S18-PREFILL",
+      "status": "passed"
+    },
+    {
+      "id": "S18-PURCHASE60",
+      "status": "passed"
+    },
+    {
+      "id": "S18-BREAKDOWN",
+      "status": "passed"
+    },
+    {
+      "id": "S18-CONVERSION",
+      "status": "passed"
+    },
+    {
+      "id": "S18-REFUSE-CORRECT",
+      "status": "passed"
+    },
+    {
+      "id": "S18-INFLIGHT",
+      "status": "passed"
+    },
+    {
+      "id": "S18-KEEP-SUCCESS",
+      "status": "passed"
+    }
+  ],
+  "manifest": [
+    {
+      "path": "packages/accounting/src/document-guards.ts",
+      "blob": "80c7d6e493f77a2cd553899f2ab4827ed43a5323"
+    },
+    {
+      "path": "apps/web/src/lib/idempotency-lifecycle.ts",
+      "blob": "d2ea2227383fa6555c6a412d5088bdea90812c4f"
+    },
+    {
+      "path": "apps/web/src/lib/idempotency-result.ts",
+      "blob": "7e180b2ff9a637908338fe61f9a9fcf9b7972467"
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "provenance": "All three executed source files match Git blob hashes after removing one patch-added trailing blank line. First normalized-source 12-pass attempt preserved privately; exact-source rerun also12passed. Import path remapped to data URL and TS stripped using Node24.19.0; no semantic source changes."
+}
