@@ -20,3 +20,8 @@ New guards reject duplicate/dangling IDs, orphan rules, missing outcome/unchange
 
 Not run: full pnpm check in a complete checkout; dependency installation; E2E discovery/product build; live UI tests; keyboard/screen reader/device/fault/upgrade/recovery executions. No ERP defect closure or customer/accessibility acceptance. Existing272 business cases and Light03 results preserved.
 
+## Publication verification
+
+QA PR52 and product PR6 are published as drafts. Exact-commit readback of all37 files matched prepared content. GitHub compares confirm the28-file QA allowlist and9-file product Markdown-only scope; original business definitions/rulebook/runs were not changed. Product commitf710fb95ae15425fc0a283d61424db5422561ae7; initial QA specification commit024f8c35223a28c0662d469b71cd96579d4ee24d. No merge/deploy or live UI changes.
+
+

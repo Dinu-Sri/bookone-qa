@@ -31,3 +31,11 @@ Full pnpm check was not run in the partial local snapshot; dependency installati
 
 Independent specification review owner: Medium QA reviewer; pending, not invented. Owner release decision and expert accounting/statutory review remain separate. No merge/deploy/direct agent message was performed by this handoff.
 
+## Published integration
+
+QA companion: https://github.com/Dinu-Sri/bookone-qa/pull/52 (initial specification commit024f8c35223a28c0662d469b71cd96579d4ee24d).
+Product documentation adoption: https://github.com/Dinu-Sri/BookOne/pull/6, commitf710fb95ae15425fc0a283d61424db5422561ae7.
+
+All37 published files (28QA+9product) were fetched back at exact commits and matched their prepared content. GitHub compares confirm no original business cases/rules/runs changed, and the product patch has132 added documentation lines/zero deleted lines. Both PRs remain drafts, unmerged and undeployed. Product guide pins the immutable QA specification commit; this publication addendum does not alter UX definitions/hash.
+
+
