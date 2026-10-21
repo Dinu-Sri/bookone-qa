@@ -1579,5 +1579,37 @@
     },
     "nextAction": "Medium classify UI interaction failure;newreviewedattempt after reliableprofile;nohistoricalrepair",
     "releaseAcceptance": false
+  },
+  "light03InteractionRecovery": {
+    "schemaVersion": 1,
+    "date": "2026-10-21",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "qaParent": "fd9b40bd2c859362b3f82b95aa6d1f0e0ad4958f",
+    "actor": "Fresh intended private QA N141710 sign-in on21Oct; loaded owncompanyOwner",
+    "observations": [
+      {
+        "id": "REC21-EXTENSION",
+        "status": "observed-blocker",
+        "actual": "Browser explicitly reported another extension UI open and blocking automation; user asked to dismiss; do not infer this caused19Oct checkbox failure."
+      },
+      {
+        "id": "REC21-CHECK",
+        "status": "passed-bounded",
+        "actual": "After user continued, standard getByRole checkbox.check changed requiredsupplier false totrue; DOMcheckedtrue observed; screenshot retained privately."
+      },
+      {
+        "id": "REC21-RESTORE",
+        "status": "passed-bounded",
+        "actual": "Standard uncheck restoredfalse; noSave clicked; reload retainedfullopeningpurchaseprofilefalse,false,true,false,false,Net30,6800."
+      }
+    ],
+    "settingsSaved": false,
+    "financialSubmissions": 0,
+    "businessFixAcceptance": false,
+    "historicalRootCause": "unresolved; prior19Oct failure remainsimmutable; currentautomationblockcleared and checkboxoperatesnow",
+    "scope": "Unsavedcontrolandrestore/readbackonly;notpersistedsettingssave,fullprofile,financialworkflow,DBconcurrencyorauthzacceptance",
+    "nextAction": "Newprivateexecutionattemptforunchanged22slotqueue atverifiedsamecandidate;reverifyactualactor/openings/allprofiles;neveroverwriteterminalblockedrun",
+    "handoff": "handoffs/HANDOFF-20261021-light03-recovery.md"
   }
 }

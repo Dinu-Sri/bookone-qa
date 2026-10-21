@@ -1,3 +1,9 @@
+## Light03 control recovery — 21 October 2026
+
+Currentcheckboxinteractionrecovered onunchangedv2.5.18 · a4a6d65. [Recoveryhandoff](handoffs/HANDOFF-20261021-light03-recovery.md), [exactevidence](runs/CHECKS-20261021-ui-recovery.json). BrowserexplicitlyreportedanotherextensionUIblockingautomation;afteruserdismissalstandardcheckboxcheckfalse→true/unchecktrue→falseworked. NoSaveclicked;reloadretainedallopeningpurchaseflags. No financial actions.19Octrootcauseunresolvedandblockedrununchanged. Newreviewedexecutionattemptmayusetheunchanged22slotqueuewithNEWledger/actualfingerprint;reverifyactor/openings/allsettingsbeforetrading. Recoverydoesnotverifysettingssave/productfixes. BackuprestoreLAST.
+
+Priorrecordsremainhistorical.
+
 ## Light03 execution blocked — 19 October 2026
 
 **2passed/20blocked;0businesssubmissions.** [Run](runs/RUN-20261019-light03-blocked.md), [checks](runs/CHECKS-20261019-light03-blocked.json), [handoff](handoffs/HANDOFF-20261019-light03-blocked.md), [Mediumtriage](handoffs/MEDIUM-MISSION-20261019-light03-ui.md). Fresh autonomous intendedQAlogin/ownOwner and exactv2.5.18 · a4a6d65 verified. Requiredpurchasecheckbox remainsfalse acrosssupportedmethods/reload; profilecannotbeestablished. No settingsSave/tradingmutations. Causeproductversusbrowserunknown,notaconfirmedproductdefect. Passedslotsgate/closingonly;donotcountasbusinesspasses. Actualopening/closing88journals11115.51/AR1006.21/AP840/InvGL420/GRNI0/stock540/inheritedgap120unchanged. Allsettingsreloadedunchanged;noambiguousintent. NextMediumclassifiesinteractionthennewreviewedattempt;oldblockedresultsimmutable. RoutineQAloginuserauthorized;nosigninpermissionblock. BackuprestoreLAST.
