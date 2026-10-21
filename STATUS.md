@@ -1,3 +1,11 @@
+## Light03 fresh attempt completed — 21 October 2026
+
+**22slots:18passed,2failed,2blocked.** [Run](runs/RUN-20261021-light03-results.md), [checks](runs/CHECKS-20261021-light03-results.json), [results handoff](handoffs/HANDOFF-20261021-light03-results.md), [coding/Medium mission](handoffs/CODING-MISSION-20261021-light03-results.md). Exactstart/endv2.5.18 · a4a6d65;freshQAOwner;priorblockedrunimmutable. Suppliercorrection,draft256.50,requiredrefpurchase/GRNI/partialreturn,7/10/3ladders,historicalVATandretentionpassedboundedchecks. Failures:genericbillpickerupdatesmetadatawithoutlines;addedreturnrowsuseeditablecatalog10insteadofsource100/line120vsfooter300. PreserveINV0032open300;noacceptedvalidsplitreturn. Authenticlegacy101c/104cupgradesstillblocked.
+
+Closing122journals13243.63balanced;AR1306.21/AP1090/InvGL660/GRNI0/VAT46.71/COGS420/expense10/profit829.50/assets1966.21. Stock780/inheritedgap120unchanged;allactualopeningpurchase/inventory/fullsalesmapsrestoredreloadedexact-equal. No ambiguousfinancialintent/payment/reset/repair. Checkpoint44.6minplusinitialsetup;modelcreditsunknown. NextcodingfixesandMediumactualdiff/newcandidate/freshfixedqueue. Canonical272draftunboundunchanged;candidateunapproved;backuprestoreLAST.
+
+Priorrecordsbelowarehistorical.
+
 ## Light03 control recovery — 21 October 2026
 
 Currentcheckboxinteractionrecovered onunchangedv2.5.18 · a4a6d65. [Recoveryhandoff](handoffs/HANDOFF-20261021-light03-recovery.md), [exactevidence](runs/CHECKS-20261021-ui-recovery.json). BrowserexplicitlyreportedanotherextensionUIblockingautomation;afteruserdismissalstandardcheckboxcheckfalse→true/unchecktrue→falseworked. NoSaveclicked;reloadretainedallopeningpurchaseflags. No financial actions.19Octrootcauseunresolvedandblockedrununchanged. Newreviewedexecutionattemptmayusetheunchanged22slotqueuewithNEWledger/actualfingerprint;reverifyactor/openings/allsettingsbeforetrading. Recoverydoesnotverifysettingssave/productfixes. BackuprestoreLAST.

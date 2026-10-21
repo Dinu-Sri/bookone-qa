@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -3533,6 +3533,273 @@
       "fullCaseAcceptance": false,
       "boundary": "Zero trading delta; no settings save; all actual openings reloaded unchanged; no ambiguous financial intent.",
       "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "ExactcandidateandpublishedQArevisionverified;freshattemptpreservespriorblockedrun."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshintendedlogin/openingscaptured;plannedprofile savedandreloaded;noexistingM18bills."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Businessrefusalretainedallfields;sameformcorrectedreferencepostedexactlyonebill10."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Legacyamount-onlydraftreopenscorrect256.50;readonly,noSavePost."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshpercentdraftsave/reopen/post/fullcredit256.50correctwithpersistedbreakdown."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-PO",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "NewPhysicalcatalog/PO5x60=300withzeroGLAPstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Received2@60withcorrectGRNIposting/AP0/newstock2value120."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "RequiredbillreferenceA persisted;nativeblankrefusalonly;GRNIclearedwithoutdoublestock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining3received180withGRNI;stock5value300/APprior120unchanged."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "DuplicaterefArefusedzeroGL;uniquerefBpostedonebill180/GRNIcleared/noadditionalstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Billpickerclientnavigationloadsmetadatawithoutlines/total0;safeReloadrecovers. Separatepartialreturnpostedcorrect60;firstUIfailurepreserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining2/value120prefilled;qty3explicitinvalidwithoutfakeDiscount;oneSave refusedallfieldsretained."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "AfterpartialreturnexhaustedPOhidesconversioncontrols;clientboundaryonly."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Invalid2+2refusalretainedfields/zeroGL;validsplitrows addedfromcatalogshowunlocked10insteadsource100,lineamounts120vsfooter300;dependentcreditnotposted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All7credits0.99x5,1,1equalpreviews/persistedbreakdowns;headerbudget0.05conserved/sourceclosed."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F10",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All10credits0.99x5then1x5matchpreview/persistedbreakdown;sourceclosed9.95/header0.05conserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Threecredits1,1,0.99matchpreviews/persistedallocations;sourceclosed2.99."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Taxedsource302.67fullycreditedafterVATdisabled;historicalVAT46.17andpersistedbreakdowncorrect."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Serverstockrefusalretains17fields;client150quoteerrorretains16;onlydiscountcorrectedquote10savedwith18-26Octnotes/zeroGL."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Actualoutcomesreconciled;allsettingsrestoredreloaded;noambiguousintent;sanitizedpublicationclosing."
     }
   ]
 }
