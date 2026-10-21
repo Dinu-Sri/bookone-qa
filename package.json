@@ -18,7 +18,7 @@
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/catalog/sync-backup.mjs && node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
-    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue && pnpm test:review43-guard && pnpm test:mission-v2516 && pnpm test:mission-v2516-02",
+    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue && pnpm test:review43-guard && pnpm test:mission-v2516 && pnpm test:mission-v2516-02 && pnpm ux:check && pnpm test:ux-workbook",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs tests/infrastructure/runtime-diagnostics.test.mjs",
     "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
@@ -57,7 +57,11 @@
     "retest:v2516": "node scripts/retest2516-source.mjs",
     "test:mission-v2516": "node --test tests/infrastructure/mission-v2516.test.mjs",
     "test:mission-v2516-02": "node --test tests/infrastructure/mission-v2516-02.test.mjs",
-    "review:pr46": "node scripts/review46-source.mjs"
+    "review:pr46": "node scripts/review46-source.mjs",
+    "ux:render": "node scripts/ux-workbook.mjs render",
+    "ux:check": "node scripts/ux-workbook.mjs check",
+    "ux:plan": "node scripts/ux-workbook.mjs plan",
+    "test:ux-workbook": "node --test tests/infrastructure/ux-workbook.test.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",

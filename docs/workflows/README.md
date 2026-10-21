@@ -38,3 +38,9 @@ pnpm workflows:plan discount payment
 Planner returns affected families plus transitive dependents;missing/unknown impact broadens to all five. Shared core and actual-diff review remain mandatory. It neither executes business tests nor selects every inherited case automatically. Existing campaign/batch/HTTP/browser runners remain execution tools.
 
 
+## UI/UX across all books
+
+Read the [shared UI/UX companion](../ux/README.md) for32 interaction rules,48 drafted workflows, pinned existing-design inventory and safe incremental coding guidance. It supplements all eight books without replacing the current design system or financial policy.
+
+
+

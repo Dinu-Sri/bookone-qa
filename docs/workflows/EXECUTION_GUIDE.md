@@ -43,3 +43,9 @@ Open WORKFLOW_EDGE_CASE or RULE_CHANGE as appropriate. Mark affected scope block
 Reconcile document allocations, GL/control accounts, stock quantities/valuation, fleet disposition, deposits, cash, tax and reports with exact date/scope as applicable. Preserve first failures; a later fix creates a new fingerprinted run. Update STATUS/SESSION and sanitized handoff links, with actual created data/cleanup and remaining gates. Candidate acceptance is a separate independent decision.
 
 For new feature/edge definitions, update canonical JSON, increment affected revisions, record before/after examples, rule impacts, direct/dependent journeys and compatibility, regenerate and validate. v1 new cases remain unbound/not-run; an executable-binding extension needs reviewed real adapter/test links and schema validation. Do not store mutable live outcomes in the canonical definitions. Actual encrypted backup/restore remains LAST.
+
+
+## UI/UX assertions on business transitions
+
+Also resolve applicable [shared UX rules/workflows](../ux/README.md). Bind UX JSON version/hash, state, keyboard/touch/reader/viewport/locale and actual evidence layer. Observe pending/result/error, all-field retention, source hydration, visible financial reconciliation and saved readback while checking unchanged business state. UXW mappings compose the existing business case; partial UX evidence cannot pass the full case. Use templates/UX_RUN.md and the UX execution guide.
+

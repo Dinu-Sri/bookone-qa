@@ -1,3 +1,10 @@
+## UI/UX workbook and incremental adoption —21 October2026
+
+Owner-requested shared UX companion1.0.0: **32 rules,48 draft/unbound/not-run workflow templates,12 groups,31 direct business-journey mappings** plus the shared state/field matrix for all selected business journeys. [Start here](docs/ux/README.md), [workbook](docs/ux/WORKBOOK.md), [existing design inventory](docs/ux/DESIGN_INVENTORY.md), [coding guide](docs/ux/CODING_GUIDE.md), [handoff](handoffs/HANDOFF-20261021-ux-workbook.md). Existing BookOne visual system is extended, not replaced. Four design questions remain owned/pending. New authoring checks6/6 and retained business-library guards16/16 pass; full repository check and ERP UX execution are not claimed.
+
+Existing Light03 results and both unresolved return findings below remain unchanged. The272 canonical business cases remain draft/unbound/not-run. Product instruction adoption is in a separate documentation PR; no UI code, version, deployment or customer-readiness change.
+
+
 ## Light03 fresh attempt completed — 21 October 2026
 
 **22slots:18passed,2failed,2blocked.** [Run](runs/RUN-20261021-light03-results.md), [checks](runs/CHECKS-20261021-light03-results.json), [results handoff](handoffs/HANDOFF-20261021-light03-results.md), [coding/Medium mission](handoffs/CODING-MISSION-20261021-light03-results.md). Exactstart/endv2.5.18 · a4a6d65;freshQAOwner;priorblockedrunimmutable. Suppliercorrection,draft256.50,requiredrefpurchase/GRNI/partialreturn,7/10/3ladders,historicalVATandretentionpassedboundedchecks. Failures:genericbillpickerupdatesmetadatawithoutlines;addedreturnrowsuseeditablecatalog10insteadofsource100/line120vsfooter300. PreserveINV0032open300;noacceptedvalidsplitreturn. Authenticlegacy101c/104cupgradesstillblocked.
@@ -71,5 +78,6 @@ Prior immutable evidence: [87-assertion v2.5.14 batch](runs/RUN-20261018-v2514-r
 ## Next Light mission prepared — v2.5.16
 
 Coding update b2c5205a1bf52fbd327a948325810670467d21b4 is pinned and its actual diff reviewed. The unchanged13 source assertions now pass on the new manifest; earlier red evidence remains intact. Live deployment and real form retention are not verified yet. Read [mission handoff](handoffs/HANDOFF-20261018-v2516-light-mission.md), [instructions](docs/missions/MISSION-v2516-LIGHT-01.md) and [18-slot queue](queues/MISSION-v2516-LIGHT-01.json). Two upgrade slots remain blocked;90-minute budget includes15minutes for closing. Seven focused planning/oracle tests pass; no full-repository/browser/upgrade approval. No new staging mutations or changes to prior45-journal checkpoint. First Light action: fetch this published branch, verify livev2.5.16·b2c5205 and fresh actor, then run independent cases/checkpoints. Backup/restore LAST.
+
 
 

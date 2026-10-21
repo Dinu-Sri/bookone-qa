@@ -1735,5 +1735,18 @@
     "releaseAcceptance": false,
     "canonicalAcceptance": false,
     "nextAction": "Codingfixpickerstate/addedsourcerowpricing;Mediumreviewsactualdiff/newcandidateandfreshfixedqueue;authenticupgradesblocked;backuprestoreLAST"
+  },
+  "uiUxCompanion20261021": {
+    "version": "1.0.0",
+    "source": "ux/workbook.json",
+    "sha256": "383d18ad74978af67e9e75d855c77c87b45a92beb00c101a3338dd0abd01e57f",
+    "rules": 32,
+    "workflowTemplates": 48,
+    "directJourneyMappings": 31,
+    "status": "specified-draft-unbound-not-run",
+    "existingBusinessLibrary": "1.5.0/272 unchanged",
+    "productStudySha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "handoff": "handoffs/HANDOFF-20261021-ux-workbook.md",
+    "next": "Coding agent adopts documentation-only product contract and incremental fixes; Medium reviews actual diff/build and binds a fresh mission. Original Light03 return findings remain unresolved."
   }
 }

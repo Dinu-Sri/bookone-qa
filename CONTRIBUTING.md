@@ -12,3 +12,9 @@ Read [the maintained library](docs/workflows/LIBRARY.md), [execution guide](docs
 
 
 **Mandatory maintenance:** every relevant feature, defect, edge case or correction must follow [AGENTS rules 73–81](AGENTS.md#mandatory-workbook-maintenance-correction-and-audit). Maintain canonical definitions and independent expected outputs, audit semantics and mappings, version/review changes, validate generated views, preserve history and publish the updated handoff. Structural checks and specification counts are separate from actual ERP test evidence.
+
+
+## Shared UI/UX maintenance
+
+The [UI/UX companion](docs/ux/README.md) and AGENTS rules91–98 apply to humans and agents. Edit canonical UX JSON, preserve the existing product design system, map affected business journeys and shared consumers, keep exact expected/unchanged outcomes, regenerate/check views and preserve historical evidence. Use templates/UX_CHANGE.md and UX_RUN.md. Draft workflows and structural checks are not ERP passes; missing browser/reader/history layers stay explicit.
+
