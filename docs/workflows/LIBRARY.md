@@ -82,3 +82,9 @@ Library1.4.1 clarifies existingCORE.J06.C07 with distinct issue/delivery/due dat
 ## PR43 source review and residual fixture resolution
 
 Library **1.5.0** adds **WB-HYB.J02.C11**, the non-closing return boundary after the header budget is exhausted. HYB book/journey revisions become 5; C10's original legacy 1.01/1.04 expectations remain unchanged. There are now **272 draft/unbound/not-run cases**, still 52 journeys and 23 worked examples/56 steps. The new case has independent integer-cent checks. See the [technical review](../../reviews/REVIEW-20261018-pr43.md) and [fixture plan](RESIDUAL_FIXTURE_PLAN.md). Source diagnostics and planning do not establish browser, upgrade or canonical-case acceptance.
+
+
+## Shared UI/UX companion —2026-10-21
+
+The [UI/UX workbook](../ux/README.md) adds32 shared rules and48 separately identified draft/unbound/not-run templates mapped to these journeys. Canonical source is ux/workbook.json; existing1.5.0/272 business definitions and all prior financial expectations remain unchanged. UX mappings are supplementary specification links, not new business-case execution or acceptance. Follow its maintenance protocol alongside rules73–81.
+

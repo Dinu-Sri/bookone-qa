@@ -1,3 +1,10 @@
+## UI/UX workbook and incremental adoption —21 October2026
+
+Owner-requested shared UX companion1.0.0: **32 rules,48 draft/unbound/not-run workflow templates,12 groups,31 direct business-journey mappings** plus the shared state/field matrix for all selected business journeys. [Start here](docs/ux/README.md), [workbook](docs/ux/WORKBOOK.md), [existing design inventory](docs/ux/DESIGN_INVENTORY.md), [coding guide](docs/ux/CODING_GUIDE.md), [handoff](handoffs/HANDOFF-20261021-ux-workbook.md). Existing BookOne visual system is extended, not replaced. Four design questions remain owned/pending. New authoring checks6/6 and retained business-library guards16/16 pass; full repository check and ERP UX execution are not claimed.
+
+Existing Light03 results and both unresolved return findings below remain unchanged. The272 canonical business cases remain draft/unbound/not-run. Product instruction adoption is in a separate documentation PR; no UI code, version, deployment or customer-readiness change.
+
+
 ## Light03 fresh attempt completed — 21 October 2026
 
 **22slots:18passed,2failed,2blocked.** [Run](runs/RUN-20261021-light03-results.md), [checks](runs/CHECKS-20261021-light03-results.json), [results handoff](handoffs/HANDOFF-20261021-light03-results.md), [coding/Medium mission](handoffs/CODING-MISSION-20261021-light03-results.md). Exactstart/endv2.5.18 · a4a6d65;freshQAOwner;priorblockedrunimmutable. Suppliercorrection,draft256.50,requiredrefpurchase/GRNI/partialreturn,7/10/3ladders,historicalVATandretentionpassedboundedchecks. Failures:genericbillpickerupdatesmetadatawithoutlines;addedreturnrowsuseeditablecatalog10insteadofsource100/line120vsfooter300. PreserveINV0032open300;noacceptedvalidsplitreturn. Authenticlegacy101c/104cupgradesstillblocked.
@@ -85,5 +92,6 @@ New queues/RESIDUAL-REVIEW-v2515.json has eight planned slots, separate from fro
 ## Immediate continuation — v2.5.16 Light mission
 
 Start handoffs/HANDOFF-20261018-v2516-light-mission.md and docs/missions/MISSION-v2516-LIGHT-01.md from the newly published branch, not stale scratch files. Queue MISSION-v2516-LIGHT-01 has18slots,2isolatedupgrade blockers,90minutes including15closing. Fullproduct b2c5205a1bf52fbd327a948325810670467d21b4; live stamp still unverified. New source preflight13pass, old expectations/evidence preserved. Runtime/ReactDOM/upgrade acceptance not implied. Revalidate private credential availability and intended fresh login; do not guess credentials or bypass identity checks. Prior45journals/balances/settings remain historical anchors, not current observations. No browser actions in planning. Execute only after exactbuild/actor/openingstate checks, checkpoint allsubmissions, continue independentcases, preserve failures and close with restoredsettings/reconciliation. Backup/restore LAST.
+
 
 

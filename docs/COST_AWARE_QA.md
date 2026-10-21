@@ -70,3 +70,9 @@ The [PR43 technical review](../reviews/REVIEW-20261018-pr43.md) completes the so
 ## PR46 review and mission02
 
 Read reviews/REVIEW-20261018-pr46.md and handoffs/HANDOFF-20261018-light02-mission.md. Light02 is frozen to v2.5.16/b2c5205 with18plannedslots and75execution+15closing active minutes; idlecreditwaiting is recorded separately. Capture error OR successnavigation with persisted readback; a timeout alone proves neither rollback nor failure. Verify controlled date values after rerender. Codingmission is separate; do not deploy across the run. All supplier/VAT/stock configuration variants must be explicit and restored. Newcandidate requires Mediumreview/newqueue. Priorfailures and corrections remain immutable; canonicalcaseacceptance and modelcredit savings are not established.
+
+
+## Shared UI/UX mission composition
+
+For a changed UI, Medium selects applicable UX/UXW steps from docs/ux/WORKBOOK.md alongside original bug repros and WB business cases, resolves policies/layers and pins UX JSON version/hash. Light checks them during the same fixed business mission rather than repeatedly auditing every screen. Dedicated keyboard/reader/responsive/isolated-fault passes cover shared components and required consumer variants. Metadata checks are cheap authoring checks, not live automation or product acceptance. Unknowns escalate; record unavailable layers explicitly.
+
