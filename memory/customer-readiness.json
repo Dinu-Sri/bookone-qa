@@ -1550,5 +1550,66 @@
     "canonicalAcceptance": false,
     "settingsChanged": false,
     "nextAction": "User sign-in; thenfresh actor/build/openings and execute22fixedslots; restore/reconcile/publish"
+  },
+  "light03BlockedExecution": {
+    "run": "runs/CHECKS-20261019-light03-blocked.json",
+    "handoff": "handoffs/HANDOFF-20261019-light03-blocked.md",
+    "mediumMission": "handoffs/MEDIUM-MISSION-20261019-light03-ui.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaBase": "bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+    "counts": {
+      "passed": 2,
+      "failed": 0,
+      "blocked": 20
+    },
+    "businessSubmissions": 0,
+    "classification": "Interaction anomaly; product versus browser/control cause unknown; Medium review required",
+    "settingsSaved": false,
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "profit": 539.5,
+      "assets": 1426.21,
+      "stockValue": 540
+    },
+    "nextAction": "Medium classify UI interaction failure;newreviewedattempt after reliableprofile;nohistoricalrepair",
+    "releaseAcceptance": false
+  },
+  "light03InteractionRecovery": {
+    "schemaVersion": 1,
+    "date": "2026-10-21",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "qaParent": "fd9b40bd2c859362b3f82b95aa6d1f0e0ad4958f",
+    "actor": "Fresh intended private QA N141710 sign-in on21Oct; loaded owncompanyOwner",
+    "observations": [
+      {
+        "id": "REC21-EXTENSION",
+        "status": "observed-blocker",
+        "actual": "Browser explicitly reported another extension UI open and blocking automation; user asked to dismiss; do not infer this caused19Oct checkbox failure."
+      },
+      {
+        "id": "REC21-CHECK",
+        "status": "passed-bounded",
+        "actual": "After user continued, standard getByRole checkbox.check changed requiredsupplier false totrue; DOMcheckedtrue observed; screenshot retained privately."
+      },
+      {
+        "id": "REC21-RESTORE",
+        "status": "passed-bounded",
+        "actual": "Standard uncheck restoredfalse; noSave clicked; reload retainedfullopeningpurchaseprofilefalse,false,true,false,false,Net30,6800."
+      }
+    ],
+    "settingsSaved": false,
+    "financialSubmissions": 0,
+    "businessFixAcceptance": false,
+    "historicalRootCause": "unresolved; prior19Oct failure remainsimmutable; currentautomationblockcleared and checkboxoperatesnow",
+    "scope": "Unsavedcontrolandrestore/readbackonly;notpersistedsettingssave,fullprofile,financialworkflow,DBconcurrencyorauthzacceptance",
+    "nextAction": "Newprivateexecutionattemptforunchanged22slotqueue atverifiedsamecandidate;reverifyactualactor/openings/allprofiles;neveroverwriteterminalblockedrun",
+    "handoff": "handoffs/HANDOFF-20261021-light03-recovery.md"
   }
 }
