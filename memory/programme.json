@@ -1699,5 +1699,41 @@
     "scope": "Unsavedcontrolandrestore/readbackonly;notpersistedsettingssave,fullprofile,financialworkflow,DBconcurrencyorauthzacceptance",
     "nextAction": "Newprivateexecutionattemptforunchanged22slotqueue atverifiedsamecandidate;reverifyactualactor/openings/allprofiles;neveroverwriteterminalblockedrun",
     "handoff": "handoffs/HANDOFF-20261021-light03-recovery.md"
+  },
+  "light03FreshResults": {
+    "run": "runs/CHECKS-20261021-light03-results.json",
+    "handoff": "handoffs/HANDOFF-20261021-light03-results.md",
+    "codingMission": "handoffs/CODING-MISSION-20261021-light03-results.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaExecutionBase": "0afd96b4dd9e317e75102c6e159df9aa0e58561a",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "counts": {
+      "passed": 18,
+      "failed": 2,
+      "blocked": 2,
+      "inconclusive": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "closing": {
+      "journals": 122,
+      "turnover": 13243.63,
+      "AR": 1306.21,
+      "AP": 1090,
+      "inventoryGL": 660,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "COGS": 420,
+      "expense6800": 10,
+      "profit": 829.5,
+      "assets": 1966.21,
+      "stockValue": 780
+    },
+    "settingsRestoredReloaded": true,
+    "ambiguousFinancialIntents": 0,
+    "checkpointMinutes": 44.6,
+    "releaseAcceptance": false,
+    "canonicalAcceptance": false,
+    "nextAction": "Codingfixpickerstate/addedsourcerowpricing;Mediumreviewsactualdiff/newcandidateandfreshfixedqueue;authenticupgradesblocked;backuprestoreLAST"
   }
 }
