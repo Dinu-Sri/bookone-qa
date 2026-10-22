@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount.",
+  "asOf": "2026-10-22",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount. Added28 Light04 mission-slot dispositions:10passed,4failed,10blocked,4inconclusive on exact4c3a304; partial evidence, no atomic-assertion total or full canonical acceptance. New workbook bindings require Medium semantic review. Publication/restoration close verified in PR54.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -3800,6 +3800,372 @@
       "fullCaseAcceptance": false,
       "layer": "staging-browser",
       "boundary": "Actualoutcomesreconciled;allsettingsrestoredreloaded;noambiguousintent;sanitizedpublicationclosing."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-HISTORY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-A",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-B",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-EMPTY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-AB",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-CLEAR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PARTIAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-REMAIN",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PUR-SPLIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ZERO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-FIX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-DENY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011",
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-CLOSE",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-TAX",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SUPPLIER",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LISTS",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-004",
+        "UXW-013",
+        "UXW-014",
+        "UXW-015"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-UNLINKED",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-QUOTE",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-KEYBOARD",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-017",
+        "UXW-018"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-NARROW",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-021",
+        "UXW-022"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LATE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
     }
   ]
 }
