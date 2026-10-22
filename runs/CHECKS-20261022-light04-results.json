@@ -3,13 +3,13 @@
   "id": "RUN-20261022-light04-results",
   "mission": "MISSION-v2519-LIGHT-04",
   "started": "2026-10-22T05:13:31.872454+00:00",
-  "closingRecorded": "2026-10-22T08:18:47.837889+00:00",
-  "status": "publication-close-pending",
+  "closingRecorded": "2026-10-22T08:21:01.996719+00:00",
+  "status": "completed-dispositions-review-pending",
   "counts": {
-    "passed": 9,
+    "passed": 10,
     "failed": 4,
     "blocked": 10,
-    "inconclusive": 5
+    "inconclusive": 4
   },
   "fingerprint": {
     "productSha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
@@ -510,19 +510,18 @@
     },
     {
       "id": "M19-END",
-      "status": "inconclusive",
-      "actual": "Browser close is reconciled and restored; publication verification pending.",
+      "status": "passed",
+      "actual": "All28slotsdisposed;137journals15070.87balanced,onlynetAPexpense+95;AP1185/profit734.50/AR1306.21/Inv660/stock780/VAT46.71/COGS420/GRNIcash0/assets1966.21. All3openingmaps exactreload andviewports1920x855 restored;oldINV0032open300. PublishedPR54/e4b9741 sixfilesexactcontentreadbackverified;Mediumreviewpending. No replay/deploy/cleanup.",
       "evidence": {
-        "actualDeltas": "AP/expense +95; other net controls unchanged",
-        "trialBalance": "137 journals / 15070.87 balanced",
-        "stock": "780; inherited gap120",
-        "fixtureRegister": "Run report below",
-        "settingsReload": "All three full opening maps exactly equal after reload",
-        "viewportReset": "1920x855 both tabs",
-        "endStamp": "v2.5.19 · 4c3a304",
-        "publishedHandoff": "Pending publication verification"
+        "actualDeltas": "15entries1827.24;onlynetAPexpense95",
+        "trialBalance": "137/15070.87 balanced;AR1306.21/AP1185",
+        "stock": "780 unchanged;newquickSKU0/inheritedgap120",
+        "fixtureRegister": "runreportnew0037-0040zero/B0008open95/QT0004zero/old0032open300",
+        "settingsReload": "sales/purchase/inventory maps exact opening equality afterreload",
+        "viewportReset": "both1920x855",
+        "endStamp": "reloadv2.5.19 · 4c3a304",
+        "publishedHandoff": "PR54 commit e4b974146b880b7d4fa83ec7d2b625162f9fa945 sixfilescontentverified"
       },
-      "nextAction": "Complete publication/readback, then append final close disposition.",
       "title": "Restore, reconcile and publish",
       "expected": "Compare actual openings+actual recorded writes,including failures. If all planned financial branches pass: A+180-60-120=0inventory/AP; Bservice95+supplier10=105expense/AP; sale/fullcredit pairs net0; newSKU0; GRNI/cash/COGS/tax/control stock unchanged. From unchanged anchor AP1195,profit724.50,AR1306.21,InvGL660,stock780,assets1966.21. Journal count/turnover derive from actual submissions,not guessed counts. Restore ALL opening sales/VAT/purchase/inventory maps and viewport,save/reloadverify. Preserve failurefixtures,oldINV0032open300 and inheritedstock-GLgap120. Publish immutable checks/run/newbugs/handoff,explicit not-runbudgetscope,endstamp identical. No payments/writeoffs/reset/cleanup/merge/deploy; archiveLAST.",
       "uxRefs": [],

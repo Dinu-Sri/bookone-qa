@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-22",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount. Added28 Light04 mission-slot dispositions from exact4c3a304; partial evidence, no atomic-assertion total or full canonical acceptance. New workbook bindings require Medium semantic review. Publication close is initially pending and is finalized by a subsequent commit.",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount. Added28 Light04 mission-slot dispositions:10passed,4failed,10blocked,4inconclusive on exact4c3a304; partial evidence, no atomic-assertion total or full canonical acceptance. New workbook bindings require Medium semantic review. Publication/restoration close verified in PR54.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -4159,7 +4159,7 @@
     {
       "run": "runs/CHECKS-20261022-light04-results.json",
       "assertion": "M19-END",
-      "originalStatus": "inconclusive",
+      "originalStatus": "passed",
       "relatedWorkbookCases": [],
       "uxRefs": [],
       "mapping": "unmapped-medium-review-pending",

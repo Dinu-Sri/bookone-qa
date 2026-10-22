@@ -1,6 +1,6 @@
 # Light04 execution handoff — 22 October 2026
 
-Executed PR53 queue on **v2.5.19 ·4c3a304**, product `4c3a304e6adc985c591ecb7934382b8929f9b189`, QA `2b009339cd7776e7c5327c733f4e0026aaeab8b6`. **9 passed, 4 failed, 10 blocked, 5 inconclusive** across28 fixed slots. END publication verification is pending; other27slots have dispositions.
+Executed PR53 queue on **v2.5.19 ·4c3a304**, product `4c3a304e6adc985c591ecb7934382b8929f9b189`, QA `2b009339cd7776e7c5327c733f4e0026aaeab8b6`. **10 passed, 4 failed, 10 blocked, 4 inconclusive** across28 fixed slots. All slots have final dispositions; independent Medium review is next.
 
 Read [run](../runs/RUN-20261022-light04-results.md), [immutable checks](../runs/CHECKS-20261022-light04-results.json) and [observations / coding review](../bugs/OBS-20261022-light04-results.md). Original mission/expectations, priorLight03 failures and oldINV0032 remain preserved. These dispositions are not full canonical acceptance or an ERP completion percentage.
 
@@ -26,6 +26,6 @@ All complete opening sales/purchase/inventory maps compare exactly after reload.
 
 **Next Light mission:** only after reviewed fixes and exact live candidate. New physicalcost60/sell10sourceA, run blocked picker/partial/split/exhausted cases; exact new UI repros plus adjacent consumers; explicit server-refusal fixture and print layer once supported. Bind a NEW queue/fingerprint and use generic operator-queue initialization from the start. Never replay consumed0037–0040 or edit/credit old0032. Legacy upgrade environments stay infrastructure-owned; encrypted backup/restore LAST.
 
-Validation: original28IDs and expectations preserved; nonpass next actions present; independent integer-cent ledger reconciles15accepted entries/1827.24 and ladder0.05budget. Local UX definition/view consistency checked separately. Full repository check unavailable in this partial snapshot; no product unit/CI or canonical acceptance claimed. Browser model/credits unavailable; no credit-saving claim. One owner continuation message arrived during closing.
+Validation: original28IDs and expectations preserved; nonpass next actions present; independent integer-cent ledger reconciles15accepted entries/1827.24 and ladder0.05budget. Local UX definition/view consistency checked separately. Full repository check unavailable in this partial snapshot; no product unit/CI or canonical acceptance claimed. Browser model/credits unavailable; no credit-saving claim. One owner continuation message arrived during closing. Wall time05:13→08:20UTC exceeded120minutes; active versus idle/interruption time was not instrumented, so active-budget compliance is unverified. No extra live business cases were added after queue disposition.
 
 Current pointer is handoffs/CURRENT-LIGHT.md. Broad STATUS/SESSION/programme metadata is intentionally not republished under the earlier narrowed-publication boundary; Medium should reconcile those indexes through a separately reviewed minimal change. Browser evidence index receives28 scoped mission dispositions, with no automatic canonical case binding.

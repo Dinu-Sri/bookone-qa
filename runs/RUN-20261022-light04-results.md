@@ -1,8 +1,8 @@
 # Light04 results — 22 October 2026
 
-Exact candidate **v2.5.19 · 4c3a304**, full `4c3a304e6adc985c591ecb7934382b8929f9b189`. QA execution definitions `2b009339cd7776e7c5327c733f4e0026aaeab8b6` from PR53. [Checks](CHECKS-20261022-light04-results.json) retain all28 IDs, original expected outcomes, first dispositions, missing layers and next actions. Publication close: **pending publication verification**.
+Exact candidate **v2.5.19 · 4c3a304**, full `4c3a304e6adc985c591ecb7934382b8929f9b189`. QA execution definitions `2b009339cd7776e7c5327c733f4e0026aaeab8b6` from PR53. [Checks](CHECKS-20261022-light04-results.json) retain all28 IDs, original expected outcomes, first dispositions, missing layers and next actions. Publication close: **completed; independent Medium review pending**.
 
-Disposition counts: 9 passed, 4 failed, 10 blocked, 5 inconclusive. These are mission slots, not an ERP completion percentage. No bug or canonical workbook case is closed by this run.
+Disposition counts: 10 passed, 4 failed, 10 blocked, 4 inconclusive. These are mission slots, not an ERP completion percentage. No bug or canonical workbook case is closed by this run.
 
 ## Gates and execution boundary
 
@@ -10,7 +10,7 @@ Fresh supported logout/login with the private fixture, Remember off; QA Owner in
 
 Connected Chrome, English UI/LKR, fixture dates21/22/28October; default viewport1920×855. Responsive sizes390×844 and320×844 verified on the secondary tab, then reset on both tabs. No assistive technology, real server authorization, concurrency, schema-upgrade or legal tax eligibility acceptance.
 
-Start `2026-10-22T05:13:31.872454+00:00` UTC. Browser close and publication timestamps are recorded separately. One additional owner message requested continuation during closing; no answer or manual browser intervention was required. Model/setting, observed credits and cost savings unavailable. This is browser execution with a custom private checkpoint journal, not unattended automation. The required generic operator initialization was not used; this deviation needs Medium review.
+Start `2026-10-22T05:13:31.872454+00:00` UTC. Initial publication/readback completed at08:20UTC (11:50Asia/Colombo), with a continuation interruption during closing. Total wall time exceeds the120-minute active budget; active time and interruption/idle duration were not instrumented, so compliance with the active budget is unverified. No further live business cases were added after queue disposition. One additional owner message requested continuation during closing; no answer or manual browser intervention was required. Model/setting, observed credits and cost savings unavailable. This is browser execution with a custom private checkpoint journal, not unattended automation. The required generic operator initialization was not used; this deviation needs Medium review.
 
 ## Slot dispositions
 
@@ -43,7 +43,7 @@ Start `2026-10-22T05:13:31.872454+00:00` UTC. Browser close and publication time
 |M19-LATE|blocked|Controlled late-response source race|
 |M19-U7|blocked|Authentic legacy101c upgrade|
 |M19-U10|blocked|Authentic legacy104c upgrade|
-|M19-END|inconclusive|Restore, reconcile and publish|
+|M19-END|passed|Restore, reconcile and publish|
 
 ## Actual financial ledger
 
