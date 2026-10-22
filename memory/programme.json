@@ -1748,5 +1748,27 @@
     "productStudySha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
     "handoff": "handoffs/HANDOFF-20261021-ux-workbook.md",
     "next": "Coding agent adopts documentation-only product contract and incremental fixes; Medium reviews actual diff/build and binds a fresh mission. Original Light03 return findings remain unresolved."
+  },
+  "light05Results": {
+    "date": "2026-10-22",
+    "productSha": "de45536bc47ead3e20f401ecd5fe144bfdf7d52c",
+    "executionQaSha": "a6379c2e4c835dc710e324fca342f0bba9decd9e",
+    "liveStamp": "v2.5.20 · de45536",
+    "run": "runs/CHECKS-20261022-light05-results.json",
+    "handoff": "handoffs/HANDOFF-20261022-light05-results.md",
+    "medium": "handoffs/MEDIUM-MISSION-20261022-light05.md",
+    "counts": {
+      "passed": 9,
+      "failed": 2,
+      "blocked": 16,
+      "inconclusive": 3,
+      "not-run": 0
+    },
+    "restored": true,
+    "reconciled": true,
+    "ledgerAndClockClose": "not-saved-environment-disconnected",
+    "budgetCompliance": "unverified",
+    "releaseAcceptance": "not-established",
+    "next": "Medium review and control recovery; no financial replay; new fixed mission after reviewed fixes/fixtures"
   }
 }
