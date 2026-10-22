@@ -1,7 +1,7 @@
 # Current QA continuation
 
-PR54 technical review: [handoff](HANDOFF-20261022-pr54-review.md), [coding mission](CODING-MISSION-20261022-pr54.md), [Light05 preparation](HANDOFF-20261022-light05-mission.md).
+**Light05: v2.5.20 · de45536**, fullSHA de45536bc47ead3e20f401ecd5fe144bfdf7d52c. Branch `qa/v2520-light05-mission`; [new bound handoff](HANDOFF-20261022-v2520-light05.md), [30-slot queue](../queues/MISSION-v2520-LIGHT-05.json), [source/live binding review](../reviews/REVIEW-20261022-v2520-light05-binding.md).
 
-Coding/fixture preparation is next. Fixed28-slot Light05 is executionReady=false until Medium reviews the actual new fixdiff, verifies exact build/fullSHA and already-authorized Inventory-write fixture, then publishes a NEW bound queue. Do not invent a future version, grant permissions, bypass a product gate or execute this template.
+Execution is conditional on fresh actor/profile/openings and exact build. Current profile is product view-only; no qualified Inventory writer delivered. Block physical-master/A/UNLINKED dependents before Save unless an already-authorized writer is proven; no module/job/grant changes or quick-create bypass. Continue independent verified service/sales/UX cases. Four isolated auth/race/upgrade lanes remain blocked. Start new generic ledger and100-minute conservative clock, reserve15closing; checkpoint every submission. Do not execute the old unbound POSTFIX template.
 
-Original [Light04 results](HANDOFF-20261022-v2519-light04-results.md) remain immutable:10passed/4failed/10blocked/4inconclusive; restored/reconciled137journals,onlynetAPexpense95. Preserve oldINV0032open300,failedQT0004draft0 and every failure/correction. No replay/reset/deploy. Generic submission and conservative budget controls are mandatory. Actual encrypted backup/restore LAST.
+PR54 results remain immutable:10passed/4failed/10blocked/4inconclusive; actual close137journals/15070.87. New mission has not executed and closes no bug. Preserve oldINV0032open300,failedQT0004draft0 and all evidence/corrections. No replay/reset/deploy. Finish restored/reconciled sanitized published handoff. Backup/restore LAST.

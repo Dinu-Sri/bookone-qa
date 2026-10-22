@@ -1,3 +1,9 @@
+## Light05 candidate bound —22 October2026
+
+Product **v2.5.20 · de45536**, fullSHA de45536bc47ead3e20f401ecd5fe144bfdf7d52c; direct fix diff reviewed and live sidebar observed. [New conditional30-slot mission](handoffs/HANDOFF-20261022-v2520-light05.md), [queue](queues/MISSION-v2520-LIGHT-05.json), [review](reviews/REVIEW-20261022-v2520-light05-binding.md). Current product profile is view-only; Inventory writer absent. Physical MASTER/A/UNLINKED dependents stay blocked unless an already-provisioned writer is proven; independent verified cases may proceed. Four isolated lanes remain blocked. No financial testing, bug closure or release acceptance in this preparation. Fresh login/openings, exact execution QA fingerprint, generic per-submission ledger and100-minute conservative clock/reserve15 required. Prior planning/results and expectations unchanged; backuprestoreLAST.
+
+Prior records follow.
+
 ## UI/UX workbook and incremental adoption —21 October2026
 
 Owner-requested shared UX companion1.0.0: **32 rules,48 draft/unbound/not-run workflow templates,12 groups,31 direct business-journey mappings** plus the shared state/field matrix for all selected business journeys. [Start here](docs/ux/README.md), [workbook](docs/ux/WORKBOOK.md), [existing design inventory](docs/ux/DESIGN_INVENTORY.md), [coding guide](docs/ux/CODING_GUIDE.md), [handoff](handoffs/HANDOFF-20261021-ux-workbook.md). Existing BookOne visual system is extended, not replaced. Four design questions remain owned/pending. New authoring checks6/6 and retained business-library guards16/16 pass; full repository check and ERP UX execution are not claimed.
