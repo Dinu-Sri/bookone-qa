@@ -1,3 +1,9 @@
+## Light05 results —22 October2026
+
+Exact **v2.5.20 · de45536**, productde45536bc47ead3e20f401ecd5fe144bfdf7d52c/executionQA a6379c2e4c835dc710e324fca342f0bba9decd9e. **30 supplemental dispositions:9pass/2fail/16blocked/3inconclusive.** [Run](runs/RUN-20261022-light05-results.md), [handoff](handoffs/HANDOFF-20261022-light05-results.md), [Medium next](handoffs/MEDIUM-MISSION-20261022-light05.md). Confirmed list-dialog return-focus and320help layout regressions; access/LINE unknowns preserved. Physical writer and isolated lanes missing. Restored/reconciled153journals/16908.11balanced;onlynetAP/expense105;oldfixtures preserved. Environment disconnected before final ledger/clockclose; ERP restoration readback verified, supplemental END inconclusive, final budget compliance unknown. No replay/grants/reset/deploy/acceptance;backuprestoreLAST.
+
+Prior records follow.
+
 ## Light05 candidate bound —22 October2026
 
 Product **v2.5.20 · de45536**, fullSHA de45536bc47ead3e20f401ecd5fe144bfdf7d52c; direct fix diff reviewed and live sidebar observed. [New conditional30-slot mission](handoffs/HANDOFF-20261022-v2520-light05.md), [queue](queues/MISSION-v2520-LIGHT-05.json), [review](reviews/REVIEW-20261022-v2520-light05-binding.md). Current product profile is view-only; Inventory writer absent. Physical MASTER/A/UNLINKED dependents stay blocked unless an already-provisioned writer is proven; independent verified cases may proceed. Four isolated lanes remain blocked. No financial testing, bug closure or release acceptance in this preparation. Fresh login/openings, exact execution QA fingerprint, generic per-submission ledger and100-minute conservative clock/reserve15 required. Prior planning/results and expectations unchanged; backuprestoreLAST.
