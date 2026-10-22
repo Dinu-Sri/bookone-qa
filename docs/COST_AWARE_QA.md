@@ -76,3 +76,21 @@ Read reviews/REVIEW-20261018-pr46.md and handoffs/HANDOFF-20261018-light02-missi
 
 For a changed UI, Medium selects applicable UX/UXW steps from docs/ux/WORKBOOK.md alongside original bug repros and WB business cases, resolves policies/layers and pins UX JSON version/hash. Light checks them during the same fixed business mission rather than repeatedly auditing every screen. Dedicated keyboard/reader/responsive/isolated-fault passes cover shared components and required consumer variants. Metadata checks are cheap authoring checks, not live automation or product acceptance. Unknowns escalate; record unavailable layers explicitly.
 
+## PR54 control repair — mandatory for subsequent missions
+
+PR54 retained all business evidence, but did not initialize the generic ledger and did not instrument active/idle time. Its budget compliance is unverified. Do not retrofit a passing clock/fingerprint onto that historical run. Read reviews/REVIEW-20261022-pr54.md and handoffs/HANDOFF-20261022-light05-mission.md.
+
+Generic initialization now rejects executionReady=false plans and mismatched FULL productSHA even when seven-character prefixes match. New commands, using the same queue/state/fingerprint/case argument layout as record:
+
+- `intent ... CASE intent.json`: running case; JSON has unique submissionId and concrete action. Never reuse an ID or submit while a mission intent is unresolved.
+- `readback ... CASE readback.json`: same submissionId, outcome accepted/refused/inconclusive and concrete actual. Inconclusive appends evidence but leaves the submission unresolved. Later persisted recovery can append to an inconclusive/failed case without changing its original status. Terminal results are not turned green by recovery metadata.
+- `defer ... CASE result.json`: pending case only; reason not-run-budget, actual clock evidence and nextAction. This records not-run, not a product failure, and cannot erase an attempted case.
+
+Necessary restoration/reconciliation is separately declared by recovery=true on the reviewed case and its intent; this is not permission to replay or start new financial cases. Closing cannot pass while any mission submission remains unresolved. The ledger does not validate the truth of supplied evidence or drive the browser.
+
+`node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly. The clock is advisory and cannot interrupt a browser action or measure credits/model compute.
+
+Each new mission must bind budget, exact candidate/QA/UX/rule/library, actual actor/module/job capabilities, full opening maps and source identities. Missing legitimate Inventory-write fixture blocks product-master setup before repeating an expected denial. Neither Owner label nor document quick-create success proves full Inventory permission. HEADER150 and LINE150 are separate fixtures; expired feedback is not server refusal evidence. Credit print remains its own supported-capability assertion.
+
+Light05's scenario template is fixed but executionReady=false until Medium publishes a NEW exact-bound candidate/fixture copy. The template never invents a future version or grants permission to deploy. Preserve all previous results, corrections, settings and old consumed sources. Actual encrypted backup/restore remains LAST.
+

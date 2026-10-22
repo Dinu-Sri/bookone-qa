@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "version": "1.0.0",
-  "date": "2026-10-21",
+  "version": "1.1.0",
+  "date": "2026-10-22",
   "title": "BookOne shared UI/UX acceptance workbook",
-  "qaBase": "c7ed9c5cd31f28efac5be98a463bb96197890a46",
-  "productStudySha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+  "qaBase": "37408fc48c5a3699a2033966594d8474652ab751",
+  "productStudySha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
   "rulebookVersion": "1.0.0",
   "businessLibraryVersion": "1.5.0",
   "canonicalBusinessCasesUnchanged": 272,
@@ -411,7 +411,7 @@
     },
     {
       "id": "UXW-002",
-      "revision": 1,
+      "revision": 2,
       "group": "shared",
       "title": "Conclusive refusal then correction",
       "status": "draft",
@@ -431,7 +431,7 @@
       "steps": [
         {
           "id": "S1",
-          "action": "Submit blank reference"
+          "action": "Submit blank reference once and observe the specific refusal in the same action sequence; identify native/client versus server layer."
         },
         {
           "id": "S2",
@@ -446,7 +446,7 @@
           "action": "submit once."
         }
       ],
-      "expected": "First refusal creates no bill/journal; all fields retained; corrected attempt creates exactly one bill with original facts.",
+      "expected": "First refusal creates no bill/journal; all fields retained; corrected attempt creates exactly one bill with original facts. Expired or uncaptured toast cannot establish a server refusal. If feedback is missing, inspect persisted state and mark its layer inconclusive; do not replay solely for evidence or proceed to correction until refusal is conclusive.",
       "unchanged": "Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.",
       "layers": [
         "browser",
@@ -550,7 +550,7 @@
     },
     {
       "id": "UXW-005",
-      "revision": 1,
+      "revision": 2,
       "group": "forms",
       "title": "Client error retains all fields",
       "status": "draft",
@@ -568,26 +568,26 @@
         "WB-CORE.J04",
         "WB-CORE.J06"
       ],
-      "fixture": "Run-owned quote with issue2026-10-18/due2026-10-26, unique notes, two lines and invalid150% discount.",
+      "fixture": "Two distinct run-owned quote variants: LINE150% and HEADER150%, each with declared independent valid net, exact committed issue/due dates and notes. Never treat one variant as execution of the other.",
       "steps": [
         {
           "id": "S1",
-          "action": "Capture submitted field map"
+          "action": "Capture every field and explicitly identify LINE versus HEADER percentage input; verify dates after rerender/native keyboard commit."
         },
         {
           "id": "S2",
-          "action": "submit"
+          "action": "Submit the chosen150% variant once; observe actionable refusal and zero newly saved quote/GL."
         },
         {
           "id": "S3",
-          "action": "correct only150% to0"
+          "action": "After conclusive refusal only, correct that same150% value to0; leave all other fields unchanged."
         },
         {
           "id": "S4",
           "action": "save/reopen."
         }
       ],
-      "expected": "Clear discount error; dates/notes/line order retained through rerender; saved expected total independently calculated; no posting.",
+      "expected": "Under BR-SAL-03 reject excessive line OR header discounts; do not silently clamp an entered150% to100%. Keep dates/notes/line order/valid prices and all fields after refusal. The corrected quote saves once at independently expected net with no GL. Header raw type/value must survive server validation; a valid clamped hidden amount alone is not evidence of validating the entered percentage.",
       "unchanged": "Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.",
       "layers": [
         "browser",
@@ -1178,7 +1178,7 @@
     },
     {
       "id": "UXW-018",
-      "revision": 1,
+      "revision": 2,
       "group": "accessibility",
       "title": "Dialog menu and focus restoration",
       "status": "draft",
@@ -1204,7 +1204,7 @@
         },
         {
           "id": "S2",
-          "action": "traverse"
+          "action": "Check initial focus, Tab and Shift+Tab wrap, and no focus escape to BODY/background; do not activate a destructive confirmation."
         },
         {
           "id": "S3",
@@ -1219,7 +1219,7 @@
           "action": "test pointer/touch help."
         }
       ],
-      "expected": "Modal contains focus while open and restores trigger; menu nonmodal semantics appropriate; help accessible and not covering essential instructions; cancellation writes nothing.",
+      "expected": "Modal contains focus while open and restores trigger; menu nonmodal semantics appropriate; help accessible and not covering essential instructions; cancellation writes nothing. ConfirmDialog opens on a safe focus target, Escape/cancel dismiss only when allowed, and focus returns to its actual trigger. Busy behavior is declared and does not silently dismiss an unresolved write. Distinguish focus containment from an inaccessible keyboard trap; maintain native field behavior.",
       "unchanged": "Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.",
       "layers": [
         "keyboard",
@@ -1331,7 +1331,7 @@
     },
     {
       "id": "UXW-021",
-      "revision": 1,
+      "revision": 2,
       "group": "responsive",
       "title": "Narrow invoice and long content",
       "status": "draft",
@@ -1360,10 +1360,10 @@
         },
         {
           "id": "S3",
-          "action": "open search/menu near edges."
+          "action": "Open search/menu/StatusHelp near left/right/top/bottom edges at actual390/320CSSpx on the controlled tab; record actual available layout width and focused-control visibility; reset original viewport."
         }
       ],
-      "expected": "No lost content/action or pagewide clipping; genuine table scroll remains operable; row amounts/labels readable; saved facts unchanged.",
+      "expected": "No lost content/action or pagewide clipping; genuine table scroll remains operable; row amounts/labels readable; saved facts unchanged. Help text must remain visible inside available layout viewport: use rendered width and scrollbar-aware bounds. Preserve the320px screenshot failure; x42+340=382 at390px alone does not prove text clipping. Genuine tables may scroll; do not eliminate table scrolling as a cosmetic fix.",
       "unchanged": "Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.",
       "layers": [
         "browser",
@@ -1371,7 +1371,7 @@
       ],
       "preflight": "Bind the common execution contract and this fixture at exact candidate/actor/configuration; resolve unknown policy and layer prerequisites before any mutation.",
       "failureHandling": "Checkpoint intent and immediate result; preserve first discrepancy and field map; do not post an inconsistent preview or replay an uncertain financial action; continue only independent safe cases.",
-      "cleanup": "Retain source/failed fixtures and evidence; restore any changed opening settings and reconcile actual writes; no deletion/reset/writeoff to clean the run."
+      "cleanup": "Retain source/failed fixtures and evidence; restore any changed opening settings and reconcile actual writes; no deletion/reset/writeoff to clean the run. Verify dimensions on the actual tab after override AND reset; another tab remaining desktop-sized does not execute the narrow branch."
     },
     {
       "id": "UXW-022",

@@ -1,6 +1,6 @@
 # BookOne UI/UX QA companion
 
-Version1.0.0, owner requested2026-10-21. Mandatory maintenance and change procedures apply now; product conformance and independent specification review are separate.
+Version1.1.0, updated2026-10-22 after PR54 technical review; owner requested2026-10-21. Mandatory maintenance and change procedures apply now; product conformance and independent specification review are separate. See [PR54 review](../../reviews/REVIEW-20261022-pr54.md) for separate line/header refusals, capability qualification, dialog focus, actual-viewport help and checkpoint/budget corrections. Historical1.0.0 run hashes remain unchanged.
 
 Start with [existing design references](DESIGN_INVENTORY.md), [protocol](PROTOCOL.md), [generated workbook](WORKBOOK.md), [execution guide](EXECUTION.md), [state/field matrix](MATRIX.md) and [incremental engineering adoption](CODING_GUIDE.md). Canonical editable sources are ux/workbook.json and ux/design-inventory.json; generated views are read-only. There are32 shared rules and48 draft, unbound, not-run UX workflows across12 groups. The eight business books/52journeys/272business cases remain unchanged and retain their original authority/evidence.
 

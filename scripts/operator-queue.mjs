@@ -15,7 +15,9 @@ export function validate(plan) {
 }
 export function initialize(plan, fingerprint) {
   validate(plan);
+  if (plan.executionReady === false) throw Error('Mission awaits reviewed candidate/fixture binding; do not execute planning template');
   if(required.some(k=>typeof fingerprint[k]!=='string'||!fingerprint[k].trim()) || !/^[a-f0-9]{40}$/.test(fingerprint.productSha)|| !/^[a-f0-9]{40}$/.test(fingerprint.qaSha)) throw Error('Incomplete fingerprint');
+  if(plan.productSha && fingerprint.productSha !== plan.productSha) throw Error('Wrong live candidate: full product SHA differs');
   if(fingerprint.liveStamp.split(' · ')[0]!==plan.candidate || !fingerprint.liveStamp.endsWith(fingerprint.productSha.slice(0,7)) || (plan.reportedShortSha && !fingerprint.productSha.startsWith(plan.reportedShortSha))) throw Error('Wrong live candidate');
   return {schemaVersion:1,planHash:digest(plan),fingerprintHash:digest(fingerprint),fingerprint,
     cases:plan.cases.map(c=>({id:c.id,status:'pending'})),events:[]};
@@ -32,21 +34,41 @@ export function transition(plan,state,fingerprint,command,id,result) {
   if(command==='start') {
     if(c.status!=='pending'||next.cases.some(c=>c.status==='running')) throw Error('Read persisted state; unresolved/finished actions cannot restart');
     c.status='running';
+  } else if(command==='intent') {
+    if(c.status!=='running'||!result?.submissionId?.trim()||!result.action?.trim()) throw Error('Running case and submission identity/action required');
+    c.submissions ??= [];
+    if(c.submissions.some(s=>s.submissionId===result.submissionId)) throw Error('Submission identity already recorded; never replay');
+    if(c.submissions.some(s=>s.outcome==='unresolved')) throw Error('Inspect persisted state before another submission');
+    const spec=plan.cases.find(x=>x.id===id);
+    if(next.cases.some(row=>row.submissions?.some(s=>s.outcome==='unresolved')) && !(spec.recovery===true && result.recovery===true)) throw Error('Unresolved mission submission: read back before new business writes');
+    c.submissions.push({submissionId:result.submissionId,action:result.action,outcome:'unresolved',at:new Date().toISOString()});
+  } else if(command==='readback') {
+    const submission=c.submissions?.find(s=>s.submissionId===result?.submissionId);
+    if(!['running','failed','inconclusive'].includes(c.status)||!submission||submission.outcome!=='unresolved'||!['accepted','refused','inconclusive'].includes(result?.outcome)||!result.actual?.trim()) throw Error('Readback requires unresolved submission and concrete outcome');
+    submission.readbacks ??= [];
+    submission.readbacks.push({outcome:result.outcome,actual:result.actual,at:new Date().toISOString()});
+    if(result.outcome!=='inconclusive') submission.outcome=result.outcome;
+  } else if(command==='defer') {
+    if(c.status!=='pending'||result?.reason!=='not-run-budget'||!result.actual?.trim()||!result.nextAction?.trim()) throw Error('Budget deferral requires pending case, evidence and next action');
+    Object.assign(c,{status:'not-run',actual:result.actual,reason:result.reason,nextAction:result.nextAction});
   } else if(command==='record') {
     if(c.status!=='running'||!['passed','failed','blocked','inconclusive'].includes(result?.status)||!result.actual?.trim()) throw Error('Invalid disposition');
     const spec=plan.cases.find(x=>x.id===id);
     if(!result.evidence || (result.status==='passed' && spec.evidence.some(k=>!result.evidence[k]?.trim()))) throw Error('Missing required evidence');
+    if(result.status==='passed' && c.submissions?.some(s=>s.outcome==='unresolved')) throw Error('Unresolved submission cannot pass');
+    if(result.status==='passed' && spec.recovery===true && next.cases.some(row=>row.submissions?.some(s=>s.outcome==='unresolved'))) throw Error('Closing reconciliation still has unresolved mission submissions');
     if(result.status!=='passed' && !result.nextAction?.trim()) throw Error('Escalation/next action required');
     Object.assign(c,{status:result.status,actual:result.actual,evidence:result.evidence,...(result.nextAction?{nextAction:result.nextAction}:{})});
-  } else throw Error('Use start/record');
+  } else throw Error('Use start/intent/readback/defer/record');
   next.events.push({command,id,status:c.status,at:new Date().toISOString()});
   return next;
 }
 export function report(plan,state,fingerprint) {
   guard(plan,state,fingerprint);
-  return {queue:plan.id,counts:Object.fromEntries(['pending','running','passed','failed','blocked','inconclusive'].map(s=>[s,state.cases.filter(c=>c.status===s).length])),
-    unresolved:state.cases.filter(c=>c.status==='running').map(c=>c.id),
-    next:state.cases.some(c=>c.status==='running')?null:state.cases.find(c=>c.status==='pending')?.id??null,
+  const unresolved=state.cases.filter(c=>c.status==='running'||c.submissions?.some(s=>s.outcome==='unresolved')).map(c=>c.id);
+  return {queue:plan.id,counts:Object.fromEntries(['pending','running','passed','failed','blocked','inconclusive','not-run'].map(s=>[s,state.cases.filter(c=>c.status===s).length])),
+    unresolved,
+    next:unresolved.length?null:state.cases.find(c=>c.status==='pending')?.id??null,
     releaseAcceptance:'not-established',canonicalCaseAcceptance:'not-established'};
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
@@ -59,9 +81,9 @@ if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
     if(command==='init'&&existsSync(statePath)) throw Error('Never overwrite a run');
     let state=command==='init'?initialize(plan,fp):read(statePath);
     guard(plan,state,fp);
-    if(['start','record'].includes(command)) state=transition(plan,state,fp,command,id,resultPath?read(resultPath):undefined);
+    if(['start','intent','readback','defer','record'].includes(command)) state=transition(plan,state,fp,command,id,resultPath?read(resultPath):undefined);
     else if(!['init','summary','pack'].includes(command)) throw Error('Use plan/init/start/record/summary/pack');
-    if(['init','start','record'].includes(command)) {
+    if(['init','start','intent','readback','defer','record'].includes(command)) {
       // Exclusive single operator; interrupted writes leave the last full state intact.
       const temp=statePath+'.tmp'; writeFileSync(temp,JSON.stringify(state,null,2)+'\n',{flag:'wx'}); renameSync(temp,statePath);
     }
