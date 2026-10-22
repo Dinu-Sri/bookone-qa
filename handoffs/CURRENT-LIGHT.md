@@ -1,5 +1,5 @@
-# Current prepared Light mission
+# Current Light continuation
 
-Prepared22October2026: [Light04 handoff](HANDOFF-20261022-v2519-light04.md), [28-slot queue](../queues/MISSION-v2519-LIGHT-04.json), [review](../reviews/REVIEW-20261022-v2519-light04.md). Branchqa/v2519-light04-mission. Candidatev2.5.19 ·4c3a304; fresh build/actor/openings required. Budget120active minutes including15closing;3isolatedblockedslots. Planning only, no execution or bug closure. Existing prior results are preserved. Use the handoff's fixed prompt after manually selecting Light.
+Light04 execution results: [HANDOFF-20261022-v2519-light04-results.md](HANDOFF-20261022-v2519-light04-results.md).
 
-This bounded pointer avoids republishing broader programme/session metadata; root continuity files remain unchanged. Medium QA owns a later reviewed pointer update.
+Exact executedcandidatev2.5.19·4c3a304 / QA2b009339. 9 passed, 4 failed, 10 blocked, 5 inconclusive. Financial sources consumed and preserved; do not replay the mission. Read results and observations; next owner is Medium for failure/oracle/fixture/checkpoint review, then coding fixes and a NEW fixed Light queue. All opening maps/viewport restored, actual balances reconciled. Prior mission and results unchanged. Backup/restore LAST.

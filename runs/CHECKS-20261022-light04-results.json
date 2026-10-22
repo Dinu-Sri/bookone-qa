@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "id": "RUN-20261022-light04-results",
+  "mission": "MISSION-v2519-LIGHT-04",
+  "started": "2026-10-22T05:13:31.872454+00:00",
+  "closingRecorded": "2026-10-22T08:18:47.837889+00:00",
+  "status": "publication-close-pending",
+  "counts": {
+    "passed": 9,
+    "failed": 4,
+    "blocked": 10,
+    "inconclusive": 5
+  },
+  "fingerprint": {
+    "productSha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+    "liveStamp": "v2.5.19 · 4c3a304",
+    "qaSha": "2b009339cd7776e7c5327c733f4e0026aaeab8b6",
+    "queue": "queues/MISSION-v2519-LIGHT-04.json",
+    "rulesHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "libraryHash": "7c301fe9c4f69d87b4d856b29d3f424115dce1294916960ee9a21e63cc024c9b",
+    "uxHash": "383d18ad74978af67e9e75d855c77c87b45a92beb00c101a3338dd0abd01e57f",
+    "actor": "Fresh private QA fixture login; QA Owner in own synthetic company",
+    "configuration": "Captured opening maps; reviewed purchase supplier-required / inventory block transitions; temporary tax VAT true18 then false; full restoration",
+    "fixture": "Run-owned M19 fixture plan and actual document ledger below",
+    "schema": "Database schema revision not exposed by supported UI; not independently attested",
+    "browser": "Connected Chrome extension; desktop1920x855; temporary390x844/320x844 on secondary tab; reset verified",
+    "locale": "UI English, LKR, Asia/Colombo fixture dates"
+  },
+  "evidenceBoundary": "28 mission-slot dispositions, not28 atomic assertions or canonical business-case passes. No release/security/accessibility certification. First failures and original expectations retained.",
+  "cases": [
+    {
+      "id": "M19-GATE",
+      "status": "passed",
+      "actual": "Reloaded live v2.5.19 · 4c3a304; GitHub resolves4c3a304 to expected full SHA; no deployment crossed.",
+      "evidence": {
+        "liveStamp": "Reloaded v2.5.19 · 4c3a304 at start and close",
+        "fullProductSha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+        "qaRevision": "2b009339cd7776e7c5327c733f4e0026aaeab8b6",
+        "freeze": "Same candidate; no deployment performed"
+      },
+      "title": "Pin exact live candidate",
+      "expected": "Require v2.5.19 · 4c3a304 and full4c3a304e6adc985c591ecb7934382b8929f9b189. Master3e9ffee is a later docs-only commit, NOT an alternate candidate for this queue. A changed deployment stops writes and needs Medium/new queue.",
+      "uxRefs": [],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-ACTOR",
+      "status": "passed",
+      "actual": "Fresh logout/login verified own QA N141710 Owner; full opening maps captured. TB122/13243.63 balanced,AR1306.21/AP1090/Inv660/GRNI0/VAT46.71/COGS420/expense10/profit829.50/assets1966.21;stock780. Profile saved/reloaded purchase requiredSuppliertrue and inventory last/block; VATfalse18 as opening. No business writes.",
+      "evidence": {
+        "freshLogin": "logout/login Remember off; expected company/Owner",
+        "actorCompany": "QA synthetic owncompany",
+        "openingBalances": "UI TB and balance122/13243.63",
+        "openingStock": "UI stock780",
+        "openingSettings": "private opening-settings.json",
+        "profileReload": "requiredsuppliertrue,negativeblock"
+      },
+      "title": "Fresh login, settings and actual openings",
+      "expected": "Verify actor/company and actual TB/journal/stock plus complete sales/VAT/purchase/inventory settings. Historical anchor122 journals13243.63,AR1306.21,AP1090,InvGL660,stock780,GRNI0,VAT46.71,COGS420,profit829.50,assets1966.21 is comparison only. Record drift before planning any effects. Bind VATfalse18%,lastcost,negativeBlock,approvalfalse,requiredsuppliertrue,duplicateblocktrue,RequireGRNfalse,PostGRNIfalse; save/reload each planned transition and restore actual openings at END.",
+      "uxRefs": [],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-HISTORY",
+      "status": "passed",
+      "actual": "Read-only INV0032 source3x100 open300/paid0,posted. INV0030 edit fixedline30/header13.50/subtotal270/total256.50 dates/notes retained; noSave/Post. INV0031 listpaid256.50 observed. INV0018 checkedlistdraft10. No historical changes.",
+      "evidence": {
+        "documents": "INV0032open300;0018draft10;0031paid256.50",
+        "editPreview": "0030line-net270/header13.5/256.50",
+        "unchangedState": "all historical navigation read-only;no business writes"
+      },
+      "title": "Preserved failure and legacy draft readback",
+      "expected": "Do not Save/Post/credit/repair any preserved record. Record actual state; confirm INV0032 still open300 and draft0030 edit economics256.50. Missing historical fixture blocks its substep; no recreation. Zero GL/AR/stock writes.",
+      "uxRefs": [
+        "UXW-006"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-FIX-A",
+      "status": "failed",
+      "actual": "Required fresh physical fixture could not be completed: quick-created product remainedcost10/sell0 after editserverexception; separate fullcreatecost60/sell10 also serverexception. No sourceA bill posted. Two initial errors retained; no repeated writes.",
+      "evidence": {
+        "fixtureIdentity": "Q-M19-RETURN-P-ENDD physical0;fullnewSKU readback pending",
+        "bill": "not submitted",
+        "journal": "no purchase submission",
+        "stock": "quickSKU0",
+        "sourceBalance": "no sourceA"
+      },
+      "nextAction": "Medium classify serverexceptions/module-or-action failure fromsanitizedrepro; engineeringrepair or reviewed fixtureplan;no historicalsubstitute.",
+      "title": "Fresh physical purchase source A",
+      "expected": "Create exactly one direct bill3×60=180. DrInventory180/CrAP180; stock3/value180,source balance180,GRNI unchanged. Verify stored Physical class and SKU, source identity, cost and reference. No GRN substitute or use of old consumed PUR0007.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-FIX-B",
+      "status": "passed",
+      "actual": "PUR-20261022-0008 vendorM19ServiceVendorB manual1x100/header5/total95/open95/refM19-B. Journal123 total13338.63 has Dr6800 95/Cr2100 95,stock unchanged780.",
+      "evidence": {
+        "fixtureIdentity": "ownnewvendornameB/manualservice",
+        "bill": "PUR0008 total95/refM19-B/header5",
+        "journal": "Dr6800Cr2100 95;123/13338.63",
+        "sourceBalance": "95unpaid",
+        "stockUnchanged": "stock780 plusquickSKU0"
+      },
+      "title": "Different-vendor discounted source B",
+      "expected": "Create exactly one service bill95; Dr6800/CrAP95; source vendorB,qty1,price100,header5,total95. No stock/COGS/GRNI. Retain bill open95 at close.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-PICK-EMPTY",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Generic picker empty to A without reload",
+      "expected": "SelectA through visible Find bill. WITHOUT reload require vendorA locked,lines3×60,source quantity3,header0,remaining3/value180,total180,price60 readonly. Qty1preview60. Capture same render; no submit yet. Original OBS-M18-PURCHASE-PICKER-STATE preserved separately.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-PICK-AB",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Switch A to B and back",
+      "expected": "Use supported picker source-change controls: A→B replaces vendor,ancestry,qty1,price100,header5,total95; returnB→A restores qty3/60/header0/180. No mixed fields or writes. If same-form source switch unavailable, record capability gap; do not claim A→B from two fresh pages. Late-response branch is separate blocked slot.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-PICK-CLEAR",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Clear and reselect source",
+      "expected": "If supported clear exists, remove source and confirm no stale source-bound vendor/line/header/total, then reselectA3×60/180. If clear unsupported, mark that substep blocked; do not tamper with query/hidden props or equate navigation to clear. Continue PARTIAL from a fresh correct A form.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-PARTIAL",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "One purchase return at60",
+      "expected": "Setqty1; preview60 and source price60 locked; submit ONCE. Persisted credit60,DrAP60/CrInventory60; sourceA due120/remaining2,newSKU2/value120,GRNI0. View/print source/row/total agree. No cash/COGS. If preview inconsistent, fail and stop dependent returns.",
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-REMAIN",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Remaining two and over-return denial",
+      "expected": "Prefillqty2/value120,originalsourceqty3. Setqty3 or split2+2 only if offered; clear exceeded constraint, no fictitious discount. If Save offered submit once and require refusal/all fields retained/zero new credit,GL/AP/stock. Disabled Save proves only client boundary. Do not infer server enforcement.",
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-PUR-SPLIT",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Purchase added-row source price and close",
+      "expected": "Create supported1+1 rows; BOTH price60 readonly,source facts retained,rows120=footer120. Submit one credit120 only if coherent. DrAP120/CrInventory120; sourceA0/remaining0,newSKU0/value0. No cash/COGS. This confirms purchase cost-source locking; do not claim catalogue COST differs unless independently bound.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-ZERO",
+      "status": "blocked",
+      "actual": "Required fresh sourceA absent after preserved product setup exceptions; no dependent financial actions executed.",
+      "evidence": {
+        "dependency": "M19-FIX-A failed;sourceA notposted"
+      },
+      "nextAction": "Medium review product create/edit error and prepare a new validated fresh fixture; retain original expectations.",
+      "title": "Exhausted source has no accepted additional return",
+      "expected": "Supported picker/detail shows remaining0/value0 and no accepted positive credit. Zero/disabled controls recorded at actual layer; no forged requests. ReopenB remains95 unchanged; no journal/stock writes.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-SALES-FIX",
+      "status": "passed",
+      "actual": "Fresh INV-20261022-0037 posted300;Dr1300/Cr4000 300;catalogQ-M16-DIGITAL-ICWZ actualDigital sell10;sourceopen300 andoldINV0032stillopen300. Stock780 unchanged.",
+      "evidence": {
+        "catalogue": "productlistDigital/sell10",
+        "invoice": "INV0037 fresh3x100/noheader/noVAT",
+        "journal": "Dr1300Cr4000 300",
+        "sourceBalance": "newopen300",
+        "stockUnchanged": "stock780"
+      },
+      "title": "Fresh digital source at100 vs catalogue10",
+      "expected": "Save/post exactly one freshinvoice300,DrAR/CrSales300,no stock/COGS. Record actual sourceNumber/privateID alias; catalogue10 remains unchanged. All following split writes target THIS new source only.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-SALES-DENY",
+      "status": "passed",
+      "actual": "FreshINV0037 split2+2:bothsource100readonly,row200+200;explicit4>3/no fake discount;oneSave left sameform,all18fieldsidentical. Journalsremain124/13638.63,nonewcredit. UIrefusal layer only;serverauthorizationnotclaimed.",
+      "evidence": {
+        "locks": "100/100readonly",
+        "invalidPreview": "qty4>remaining3;nofakediscount",
+        "denialLayer": "UIrefusal;noserverauthorityclaim",
+        "retainedFields": "18/18exact",
+        "unchangedState": "124journals13638.63;noacceptedcredit"
+      },
+      "title": "Split2+2 exceeds source3",
+      "expected": "Added rows source100 readonly; set2+2,require qty4>3 explanation and no fake balancing discount. One Save only if offered: refusal retains dates/notes/lines/discounts and zero new credit/GL/AR/stock. Capture immediate response+persisted readback. Clear refusal before correction; ambiguous outcome stops dependent action.",
+      "uxRefs": [
+        "UXW-011",
+        "UXW-002"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-SALES-CLOSE",
+      "status": "inconclusive",
+      "actual": "Corrected1+1+1 source100readonlyeach,row100/footer300 postedSR-20261022-0076 credit300. Viewpersistedthree100rows,line-net300/header0;Dr4100Cr1300 300. FreshINV0037paid/source0;oldINV0032open300. Required creditprint notexposed:ViewmodalonlytwoClose,ActionsDeleteonly;no print claimed. Exactoriginal monetary/UI repro passes bounded checks.",
+      "evidence": {
+        "rowsAndFooter": "three100readonly/footer300",
+        "credit": "SR0076three1x100/net300",
+        "journal": "Dr4100Cr1300 300",
+        "sourceBalance": "INV0037paid0due",
+        "print": "notavailable through observed creditUI;missinglayer",
+        "oldFixtureUnchanged": "INV0032open300"
+      },
+      "nextAction": "Medium review print applicability/binding; retain bounded originalfix evidence;do not claim fullcanonical acceptance.",
+      "title": "Valid1+1+1 source100, footer300 and post",
+      "expected": "Correct only quantities/row split to1+1+1; allprices100 readonly,eachrow100,sum300=footer300. Submit once; persistedcredit300,DrReturns/CrAR300,source0; View/printlinegross300,discount0,header0,net300. No stock/COGS. Any discrepancy stops posting; original INV0032 staysopen300.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-DRAFT",
+      "status": "passed",
+      "actual": "INV0038 draft retained dates21/22/28,notes,line10%,header13.50/256.50 afterreopen/searchrerender;draft0GL. ExplicitPost Dr1300Cr4000 256.50; SR0077 fullcredit256.50 Viewgross300/line30/net270/header13.5. Journal127/14451.63 Dr4100Cr1300 256.50. Source listpaid; no stock/COGS event.",
+      "evidence": {
+        "draft": "INV0038",
+        "credit": "SR0077",
+        "journal": "127/14451.63",
+        "sourceBalance": "paid0due",
+        "reopenedFields": "exact dates/notes/discounts",
+        "unchangedState": "no stock/COGS events",
+        "post": "Explicit Post once; matching expanded INV0038 journal Dr1300/Cr4000 256.50; 126 entries/14195.13 before its full credit."
+      },
+      "title": "Discounted draft and full return adjacency",
+      "expected": "Draft/save/reopen/edit/rerender retainsSKU/class/dates/notes and line-net270,header13.50,total256.50. No GL until one explicit Post; DrARCrSales256.50 then one linked fullreturn256.50/source0. Inspect added split rows as available: line net90 each; no compulsory split action if it would repeat the financial event. No stock/COGS.",
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-TAX",
+      "status": "inconclusive",
+      "actual": "FreshINV0039 tax302.67,DrAR302.67CrSales256.50CrVAT46.17. VATdisabled/reloadbeforefullreturn;preview302.67/SR0078View302.67 VAT46.17;DrReturns256.50DrVAT46.17CrAR302.67;129journals15056.97. Sourcepaid. Requiredcreditprint unavailable as earlier; boundedhistoricalVATchecks pass.",
+      "evidence": {
+        "source": "INV0039 tax26OCT_01/8",
+        "credit": "SR0078",
+        "settingsReload": "VATfalse18 beforecredit",
+        "journal": "129/15056.97;exact VATreversal",
+        "print": "unavailable",
+        "sourceBalance": "paid0due"
+      },
+      "nextAction": "Medium bind print applicability;retain exactVAT evidence withoutwhole-slotpass.",
+      "title": "Historical VAT302.67 adjacency",
+      "expected": "One invoice302.67=supply256.50+VAT46.17. DisableVATregisteredfalse/reload BEFORE linked fullreturn. Preview/post/View/print credit302.67,DrReturns256.50+DrVAT46.17/CrAR302.67,source0,no stock/COGS. If classification/support unverified, block instead of guessing. Restore planned false before other cases and actual openings at END.",
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-F7",
+      "status": "passed",
+      "actual": "INV0040 7x1 header.05 posted6.95;SR0079..0085 exactly.99,.99,.99,.99,.99,1,1;header.01x5+0+0=.05;eachView/Dr4100Cr1300/readbackcheckpoint verified;remaining6/5/4/3/2/1/0 andbalances5.96/4.97/3.98/2.99/2/1/0. Final137/15070.87/sourcepaid0. Freshonly,no legacycertification. Reopenprefillsoriginal7 then warnsremaining;separateUXobservation.",
+      "evidence": {
+        "source": "INV0040",
+        "credits": "SR0079-SR0085",
+        "conservation": "6.95 credit,.05 discount,source0",
+        "eachJournal": "131..137/15064.91..15070.87",
+        "remaining": "6to0 qty;5.96to0value",
+        "legacy": "notcertified",
+        "eachPreview": "Seven qty1 previews .99,.99,.99,.99,.99,1,1; checkpointed before each Save.",
+        "eachCreditBreakdown": "SR0079..0085 View: each line gross/net1, discount0; header.01 firstfive,0 lasttwo; credits equal previews.",
+        "eachRemaining": "Linked warnings remaining6,5,4,3,2,1,0; direct invoice balances5.96,4.97,3.98,2.99,2,1,0 read before continuing."
+      },
+      "title": "Fresh residual ladder after shared row changes",
+      "expected": "Seven separate qty1credits expected.99,.99,.99,.99,.99,1,1. Checkpoint EACH intent/preview/post/View/journal/sourcequantity/value before next; cumulative6.95/source0/header budget.05 conserved. Partial ladder records every completed step; failure stops dependent ladder only. Fresh arithmetic does NOT certify legacy101c/104c.",
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-SUPPLIER",
+      "status": "inconclusive",
+      "actual": "One blankreference Save leftform/all16fieldsidentical; nativevalidationmessagesempty; no explicitserverrefusal captured, no toastpersistent. Journal137/15070.87 unchanged. No blindretry/correctedbill because conclusive refusalpreconditionmissing. Unsavedformabandoned.",
+      "evidence": {
+        "submittedFields": "16 retained includingdates21/22/28/vendor/notes/6800",
+        "refusal": "outcome notconclusivelyattributed",
+        "journal": "137/15070.87 unchanged",
+        "correctedBill": "notcreated"
+      },
+      "nextAction": "Medium review supported notification/server-refusal evidence;no replay;new reviewed fixturemission needed.",
+      "title": "All-field server refusal then corrected bill10",
+      "expected": "Submit once and distinguish native/client vs actual server refusal; all recoverable fields retained,zeroGL/AP/stock. If conclusive server refusal, changeONLY supplierref to M19-SUP and submit once: exactly one bill10 Dr6800CrAP; original dates/notes retained. No blind rekey/retry. Retainopen10 at close. Whole-slot pass requires the conclusive server refusal AND exactly one corrected bill10. If native validation prevents the server branch, report it blocked/partial; do not remove native constraints to force a request.",
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-LISTS",
+      "status": "passed",
+      "actual": "Invoiceexact0040/nameN14/unmatchedM19NoMatch/clear;Numberasc40rows/4pages/Nextpage2;first0001Archiveconfirmcorrect/cancel,last0008Deleteconfirmcorrect/cancel;GET/newCancel nooverlay. Datefilter22Oct afternativeArrowUpDowncommit exactly0040/0039/0037. Initialfill-onlyAlltime retained is harnesscorrection,no defectclaim. No businesswrites;boundedsharedlist assertion only.",
+      "evidence": {
+        "search": "exact/name/unmatched/clear",
+        "filterSort": "Numberasc;page2;date22Oct3rows",
+        "rowActions": "first/lastcorrectconfirmcancel",
+        "busyCleanup": "no strandedoverlay",
+        "noWrites": "onlyGET/cancels"
+      },
+      "title": "Shared lists, status and no-write busy cleanup",
+      "expected": "Search exact documentnumber andparty,unmatchedquery,clear; pagination/sort where enough rows. First/last row Actions target correct object and remain visible; cancel confirmation. GET filter/query/back/Cancel never leaves write overlay. No writes; record absent pagination dataset as missing branch, not false full pass.",
+      "uxRefs": [
+        "UXW-004",
+        "UXW-013",
+        "UXW-014",
+        "UXW-015"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-UNLINKED",
+      "status": "inconclusive",
+      "actual": "Consumer matrix:quote andsalesorder Digitaldefault10editable/qty2notesrerender/cancel;invoicepreviousdefault10 no source lock. PO,GRN,import,cashpurchaseavailableopened/cancelled;directpurchasemanualtestedearlier. Allfivepurchasecost60pricing/rerenderbranchesblocked byfreshfixturefailure;notreplacedwitholdphysicalSKU. Dateeditsnotcompletedinpartialsmokes. Nosharedformsave.",
+      "evidence": {
+        "consumerMatrix": "3partialDigital;5purchasecostfixtureblocked",
+        "normalPrices": "quote/SO/invoice10editable",
+        "cancel": "unsavedquote/SO/PO/GRN/import/cashcancelled",
+        "noWrites": "no UNLINKED save",
+        "missing": "physical10/60 allconsumercoverage/dates"
+      },
+      "nextAction": "Mediumreviewnewfixture;nextfixedmissioncompleteeachphysicalconsumer/datebranch withoutclaimingfullworkflows.",
+      "title": "Shared source-less forms retain normal pricing",
+      "expected": "For each actual available consumer select product: sales/defaultsell10; purchase/cost60 when linePriceModecost by observed form contract. Edit qty/dates/notes then trigger normal rerender; fields/rows persist with no source lock/pricing pollution. Cancel every unsaved form; noGL/stock/new saved docs. List untested/unsupported consumers individually; do not claim full business workflows from this form-level smoke.",
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-QUOTE",
+      "status": "failed",
+      "actual": "KeyboardM16Enter addedexactlyoneDigital10/searchfocusretained. Header150% previewclamped10discount/total0;SaveunexpectedlycreatedQT0004draft0 insteadrefusal. Dates21/28/notesretainedread-onlyedit. No correctedquote10;preservefailedquote. Separatemanualunsavedlinecancelled/productsearchnone. NoGLexpectedverifyEND.",
+      "evidence": {
+        "searchAndFocus": "M16multiple keyboardEnter oneDigital",
+        "refusal": "NOT refused;acceptedzeroquote",
+        "savedQuote": "QT-20261021-0004 draft0",
+        "retainedFields": "stored dates21/28/notes",
+        "manual": "notautocreated",
+        "noGL": "quoteonly;END verify"
+      },
+      "nextAction": "Mediumreviewheader-vs-line150%rule binding;engineerpreservequote and add explicitpercentagevalidation;newfixedmissionafterreview.",
+      "title": "Product search/manual/discount refusal",
+      "expected": "Keyboard catalogue add exactlyonce; focus retained,details expansion stable. 150%clientrefusal retainsallfields; correctonly150→0,verifydates afterrerender/nativekeyboardcommit,Saveonequote10/noGL. Separate unsaved Manual line must not autocreateSKU; cancel. No source pricing on unlinked quote.",
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-KEYBOARD",
+      "status": "failed",
+      "actual": "ProductsearchM16ArrowDownUpEscapeclosed/focusretained;helpEnter/Escapeclosed/focusreturnedhelp. InvoiceDeleteconfirm0040 keyboardEnter opened;CancelTab focusesDelete;DeleteTab escapesmodaltoBODY;EscapeonCancel didnotclose. ExplicitCancelEnterclosed. NoDeleteconfirmed/no writes. Focusinitial/returnnotreliablyrestored;nofullaccessibilityclaim.",
+      "evidence": {
+        "keyboardSteps": "search/help/menu/dialogbounded",
+        "focus": "CancelTabDelete;DeleteTabBODY outside modal",
+        "helpDialog": "helpEscape works;confirmEscape didnotclose",
+        "noWrites": "Cancelonly"
+      },
+      "nextAction": "MediumreviewConfirmDialog focuscontainment/initialfocus/Escape/returnfocus againstexistingdesign;engineeringreprowithoutconfirmingDelete.",
+      "title": "Bounded keyboard/help/dialog checks",
+      "expected": "Complete representative field selection/product search/menu/help/cancel keyboard-only; visible logical focus,Escape as supported,return focus and modal containment,icon names. Record exact state/route and defects. This is partial UXW-017/018 evidence, NOT screen-reader or full accessibility acceptance; don't force absent tooltips.",
+      "uxRefs": [
+        "UXW-017",
+        "UXW-018"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-NARROW",
+      "status": "failed",
+      "actual": "Actualreadtab390x844/320x844;unsavedreturnnotes/sourcefocuscenterunobscured,CancelSavevisible,tablehorizontaloverflowcontained;screenphotos390/320.320statushelptooltipx-28/w304 clipslefttext;screenshothelp320.390helpx42/w340extends8pastviewport;menu320x68/w220fits.390menubranchnotconclusive. NoSave/credit;viewportresetrequestedverify.",
+      "evidence": {
+        "viewport": "390x844 and320x844 actualDOM",
+        "formAndMenu": "320menucontained/helpclipped",
+        "focus": "notes/searchcenterhit-testtrue",
+        "reset": "resetrequested",
+        "noWrites": "unsavedreturncancelonly",
+        "screenshots": "private narrow390.jpg narrow320.jpg help320.jpg"
+      },
+      "nextAction": "MediumreviewStatusHelp viewportclamping and390menu branch;keepboundedresponsiveevidence,notfullaccessibilityacceptance.",
+      "title": "390px and320px affected-form smoke",
+      "expected": "Inspect at390 then320CSSpx: party/source/rows/totals/actions/menu usable,focusedcontrolnotentirelyobscured; realtables may scroll. Capture sanitized view. Reset viewport before END. No source posting. Missing capability blocks rather than simulating with CSS/evaluate. No200%text/400%zoom/screenreader claim.",
+      "uxRefs": [
+        "UXW-021",
+        "UXW-022"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-LATE",
+      "status": "blocked",
+      "actual": "No reviewedisolatedfaultenvironment available;no latenetworkfault injected onsharedstaging. Expected lateA mustnot overwrite selectedB unchanged.",
+      "evidence": {
+        "environmentDisposition": "isolatedunavailable",
+        "preservedExpectation": "B cannotbeoverwrittenbylateA",
+        "nextAction": "Medium+engineering prepareisolatedapprovedracefixture"
+      },
+      "nextAction": "Medium+engineering prepareapprovedisolatedlate-responsefixture;preserveexpectedsourceB.",
+      "title": "Controlled late-response source race",
+      "expected": "Record BLOCKED infrastructure,ownerMedium+engineering,nextprepareisolatedapprovedfixture; preserve expectedB cannot be overwritten by lateA. No network interception,stress/fault injection on shared staging and no helper-unit substitution.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-U7",
+      "status": "blocked",
+      "actual": "Authentic priorv2.5.14compiledapp/auth/DB unavailable;no fabricatedlegacy101c,stagingdowngrade orhistoricalrepair;freshF7separate.",
+      "evidence": {
+        "environmentDisposition": "authenticoldenvironmentunavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN unchanged101c",
+        "nextAction": "engineeringprepareisolatedauthenticupgradefixture"
+      },
+      "nextAction": "Engineeringprepareauthenticcompiledv2514/auth/DB isolated101cfixture;Mediumreviewbeforerun.",
+      "title": "Authentic legacy101c upgrade",
+      "expected": "Record BLOCKED per RESIDUAL_FIXTURE_PLAN; retain original101c expectation and evidence. No fabricated pre-state,stagingdowngrade/historicalrepair or fresh-ladder substitution. Ownerengineering prepares isolated authentic fixture.",
+      "uxRefs": [],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-U10",
+      "status": "blocked",
+      "actual": "Authentic priorv2.5.14compiledapp/auth/DB unavailable;no fabricatedlegacy104c,stagingdowngrade orhistoricalrepair;freshF7separate.",
+      "evidence": {
+        "environmentDisposition": "authenticoldenvironmentunavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN unchanged104c",
+        "nextAction": "engineeringprepareisolatedauthenticupgradefixture"
+      },
+      "nextAction": "Engineeringprepareauthenticcompiledv2514/auth/DB isolated104cfixture;Mediumreviewbeforerun.",
+      "title": "Authentic legacy104c upgrade",
+      "expected": "Record BLOCKED per RESIDUAL_FIXTURE_PLAN; retain original104c expectation and evidence. No fabricated pre-state,stagingdowngrade/historicalrepair or fresh-ladder substitution. Ownerengineering prepares isolated authentic fixture.",
+      "uxRefs": [],
+      "fullCanonicalAcceptance": false
+    },
+    {
+      "id": "M19-END",
+      "status": "inconclusive",
+      "actual": "Browser close is reconciled and restored; publication verification pending.",
+      "evidence": {
+        "actualDeltas": "AP/expense +95; other net controls unchanged",
+        "trialBalance": "137 journals / 15070.87 balanced",
+        "stock": "780; inherited gap120",
+        "fixtureRegister": "Run report below",
+        "settingsReload": "All three full opening maps exactly equal after reload",
+        "viewportReset": "1920x855 both tabs",
+        "endStamp": "v2.5.19 · 4c3a304",
+        "publishedHandoff": "Pending publication verification"
+      },
+      "nextAction": "Complete publication/readback, then append final close disposition.",
+      "title": "Restore, reconcile and publish",
+      "expected": "Compare actual openings+actual recorded writes,including failures. If all planned financial branches pass: A+180-60-120=0inventory/AP; Bservice95+supplier10=105expense/AP; sale/fullcredit pairs net0; newSKU0; GRNI/cash/COGS/tax/control stock unchanged. From unchanged anchor AP1195,profit724.50,AR1306.21,InvGL660,stock780,assets1966.21. Journal count/turnover derive from actual submissions,not guessed counts. Restore ALL opening sales/VAT/purchase/inventory maps and viewport,save/reloadverify. Preserve failurefixtures,oldINV0032open300 and inheritedstock-GLgap120. Publish immutable checks/run/newbugs/handoff,explicit not-runbudgetscope,endstamp identical. No payments/writeoffs/reset/cleanup/merge/deploy; archiveLAST.",
+      "uxRefs": [],
+      "fullCanonicalAcceptance": false
+    }
+  ],
+  "roundingSteps": [
+    {
+      "step": 1,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0079",
+      "qty": 1,
+      "preview": 0.99,
+      "persistedCredit": 0.99,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0.01,
+      "afterHeader": 0.99,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 131,
+      "journalTurnover": 15064.91,
+      "remainingQty": 6,
+      "sourceBalance": 5.96,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 2,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0080",
+      "qty": 1,
+      "preview": 0.99,
+      "persistedCredit": 0.99,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0.01,
+      "afterHeader": 0.99,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 132,
+      "journalTurnover": 15065.9,
+      "remainingQty": 5,
+      "sourceBalance": 4.97,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 3,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0081",
+      "qty": 1,
+      "preview": 0.99,
+      "persistedCredit": 0.99,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0.01,
+      "afterHeader": 0.99,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 133,
+      "journalTurnover": 15066.89,
+      "remainingQty": 4,
+      "sourceBalance": 3.98,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 4,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0082",
+      "qty": 1,
+      "preview": 0.99,
+      "persistedCredit": 0.99,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0.01,
+      "afterHeader": 0.99,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 134,
+      "journalTurnover": 15067.88,
+      "remainingQty": 3,
+      "sourceBalance": 2.99,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 5,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0083",
+      "qty": 1,
+      "preview": 0.99,
+      "persistedCredit": 0.99,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0.01,
+      "afterHeader": 0.99,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 135,
+      "journalTurnover": 15068.87,
+      "remainingQty": 2,
+      "sourceBalance": 2,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 6,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0084",
+      "qty": 1,
+      "preview": 1,
+      "persistedCredit": 1,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0,
+      "afterHeader": 1,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 136,
+      "journalTurnover": 15069.87,
+      "remainingQty": 1,
+      "sourceBalance": 1,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    },
+    {
+      "step": 7,
+      "source": "INV-20261022-0040",
+      "credit": "SR-20261022-0085",
+      "qty": 1,
+      "preview": 1,
+      "persistedCredit": 1,
+      "lineGross": 1,
+      "lineDiscount": 0,
+      "lineNet": 1,
+      "headerAllocation": 0,
+      "afterHeader": 1,
+      "journal": "Dr4100 / Cr1300",
+      "journalCount": 137,
+      "journalTurnover": 15070.87,
+      "remainingQty": 0,
+      "sourceBalance": 0,
+      "evidence": "Each intent was checkpointed before Save; then View breakdown, matching expanded journal, linked remaining-quantity warning and direct invoice balance read before the next credit."
+    }
+  ],
+  "corrections": [
+    "FIX-A: full New product SKU M19-RETURN-READY-20261022 was searched after the exception: No products found. The earlier checkpoint evidence string saying readback pending is superseded only by this appended readback, not erased.",
+    "DRAFT: an immediate journal read initially showed the previously expanded SR0076 table. It was not used as invoice proof. The matching INV0038 entry was explicitly expanded and Dr1300/Cr4000 256.50 verified; the SR0077 matching entry and 127/14451.63 were verified separately.",
+    "LISTS: fill-only date input left All time. Native ArrowUp/ArrowDown commit then produced the 22Oct filter and exactly0037/0039/0040. This is a harness correction, not a date-filter product defect.",
+    "SUPPLIER: no explicit refusal was captured in the submission sequence. Native validity messages were empty, all16 fields retained, 137 journals unchanged; final purchase-list query for the synthetic override vendor had No matches. This proves no observed accepted bill but does not establish a server-refusal layer. No correction/retry occurred.",
+    "QUOTE: tested 150% HEADER (Quote discount), not the line discount. It was clamped to10 on a10 quote and saved as0. Medium must review header-vs-line rule binding without rewriting the original refusal expectation or treating an unexecuted line-discount branch as tested.",
+    "NARROW: viewport override applied to the active secondary tab, while primary stayed1920x855. Actual390/320 dimensions were verified on that secondary tab before responsive observations. Both tabs were1920x855 after reset.",
+    "NARROW geometry correction: the earlier checkpoint claimed390px tooltip extends8pastviewport. Actualx42+width340=382 fits390CSSpx but exceeds layout width375 by7px. Only320px visual left clipping is directly demonstrated; the390px concern is review-only.",
+    "KEYBOARD: body focus is reported by tag only. Accidental broad body text from a focus probe was excluded from publication; no embedded payload or private record identifiers are included.",
+    "Protocol deviation: a custom private append-only submission ledger and terminal case checkpoints were used instead of operator-queue init/pack. No claim is made that the generic operator tool initialized or enforced this fingerprint. Schema and actual model/credit usage were not observable. Medium should audit this deviation before using the run for acceptance."
+  ],
+  "reconciliation": {
+    "openingJournals": 122,
+    "closingJournals": 137,
+    "openingTurnover": 13243.63,
+    "closingTurnover": 15070.87,
+    "acceptedNewJournals": 15,
+    "acceptedNewTurnover": 1827.24,
+    "openingAR": 1306.21,
+    "closingAR": 1306.21,
+    "openingAP": 1090,
+    "closingAP": 1185,
+    "openingExpense6800": 10,
+    "closingExpense6800": 105,
+    "openingProfit": 829.5,
+    "closingProfit": 734.5,
+    "inventoryGL": 660,
+    "stockValue": 780,
+    "inheritedStockMinusGL": 120,
+    "outputVAT": 46.71,
+    "inputVAT": 0,
+    "COGS": 420,
+    "GRNI": 0,
+    "cashBankCard": 0,
+    "assetsAndLiabilitiesEquity": 1966.21,
+    "actualNetEffect": "Only accepted service bill95 increases AP/expense; all four new sales sources fully credited; no sourceA purchase or corrected supplier bill10."
+  },
+  "publication": {
+    "handoff": "handoffs/HANDOFF-20261022-v2519-light04-results.md",
+    "observations": "bugs/OBS-20261022-light04-results.md",
+    "privateEvidencePublished": false,
+    "mediumReview": "required",
+    "rootContinuityBoundary": "CURRENT-LIGHT is updated; broad STATUS/SESSION/programme files remain unchanged under the prior narrowed-publication boundary. No automatic memory export."
+  }
+}
