@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261023-light06-browser-blocked",
+  "qaExecutionSha": "60198f3189459431fe32d331a0abe1ae00351743",
+  "expectedProductSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "expectedLiveStamp": "v2.5.21 · 7458a9c",
+  "actualObservedLiveStamp": null,
+  "candidateFreshlyVerified": false,
+  "actorFreshlyVerified": false,
+  "openingMapsCaptured": false,
+  "classification": "browser-connector-infrastructure-blocker; not product failure",
+  "browserBootstrapAttempts": 2,
+  "bootstrapResult": "Both requests timed out before runtime documentation or tab access",
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 20,
+    "inconclusive": 1,
+    "pending": 0,
+    "running": 0
+  },
+  "submissions": {
+    "business": 0,
+    "settings": 0,
+    "credentialsEntered": false,
+    "viewportChanges": 0,
+    "unresolved": 0
+  },
+  "clock": {
+    "configuredMinutes": 75,
+    "reserveMinutes": 15,
+    "chargedBookkeepingMs": 30602,
+    "mode": "closed",
+    "explicitPauses": 0,
+    "openedAfterBrowserAttempts": true,
+    "closedBeforePublication": true,
+    "fullAttemptCompliance": "unverified",
+    "boundary": "30.602 seconds is late ledger bookkeeping only; excludes browser setup and publication; not execution or whole-session timing"
+  },
+  "hashes": {
+    "rules": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "ux": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b",
+    "workflowsLibraryBytes": "a18153cf65aa140b2ac71cd52b47faef142a51756967fb749581d93e326f7015"
+  },
+  "cases": [
+    {
+      "id": "M21-GATE",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-ACTOR",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-PL-D",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-PL-N",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-PD-D",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-PD-N",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-SL-D",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-SL-N",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-SD",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-MOUNTED",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-PRODUCT",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-IH320",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-RH320",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-IH390",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-RH390",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-RESIZE",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-BUSY",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-AT",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-LINE",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-BLOCKERS",
+      "status": "blocked",
+      "reason": "Fresh browser gate unavailable; no required assertion executed"
+    },
+    {
+      "id": "M21-END",
+      "status": "inconclusive",
+      "reason": "No product mutation issued, but no current-state/endstamp/reconciliation verification available"
+    }
+  ],
+  "nextAction": "Reconnect existing local Browser extension; create new ledger/clock BEFORE browser setup and rerun unchanged queue after exact build/fresh actor/opening verification.",
+  "releaseAcceptance": false,
+  "canonicalAcceptance": false,
+  "metadataPersistence": {
+    "initialCommandReportedTerminal": true,
+    "firstSeparateReadback": {
+      "events": 33,
+      "blocked": 16,
+      "running": 1,
+      "pending": 4
+    },
+    "preservedOriginal": true,
+    "recovery": "Missing metadata transitions only; zero product actions",
+    "separateRecoveryReadback": {
+      "events": 42,
+      "blocked": 20,
+      "inconclusive": 1,
+      "pending": 0,
+      "running": 0,
+      "submissions": 0,
+      "clock": "closed"
+    }
+  }
+}
