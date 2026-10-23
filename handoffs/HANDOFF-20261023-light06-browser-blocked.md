@@ -20,3 +20,6 @@ Owner reconnects the existing local Browser extension and confirms readiness. Do
 Then start a NEW attempt and clock BEFORE browser setup; do not overwrite this terminal blocked ledger. Use the unchanged21-slot queue and exact QA commit above. Freshly verify v2.5.21 · 7458a9c/full source, explicitly login intended existing fixture, collect actual permissions/openings, then run all safe independent cases through queue/budget/blocker. Candidate drift requires Medium review/new binding. Preserve consumed financial sources and all earlier failures.
 
 Publish new results separately. No fix closure, release/customer-readiness/canonical acceptance. Backup/restore LAST.
+
+## Metadata persistence recovery addendum
+The first operator command sequence returned terminal20blocked/1inconclusive, but a separate persisted readback showed33events,16blocked,one running BUSY and four pending. No submission existed. Preserved that33event state and mismatch note privately; completed only the missing metadata transitions using the generic ledger, without any browser/ERP action. Subsequent separate persisted readback verified42events,20blocked/1inconclusive,zero submissions and closed clock. Original command output and mismatch remain disclosed. This is local checkpoint persistence uncertainty, not product behavior, and adds no executed acceptance evidence.
