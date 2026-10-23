@@ -151,5 +151,25 @@
   ],
   "nextAction": "Reconnect existing local Browser extension; create new ledger/clock BEFORE browser setup and rerun unchanged queue after exact build/fresh actor/opening verification.",
   "releaseAcceptance": false,
-  "canonicalAcceptance": false
+  "canonicalAcceptance": false,
+  "metadataPersistence": {
+    "initialCommandReportedTerminal": true,
+    "firstSeparateReadback": {
+      "events": 33,
+      "blocked": 16,
+      "running": 1,
+      "pending": 4
+    },
+    "preservedOriginal": true,
+    "recovery": "Missing metadata transitions only; zero product actions",
+    "separateRecoveryReadback": {
+      "events": 42,
+      "blocked": 20,
+      "inconclusive": 1,
+      "pending": 0,
+      "running": 0,
+      "submissions": 0,
+      "clock": "closed"
+    }
+  }
 }
