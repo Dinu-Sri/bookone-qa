@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-23",
+  "baseIndex": "coverage/browser-evidence-index.json at60198f3189459431fe32d331a0abe1ae00351743",
+  "note": "Additive21 Light06 dispositions only. Historical index unchanged: automatic publication review rejected re-uploading its historical business/financial content. Read this supplement alongside the base index; central consolidation remains for a scoped repository review. No full canonical acceptance.",
+  "entries": [
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-PL-D",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-PL-N",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-PD-D",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-PD-N",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-SL-D",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-SL-N",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-SD",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-MOUNTED",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-PRODUCT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-IH320",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-RH320",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-IH390",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-RH390",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-RESIZE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-BUSY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-AT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-LINE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-BLOCKERS",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261023-light06-attempt2.json",
+      "assertion": "M21-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded Light06 consumer/viewport disposition; required missing layers retained; no full canonical acceptance."
+    }
+  ]
+}
