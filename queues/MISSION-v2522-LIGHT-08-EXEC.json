@@ -7,6 +7,7 @@
   "executionReady": true,
   "status": "execution-ready-after-connected-transport-review-not-run",
   "qaPlanningBase": "a9ccd4fbc360ed67fd3083f79bbd8c094eabef45",
+  "qaExecutionSha": "11206e17b8fc42260f53a9b2981c848a4b4b5c6d",
   "budget": {
     "totalMinutes": 120,
     "executionMinutes": 100,

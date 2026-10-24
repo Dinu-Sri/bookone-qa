@@ -1,6 +1,6 @@
 # Light08 execution — after PR #69 independent review
 
-Read AGENTS.md, docs/COST_AWARE_QA.md, docs/CONNECTED_BROWSER_TRANSPORT.md, [review](../reviews/REVIEW-20261024-pr69-transport.md), [queue](../queues/MISSION-v2522-LIGHT-08-EXEC.json), [oracle](../queues/ORACLE-v2522-LIGHT-08.json) and [parent Light08 review](../reviews/REVIEW-20261024-light08.md). Checkout the QA commit named in the continuation prompt.
+Read AGENTS.md, docs/COST_AWARE_QA.md, docs/CONNECTED_BROWSER_TRANSPORT.md, [review](../reviews/REVIEW-20261024-pr69-transport.md), [queue](../queues/MISSION-v2522-LIGHT-08-EXEC.json), [oracle](../queues/ORACLE-v2522-LIGHT-08.json) and [parent Light08 review](../reviews/REVIEW-20261024-light08.md). Checkout the published SHA named in the continuation prompt. Queue `qaExecutionSha` is **11206e17b8fc42260f53a9b2981c848a4b4b5c6d**.
 
 Target **v2.5.22 · 211771e**, full product **211771e95d6f97cac5eb281a0f8e63f0fceef8a4**. Start a NEW 120-minute clock, reserving 20 for closing, before browser setup. Initialize a NEW generic ledger before any logout/login/form submission. Bind fingerprint.qaSha to this checkout. Stop dependent actions on candidate drift.
 

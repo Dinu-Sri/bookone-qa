@@ -24,6 +24,7 @@ test('Light08 EXEC is bound to live v2.5.22 and the reviewed transport', () => {
   assert.equal(q.productSha, '211771e95d6f97cac5eb281a0f8e63f0fceef8a4');
   assert.equal(q.reportedShortSha, '211771e');
   assert.equal(q.qaPlanningBase, 'a9ccd4fbc360ed67fd3083f79bbd8c094eabef45');
+  assert.equal(q.qaExecutionSha, '11206e17b8fc42260f53a9b2981c848a4b4b5c6d');
   assert.equal(q.reviewedTransport.entry, 'runPersistedBrowserRequest');
   assert.equal(q.reviewedTransport.authorCommit, 'a9ccd4fbc360ed67fd3083f79bbd8c094eabef45');
   for (const p of Object.values(q.reviewedTransport)) {
