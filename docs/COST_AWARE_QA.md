@@ -88,7 +88,18 @@ Generic initialization now rejects executionReady=false plans and mismatched FUL
 
 Necessary restoration/reconciliation is separately declared by recovery=true on the reviewed case and its intent; this is not permission to replay or start new financial cases. Closing cannot pass while any mission submission remains unresolved. The ledger does not validate the truth of supplied evidence or drive the browser.
 
-`node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly. The clock is advisory and cannot interrupt a browser action or measure credits/model compute.
+`node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly.
+
+Immediately before a business browser write, run the fail-closed action wrapper. It re-reads persisted plan/state/fingerprint/clock; it does not trust command stdout. Require command exit 0, a persisted running case, matching unresolved submissionId, exact fingerprint, and `allowNewBusinessSubmission=true`. Then invoke the approved browser only through `execute`:
+
+```sh
+node scripts/operator-queue.mjs intent queues/<QUEUE>.json "$P/state.json" "$P/fingerprint.json" CASE "$P/intent.json"
+INTENT_EXIT=$?
+node scripts/operator-clock.mjs check "$P/clock.json"
+node scripts/operator-action-guard.mjs execute queues/<QUEUE>.json "$P/state.json" "$P/fingerprint.json" "$P/clock.json" CASE SUBMISSION_ID $INTENT_EXIT -- pnpm agent:browse --path /sales/invoices
+```
+
+A rejected start/intent, missing or stale persisted intent, unresolved other submission, fingerprint mismatch, or closed budget must spawn **zero** browser processes. Do not click Post/Save after a rejected intent. Late recovery cannot turn a failed pre-submit checkpoint into compliance. The wrapper still cannot interrupt an already-running Playwright session or measure credits/model compute. Keep `pnpm agent:browse`; do not substitute HTTP or a second Playwright driver.
 
 Each new mission must bind budget, exact candidate/QA/UX/rule/library, actual actor/module/job capabilities, full opening maps and source identities. Missing legitimate Inventory-write fixture blocks product-master setup before repeating an expected denial. Neither Owner label nor document quick-create success proves full Inventory permission. HEADER150 and LINE150 are separate fixtures; expired feedback is not server refusal evidence. Credit print remains its own supported-capability assertion.
 
