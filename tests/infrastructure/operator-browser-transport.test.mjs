@@ -79,7 +79,8 @@ test('uncertain actual call is durably consumed and never replayed', async () =>
   const out = await execute(f, p, async () => {calls++; throw Error('uncertain response');});
   assert.equal(out.uncertain, true); assert.equal(calls, 1);
   assert.equal(prepare(f.request).ok, false);
-  await assert.rejects(execute(f, p, async () => {calls++;}));
+  const replay = await execute(f, p, async () => {calls++;});
+  assert.equal(replay.executed, false);
   assert.equal(calls, 1);
 });
 test('clock expiring during host claim latency causes zero actual tool calls', async () => {
@@ -117,12 +118,53 @@ test('durable claim survives an independent process', () => {
   const second = spawnSync(process.execPath, [script, 'claim', f.dir, p.preparationId], {encoding: 'utf8'});
   assert.equal(second.status, 0); assert.equal(JSON.parse(second.stdout).ok, false);
 });
+test('claim without finish leaves the submission consumed with unknown outcome', () => {
+  const f = fixture(), p = prepare(f.request);
+  assert.equal(claim(f.dir, p.preparationId).ok, true);
+  const receipts = fs.readdirSync(path.join(f.dir, 'dispatches'));
+  assert.equal(read(path.join(f.dir, 'dispatches', receipts[0])).status, 'claimed-outcome-unknown');
+  assert.equal(prepare(f.request).ok, false);
+  assert.equal(claim(f.dir, p.preparationId).ok, false);
+});
+test('finish failure after a tool call is uncertain and is not replayed', async () => {
+  const f = fixture(), p = prepare(f.request); let calls = 0;
+  const out = await dispatchConnectedBrowser({
+    prepared: p,
+    claim: id => claim(f.dir, id),
+    finish: async () => { throw Error('finish failed'); },
+    js: async () => { calls++; return 'BookOne'; },
+  });
+  assert.equal(calls, 1);
+  assert.equal(out.executed, false);
+  assert.equal(out.uncertain, true);
+  assert.match(out.reason, /Finish refused/);
+  assert.equal(prepare(f.request).ok, false);
+});
+function posixArgv(cmd) {
+  const out = [];
+  let cur = '';
+  let quoted = false;
+  for (const ch of cmd) {
+    if (ch === "'") { quoted = !quoted; continue; }
+    if (ch === ' ' && !quoted) { if (cur) out.push(cur); cur = ''; continue; }
+    cur += ch;
+  }
+  if (cur) out.push(cur);
+  return out;
+}
 test('concrete code host treats Browser tool isError as an uncertain consumed call', async () => {
   const f = fixture(); let calls = 0;
   const tools = {
     exec_command: async ({cmd, workdir}) => {
-      const r = spawnSync(cmd, {cwd: workdir, shell: true, encoding: 'utf8'});
-      return {exit_code: r.status, output: r.stdout};
+      const argv = posixArgv(cmd);
+      if (argv[0] === 'cat' && argv[1]) {
+        return {exit_code: 0, output: fs.readFileSync(path.resolve(workdir, argv[1]), 'utf8')};
+      }
+      if (argv[0] === 'node') {
+        const r = spawnSync(process.execPath, argv.slice(1), {cwd: workdir, encoding: 'utf8'});
+        return {exit_code: r.status ?? 1, output: r.stdout};
+      }
+      return {exit_code: 1, output: ''};
     },
     apply_patch: async patch => {
       const lines = patch.split('\n');

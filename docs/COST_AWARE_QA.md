@@ -90,7 +90,7 @@ Necessary restoration/reconciliation is separately declared by recovery=true on 
 
 `node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly.
 
-Immediately before a business browser write, dispatch through `dispatchBrowserAppWrite`. It re-reads persisted plan/state/fingerprint/clock, charges the unpaused gap from `lastAt` to the dispatch time, and revalidates immediately before invoking the connected Browser app `js` tool. It does not trust command stdout or a prior Boolean authorization.
+Immediately before a business browser write, dispatch through `runPersistedBrowserRequest` / `dispatchConnectedBrowser` so the unchanged `dispatchBrowserAppWrite` re-reads persisted plan/state/fingerprint/clock, charges the unpaused gap from `lastAt` to the dispatch time, and revalidates immediately before invoking the connected Browser app `js` tool. It does not trust command stdout or a prior Boolean authorization. See docs/CONNECTED_BROWSER_TRANSPORT.md.
 
 ```js
 import {dispatchBrowserAppWrite} from './scripts/operator-action-guard.mjs';
