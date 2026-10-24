@@ -1,3 +1,5 @@
-# Current continuation
+# Light08 EXEC run1 — 24 October 2026
 
-[Light08 EXEC handoff](HANDOFF-20261024-v2522-light08-exec.md) after [PR #69 independent review](HANDOFF-20261024-pr69-review.md). Queue: [MISSION-v2522-LIGHT-08-EXEC.json](../queues/MISSION-v2522-LIGHT-08-EXEC.json). QA `11206e17b8fc42260f53a9b2981c848a4b4b5c6d`. Product `211771e95d6f97cac5eb281a0f8e63f0fceef8a4`. Actual connected Browser tool still required at L08-GUARD. Historical results unchanged.
+[PR71](https://github.com/Dinu-Sri/bookone-qa/pull/71):1setup pass/1harness failure/35blocked. Full-mission transport preparation exceeds the host output cap before dispatch;46unit tests pass but actual EXEC GUARD proof did not complete. Read-only Browser navigation and diagnostics also stalled after fresh login. No business actions/settings changes/viewport overrides. Historical results remain immutable; no release acceptance.
+
+[Run](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-exec-results/runs/RUN-20261024-light08-exec-run1.md), [coding handoff](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-exec-results/handoffs/CODING-20261024-light08-exec-run1.md). Next: independent bounded transport correction with full-mission payload regression, Browser recovery, then NEW exact-bound EXEC run. Parent pointers remain in Git at fa927046fa5127d927fdd5cedea5a5279d26e3f3.
