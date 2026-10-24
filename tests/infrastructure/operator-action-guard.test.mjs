@@ -6,10 +6,11 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {initialize, transition} from '../../scripts/operator-queue.mjs';
-import {openClock, advanceClock} from '../../scripts/operator-clock.mjs';
+import {openClock, advanceClock, clockReport} from '../../scripts/operator-clock.mjs';
 import {
   authorizeBusinessBrowserAction,
   executeAuthorizedBrowserAction,
+  dispatchBrowserAppWrite,
 } from '../../scripts/operator-action-guard.mjs';
 
 const sha = 'a'.repeat(40);
@@ -34,7 +35,9 @@ const fp = {
   actor: 'unit',
   fixture: 'unit',
 };
-const clock = () => openClock(100, 15, 0);
+const OPEN = 0;
+const FRESH = 1000;
+const THRESHOLD = 85 * 60000;
 
 function withIntent() {
   let state = transition(plan, initialize(plan, fp), fp, 'start', 'one');
@@ -47,129 +50,285 @@ function input(overrides = {}) {
     plan,
     state: withIntent(),
     fingerprint: fp,
-    clock: clock(),
+    clock: openClock(100, 15, OPEN),
     caseId: 'one',
     submissionId: 's1',
+    now: FRESH,
     ...overrides,
   };
 }
 
-async function spyBrowse(auth) {
-  let calls = 0;
-  const out = await executeAuthorizedBrowserAction(auth, async () => {
-    calls += 1;
-    return {clicked: 'Post'};
-  });
-  return {calls, out};
+function jsMustNotRun() {
+  return async function js() {
+    throw Error('Browser app js must not run');
+  };
 }
 
-test('authorized checkpoint invokes the approved browser action once', async () => {
-  const auth = authorizeBusinessBrowserAction(input());
-  assert.equal(auth.allowBrowserAction, true);
-  const {calls, out} = await spyBrowse(auth);
-  assert.equal(calls, 1);
+async function dispatch(overrides, script = 'void 0') {
+  const calls = [];
+  async function js(s) {
+    calls.push(s);
+    return {ok: true, script: s};
+  }
+  const out = await dispatchBrowserAppWrite(input(overrides), {js, script});
+  return {out, calls};
+}
+
+test('Browser app js positive control runs the inert script once', async () => {
+  const {out, calls} = await dispatch({}, 'document.title');
   assert.equal(out.executed, true);
-  assert.equal(out.result.clicked, 'Post');
+  assert.deepEqual(calls, ['document.title']);
+  assert.equal(out.result.script, 'document.title');
 });
 
-test('rejected start command exit causes zero browser action', async () => {
-  const auth = authorizeBusinessBrowserAction(
-    input({commandExitCode: 1, state: initialize(plan, fp), submissionId: 's1'}),
+test('missing Browser app js tool is refused and has no Playwright fallback', async () => {
+  await assert.rejects(
+    () => dispatchBrowserAppWrite(input(), {script: 'document.title'}),
+    /Connected Browser app js tool required/,
   );
-  assert.equal(auth.allowBrowserAction, false);
-  const {calls, out} = await spyBrowse(auth);
-  assert.equal(calls, 0);
+});
+
+test('empty Browser app script is refused', async () => {
+  await assert.rejects(
+    () => dispatchBrowserAppWrite(input(), {js: jsMustNotRun(), script: '  '}),
+    /Browser js script required/,
+  );
+});
+
+test('active clock still under the execution threshold since last check allows js once', async () => {
+  const {out, calls} = await dispatch({now: 80 * 60000}, 'document.title');
+  assert.equal(out.executed, true);
+  assert.deepEqual(calls, ['document.title']);
+  assert.ok(out.chargedClock.chargedMs < THRESHOLD);
+});
+
+test('rejected start command exit causes zero Browser app js calls', async () => {
+  const out = await dispatchBrowserAppWrite(input({commandExitCode: 1, state: initialize(plan, fp)}), {
+    js: jsMustNotRun(),
+    script: 'document.querySelector("button").click()',
+  });
   assert.equal(out.executed, false);
 });
 
-test('rejected intent does not authorize posting even when a start response looked running', async () => {
-  // Light07 L07-SALE: start stdout appeared running, persisted ledger lacked it, intent rejected, operator still posted.
-  const persisted = initialize(plan, fp);
-  const auth = authorizeBusinessBrowserAction({
-    commandExitCode: 1,
-    plan,
-    state: persisted,
-    fingerprint: fp,
-    clock: clock(),
-    caseId: 'one',
-    submissionId: 's1',
-  });
-  assert.equal(auth.allowBrowserAction, false);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
+test('rejected intent does not invoke js even when a start response looked running', async () => {
+  const out = await dispatchBrowserAppWrite(
+    input({commandExitCode: 1, state: initialize(plan, fp)}),
+    {js: jsMustNotRun(), script: 'click()'},
+  );
+  assert.equal(out.executed, false);
 });
 
-test('missing persisted intent on a running case causes zero browser action', async () => {
+test('missing persisted intent on a running case causes zero js calls', async () => {
   const running = transition(plan, initialize(plan, fp), fp, 'start', 'one');
-  const auth = authorizeBusinessBrowserAction(input({state: running}));
-  assert.match(auth.reason, /Persisted intent/);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
+  const {out, calls} = await dispatch({state: running});
+  assert.equal(calls.length, 0);
+  assert.match(out.reason, /Persisted intent/);
 });
 
-test('stale submission identity does not authorize a browser action', async () => {
-  const auth = authorizeBusinessBrowserAction(input({submissionId: 'stale'}));
-  assert.match(auth.reason, /Persisted intent/);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
+test('stale submission identity does not invoke js', async () => {
+  const {out, calls} = await dispatch({submissionId: 'stale'});
+  assert.equal(calls.length, 0);
+  assert.match(out.reason, /Persisted intent/);
 });
 
-test('unresolved other submission causes zero new browser action', async () => {
+test('unresolved other submission causes zero js calls', async () => {
   const forged = structuredClone(withIntent());
   forged.cases[1].status = 'running';
   forged.cases[1].submissions = [
     {submissionId: 's2', action: 'Post other', outcome: 'unresolved', at: new Date().toISOString()},
   ];
-  const auth = authorizeBusinessBrowserAction(
-    input({state: forged, caseId: 'two', submissionId: 's2'}),
+  const {out, calls} = await dispatch({state: forged, caseId: 'two', submissionId: 's2'});
+  assert.equal(calls.length, 0);
+  assert.match(out.reason, /Unresolved mission submission/);
+});
+
+test('mismatched fingerprint causes zero js calls', async () => {
+  const {out, calls} = await dispatch({fingerprint: {...fp, configuration: 'changed'}});
+  assert.equal(calls.length, 0);
+  assert.equal(out.executed, false);
+});
+
+test('missing command exit code is fail-closed and does not invoke js', async () => {
+  const {out, calls} = await dispatch({commandExitCode: undefined});
+  assert.equal(calls.length, 0);
+  assert.equal(out.executed, false);
+});
+
+test('stale active clock that crossed the execution threshold since last check refuses js', async () => {
+  const stale = openClock(100, 15, OPEN);
+  assert.equal(stale.chargedMs, 0);
+  assert.equal(clockReport(stale).allowNewBusinessSubmission, true);
+  const out = await dispatchBrowserAppWrite(input({clock: stale, now: 90 * 60000}), {
+    js: jsMustNotRun(),
+    script: 'document.querySelector("[type=submit]").click()',
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /Clock refuses/);
+  assert.ok(out.chargedClock.chargedMs >= THRESHOLD);
+});
+
+test('paused clock refuses a new Browser app write', async () => {
+  const paused = advanceClock(openClock(100, 15, OPEN), 'pause', FRESH, 'owner interruption');
+  const out = await dispatchBrowserAppWrite(input({clock: paused, now: 10 * 60000}), {
+    js: jsMustNotRun(),
+    script: 'click()',
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /Clock refuses/);
+});
+
+test('closed clock refuses a new Browser app write', async () => {
+  const closed = advanceClock(openClock(100, 15, OPEN), 'close', FRESH);
+  const out = await dispatchBrowserAppWrite(input({clock: closed, now: 2000}), {
+    js: jsMustNotRun(),
+    script: 'click()',
+  });
+  assert.equal(out.executed, false);
+});
+
+test('malformed clock timestamp refuses js', async () => {
+  const bad = {...openClock(100, 15, OPEN), lastAt: 'nope'};
+  const out = await dispatchBrowserAppWrite(input({clock: bad}), {js: jsMustNotRun(), script: 'click()'});
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /Malformed clock timestamp/);
+});
+
+test('backward dispatch timestamp refuses js', async () => {
+  const clock = openClock(100, 15, 5000);
+  const out = await dispatchBrowserAppWrite(input({clock, now: 1000}), {
+    js: jsMustNotRun(),
+    script: 'click()',
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /time reversal/);
+});
+
+test('intent becoming resolved after authorization causes zero js calls', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  assert.equal(auth.allowBrowserAction, true);
+  const resolved = transition(plan, live.state, fp, 'readback', 'one', {
+    submissionId: 's1',
+    outcome: 'accepted',
+    actual: 'posted once',
+  });
+  const out = await executeAuthorizedBrowserAction(auth, jsMustNotRun(), {
+    ...live,
+    state: resolved,
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /unresolved intent/);
+});
+
+test('fingerprint changing after authorization causes zero js calls', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  const out = await executeAuthorizedBrowserAction(auth, jsMustNotRun(), {
+    ...live,
+    fingerprint: {...fp, configuration: 'changed'},
+  });
+  assert.equal(out.executed, false);
+});
+
+test('clock expiring after authorization causes zero js calls', async () => {
+  const live = input({now: FRESH});
+  const auth = authorizeBusinessBrowserAction(live);
+  assert.equal(auth.allowBrowserAction, true);
+  const out = await executeAuthorizedBrowserAction(auth, jsMustNotRun(), {
+    ...live,
+    now: 90 * 60000,
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /Clock refuses/);
+});
+
+test('second invocation of the same authorization does not invoke js again', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  const calls = [];
+  async function js(script) {
+    calls.push(script);
+    return {ok: true};
+  }
+  const first = await executeAuthorizedBrowserAction(auth, () => js('once'), live);
+  const second = await executeAuthorizedBrowserAction(auth, () => js('twice'), live);
+  assert.equal(first.executed, true);
+  assert.equal(second.executed, false);
+  assert.match(second.reason, /already dispatched/);
+  assert.deepEqual(calls, ['once']);
+});
+
+test('cloned authorization after the first dispatch does not invoke js again', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  const clone = {...auth};
+  const calls = [];
+  async function js(script) {
+    calls.push(script);
+    return {ok: true};
+  }
+  const first = await executeAuthorizedBrowserAction(auth, () => js('once'), live);
+  const second = await executeAuthorizedBrowserAction(clone, () => js('clone'), live);
+  assert.equal(first.executed, true);
+  assert.equal(second.executed, false);
+  assert.match(second.reason, /already dispatched/);
+  assert.deepEqual(calls, ['once']);
+});
+
+test('authorization bound to a different persisted action causes zero js calls', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  const out = await executeAuthorizedBrowserAction(auth, jsMustNotRun(), {
+    ...live,
+    caseId: 'two',
+    submissionId: 's2',
+  });
+  assert.equal(out.executed, false);
+  assert.match(out.reason, /does not match persisted action/);
+});
+
+test('uncertain dispatch consumes the ticket and is not replayed', async () => {
+  const live = input();
+  const auth = authorizeBusinessBrowserAction(live);
+  const first = await executeAuthorizedBrowserAction(
+    auth,
+    async () => {
+      throw Error('page closed');
+    },
+    live,
   );
-  assert.match(auth.reason, /Unresolved mission submission/);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
-});
-
-test('mismatched fingerprint causes zero browser action', async () => {
-  const auth = authorizeBusinessBrowserAction(input({fingerprint: {...fp, configuration: 'changed'}}));
-  assert.equal(auth.allowBrowserAction, false);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
-});
-
-test('budget boundary causes zero browser action', async () => {
-  const spent = advanceClock(clock(), 'check', 85 * 60000);
-  const auth = authorizeBusinessBrowserAction(input({clock: spent}));
-  assert.match(auth.reason, /Clock refuses/);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
-});
-
-test('missing command exit code is fail-closed and does not call the browser', async () => {
-  const auth = authorizeBusinessBrowserAction(input({commandExitCode: undefined}));
-  assert.equal(auth.allowBrowserAction, false);
-  const {calls} = await spyBrowse(auth);
-  assert.equal(calls, 0);
+  assert.equal(first.executed, false);
+  assert.equal(first.uncertain, true);
+  const calls = [];
+  const second = await executeAuthorizedBrowserAction(
+    auth,
+    async () => {
+      calls.push('replay');
+    },
+    live,
+  );
+  assert.equal(second.executed, false);
+  assert.equal(calls.length, 0);
 });
 
 test('late recovery after a rejected intent does not authorize the original submit', async () => {
-  const rejected = authorizeBusinessBrowserAction(
-    input({commandExitCode: 1, state: initialize(plan, fp)}),
-  );
-  assert.equal(rejected.allowBrowserAction, false);
-  const recovered = withIntent();
-  const later = authorizeBusinessBrowserAction(input({state: recovered, commandExitCode: 0}));
-  assert.equal(later.allowBrowserAction, true);
-  const {calls: rejectedCalls} = await spyBrowse(rejected);
-  assert.equal(rejectedCalls, 0);
+  const rejected = await dispatchBrowserAppWrite(input({commandExitCode: 1, state: initialize(plan, fp)}), {
+    js: jsMustNotRun(),
+    script: 'click()',
+  });
+  assert.equal(rejected.executed, false);
+  const {out, calls} = await dispatch({});
+  assert.equal(out.executed, true);
+  assert.equal(calls.length, 1);
 });
 
 test('CLI execute with rejected intent never spawns the browser command', () => {
   const dir = mkdtempSync(join(tmpdir(), 'op-guard-'));
   const marker = join(dir, 'browser-ran.txt');
-  const state = initialize(plan, fp);
   writeFileSync(join(dir, 'plan.json'), JSON.stringify(plan));
-  writeFileSync(join(dir, 'state.json'), JSON.stringify(state));
+  writeFileSync(join(dir, 'state.json'), JSON.stringify(initialize(plan, fp)));
   writeFileSync(join(dir, 'fp.json'), JSON.stringify(fp));
-  writeFileSync(join(dir, 'clock.json'), JSON.stringify(clock()));
+  writeFileSync(join(dir, 'clock.json'), JSON.stringify(openClock(100, 15)));
   const script = fileURLToPath(new URL('../../scripts/operator-action-guard.mjs', import.meta.url));
   const r = spawnSync(
     process.execPath,
@@ -196,13 +355,13 @@ test('CLI execute with rejected intent never spawns the browser command', () => 
   assert.equal(auth.allowBrowserAction, false);
 });
 
-test('CLI execute with a valid checkpoint runs the approved command', () => {
+test('CLI execute with a valid checkpoint runs the approved command once', () => {
   const dir = mkdtempSync(join(tmpdir(), 'op-guard-ok-'));
   const marker = join(dir, 'browser-ran.txt');
   writeFileSync(join(dir, 'plan.json'), JSON.stringify(plan));
   writeFileSync(join(dir, 'state.json'), JSON.stringify(withIntent()));
   writeFileSync(join(dir, 'fp.json'), JSON.stringify(fp));
-  writeFileSync(join(dir, 'clock.json'), JSON.stringify(clock()));
+  writeFileSync(join(dir, 'clock.json'), JSON.stringify(openClock(100, 15)));
   const script = fileURLToPath(new URL('../../scripts/operator-action-guard.mjs', import.meta.url));
   const r = spawnSync(
     process.execPath,
@@ -223,6 +382,6 @@ test('CLI execute with a valid checkpoint runs the approved command', () => {
     ],
     {encoding: 'utf8'},
   );
-  assert.equal(r.status, 0);
+  assert.equal(r.status, 0, r.stderr);
   assert.equal(readFileSync(marker, 'utf8'), 'ran');
 });
