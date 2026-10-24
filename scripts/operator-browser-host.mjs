@@ -103,12 +103,59 @@ export function finish(base, result) {
     toolCalls: result.toolCalls, uncertain: result.uncertain === true, status: 'consumed'});
   return {ok: true, claimed: true};
 }
+export const SLICE_MAX = 4096;
+export function slice(file, offsetRaw, lengthRaw) {
+  const offset = Number(offsetRaw), length = Number(lengthRaw);
+  if (!Number.isInteger(offset) || !Number.isInteger(length) || offset < 0 || length < 1 || length > SLICE_MAX) {
+    return {ok: false, reason: 'Invalid slice'};
+  }
+  const buf = fs.readFileSync(path.resolve(file));
+  if (offset > buf.length) return {ok: false, reason: 'Slice offset past end'};
+  const part = buf.subarray(offset, Math.min(offset + length, buf.length));
+  return {ok: true, offset, length: part.length, total: buf.length,
+    sha256: createHash('sha256').update(part).digest('hex'), data: part.toString('base64')};
+}
+function fileDigest(file) {
+  const raw = fs.readFileSync(path.resolve(file));
+  return {raw, sha256: createHash('sha256').update(raw).digest('hex'), bytes: raw.length};
+}
+function prepareEnvelope(requestPath) {
+  const prepared = prepare(requestPath);
+  if (!prepared.ok) return prepared;
+  const file = path.join(path.dirname(path.resolve(requestPath)), prepared.preparationId + '.prepared.json');
+  const {sha256, bytes} = fileDigest(file);
+  return {ok: true, preparationId: prepared.preparationId, dispatchId: prepared.dispatchId, file, sha256, bytes,
+    planHash: prepared.inputs.state.planHash, fingerprintHash: prepared.inputs.state.fingerprintHash,
+    requestHash: prepared.requestHash, runtimeHash: prepared.runtimeHash};
+}
+function claimEnvelope(base, preparationId) {
+  const result = claim(base, preparationId);
+  if (!result.ok) return result;
+  const saved = read(path.join(base, preparationId + '.prepared.json'));
+  return {ok: true, chargedClock: result.inputs.clock, planHash: hash(result.inputs.plan),
+    fingerprintHash: hash(result.inputs.fingerprint), stateHash: hash(result.inputs.state),
+    runtimeHash: saved.prepared.runtimeHash};
+}
+function confirm(file, sha256, bytesRaw) {
+  const bytes = Number(bytesRaw);
+  const digest = fileDigest(file);
+  if (digest.sha256 !== sha256 || digest.bytes !== bytes) return {ok: false, reason: 'Payload hash mismatch'};
+  const parsed = JSON.parse(digest.raw.toString('utf8'));
+  const prepared = parsed.prepared;
+  if (!prepared?.ok || !prepared.preparationId) return {ok: false, reason: 'Durable preparation missing'};
+  return {ok: true, preparationId: prepared.preparationId, dispatchId: prepared.dispatchId,
+    runtimeHash: prepared.runtimeHash, requestHash: prepared.requestHash, bytes: digest.bytes};
+}
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const [command, file, argument] = process.argv.slice(2);
+  const [command, file, argument, extra] = process.argv.slice(2);
   try {
-    const result = command === 'prepare' ? prepare(file) : command === 'claim' ? claim(file, argument) :
-      command === 'finish' ? finish(file, JSON.parse(fs.readFileSync(argument, 'utf8'))) : null;
-    if (!result) throw Error('Use prepare request.json / claim runDir preparationId / finish runDir result.json');
+    const result = command === 'prepare' ? prepareEnvelope(file)
+      : command === 'claim' ? claimEnvelope(file, argument)
+      : command === 'finish' ? finish(file, JSON.parse(fs.readFileSync(argument, 'utf8')))
+      : command === 'slice' ? slice(file, argument, extra)
+      : command === 'confirm' ? confirm(file, argument, extra)
+      : null;
+    if (!result) throw Error('Use prepare request.json / claim runDir preparationId / finish runDir result.json / slice file offset length / confirm file sha256 bytes');
     process.stdout.write(JSON.stringify(result));
   } catch {process.stdout.write(JSON.stringify({ok: false, reason: 'Host operation refused; inspect private evidence'})); process.exitCode = 1;}
 }
