@@ -17,7 +17,7 @@ Do not relabel Light07 late recovery as pre-submit compliance.
 
 ## Product candidate (separate review branch, not merged)
 
-Review branch `fix/v2522-light06-focus-order-source` from `7458a9c458402f9dfaf64587dd5ef7ebe1b5d448`. VERSION 2.5.22. Record [CHG-20261024-light06-focus-order-source](https://github.com/Dinu-Sri/BookOne/blob/fix/v2522-light06-focus-order-source/docs/changes/CHG-20261024-light06-focus-order-source.md) (link is valid after the product branch is pushed).
+Review branch `fix/v2522-light06-focus-order-source` from `7458a9c458402f9dfaf64587dd5ef7ebe1b5d448`. VERSION 2.5.22. Full SHA `c002e0e3541e0db07df7dccc2b6211094661c966` (short `c002e0e`). Stamp to quote after a later authorized deploy: `v2.5.22 · c002e0e`. Record [CHG-20261024-light06-focus-order-source](https://github.com/Dinu-Sri/BookOne/blob/fix/v2522-light06-focus-order-source/docs/changes/CHG-20261024-light06-focus-order-source.md). Do not merge or deploy as part of this request.
 
 - OBS-M21-01: BODY/HTML are not returnable focus targets.
 - OBS-M21-U1: sales-return paid/partial help.
