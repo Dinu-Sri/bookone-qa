@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.0",
+  "date": "2026-10-22",
+  "qaBase": "37408fc48c5a3699a2033966594d8474652ab751",
+  "productStudySha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+  "productStudyVersion": "2.5.19",
+  "classification": "source-inventory-not-live-acceptance",
+  "references": [
+    {
+      "id": "DS-01",
+      "path": "apps/web/src/app/globals.css",
+      "observation": "Existing CSS variables, base styles and module-specific classes; preserve palette/type/density and scope any accessibility correction."
+    },
+    {
+      "id": "DS-02",
+      "path": "apps/web/src/components/ui/bookone-ui.tsx",
+      "observation": "Existing Button, Card, Badge, PageHeading and busy integration; source presence is not accessible-interaction certification."
+    },
+    {
+      "id": "DS-03",
+      "path": "apps/web/src/app/design-system/page.tsx",
+      "observation": "Existing interface-foundations showcase; uses demo-data and includes illustrative controls; do not treat demonstrations as production behaviour."
+    },
+    {
+      "id": "DS-04",
+      "path": "docs/LIST_TABLE_UX_GUIDE.md",
+      "observation": "Canonical existing list/search/form-entry design guide; extend it in place."
+    },
+    {
+      "id": "DS-05",
+      "path": "docs/SIMPLE_ENTRY_UX_REDESIGN.md",
+      "observation": "Operational fast path, primary lane/support rail, keyboard flow and business language."
+    },
+    {
+      "id": "DS-06",
+      "path": "docs/ENTITY_UX_FLOWS.md",
+      "observation": "Entity-specific approved direction plus partially built/deferred areas; contains old Sinhala bracket wording."
+    },
+    {
+      "id": "DS-07",
+      "path": "docs/UX_REDESIGN_GUIDE_STATUS.md",
+      "observation": "Existing rollout checklist; Done claims are documentation, manual deploy verification remains separate."
+    },
+    {
+      "id": "DS-08",
+      "path": "docs/AR_INVENTORY_UX.md",
+      "observation": "Existing receive-payment and inventory screen guidance; business policy remains subordinate to canonical rulebook."
+    },
+    {
+      "id": "DS-09",
+      "path": "apps/web/src/components/ui/form-busy.tsx",
+      "observation": "Existing pending helper, 1.5s overlay and45s clearing; clearing is not transaction rollback."
+    },
+    {
+      "id": "DS-10",
+      "path": "apps/web/src/components/ui/status-help.tsx",
+      "observation": "Existing StatusHelp/tooltip mechanisms; keyboard/touch/announcement behaviour requires execution."
+    },
+    {
+      "id": "DS-11",
+      "path": "apps/web/src/components/ui/date-field.tsx",
+      "observation": "Existing shared calendar field; verify typed/picker/rerender semantics."
+    },
+    {
+      "id": "DS-12",
+      "path": "apps/web/src/components/ui/confirm-dialog.tsx",
+      "observation": "Existing modal; verify initial/contained/restored focus and cancellation in a browser."
+    },
+    {
+      "id": "DS-13",
+      "path": "apps/web/src/components/ui/gloss-label.tsx",
+      "observation": "Current component replaces English with Sinhala; conflicts with older bracket guidance; no language policy changed."
+    },
+    {
+      "id": "DS-14",
+      "path": "AGENTS.md",
+      "observation": "Canonical product agent rules, versioning, busy guard and external QA contract."
+    },
+    {
+      "id": "DS-15",
+      "path": ".claude/CLAUDE.md",
+      "observation": "Secondary entry point delegates to AGENTS and requests graph discovery; graph MCP unavailable in this QA session, pinned GitHub tree/files used."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "UXQ-001",
+      "owner": "Product owner with coding agent",
+      "issue": "ENTITY_UX_FLOWS bracket hints versus GlossLabel replacement",
+      "decision": "pending; preserve current behaviour",
+      "next": "Trace affected users/screens and confirm intended language behaviour before a separate change."
+    },
+    {
+      "id": "UXQ-002",
+      "owner": "Coding agent",
+      "issue": "UX_REDESIGN_GUIDE_STATUS references bookone-ux-redesign-guide.md absent from inspected product tree",
+      "decision": "missing reference; no invented content",
+      "next": "Locate source or explicitly supersede obsolete reference using reviewed existing guidance."
+    },
+    {
+      "id": "UXQ-003",
+      "owner": "Medium QA reviewer",
+      "issue": "Existing24-ui-ux tests include shell/style checks; generic catalogue dispatch not semantically audited here",
+      "decision": "not comprehensive UX acceptance",
+      "next": "Audit assertions before binding new UX scenarios; preserve inherited IDs."
+    },
+    {
+      "id": "UXQ-004",
+      "owner": "Product owner and Medium QA",
+      "issue": "Existing list guide physical sizes/no page H1 preference vs accessibility semantics",
+      "decision": "preserve compact visual layout, add accessible structure where necessary",
+      "next": "Do not turn visual no-large-heading rule into removal of meaningful page naming; verify impacted rendering."
+    },
+    {
+      "id": "UXQ-005",
+      "owner": "Engineering security/permissions owner with Medium QA",
+      "issue": "Product master module-write gate and document quick-create scope differ; Light04 fixture omitted explicit inventory write capability.",
+      "decision": "No permission expansion or quick-create workaround is approved by this review; exact exception cause remains runtime-unverified.",
+      "next": "Define intended scope, enforce server boundary, gate read-only UI, prepare an already-authorized inventory-write fixture and denied-role tests before Light05 binding."
+    },
+    {
+      "id": "UXQ-006",
+      "owner": "Product/coding owner with Medium QA",
+      "issue": "Sales return list has no print control; generic print model currently has no credit-specific kind/title.",
+      "decision": "Missing supported credit-print capability, not a tested monetary failure; original print assertions remain missing.",
+      "next": "Implement correct credit semantics within existing print components or explicitly retain unsupported print layer; never wire an invoice-labelled fallback or claim full credit-print acceptance."
+    }
+  ]
+}

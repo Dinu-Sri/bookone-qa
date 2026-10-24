@@ -1,0 +1,515 @@
+{
+  "id": "WB-DIG",
+  "revision": 1,
+  "title": "Digital products and delivery boundaries",
+  "profileIds": [
+    "BP-02"
+  ],
+  "familyRefs": [
+    "WF-DIG-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-DIG.J01",
+      "revision": 1,
+      "title": "Sell digital goods without physical inventory",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Digital SKU D; three licences@200; no tax; no delivery assumption.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-SAL-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-102",
+        "B-117"
+      ],
+      "entityRefs": [
+        "inventoryProducts",
+        "businessDocuments",
+        "businessDocumentLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Digital invoice",
+          "given": "No physical stock; bank0.",
+          "action": "Post3x200 digital sale.",
+          "expected": "AR600/revenue600 under applicable completed-sale policy; no physical quantity, asset or COGS movements.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "digital invoice cents",
+              "operation": "mul",
+              "operands": [
+                3,
+                20000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-DIG.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Digital purchase",
+          "given": "Vendor software100 classified as expense under reviewed policy.",
+          "action": "Post purchase with digital line.",
+          "expected": "No physical stock; approved expense/intangible treatment required; cannot infer intangible capitalization from digital label.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Wrong classification",
+          "given": "Stored SKU says physical though name says digital.",
+          "action": "Attempt the digital scenario.",
+          "expected": "Fixture invalid; stop/reclassify through supported flow and preserve first attempt; product name is not class evidence.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-DIG.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Sale with empty product ID",
+          "given": "Description-only digital service line allowed by contract.",
+          "action": "Post free-text line.",
+          "expected": "No foreign/unknown SKU silently treated as free text; legitimate free-text applicability verified; no stock.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return or credit",
+          "given": "Digital sale paid600; policy permits one licence credit200.",
+          "action": "Issue linked credit200.",
+          "expected": "Net revenue400; customer credit200 until refund; no invented physical return200 or quantity1.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-DIG.J02",
+      "revision": 1,
+      "title": "Delivery, licence, download and revocation contract",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Completed digital invoice exists; entitlement capability not assumed from schema.",
+      "ruleRefs": [
+        {
+          "id": "RB-SAL-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-FILE-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-117",
+        "B-110"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryProducts",
+        "tenantMemberships"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "No separate delivery/entitlement implementation was established in this source study. Cases are capability-conditional, not runnable pass claims."
+      ],
+      "cases": [
+        {
+          "title": "Inspect entitlement support",
+          "given": "Invoice600 posted.",
+          "action": "Find supported delivery/licence state and official business contract.",
+          "expected": "Record actual capability evidence or unsupported gap. Invoice/print is not delivery proof.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-DIG.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Authorized delivery target",
+          "given": "If supported: licence L for party C, not C2.",
+          "action": "Deliver to entitled C.",
+          "expected": "Only C receives declared scope/expiry; recipient identity and issuance linked; exactly one accepted entitlement.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-DIG.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Retry issuing same licence",
+          "given": "If supported: delivery succeeded before timeout.",
+          "action": "Retry accepted delivery key.",
+          "expected": "No duplicate paid entitlement or repeated charge; recover existing delivery state.",
+          "kind": "retry",
+          "oracle": [],
+          "id": "WB-DIG.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Refund and revocation",
+          "given": "If supported: refunded licence has an access contract.",
+          "action": "Refund then access old link/token.",
+          "expected": "Access follows reviewed revocation/expiry policy; payment reversal alone is not observed access revocation.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Foreign or expired access",
+          "given": "If supported: real foreign entitlement and expired fixture.",
+          "action": "Request both with own valid positive control.",
+          "expected": "Foreign/expired access denied without leaking other recipient data; authorized current access works.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-DIG.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-DIG.J03",
+      "revision": 1,
+      "title": "Digital refunds, quantity and historical price",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Digital licence SKU price200; invoice3x200; paid600.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-104",
+        "B-105",
+        "B-113"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Partial credit one licence",
+          "given": "Original3 paid600; no prior credit.",
+          "action": "Credit1x200.",
+          "expected": "Credit200; net revenue400; bank600 until refund; returnable quantity2 if quantity-based credits supported.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-DIG.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Refund once",
+          "given": "Credit200 available.",
+          "action": "Refund200 and reload receipt.",
+          "expected": "Bank400; credit balance0; original600 receipt retained; no inventory.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "net bank cents",
+              "operation": "sub",
+              "operands": [
+                60000,
+                20000
+              ],
+              "equals": 40000
+            }
+          ],
+          "id": "WB-DIG.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Excess credit",
+          "given": "Original3, already credited1.",
+          "action": "Attempt credit3 more.",
+          "expected": "Deny beyond remaining2/value400; no cash or entitlement side effects.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Price changes",
+          "given": "Original unit200; current master250.",
+          "action": "Print and credit original one.",
+          "expected": "Original print600; source credit200, not250; master can price new sales separately.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-DIG.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Entitlement refund consistency",
+          "given": "Delivery capability conditional.",
+          "action": "Cancel/refund fulfilled sale.",
+          "expected": "Record separate entitlement and financial outcomes; do not call full workflow accepted while access disposition is unknown.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-DIG.J04",
+      "revision": 1,
+      "title": "Digital classification, tax and mixed bundles",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Digital100 plus physical300 at cost180; no VAT baseline; bundle capabilities explicit.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-SAL-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-101",
+        "E-102"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "inventoryProducts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Bundle entitlement allocation and mixed tax require separately verified support; numerical discount example is delegated policy, not legal advice."
+      ],
+      "cases": [
+        {
+          "title": "Mixed invoice",
+          "given": "Physical stock10; digital unstocked.",
+          "action": "Post physical300+digital100.",
+          "expected": "Revenue400; COGS180 only physical; physical stock decreases declared units; digital has no movement; profit220.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "profit cents",
+              "operation": "sub",
+              "operands": [
+                40000,
+                18000
+              ],
+              "equals": 22000
+            }
+          ],
+          "id": "WB-DIG.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Bundle discount",
+          "given": "Physical300+digital100, header discount40.",
+          "action": "Apply reviewed proportional allocation.",
+          "expected": "Physical net270/digital90; total360; COGS180 unchanged; later physical credit uses270 source share.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bundle total cents",
+              "operation": "add",
+              "operands": [
+                27000,
+                9000
+              ],
+              "equals": 36000
+            }
+          ],
+          "id": "WB-DIG.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mixed tax classifications",
+          "given": "One taxable and one exempt line.",
+          "action": "Post mixed-rate digital/physical invoice.",
+          "expected": "Use reviewed per-line buckets or explicit unsupported refusal; single-rate total cannot pass mixed-tax acceptance.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Module disabled",
+          "given": "Sales disabled but cached digital invoice form open.",
+          "action": "Submit sale.",
+          "expected": "Server denies; no posted document, payment or invented entitlement.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-DIG.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Digital description HTML",
+          "given": "Inert HTML-like title stored in fixture.",
+          "action": "Render invoice/print/export.",
+          "expected": "Content remains harmless text or sanitized approved content; no executable markup or spreadsheet formula behavior.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-DIG.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

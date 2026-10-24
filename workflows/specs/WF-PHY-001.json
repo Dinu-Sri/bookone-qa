@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "id": "WF-PHY-001",
+  "revision": 1,
+  "title": "Physical purchase,receipt,bill,sale,settlement and return",
+  "profileIds": [
+    "BP-01"
+  ],
+  "status": "draft",
+  "author": "QA-agent",
+  "review": {
+    "qaReviewer": null,
+    "businessOwner": null,
+    "record": null
+  },
+  "risk": "P1",
+  "scope": "Specified golden journey; capability/settings and expert applicability must be confirmed before acceptance.",
+  "legacyTaskRefs": [
+    "C-101",
+    "C-102",
+    "C-103",
+    "C-104",
+    "C-105",
+    "C-106",
+    "C-107",
+    "C-111",
+    "C-112",
+    "C-113",
+    "C-115",
+    "C-116"
+  ],
+  "ruleRefs": [
+    {
+      "id": "BR-ACC-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-ACC-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-ACC-03",
+      "revision": 1
+    },
+    {
+      "id": "BR-ACC-04",
+      "revision": 1
+    },
+    {
+      "id": "BR-PUR-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-PUR-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-STK-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-STK-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-SAL-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-SAL-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-DAT-01",
+      "revision": 1
+    }
+  ],
+  "featureAreas": [
+    "purchase",
+    "sales",
+    "inventory",
+    "payment",
+    "posting",
+    "reports",
+    "history"
+  ],
+  "dependsOn": [],
+  "fixture": {
+    "currency": "LKR",
+    "moneyUnit": "integer cents",
+    "businessDate": "2026-10-16",
+    "timezone": "Asia/Colombo",
+    "taxProfile": "Tax-disabled synthetic arithmetic fixture;no statutory applicability claimed.",
+    "settings": {
+      "approval": "off in this baseline;separate on variant",
+      "GRNI": "on",
+      "costing": "approved constant-cost fixture;separate FIFO/average/last variable-price variants",
+      "negativeStock": "block",
+      "discount": "none"
+    },
+    "opening": {
+      "cashCents": 1000000,
+      "equityCents": 1000000,
+      "stockQty": 0,
+      "stockValueCents": 0,
+      "ARCents": 0,
+      "APCents": 0,
+      "GRNICents": 0
+    }
+  },
+  "preconditions": [
+    "Fresh isolated run-owned fixture;verify actor,tenant and actual capability/settings before writes.",
+    "Record product/QA/build/schema/config/fixture fingerprint;missing identity blocks only affected acceptance.",
+    "No reuse of contaminated prior browser fixture;no payment replay or silent repair."
+  ],
+  "steps": [
+    {
+      "id": "S01",
+      "action": "Create PO10 units at6000 cents",
+      "expected": {
+        "journalLines": [],
+        "closing": {
+          "stockQty": 0,
+          "APCents": 0,
+          "GRNICents": 0
+        },
+        "noChange": [
+          "Cash",
+          "GL",
+          "Stock"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S02",
+      "action": "Receive all10 against PO,GRNI enabled",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Inventory",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "GRNI",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "stockQty": 10,
+          "stockValueCents": 60000,
+          "APCents": 0,
+          "GRNICents": 60000
+        },
+        "noChange": [
+          "Cash",
+          "AP"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S03",
+      "action": "Bill the received10 once",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "GRNI",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "AP",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "stockQty": 10,
+          "stockValueCents": 60000,
+          "APCents": 60000,
+          "GRNICents": 0
+        },
+        "noChange": [
+          "Stock quantity",
+          "Cash"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S04",
+      "action": "Credit sale2 units at10000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "AR",
+            "side": "debit",
+            "cents": 20000
+          },
+          {
+            "account": "Sales",
+            "side": "credit",
+            "cents": 20000
+          },
+          {
+            "account": "COGS",
+            "side": "debit",
+            "cents": 12000
+          },
+          {
+            "account": "Inventory",
+            "side": "credit",
+            "cents": 12000
+          }
+        ],
+        "closing": {
+          "stockQty": 8,
+          "stockValueCents": 48000,
+          "ARCents": 20000,
+          "APCents": 60000
+        },
+        "noChange": [
+          "Other tenant records",
+          "Unrelated documents"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S05",
+      "action": "Receive8000 cents against sale",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Cash",
+            "side": "debit",
+            "cents": 8000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 8000
+          }
+        ],
+        "closing": {
+          "cashCents": 1008000,
+          "ARCents": 12000
+        },
+        "noChange": [
+          "Revenue",
+          "COGS",
+          "Stock"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S06",
+      "action": "Return1 sold unit at original cost6000 cents,credit outstanding",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "SalesReturns",
+            "side": "debit",
+            "cents": 10000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 10000
+          },
+          {
+            "account": "Inventory",
+            "side": "debit",
+            "cents": 6000
+          },
+          {
+            "account": "COGS",
+            "side": "credit",
+            "cents": 6000
+          }
+        ],
+        "closing": {
+          "stockQty": 9,
+          "stockValueCents": 54000,
+          "ARCents": 2000,
+          "netRevenueCents": 10000,
+          "netCOGSCents": 6000,
+          "profitCents": 4000
+        },
+        "noChange": [
+          "Other tenant records",
+          "Unrelated documents"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S07",
+      "action": "Receive remaining2000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Cash",
+            "side": "debit",
+            "cents": 2000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 2000
+          }
+        ],
+        "closing": {
+          "cashCents": 1010000,
+          "ARCents": 0
+        },
+        "noChange": [
+          "Revenue",
+          "COGS",
+          "Stock"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S08",
+      "action": "Pay vendor60000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "AP",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "Cash",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "cashCents": 950000,
+          "APCents": 0,
+          "stockQty": 9,
+          "stockValueCents": 54000,
+          "assetsCents": 1004000,
+          "equityIncludingProfitCents": 1004000
+        },
+        "noChange": [
+          "Revenue",
+          "COGS",
+          "Stock"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "WF-PHY-001.V01",
+      "category": "boundary",
+      "trigger": "Zero/negative/fractional amounts and remaining quantity boundary; exact currency rounding",
+      "expected": "Apply referenced rule;reject invalid values with explicit feedback and zero forbidden effects.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V02",
+      "category": "invalid-state",
+      "trigger": "Attempt conversion/return/payment after final or incompatible state",
+      "expected": "Refuse invalid transition;preserve source,stock,allocations and journals.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V03",
+      "category": "retry",
+      "trigger": "Repeat same completed request;interrupt response after posting",
+      "expected": "Inspect persisted outcome before retry;one effect per permitted idempotency contract;never blindly replay payment.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V04",
+      "category": "permissions",
+      "trigger": "Own positive,Viewer/other-role deny,foreign record and stale membership",
+      "expected": "Verify fresh actor;deny zero forbidden effects and no foreign disclosure at command/HTTP/browser layers.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V05",
+      "category": "history",
+      "trigger": "Change master price/settings after posting;return old document;choose prior report date",
+      "expected": "Preserve issued facts;use original permitted snapshots and correct asof scope.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V06",
+      "category": "failure",
+      "trigger": "Failure between document,stock,allocation and journal steps;competing request",
+      "expected": "Use isolated verified infrastructure;all-or-nothing effects and safe explicit recovery;no shared-staging fault injection.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-PHY-001.V07",
+      "category": "partials",
+      "trigger": "Receive4 of ordered10;bill via GRN,then try receipt7",
+      "expected": "Remaining receipt6,billed4;reject7;separate valid remaining6;no duplicate stock on bill.",
+      "bugIds": [
+        "BUG-0056"
+      ]
+    },
+    {
+      "id": "WF-PHY-001.V08",
+      "category": "cumulative-return",
+      "trigger": "Fully return billed4 units then request another full purchase return",
+      "expected": "Reject cumulative return above original quantity/value;no extraAP/stock/journal.",
+      "bugIds": [
+        "BUG-0059"
+      ]
+    },
+    {
+      "id": "WF-PHY-001.V09",
+      "category": "validation",
+      "trigger": "Duplicate supplier invoice conversion",
+      "expected": "Usable explicit validation,zero extra bill/posting;preserve first request outcome.",
+      "bugIds": [
+        "BUG-0057"
+      ]
+    }
+  ],
+  "requiredLayers": [
+    "persisted-command",
+    "credential-auth",
+    "browser",
+    "report-reconciliation",
+    "audit-history"
+  ],
+  "policyGaps": [],
+  "automation": {
+    "status": "unbound",
+    "bindings": []
+  },
+  "acceptance": "not-assessed;defined elsewhere per immutable candidate run,never inferred from this specification"
+}

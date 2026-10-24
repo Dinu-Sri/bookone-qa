@@ -15,3 +15,16 @@ Supported classification [follow-up](../runs/RUN-2026-10-14T12-20-56-750Z-runtim
 ## v2.5.6 bounded retest - 2026-10-15
 
 RT-036, RT-037 pass on d5377d89d2bd9d27c52a6e9c43376f2d03255bd0. [Latest campaign](../runs/CAMP-20261015-015814708-878549.json)291/292pass, [PostgreSQL](../runs/RUN-2026-10-15T01-58-15-584Z-runtime.json)117/118pass, zero skips or infrastructure failures. All19 earlier failure cases pass. This is bounded original/selected-adjacent reproduction evidence; full feature/credential/browser/storage acceptance remains pending. Retain historical failure and expectations. BUG-0043 module-off historical detail denial is a new adjacent access regression; do not undo scope/read-job protections to repair it. See [current handoff](../handoffs/HANDOFF-20261015-v256-retest.md).
+
+## v2.5.11 deployed quotation-draft variant — 2026-10-16
+
+**P2 adjacent draft validation gap, reproduced; original posted-invoice retest disposition above remains unchanged.** New service quote2×100. Toggle line selector LKR→%,set150%,save once. Reject excessive discount per BR-SAL-03; no new quotation. UI clamps net/total0 and persists QT0002 draft0. No conversion or posting attempted.
+
+Live0bcdf4d,continued synthetic QA/Owner session; no new role acceptance. New quoteQT-20261016-0002,Service2×100,explicit150%. No conversion or posting attempted. RuleBR-SAL-03rev1. This does not reopen the original RT036/37 posted-path fix or claim a150%-discount issued invoice. Keep legitimate100% discount/zero-value policy separate. [Broad run](../runs/RUN-20261016-broad-workflows.md), [checks VAL03](../runs/CHECKS-20261016-broad-workflows.json), [handoff](../handoffs/HANDOFF-20261016-broad-workflows.md). No fix/retest for this draft variant yet.
+
+
+## Appended v2.5.12 retest — 2026-10-16
+
+150% free-text service quotation was rejected: list remained three quotes, no new quote. Bounded positive only; transient validation wording was not captured.
+
+Candidate ead3a82170e7a34ad625ec6ef8434e5ae65b1609. [Exact run and boundaries](../runs/RUN-20261016-v2512-browser-deep.md), [assertions](../runs/CHECKS-20261016-v2512-browser-deep.json). Original observations above remain immutable; this is scoped follow-up, not blanket closure.

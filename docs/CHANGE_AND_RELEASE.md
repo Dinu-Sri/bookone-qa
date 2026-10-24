@@ -77,3 +77,8 @@ Start by identifying the target and last verified baseline. Save selected tests 
 When fixing a defect, retain the original failing evidence, identify the fixing SHA, rerun the exact reproduction and adjacent workflows, and add the durable regression assertion. Reopening a bug does not overwrite its old history.
 
 End with STATUS.md: completed run IDs, pass/fail/blocked counts, bugs, configuration changes, created records/cleanup, and the next executable action. Unfinished runs remain unfinished.
+
+## Workflow contract companion
+
+For feature,edge-case and materially changed behaviour,follow [workflow protocol](workflows/PROTOCOL.md) and [WORKFLOW_CHANGE](../templates/WORKFLOW_CHANGE.md). Map actual diff to rules/families/variants/existing tasks,include dependent hybrid paths,mandatory core and risk controls. Unknown impact broadens. Revised expectations require independent review;record impacted prior acceptance as stale,not retrospectively rewritten. Metadata checks do not replace actual candidate business evidence or trusted release enforcement.
+

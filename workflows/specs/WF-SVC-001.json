@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "WF-SVC-001",
+  "revision": 1,
+  "title": "Service quote,draft,invoice and partial/full collection",
+  "profileIds": [
+    "BP-03"
+  ],
+  "status": "draft",
+  "author": "QA-agent",
+  "review": {
+    "qaReviewer": null,
+    "businessOwner": null,
+    "record": null
+  },
+  "risk": "P1",
+  "scope": "Specified golden journey; capability/settings and expert applicability must be confirmed before acceptance.",
+  "legacyTaskRefs": [
+    "B-101",
+    "B-102",
+    "B-103",
+    "B-104",
+    "B-105",
+    "B-108",
+    "B-111",
+    "B-113",
+    "B-114"
+  ],
+  "ruleRefs": [
+    {
+      "id": "BR-ACC-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-ACC-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-SAL-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-SAL-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-SAL-03",
+      "revision": 1
+    },
+    {
+      "id": "BR-STK-03",
+      "revision": 1
+    },
+    {
+      "id": "RB-ACC-01",
+      "revision": 1
+    },
+    {
+      "id": "RB-UI-01",
+      "revision": 1
+    }
+  ],
+  "featureAreas": [
+    "sales",
+    "services",
+    "payment",
+    "discount",
+    "posting",
+    "reports",
+    "print"
+  ],
+  "dependsOn": [],
+  "fixture": {
+    "currency": "LKR",
+    "moneyUnit": "integer cents",
+    "businessDate": "2026-10-16",
+    "timezone": "Asia/Colombo",
+    "taxProfile": "Tax-disabled synthetic arithmetic fixture;no statutory applicability claimed.",
+    "settings": {
+      "classification": "service",
+      "tax": "disabled",
+      "recognition": "completed service;no deferred recognition assumed"
+    },
+    "opening": {
+      "cashCents": 0,
+      "ARCents": 0,
+      "stockQty": 0
+    }
+  },
+  "preconditions": [
+    "Fresh isolated run-owned fixture;verify actor,tenant and actual capability/settings before writes.",
+    "Record product/QA/build/schema/config/fixture fingerprint;missing identity blocks only affected acceptance.",
+    "No reuse of contaminated prior browser fixture;no payment replay or silent repair."
+  ],
+  "steps": [
+    {
+      "id": "S01",
+      "action": "Quote/order/draft3 completed-service units at20000 cents",
+      "expected": {
+        "journalLines": [],
+        "closing": {
+          "ARCents": 0,
+          "revenueCents": 0,
+          "physicalStockMovement": 0
+        },
+        "noChange": [
+          "GL",
+          "Cash",
+          "Physical stock"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S02",
+      "action": "Post invoice60000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "AR",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "ServiceRevenue",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "ARCents": 60000,
+          "revenueCents": 60000,
+          "physicalStockMovement": 0,
+          "physicalCOGSCents": 0
+        },
+        "noChange": [
+          "Other tenant records",
+          "Unrelated documents"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S03",
+      "action": "Receive25000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Cash",
+            "side": "debit",
+            "cents": 25000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 25000
+          }
+        ],
+        "closing": {
+          "cashCents": 25000,
+          "ARCents": 35000,
+          "revenueCents": 60000
+        },
+        "noChange": [
+          "Revenue",
+          "Physical stock",
+          "COGS"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S04",
+      "action": "Receive35000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Cash",
+            "side": "debit",
+            "cents": 35000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 35000
+          }
+        ],
+        "closing": {
+          "cashCents": 60000,
+          "ARCents": 0,
+          "revenueCents": 60000
+        },
+        "noChange": [
+          "Revenue",
+          "Physical stock",
+          "COGS"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S05",
+      "action": "Change master price after posting;reload old invoice/receipt",
+      "expected": {
+        "journalLines": [],
+        "closing": {
+          "recordedInvoiceCents": 60000,
+          "ARCents": 0
+        },
+        "noChange": [
+          "Issued price/date/customer snapshots",
+          "GL",
+          "Recorded receipt facts"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "WF-SVC-001.V01",
+      "category": "boundary",
+      "trigger": "Zero/negative/fractional amounts and remaining quantity boundary; exact currency rounding",
+      "expected": "Apply referenced rule;reject invalid values with explicit feedback and zero forbidden effects.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V02",
+      "category": "invalid-state",
+      "trigger": "Attempt conversion/return/payment after final or incompatible state",
+      "expected": "Refuse invalid transition;preserve source,stock,allocations and journals.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V03",
+      "category": "retry",
+      "trigger": "Repeat same completed request;interrupt response after posting",
+      "expected": "Inspect persisted outcome before retry;one effect per permitted idempotency contract;never blindly replay payment.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V04",
+      "category": "permissions",
+      "trigger": "Own positive,Viewer/other-role deny,foreign record and stale membership",
+      "expected": "Verify fresh actor;deny zero forbidden effects and no foreign disclosure at command/HTTP/browser layers.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V05",
+      "category": "history",
+      "trigger": "Change master price/settings after posting;return old document;choose prior report date",
+      "expected": "Preserve issued facts;use original permitted snapshots and correct asof scope.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V06",
+      "category": "failure",
+      "trigger": "Failure between document,stock,allocation and journal steps;competing request",
+      "expected": "Use isolated verified infrastructure;all-or-nothing effects and safe explicit recovery;no shared-staging fault injection.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-SVC-001.V07",
+      "category": "calculation",
+      "trigger": "Untouched% selector,2x100,line10%;then toggle away/back",
+      "expected": "Both paths must180;3x100,line10%,header5% must256.50;reject150%,not clamp.",
+      "bugIds": [
+        "BUG-0060",
+        "BUG-0037"
+      ]
+    },
+    {
+      "id": "WF-SVC-001.V08",
+      "category": "print-integrity",
+      "trigger": "Alter own payment print request amount/date",
+      "expected": "Persisted allocation facts or explicit rejection;no invented payment or foreign disclosure.",
+      "bugIds": [
+        "BUG-0058"
+      ]
+    },
+    {
+      "id": "WF-SVC-001.V09",
+      "category": "validation",
+      "trigger": "Enter over-balance payment",
+      "expected": "Visible validation;no allocation or financial effect.",
+      "bugIds": [
+        "BUG-0061"
+      ]
+    }
+  ],
+  "requiredLayers": [
+    "persisted-command",
+    "credential-auth",
+    "browser",
+    "report-reconciliation",
+    "audit-history"
+  ],
+  "policyGaps": [
+    "Advances/milestones/subscriptions/unearned revenue require explicit policy/support and distinct workflows;RF-04 applicability remains expert-pending."
+  ],
+  "automation": {
+    "status": "unbound",
+    "bindings": []
+  },
+  "acceptance": "not-assessed;defined elsewhere per immutable candidate run,never inferred from this specification"
+}
+

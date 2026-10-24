@@ -1,0 +1,174 @@
+{
+  "base": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "candidate": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+  "files": [
+    {
+      "path": "VERSION",
+      "blob": "4702d8f52911fd2f6980e9b6a291e4842e966222",
+      "status": "modified",
+      "changes": 2
+    },
+    {
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "blob": "a6c210192034814c240405ea6657d258a14f2021",
+      "status": "modified",
+      "changes": 175
+    },
+    {
+      "path": "apps/web/src/app/purchase/expenses/page.tsx",
+      "blob": "90f04081d96e95cb7a3f3b4e8a1ef8bb58649ede",
+      "status": "modified",
+      "changes": 1
+    },
+    {
+      "path": "apps/web/src/app/purchase/import/page.tsx",
+      "blob": "5d8fd6c6f5c2da4ae8de427fa8739d584e34c8ef",
+      "status": "modified",
+      "changes": 1
+    },
+    {
+      "path": "apps/web/src/app/purchase/orders/[id]/page.tsx",
+      "blob": "b0471fefbd59dcdfdc01904297c8ff24267fba40",
+      "status": "modified",
+      "changes": 12
+    },
+    {
+      "path": "apps/web/src/app/purchase/purchases/page.tsx",
+      "blob": "24fb2c4ca219b25118e52f785a282288cd1d4cd1",
+      "status": "modified",
+      "changes": 1
+    },
+    {
+      "path": "apps/web/src/app/purchase/receipts/[id]/page.tsx",
+      "blob": "554ff54ddb00436ebcd815bb70c254cee0b8e253",
+      "status": "modified",
+      "changes": 9
+    },
+    {
+      "path": "apps/web/src/app/purchase/returns/new/page.tsx",
+      "blob": "4c823f1b2c4b1b42e833426cfe18b2fd54dec371",
+      "status": "modified",
+      "changes": 72
+    },
+    {
+      "path": "apps/web/src/components/module/commercial-doc-screens.tsx",
+      "blob": "8e7ef2de60b8f7744fe59f77cd20eeecaf9574f4",
+      "status": "modified",
+      "changes": 72
+    },
+    {
+      "path": "apps/web/src/components/module/document-lines-editor.tsx",
+      "blob": "45e6a8dc2d5250f5b4e6d70a2fee497fb6098e36",
+      "status": "modified",
+      "changes": 2
+    },
+    {
+      "path": "apps/web/src/components/purchase/commercial-document-detail.tsx",
+      "blob": "1fe22888cb516b9baa2cd7805c8944423fea564b",
+      "status": "modified",
+      "changes": 88
+    },
+    {
+      "path": "apps/web/src/components/purchase/po-convert-form.tsx",
+      "blob": "95dec1354d55341205d0910a9356759b3ad6259f",
+      "status": "modified",
+      "changes": 15
+    },
+    {
+      "path": "apps/web/src/components/purchase/purchase-return-bill-picker.tsx",
+      "blob": "0c7c720cde47a41d4b03a4aaea5d0efb50e01298",
+      "status": "added",
+      "changes": 142
+    },
+    {
+      "path": "apps/web/src/components/sales/commercial-document-list.tsx",
+      "blob": "1895413d46d51e13ad020b5922872430c5841608",
+      "status": "modified",
+      "changes": 25
+    },
+    {
+      "path": "apps/web/src/components/sales/invoice-document-form.tsx",
+      "blob": "6058c9ea069e4d5ebeb1b27c1051baa5b3fa5d82",
+      "status": "modified",
+      "changes": 23
+    },
+    {
+      "path": "apps/web/src/components/sales/quotation-snapshot.tsx",
+      "blob": "4a9b06ad7cb7b37a7cec3c47586eebd1812af8ea",
+      "status": "modified",
+      "changes": 71
+    },
+    {
+      "path": "apps/web/src/components/sales/sales-document-form.tsx",
+      "blob": "bb612131ba67d9e87dc43de7f574eff9ae6723fb",
+      "status": "modified",
+      "changes": 58
+    },
+    {
+      "path": "apps/web/src/lib/idempotency-lifecycle.ts",
+      "blob": "d2ea2227383fa6555c6a412d5088bdea90812c4f",
+      "status": "added",
+      "changes": 100
+    },
+    {
+      "path": "apps/web/src/lib/idempotency.ts",
+      "blob": "6cbb99d9aefb8019b186ae0bd611ee6a84ea1b5e",
+      "status": "modified",
+      "changes": 104
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "blob": "ff435fde0adbc7d5925e9c3105e1f5d5127b8d27",
+      "status": "modified",
+      "changes": 8
+    },
+    {
+      "path": "docs/TASK_LOG.md",
+      "blob": "727bd1111ca115b636c02f9ad8b0183a5d858959",
+      "status": "modified",
+      "changes": 12
+    },
+    {
+      "path": "docs/changes/CHG-20261018-light02-purchase-return-entry.md",
+      "blob": "e91d5c4432b4cd5c24f77c70a394b0cfbf6493ab",
+      "status": "added",
+      "changes": 26
+    },
+    {
+      "path": "docs/changes/CHG-20261018-pr46-idempotency-hydration.md",
+      "blob": "903710d409c8ba61bd09471bdc699eb0cfcc0a0a",
+      "status": "added",
+      "changes": 28
+    },
+    {
+      "path": "packages/accounting/src/document-guards.ts",
+      "blob": "80c7d6e493f77a2cd553899f2ab4827ed43a5323",
+      "status": "modified",
+      "changes": 244
+    },
+    {
+      "path": "packages/accounting/src/index.ts",
+      "blob": "fc86f9dba44d866cab5d28acb90ff8376b0ef3b8",
+      "status": "modified",
+      "changes": 14
+    },
+    {
+      "path": "packages/accounting/test/document-guards.test.ts",
+      "blob": "bb278f0b73df593d0c126e48fa5af29db94c19f4",
+      "status": "modified",
+      "changes": 228
+    },
+    {
+      "path": "packages/accounting/test/document-posting.test.ts",
+      "blob": "60a332fac5f94c05cb9b35bffa2954dfe0962d6c",
+      "status": "modified",
+      "changes": 10
+    },
+    {
+      "path": "packages/auth/test/idempotency-lifecycle.test.ts",
+      "blob": "977ed18b7771cb2ba40b101af8a50b6cae3f523a",
+      "status": "added",
+      "changes": 114
+    }
+  ]
+}

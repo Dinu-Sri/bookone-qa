@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2521-LIGHT-07",
+  "attempt": 2,
+  "clockMode": "closed",
+  "budgetMinutes": 120,
+  "closingReserveMinutes": 20,
+  "chargedMs": 1649643,
+  "chargedMinutes": 27.49405,
+  "explicitPausedMs": 0,
+  "closedAt": "2026-10-24T03:59:44.409000+00:00",
+  "counts": {
+    "passed": 13,
+    "failed": 1,
+    "blocked": 22
+  },
+  "unresolvedLedgerSubmissions": 0,
+  "actualSubmissions": 9,
+  "businessSubmissions": 6,
+  "lateCheckpointExceptions": 1,
+  "closeReason": "Allsafeindependentcasesdispositioned;Sdependentcontrolgate/Pfundinggate andunsupportedlayersgenuinelyblocked",
+  "timingBoundary": "Clockstartedbeforebrowserandchargedunpausedexecution/reconciliation/initialpublication;thisfinalmetadataandreadbackpublicationtailoccursaftercloseandisnotincludedabove",
+  "tailPublicationObservedAt": "2026-10-24T04:00:07.216811+00:00",
+  "modelCredits": "unavailable",
+  "releaseAcceptance": false
+}

@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2516-LIGHT-02",
+  "candidate": "v2.5.16",
+  "reportedShortSha": "b2c5205",
+  "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "status": "planned-not-executed",
+  "budget": {
+    "totalMinutes": 90,
+    "executionMinutes": 75,
+    "closingReserveMinutes": 15
+  },
+  "note": "18slots fixed. Known source risks mayfail; preserve and continue independentcases. Neverrunconcurrentlywithdeployment. Queue is not an automatedrunner, timing/dependency ortruthvalidator. Canonicalcaseacceptanceunestablished.",
+  "cases": [
+    {
+      "id": "M17-GATE",
+      "title": "Exact candidate and serial execution gate",
+      "precondition": "Read latest remote review/handoffs; this queue pins b2c5205a1bf52fbd327a948325810670467d21b4/v2.5.16.",
+      "expected": "Verify live v2.5.16 \u00b7 b2c5205; QA branch SHA; source probe2pass/1fail is source-only known risk. Any build change globally blocks writes. No deployment during mission; no silent candidate rebinding.",
+      "relatedWorkbookCases": [],
+      "dependsOn": [],
+      "evidence": [
+        "liveStamp",
+        "qaRevision",
+        "sourceBoundary",
+        "deploymentFreeze"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-ACTOR",
+      "title": "Fresh actor, settings and opening snapshots",
+      "precondition": "Private intended QA credentials; actual current company/Owner. Previous review80journals/10475.51 only anchor.",
+      "expected": "Explicit logout/login; verify own QA company/Owner/build. Capture TB, journal, stock and ALL purchase/VAT/inventory settings. Record versioned transitions: VATfalse, negativeBlock, costLast; supplier-number requiredtrue/duplicateblocktrue/requireGRNtrue/postGRNItrue/approvalfalse for purchase lane. Restore actual openings at END. If any setting unavailable, block affected lane; no grants/reset.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "dependsOn": [
+        "M17-GATE"
+      ],
+      "evidence": [
+        "freshLogin",
+        "openingBalances",
+        "openingStock",
+        "openingSettings",
+        "settingsReload",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-E01",
+      "title": "Complete stock-refusal evidence",
+      "precondition": "Own M16 Zero Physical0, negativeBlock/VATfalse; new unsaved invoice1x10. Bind issue17Oct/delivery19Oct/due25Oct2026, notesM17-E01/paymentOther headerlabel. Confirm every visible value before submit.",
+      "expected": "One Post; capture status in same tool call with click then waitFor visible status (up to15s), read immediately; exact shortage1 actionable error; every applicable field identical, busy clears; no invoice/AR/journal/stock. Do not replay or reuse original E01. If toast missed, inconclusive. Same-form correction not claimed.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-QUOTE",
+      "title": "Controlled-date quote correction",
+      "precondition": "Fresh M16Digital1x10; exact issue17Oct/goodthru25Oct2026; notes. Set issue then due using fill+ArrowUp+ArrowDown+Tab. Verify DOM after changing line discount150 before submitting.",
+      "expected": "Dates must remain17/25Oct after rerender. Single invalid Save quotation ->100%error/allfields retained. Correct only150to0 and Save once. One quote10 with exact dates/notes on reopened edit; no AR/AP/GL/stock/email/conversion. If date setup resets, stop fixture before submit and escalate, not product save-loss claim.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-D18",
+      "title": "Catalog draft18Oct then one Post",
+      "precondition": "New M16Digital1x10, issue18Oct/delivery19Oct/due25Oct2026; no discounts/VAT. Separate fixture, not0018 or0027.",
+      "expected": "Save draft once10/zeroGLARstock; reopen and verify product/amount/dates/notes. One Post, capture either status or Newinvoice navigation in same call; inspect persisted state before retry. Expected one posted10 DrAR10CrSales10/noCOGS. If accepted, one full linked return10/source0. If rejected/ambiguous stop dependent return, preserve error/source.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-D17",
+      "title": "Catalog draft17Oct comparison",
+      "precondition": "Same as D18 but separate new draftissue17Oct2026; verify period openness through supported UI/readback; no lock changes.",
+      "expected": "Same exact draft10/Post10/return10 expectations. Compare date/class difference with fresh manual18Oct control in review; original0018 untouched. Capture error/navigation atomically; never infer failure from a delayed redirect.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-DDISC",
+      "title": "Discounted draft edit regression",
+      "precondition": "Separate draft3x100, line10%, header5%, noVAT; approved fixture256.50, source line-net270.",
+      "expected": "Save draft256.50 noGL; reopen Edit without economics changes. Expect line10% or fixed30 equivalent, header13.50 and preview256.50. If line discount disappears or preview286.50, fail immediately, preserve draft, do NOT Save or Post changed economics. No auto-correction to match implementation.",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-SUPPLIER",
+      "title": "Reachable purchase server refusal and same-form correction",
+      "precondition": "Purchase profile: requireSupplierInvoiceNo=true, approvalfalse, VATfalse; fresh manualService1x10/6800/ownvendor, issue18Oct/due25Oct2026/notes; supplierInvoiceNumber blank and natively not required. Record full map.",
+      "expected": "One Create purchase submission -> supplier invoice number required business error, allfields retained/zeroAPGLstock. In SAME form fill unique M17-SUP-REF and submit once: expect one bill10 Dr6800Cr2100/zero stock. Known source risk predicts stuck already-running error; if observed fail, preserve form/key privately, do NOT retry/reload to force success. No business number/permission tampering. Missing native/server path stays blocked. If accepted leave billopen10; include AP/expense10 in closing.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-PO",
+      "title": "Fresh physical PO5x60",
+      "precondition": "New run-owned Physical product M17 Receipt Stock; quickcatalog creation separately recorded; ownexistingvendor. VATfalse; supplier/GRNI profile verified; initialnewSKUstock0. After SUPPLIER case explicitly turn requireSupplierInvoiceNo=false and reload for conversion lane; other planned settings unchanged. Conversion UI cannot set a new supplier reference; this is a separate configuration profile, not bypass of the negative test.",
+      "expected": "Save one PO5x60=300. PO noAP/GL/stock; storedproductPhysical, ordered5 received0 billed0. Use only new PO for dependent cases; no conversion of old PO0001.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "dependsOn": [
+        "M17-ACTOR"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-GRN2",
+      "title": "Receive first2 of5 with GRNI",
+      "precondition": "M17PO300; postGRNItrue, requireGRNtrue, lastcost; actualnewSKU0.",
+      "expected": "From supported PO detail receive2@60 once. One GRN120; qty2/value120/cost60; Dr5100Inventory120Cr2150GRNI120, AP0. PO received2/billed0/remainingreceive3. Source/ownparty retained; no double stock.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "dependsOn": [
+        "M17-PO"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-BILL2",
+      "title": "Bill first GRN2",
+      "precondition": "GRN2posted120; conversion-lane requireSupplierInvoiceNo=false verifiedreload; approvalfalse. No supplier-reference entry exists on conversion UI.",
+      "expected": "Use supported GRN detail bill exactly2@60 once. AP120/Dr2150GRNI120Cr2100AP120; GRNI0; no inventory quantity/value addition. PO billed2 (including GRN-sourced bill), received2. Supplier-number-required conversion coverage remains separate; no hidden field entry.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "dependsOn": [
+        "M17-GRN2"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-GRN3",
+      "title": "Receive remaining3",
+      "precondition": "SamePO: received2, remaining3; newSKU2/value120/cost60.",
+      "expected": "Receive3@60 once -> GRN180; stock5/value300; DrInventory180CrGRNI180; POreceived5. No AP yet from thisGRN; priorbill120 unchanged.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "dependsOn": [
+        "M17-BILL2"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-BILL3",
+      "title": "Bill remaining GRN3",
+      "precondition": "SecondGRN3posted180; conversion-lane supplier-number-required=false, approvalfalse; actual profile verified.",
+      "expected": "Bill3@60 once from secondGRN: DrGRNI180CrAP180; cumulativeAP300/GRNI0; POreceived5/billed5; stockstays5/value300. Exact lineage prevents double stock and doublecount.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02",
+        "WB-PHY.J03.C04"
+      ],
+      "dependsOn": [
+        "M17-GRN3"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-RET1",
+      "title": "Return one received/billed physical unit",
+      "precondition": "Source secondbill3@60, unpaid; newSKU5/value300; ownvendor/source locks.",
+      "expected": "Source-linked purchase return1@60 once: credit60 DrAP60CrInventory60; APremaining240 acrossbothbills, stock4/value240. Source secondbill120due; firstbill120due. No expense/COGS/cash and no double movement. Capture preview/post/ledger/sourcequantities.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "dependsOn": [
+        "M17-BILL3"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-OVER",
+      "title": "Exhausted PO cannot receive again",
+      "precondition": "OriginalPOreceived5of5; supplierreturn does not create a newPO order; source/bill snapshots.",
+      "expected": "Attempt supported extra receive1 only if UI offers editable remaining path. Refuse aboveordered5 with zeroGRN/GL/stock. If disabled/hidden, record client boundary with snapshots; do not claim authoritative server denial or tamper fields. Must not silently accept6of5.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "dependsOn": [
+        "M17-RET1"
+      ],
+      "evidence": [
+        "preview",
+        "persistedDocument",
+        "journal",
+        "sourceBalance",
+        "unchangedState",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M17-U07",
+      "title": "Authentic legacy101c upgrade blocker",
+      "precondition": "Isolatedoldv2.5.14compiledapp/auth/DB NOT prepared.",
+      "expected": "Blocked infrastructure. Follow RESIDUAL_FIXTURE_PLAN; no source-pass upgrade acceptance, fabricated SQL prestate, staging downgrade/reset or backup/restore.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "dependsOn": [],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlan",
+        "nextAction"
+      ],
+      "lane": "isolated-upgrade",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M17-U10",
+      "title": "Authentic legacy104c upgrade blocker",
+      "precondition": "Same isolation prerequisite unavailable.",
+      "expected": "Blocked infrastructure under authentic upgrade fixture plan. Preserve consumed sources and historical facts.",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "dependsOn": [],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlan",
+        "nextAction"
+      ],
+      "lane": "isolated-upgrade",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M17-END",
+      "title": "Reconcile, restore and publish",
+      "precondition": "Reserve last15active minutes; inspect every outstandingintent, all created/failed/ambiguousfixtures.",
+      "expected": "Reconcile actual openings plus actual outcomes. Completepurchasechain netnewSKU4/value240,inventoryGL+240/AP+240/GRNI0; if supplier correction passes addAP10/expense10, otherwise0. Draft sale+credit pairs net0; quotes/drafts0GL. Inherited120gap tracked separately. Restore ALL captured purchase/VAT/inventory flags and reload; no balancing/payment/writeoff/cleanup. Publishfirstfailures/corrections/handoff; untouchedslotsnot-run ifbudgetends; endcandidate=start.",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "dependsOn": [],
+      "evidence": [
+        "trialBalance",
+        "controlDeltas",
+        "stockDeltas",
+        "fixtureRegister",
+        "settingsReload",
+        "endStamp"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    }
+  ]
+}

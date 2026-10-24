@@ -1,0 +1,11 @@
+# Current QA continuation
+
+**Operator guard clock/dispatch follow-up after PR #66 review.** Frozen Light07 attempt2 remains **13 passed / 1 operator-control failure / 22 blocked**. [Guard handoff](HANDOFF-20261024-light07-operator-guard.md), [WCHG](../changes/WCHG-20261024-pr66-guard-clock-dispatch.md). L07-SALE stays failed. Review pin `31f97b679ca578d8a1f12a9863b97efabab4a312`.
+
+Light07 attempt2 files: [Results](HANDOFF-20261024-light07-attempt2.md), [checks](../runs/CHECKS-20261024-light07-attempt2.json), [partial oracle](../runs/RECONCILIATION-20261024-light07-attempt2.json), [coding/Medium next](CODING-MISSION-20261024-light07-attempt2.md), [additive coverage](../coverage/browser-evidence-light07-attempt2.json), [closed clock](../runs/CLOSE-20261024-light07-attempt2.json).
+
+Live product **v2.5.22 · 211771e** / full `211771e95d6f97cac5eb281a0f8e63f0fceef8a4` (PR #7 merge). Light07 execution QA remains `d04c33e10d375582ea6c6184a48470233e97ed46` on v2.5.21. OneS600postingcorrectfinancially butoperatorintent rejected beforeclick;late recovery doesnotpasscontrol. Sdependentladderblocked; independentP200posted,0fundingblocksPpay. PartialtwoeventsDrCr800/AR+600/AP+200/profit+400/liquid0,reconciled;Q/order600+Ddraft100preservednonposting. Settings/catalguestock/oldaging unchanged,viewportunchanged. No newaccountingproductdefectdemonstrated; no releaseacceptance.
+
+Required write path is `dispatchBrowserAppWrite` with the connected Browser app `js` tool. Clock charges the unpaused gap through dispatch. Tickets are single-use and revalidated immediately before `js`. This coding session has no connected Browser app `js` tool; tests prove zero `js` on rejected prerequisites and one inert positive control.
+
+Next: Medium independently reruns `pnpm test:operator-action-guard`, then binds a NEW Light mission to live `211771e95d6f97cac5eb281a0f8e63f0fceef8a4` for receipts, part-paid credit, overpayment refusal/correction and vendor payments. Missing independent stock movement and isolated fixtures remain blocked. Prior [Light07 attempt1](HANDOFF-20261024-light07-results.md) and [Light06](HANDOFF-20261023-light06-results.md) immutable. Light06 focus/return-help findings remain open until independent retest. No grants/cleanup reversal/tenant workaround/merge/deploy; backup LAST.

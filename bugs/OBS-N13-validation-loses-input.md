@@ -1,0 +1,9 @@
+# OBS-N13-INPUT — rejected invoice discards entered work
+
+P2/open, usability/recovery; v2.5.13 ·1a10201/full1a1020127c4ff0f11ccd9d84d736c6b18b235fca. Prepared new invoice with entered synthetic D2513RoundingCustomer, explicitDigitalSKU,qty3,price1,linepercent150. Submit Post once. Immediate status correctly says Percentage line discount cannot exceed100%, and no invoice/journal was created by this invalid submission.
+
+However, it redirects to invoice list. Opening New invoice shows blank new-customer input, no lines, default values: prior entry is lost. Expected actionable field/server error with retained customer,dates,lines,prices and other entered values so the user can correct the invalid percentage and submit once. This is CTL-UI/WB-CORE.J06.C05/C06, not a demand to accept150%. Preserve validation denial as a passing accounting guard separately from failed recovery. Do not claim every validation path loses inputs; payment overbalance client validation is a different path.
+
+An initial same-call observation assumed the form remained; the following attempted row fill failed because the page was already the list. That locator failure is a harness symptom, not an additional product bug. Settled snapshots confirmed the actual redirect and empty re-entry form; this record contains the corrected interpretation. First prepared numerical fixture later saved1unit0.99 without a settled pre-submit qty capture, so it is explicitly invalid for the3-unit rounding case; a distinct verified INV0009 exercised that case. Neither fixture issue changes this independently observed loss of entry on rejection.
+
+Owner coding agent, review before candidate acceptance; regression retains a long multi-line form after server rejection, exact error, no forbidden financial changes and a single corrected positive. Publish synthetic observations only; no credentials/raw traces/customer data.

@@ -1,0 +1,13 @@
+# Coding-agent handoff: v2.5.12 deep browser batch
+
+Read [run](../runs/RUN-20261016-v2512-browser-deep.md), [67 exact assertions](../runs/CHECKS-20261016-v2512-browser-deep.json) and [workbook maintenance](../changes/WCHG-20261016-v2512-browser-edges.md). Candidate ead3a82170e7a34ad625ec6ef8434e5ae65b1609;61pass/4fail/2inconclusive;three symptom groups. This is browser evidence, not full workbook/release acceptance.
+
+1. **P1 BUG0063:** future17Oct receipt1 incorrectly reduces16Oct invoice aging181→180; aggregate251→250. INV0003 remains open180 with actual75.50/16Oct and1/17Oct receipts. Reconstruct historical allocations as of cutoff; include future credits/returns and AP equivalents in regression. Never solve this by changing current due180 or deleting test payments.
+2. **P2 BUG0062:** full linked-return preview fixed, partial1/remaining2 show56.50/156.50 instead85.50/171 for source256.50. Backend credits and cost reversals correct. Preview must use source-proportional discount/rounding semantics shared with posting, with independent expected tests. INV0004 now returned fully by SR0002/3; use a fresh source for retest.
+3. **P2 OBS-D12-SUBTOTAL:** quote/invoice detail labels net total256.50 as subtotal while separately showing header discount13.50; line net270. Display subtotal270 and total256.50 consistently. No ledger-value rewrite needed for this symptom.
+
+Nine old groups retested; see disposition table. Overbalance and duplicate-bill feedback DO pass when captured before toast dismissal. Prior delayed absence claims corrected; do not build fixes for those false negatives. Other bounded repairs include full return preview, future issue exclusion, initial percentage selector, print integrity and duplicate-return guard. Do not blanket-close critical findings without their remaining layers/adjacent cases.
+
+Keep all synthetic D2512 fixtures and earlier BW fixtures. Final21journals/debitscredits4542.50;P&L86.50;BS246.50=246.50; currentAR180 for preserved invoice, AP600 for cycle bill. InventoryGL reconciles but quantity/layer/location unobserved. No fresh-login security, race, fault, audit, lock, migration or full module acceptance. No merge/deploy authorized by this handoff.
+
+Mandatory: apply AGENTS63–81; update canonical JSON, revisions, source/dependency impacts, independent examples and sanitized immutable runs for fixes/new edges. Library1.0.1 expectation clarifications leave260draft/unbound/not-run cases; evidence here does not mutate their execution status. Add critical executable and failure-sensitive regressions, then return exact product fix SHA/CHG and validation for independent retest. Owner manually relays this handoff; no agent was messaged directly.

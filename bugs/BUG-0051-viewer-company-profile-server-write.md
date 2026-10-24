@@ -1,3 +1,5 @@
+Current disposition (2026-10-16): v2.5.10 OwnerDB original five settings repros remain passing; restricted sales/purchase/inventory settings denials and Owner positives pass. Restricted company/profile/tax forms fail prerequisite under distinctBUG0054; those write assertions not accepted. Evidence: [v2.5.10 run](../runs/RUN-20261016-v2510-independent-retest.md). Earlier dispositions/reproductions below remain historical.
+
 Current disposition (2026-10-15): v2.5.9 five original owner-DB HTTP Viewer settings denials and distinct Owner positives pass; posted facts unchanged. Restricted role cases blocked by0053; adjacent Admin/brand/location/year/rental not accepted. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
 
 # BUG-0051: Assigned Viewer can persist company profile and finance settings

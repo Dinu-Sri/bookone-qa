@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "runId": "RUN-20261023-light06-attempt2",
+  "qaExecutionSha": "60198f3189459431fe32d331a0abe1ae00351743",
+  "productSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "liveStartEnd": "v2.5.21 ·7458a9c",
+  "counts": {
+    "passed": 10,
+    "failed": 4,
+    "blocked": 7,
+    "pending": 0,
+    "running": 0
+  },
+  "cases": [
+    {
+      "id": "M21-GATE",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-ACTOR",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-PL-D",
+      "status": "failed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-PL-N",
+      "status": "failed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-PD-D",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-PD-N",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-SL-D",
+      "status": "failed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-SL-N",
+      "status": "failed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-SD",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-MOUNTED",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-PRODUCT",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-IH320",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-RH320",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-IH390",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-RH390",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-RESIZE",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-BUSY",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-AT",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-LINE",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-BLOCKERS",
+      "status": "blocked",
+      "fullCaseAcceptance": false
+    },
+    {
+      "id": "M21-END",
+      "status": "passed",
+      "fullCaseAcceptance": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "OBS-M21-01",
+      "classification": "confirmed-observed-UX-failure",
+      "actual": "Purchase and quotation list cancellation returns focus to BODY at desktop and390px; mounted detail and inline controls restore trigger."
+    },
+    {
+      "id": "OBS-M21-U1",
+      "classification": "missing-help-consumer-medium-review",
+      "actual": "Return paid badges lack keyboard/pointer help; column help fits. Keep complete consumer slots blocked."
+    }
+  ],
+  "verifiedScope": [
+    "Invoice help rendered containment at320/390; first/last rows, hover/Escape/scroll",
+    "Purchase detail desktop/390 and quotation detail/customer-inline cancellation",
+    "Fresh synthetic LINE refusal, visible field retention, same-form correction and bounded persisted readback",
+    "Opening/closing settings and read-only control comparisons; no unexpected effects"
+  ],
+  "privacy": "No actor/company/customer identity, record identifiers, financial baselines, credentials, traces or raw screenshots in this public summary. Detailed readbacks remain private.",
+  "clock": {
+    "configuredMinutes": 75,
+    "closingReserveMinutes": 15,
+    "chargedMinutesThroughInitialPublication": 27.25645,
+    "explicitPauses": 0,
+    "startedBeforeBrowserSetup": true,
+    "closed": true,
+    "finalMetadataPublicationOutsideClosedClock": true,
+    "elapsedIncludingFinalizationObservedMinutes": 29.6351,
+    "creditsOrComputeMeasured": false
+  },
+  "limits": [
+    "Full source pinned but image/schema not attested",
+    "No full product/repository build or unit-suite run",
+    "Missing Inventory writer and isolated busy/AT/auth/late/upgrade layers remain blocked",
+    "Logout preceded ledger initialization; clock already active. Later submissions checkpointed. Probe errors retained privately."
+  ],
+  "unresolvedSubmissions": 0,
+  "releaseAcceptance": false,
+  "canonicalAcceptance": false
+}

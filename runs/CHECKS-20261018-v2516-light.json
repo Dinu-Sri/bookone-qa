@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "id": "RUN-20261018-v2516-light",
+  "queue": "MISSION-v2516-LIGHT-01",
+  "fingerprint": {
+    "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+    "liveStamp": "v2.5.16 · b2c5205",
+    "qaSha": "4cb309158dc6405f61bfce09e45386919c6875b0",
+    "rulesHash": "declared-sha256:abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc;gitblob:d4fdeeea1c4e00ca7fb285ce7959f71a90110bed",
+    "libraryHash": "gitblob:7b0a44449ac480d3bfac36b7868e7e47114c3556;library1.5.0",
+    "schema": "live-no-migration-inspection;author-reports-no-schema-change",
+    "configuration": "M16-fixed-plan;openingVATfalse-rate18-export0-dept01;negativeallow-costlast;plannedblock-andVAT-transitions-restored-at-end",
+    "actor": "fresh-explicit-QA-N141710-login;owncompany;Owner",
+    "fixture": "M16-fresh-independent;opening45journals-AR706.21-AP540-inventoryGL300-VAT46.71-profit419.50;openingstock7x60value420-inheritedgap120"
+  },
+  "counts": {
+    "passed": 9,
+    "failed": 2,
+    "blocked": 3,
+    "inconclusive": 4,
+    "pending": 0,
+    "running": 0
+  },
+  "releaseAcceptance": "not-established",
+  "canonicalCaseAcceptance": "not-established",
+  "sourcePreflight": "Unchanged13pass result cited at PR45/4cb3091; not rerun or browser/upgrade evidence",
+  "cases": [
+    {
+      "id": "M16-GATE",
+      "status": "passed",
+      "actual": "Exact live candidate verified before mutation; immutable source preflight cited, not rerun.",
+      "evidence": {
+        "liveStamp": "v2.5.16 · b2c5205 on report and sign-in",
+        "sourceManifest": "PR45 reviews/RETEST-20261018-v2516-source.json at4cb3091",
+        "sourceResult": "PR45 runs/CHECKS-20261018-v2516-source-preflight.json:13passed;source-only",
+        "qaRevision": "PR45 remote head4cb309158dc6405f61bfce09e45386919c6875b0 unchanged"
+      }
+    },
+    {
+      "id": "M16-ACTOR",
+      "status": "passed",
+      "actual": "Fresh explicit fixture logout/login loaded own company/Owner and expected stamp; openings freshly read.",
+      "evidence": {
+        "freshLogin": "Logout → sign-in → intended private fixture credentials; Remember me unchecked; Login → main",
+        "loadedActor": "QA N141710 own company, QA/Owner role; no unexpected context",
+        "openingBalances": "45journals;AR706.21;AP540;inventoryGL300;VAT46.71;profit419.50;assets1006.21;TB ARdebit2273.80 credit1567.59",
+        "openingStock": "N14Widget7 available7 lastcost60 value420; two old zero SKUs0; inheritedgap120",
+        "openingSettings": "VATfalse18/export0/dept01/local/commercial;creditlimitoff;negativeallow;costlast",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-E01",
+      "status": "inconclusive",
+      "actual": "All17 visible fields retained exactly; no invoice/AR/GL/stock mutation. Transient refusal message was missed, so clear shortage error assertion remains unproven.",
+      "evidence": {
+        "formBeforeAfter": "17 visible entries identical including issue17/delivery19/due25Oct,notes,paymentOther; ownparty/SKU1x10/discounts/localcommercial",
+        "error": "not captured before toast expired",
+        "documentAbsence": "Invoice list remains17 total through0017",
+        "journalAbsence": "45journals;TB all balances unchanged",
+        "stockUnchanged": "M16ZeroPhysical0,N14Widget7/value420; quickcreatedcatalogretained",
+        "busyCleared": "Post/Save draft/Post&print enabled",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium review evidence gap; fresh separately bound refusal retest required for toast, no blind replay."
+    },
+    {
+      "id": "M16-E02",
+      "status": "passed",
+      "actual": "Client150percent rejected with actionable error,17visiblefieldsidentical,busycleared,noinvoice/journal.",
+      "evidence": {
+        "formBeforeAfter": "Identical all17fields;Digital1x10/150percent;17/19/25Oct,notes,Other",
+        "error": "Percentage line discount cannot exceed 100%.",
+        "documentAbsence": "17invoices unchanged",
+        "journalAbsence": "45journals and same profit419.50/assets1006.21",
+        "busyCleared": "Postenabled;nooverlay",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-I01",
+      "status": "failed",
+      "actual": "Draft10 persisted and all17fields rehydrated; singlePostfailedtoreachpostedstate/noGL,source staysdraft. Dependentreturnnotrun; firstattempt preserved.",
+      "evidence": {
+        "preview": "10.00 no discounts/VAT",
+        "persistedDocument": "INV-20261017-0018 draft10;notesdatesretained;EditSKUdashdespiteLinked",
+        "journal": "45entries/debitcredit7261.39 unchanged afterdraftandPost",
+        "sourceBalance": "draft10;Postnotaccepted",
+        "unchangedState": "AR706.21/profit419.50;nojournal;finalstockcheckpending",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium investigate draft Post failure and missing displayed SKU; preserve0018/no replay; fullcredit dependentnotrun.",
+      "appendedReview": {
+        "classification": "unsuccessful-live-workflow;cause-unknown",
+        "correctedInterpretation": "One draft Post did not reach posted state; journal unchanged and draft remains. Error message missed. No diagnosis or replay. Missing displayed SKU is an observation, not proof of lost product identity."
+      }
+    },
+    {
+      "id": "M16-Q01",
+      "status": "failed",
+      "actual": "Client150refusalretainsall16fields; correction savesonequote10 butissue/goodthrudatesresetto18Oct/17Nov ratherthan17Oct/25Oct;notescorrect.",
+      "evidence": {
+        "formBeforeAfter": "150refusal identical16visiblefields including17Oct/25Oct/notes",
+        "error": "Percentage line discount cannot exceed 100%.",
+        "savedQuote": "QT-20261018-0001 draft10;Edit issue18Oct due17Nov notesM16-Q01quoteretention",
+        "zeroFinancialDelta": "45journals/AR706.21/profit419.50 unchanged;nostockpost",
+        "busyCleared": "Savequotationenabled afterrefusal;successredirectaftervalidsave",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium review savedquote date loss on supported correction; preservequote/noedit.",
+      "appendedReview": {
+        "classification": "invalid-fixture/harness;not-confirmed-product-defect",
+        "correctedInterpretation": "Captured pre-submit DOM already had default18Oct/17Nov. Date17/25 fills did not stick. Saved quote matches captured dates; no save-time date loss demonstrated. Client refusal retained16fields and valid correction saved one quote10. Original failed disposition preserved; distinct-date obligation needs fresh retest."
+      }
+    },
+    {
+      "id": "M16-F07",
+      "status": "inconclusive",
+      "actual": "Complete7step monetary ladder correct; sourcepaid/balance0 andjournalsmatch; persistedheaderdetail absentfromreturnmodal, so full required representation evidence incomplete.",
+      "evidence": {
+        "preview": "99,99,99,99,99,100,100;header1cfirst5then0;locksverified",
+        "persistedDocument": "INV0019 7x1/header.05,total6.95;SR0026-0032 matchingcredits;modalsqty1price1line1 but noheaderfield",
+        "journal": "53entries7275.29;eachreturnDr4100/Cr1300 exact;source6.95;noCOGS",
+        "sourceBalance": "detailpaid6.95 balancedue0;7returnedunits by7acceptedqty1",
+        "unchangedState": "stockN14Widget7/value420;zeroproduct0;AP540 inheritedgap120",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium review accessible persistedheader/adjustment evidence; observedfreshcapboundary correct, no fullcanonicalacceptance."
+    },
+    {
+      "id": "M16-F10",
+      "status": "inconclusive",
+      "actual": "All10credits equalpreview99x5then100x5,sum9.95,sourcepaidzero;persistedheader/adjustmentUIgapstillpreventsfullrepresentationevidence.",
+      "evidence": {
+        "preview": "99,99,99,99,99,100,100,100,100,100;headers1cfirst5then0",
+        "persistedDocument": "INV0020 10x1/header.05=9.95;SR0033-0042 qty1price1line1 each;modalheaderabsent",
+        "journal": "64entries7295.19;eachDrReturns/CrARexact;noCOGS",
+        "sourceBalance": "detailpaid9.95 balance0;10returnedunits",
+        "unchangedState": "digitalnostock;ownpartylocked;price/discountlocks;openinginventorygapretained",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium review persistedheader/adjustment visibility; nofreshcappreviewmismatch reproduced."
+    },
+    {
+      "id": "M16-C03",
+      "status": "inconclusive",
+      "actual": "Threecredits1/1/.99 correct,persistedheadernotvisible;sourcepaid2.99;fullrepresentationlayerincomplete.",
+      "evidence": {
+        "preview": "1/header0,1/header0,.99/header.01",
+        "persistedDocument": "INV0021 3x1/header.01;SR0043/44/45 qty1price1line1 totals1/1/.99",
+        "journal": "68entries7301.17;DrReturns/CrARexact,noCOGS",
+        "sourceBalance": "invoicepaid2.99;threeacceptedunits",
+        "unchangedState": "Digitalnostock;ownparty/sourceeconomicslocked;noAPdelta",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium review persistedheader UIgap;completefull-layeracceptanceunproven."
+    },
+    {
+      "id": "M16-PART",
+      "status": "passed",
+      "actual": "Freshphysical256.50 returns85.50/171;correctcost60/120;stockfullyrestoredandledgerconserves.",
+      "evidence": {
+        "preview": "qty1 line90/header4.50=85.50;qty2 line180/header9=171;sourceprice/discount/partylocksverified",
+        "persistedDocument": "INV0022 paid256.50;SR0046 qty1price100line90credit85.50;SR0047 qty2price100line180credit171",
+        "journal": "sourceDrAR256.50CrSales256.50DrCOGS180CrInventory180;returnsinverse85.50/60and171/120;71journals8174.17",
+        "sourceBalance": "listpaid256.50;returnedqty3/credits256.50",
+        "unchangedState": "Widget7/value420 restored;ledger-3,+1,+2 allcost60;inherited120gapunchanged",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-TAX",
+      "status": "passed",
+      "actual": "ExplicitTAXservice302.67 fullyreturnedexactly;net256.50/VAT46.17 reversed;sourcepaid;temporaryVATrestorationboundtoHVAT/END.",
+      "evidence": {
+        "preview": "line270/header13.50/gross302.67",
+        "persistedDocument": "INV0023/TAX26OCT_01/5=302.67;SR0048qty3price100line270credit302.67",
+        "journal": "sourceDrAR302.67CrSales256.50CrVAT46.17;returnDrReturns256.50DrVAT46.17CrAR302.67;73entries8779.51",
+        "sourceBalance": "INV0023listpaid302.67",
+        "unchangedState": "Service/noinventoryCOGS;VATtrue18verifiedreload;otherVATsettingsunchanged;restorefalseHVAT",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-HVAT",
+      "status": "passed",
+      "actual": "HistoricalTAX118retainedafterVATflagoff,reversed100net18VAT,sourcepaid;registrationrestoredfalse.",
+      "evidence": {
+        "preview": "100/header0/gross118afterflagfalseconfirmedreload",
+        "persistedDocument": "INV0024/TAXserial6=118;SR0049qty1price100line100total118",
+        "journal": "DrReturns100DrVAT18CrAR118;75entries9015.51;nostockCOGS",
+        "sourceBalance": "INV0024listpaid118",
+        "unchangedState": "historicalsourceTAXunchanged;VATregistrationfalse restored,rate18/export0/dept01;digitalnostock",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-DENY",
+      "status": "passed",
+      "actual": "Duplicate2+2against3refusedsameform/noacceptedreturnstockjournal;source300intentionallyopen.",
+      "evidence": {
+        "preview": "line400/capdiscount100/total300;refusedremainingquantity;fieldsidentical;displayescalated",
+        "persistedDocument": "NoSR0050;returnlist49total;INV0025open300",
+        "journal": "76entries9495.51 onlysourceDrAR300CrSales300DrCOGS180CrInventory180;noattemptjournal",
+        "sourceBalance": "INV0025open300;leaveunreturned",
+        "unchangedState": "afterrejectionWidget4/value240 exactlysourceeffectonly;priorreturnsretained",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "appendedReview": {
+        "classification": "denial-passed;preview-display-review",
+        "correctedInterpretation": "Invalid rows2+2 show line subtotal400, computed discount100,total300 before refusal. Earlier intent called total400 incorrectly. No accepted return. Medium assess misleading cap display; expectations unchanged."
+      }
+    },
+    {
+      "id": "M16-SPLIT",
+      "status": "passed",
+      "actual": "Valid1+1+1 rowsall100 credited300 restoredcost180andstock;sourcepaid.",
+      "evidence": {
+        "preview": "threeqty1price100 lines100/header0,total300",
+        "persistedDocument": "INV0026paid300;SR0050threeqty1price100amount100",
+        "journal": "78entries10455.51;DrReturns300CrAR300 plus3xDrInventory60CrCOGS60",
+        "sourceBalance": "INV0026paid300/zero;denyINV0025remainsopen300",
+        "unchangedState": "Widget4/value240 restoredrelativeprecase;ledger-3,+1,+1,+1allcost60;gap120unchanged",
+        "endStamp": "v2.5.16 · b2c5205"
+      }
+    },
+    {
+      "id": "M16-PO",
+      "status": "blocked",
+      "actual": "MissingvendorserverbranchunreachableviaUI;independentpositivePO10savedwithdates/notesandGLnotposted,AP/ARunchangedbyPO.",
+      "evidence": {
+        "formBeforeAfter": "Positivefieldsissue17/due25Oct/notesandDigital1x10persisted;negativeunreachable",
+        "error": "NoNew/blankvendorselectoption;noinventedservererror",
+        "savedPurchaseOrder": "PO-20261017-0001confirmed10 GLnotposted received0 billed0",
+        "zeroFinancialDelta": "78journals10455.51;POeffect0;AR1006.21/AP540afterintentionaldeny-source",
+        "busyCleared": "successredirecttoonePO;buttonsavailable",
+        "endStamp": "v2.5.16 · b2c5205"
+      },
+      "nextAction": "Medium bindlegitimate serverrefusalfixture for sharedpurchaseform;do nottamperhiddenfields."
+    },
+    {
+      "id": "M16-U07",
+      "status": "blocked",
+      "actual": "Isolatedold-buildcompiledapp/auth/DBenvironmentnotprepared;noauthenticupgradefixturecreated;sourcepassnotupgradeacceptance.",
+      "evidence": {
+        "environmentDisposition": "blocked-environment-not-prepared",
+        "fixturePlanReference": "docs/workflows/RESIDUAL_FIXTURE_PLAN.md1.0.0",
+        "nextAction": "Infrastructureoperatorpreparerealoldv2.5.14/newpinnedapp+auth+DB;preservestaging"
+      },
+      "nextAction": "Medium/infrastructureoperator prepareisolatedauthenticold-versionfixture;noSQLfabrication/stagingdowngrade/reset/backuprestore."
+    },
+    {
+      "id": "M16-U10",
+      "status": "blocked",
+      "actual": "Isolatedold-buildcompiledapp/auth/DBenvironmentnotprepared;noauthenticupgradefixturecreated;sourcepassnotupgradeacceptance.",
+      "evidence": {
+        "environmentDisposition": "blocked-environment-not-prepared",
+        "fixturePlanReference": "docs/workflows/RESIDUAL_FIXTURE_PLAN.md1.0.0",
+        "nextAction": "Infrastructureoperatorpreparerealoldv2.5.14/newpinnedapp+auth+DB;preservestaging"
+      },
+      "nextAction": "Medium/infrastructureoperator prepareisolatedauthenticold-versionfixture;noSQLfabrication/stagingdowngrade/reset/backuprestore."
+    },
+    {
+      "id": "M16-END",
+      "status": "passed",
+      "actual": "All18slotsdisposed;78journals/debitscredits10455.51;expectednetdeny-source300andcost180only;settingsrestoredreload;noambiguousfinancialintent.",
+      "evidence": {
+        "trialBalance": "78entries/debitscredits10455.51;ARdebit3570.86credit2564.65=1006.21;inventory2220-2100=120;COGS1440-1020=420;VAT193.05-146.34=46.71",
+        "controlAccountDeltas": "AR+300;AP0;inventory-180;VAT0;profit+120;assets+120;newgrosssales1297.06credits997.06;costout540restore360",
+        "stockDeltas": "7to4 Widgetcost60/value420to240;net-3/-180 fromINV0025only;GL120vsstock240 inheritedgap120unchanged;zeroproduct0",
+        "fixtureRegister": "draft0018preserved;posted0019-0026;returns0026-0050;quote0001;PO17Oct0001;deny0025open300;otherspaid",
+        "settingsReload": "Inventorylast/allow reloaded;VATfalse18/export0/dept01reloaded;openingflagsrestored",
+        "endStamp": "v2.5.16 · b2c5205 onfinalBalanceSheet;owncompanyOwner"
+      }
+    }
+  ],
+  "opening": {
+    "journals": 45,
+    "debitCredit": 7261.39,
+    "AR": 706.21,
+    "AP": 540,
+    "inventoryGL": 300,
+    "VAT": 46.71,
+    "COGS": 240,
+    "profit": 419.5,
+    "assets": 1006.21,
+    "stockQty": 7,
+    "stockValue": 420
+  },
+  "closing": {
+    "journals": 78,
+    "debitCredit": 10455.51,
+    "AR": 1006.21,
+    "AP": 540,
+    "inventoryGL": 120,
+    "VAT": 46.71,
+    "COGS": 420,
+    "profit": 539.5,
+    "assets": 1126.21,
+    "stockQty": 4,
+    "stockValue": 240
+  },
+  "fixtures": [
+    {
+      "case": "M16-I01",
+      "source": "INV-20261017-0018",
+      "status": "draft",
+      "amount": 10,
+      "returns": [],
+      "note": "Do not replay Post; preserve failure"
+    },
+    {
+      "case": "M16-F07",
+      "source": "INV-20261018-0019",
+      "amount": 6.95,
+      "returns": [
+        "0026",
+        "0027",
+        "0028",
+        "0029",
+        "0030",
+        "0031",
+        "0032"
+      ],
+      "credits": [
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        1,
+        1
+      ],
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-F10",
+      "source": "INV-20261018-0020",
+      "amount": 9.95,
+      "returns": [
+        "0033",
+        "0034",
+        "0035",
+        "0036",
+        "0037",
+        "0038",
+        "0039",
+        "0040",
+        "0041",
+        "0042"
+      ],
+      "credits": [
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-C03",
+      "source": "INV-20261018-0021",
+      "amount": 2.99,
+      "returns": [
+        "0043",
+        "0044",
+        "0045"
+      ],
+      "credits": [
+        1,
+        1,
+        0.99
+      ],
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-PART",
+      "source": "INV-20261018-0022",
+      "amount": 256.5,
+      "returns": [
+        "0046",
+        "0047"
+      ],
+      "credits": [
+        85.5,
+        171
+      ],
+      "costOut": 180,
+      "costRestored": 180,
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-TAX",
+      "source": "INV-20261018-0023",
+      "taxSerial": "26OCT_01/5",
+      "amount": 302.67,
+      "net": 256.5,
+      "VAT": 46.17,
+      "returns": [
+        "0048"
+      ],
+      "credits": [
+        302.67
+      ],
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-HVAT",
+      "source": "INV-20261018-0024",
+      "taxSerial": "26OCT_01/6",
+      "amount": 118,
+      "net": 100,
+      "VAT": 18,
+      "returns": [
+        "0049"
+      ],
+      "credits": [
+        118
+      ],
+      "status": "paid",
+      "balance": 0
+    },
+    {
+      "case": "M16-DENY",
+      "source": "INV-20261018-0025",
+      "status": "open",
+      "amount": 300,
+      "returns": [],
+      "costOut": 180,
+      "costRestored": 0,
+      "note": "Intentionally open; no cleanup/payment"
+    },
+    {
+      "case": "M16-SPLIT",
+      "source": "INV-20261018-0026",
+      "amount": 300,
+      "returns": [
+        "0050"
+      ],
+      "credits": [
+        300
+      ],
+      "costOut": 180,
+      "costRestored": 180,
+      "status": "paid",
+      "balance": 0
+    }
+  ],
+  "otherCreated": [
+    {
+      "kind": "quotation",
+      "number": "QT-20261018-0001",
+      "status": "draft",
+      "amount": 10,
+      "financialPosting": false
+    },
+    {
+      "kind": "purchase_order",
+      "number": "PO-20261017-0001",
+      "status": "confirmed",
+      "amount": 10,
+      "received": 0,
+      "billed": 0,
+      "financialPosting": false
+    },
+    {
+      "kind": "catalog",
+      "alias": "M16 Zero Physical",
+      "sku": "Q-M16-ZERO-PHY-GCSS",
+      "class": "Physical",
+      "quantity": 0
+    },
+    {
+      "kind": "catalog",
+      "alias": "M16 Digital",
+      "sku": "Q-M16-DIGITAL-ICWZ",
+      "class": "Digital"
+    }
+  ],
+  "reconciliation": {
+    "newPostedInvoices": 8,
+    "newReturns": 25,
+    "newJournals": 33,
+    "grossInvoices": 1297.06,
+    "grossCredits": 997.06,
+    "netSales": 1232.89,
+    "netReturns": 932.89,
+    "costOut": 540,
+    "costRestored": 360,
+    "turnoverDelta": 3194.12,
+    "inheritedStockGLGap": 120,
+    "newUnexplainedVariance": 0,
+    "settingsRestored": {
+      "vatRegistered": false,
+      "vatRate": 18,
+      "exportRate": 0,
+      "dept": "01",
+      "negativeStock": "allow",
+      "costing": "last"
+    }
+  },
+  "timing": {
+    "firstCheckpoint": "2026-10-18T11:45:25Z",
+    "creditPauseAfter": "2026-10-18T12:04:41Z",
+    "resume": "after2026-10-18T14:08Z",
+    "creditWaitingExcluded": true,
+    "modelSetting": "not-observable",
+    "credits": "not-observable",
+    "creditRecoveryHumanPrompt": 1
+  },
+  "limitations": [
+    "Persisted header/adjustment not shown in return modal: F07/F10/C03 remain inconclusive despite complete correct monetary ladders.",
+    "E01 clear-error text missed; all-field retention and no-mutation observations retained.",
+    "I01 draft Post cause unknown; source preserved.",
+    "Q01 distinct dates not bound; original failed record corrected as fixture/harness, not product date loss.",
+    "PO supported server refusal unreachable; positivePO10 complete.",
+    "U07/U10 real isolated upgrade infrastructure unavailable.",
+    "No audit/server-foreign/race/fault/native-print/fullcanonicalcase or statutory acceptance.",
+    "No backup/restore, deployment, merge, reset, payment, writeoff or historical repair."
+  ]
+}
