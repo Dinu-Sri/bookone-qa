@@ -1,3 +1,7 @@
+# Light08 new01 prerequisite checkpoint — 24 October 2026
+
+[PR #68](https://github.com/Dinu-Sri/bookone-qa/pull/68): 37 blocked, zero product passes/failures; 26 guard unit passes do not prove actual transport. Fresh private actor credentials and reviewed connected-GUARD transport unavailable. No staging submissions or changes. [Run](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-results-new01/runs/RUN-20261024-light08-new01.md), [coding handoff](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-results-new01/handoffs/CODING-20261024-light08-new01.md). Next: qualify prerequisites and start NEW run. Prior evidence below is retained.
+
 # BookOne QA current status — 24 October 2026
 
 Operator-guard clock/dispatch follow-up after independent review of PR #65 (review pin `31f97b679ca578d8a1f12a9863b97efabab4a312`): charge unpaused clock gap through dispatch, single-use revalidated tickets, required `dispatchBrowserAppWrite` + connected Browser app `js`. Light07 attempt files remain frozen. L07-SALE stays failed. [Guard handoff](handoffs/HANDOFF-20261024-light07-operator-guard.md), [WCHG](changes/WCHG-20261024-pr66-guard-clock-dispatch.md), [current pointer](handoffs/CURRENT-LIGHT.md).
