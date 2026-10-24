@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "run": "runs/RUN-20261024-light08-exec-run1.md",
+  "codingHandoff": "handoffs/CODING-20261024-light08-exec-run1.md",
+  "closure": "runs/CLOSE-20261024-light08-exec-run1.json",
+  "status": "terminal-blocked-harness-browser",
+  "next": "Fix full-payload transport outside execution; recover Browser; independently review and publish NEW mission",
+  "businessAcceptance": "not-established",
+  "historicalEvidence": "unchanged"
+}

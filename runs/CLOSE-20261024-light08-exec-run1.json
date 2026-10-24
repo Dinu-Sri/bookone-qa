@@ -1,0 +1,23 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08-EXEC",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 733914,
+    "totalMinutes": 120,
+    "closingReserveMinutes": 20,
+    "explicitPausedMs": 0,
+    "budgetExhausted": false
+  },
+  "reason": "Genuine harness and unresponsive Browser blockers",
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/71",
+  "acceptedFinancialEvents": 0,
+  "unresolvedSubmissions": 0,
+  "restoration": "No application settings or viewport overrides changed; final live readback blocked",
+  "reconciliation": "Empty accepted-event ledger; actual opening/closing report equality not established",
+  "payloadMeasurementCorrection": {
+    "actualNodeJSONUtf8Bytes": 96743,
+    "earlierPythonReserializationBytes": 96775,
+    "explanation": "Earlier narrative size used Python escaped JSON representation. Actual Node JSON.stringify output is96743bytes. Original truncation/zero-dispatch failure unchanged."
+  },
+  "metadataTail": "Clock covers initial PR publication and current-pointer updates. This closing record and additive memory pointer are published after clock closure; their publication time is excluded."
+}
