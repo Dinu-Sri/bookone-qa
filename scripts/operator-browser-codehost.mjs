@@ -11,9 +11,10 @@ export async function runPersistedBrowserRequest({tools, cwd, requestPath}) {
   const dispatch = new Function(code.replace('export async function', 'async function') +
     '\nreturn dispatchConnectedBrowser;')();
   const prepared = JSON.parse(await command('node scripts/operator-browser-host.mjs prepare ' + quote(requestPath)));
-  const separator = requestPath.lastIndexOf('/');
+  const normalized = String(requestPath).replaceAll('\\', '/');
+  const separator = normalized.lastIndexOf('/');
   if (separator < 0) throw Error('Use an explicit request directory');
-  const dir = requestPath.slice(0, separator);
+  const dir = normalized.slice(0, separator);
   return dispatch({prepared,
     claim: async id => JSON.parse(await command('node scripts/operator-browser-host.mjs claim ' + quote(dir) + ' ' + quote(id))),
     finish: async result => {
