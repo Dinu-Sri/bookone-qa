@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2522-LIGHT-08",
+  "meaning": "Independent synthetic bookkeeping fixture; integerLKRcents; no real customer data or existing financial baseline.",
+  "authority": [
+    "BR-ACC-01",
+    "BR-ACC-08",
+    "BR-SAL-01",
+    "BR-SAL-02",
+    "BR-STK-03",
+    "EX-SVC-01",
+    "EX-SVC-02",
+    "EX-CORE-02"
+  ],
+  "accountPurposes": {
+    "liquid": "one existing verified cash/bank bookkeeping account",
+    "AR": "customer control",
+    "AP": "supplier control",
+    "sales": "earned non-stock revenue",
+    "returns": "sales-return contra revenue",
+    "expense": "delivered service expense"
+  },
+  "steps": [
+    {
+      "id": "S-SALE",
+      "case": "L08-SALE",
+      "lines": {
+        "AR": 60000,
+        "sales": -60000
+      },
+      "sourceRemaining": 60000
+    },
+    {
+      "id": "S-RECEIVE",
+      "case": "L08-RECEIVE",
+      "lines": {
+        "liquid": 25000,
+        "AR": -25000
+      },
+      "sourceRemaining": 35000
+    },
+    {
+      "id": "S-CREDIT",
+      "case": "L08-CREDIT",
+      "lines": {
+        "returns": 10000,
+        "AR": -10000
+      },
+      "sourceRemaining": 25000
+    },
+    {
+      "id": "S-FINAL",
+      "case": "L08-AR-CLOSE",
+      "lines": {
+        "liquid": 25000,
+        "AR": -25000
+      },
+      "sourceRemaining": 0
+    },
+    {
+      "id": "P-BILL",
+      "case": "L08-BILL",
+      "lines": {
+        "expense": 20000,
+        "AP": -20000
+      },
+      "sourceRemaining": 20000
+    },
+    {
+      "id": "P-PAY",
+      "case": "L08-PAY",
+      "lines": {
+        "AP": 8000,
+        "liquid": -8000
+      },
+      "sourceRemaining": 12000
+    },
+    {
+      "id": "P-FINAL",
+      "case": "L08-AP-CLOSE",
+      "lines": {
+        "AP": 12000,
+        "liquid": -12000
+      },
+      "sourceRemaining": 0
+    }
+  ],
+  "denials": [
+    {
+      "case": "L08-AR-OVER",
+      "remainingCents": 25000,
+      "attemptCents": 25100,
+      "expectedEffectCents": 0
+    },
+    {
+      "case": "L08-AP-OVER",
+      "remainingCents": 12000,
+      "attemptCents": 12100,
+      "expectedEffectCents": 0
+    }
+  ],
+  "nonposting": {
+    "QquoteCents": 60000,
+    "QorderCents": 60000,
+    "DdraftCents": 10000,
+    "expectedJournalCount": 0,
+    "boundary": "ExistingprotectedQ/order/D, never recreated or converted; all oldfinancialS/P also protected"
+  },
+  "allAcceptedExpected": {
+    "financialEvents": 7,
+    "journals": 7,
+    "debitCents": 160000,
+    "creditCents": 160000,
+    "ARDelta": 0,
+    "APDelta": 0,
+    "liquidDelta": 30000,
+    "netIncomeDelta": 30000,
+    "assetsDelta": 30000,
+    "liabilitiesDelta": 0,
+    "stockQtyDelta": 0,
+    "inventoryGLDelta": 0,
+    "COGSDelta": 0,
+    "VATDelta": 0,
+    "GRNIDelta": 0
+  },
+  "branchRule": "Sum only independently confirmed accepted events. A blocked/failing event cannot be assumed. Unexpected monetary effects require Medium; never change expectations or repair history to force all-pass totals.",
+  "execution": "not-run",
+  "acceptance": "not-established",
+  "expertApproval": "not-claimed"
+}
