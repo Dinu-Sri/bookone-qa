@@ -1,0 +1,15 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08-EXEC",
+  "run": "runs/RUN-20261024-light08-exec-run1.md",
+  "counts": {
+    "passed": 1,
+    "failed": 1,
+    "blocked": 35,
+    "pending": 0,
+    "running": 0
+  },
+  "newAcceptedBusinessAssertions": 0,
+  "canonicalMappingsAdded": 0,
+  "releaseAcceptance": "not-established",
+  "historicalEvidence": "unchanged"
+}
