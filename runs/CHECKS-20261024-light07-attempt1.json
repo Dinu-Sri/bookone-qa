@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2521-LIGHT-07",
+  "executionQaSha": "d04c33e10d375582ea6c6184a48470233e97ed46",
+  "productSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "observedStamp": "v2.5.21 \u00b7 7458a9c",
+  "status": "closed-genuine-actor-session-blocker",
+  "counts": {
+    "passed": 1,
+    "blocked": 35
+  },
+  "businessSubmissions": 0,
+  "sessionSubmissions": 3,
+  "ledgerUnresolvedSubmissions": 0,
+  "sessionDurability": "last signout not durable in later observation; source unknown; no replay",
+  "clockAtReconciliation": {
+    "chargedMs": 300632,
+    "explicitPausedMs": 832819,
+    "mode": "active"
+  },
+  "cases": [
+    {
+      "id": "L07-GATE",
+      "status": "passed",
+      "actual": "Fresh browser UI v2.5.21 \u00b7 7458a9c; GitHub latest source commit exact7458a9c458402f9dfaf64587dd5ef7ebe1b5d448. Full deployment image/schema attestation unavailable. New clock/ledger before browser. Initial non-browser instruction reading preceded clock; no business operation.",
+      "evidence": {
+        "candidate": "UI stamp + GitHub full SHA readback; no image/schema attestation",
+        "qaSha": "d04c33e10d375582ea6c6184a48470233e97ed46",
+        "hashes": "rules abcdd897...;library a18153cf...;UX c6fb86e2... exact hashes in fingerprint; prebrowser extra-newline ledger preserved/reinitialized before browser",
+        "clock": "NEW 120/20 clock active before browser setup"
+      },
+      "nextAction": null
+    },
+    {
+      "id": "L07-ACTOR",
+      "status": "blocked",
+      "actual": "Saved Login accepted with Remember off but loaded different actor/company. Signed out once; Sign In screen observed, then later DOM returned to different authenticated actor without another agent Login. Session transition origin unknown; no replay. Earlier Logout readback Remember-off statement was premature: uncheck failed, subsequent DOM had no checkbox. Preserve correction and stop business.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-PHYSICAL",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-FIXTURES",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-QUOTE",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-Q-EDIT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-Q-PRINT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-Q-ORDER",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-ORDER",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-DRAFT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-D-GUARD",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-SALE",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-S-JOURNAL",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-RECEIVE",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-CREDIT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-C-PRINT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AR-OVER",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AR-CLOSE",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-S-HISTORY",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-S-REPORTS",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-BILL",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-P-JOURNAL",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-PAY",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AP-OVER",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AP-CLOSE",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-P-HISTORY",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-P-REPORTS",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-COMBINED",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AGING",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-STOCK",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-LISTS",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-EXPORT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-DRILLDOWN",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-AUDIT",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-GAPS",
+      "status": "blocked",
+      "actual": "Not executed: fresh intended QA actor/company gate not satisfied; no qualified openings or run-owned business fixtures. No business mutation or alternate tenant/grant workaround.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    },
+    {
+      "id": "L07-END",
+      "status": "blocked",
+      "actual": "Genuine identity/session blocker. No financial/stock/product/settings/grant actions performed; no business effects to reconcile or settings/viewport overrides to restore. Full own-fixture closing maps/reports unavailable, so closing not passed. All three session submissions have preserved immediate readbacks; durability of last signout not established. Publish sanitized escalation and start NEW run after actual intended actor is proven.",
+      "evidence": {
+        "blocker": "Fresh saved Login loaded different actor/company; actual QA fixture unavailable; session changed after logout observation",
+        "scope": "No business action; no openings substituted; old Light06 findings retained"
+      },
+      "nextAction": "Provide/select intended QA fixture login through supported browser; Medium reviews identity/session boundary; new exact-bound run before business. No company/permission workaround."
+    }
+  ],
+  "acceptance": "not-established"
+}
+
