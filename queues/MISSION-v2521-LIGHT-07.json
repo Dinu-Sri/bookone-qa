@@ -28,7 +28,7 @@
       "id": "L07-GATE",
       "title": "Exact candidate and new controls",
       "dependsOn": [],
-      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "precondition": "No prior case required. Start a NEW clock and initialize a NEW generic ledger before browser setup or any session submission; verify exact published QA and full product candidate before business actions.",
       "expected": "Verify v2.5.21 ·7458a9c against full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448 and exact published execution QA SHA. NEW generic ledger and120-minute conservative clock BEFORE browser setup,20closing reserved. Candidate drift blocks all dependent actions; no silent rebind. No image/schema attestation claimed.",
       "evidence": [
         "candidate",
@@ -46,7 +46,7 @@
       "dependsOn": [
         "L07-GATE"
       ],
-      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "precondition": "L07-GATE passed; NEW clock and ledger active. Verify actor, capabilities and actual openings in this case before business mutations; no settings or privilege changes.",
       "expected": "Explicit existing-fixture signout/login Rememberoff; intent before every session/form submission. Verify actual identity/company/job/capabilities. Capture all sales/purchase/inventory maps, actual viewport, journals/dr/cr, CoA purposes, reports/aging, stock/catalogue and old failure fixtures privately. Prior values never substituted for current readings.",
       "evidence": [
         "freshActor",
@@ -766,7 +766,7 @@
       "dependsOn": [
         "L07-GATE"
       ],
-      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "precondition": "Recovery case runs after any attempted setup/execution, including failed actor or candidate gates. Reconcile only actual confirmed effects, restore only changes actually made, and publish truthful dispositions. No business mutation requires a failed gate to be bypassed.",
       "expected": "At100chargedminutes stop new business; defer untouched pending slots not-run-budget. Necessary safe readback/reconciliation/actual restoration only. Preserve all attempted outcomes and every accepted source; no cleanupdelete/reversal/reset. Resolve all intents without replay. Reload all full actual settings maps, resetactualviewport, reconcile accepted S/P/Q/D branches and oldfixtures, verify sameendstamp. Publish sanitized run/checks/findings/codinghandoff/currentpointer/additivecoverage in NEWresultsbranch/PR; no rawIDs/credentials/financialbaselines/screenshots/traces inpublicGit. Close actualclock including publication; disclose finalmetadata tail. No release/fullERP/canonical acceptance.",
       "evidence": [
         "settings",
