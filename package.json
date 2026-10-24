@@ -53,7 +53,7 @@
     "queue": "node scripts/operator-queue.mjs",
     "action-guard": "node scripts/operator-action-guard.mjs",
     "test:operator-queue": "node --test tests/infrastructure/operator-queue.test.mjs",
-    "test:operator-action-guard": "node --test tests/infrastructure/operator-action-guard.test.mjs",
+    "test:operator-action-guard": "node --test tests/infrastructure/operator-action-guard.test.mjs tests/infrastructure/operator-browser-transport.test.mjs",
     "review:pr43": "node scripts/review43-source.mjs",
     "test:review43-guard": "node --test tests/infrastructure/review43-source.test.mjs",
     "retest:v2516": "node scripts/retest2516-source.mjs",
