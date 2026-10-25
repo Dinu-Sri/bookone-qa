@@ -1,5 +1,5 @@
-# PR72 reviewed correction and Light08 EXEC2 — 25 October 2026
+# Light08 EXEC2 results — 25 October 2026
 
-Original PR72 requires correction. Executable correction fc79951208e9dbc7272464e11405cebcf693c511 independently reviewed: 61 focused tests, 152 full-check tests, actual Browser title BookOne and four zero-call/zero-claim controls. No business execution in review.
+37 dispositions: **10 passed / 27 blocked**; seven complete bounded product UI cases, two gates and one gap census. Actual Browser GUARD works. No NEW business writes. Six focus cases and source links passed; paid/invoice help partial evidence retained at desktop/320/390, full cases blocked pending qualified partial-return fixture.
 
-[Review](reviews/REVIEW-20261025-pr72.md), [checks](runs/CHECKS-20261025-pr72-review.json), [new execution handoff](handoffs/HANDOFF-20261025-light08-exec2.md). Preserve QA-HARNESS-L08-EXEC-01 and Light07 attempt2. Product remains unapproved; no merge/deploy.
+[Run](runs/RUN-20261025-light08-exec2.md), [checks](runs/CHECKS-20261025-light08-exec2-results.json), [coding handoff](handoffs/CODING-MISSION-20261025-light08-exec2.md), [transport review](reviews/REVIEW-20261025-pr72.md). Finance blocked by incomplete original preflight; late correct inventory routes are recovery evidence. Next preflight uses source-verified routes upfront; do not resume terminal run. Historical Light07 and Light08 run1 unchanged. No release/merge/deploy. Backup LAST.

@@ -1,4 +1,5 @@
 {
+  "latestBrowserExecution": {"date": "2026-10-25", "executionSha": "73879775fd1227500c10496d86563f020dcc4cfe", "run": "runs/RUN-20261025-light08-exec2.md", "checks": "runs/CHECKS-20261025-light08-exec2-results.json", "handoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md", "passed": 10, "blocked": 27, "businessWrites": 0, "releaseAcceptance": "not-established"},
   "latestHarnessReview": {"date": "2026-10-25", "review": "reviews/REVIEW-20261025-pr72.md", "executableSha": "fc79951208e9dbc7272464e11405cebcf693c511", "nextQueue": "queues/MISSION-v2522-LIGHT-08-EXEC2.json", "businessExecution": "not-run", "releaseAcceptance": "not-established"},
   "schemaVersion": 1,
   "programme": "BookOne risk-based batch QA",

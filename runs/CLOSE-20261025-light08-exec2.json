@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261025-light08-exec2",
+  "state": "initial-publication-clock-active",
+  "clock": {
+    "mode": "active",
+    "chargedMs": 2605437,
+    "pausedMs": 21453,
+    "totalMs": 7200000,
+    "reserveMs": 1200000,
+    "lastAt": 1792935196776
+  },
+  "execution": "37 terminal dispositions;10passed27blocked;0businesswrites;2authintentsresolved",
+  "closingBoundary": "Observed settings/account/journal/aging comparisons and viewport restoration complete;fulloriginalstockbefore-after unavailable;ENDblocked. Final clock closure follows initial PR publication."
+}
