@@ -297,9 +297,13 @@
     "not-run": 0
   },
   "publication": {
-    "state": "initial-publication-while-clock-active",
-    "branch": "qa/light08-exec2-results-20261025",
+    "PR": 74,
+    "url": "https://github.com/Dinu-Sri/bookone-qa/pull/74",
+    "state": "initial-PR-published-and-links-verified-before-clock-close",
+    "chargedMs": 2961736,
+    "explicitPausedMs": 21453,
+    "closedAtUTC": "2026-10-25T13:39:13.075000+00:00",
     "clockRecord": "runs/CLOSE-20261025-light08-exec2.json",
-    "explicitPausedMs": 21453
+    "metadataTail": "Final closing-record commit/ref/link checks after clockclose;documentation-only,uncharged,no browser/business action"
   }
 }
