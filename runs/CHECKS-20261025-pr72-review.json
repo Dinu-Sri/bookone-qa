@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-25",
+  "authorPin": "20706e20b283987bc3ea5349c91f2f91eb285f1d",
+  "correctedCodePin": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "original": {
+    "guardTransport": {
+      "passed": 50,
+      "failed": 0
+    },
+    "equivalentFullCheck": {
+      "components": 23,
+      "passed": 141,
+      "failed": 0
+    }
+  },
+  "corrected": {
+    "independentGuardTransport": {
+      "passed": 61,
+      "failed": 0
+    },
+    "equivalentFullCheck": {
+      "components": 23,
+      "passed": 152,
+      "failed": 0
+    }
+  },
+  "live": {
+    "surface": "actual tools.mcp__codex_apps__browser_js",
+    "queueCases": 37,
+    "title": "BookOne",
+    "positiveCalls": 1,
+    "positiveClaims": 1,
+    "positiveReceipt": "consumed",
+    "negatives": {
+      "rejectedExit": {
+        "jsCalls": 0,
+        "claims": 0
+      },
+      "missingIntent": {
+        "jsCalls": 0,
+        "claims": 0
+      },
+      "changedFingerprint": {
+        "jsCalls": 0,
+        "claims": 0
+      },
+      "expiredClock": {
+        "jsCalls": 0,
+        "claims": 0
+      }
+    }
+  },
+  "boundary": "No product business writes or release acceptance; all original historical failures preserved.",
+  "localReviewedCodePin": "eda5bbce97f4cebd1c56179cbba68e19b8434358",
+  "verifiedPublishedCodeTree": "2f3ffc1e0c5707aa010cdcfadbdbf15b79e72307"
+}
