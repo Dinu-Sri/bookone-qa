@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261025-light08-exec2",
+  "state": "closed-after-results-PR-publication-and-link-verification",
+  "resultsPR": "https://github.com/Dinu-Sri/bookone-qa/pull/74",
+  "initialResultsCommit": "03318a66e53d787625f9c6b436db793a3c0d68e7",
+  "executionQaSha": "73879775fd1227500c10496d86563f020dcc4cfe",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 2961736,
+    "pausedMs": 21453,
+    "totalMs": 7200000,
+    "reserveMs": 1200000,
+    "lastAt": 1792935553075
+  },
+  "closedAtUTC": "2026-10-25T13:39:13.075000+00:00",
+  "chargedMinutes": 49.362,
+  "counts": {
+    "passed": 10,
+    "blocked": 27,
+    "failed": 0,
+    "pending": 0,
+    "running": 0
+  },
+  "businessWrites": 0,
+  "unresolvedMainIntents": 0,
+  "closingBoundary": "33 settings controls and32 accountrows unchanged;155journals/17708.11 andagingunchanged;viewport1920x855samebuild;completeoriginalstockbeforeafter unavailable,ENDblocked.",
+  "metadataTail": "This close record, report pointers, commit/ref update and link checks are documentation-only after clockclose; no browser/business action and no inferred idle subtraction. Initial results PR publication was charged."
+}

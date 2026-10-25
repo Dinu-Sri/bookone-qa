@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261025-light08-exec2",
+  "status": "execution-complete-partially-blocked",
+  "candidate": {
+    "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+    "liveStamp": "v2.5.22 \u00b7 211771e",
+    "qaCheckoutSha": "73879775fd1227500c10496d86563f020dcc4cfe",
+    "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+    "review": "reviews/REVIEW-20261025-pr72.md",
+    "publicationPR": 73
+  },
+  "hashes": {
+    "rules": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "library": "a18153cf65aa140b2ac71cd52b47faef142a51756967fb749581d93e326f7015",
+    "ux": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "businessWrites": 0,
+  "settingsSaved": false,
+  "guard": {
+    "actualPositiveCalls": 1,
+    "title": "BookOne",
+    "consumedClaims": 1,
+    "negativeControls": 4,
+    "negativeCalls": 0,
+    "negativeClaims": 0
+  },
+  "cases": [
+    {
+      "id": "L08-GATE",
+      "status": "passed",
+      "actual": "Fresh root connected Browser observation at staging showed v2.5.22 \u00b7 211771e, title BookOne, viewport1920x855 and en DOM language. Exact full product commit verified independently through GitHub; no image/schema attestation. New ledger initialized before session action, source identical to reviewed executable pin."
+    },
+    {
+      "id": "L08-ACTOR",
+      "status": "blocked",
+      "actual": "Fresh original fixture login with Remember off and expected Owner/company verified. Complete sales/purchase/inventory settings, CoA, journal155, P&L, trial/BS and AR/AP aging captured anew. Financial gate incomplete: full current catalogue/stock movement layer and current-period lock/capability evidence not qualified through supported UI. No business writes. Intended actor/source read-only lane independently established."
+    },
+    {
+      "id": "L08-GUARD",
+      "status": "passed",
+      "actual": "Exact published checkout source unchanged. Fresh full37-case synthetic positive invoked actual connected Browser js exactly once and returned BookOne; one consumed durable claim. Rejected exit/missing intent/changed fingerprint/expired clock each zero calls/claims. Technical gate only; ACTOR full financial gate remains blocked."
+    },
+    {
+      "id": "L08-PL-D",
+      "status": "passed",
+      "actual": "Desktop1920x855 own purchase list row Archive opened three times and cancelled via Escape, explicit Cancel and backdrop. Initial Cancel focus, Tab/ShiftTab wrap contained, each close exact same surviving row Actions (not BODY/HTML); row status/amount/10visible rows and11total unchanged. Never confirmed Archive/Delete."
+    },
+    {
+      "id": "L08-PL-390",
+      "status": "passed",
+      "actual": "Narrow390x855 own purchase list row Archive opened three times and cancelled via Escape, explicit Cancel and backdrop. Initial Cancel focus, Tab/ShiftTab wrap contained, each close exact same surviving row Actions (not BODY/HTML); row status/amount/10visible rows and11total unchanged. Never confirmed Archive/Delete."
+    },
+    {
+      "id": "L08-QL-D",
+      "status": "passed",
+      "actual": "Desktop1920x855 eligible preserved draft quotation row Archive cancelled by Escape/Cancel/backdrop; all three returned exact same surviving Actions, initialCancel and bidirectional trap correct, draft10/sevenrows unchanged. First converted600 row had onlyOpen and was ineligible for Archive; initial locator timeout preserved privately, no write or retry submission."
+    },
+    {
+      "id": "L08-QL-390",
+      "status": "passed",
+      "actual": "Narrow390x855 eligible quotation Archive Escape/Cancel/backdrop returned exact same row Actions; initialCancel, bidirectional trap, draft10/sevenrows unchanged."
+    },
+    {
+      "id": "L08-DETAIL-D",
+      "status": "passed",
+      "actual": "Desktop own purchase detail, eligible quotation detail and existing customer inline Archive confirmations all initialCancel, Tab/ShiftTab containment and Escape/Cancel exactmountedtrigger restore; source text unchanged. No confirmation or business write."
+    },
+    {
+      "id": "L08-DETAIL-390",
+      "status": "passed",
+      "actual": "Narrow390x855 own purchase detail, eligible quotation detail and existing customer inline Archive confirmations all initialCancel, Tab/ShiftTab containment and Escape/Cancel exactmountedtrigger restore; source text unchanged. No confirmation or business write."
+    },
+    {
+      "id": "L08-HELP-D",
+      "status": "blocked",
+      "actual": "Desktop actual paid sales-return keyboard ShiftTab/focus and pointer help correct; Escape dismisses preserving focus, tooltip fitslayout with8pxgutters/no horizontal scroll. Paid source/credit1 and original invoice6.95 settled0 verified; invoice paid positive keyboard/pointer correct. Required real PARTIAL return not located in inspected list scope; no old return altered or new credit created. Fullcase cannotpass."
+    },
+    {
+      "id": "L08-HELP-320",
+      "status": "blocked",
+      "actual": "At320x855 actualpaid return andinvoice keyboard/pointer/Escape pass; layout305px no horizontaloverflow and8pxgutters. Required persistedpartial return remainsunqualified;fullcaseblocked."
+    },
+    {
+      "id": "L08-HELP-390",
+      "status": "blocked",
+      "actual": "At390x855 actualpaid return andinvoice keyboard/pointer/Escape pass;layout375px nohorizontaloverflow and8pxgutters. Requiredpartialreturn unqualified;fullcaseblocked."
+    },
+    {
+      "id": "L08-SOURCE",
+      "status": "passed",
+      "actual": "Existing order600 listView and ActionsOpen reach same supported detail. Visible Sourcequotation:number/type link keyboardTabfocus+Enter resolves exact original ownconvertedquotation600; browserBack returns exact order. Party,6x100,date/due/notes,status/nonposting preserved. Shared paidreturnsourceinvoice link keyboardEnter resolves ownpaidinvoice6.95/0remaining. No orderPrint exposed,conversion or business write."
+    },
+    {
+      "id": "L08-PHYSICAL",
+      "status": "blocked",
+      "actual": "No freshly qualified full Inventory writer. Intended Owner role and viewable settings do not prove Inventory write authority; no setup/Save or grant attempted. Independently qualified digital/service fullfinancial prerequisites also incomplete."
+    },
+    {
+      "id": "L08-FIXTURES",
+      "status": "blocked",
+      "actual": "GUARD technical proof passed; new S/P financial family setup not qualified because ACTOR fullcurrentcatalogue/classification/stock/period/capability layers incomplete. Fresh settings VATfalse/approvalfalse andaccountpurposes verified;liquid0. No NEW source created, financialSave/Post/Convert or payment attempted."
+    },
+    {
+      "id": "L08-SALE",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-S-JOURNAL",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-RECEIVE",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-CREDIT",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-C-PRINT",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-AR-OVER",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-AR-CLOSE",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-S-HISTORY",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-S-REPORTS",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-BILL",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-P-JOURNAL",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-PAY",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-AP-OVER",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-AP-CLOSE",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-P-HISTORY",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-P-REPORTS",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-COMBINED",
+      "status": "blocked",
+      "actual": "Not executed: full ACTOR/NEW financial FIXTURES gates did not pass. No NEW S/P source or business submission. Technical GUARD passed; zero funding at opening. Protected historical S/P/Q/order/D never reused."
+    },
+    {
+      "id": "L08-AGING",
+      "status": "blocked",
+      "actual": "Read-only oldsource aging closing obtained atsame2026-10-25 scope;AR1906.21/AP1490 andoldopen600/200 preserved. NEW S/P families not created, so required freshsource settlement/absence assertions notexecuted. No financialsubmissions."
+    },
+    {
+      "id": "L08-STOCK",
+      "status": "blocked",
+      "actual": "No operator business writes. Current catalogue10 andstocklevels780/stockledger read later using source-verified inventory/products,inventory/levels,inventory/ledger routes;these are recoveryobservations, not retroactive opening evidence. Fullbefore/afterstockcomparison unavailable;knownInventoryGL660stock780gap120preserved,notrepaired."
+    },
+    {
+      "id": "L08-DRILLDOWN",
+      "status": "blocked",
+      "actual": "Zero NEW acceptedfinancialevents andzero financialsubmissions. Freshjournal155/Dr=Cr17708.11 observed;new7eventjournal/source/audit assertions cannotexecute without qualified NEW S/Pfamilies. Existingprotectedjournals notsubstitutes."
+    },
+    {
+      "id": "L08-GAPS",
+      "status": "passed",
+      "actual": "Acceptance gaps retained explicitly: orderPrint absent in actualorderUI;no list/trialexport or businessdocumentactor/history acceptance. CashbookCSV/reconJSON remain separate scopedworkflows,backup/restoreLASTnotrun. MissingInventorywriter,realroles/foreignrecords/runtime,busy/late,authenticupgrade,AT/POS/rental remainblocked,notinferredfromsourceorUI. Light07L07-SALEfailed13/1/22 andrun1harnessfailure immutable."
+    },
+    {
+      "id": "L08-END",
+      "status": "blocked",
+      "actual": "Settings24/7/2 and32accounts matched; journal155,total17708.11,AR/AP unchanged; original complete stock before/after unavailable. Viewport1920x855 and sameendstamp. Zero business accepted; two auth accepted. Publication clock finalized separately."
+    }
+  ],
+  "closing": {
+    "settings": {
+      "sales": {
+        "openingCount": 24,
+        "closingCount": 24,
+        "equal": true,
+        "differences": {}
+      },
+      "purchase": {
+        "openingCount": 7,
+        "closingCount": 7,
+        "equal": true,
+        "differences": {}
+      },
+      "inventory": {
+        "openingCount": 2,
+        "closingCount": 2,
+        "equal": true,
+        "differences": {}
+      }
+    },
+    "accounts": {
+      "openingCount": 32,
+      "closingCount": 32,
+      "equal": true,
+      "differences": {}
+    },
+    "journal": {
+      "openingEntries": 155,
+      "closingEntries": 155,
+      "openingDebitCredit": "17708.11",
+      "closingDebitCredit": "17708.11",
+      "same": true,
+      "boundary": "Journal total debits and integrity All entries balance; no new accepted business events."
+    },
+    "closing": {
+      "AR": "1906.21",
+      "AP": "1490",
+      "cashBankCard": "0",
+      "inventoryGL": "660",
+      "assets": "2566.21",
+      "earnings": "1029.50",
+      "stamp": "v2.5.22 \u00b7 211771e",
+      "viewport": [
+        1920,
+        855
+      ]
+    },
+    "lateRecovery": {
+      "catalogueProducts": 10,
+      "stockValue": "780",
+      "routes": [
+        "/inventory/products",
+        "/inventory/levels",
+        "/inventory/ledger"
+      ],
+      "meaning": "Late source-verified supported-route observations; no comparable original opening, no retroactive ACTOR/FIXTURES/STOCK pass. Navigation/preflight limitation belongs to operator, not product route absence."
+    },
+    "businessAccepted": 0,
+    "mainAuthIntentsAccepted": 2,
+    "protectedSources": "Q/order600 and draft100 unposted; original open invoice600 and bill200 untouched.",
+    "endCase": "blocked: original complete stock opening unavailable",
+    "financialCasesBlocked": 17
+  },
+  "acceptance": {
+    "release": false,
+    "canonical": false,
+    "AT": false
+  },
+  "modelAndCosts": {
+    "browserExecution": "root context; child performed offline evidence bookkeeping and summarization",
+    "childInterruption": "originating Browser context unavailable, later capacity gap; root assumed execution and ledger",
+    "credits": "unavailable",
+    "savingsClaimed": false
+  },
+  "counts": {
+    "passed": 10,
+    "blocked": 27,
+    "failed": 0,
+    "inconclusive": 0,
+    "pending": 0,
+    "running": 0,
+    "not-run": 0
+  },
+  "publication": {
+    "PR": 74,
+    "url": "https://github.com/Dinu-Sri/bookone-qa/pull/74",
+    "state": "initial-PR-published-and-links-verified-before-clock-close",
+    "chargedMs": 2961736,
+    "explicitPausedMs": 21453,
+    "closedAtUTC": "2026-10-25T13:39:13.075000+00:00",
+    "clockRecord": "runs/CLOSE-20261025-light08-exec2.json",
+    "metadataTail": "Final closing-record commit/ref/link checks after clockclose;documentation-only,uncharged,no browser/business action"
+  }
+}
