@@ -1,6 +1,6 @@
 # Light08 EXEC3 — next Sol Light mission
 
-Execution QA checkout: the exact full published commit supplied in the PR and continuation prompt. Product **v2.5.22 · 211771e**, full **211771e95d6f97cac5eb281a0f8e63f0fceef8a4**. Reviewed executable code **fc79951208e9dbc7272464e11405cebcf693c511**, unchanged. Publication may add metadata after the execution checkout; use the exact execution commit above, never floating HEAD. This is a NEW conditional mission, not continuation of terminal EXEC2.
+Execution QA checkout: **2d43963978d2d3f619afcf9cfa77ad74cd079276**. Product **v2.5.22 · 211771e**, full **211771e95d6f97cac5eb281a0f8e63f0fceef8a4**. Reviewed executable code **fc79951208e9dbc7272464e11405cebcf693c511**, unchanged. This handoff is a metadata-only publication successor of that execution checkout. Read it from the publication PR, then execute the exact commit above, never floating HEAD. This is a NEW conditional mission, not continuation of terminal EXEC2.
 
 Read AGENTS.md, STATUS.md, SESSION.md, docs/COST_AWARE_QA.md, docs/CONNECTED_BROWSER_TRANSPORT.md, [review](../reviews/REVIEW-20261026-continuation.md), [queue](../queues/MISSION-v2522-LIGHT-08-EXEC3.json), [preflight](../queues/PREFLIGHT-v2522-LIGHT-08-EXEC3.json) and unchanged [oracle](../queues/ORACLE-v2522-LIGHT-08.json). Read relevant case rules as packed; avoid rereading unrelated histories.
 
