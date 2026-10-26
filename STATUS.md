@@ -1,5 +1,5 @@
-# EXEC3 run1 terminal — 26 October 2026
+# EXEC3 Medium review — 26 October 2026
 
-4passed/28blocked; zero business/configuration writes. ActualGUARD/freshoriginalidentity passed;95returns/10pages allpaid. Finance blocked on unqualified current-period lock/full-form/protected-source preflight. No new product defect established.
+Period-lock readback located and source/UI verified at /transactions; October rows currently Open. EXEC3 frozen4passed/28blocked. No product fix established.
 
-[Run](runs/RUN-20261026-light08-exec3-run1.md), [checks](runs/CHECKS-20261026-light08-exec3-run1.json), [next Medium qualification handoff](handoffs/CODING-MISSION-20261026-light08-exec3-run1.md). Do not repeat terminal queue. Historical records preserved; no merge/deploy. BackupLAST.
+Next: Medium completes full-form/protected-source qualification and partial-return semantics before a smaller financial Light mission. [Review and exact next work](reviews/REVIEW-20261026-exec3-medium.md). Historical results unchanged; no business writes. No merge/deploy. BackupLAST.

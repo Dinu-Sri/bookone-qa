@@ -1,5 +1,3 @@
-# EXEC3 run1 terminal — 26 October 2026
+# Current continuation
 
-4passed/28blocked; zero business/configuration writes. ActualGUARD/freshoriginalidentity passed;95returns/10pages allpaid. Finance blocked on unqualified current-period lock/full-form/protected-source preflight. No new product defect established.
-
-[Run](runs/RUN-20261026-light08-exec3-run1.md), [checks](runs/CHECKS-20261026-light08-exec3-run1.json), [next Medium qualification handoff](handoffs/CODING-MISSION-20261026-light08-exec3-run1.md). Do not repeat terminal queue. Historical records preserved; no merge/deploy. BackupLAST.
+Read reviews/REVIEW-20261026-exec3-medium.md. Supported period-lock readback is /transactions Review Open/Locked, derived from current tenant/month lock rows. Fresh readback required per mission. Full-form/protected-source and partial-return fixture qualification remain; no new financial queue authorized by this diagnostic review. Keep EXEC3 terminal4/28 and all history immutable.
