@@ -1,0 +1,179 @@
+{
+  "queue": "MISSION-v2522-LIGHT-09-FINANCE",
+  "qaSha": "f00332fb2434b6a0b9b9b9de3f88357b3d15eeb5",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "dispositions": [
+    {
+      "id": "L08-GATE",
+      "status": "passed",
+      "actual": "Exact cleancheckout f00332f;new120/20clock and26slotledger beforebrowser/session;freshstampv2.5.22 \u00b7211771e;fullproductSHApinned;rule/libraryhashesbound."
+    },
+    {
+      "id": "L08-GUARD",
+      "status": "passed",
+      "actual": "Fresh61tests passed;actualtitleBookOne1call1claim;exit/intent/fingerprint/clock0calls0claims through unchanged codehost."
+    },
+    {
+      "id": "L08-IDENTITY",
+      "status": "passed",
+      "actual": "Fresh originalfixture logout/login;Rememberoff;ownQAcompany andOwnerloaded;TeamcurrentuserOwner,allrelevant exceptionsInherit."
+    },
+    {
+      "id": "L08-ACTOR",
+      "status": "passed",
+      "actual": "ActualaccesspreviewCaneditSalesInvoices/ReceivePayments/SalesReturns/Purchases/PayVendors;Productsviewonly. Fresh5forms,full24/7/2settings,32accounts,10catalogue/7stocklines780/all31movementrows,155journal17708.11,trial/P&L/BS/AR1906.21/AP1490;OctoberOpenlockbadge;all5protectedownsource details captured privately. No grants."
+    },
+    {
+      "id": "L08-FIXTURES",
+      "status": "passed",
+      "actual": "NEWplanned S aliasL09R1-S digitalM16existing6x100600,commerciallocalnoVAT,ownexistingcustomer;P manualservice1x200expense6800existingvendor;cash1000qualifiedliquidopening0;dates26Oct;approvalfalse;no source saved yet. ProtectedoldrecordsReadOnly."
+    },
+    {
+      "id": "L08-SALE",
+      "status": "passed",
+      "actual": "NEW digital6x100600postedonce;sourceopen600;exactjournalDrAR600CrSales600,noVAT/COGS stock line.26Oct."
+    },
+    {
+      "id": "L08-S-JOURNAL",
+      "status": "passed",
+      "actual": "Independent source-linked journal Dr1300 600 Cr4000 600;newoneevent,correct26Octcompany;oldinvoice600untouched."
+    },
+    {
+      "id": "L08-RECEIVE",
+      "status": "passed",
+      "actual": "One250receiptto1000Cash,NEWINV47remaining350;oneexactpaymentjournal26Oct;revenue600unchanged."
+    },
+    {
+      "id": "L08-CREDIT",
+      "status": "passed",
+      "actual": "Linkedoneunitcredit100atOriginal100;source600withreceipt250+credit100nowdue250;onecorrect100journal,nostock. Original6less1remaining5."
+    },
+    {
+      "id": "L08-C-PRINT",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-AR-OVER",
+      "status": "passed",
+      "actual": "OrdinaryUI251over250refusedwithactionablefeedback,fullfieldretention,source/journalzeroeffects. UIrefusallayer;server-sideauthorization/forcedrequestnotcertified."
+    },
+    {
+      "id": "L08-AR-CLOSE",
+      "status": "passed",
+      "actual": "Sameformonlyamountcorrected250;oneadditionalreceipt250;source0;cash+500;netrevenue500."
+    },
+    {
+      "id": "L08-S-HISTORY",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-S-REPORTS",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-BILL",
+      "status": "passed",
+      "actual": "NEWmanualservicePUR12posted200;existingvendor;allfields/ref/26Oct;J160Dr6800Cr2100200,noVATstock."
+    },
+    {
+      "id": "L08-P-JOURNAL",
+      "status": "passed",
+      "actual": "IndependentNEWPUR12sourcebalance200;exactJ160DrExpense6800200CrAP2100200;oldobligationsunchanged;nostock."
+    },
+    {
+      "id": "L08-PAY",
+      "status": "passed",
+      "actual": "Fundingactualcash500verified>=200;one80paymentonlyNEWbill;due120expense200unchanged."
+    },
+    {
+      "id": "L08-AP-OVER",
+      "status": "passed",
+      "actual": "121over120refusedordinaryUI;allfieldsretained;source/journalzeroeffects;UIlayer,notserverdenycertification."
+    },
+    {
+      "id": "L08-AP-CLOSE",
+      "status": "passed",
+      "actual": "Sameformonlyamount121corrected120;oneadditionalpayment120;source0,paymentstotal200,expense200unchanged."
+    },
+    {
+      "id": "L08-P-HISTORY",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-P-REPORTS",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-COMBINED",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-AGING",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-STOCK",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-DRILLDOWN",
+      "status": "not-run",
+      "actual": "Resume found unpaused clock beyond120minutes;31.14minute checkpoint preserved;no new business. Required full assertions unfinished; closing observations separate.",
+      "nextAction": "Medium review existing seven events and complete read-only missing assertions in separately budgeted mission; never replay money."
+    },
+    {
+      "id": "L08-END",
+      "status": "inconclusive",
+      "actual": "Read-only recovery: same v2.5.22 stamp; J162 total19308.11; all trial deltas match1600/+300oracle; AR/AP rows unchanged;24/7/2settings,10catalogue,7stocklines and31movementrows unchanged;protectedinvoice/bill exact. Closing quote/order/draft full comparison and viewport baseline not completed. Clock unpaused gap exceeded120min; original fingerprint retained pending labels. No replay or restoration write.",
+      "nextAction": "Medium independently reviews control attribution and completes remaining read-only layers in new budget; no financial replay."
+    }
+  ],
+  "counts": {
+    "passed": 16,
+    "not-run": 9,
+    "inconclusive": 1
+  },
+  "unresolvedSubmissions": 0,
+  "historicalAcceptedFinancialEvents": 7,
+  "closingObserved": {
+    "journalCount": 162,
+    "debitsAndCredits": "19308.11",
+    "deltaDrCr": "1600",
+    "cash": "300",
+    "netIncome": "1329.50",
+    "assets": "2866.21",
+    "AR": "1906.21",
+    "AP": "1490",
+    "settingsMatch": [
+      24,
+      7,
+      2
+    ],
+    "catalogueRows": 10,
+    "stockMovementRows": 31,
+    "preservedStockGLGap": "120"
+  },
+  "acceptance": "not-established",
+  "controlReviewRequired": [
+    "unpaused budget overrun",
+    "pending actor/configuration fingerprint labels",
+    "historical GUARD proof attribution",
+    "missing full closing layers"
+  ]
+}

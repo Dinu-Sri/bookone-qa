@@ -1,0 +1,36 @@
+{
+  "additiveOnly": true,
+  "canonicalAcceptance": false,
+  "run": "runs/RUN-20261026-light09-finance-run1.md",
+  "originalLedgerPasses": [
+    "L08-GATE",
+    "L08-GUARD",
+    "L08-IDENTITY",
+    "L08-ACTOR",
+    "L08-FIXTURES",
+    "L08-SALE",
+    "L08-S-JOURNAL",
+    "L08-RECEIVE",
+    "L08-CREDIT",
+    "L08-AR-OVER",
+    "L08-AR-CLOSE",
+    "L08-BILL",
+    "L08-P-JOURNAL",
+    "L08-PAY",
+    "L08-AP-OVER",
+    "L08-AP-CLOSE"
+  ],
+  "missing": [
+    "L08-C-PRINT",
+    "L08-S-HISTORY",
+    "L08-S-REPORTS",
+    "L08-P-HISTORY",
+    "L08-P-REPORTS",
+    "L08-COMBINED",
+    "L08-AGING",
+    "L08-STOCK",
+    "L08-DRILLDOWN"
+  ],
+  "end": "inconclusive",
+  "controlReviewRequired": true
+}
