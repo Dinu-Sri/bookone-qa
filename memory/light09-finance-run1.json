@@ -1,0 +1,11 @@
+{
+  "run": "runs/RUN-20261026-light09-finance-run1.md",
+  "handoff": "handoffs/CODING-MISSION-20261026-light09-finance-run1.md",
+  "counts": {
+    "passed": 16,
+    "not-run": 9,
+    "inconclusive": 1
+  },
+  "controlReviewRequired": true,
+  "next": "Medium read-only completion; never replay seven financial events"
+}
