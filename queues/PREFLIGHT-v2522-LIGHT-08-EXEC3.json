@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2522-LIGHT-08-EXEC3",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "readOnlyPreparation": true,
+  "previousEvidence": "runs/CHECKS-20261025-light08-exec2-results.json",
+  "hardStop": "No financial Save/Post/Convert/receipt/credit/payment until GATE, IDENTITY, full ACTOR, actual GUARD and FIXTURES all passed. No unresolved mission intent; check charged clock at each dispatch. Missing physical writer blocks physical families only; never waive actual digital/service capability or complete openings.",
+  "openingChecklist": [
+    {
+      "id": "identity",
+      "required": "Original private fixture; fresh explicit login; Remember off; loaded own identity/company/job/module context; no unrelated autofill."
+    },
+    {
+      "id": "settings",
+      "required": "Complete current sales/purchase/inventory maps, every field and actual value; same maps at close. Historical24/7/2 counts are hints only. No settings change."
+    },
+    {
+      "id": "accounts-period",
+      "required": "Every CoA account row/purpose/status, actual AR/AP/revenue/returns/expense/liquid/inventory/GRNI/VAT/COGS mapping; current-period locks from supported UI. No assumed open period or copied old date."
+    },
+    {
+      "id": "inventory",
+      "routes": [
+        "/inventory/products",
+        "/inventory/levels",
+        "/inventory/ledger"
+      ],
+      "required": "Verify current supported navigation and exact source route. Capture all catalogue IDs privately, actual class/Standard/sellable facts, locations, quantities/costs/values and all relevant movement pages under declared filters. Empty filtered page is not complete opening. No master Save or quick-create."
+    },
+    {
+      "id": "finance",
+      "required": "Journal entries and lines/totals, trial balance all rows, P&L, balance sheet incl current earnings, cash/bank, AR/AP aging and old sources under identical as-of/currency/tenant/dimensions. Paginate all required rows; retain baseline privately."
+    },
+    {
+      "id": "capabilities",
+      "required": "Read actual supported capability/job/module context and relevant full forms without saving: invoice/digital selection, linked return, receipts, manual-service bill/payments. Record UI versus runtime authorization boundaries separately. PHYSICAL is separate, never a workaround."
+    },
+    {
+      "id": "protected",
+      "required": "Original converted quote/order600, unposted draft100, open invoice600 and bill200: private exact identities, fields/status/allocations/remaining/source facts. READ-ONLY forever in this mission."
+    },
+    {
+      "id": "families",
+      "required": "NEW run-owned S digital6x100 and P manual service1x200, existing own parties/product, unchanged VATregistrationfalse/purchaseapprovalfalse. Register input and account purposes; no source creation until SALE/BILL."
+    },
+    {
+      "id": "funding",
+      "required": "Actual liquid opening plus independently accepted NEW S receipts; >=200 before any vendor payment. Opening0 alone does not block the sale/receipt lane; no deposit/top-up/grant/negative workaround."
+    }
+  ],
+  "historicalReferenceOnly": {
+    "journalEntries": 155,
+    "journalDrCr": "17708.11",
+    "AR": "1906.21",
+    "AP": "1490",
+    "liquid": "0",
+    "inventoryGL": "660",
+    "lateStockValue": "780",
+    "knownStockGLGap": "120",
+    "meaning": "25Oct observations, never current baseline. Preserve discrepancy; no repair. Any new unexplained delta stops affected submissions."
+  },
+  "costControl": {
+    "openingCheckpointMinutes": 30,
+    "meaning": "At30 charged minutes persist exactly qualified/missing cells. This is a checkpoint, not permission to waive gates or silently stop. If a genuine blocker exists, disposition dependent cases without browser attempts and continue independent read-only cases. Stop new business at100; closing20.",
+    "partialScanMaxMinutes": 10,
+    "partialScanMaxPages": 12,
+    "repeatFullSuite": false,
+    "modelSelection": "User manually selects Sol Light; no paid service/model routing configured."
+  },
+  "fullSuccessOracle": "queues/ORACLE-v2522-LIGHT-08.json",
+  "closing": "Compare every original opening row/scope to closing plus confirmed accepted-branch deltas. No inferred7events or1600 unless all required events actually accepted; retain stock/GL gap and failed fixtures. Backup/restore LAST."
+}

@@ -1,4 +1,18 @@
 {
+  "latestMissionPreparation": {
+    "date": "2026-10-26",
+    "queue": "queues/MISSION-v2522-LIGHT-08-EXEC3.json",
+    "handoff": "handoffs/HANDOFF-20261026-light08-exec3.md",
+    "review": "reviews/REVIEW-20261026-continuation.md",
+    "checks": "runs/CHECKS-20261026-continuation.json",
+    "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+    "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+    "slots": 32,
+    "executed": false,
+    "status": "conditional-finance-requires-fresh-full-preflight",
+    "model": "manual-user-selection-Sol-Light",
+    "historicalResultsUnchanged": true
+  },
   "latestBrowserExecution": {"date": "2026-10-25", "executionSha": "73879775fd1227500c10496d86563f020dcc4cfe", "run": "runs/RUN-20261025-light08-exec2.md", "checks": "runs/CHECKS-20261025-light08-exec2-results.json", "handoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md", "passed": 10, "blocked": 27, "businessWrites": 0, "releaseAcceptance": "not-established"},
   "latestHarnessReview": {"date": "2026-10-25", "review": "reviews/REVIEW-20261025-pr72.md", "executableSha": "fc79951208e9dbc7272464e11405cebcf693c511", "nextQueue": "queues/MISSION-v2522-LIGHT-08-EXEC2.json", "businessExecution": "not-run", "releaseAcceptance": "not-established"},
   "schemaVersion": 1,
@@ -145,7 +159,7 @@
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/HANDOFF-20261016-v2511-results.md",
+  "currentCodingHandoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
     "BUG-0044",
