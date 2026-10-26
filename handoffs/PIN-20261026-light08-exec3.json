@@ -1,0 +1,11 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08-EXEC3",
+  "executionQaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276",
+  "executionTree": "8e2158f345a737688a1ddae48220c949bb6e3421",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "queue": "queues/MISSION-v2522-LIGHT-08-EXEC3.json",
+  "handoff": "handoffs/HANDOFF-20261026-light08-exec3.md",
+  "publicationMeaning": "This pin and exact handoff are metadata-only successors. Read them before checking out executionQaSha. Never resume terminal EXEC2.",
+  "executionStatus": "not-run"
+}
