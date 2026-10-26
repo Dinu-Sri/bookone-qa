@@ -1,0 +1,20 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08-EXEC3",
+  "executionQaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276",
+  "resultsPR": 76,
+  "resultsCommit": "f93ba1589ba50c683df9f16800775177ccbd459a",
+  "clock": "closed-after-PR-publication-and-three-file-link-verification",
+  "chargedMs": 790679,
+  "explicitPausedMs": 0,
+  "totalMinutes": 120,
+  "closingReserveMinutes": 20,
+  "counts": {
+    "passed": 4,
+    "blocked": 28
+  },
+  "businessWrites": 0,
+  "unresolvedIntents": 0,
+  "fullReconciliation": "blocked-missing-full-qualification",
+  "metadataTail": "This closing-record commit and verification are documentation only after clock close; no browser/business actions.",
+  "historicalResults": "unchanged"
+}
