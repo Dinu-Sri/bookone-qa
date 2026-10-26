@@ -1,4 +1,5 @@
 {
+  "latestExec3Results": {"date": "2026-10-26", "run": "runs/RUN-20261026-light08-exec3-run1.md", "handoff": "handoffs/CODING-MISSION-20261026-light08-exec3-run1.md", "qaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276", "passed": 4, "blocked": 28, "businessWrites": 0, "next": "Medium supported period-lock/full-form/protected-source qualification; authentic partial fixture before new Light queue"},
   "latestMissionPreparation": {
     "date": "2026-10-26",
     "queue": "queues/MISSION-v2522-LIGHT-08-EXEC3.json",
