@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "kind": "additive-partial-evidence-only",
+  "run": "runs/RUN-20261027-light10-desktop-recovery.md",
+  "missionCases": [
+    {
+      "id": "L10-GATE",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-GUARD",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-IDENTITY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-SOURCES",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-CREDITPRINT",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-SHISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-PHISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-JOURNALS",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-SREPORTS",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-PREPORTS",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-COMBINED",
+      "status": "inconclusive"
+    },
+    {
+      "id": "L10-AGING",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-STOCK",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-PROTECTED",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-SETTINGS",
+      "status": "blocked"
+    },
+    {
+      "id": "L10-END",
+      "status": "inconclusive"
+    }
+  ],
+  "canonicalCasesAccepted": [],
+  "boundary": "No historical evidence mapping or canonical acceptance changed; current partial observations only."
+}
