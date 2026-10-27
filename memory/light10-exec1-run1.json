@@ -1,0 +1,12 @@
+{
+  "run": "runs/RUN-20261027-light10-exec1-run1.md",
+  "handoff": "handoffs/CODING-MISSION-20261027-light10-exec1-run1.md",
+  "executionQaSha": "3e57f1efaf5bcb3dd9d079be716b19404acf2c13",
+  "counts": {
+    "passed": 3,
+    "inconclusive": 2,
+    "notRunBudget": 11
+  },
+  "businessWrites": 0,
+  "accepted": false
+}
