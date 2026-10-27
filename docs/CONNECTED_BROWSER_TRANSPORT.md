@@ -1,5 +1,7 @@
 # Connected Browser host transport
 
+Rapid Cycle01 has a separately qualified direct-module desktop surface in [DESKTOP_CUA_TRANSPORT.md](DESKTOP_CUA_TRANSPORT.md). Its new queue explicitly uses actual mcp__cua_repl.js and persisted UI dispatch; historical queues and the transport requirements below remain unchanged. Do not apply that new path retroactively or count UI dispatches as outer tool calls.
+
 Status: portable bounded prepare/claim exchange independently reviewed in reviews/REVIEW-20261025-pr72.md after QA-HARNESS-L08-EXEC-01. Actual connected Browser tool still required at L08-GUARD. Historical Light07 and parent Light08 records are unchanged.
 
 `operator-browser-host.mjs` handles persisted files. `operator-browser-transport.mjs` runs in the tool host and receives the actual connected Browser app `js` callback. Neither creates a Playwright driver, HTTP client, or browser connection.

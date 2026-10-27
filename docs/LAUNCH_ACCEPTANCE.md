@@ -1,5 +1,9 @@
 # BookOne launch acceptance register
 
+## Current execution cycle — Rapid01, 27 October 2026
+
+[Sol Light handoff](../handoffs/HANDOFF-20261027-rapid-cycle01-sol-light.md) selects41checkpoints across physical purchasing/stock/sales/returns/settlement, digital, delivered service and mixed trading. Use fresh current openings and new source documents; collect one consolidated defect batch and retest fixes plus adjacent workflows. The mission is conditionally executable after its actual guard/actor/profile/source gates. Preparation is not execution or launch acceptance. Missing cash-refund/rental fixtures/controls, receipt/remittance/audit layers, real role/tenant/races/faults, upgrades and archive/recovery remain explicit future acceptance work. No narrower launch scope or overall pass percentage is approved by this cycle.
+
 This register explains the existing machine-readable gates in [customer-readiness.json](../memory/customer-readiness.json). Gate status and evidence links live there; this document defines how to decide acceptance. Passing test percentages are not a readiness percentage. All requested physical, service/digital, rental and mixed scope remains required. No narrower launch scope has been approved.
 
 ## Required gate evidence

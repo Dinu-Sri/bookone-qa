@@ -21,8 +21,8 @@ function sources() {
     if (a < 0 || b <= a) throw Error('Pinned runtime source layout changed; review required');
     return source.slice(a, b).replaceAll('export function ', 'function ').replaceAll('export async function ', 'async function ');
   };
-  const runtimeSource = extract(queue, 'const required =', 'if(process.argv[1]') +
-    extract(clock, 'export function openClock', 'if(process.argv[1]') +
+  const runtimeSource = extract(queue, 'const required =', '// CLI ENTRYPOINT') +
+    extract(clock, 'export function openClock', '// CLI ENTRYPOINT') +
     extract(action, 'function deny(', 'function parseExitCode(') +
     '\nreturn {dispatchBrowserAppWrite, evaluateAuthorization};';
   return {runtimeSource, runtimeHash: hash(runtimeSource),
@@ -168,7 +168,7 @@ function confirm(file, sha256, bytesRaw, kind = 'prepare') {
     runtimeHash: prepared.runtimeHash, requestHash: prepared.requestHash, bytes: digest.bytes,
     planHash: prepared.planHash, fingerprintHash: prepared.fingerprintHash};
 }
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (typeof process !== 'undefined' && process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [command, file, argument, extra, digest] = process.argv.slice(2);
   try {
     const result = command === 'prepare' ? prepareEnvelope(file)
