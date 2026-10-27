@@ -1,0 +1,243 @@
+{
+  "reviewDate": "2026-10-27",
+  "reviewType": "Medium technical evidence review; no independent third-party or expert signoff",
+  "originalResultsCommit": "7572c5f492126b8eb59461b10fbb9f42093259bf",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "dispatchAudit": [
+    {
+      "case": "L08-SALE",
+      "submission": "l09-sale-post-1",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 9.603333333333333,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-RECEIVE",
+      "submission": "l09-receive-250",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 12.45365,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-CREDIT",
+      "submission": "l09-credit-100",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 17.78335,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-AR-OVER",
+      "submission": "l09-over-251",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 20.18113333333333,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-AR-CLOSE",
+      "submission": "l09-final-receive250",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 22.208316666666665,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-BILL",
+      "submission": "l09-bill200",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 25.249633333333332,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-PAY",
+      "submission": "l09-pay80",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 27.024766666666668,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-AP-OVER",
+      "submission": "l09-apover121",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 28.75345,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    },
+    {
+      "case": "L08-AP-CLOSE",
+      "submission": "l09-apfinal120",
+      "intentExit": 0,
+      "guardBindingValid": true,
+      "dependencyMissing": [],
+      "requestMatches": true,
+      "scriptHashMatches": true,
+      "claimFingerprintMatches": true,
+      "finishExecuted": true,
+      "finishCalls": 1,
+      "uncertain": false,
+      "status": "consumed",
+      "chargedMinutes": 30.4569,
+      "codeHostHashMatches": true,
+      "transportHashMatches": true
+    }
+  ],
+  "originalGuardProof": {
+    "validConsumedClaims": 1,
+    "finishCalls": 1,
+    "negativeClaimCounts": {
+      "exit": 0,
+      "intent": 0,
+      "fingerprint": 0,
+      "clock": 0
+    },
+    "limitation": "Durable receipts support recorded invocation counts; raw original connected-tool response/title and negative invocation transcript not retained in these files. No historical independent tool provenance certification."
+  },
+  "oracleCents": {
+    "debit": 160000,
+    "credit": 160000,
+    "signedAccountTotals": {
+      "AR": 0,
+      "sales": -60000,
+      "liquid": 30000,
+      "returns": 10000,
+      "expense": 20000,
+      "AP": 0
+    }
+  },
+  "historicalBudget": {
+    "lastBusinessDispatchChargedMinutes": 30.4569,
+    "closedChargedMinutes": 327.509,
+    "unpausedGapCharged": true,
+    "fullRunWithinBudget": false
+  },
+  "controlDisposition": {
+    "actorConfigurationFingerprint": "historical control acceptance incomplete; do not rewrite placeholders",
+    "moneyOutcome": "corroborated by persisted readbacks and closing reports; not full acceptance",
+    "original16Passes": "preserved as recorded, not independently recertified",
+    "newBusinessAuthorization": false
+  },
+  "nextConfigurationReferenceSha256": "056e58fc2d85694610f2167d879317c260c13d8581a805a75caf8c5f7135f3e6",
+  "tests": {
+    "command": "node --test tests/infrastructure/operator-queue.test.mjs tests/infrastructure/operator-action-guard.test.mjs tests/infrastructure/operator-browser-transport.test.mjs",
+    "tests": 70,
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0
+  },
+  "workbookImpact": "No rule, accounting policy, UX definition, executable adapter or product source change. Preserve existing stable rule-linked financial expectations; new queue only reads consumed sources.",
+  "queueStructuralChecks": {
+    "cases": 16,
+    "uniqueIds": true,
+    "allDependenciesExist": true,
+    "acyclic": true,
+    "recoveryEnd": true,
+    "originalRuleRefsRetained": true,
+    "syntheticInitializeAndGuard": true,
+    "fullShaMismatchRefused": true,
+    "executionReadyFalseNow": true
+  },
+  "activationBlocked": {
+    "browser": "originating connected-browser context unavailable before tab access",
+    "localProductObject": "pinned commit object absent in attempted local repository; no source attestation",
+    "liveObservedThisReview": false
+  },
+  "diagnosticClock": {
+    "scope": "Opened immediately before attempted fresh browser qualification; earlier offline review not timed by this clock",
+    "mode": "closed",
+    "chargedMinutes": 1.526,
+    "businessWrites": 0,
+    "publicationTail": "Review/queue publication follows this explicit diagnostic clock closure; no business or browser actions in tail."
+  },
+  "unchangedSourceHashCheck": {
+    "allMatch": true,
+    "sourceHashes": {
+      "scripts/operator-browser-codehost.mjs": "5b49276ea52d671031b61ef9cbf599c8274782ea94fcc0da7decc6d650b5454f",
+      "scripts/operator-browser-host.mjs": "bb43d576a505fe0abe6ae1c7edac3f41188c27cc4fe24dc457404386c0cbd5b5",
+      "scripts/operator-browser-transport.mjs": "3d9f9f9a8f7790f834a57a607813e4fe9bb4d6e902b62cde535f5cc5ea5325b9",
+      "scripts/operator-action-guard.mjs": "968866c9eb29d7e867ee7bbe6f15675dc44b1c404324b12bed55de1fe3fc7333",
+      "scripts/operator-clock.mjs": "e4f10bf7584c28e613133891c2be884280b7009371b3fd52413a3f2cfc65105c",
+      "scripts/operator-queue.mjs": "c324441b4f6ee9e108a60a97211bba1fa8be452535362b55e2e862d9f6f28268",
+      "rules/rulebook.json": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+      "workflows/library.json": "a18153cf65aa140b2ac71cd52b47faef142a51756967fb749581d93e326f7015",
+      "ux/workbook.json": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b",
+      "queues/ORACLE-v2522-LIGHT-08.json": "0fc09e1cc3d15d23da233c50289a374b1c125ff4a24384e6b445f48c3f7ad19c"
+    }
+  }
+}

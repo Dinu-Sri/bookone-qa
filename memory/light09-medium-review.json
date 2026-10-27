@@ -1,0 +1,10 @@
+{
+  "review": "reviews/REVIEW-20261027-light09-medium.md",
+  "checks": "runs/REVIEW-CHECKS-20261027-light09-medium.json",
+  "nextQueue": "queues/MISSION-v2522-LIGHT-10-READONLY.json",
+  "nextHandoff": "handoffs/HANDOFF-20261027-light10-readonly.md",
+  "nextExecutionReady": false,
+  "blocker": "Browser originating context unavailable; fresh live qualification required",
+  "historicalResultsImmutable": "runs/RUN-20261026-light09-finance-run1.md",
+  "nextAction": "Restore original connected Browser context; Medium verifies pinned live candidate and publishes new executable queue copy; no business replay"
+}

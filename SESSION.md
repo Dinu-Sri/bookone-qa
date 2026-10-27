@@ -1,5 +1,7 @@
-# Light09 FINANCE run1 recovered and closed
+# Light09 Medium review — 27 October 2026
 
-[Run](runs/RUN-20261026-light09-finance-run1.md), [checks](runs/CHECKS-20261026-light09-finance-run1.json), [handoff](handoffs/CODING-MISSION-20261026-light09-finance-run1.md).16originalpasses/9not-run-budget/1inconclusive;7events confirmed;+1600DrCr/+300cash-income-assets. No unresolved intents. Budget overrun and pending fingerprint labels require Medium review; missing print/history/fullclosing layers remain. Never replay finance. No merge/deploy/release acceptance. Backup LAST.
+[Review](reviews/REVIEW-20261027-light09-medium.md), [checks](runs/REVIEW-CHECKS-20261027-light09-medium.json), [next handoff](handoffs/HANDOFF-20261027-light10-readonly.md), [planning queue](queues/MISSION-v2522-LIGHT-10-READONLY.json).
 
-Portable continuation index: [Light09 memory](memory/light09-finance-run1.json). See [closed clock](runs/CLOCK-20261026-light09-finance-run1.json) for the publication metadata tail.
+Medium verified9durable submission chains within the execution threshold and independently reproduced1600/+300oracle;70focused harness tests passed. Original Light09 remains16recordedpasses/9not-run/ENDinconclusive.327.509minute full clock overrun and incomplete historical actor/configuration/tool provenance remain open. No finance replay or retrospective acceptance.
+
+Light10 has16read-only slots with90/15budget but executionReady=false. Browser originating context unavailable; no fresh live observation. Restore the original connected browser context; Medium must verify exact candidate and publish a NEW executable copy. Do not locally flip executionReady, use another browser, create fixtures or repeat financial actions. BackupLAST; no merge/deploy/release acceptance.
