@@ -1,0 +1,10 @@
+{
+  "review": "reviews/REVIEW-20261027-light10-activation.md",
+  "queue": "queues/MISSION-v2522-LIGHT-10-READONLY-EXEC1.json",
+  "handoff": "handoffs/HANDOFF-20261027-light10-exec1.md",
+  "conditionalReady": true,
+  "businessWritesAllowed": false,
+  "newBudgetMinutes": 90,
+  "reserveMinutes": 15,
+  "historicalLight09Immutable": true
+}
