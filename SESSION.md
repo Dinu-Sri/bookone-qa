@@ -1,5 +1,9 @@
-# Light10 EXEC1 run1 closed to new execution — 27 October 2026
+# Light10 desktop read-only recovery — 27 October 2026
 
-[Results](runs/RUN-20261027-light10-exec1-run1.md), [checks](runs/CHECKS-20261027-light10-exec1-run1.json), [coding handoff and remaining acceptance checklist](handoffs/CODING-MISSION-20261027-light10-exec1-run1.md).
+[Recovery results](runs/RUN-20261027-light10-desktop-recovery.md), [checks](runs/CHECKS-20261027-light10-desktop-recovery.json), [consolidated handoff](handoffs/CODING-MISSION-20261027-light10-desktop-recovery.md).
 
-3 recorded passes preserved,2inconclusive,11not-run-budget; zero unresolved session submissions, zero business writes. Active interrupted gap fully charged. Source qualification/print/history/audit/protected/reconciliation completion remains required in a fresh reviewed bounded run. Never replay seven Light09 events. No full acceptance/customer readiness. BackupLAST.
+Fresh current print/journal/report/aging/stock/protected/settings observations after owner manual login. All16diagnostic dispositions:7blocked/9inconclusive; zero formal case acceptance, zero business/configuration writes or unresolved submissions. Original guard/private baselines and receipt/remittance/audit layers remain open. No seven-event replay, merges or deployments. BackupLAST.
+
+Preserve [RUN1](runs/RUN-20261027-light10-exec1-run1.md), [RUN2](runs/RUN-20261027-light10-run2.md) and their original results/controls. The current recovery is not a repair of historical compliance.
+
+Standing owner approval for future sanitized QA publication to this repository is recorded in [publication authorization](docs/PUBLICATION_AUTHORIZATION.md). No repeated approval needed within that scope; public-data restrictions and no-merge/deploy boundaries remain.
