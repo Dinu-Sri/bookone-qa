@@ -1,6 +1,23 @@
 {
-  "nextLight09": {"queue":"queues/MISSION-v2522-LIGHT-09-FINANCE.json","handoff":"handoffs/HANDOFF-20261026-light09-finance.md","review":"reviews/REVIEW-20261026-light09-finance.md","status":"conditional-ready-not-run","slots":26,"financialOracleUnchanged":true,"partialTooltipFixture":"separate-not-authorized"},
-  "latestExec3Results": {"date": "2026-10-26", "run": "runs/RUN-20261026-light08-exec3-run1.md", "handoff": "handoffs/CODING-MISSION-20261026-light08-exec3-run1.md", "qaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276", "passed": 4, "blocked": 28, "businessWrites": 0, "next": "Medium supported period-lock/full-form/protected-source qualification; authentic partial fixture before new Light queue"},
+  "nextLight09": {
+    "queue": "queues/MISSION-v2522-LIGHT-09-FINANCE.json",
+    "handoff": "handoffs/HANDOFF-20261026-light09-finance.md",
+    "review": "reviews/REVIEW-20261026-light09-finance.md",
+    "status": "conditional-ready-not-run",
+    "slots": 26,
+    "financialOracleUnchanged": true,
+    "partialTooltipFixture": "separate-not-authorized"
+  },
+  "latestExec3Results": {
+    "date": "2026-10-26",
+    "run": "runs/RUN-20261026-light08-exec3-run1.md",
+    "handoff": "handoffs/CODING-MISSION-20261026-light08-exec3-run1.md",
+    "qaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276",
+    "passed": 4,
+    "blocked": 28,
+    "businessWrites": 0,
+    "next": "Medium supported period-lock/full-form/protected-source qualification; authentic partial fixture before new Light queue"
+  },
   "latestMissionPreparation": {
     "date": "2026-10-26",
     "queue": "queues/MISSION-v2522-LIGHT-08-EXEC3.json",
@@ -15,8 +32,25 @@
     "model": "manual-user-selection-Sol-Light",
     "historicalResultsUnchanged": true
   },
-  "latestBrowserExecution": {"date": "2026-10-25", "executionSha": "73879775fd1227500c10496d86563f020dcc4cfe", "run": "runs/RUN-20261025-light08-exec2.md", "checks": "runs/CHECKS-20261025-light08-exec2-results.json", "handoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md", "passed": 10, "blocked": 27, "businessWrites": 0, "releaseAcceptance": "not-established"},
-  "latestHarnessReview": {"date": "2026-10-25", "review": "reviews/REVIEW-20261025-pr72.md", "executableSha": "fc79951208e9dbc7272464e11405cebcf693c511", "nextQueue": "queues/MISSION-v2522-LIGHT-08-EXEC2.json", "businessExecution": "not-run", "releaseAcceptance": "not-established"},
+  "latestBrowserExecution": {
+    "date": "2026-10-25",
+    "executionSha": "73879775fd1227500c10496d86563f020dcc4cfe",
+    "run": "runs/RUN-20261025-light08-exec2.md",
+    "checks": "runs/CHECKS-20261025-light08-exec2-results.json",
+    "handoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md",
+    "passed": 10,
+    "blocked": 27,
+    "businessWrites": 0,
+    "releaseAcceptance": "not-established"
+  },
+  "latestHarnessReview": {
+    "date": "2026-10-25",
+    "review": "reviews/REVIEW-20261025-pr72.md",
+    "executableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+    "nextQueue": "queues/MISSION-v2522-LIGHT-08-EXEC2.json",
+    "businessExecution": "not-run",
+    "releaseAcceptance": "not-established"
+  },
   "schemaVersion": 1,
   "programme": "BookOne risk-based batch QA",
   "strategyDecision": "decisions/ADR-20261013-batch-testing.md",
@@ -1788,5 +1822,19 @@
     "budgetCompliance": "unverified",
     "releaseAcceptance": "not-established",
     "next": "Medium review and control recovery; no financial replay; new fixed mission after reviewed fixes/fixtures"
+  },
+  "latestRapid01Execution": {
+    "date": "2026-10-28",
+    "run": "runs/RUN-20261028-rapid01-exec1.md",
+    "checks": "runs/CHECKS-20261028-rapid01-exec1.json",
+    "handoff": "handoffs/CODING-MISSION-20261028-rapid01-exec1.md",
+    "executionQaSha": "25bf94ad1877c80d9d9492a87431d5e1ab6f2dc0",
+    "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+    "checkpointDispositions": 40,
+    "publicationClosure": "pending",
+    "acceptedFinancialEvents": 6,
+    "unbilledPhysicalUnits": 10,
+    "next": "One date-compatible complete physical/service continuation after Medium review; preserve accepted sources and partial branches",
+    "releaseAcceptance": "not-established"
   }
 }

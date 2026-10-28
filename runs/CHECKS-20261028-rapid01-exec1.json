@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261028-rapid01-exec1",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "qaSha": "25bf94ad1877c80d9d9492a87431d5e1ab6f2dc0",
+  "liveStamp": "v2.5.22 · 211771e",
+  "scope": "exploratory-partial-fixed41checkpoint",
+  "cases": [
+    {
+      "id": "R01-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-GUARD",
+      "status": "passed"
+    },
+    {
+      "id": "R01-IDENTITY",
+      "status": "passed"
+    },
+    {
+      "id": "R01-OPEN",
+      "status": "passed"
+    },
+    {
+      "id": "R01-D-CAP",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-CAP",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-CAP",
+      "status": "passed"
+    },
+    {
+      "id": "R01-M-CAP",
+      "status": "passed"
+    },
+    {
+      "id": "R01-D-INVOICE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-D-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R01-D-OVERRETURN",
+      "status": "passed"
+    },
+    {
+      "id": "R01-D-RECEIPT",
+      "status": "failed"
+    },
+    {
+      "id": "R01-D-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R01-P-PO",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-GRN",
+      "status": "failed"
+    },
+    {
+      "id": "R01-P-BILL",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-PRETURN",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-OVERPAY",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-INVOICE",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-RECEIPT1",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-SRETURN",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-OVERRECEIPT",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-RECEIPT2",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-PAY",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-P-HISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-QUOTE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-ORDER",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-INVOICE",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-RECEIPT1",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-CREDIT",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-RECEIPT2",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-BILL",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-PAY",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-S-HISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-M-INVOICE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-M-RECEIPT",
+      "status": "passed"
+    },
+    {
+      "id": "R01-M-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R01-M-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R01-REFUND-RENTAL",
+      "status": "blocked"
+    },
+    {
+      "id": "R01-COMBINED",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R01-END",
+      "status": "pending"
+    }
+  ],
+  "counts": {
+    "passed": 16,
+    "failed": 2,
+    "blocked": 19,
+    "inconclusive": 3,
+    "pending": 1
+  },
+  "unresolvedSubmissions": [],
+  "focusedTests": {
+    "passed": 96,
+    "failed": 0,
+    "skipped": 0
+  },
+  "fullRepositoryCheck": "not-green-existing-documented-Windows-governance-process-filesystem-failure-not-rerun",
+  "guard": {
+    "proofAdapterInvocations": 7,
+    "proofCUAToolInvocations": 3,
+    "proofUiCalls": 2,
+    "fourNegativeUiCalls": 0,
+    "initialUppercaseClickUiCalls": 0,
+    "totalAdapterInvocations": 19,
+    "totalCUAToolInvocationsContainingDispatch": 15,
+    "totalUiCalls": 14,
+    "authUiCalls": 3,
+    "businessUiCalls": 9,
+    "uncertainBusinessReplay": 0
+  },
+  "acceptedEvents": [
+    "R01-D-INVOICE",
+    "R01-D-CREDIT",
+    "R01-D-RECEIPT",
+    "R01-P-PO",
+    "R01-P-GRN",
+    "R01-S-QUOTE",
+    "R01-M-INVOICE",
+    "R01-M-RECEIPT",
+    "R01-M-CREDIT"
+  ],
+  "dates": {
+    "digitalReceipt": "2026-10-28-operator-verification-failure",
+    "physicalGrn": "2026-10-28-current-UTC-conversion-vs-fixed2026-10-27",
+    "mixedReceipt": "2026-10-27-verified-correct",
+    "repairOrReplay": false
+  },
+  "acceptedFinancial": {
+    "journals": 6,
+    "debitCents": 112000,
+    "creditCents": 112000,
+    "cashDeltaCents": 30000,
+    "ARDeltaCents": 0,
+    "APDeltaCents": 0,
+    "revenueDeltaCents": 50000,
+    "returnsDeltaCents": 20000,
+    "COGSDeltaCents": 0,
+    "inventoryGLDeltaCents": 0,
+    "netIncomeDeltaCents": 30000,
+    "assetsDeltaCents": 30000
+  },
+  "stock": {
+    "qtyDelta": 10,
+    "currentValueDeltaCents": 60000,
+    "newMovements": 3,
+    "unbilledGrnUnits": 10,
+    "unbilledValueCents": 60000,
+    "openingGapPreserved": true
+  },
+  "protection": {
+    "fiveDetailSnapshotsUnchanged": true,
+    "allSettingsUnchanged": true,
+    "oldJournalSummariesPreserved": 162,
+    "oldMovementRowsPreserved": 31,
+    "catalogueItemsUnchanged": 10,
+    "unaffectedStockRowsUnchanged": true
+  },
+  "previews": {
+    "digitalInvoice": true,
+    "digitalCredit": true,
+    "digitalReceiptReopened": true,
+    "mixedInvoice": true,
+    "mixedCredit": true,
+    "mixedReceiptReopened": true,
+    "physicalPrinting": false,
+    "financialAuditAcceptance": false
+  },
+  "clock": {
+    "mode": "active",
+    "chargedMsAtLastPersistedCheck": 1669189,
+    "explicitPausedMs": 3985127,
+    "finalClockPending": true,
+    "meaning": "Conservative unpaused elapsed; no inferred idle subtraction. Paused only at observed owner-assistance wait; owner later instructed agent to authenticate and clock resumed."
+  },
+  "publication": "closure-update-pending-in-same-results-PR",
+  "releaseAcceptance": "not-established",
+  "canonicalCaseAcceptance": "not-established",
+  "rawEvidencePublished": false
+}
