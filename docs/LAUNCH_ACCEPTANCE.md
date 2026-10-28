@@ -1,6 +1,10 @@
 # BookOne launch acceptance register
 
-## Current execution cycle — Rapid01, 27 October 2026
+## Latest execution — Rapid01, 28 October 2026
+
+[Run](../runs/RUN-20261028-rapid01-exec1.md) and [consolidated handoff](../handoffs/CODING-MISSION-20261028-rapid01-exec1.md): digital monetary and mixed core cycles reconciled; fixed-date receipt failure, conversion/calendar incompatibility, unbilled physical GRN and incomplete service/audit layers remain. Receipt/invoice/credit previews are observed available. Six accepted journals do not establish complete physical/service/rental/refund/security or launch acceptance. Next batch must resolve dates once and complete physical/service lifecycles using reviewed current sources/openings.
+
+## Prepared execution cycle — Rapid01, 27 October 2026
 
 [Sol Light handoff](../handoffs/HANDOFF-20261027-rapid-cycle01-sol-light.md) selects41checkpoints across physical purchasing/stock/sales/returns/settlement, digital, delivered service and mixed trading. Use fresh current openings and new source documents; collect one consolidated defect batch and retest fixes plus adjacent workflows. The mission is conditionally executable after its actual guard/actor/profile/source gates. Preparation is not execution or launch acceptance. Missing cash-refund/rental fixtures/controls, receipt/remittance/audit layers, real role/tenant/races/faults, upgrades and archive/recovery remain explicit future acceptance work. No narrower launch scope or overall pass percentage is approved by this cycle.
 
