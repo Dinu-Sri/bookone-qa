@@ -168,15 +168,15 @@
     },
     {
       "id": "R01-END",
-      "status": "pending"
+      "status": "passed"
     }
   ],
   "counts": {
-    "passed": 16,
+    "passed": 17,
     "failed": 2,
     "blocked": 19,
     "inconclusive": 3,
-    "pending": 1
+    "pending": 0
   },
   "unresolvedSubmissions": [],
   "focusedTests": {
@@ -256,13 +256,19 @@
     "financialAuditAcceptance": false
   },
   "clock": {
-    "mode": "active",
-    "chargedMsAtLastPersistedCheck": 1669189,
+    "mode": "closed",
+    "chargedMs": 2252028,
     "explicitPausedMs": 3985127,
-    "finalClockPending": true,
-    "meaning": "Conservative unpaused elapsed; no inferred idle subtraction. Paused only at observed owner-assistance wait; owner later instructed agent to authenticate and clock resumed."
+    "chargedMinutes": 37.5338,
+    "finalClockPending": false,
+    "metadataTail": "Only sanitized closure/check/current-pointer publication after explicit clock close; no further browser/business execution.",
+    "meaning": "Conservative unpaused elapsed. Explicit pause at observed owner-assistance wait; later owner instructed agent to authenticate and clock resumed. No retrospective subtraction."
   },
-  "publication": "closure-update-pending-in-same-results-PR",
+  "publication": {
+    "url": "https://github.com/Dinu-Sri/bookone-qa/pull/87",
+    "initialCommit": "39dde5079cc03ba5a833dc33afb433114abb1803",
+    "closure": "completed-same-PR-metadata-tail"
+  },
   "releaseAcceptance": "not-established",
   "canonicalCaseAcceptance": "not-established",
   "rawEvidencePublished": false

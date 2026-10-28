@@ -4,7 +4,7 @@ Product `211771e95d6f97cac5eb281a0f8e63f0fceef8a4`, observed `v2.5.22 · 211771e
 
 ## Result
 
-40 checkpoints dispositioned: 16 passed, 2 failed, 19 blocked, 3 inconclusive. END publication/clock closure pending in this same results PR; final checks will record the completed disposition. No budget omissions. No unresolved submission. Do not read blocked downstream cases as executed failures.
+All41 checkpoints dispositioned:17passed,2failed,19blocked,3inconclusive. END closure passed for truthful publication/reconciliation, not for launch acceptance. [Results PR87](https://github.com/Dinu-Sri/bookone-qa/pull/87). Clock explicitly closed at2252028ms charged (37.534minutes),3985127ms explicitly paused. Publication through initial PR is charged; this final sanitized closure update is a metadata-only tail, with no subsequent browser/business execution. No budget omissions. No unresolved submission. Do not read blocked downstream cases as executed failures.
 
 Digital sale → one-unit source credit → receipt completed monetarily. Receipt date failed the fixed-date contract. Mixed physical/digital invoice → receipt → physical-only source credit completed with correct dates, original-cost reversal and zero remaining debt. Physical PO → goods receipt reached an unbilled stock branch; dated conversion stopped dependent trading. Delivered manual-service quotation saved without a master, journal or stock movement; its conversion was held on the same date incompatibility.
 

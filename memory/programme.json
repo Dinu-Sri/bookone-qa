@@ -1830,11 +1830,21 @@
     "handoff": "handoffs/CODING-MISSION-20261028-rapid01-exec1.md",
     "executionQaSha": "25bf94ad1877c80d9d9492a87431d5e1ab6f2dc0",
     "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
-    "checkpointDispositions": 40,
-    "publicationClosure": "pending",
+    "checkpointDispositions": 41,
+    "publicationClosure": "complete-PR87",
     "acceptedFinancialEvents": 6,
     "unbilledPhysicalUnits": 10,
     "next": "One date-compatible complete physical/service continuation after Medium review; preserve accepted sources and partial branches",
-    "releaseAcceptance": "not-established"
+    "releaseAcceptance": "not-established",
+    "counts": {
+      "passed": 17,
+      "failed": 2,
+      "blocked": 19,
+      "inconclusive": 3,
+      "pending": 0
+    },
+    "resultsPr": "https://github.com/Dinu-Sri/bookone-qa/pull/87",
+    "chargedMs": 2252028,
+    "explicitPausedMs": 3985127
   }
 }
