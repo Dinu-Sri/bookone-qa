@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "id": "ORACLE-v2522-RAPID-01-CONT2",
+  "authority": [
+    "BR-ACC-01",
+    "BR-ACC-04",
+    "BR-ACC-08",
+    "BR-SAL-01",
+    "BR-SAL-02",
+    "BR-STK-03"
+  ],
+  "meaning": "Continuation after acceptedCONT1bill600. Newopeningincludesbill/AP600; remainingtransactions only, no rebilling.",
+  "profile": {
+    "businessDate": "2026-10-28",
+    "dueDate": "2026-10-31",
+    "currency": "LKR",
+    "vatRegistered": false,
+    "purchaseApproval": false,
+    "postGrniOnReceipt": false,
+    "costing": "last",
+    "negativeStock": "allow-but-never-used",
+    "physicalUnitCostCents": 6000,
+    "unitSalePriceCents": 10000,
+    "settingsMutation": false
+  },
+  "accounts": {
+    "cash": "1000",
+    "AR": "1300",
+    "AP": "2100",
+    "inventory": "5100",
+    "sales": "4000",
+    "returns": "4100",
+    "COGS": "5000",
+    "expense": "6800"
+  },
+  "lanes": {
+    "physical": {
+      "input": "Existing own run-owned GRN10x60 received/unbilled, sourcePO600. Bill once600 withoutnewqty; purchasecredit60; physicalsale6x100cost360;receipt250;sourcecredit100cost60;receipt250;vendorpay540.",
+      "events": [
+        {
+          "id": "R01-P-PRETURN",
+          "entries": [
+            {
+              "account": "2100",
+              "debitCents": 6000,
+              "creditCents": 0
+            },
+            {
+              "account": "5100",
+              "debitCents": 0,
+              "creditCents": 6000
+            }
+          ],
+          "stockQtyDelta": -1
+        },
+        {
+          "id": "R01-P-INVOICE",
+          "entries": [
+            {
+              "account": "1300",
+              "debitCents": 60000,
+              "creditCents": 0
+            },
+            {
+              "account": "4000",
+              "debitCents": 0,
+              "creditCents": 60000
+            },
+            {
+              "account": "5000",
+              "debitCents": 36000,
+              "creditCents": 0
+            },
+            {
+              "account": "5100",
+              "debitCents": 0,
+              "creditCents": 36000
+            }
+          ],
+          "stockQtyDelta": -6
+        },
+        {
+          "id": "R01-P-RECEIPT1",
+          "entries": [
+            {
+              "account": "1000",
+              "debitCents": 25000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 25000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-P-SRETURN",
+          "entries": [
+            {
+              "account": "4100",
+              "debitCents": 10000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 10000
+            },
+            {
+              "account": "5100",
+              "debitCents": 6000,
+              "creditCents": 0
+            },
+            {
+              "account": "5000",
+              "debitCents": 0,
+              "creditCents": 6000
+            }
+          ],
+          "stockQtyDelta": 1
+        },
+        {
+          "id": "R01-P-RECEIPT2",
+          "entries": [
+            {
+              "account": "1000",
+              "debitCents": 25000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 25000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-P-PAY",
+          "entries": [
+            {
+              "account": "2100",
+              "debitCents": 54000,
+              "creditCents": 0
+            },
+            {
+              "account": "1000",
+              "debitCents": 0,
+              "creditCents": 54000
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ],
+      "closing": {
+        "cashDeltaCents": -4000,
+        "inventoryDeltaCents": -36000,
+        "stockQtyDelta": -6,
+        "ARDeltaCents": 0,
+        "APDeltaCents": -60000,
+        "netIncomeDeltaCents": 20000,
+        "journalCount": 6,
+        "journalDebitCents": 222000
+      }
+    },
+    "service": {
+      "input": "Existing own run-owned manual-servicequote200unconverted; order→invoice200,receipt50,credit100,receipt50; new delivered-service expense80/payment80. No master/stock.",
+      "events": [
+        {
+          "id": "R01-S-ORDER",
+          "entries": [],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-INVOICE",
+          "entries": [
+            {
+              "account": "1300",
+              "debitCents": 20000,
+              "creditCents": 0
+            },
+            {
+              "account": "4000",
+              "debitCents": 0,
+              "creditCents": 20000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-RECEIPT1",
+          "entries": [
+            {
+              "account": "1000",
+              "debitCents": 5000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 5000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-CREDIT",
+          "entries": [
+            {
+              "account": "4100",
+              "debitCents": 10000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 10000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-RECEIPT2",
+          "entries": [
+            {
+              "account": "1000",
+              "debitCents": 5000,
+              "creditCents": 0
+            },
+            {
+              "account": "1300",
+              "debitCents": 0,
+              "creditCents": 5000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-BILL",
+          "entries": [
+            {
+              "account": "6800",
+              "debitCents": 8000,
+              "creditCents": 0
+            },
+            {
+              "account": "2100",
+              "debitCents": 0,
+              "creditCents": 8000
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R01-S-PAY",
+          "entries": [
+            {
+              "account": "2100",
+              "debitCents": 8000,
+              "creditCents": 0
+            },
+            {
+              "account": "1000",
+              "debitCents": 0,
+              "creditCents": 8000
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ],
+      "closing": {
+        "cashDeltaCents": 2000,
+        "inventoryDeltaCents": 0,
+        "stockQtyDelta": 0,
+        "ARDeltaCents": 0,
+        "APDeltaCents": 0,
+        "netIncomeDeltaCents": 2000,
+        "journalCount": 6,
+        "journalDebitCents": 56000
+      }
+    }
+  },
+  "allPass": {
+    "cashDeltaCents": -2000,
+    "inventoryGLDeltaCents": -36000,
+    "currentStockValueDeltaCents": -36000,
+    "stockQtyDelta": -6,
+    "ARDeltaCents": 0,
+    "APDeltaCents": -60000,
+    "revenueDeltaCents": 80000,
+    "returnsDeltaCents": 20000,
+    "expenseDeltaCents": 8000,
+    "COGSDeltaCents": 30000,
+    "netIncomeDeltaCents": 22000,
+    "assetsDeltaCents": -38000,
+    "liabilitiesDeltaCents": -60000,
+    "journalCount": 12,
+    "journalDebitCents": 278000,
+    "physicalMovementCount": 3
+  },
+  "partialBranch": "Sum ONLY confirmed accepted events. A failed/refused/blocked event contributes zero only after independent persistence/zero-effect readback proves it. Uncertain outcome blocks dependent writes and remains unresolved; never use allPass as a balancing target.",
+  "nonEffects": [
+    "VAT/GRNI remain unchanged",
+    "All historical/protected documents and their allocations unchanged",
+    "No master/role/settings writes",
+    "Digital/service no physical movements",
+    "PO/quote/order no posting; GRN qty-only under this explicit profile",
+    "Known stock-GL gap retained in fresh opening; new delta must reconcile independently"
+  ],
+  "missingLayers": [
+    "Unsupported cash refund UI is blocked; credit is not refund acceptance",
+    "Rental fixture absent; no master/grant workaround",
+    "Real role/tenant/race/fault/upgrade/storage and encrypted backup remain separate launch gaps"
+  ]
+}
