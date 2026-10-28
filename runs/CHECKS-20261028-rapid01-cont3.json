@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "executionQaSha": "caf89fd43725102520f1b934982681dab943f0b9",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "observedLiveStamp": "v2.5.22 · 211771e",
+  "mission": "queues/MISSION-v2522-RAPID-01-CONT3.json",
+  "oracle": "queues/ORACLE-v2522-RAPID-01-CONT3.json",
+  "dateContract": "2026-10-28 UTC unchanged; final-five-minute refusal retained",
+  "resultsPr": "https://github.com/Dinu-Sri/bookone-qa/pull/88",
+  "focusedTests": {
+    "passed": 110,
+    "failed": 0,
+    "skipped": 0,
+    "fresh": true
+  },
+  "fullCheck": "not-green: earlier documented Windows governance process/filesystem failure; not rerun or relabeled",
+  "desktopProof": {
+    "adapterInvocations": 7,
+    "outerCuaToolCalls": 1,
+    "positiveUiCalls": 2,
+    "refusals": 5,
+    "refusedUiCalls": 0,
+    "refusedClaims": 0,
+    "refusalTypes": [
+      "exit",
+      "intent",
+      "fingerprint",
+      "clock",
+      "wrong-UTC-day"
+    ]
+  },
+  "authentication": {
+    "freshSignout": true,
+    "protectedReloadRedirected": true,
+    "approvedOriginalActor": true,
+    "rememberMe": false,
+    "firstLoginRefused": true,
+    "distinctSecondLoginAccepted": true,
+    "cause": "unverified; field values redacted"
+  },
+  "acceptedFinancialEvents": 11,
+  "nonpostingConversions": 1,
+  "unresolvedSubmissions": 0,
+  "previousBillAndPurchaseCredit": "read-only opening facts; never repeated",
+  "invalidOverAllocationSubmissions": 0,
+  "reconciliation": {
+    "passed": true,
+    "newJournalDebits": 2720,
+    "newJournalCredits": 2720,
+    "cashDelta": -20,
+    "arDelta": 0,
+    "apDelta": -540,
+    "inventoryGlDelta": -300,
+    "currentStockValueDelta": -300,
+    "physicalQuantityDelta": -5,
+    "revenueDelta": 800,
+    "returnsDelta": 200,
+    "expenseDelta": 80,
+    "cogsDelta": 300,
+    "netIncomeDelta": 220,
+    "assetsDelta": -320,
+    "liabilitiesDelta": -540,
+    "newPhysicalMovements": [
+      -6,
+      1
+    ],
+    "all170OldJournalsPreserved": true,
+    "all35OldMovementsPreserved": true,
+    "threeSettingsUnchanged": true,
+    "accountDefinitionsUnchanged": 32,
+    "unaffectedCatalogueAndStockRowsUnchanged": true,
+    "allFiveProtectedRecordsUnchanged": true,
+    "completedDigitalMixedDocumentsCreditsReceiptsUnchanged": true,
+    "inventoryGlGapUnchanged": true
+  },
+  "datedReports": {
+    "closingCutoff": "2026-10-28",
+    "trialPnlBalanceCashflow": true,
+    "arAp": true,
+    "asOf27OriginalDigitalReceivableDelta": 200,
+    "originalMixedReceiptDate": "2026-10-27",
+    "originalDigitalReceiptDate": "2026-10-28",
+    "quote27ToOrder28ToInvoice28": true
+  },
+  "previews": {
+    "loadedInvoiceCreditBillPurchaseCredit": true,
+    "allFourNewReceiptsReopened": true,
+    "bothVendorRemittancesReopened": true,
+    "physicalPrinting": false
+  },
+  "cases": [
+    {
+      "id": "C1-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "C1-OPEN",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-BILL",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-PRETURN",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-OVERPAY",
+      "status": "failed"
+    },
+    {
+      "id": "R01-P-INVOICE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-RECEIPT1",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-SRETURN",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-OVERRECEIPT",
+      "status": "failed"
+    },
+    {
+      "id": "R01-P-RECEIPT2",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-PAY",
+      "status": "passed"
+    },
+    {
+      "id": "R01-P-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R01-S-ORDER",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-INVOICE",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-RECEIPT1",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-RECEIPT2",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-BILL",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-PAY",
+      "status": "passed"
+    },
+    {
+      "id": "R01-S-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "C1-DATE-ADJACENT",
+      "status": "inconclusive"
+    },
+    {
+      "id": "C1-COMBINED",
+      "status": "passed"
+    },
+    {
+      "id": "C1-END",
+      "status": "pending"
+    }
+  ],
+  "counts": {
+    "passed": 17,
+    "failed": 2,
+    "inconclusive": 3,
+    "pending": 1,
+    "running": 0,
+    "blocked": 0,
+    "not-run": 0
+  },
+  "clock": {
+    "mode": "active",
+    "chargedMs": 1785856,
+    "explicitPausedMs": 0,
+    "allowNewBusinessSubmission": true,
+    "closingRequired": false,
+    "totalExceeded": false,
+    "boundary": "Conservative unpaused elapsed time; not measured model compute, credit usage or inferred idle time. Check before each new business submission; no automatic browser interruption.",
+    "observedAt": "2026-10-28T13:58:36.980Z",
+    "publicationClosure": "pending; active through initial publication",
+    "checkpoint20Minutes": "persisted late at22.923083minutes; no retrospective deduction"
+  },
+  "releaseAcceptance": "not-established",
+  "historicalRunsUnchanged": true,
+  "rawEvidence": "private; intentionally excluded",
+  "next": "Medium review grouped pre-submit feedback/audit gaps and qualify next substantial workflow batch; never replay settled sources; backup LAST"
+}

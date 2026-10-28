@@ -1,5 +1,9 @@
 # BookOne launch acceptance register
 
+## Latest continuation — CONT3, 28 October 2026
+
+[Run](../runs/RUN-20261028-rapid01-cont3.md), [checks](../runs/CHECKS-20261028-rapid01-cont3.json) and [grouped handoff](../handoffs/CODING-MISSION-20261028-rapid01-cont3.md): remaining physical and delivered-service monetary workflows completed with11 new accepted balanced journals and independent combined reconciliation. Existing bill600 and purchase credit60 were not repeated. All earlier protected/journal/stock data remained intact. Two pre-submit feedback assertions failed without invalid submission; three closure cases lack persisted financial audit evidence. Receipt/remittance and document previews are now positively observed. No whole-family or launch acceptance: refund/rental, real authorization/tenant/race/fault, upgrade/storage and expert gates remain open; backup/restore LAST. Medium reviews this consolidated result before a new substantial batch. Earlier run statements below describe historical scope, not current fixture state.
+
 ## Latest execution — Rapid01, 28 October 2026
 
 [Run](../runs/RUN-20261028-rapid01-exec1.md) and [consolidated handoff](../handoffs/CODING-MISSION-20261028-rapid01-exec1.md): digital monetary and mixed core cycles reconciled; fixed-date receipt failure, conversion/calendar incompatibility, unbilled physical GRN and incomplete service/audit layers remain. Receipt/invoice/credit previews are observed available. Six accepted journals do not establish complete physical/service/rental/refund/security or launch acceptance. Next batch must resolve dates once and complete physical/service lifecycles using reviewed current sources/openings.
