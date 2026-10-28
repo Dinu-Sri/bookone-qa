@@ -1855,18 +1855,21 @@
     "checks": "runs/CHECKS-20261028-rapid01-cont3.json",
     "handoff": "handoffs/CODING-MISSION-20261028-rapid01-cont3.md",
     "resultsPr": "https://github.com/Dinu-Sri/bookone-qa/pull/88",
-    "status": "executed-monetary-complete-publication-closing",
+    "status": "complete-PR88-closed-clock",
     "acceptedFinancialEvents": 11,
     "counts": {
-      "passed": 17,
+      "passed": 18,
       "failed": 2,
       "inconclusive": 3,
-      "pending": 1,
+      "pending": 0,
       "running": 0,
       "blocked": 0,
       "not-run": 0
     },
     "next": "Medium review grouped pre-submit feedback/audit gaps and qualify next substantial workflow batch; never replay settled sources; backup LAST",
-    "releaseAcceptance": "not-established"
+    "releaseAcceptance": "not-established",
+    "chargedMs": 1883882,
+    "explicitPausedMs": 0,
+    "publicationClosure": "initial results and PR metadata published before explicit close; final closure metadata-only tail"
   }
 }

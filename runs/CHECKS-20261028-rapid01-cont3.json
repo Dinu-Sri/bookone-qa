@@ -180,28 +180,31 @@
     },
     {
       "id": "C1-END",
-      "status": "pending"
+      "status": "passed"
     }
   ],
   "counts": {
-    "passed": 17,
+    "passed": 18,
     "failed": 2,
     "inconclusive": 3,
-    "pending": 1,
+    "pending": 0,
     "running": 0,
     "blocked": 0,
     "not-run": 0
   },
   "clock": {
-    "mode": "active",
-    "chargedMs": 1785856,
+    "mode": "closed",
+    "chargedMs": 1883882,
     "explicitPausedMs": 0,
-    "allowNewBusinessSubmission": true,
+    "allowNewBusinessSubmission": false,
     "closingRequired": false,
     "totalExceeded": false,
     "boundary": "Conservative unpaused elapsed time; not measured model compute, credit usage or inferred idle time. Check before each new business submission; no automatic browser interruption.",
-    "observedAt": "2026-10-28T13:58:36.980Z",
-    "publicationClosure": "pending; active through initial publication",
+    "openedAt": "2026-10-28T13:28:51.124Z",
+    "closedAt": "2026-10-28T14:00:15.006Z",
+    "chargedMinutes": 31.398033333333334,
+    "publicationClosure": "initial results and PR metadata published before explicit close; final closure metadata-only tail",
+    "initialResultsCommit": "1a7511f4a3fe18d3b52615816e86699f466d13e8",
     "checkpoint20Minutes": "persisted late at22.923083minutes; no retrospective deduction"
   },
   "releaseAcceptance": "not-established",
