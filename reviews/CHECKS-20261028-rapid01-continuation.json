@@ -1,0 +1,44 @@
+{
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "baseResultsQaSha": "321ca696920787f2bd830328643586174c42f686",
+  "liveStamp": "v2.5.22 · 211771e",
+  "executionDate": "2026-10-28",
+  "caseCount": 23,
+  "focusedTests": {
+    "passed": 106,
+    "failed": 0,
+    "skipped": 0
+  },
+  "actualProof": {
+    "adapterInvocations": 7,
+    "CUAToolInvocations": 1,
+    "title": "BookOne",
+    "positiveUiCalls": 1,
+    "clickUiCalls": 1,
+    "exitIntentFingerprintClockWrongDayUiCalls": 0,
+    "refusalClaims": 0
+  },
+  "desktopSources": {
+    "scripts/operator-desktop-cua.mjs": "2da659e817715b0eb1d5f22d1d041f510b378403f5669fd3cd58566dd4d92ae4",
+    "scripts/operator-browser-host.mjs": "06eba56f6835fa4d6de7cae381afe30a611ad6ddd273c54c53bfb55364bddd8b",
+    "scripts/operator-browser-transport.mjs": "3d9f9f9a8f7790f834a57a607813e4fe9bb4d6e902b62cde535f5cc5ea5325b9",
+    "scripts/operator-action-guard.mjs": "2245ac9fa74c3128adf6c0d8698551c91900d1f11cfef622966b4bfe4291ed3a",
+    "scripts/operator-queue.mjs": "1da17374c22e199fd423b642d546e115b2b2af865549bb77c593f788fd0708e4",
+    "scripts/operator-clock.mjs": "1a61a4b27869a5a0be853f57a3ab6f18d852cef3de3f3c8bfc570ff6d2866d51"
+  },
+  "oracleHash": "fb7a08c537b962340e38c75f629596b1ecdd1a40c4101c82657a983c5b761475",
+  "sourceQualification": "Existing own run-owned GRN received10unbilled600 and unconvertedservicequote200 re-observed; exact identifiers remain private. No new business submission.",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 292676,
+    "explicitPausedMs": 0,
+    "metadataTail": "Publication and checkout materialization after preparation clockclose; no further preparation business writes."
+  },
+  "firstFailuresPreserved": [
+    "DefaultWindowsTEMPrenameEPERM",
+    "Draftmovementcount5correctedto3beforeexecution",
+    "BulkproofdirectorycopyEIO"
+  ],
+  "fullRepositoryCheck": "Previously documented Windowsgovernancefailure remainsnotgreen; no repeated unrelateddebugloop",
+  "review": "AuthorMediumtechnicalreview; not independent/expert/releaseacceptance"
+}
