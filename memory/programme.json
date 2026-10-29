@@ -1891,5 +1891,32 @@
     "next": "Lightexecute fixedbatch fromexactpublishedcleancheckout; Medium/codingresolve sharedrental/customerrefund/audit/feedback qualification asgroup; nooldreplay",
     "fullCheck": "not-green-Windows-governance",
     "releaseAcceptance": "not-established"
+  },
+  "latestRapid02Interrupted": {
+    "date": "2026-10-29",
+    "executionQaSha": "f53346e435a26cacdcebda5433b52a82246a1cf1",
+    "run": "runs/RUN-20261029-rapid02-interrupted.md",
+    "checks": "runs/CHECKS-20261029-rapid02-interrupted.json",
+    "counts": {
+      "passed": 8,
+      "failed": 1,
+      "inconclusive": 3,
+      "not-run": 16,
+      "pending": 0,
+      "running": 0
+    },
+    "acceptedFinancialEvents": 4,
+    "unresolved": 0,
+    "status": "expired-original-budget/date-no-replay"
+  },
+  "nextRapid02Continuation": {
+    "date": "2026-10-29",
+    "queue": "queues/MISSION-v2522-RAPID-02-CONT1.json",
+    "oracle": "queues/ORACLE-v2522-RAPID-02-CONT1.json",
+    "handoff": "handoffs/HANDOFF-20261029-rapid02-continuation-sol-light.md",
+    "review": "reviews/REVIEW-20261029-rapid02-continuation.md",
+    "status": "prepared-new29Oct-fresh-gates-required",
+    "cases": 23,
+    "oldFourAcceptedReadOnly": true
   }
 }

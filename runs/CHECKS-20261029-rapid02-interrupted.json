@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "executionQaSha": "f53346e435a26cacdcebda5433b52a82246a1cf1",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "liveStamp": "v2.5.22 · 211771e",
+  "counts": {
+    "passed": 8,
+    "failed": 1,
+    "inconclusive": 3,
+    "not-run": 16,
+    "pending": 0,
+    "running": 0
+  },
+  "cases": [
+    {
+      "id": "R02-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "R02-OPEN",
+      "status": "passed"
+    },
+    {
+      "id": "R02-P-BUY",
+      "status": "passed"
+    },
+    {
+      "id": "R02-P-BOUND",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R02-P-RETURN1",
+      "status": "passed"
+    },
+    {
+      "id": "R02-P-RETURN2",
+      "status": "passed"
+    },
+    {
+      "id": "R02-P-HISTORY",
+      "status": "failed"
+    },
+    {
+      "id": "R02-S-BUY",
+      "status": "passed"
+    },
+    {
+      "id": "R02-S-RETURN1",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R02-S-RETURN2",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-S-HISTORY",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-INVOICE1",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-INVOICE2",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-CREDIT",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-BOUND",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-PART",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-FINAL",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AR-HISTORY",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-BILL1",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-BILL2",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-CREDIT",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-BOUND",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-PART",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-FINAL",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-AP-HISTORY",
+      "status": "not-run"
+    },
+    {
+      "id": "R02-DATE",
+      "status": "passed"
+    },
+    {
+      "id": "R02-COMBINED",
+      "status": "passed"
+    },
+    {
+      "id": "R02-END",
+      "status": "inconclusive"
+    }
+  ],
+  "acceptedFinancialEvents": 4,
+  "newJournalDebitsAndCredits": 560,
+  "newPhysicalMovements": [
+    4,
+    -1,
+    -3
+  ],
+  "delta": {
+    "cash": -80,
+    "expense": 80,
+    "income": -80,
+    "assets": -80,
+    "ar": 0,
+    "ap": 0,
+    "inventory": 0,
+    "physicalQty": 0
+  },
+  "oldProtectedRoutesUnchanged": 28,
+  "oldJournalSummariesPreserved": 181,
+  "oldStockMovementRowsPreserved": 37,
+  "unresolvedSubmissions": 0,
+  "stoppedServiceRefund": {
+    "toolReview": "not-executed-usage-limit",
+    "matchingClaims": 0,
+    "matchingFeedback": 0,
+    "readOnlyRecovery": "remaining2/value80; journal185 unchanged",
+    "oldIntentResolved": "refused-transport-no-product-execution"
+  },
+  "failure": "cash_purchase-linked supplier cash-refund credit documents stayopen/paid0/balance60and180 after correct cash/stock effects; APGLaging unchanged",
+  "clock": {
+    "mode": "active",
+    "chargedAtResumptionMs": 72532305,
+    "chargedMs": 72532305,
+    "explicitPausedMs": 171023,
+    "budgetExceeded": true,
+    "utcDateContractExpired": true,
+    "publicationClosure": "active through results publication; finalclosedclock metadata follows",
+    "unpausedGap": "fullycharged; no retrospective deduction"
+  },
+  "focusedTests": {
+    "passed": 115,
+    "failed": 0,
+    "skipped": 0
+  },
+  "releaseAcceptance": "not-established",
+  "rawEvidence": "private"
+}
