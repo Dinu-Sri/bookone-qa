@@ -1,5 +1,9 @@
 # BookOne launch acceptance register
 
+## Next grouped regression — Rapid03
+
+[Review](../reviews/REVIEW-20261029-v2523-rapid03.md) and [Light batch](../handoffs/HANDOFF-20261029-rapid03-sol-light.md) bind newv2.5.23 fullsupplierrefund/AR/AP/customer-cashrefund workflows and actualaudit read. Preparation/livebuild qualification only, no defectclosure. Rental/realdeniedactors/foreign-tenant/race/fault/storage remainopen.
+
 ## Current Rapid02 C1 result
 
 [Results](../runs/RUN-20261029-rapid02-cont1.md) and [coding handoff](../handoffs/CODING-MISSION-20261029-rapid02-consolidated.md): all remaining money workflows complete and reconciled; supplier refund state and allocation feedback failures persist, financial audit remains inconclusive. No whole-family/security/rental/customer-refund or launch acceptance. Next grouped coding fix/qualification before substantial regression; historical prepared batches below are consumed.

@@ -18,7 +18,7 @@
     "test:e2e": "node apps/e2e-runner/scripts/run-suite.mjs",
     "agent:browse": "node apps/e2e-runner/scripts/agent-browse.mjs",
     "catalog:sync": "node scripts/catalog/sync-backup.mjs && node scripts/export-e2e-catalog.mjs && node apps/e2e-runner/scripts/generate-coverage.mjs",
-    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue && pnpm test:operator-action-guard && pnpm test:review43-guard && pnpm test:mission-v2516 && pnpm test:mission-v2516-02 && pnpm ux:check && pnpm test:ux-workbook && pnpm test:review54-controls && pnpm test:mission-light05 && pnpm test:mission-light08 && pnpm test:desktop-guard && pnpm test:rapid01 && pnpm test:rapid01-continuation && pnpm test:rapid01-continuation2 && pnpm test:rapid01-continuation3 && pnpm test:rapid02 && pnpm test:rapid02-continuation",
+    "check": "pnpm validate && pnpm test:guard && pnpm test:harness && pnpm test:runtime-guard && pnpm matrix:check && pnpm backup:plan:check && pnpm test:campaign-guard && pnpm rulebook:check && pnpm test:http-guard && pnpm workflows:check && pnpm test:workflow-governance && pnpm library:check && pnpm test:business-library && pnpm test:operator-queue && pnpm test:operator-action-guard && pnpm test:review43-guard && pnpm test:mission-v2516 && pnpm test:mission-v2516-02 && pnpm ux:check && pnpm test:ux-workbook && pnpm test:review54-controls && pnpm test:mission-light05 && pnpm test:mission-light08 && pnpm test:desktop-guard && pnpm test:rapid01 && pnpm test:rapid01-continuation && pnpm test:rapid01-continuation2 && pnpm test:rapid01-continuation3 && pnpm test:rapid02 && pnpm test:rapid02-continuation && pnpm test:rapid03",
     "test:harness": "node --test tests/infrastructure/batch-state.test.mjs tests/infrastructure/runtime-diagnostics.test.mjs",
     "test:sensitivity": "node scripts/verify-product.mjs && node --test tests/infrastructure/posting-sensitivity.test.mjs",
     "session:start": "node scripts/session.mjs",
@@ -73,7 +73,8 @@
     "test:rapid01-continuation2": "node --test tests/infrastructure/rapid01-continuation2.test.mjs",
     "test:rapid01-continuation3": "node --test tests/infrastructure/rapid01-continuation3.test.mjs",
     "test:rapid02": "node --test tests/infrastructure/rapid02.test.mjs",
-    "test:rapid02-continuation": "node --test tests/infrastructure/rapid02-continuation.test.mjs"
+    "test:rapid02-continuation": "node --test tests/infrastructure/rapid02-continuation.test.mjs",
+    "test:rapid03": "node --test tests/infrastructure/rapid03.test.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3",

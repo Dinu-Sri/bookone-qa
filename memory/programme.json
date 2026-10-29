@@ -1937,5 +1937,18 @@
     "newJournals": 16,
     "drCr": 880,
     "next": "Grouped coding fixes/qualification, Medium review, substantial regression; no replay."
+  },
+  "latestRapid03Preparation": {
+    "date": "2026-10-29",
+    "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+    "queue": "queues/MISSION-v2523-RAPID-03.json",
+    "handoff": "handoffs/HANDOFF-20261029-rapid03-sol-light.md",
+    "review": "reviews/REVIEW-20261029-v2523-rapid03.md",
+    "cases": 36,
+    "financialSubmissions": 20,
+    "newJournals": 24,
+    "drCr": 1800,
+    "executed": false,
+    "status": "conditional-ready-fresh-gates-required"
   }
 }
