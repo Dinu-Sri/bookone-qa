@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "kind": "Medium preparation and read-only qualification; no new business execution",
+  "baseQaResults": "6ccef1f555424247a6955b511f161279f278468a",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "observedLiveStamp": "v2.5.22 · 211771e",
+  "review": "reviews/REVIEW-20261028-cont3-and-rapid02.md",
+  "mission": "queues/MISSION-v2522-RAPID-02.json",
+  "oracle": "queues/ORACLE-v2522-RAPID-02.json",
+  "cases": 28,
+  "financialSubmissionsPlanned": 16,
+  "independentJournalsPlanned": 20,
+  "plannedDebitsCents": 144000,
+  "plannedCreditCents": 144000,
+  "plannedPhysicalMovements": [
+    4,
+    -1,
+    -3
+  ],
+  "businessTransactionsExecuted": 0,
+  "settingsMasterGrantCompanyChanges": 0,
+  "guardModulesChanged": false,
+  "focusedAttempts": [
+    {
+      "environment": "sandbox",
+      "passed": 72,
+      "failed": 42,
+      "skipped": 0,
+      "reason": "EPERM temporary-file rename infrastructure failures; preserved unchanged"
+    },
+    {
+      "environment": "host",
+      "passed": 114,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "environment": "host-final-new-tests",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "meaning": "final5 newmission tests include4 rerun tests and1 additional privateproof test;115 distinct focused assertions passed across host runs"
+    }
+  ],
+  "fullCheckAttempts": [
+    {
+      "environment": "sandbox",
+      "status": "not-started-package-manager",
+      "reason": "Corepack registry DNS resolution failed"
+    },
+    {
+      "environment": "host-clean-checkout",
+      "status": "failed-prerequisite",
+      "reason": "required dependency absent in new checkout"
+    },
+    {
+      "environment": "host-existing-dependency-cache",
+      "status": "not-green",
+      "reason": "workflow-governance process exit3221226505; metadata/target/harness/runtime/matrix/backup-plan/campaign/rulebook/http/workflow integrity stages preceding it completed; later package stages not reached"
+    }
+  ],
+  "actualDesktopProof": {
+    "freshInPreparation": true,
+    "adapterInvocations": 7,
+    "outerCuaCalls": 1,
+    "positiveUiCalls": 2,
+    "positiveClaims": 2,
+    "refusals": 5,
+    "refusedUiCalls": 0,
+    "refusedClaims": 0,
+    "modes": [
+      "title",
+      "exit",
+      "intent",
+      "fingerprint",
+      "clock",
+      "Sales-navigation-click",
+      "wrongUTCday"
+    ],
+    "liveExecutionMustRepeat": true
+  },
+  "qualification": {
+    "observedCashPurchaseControl": "Save cash purchase",
+    "observedPurchaseReturnControl": "Save purchase return",
+    "observedSalesPostControl": "Post",
+    "paymentAndSalesCreditControls": "observed in CONT3 on same unchanged candidate; must refresh at execution",
+    "cashPurchaseSourceReturns": "static-supported source cash_purchase => cash1000; actual newsource qualification required",
+    "rentalFullProductForm": "view-only; no rentalcatalogue fixture, no grant or quickcreate workaround",
+    "ordinaryCustomerCashRefund": "no supported tendercontrol exposed in inspected ordinarysalesreturnUI",
+    "persistedFinancialAudit": "not qualified; source/journals not substitute"
+  },
+  "dateContract": "fixed2026-10-28UTC/final5min refusal; laterday requires newreviewedmission",
+  "transport": "unchanged persisted desktop adapter inside actual CUA; internal queue ID preserves allowlist prefix",
+  "unexecutedScope": [
+    "all28businesscheckpoints",
+    "customer cashrefund",
+    "rental/deposits",
+    "actualrole/tenant/race/fault",
+    "upgrade/storage/experts",
+    "backupLAST"
+  ],
+  "releaseAcceptance": "not-established"
+}
