@@ -1907,7 +1907,9 @@
     },
     "acceptedFinancialEvents": 4,
     "unresolved": 0,
-    "status": "expired-original-budget/date-no-replay"
+    "status": "closed-expired-run-results-published-PR89",
+    "chargedMs": 73082889,
+    "explicitPausedMs": 171023
   },
   "nextRapid02Continuation": {
     "date": "2026-10-29",
