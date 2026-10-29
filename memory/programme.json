@@ -1927,12 +1927,11 @@
     "checks": "runs/CHECKS-20261029-rapid02-cont1.json",
     "handoff": "handoffs/CODING-MISSION-20261029-rapid02-consolidated.md",
     "executionQa": "dba97b79aa6c5743523345aec4693bc876a07cfa",
-    "status": "financially-complete-publication-closing",
+    "status": "consumed-closed",
     "counts": {
-      "passed": 17,
+      "passed": 18,
       "failed": 3,
-      "inconclusive": 2,
-      "pending": 1
+      "inconclusive": 2
     },
     "financialSubmissions": 12,
     "newJournals": 16,

@@ -6,10 +6,9 @@
   "mission": "Rapid02 continuation C1",
   "caseCount": 23,
   "counts": {
-    "passed": 17,
+    "passed": 18,
     "failed": 3,
-    "inconclusive": 2,
-    "pending": 1
+    "inconclusive": 2
   },
   "unresolved": 0,
   "financialSubmissions": 12,
@@ -55,11 +54,11 @@
     "refusedZeroUiAndClaims": 5
   },
   "clock": {
-    "mode": "active",
-    "chargedMs": 2187592,
+    "mode": "closed",
+    "chargedMs": 2314803,
     "explicitPausedMs": 0,
-    "includesInitialPublication": false,
-    "metadataOnlyTail": false,
+    "includesInitialPublication": true,
+    "metadataOnlyTail": true,
     "checkpoint20LateMs": 16844
   },
   "cases": [
@@ -153,7 +152,7 @@
     },
     {
       "id": "R02-END",
-      "status": "pending"
+      "status": "passed"
     }
   ],
   "fullCheck": "not-green-existing-Windows-governance-failure",
