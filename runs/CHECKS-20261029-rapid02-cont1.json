@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-29",
+  "executionQa": "dba97b79aa6c5743523345aec4693bc876a07cfa",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "liveStamp": "v2.5.22 · 211771e",
+  "mission": "Rapid02 continuation C1",
+  "caseCount": 23,
+  "counts": {
+    "passed": 17,
+    "failed": 3,
+    "inconclusive": 2,
+    "pending": 1
+  },
+  "unresolved": 0,
+  "financialSubmissions": 12,
+  "reconciliation": {
+    "protectedRecords": 32,
+    "unchangedSettings": 3,
+    "unchangedAccountDefinitions": 32,
+    "preservedJournalSummaries": 185,
+    "newJournalSummaries": 16,
+    "stockMovements": 40,
+    "stockPages": 4,
+    "unchangedCatalogueAndLevels": true,
+    "preservedPartialAllocations": true,
+    "receiptRowOrderChangedOnly": true,
+    "closing": {
+      "journals": 201,
+      "dr": 25248.11,
+      "cr": 25248.11,
+      "cash": 580,
+      "ar": 1906.21,
+      "ap": 1490,
+      "expense": 850,
+      "income": 1849.5,
+      "assets": 3386.21,
+      "inventoryGl": 900,
+      "stockValue": 1020,
+      "physicalQuantity": 8,
+      "unitCost": 60,
+      "knownStockGlGap": 120
+    },
+    "dated28OpeningRestored": true,
+    "dated27Ar": 2106.21,
+    "scope": "Visible UI captures and journal summaries; not hidden database or persisted actor/action audit attestation."
+  },
+  "focusedTests": {
+    "passed": 117,
+    "failed": 0,
+    "skipped": 0
+  },
+  "actualControlProof": {
+    "calls": 7,
+    "positiveUiAndClaims": 2,
+    "refusedZeroUiAndClaims": 5
+  },
+  "clock": {
+    "mode": "active",
+    "chargedMs": 2187592,
+    "explicitPausedMs": 0,
+    "includesInitialPublication": false,
+    "metadataOnlyTail": false,
+    "checkpoint20LateMs": 16844
+  },
+  "cases": [
+    {
+      "id": "R02-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "R02-OPEN",
+      "status": "passed"
+    },
+    {
+      "id": "R02-S-BUY",
+      "status": "passed"
+    },
+    {
+      "id": "R02-S-RETURN1",
+      "status": "passed"
+    },
+    {
+      "id": "R02-S-RETURN2",
+      "status": "passed"
+    },
+    {
+      "id": "R02-S-HISTORY",
+      "status": "failed"
+    },
+    {
+      "id": "R02-AR-INVOICE1",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AR-INVOICE2",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AR-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AR-BOUND",
+      "status": "failed"
+    },
+    {
+      "id": "R02-AR-PART",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AR-FINAL",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AR-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R02-AP-BILL1",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AP-BILL2",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AP-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AP-BOUND",
+      "status": "failed"
+    },
+    {
+      "id": "R02-AP-PART",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AP-FINAL",
+      "status": "passed"
+    },
+    {
+      "id": "R02-AP-HISTORY",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R02-DATE",
+      "status": "passed"
+    },
+    {
+      "id": "R02-COMBINED",
+      "status": "passed"
+    },
+    {
+      "id": "R02-END",
+      "status": "pending"
+    }
+  ],
+  "fullCheck": "not-green-existing-Windows-governance-failure",
+  "releaseAcceptance": "not-established",
+  "next": "Grouped coding fixes and qualification, then Medium review and substantial regression batch; no transaction replay."
+}

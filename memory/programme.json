@@ -1920,5 +1920,23 @@
     "status": "prepared-new29Oct-fresh-gates-required",
     "cases": 23,
     "oldFourAcceptedReadOnly": true
+  },
+  "latestRapid02Continuation": {
+    "date": "2026-10-29",
+    "run": "runs/RUN-20261029-rapid02-cont1.md",
+    "checks": "runs/CHECKS-20261029-rapid02-cont1.json",
+    "handoff": "handoffs/CODING-MISSION-20261029-rapid02-consolidated.md",
+    "executionQa": "dba97b79aa6c5743523345aec4693bc876a07cfa",
+    "status": "financially-complete-publication-closing",
+    "counts": {
+      "passed": 17,
+      "failed": 3,
+      "inconclusive": 2,
+      "pending": 1
+    },
+    "financialSubmissions": 12,
+    "newJournals": 16,
+    "drCr": 880,
+    "next": "Grouped coding fixes/qualification, Medium review, substantial regression; no replay."
   }
 }
