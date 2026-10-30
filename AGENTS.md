@@ -1,3 +1,9 @@
+# Current Medium review — live v2.5.24 HOLD for complete Light release
+
+Read reviews/REVIEW-20261030-v2524-live-readiness.md, runs/CHECKS-20261030-v2524-medium-review.json and handoffs/CODING-MISSION-20261030-rapid04-review-followup.md. Actual deployedmergee5bb589267035ffb031b6c083f4e911bb7d04aac/v2.5.24·e5bb589 has same tree as6152aa33. Fresh7controls/metadata pass; retrieved CI rental11pass1fail D112, aggregate130pass1fail within explicitruntime boundaries. Current Linuxfullcheckfails stale archivecatalog/planpin, distinctfromWindowscrash; HTTPfails/no detailedcountretrieved. Source-reviewed after-return reservation/deposit-event continuity and rental auditreader mismatch remain. No new business/auth/config/grant; originalcompanyInventoryoff unchanged.
+
+NEXT groupedcodingfollowup plus actualprivateA/B/Viewerfixture/AUTH qualification, then Medium freezes candidate/date/fullbatch/guards. Current11-caseplanningMISSION executionReady=false; no closure/deniedcases. Never execute it or40pointPLAN, resetoldclocks or replayRapid03. Ownerfixturequestionpending; deployisnotgrant. No merge/deploy/launch;backupLAST. Historicalhandoffclaims below describe earlier sessions.
+
 # Rapid04 coding qualification delivered — awaiting Medium bind
 
 Read [handoff](handoffs/CODING-MISSION-20261030-rapid04-complete.md). Product v2.5.24 review branch; QA `qa/rapid04-coding-qualification`. Light has no executable Rapid04 queue. AUTH-20261030 is a request, not a grant. Do not merge/deploy. Preserve Rapid03 `eed69cf`. Backup LAST.
