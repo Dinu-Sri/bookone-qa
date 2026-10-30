@@ -1,0 +1,213 @@
+{
+  "executionQa": "057f31853b706a068fd268614c6b1a79c4b352ff",
+  "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "liveStamp": "v2.5.23 · b89dd78",
+  "counts": {
+    "passed": 30,
+    "inconclusive": 1,
+    "not-run": 4,
+    "pending": 1
+  },
+  "unresolved": 0,
+  "acceptedFinancial": 18,
+  "newJournals": 22,
+  "drCr": 1680,
+  "reconciliation": {
+    "protectedMismatch": [],
+    "equality": {
+      "sales": true,
+      "purchase": true,
+      "inventory": true,
+      "catalogue": true,
+      "levels": true
+    },
+    "oldJournals": 201,
+    "newJournals": 22,
+    "oldMovements": 40,
+    "newMovements": [
+      "      - row \"2026-10-29 purchase Q-N14-WIDGET-2CTK N14 Widget +4 LKR 60 business_document CSH-20261029-0003\":",
+      "      - row \"2026-10-29 return Q-N14-WIDGET-2CTK N14 Widget -1 LKR 60 business_document PR-20261029-0010\":",
+      "      - row \"2026-10-29 return Q-N14-WIDGET-2CTK N14 Widget -3 LKR 60 business_document PR-20261029-0011\":"
+    ],
+    "closing": {
+      "journals": 223,
+      "drCr": 26928.11,
+      "cash": 700,
+      "ar": 1906.21,
+      "ap": 1490,
+      "inventoryGl": 900,
+      "stockValue": 1020,
+      "physicalQty": 8,
+      "movements": 43,
+      "income": 1969.5,
+      "assets": 3506.21
+    },
+    "scope": "18acceptedfinancialsubmissions,2refundsNOTexecuted; old36casepartialrun; visibleUI only"
+  },
+  "clock": {
+    "mode": "active",
+    "chargedMs": 31680030,
+    "explicitPausedMs": 2639522,
+    "allUnpausedGapsCharged": true,
+    "includesInitialPublication": false,
+    "metadataOnlyTail": false
+  },
+  "checkpoint18LateMs": 2178,
+  "checkpoint20LateMs": 13402,
+  "focused": {
+    "passed": 121,
+    "failed": 0,
+    "skipped": 0
+  },
+  "notExecutedRefunds": [
+    40,
+    80
+  ],
+  "cases": [
+    {
+      "id": "R03-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "R03-OPEN",
+      "status": "passed"
+    },
+    {
+      "id": "R03-P-BUY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-P-BOUND",
+      "status": "inconclusive"
+    },
+    {
+      "id": "R03-P-RETURN1",
+      "status": "passed"
+    },
+    {
+      "id": "R03-P-RETURN2",
+      "status": "passed"
+    },
+    {
+      "id": "R03-P-HISTORY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-S-BUY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-S-RETURN1",
+      "status": "passed"
+    },
+    {
+      "id": "R03-S-RETURN2",
+      "status": "passed"
+    },
+    {
+      "id": "R03-S-HISTORY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-INVOICE1",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-INVOICE2",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-BOUND",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-PART",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-FINAL",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AR-HISTORY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-BILL1",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-BILL2",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-CREDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-BOUND",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-PART",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-FINAL",
+      "status": "passed"
+    },
+    {
+      "id": "R03-AP-HISTORY",
+      "status": "passed"
+    },
+    {
+      "id": "R03-CF-INVOICE",
+      "status": "passed"
+    },
+    {
+      "id": "R03-CF-RECEIPT",
+      "status": "passed"
+    },
+    {
+      "id": "R03-CF-TENDER",
+      "status": "not-run"
+    },
+    {
+      "id": "R03-CF-RETURN1",
+      "status": "not-run"
+    },
+    {
+      "id": "R03-CF-RETURN2",
+      "status": "not-run"
+    },
+    {
+      "id": "R03-CF-HISTORY",
+      "status": "not-run"
+    },
+    {
+      "id": "R03-AUDIT",
+      "status": "passed"
+    },
+    {
+      "id": "R03-MODULE",
+      "status": "passed"
+    },
+    {
+      "id": "R03-DATE",
+      "status": "passed"
+    },
+    {
+      "id": "R03-COMBINED",
+      "status": "passed"
+    },
+    {
+      "id": "R03-END",
+      "status": "pending"
+    }
+  ],
+  "releaseAcceptance": "not-established"
+}

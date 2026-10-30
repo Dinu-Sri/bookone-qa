@@ -1,5 +1,9 @@
 # BookOne launch acceptance register
 
+## Rapid03 interrupted results and30October continuation
+
+[Partial run](../runs/RUN-20261030-rapid03-interrupted.md) verifies new supplierrefund state and both allocationfeedback fixes with complete adjacent workflows. Ordinarycustomer invoice/receipt posted; refund40/80 notexecuted before creditgap/dateexpiry. Separate reviewed10case30Octobercontinuation completesremainingrefund lifecycle, no oldtransaction replay. Historicalbadcredits/quantityboundaryinertness/rental/realroles/tenant/race/fault/upgrade/storage gaps remain.
+
 ## Next grouped regression — Rapid03
 
 [Review](../reviews/REVIEW-20261029-v2523-rapid03.md) and [Light batch](../handoffs/HANDOFF-20261029-rapid03-sol-light.md) bind newv2.5.23 fullsupplierrefund/AR/AP/customer-cashrefund workflows and actualaudit read. Preparation/livebuild qualification only, no defectclosure. Rental/realdeniedactors/foreign-tenant/race/fault/storage remainopen.

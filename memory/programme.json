@@ -1950,5 +1950,30 @@
     "drCr": 1800,
     "executed": false,
     "status": "conditional-ready-fresh-gates-required"
+  },
+  "latestRapid03Results": {
+    "run": "runs/RUN-20261030-rapid03-interrupted.md",
+    "checks": "runs/CHECKS-20261030-rapid03-interrupted.json",
+    "counts": {
+      "passed": 30,
+      "inconclusive": 1,
+      "not-run": 4,
+      "pending": 1
+    },
+    "acceptedFinancial": 18,
+    "journals": 22,
+    "drCr": 1680,
+    "status": "publication-closing"
+  },
+  "latestRapid03Continuation": {
+    "review": "reviews/REVIEW-20261030-rapid03-continuation.md",
+    "handoff": "handoffs/HANDOFF-20261030-rapid03-continuation-sol-light.md",
+    "queue": "queues/MISSION-v2523-RAPID-03-CONT1.json",
+    "date": "2026-10-30",
+    "cases": 10,
+    "financialSubmissions": 2,
+    "newJournals": 2,
+    "drCr": 120,
+    "executed": false
   }
 }
