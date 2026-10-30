@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "id": "PLAN-RAPID04-RENTAL-SECURITY-QUALIFICATION",
+  "status": "awaiting-fixture-and-control-qualification-NOT-LIGHT-EXECUTABLE",
+  "basedOnQa": "eed69cf7f63d10d13aa872f43c82830241a26f43",
+  "reviewedProduct": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "proposedCandidate": "must be reviewed/frozen after coding qualification",
+  "executionDate": null,
+  "datePolicy": "Medium binds exact UTC date/local hire interval/due dates after prerequisites; never reuse expired Rapid03 date or silently change a released contract.",
+  "clockPolicy": "Future NEW120total/100execution/20closing; preflight15min cap with one consolidated blocker disposition, no business on failed lane gate; no reset/replay.",
+  "sourceRuleRefs": [
+    "BR-REN-01@1",
+    "BR-REN-02@1",
+    "BR-REN-03@1",
+    "BR-REN-04@1",
+    "BR-SEC-01@1",
+    "BR-SEC-02@1"
+  ],
+  "sourceWorkflow": "workflows/specs/WF-REN-001.json (draft; no acceptance inherited)",
+  "oracle": {
+    "status": "independent arithmetic specified; operational bindings and fee/recognition terms require Medium review",
+    "openingFleet": {
+      "qty": 20,
+      "unitCost": 50,
+      "value": 1000
+    },
+    "reservationQty": 10,
+    "hireInvoice": 500,
+    "receipt": 500,
+    "depositCollected": 1000,
+    "explicitApprovedCharge": 200,
+    "depositApplied": 200,
+    "depositRefunded": 800,
+    "conditionalFinancialJournals": 6,
+    "drCrEach": 3200,
+    "closingDelta": {
+      "cash": 700,
+      "ar": 0,
+      "ap": 0,
+      "depositLiability": 0,
+      "hireRevenue": 500,
+      "chargeRevenue": 200,
+      "ordinaryCogs": 0,
+      "fleetQty": 0,
+      "fleetValue": 0
+    },
+    "returnBuckets": {
+      "good": 8,
+      "dirty": 2,
+      "afterWashReleaseWarehouse": 20
+    },
+    "recognitionLimit": "After-return earned hire example only; RF04/RF09/expert applicability remains open; dirty return does not imply agreed charge."
+  },
+  "cases": [
+    {
+      "id": "G01",
+      "layer": "qualification",
+      "expected": "Freeze product/QA/schema/dependencies/configuration and actual live stamp; review any new candidate diff before reuse.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "G02",
+      "layer": "qualification",
+      "expected": "Legitimate isolated company A Inventory+Rental capable, correct entity/tier, and real foreign company B; preserve original trading company.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "G03",
+      "layer": "qualification",
+      "expected": "Fresh credential login for permitted A Owner, denied A Viewer, legitimate scoped staff if used, and foreign B Owner; private credentials/source binding.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "G04",
+      "layer": "qualification",
+      "expected": "Actual ordinary product/create/booking UI positive controls and allowed/denied matrix; shell Owner label is insufficient.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "G05",
+      "layer": "qualification",
+      "expected": "Fresh books/accounts/stock/cost layers/locations/settings/current protected records; fleet20 at50 total1000, sufficient liquid tender, no historical balancing repair.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "G06",
+      "layer": "qualification",
+      "expected": "Fresh fixed date contract and independent oracle, NEW120/20 clock, immutable ledger/request/readback, actual persisted desktop positive/refusal proof; candidate/fixture-specific guard extension reviewed first.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R01",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Quote10 rental units at50/event with approved local inclusive hire dates; no financial posting or fleet consumption.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R02",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Confirm/convert to order with same reservation lineage; no duplicate reservation, no financial journal.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R03",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Calendar/source readback reserved10 of20, available10 on overlap dates; padding and invoice-stage settings recorded.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R04",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Collect refundable cash deposit1000: Dr1000/Cr2400, held1000/open1000, no income/AR/COGS.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R05",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Dispatch10 warehouse to on-rent using supported control; own fleet20/value1000 conserved, no sale COGS.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R06",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Return8good+2dirty; warehouse18/wash2/onrent0, owned20/value1000; no automatic loss/charge/GL.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R07",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Release2wash through supported readiness control; warehouse20/wash0/available20, no GL.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R08",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Create base hire invoice500 from correct source at approved after-return stage: Dr1300/Cr4400; no sale COGS or duplicate reservation/charge.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R09",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Receive500 for base invoice: Dr1000/Cr1300, original allocation/receipt preserved on later deposit settlement.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R10",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Create separately agreed damage/late charge200 only with documented fixture terms/authority, then apply200 deposit: Dr1300/Cr4450 and Dr2400/Cr1300; trace atomic actual journals/source links. No automatic fee from dirty return.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R11",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Refund remaining800 via eligible funded Cash1000: Dr2400/Cr1000, held1000/applied200/refunded800/open0.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R12",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Cumulative lifecycle: six financial journals DrCr3200; cash+700,hire4400+500/charges4450+200,AR0/AP0/deposit0,ownedfleet20/value1000/noCOGS.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R13",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Quote/order/invoice/charge/receipt/deposit/refund/history and in-app output readback, reload and independent dated reports; no physical print.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "R14",
+      "layer": "browser-and-persisted-reconciliation",
+      "expected": "Attributable actor/action/source/event audit for reservation/dispatch/return/wash and each money transition; missing events remain missing, journals alone insufficient.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N01",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Real A Viewer denies own-source create/edit/dispatch/return/deposit/refund/charge operations; zero business/stock/journal effects with allowed positives.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N02",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Real foreign B Owner denies real A document/event/line IDs and vice versa, including reads/reports/audit/files where implemented; no nonexistent-ID substitute.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N03",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Stale page/session after legitimate role/membership revocation denies next authoritative request; isolated fixture only.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N04",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Module/entity/tier/location/brand ceiling denies unchanged Owner/staff operations; preserve settings/history, explicit setup owner; no original tenant grant change.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N05",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Inclusive endpoint/turnaround overlap and concurrent last-available reservation refuse excess with no overbooking; controlled local fixture only.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N06",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Over-return11 vsdispatch10 and duplicate dispatch/return/refund refuse zero new effects, independent business snapshots.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N07",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Over-apply/over-refund and invalid/nonliquid/inactive/foreign tender deny; separately funded bank1100/card1200 positives bind original eligible amount/receipt.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "N08",
+      "layer": "isolated-credential-server-boundaries",
+      "expected": "Locked/backdated period and retry/same-key faults: original dates, amounts, source allocations and no duplicate payout; supported isolated runner only.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT01",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Deliberately align product-ref.json to reviewed candidate before source/runtime runs; inherited0bcdf4d pin is historical and must not masquerade as b89dd78.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT02",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Install locked QA/product dependencies and run full pnpm check on supported environment; preserve Windows process failure, never delete governance tests or turn failures into passes.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT03",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Fresh empty guarded loopback PostgreSQL16 bookone_qa_runtime, complete schema application and non-owner NOBYPASSRLS role; no shared staging reset.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT04",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Existing postgres-rls lane9 assertions including reserved driver/transaction/context restoration, current fingerprint and real own/foreign controls.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT05",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Existing rental-lifecycle10 plus commercial-deep8 and role-scope-boundaries19 assertions; preserve each lane owner/nonowner/synthetic-session boundary.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT06",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Extend actual credential HTTPS compiled-app runner to missing rental actions and real denial/source snapshots; existing rental command tests use synthetic sessions and owner connection.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT07",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Isolated journal/stock/settlement insert faults and controlled races commit or roll back all business effects; no shared external-service stress.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "RT08",
+      "layer": "existing-runner-and-runtime-qualification",
+      "expected": "Runtime deployed-role/schema/storage attestation remains separate from local runner success; public only allowlisted summaries, no raw SQL/errors/URLs/credentials.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "C01",
+      "layer": "closing",
+      "expected": "Reconcile every accepted source, six conditional journals, books/AR/AP/deposit,20fleet/value1000/locations/movements and expected dated reports; audit gaps explicit.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "C02",
+      "layer": "closing",
+      "expected": "Preserve all original protected records including the two newly completed customer refunds (minimum64 source set), all225 prior journal summaries/43 movements/settings/masters; fresh capture actual baseline.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "C03",
+      "layer": "closing",
+      "expected": "One severity-ranked consolidated defect/results/fix handoff, scope by exact fingerprint and layer; continue independent eligible lanes without small recurring blocked queues.",
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "C04",
+      "layer": "closing",
+      "expected": "Publish sanitized results, close clock through initial publication, disclose metadata tail and timing misses; no launch percentage/merge/deploy, backup/restore LAST.",
+      "status": "specified-not-run",
+      "executable": false
+    }
+  ]
+}
