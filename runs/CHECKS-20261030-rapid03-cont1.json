@@ -1,0 +1,204 @@
+{
+  "executionQa": "456d9f7462748e2e9d157875a4d95438b01ed6f8",
+  "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "liveStamp": "v2.5.23 · b89dd78",
+  "dateContract": "2026-10-30 UTC; due31; original source29 preserved",
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 0,
+    "not-run": 0,
+    "pending": 1,
+    "running": 0
+  },
+  "unresolved": 0,
+  "acceptedFinancial": 2,
+  "newJournals": 2,
+  "drCr": 120,
+  "focused": {
+    "passed": 125,
+    "failed": 0,
+    "skipped": 0
+  },
+  "actualProof": {
+    "positiveUiAndClaims": 2,
+    "refusedZeroUiAndClaims": 5
+  },
+  "reconciliation": {
+    "protectedRecords": 62,
+    "protectedMismatch": [],
+    "equality": {
+      "sales": true,
+      "purchase": true,
+      "inventory": true,
+      "catalogue": true,
+      "levels": true
+    },
+    "oldJournalsPreserved": 223,
+    "newJournals": 2,
+    "newJournalDrCr": 120,
+    "oldMovementsPreserved": 43,
+    "newMovements": 0,
+    "accountDefinitionsPreserved": 32,
+    "originalReceiptExactPreservation": true,
+    "sourceExhausted": true,
+    "closing": {
+      "journals": 225,
+      "drCr": 27048.11,
+      "cash": 580,
+      "ar": 1906.21,
+      "ap": 1490,
+      "inventoryGl": 900,
+      "stockValue": 1020,
+      "physicalQty": 8,
+      "movements": 43,
+      "income": 1849.5,
+      "assets": 3386.21
+    },
+    "dated29": {
+      "journals": 223,
+      "drCr": 26928.11,
+      "cash": 700,
+      "income": 1969.5,
+      "assets": 3506.21
+    },
+    "dated28": {
+      "journals": 185,
+      "cash": 500,
+      "income": 1769.5,
+      "assets": 3306.21
+    },
+    "scope": "2 accepted financial submissions in new 30Oct fingerprint; original 29Oct partial results unchanged; visible UI evidence only"
+  },
+  "clock": {
+    "mode": "active",
+    "chargedMs": 1171824,
+    "explicitPausedMs": 0,
+    "allUnpausedGapsCharged": true,
+    "includesInitialPublication": false,
+    "metadataOnlyTail": false
+  },
+  "checkpoint18": {
+    "stage": "prepare",
+    "at": "2026-10-30T02:54:58.282Z",
+    "chargedMs": 1068784,
+    "lateMs": 0,
+    "casesPassed": 9,
+    "pending": [
+      "RC1-END"
+    ],
+    "unresolved": 0,
+    "businessComplete": true,
+    "missing": [
+      "consolidated publication and closed-clock metadata"
+    ],
+    "reconciliation": "reconciliation.json"
+  },
+  "checkpoint20": {
+    "status": "not-yet-due-at-initial-record"
+  },
+  "originalRun": {
+    "executionQa": "057f31853b706a068fd268614c6b1a79c4b352ff",
+    "passed": 31,
+    "inconclusive": 1,
+    "notRunBudget": 4,
+    "unresolved": 0,
+    "acceptedFinancial": 18,
+    "newJournals": 22,
+    "drCr": 1680,
+    "clock": "closed; no modification"
+  },
+  "combinedContext": {
+    "fingerprints": 2,
+    "acceptedFinancial": 20,
+    "newJournals": 24,
+    "drCr": 1800,
+    "netCashArApStockIncome": 0,
+    "notOneOriginalBatchPass": true
+  },
+  "cases": [
+    {
+      "id": "RC1-GATE",
+      "status": "passed",
+      "actual": "ExactcleanQA456d9f7/productb89dd78 NEWclockbeforebrowser;fresh125focusedpass0fail0skip,actual7controls2positive5zeroUIclaimrefusals. OriginalQAguardedLogout/protectedreload/LoginRememberoff accepted QAOwne/company/live. Navigationdetachment/timeouts preserved,noauthreplay/no financialaction.",
+      "submissions": [
+        {
+          "submissionId": "rc1-logout-1",
+          "outcome": "accepted"
+        },
+        {
+          "submissionId": "rc1-login-1",
+          "outcome": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "RC1-OPEN",
+      "status": "passed",
+      "actual": "Fresh3settingsnoVATnoApprovalGRNIofflastcost,32accountdefs;14financial/stocksettingssurfaces,all223journal summaries/fivepages43moves,all62protectedsource snapshots loaded. Actualcash700AR1906.21AP1490inventory900/value1020qty8cost60expense1010income1969.5assets3506.21catalogue10levels7. No source/settings/grant/master changes;originalCFinvoice/receiptreadonly preserved.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-SOURCE",
+      "status": "passed",
+      "actual": "ReadonlyoriginalCF invoice0056paid120/zero datedissue/delivery29due31 andoriginalreceipt120date29cash1000 preserved;ActivityoriginalQA CREATE/ALLOCATE120 bindactualsource/receiptID. OrdinaryUI onlythissource3Serviceunits40,total120 unreturned,nomorejournals223/26928.11 orrefundintent. Invoice/receipt neverrecreated.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-TENDER",
+      "status": "passed",
+      "actual": "OriginalCFsource3x40 only:Creditonlydefault andvisible1000/1100/1200options,4000absent(UIexclusiononly). Qty4shows explicitexceedsremaining3warning/totalwithheld;Saveenabled so no inert/serverdenialclaim,invalidneverSubmit. Restored1x40/cash1000/date30due31committed/reread,source29preserved,currentcash700>=40. No otheractor/tenderpositiveclaim.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-RETURN1",
+      "status": "passed",
+      "actual": "Newordinarypartialcashrefund40accepted/refundedpaid40zero durable,exactsource/cash1000/target30due31. Originalinvoicepaid120zero/receipt120unchanged,remaining2/value80;onejournal224salesreturnsDr/cashCr40,noAR/AP/stock/master,currentcash660.",
+      "submissions": [
+        {
+          "submissionId": "rc1-return1-1",
+          "outcome": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "RC1-RETURN2",
+      "status": "passed",
+      "actual": "Final80ordinarycashrefundaccepted/refundedpaid80zero durable,onejournal225Dr4100/Cr1000 80,cash580AR/APunchanged/stock43. Sourcepickerremainingqty0total0,cumulative3/value120 exact;originalinvoicepaid120zero/receipt120 preserved,target30due31/source29 unchanged.",
+      "submissions": [
+        {
+          "submissionId": "rc1-return2-1",
+          "outcome": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "RC1-HISTORY",
+      "status": "passed",
+      "actual": "Both 30Oct refund credits40/80 independently refunded/paid/zero on list/detail/reload; in-app previews/source bindings/real Owner filtered CREATE40/80 and original CREATE/ALLOCATE120 read. Original120 invoice and receipt preserved, source quantity0/value0. Two journals Dr4100/Cr1000 total120, cash/income/assets-120, no AR/AP/stock; separate29/30 fingerprints retained.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-DATE",
+      "status": "passed",
+      "actual": "Only new refunds dated30Oct due31; original invoice issue/delivery and receipt29Oct unchanged. Dated29 reports223 journals cash700 income1969.5 assets3506.21 and AR1906.21/AP1490 preserved; dated28 185/cash500/income1769.5/assets3306.21. Closing30 225/27048.11 cash580 income1849.5 assets3386.21. Private reconciliation assertions executed.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-PRESERVE",
+      "status": "passed",
+      "actual": "Exact normalized comparisons of all62 protected records,223 prior journal summaries,all43 stock movements across5pages,32account definitions,settings/catalogue/levels passed. Only2newjournals120. InventoryGL900/value1020/qty8cost60/gap120 retained; four historical bad refund credits and all prior settled sources unchanged. Original receipt exact preservation verified.",
+      "submissions": []
+    },
+    {
+      "id": "RC1-END",
+      "status": "pending",
+      "actual": "",
+      "submissions": []
+    }
+  ],
+  "fullCheck": "NOT GREEN: missing dependency/historical Windows governance failure",
+  "releaseAcceptance": "not-established",
+  "noMergeOrDeploy": true
+}

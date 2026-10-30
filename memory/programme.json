@@ -1952,17 +1952,28 @@
     "status": "conditional-ready-fresh-gates-required"
   },
   "latestRapid03Results": {
-    "run": "runs/RUN-20261030-rapid03-interrupted.md",
-    "checks": "runs/CHECKS-20261030-rapid03-interrupted.json",
+    "date": "2026-10-30",
+    "status": "business-complete-publication-closing",
+    "executionQa": "456d9f7462748e2e9d157875a4d95438b01ed6f8",
+    "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+    "run": "runs/RUN-20261030-rapid03-cont1.md",
+    "checks": "runs/CHECKS-20261030-rapid03-cont1.json",
+    "handoff": "handoffs/CODING-MISSION-20261030-rapid03-complete.md",
     "counts": {
-      "passed": 31,
-      "inconclusive": 1,
-      "not-run": 4
+      "passed": 9,
+      "failed": 0,
+      "blocked": 0,
+      "inconclusive": 0,
+      "not-run": 0,
+      "pending": 1,
+      "running": 0
     },
-    "acceptedFinancial": 18,
-    "journals": 22,
-    "drCr": 1680,
-    "status": "closed-expired"
+    "unresolved": 0,
+    "combinedFinancialActionsAcrossTwoFingerprints": 20,
+    "originalPartialCountsPreserved": true,
+    "next": "Medium review and substantial next-family fixture/runtime qualification; never replay either consumed queue",
+    "noLaunchMergeDeploy": true,
+    "backupLast": true
   },
   "latestRapid03Continuation": {
     "review": "reviews/REVIEW-20261030-rapid03-continuation.md",
