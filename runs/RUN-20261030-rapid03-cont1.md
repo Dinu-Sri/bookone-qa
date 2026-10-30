@@ -4,7 +4,7 @@ Execution QA456d9f7462748e2e9d157875a4d95438b01ed6f8; product b89dd788b9bec9dc66
 
 ## Dispositions and controls
 
-9passed,1pending,0failed/blocked/inconclusive/running,0unresolved. Only END awaits verified initial publication and clock closure. Fresh125focused tests passed,0fail/skip; actual persisted desktop proof2positive/5zeroUI-and-claim refusals. Exactclean execution pin, fresh guarded Logout/protectednavigation/reload/Login Rememberoff, original QA Owner/profile/build/settings/openings and62protected sources verified. Auth transition detachment/evaluate timeout were retained and resolved from independent actual UI readback, with no auth or financial replay. Existing guard/queue/oracle unchanged. Full pnpm check remains NOTGREEN: historicalWindowsgovernance failure/cleancheckoutdependency limitation. Focused tests do not substitute for that broader check.
+10passed,0pending,0failed/blocked/inconclusive/running,0unresolved. All10 cases complete. Fresh125focused tests passed,0fail/skip; actual persisted desktop proof2positive/5zeroUI-and-claim refusals. Exactclean execution pin, fresh guarded Logout/protectednavigation/reload/Login Rememberoff, original QA Owner/profile/build/settings/openings and62protected sources verified. Auth transition detachment/evaluate timeout were retained and resolved from independent actual UI readback, with no auth or financial replay. Existing guard/queue/oracle unchanged. Full pnpm check remains NOTGREEN: historicalWindowsgovernance failure/cleancheckoutdependency limitation. Focused tests do not substitute for that broader check.
 
 ## Completed ordinary customer refund lifecycle
 
@@ -22,6 +22,6 @@ AsOf29 remains223journals/26928.11,cash700,income1969.50/assets3506.21;AR/APunch
 
 ## Timing and publication
 
-Clock active,charged1171824ms,paused0ms; allunpausedgapscharged. Prepare checkpoint at1068784ms (before18min deadline); persist checkpoint details in checks. Clock remains active through initial publication; final closure is recorded in the metadata-only tail. Original expiredrun clock stays closed32396895mscharged/2639522ms paused and original31/1/4counts remain immutable.
+Clock closed,charged1251983ms,paused0ms; allunpausedgapscharged. Prepare checkpoint at1068784ms (before18min deadline); persist checkpoint details in checks. Clock includes verified initial results publication; subsequent END/checks/pointer/PR updates are an explicitly disclosed metadata-only tail, no browser/auth/business activity. Original expiredrun clock stays closed32396895mscharged/2639522ms paused and original31/1/4counts remain immutable.
 
 Raw DOM/sourceIDs/credentials/proof/clock/ledger remain ignored/private. Sanitized results published in PR90 under standing authorization. No merge/deploy/launch acceptance or coding-chat message. Both queues consumed. Next Medium reviews [consolidated handoff](../handoffs/CODING-MISSION-20261030-rapid03-complete.md) and qualifies a substantial next-family batch; backup/restore LAST.

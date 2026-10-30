@@ -4,12 +4,12 @@
   "liveStamp": "v2.5.23 · b89dd78",
   "dateContract": "2026-10-30 UTC; due31; original source29 preserved",
   "counts": {
-    "passed": 9,
+    "passed": 10,
     "failed": 0,
     "blocked": 0,
     "inconclusive": 0,
     "not-run": 0,
-    "pending": 1,
+    "pending": 0,
     "running": 0
   },
   "unresolved": 0,
@@ -72,12 +72,12 @@
     "scope": "2 accepted financial submissions in new 30Oct fingerprint; original 29Oct partial results unchanged; visible UI evidence only"
   },
   "clock": {
-    "mode": "active",
-    "chargedMs": 1171824,
+    "mode": "closed",
+    "chargedMs": 1251983,
     "explicitPausedMs": 0,
     "allUnpausedGapsCharged": true,
-    "includesInitialPublication": false,
-    "metadataOnlyTail": false
+    "includesInitialPublication": true,
+    "metadataOnlyTail": true
   },
   "checkpoint18": {
     "stage": "prepare",
@@ -96,7 +96,18 @@
     "reconciliation": "reconciliation.json"
   },
   "checkpoint20": {
-    "status": "not-yet-due-at-initial-record"
+    "stage": "persist",
+    "at": "2026-10-30T02:57:20.526Z",
+    "chargedMs": 1211047,
+    "lateMs": 11047,
+    "casesPassed": 9,
+    "pending": [
+      "RC1-END"
+    ],
+    "unresolved": 0,
+    "businessComplete": true,
+    "allSourcesAndReconciliationPersisted": true,
+    "publication": "sanitized tree prepared; branch commit/verification and closed clock metadata remain"
   },
   "originalRun": {
     "executionQa": "057f31853b706a068fd268614c6b1a79c4b352ff",
@@ -193,8 +204,8 @@
     },
     {
       "id": "RC1-END",
-      "status": "pending",
-      "actual": "",
+      "status": "passed",
+      "actual": "Initial sanitized consolidated results published commit5c6c601939b9aa8bdace4bf44f09f060d9e2299e toPR90 with expected-head lease; independent branch comparison verified exactly one commit ahead. Endingbuildv2.5.23b89dd78 verified. All10cases/zero unresolved; clock now closed including initial publication; subsequent END/checks/pointer/PR edits metadata-only tail. Old31/1/4results/expiredclock/firstfailures preserved. No merge/deploy/launch;backupLAST.",
       "submissions": []
     }
   ],
