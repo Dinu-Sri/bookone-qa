@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "ORACLE-v2524-RAPID-04",
+  "authority": ["BR-REN-01@1", "BR-REN-02@1", "BR-REN-03@1", "BR-REN-04@1", "BR-SEC-01@1", "BR-SEC-02@1"],
+  "meaning": "Independent Rapid04 hire/deposit/charge arithmetic. Not product output. Medium binds dates after qualification. Dirty return does not imply a charge.",
+  "status": "independent-arithmetic-specified-operational-bindings-unbound",
+  "profile": {
+    "businessDate": null,
+    "currency": "LKR",
+    "vatRegistered": false,
+    "invoiceTiming": "after_return",
+    "overlapPolicy": "block",
+    "fleetQty": 20,
+    "unitCostCents": 5000,
+    "fleetValueCents": 100000
+  },
+  "lanes": {
+    "hireLifecycle": {
+      "events": [
+        {
+          "id": "R04",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "1000", "debitCents": 100000, "creditCents": 0 },
+                { "account": "2400", "debitCents": 0, "creditCents": 100000 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R08",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "1300", "debitCents": 50000, "creditCents": 0 },
+                { "account": "4400", "debitCents": 0, "creditCents": 50000 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R09",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "1000", "debitCents": 50000, "creditCents": 0 },
+                { "account": "1300", "debitCents": 0, "creditCents": 50000 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R10-CHARGE",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "1300", "debitCents": 20000, "creditCents": 0 },
+                { "account": "4450", "debitCents": 0, "creditCents": 20000 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R10-APPLY",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "2400", "debitCents": 20000, "creditCents": 0 },
+                { "account": "1300", "debitCents": 0, "creditCents": 20000 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R11",
+          "stockQtyDelta": 0,
+          "journals": [
+            {
+              "entries": [
+                { "account": "2400", "debitCents": 80000, "creditCents": 0 },
+                { "account": "1000", "debitCents": 0, "creditCents": 80000 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "allPass": {
+    "journals": 6,
+    "debitCents": 320000,
+    "closingDelta": {
+      "1000": 70000,
+      "1300": 0,
+      "2400": 0,
+      "4400": -50000,
+      "4450": -20000,
+      "5150": 0
+    },
+    "fleetQty": 20,
+    "fleetValueCents": 100000,
+    "ordinaryCogs": 0
+  }
+}

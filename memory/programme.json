@@ -196,7 +196,7 @@
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md",
+  "currentCodingHandoff": "handoffs/CODING-MISSION-20261030-rapid04-complete.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
     "BUG-0044",

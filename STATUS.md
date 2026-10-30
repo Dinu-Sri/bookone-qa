@@ -1,3 +1,7 @@
+# Rapid04 coding qualification delivered — awaiting Medium bind
+
+Product `6152aa33b8d4563036fbf5374220417ef320f01b` v2.5.24 on `fix/v2524-rapid04-qualification`. QA `qa/rapid04-coding-qualification` stacked on PR91 `f256d23`. [Handoff](handoffs/CODING-MISSION-20261030-rapid04-complete.md), [AUTH request](decisions/AUTH-20261030-isolated-rental-company.md), [pin impact](changes/IMPACT-20261030-v2524-pin.md). Operator MISSION-v2524-RAPID-04 `executionReady=false`. PLAN 40 cases remain specified-not-run. Do not start Light. Do not merge/deploy. Isolated runtime lanes and HTTP rental codec not-run. Full check NOTGREEN (Windows workflow-governance 3221226505; Linux CI 40997582714 at f256d23). Backup LAST.
+
 # Medium review complete — Rapid04 coding/fixture qualification first
 
 Read [review](reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.

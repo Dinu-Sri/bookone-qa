@@ -1,3 +1,7 @@
+# Rapid04 coding qualification — still not launch acceptance
+
+[Handoff](../handoffs/CODING-MISSION-20261030-rapid04-complete.md) delivers a reviewable v2.5.24 prerequisite batch (dispatch permission, agreed charges, cash tender, charge source-link) plus fail-closed operator controls. Isolated company A/B Control Room grant is **requested, not granted**. Operator plan is not Light-executable. Isolated runtime/HTTP rental/credential layers remain not-run. No launch percentage. Backup/restore LAST.
+
 # Medium review complete — Rapid04 coding/fixture qualification first
 
 Read [review](../reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](../handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](../queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.
