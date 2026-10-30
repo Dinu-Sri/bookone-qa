@@ -1955,15 +1955,14 @@
     "run": "runs/RUN-20261030-rapid03-interrupted.md",
     "checks": "runs/CHECKS-20261030-rapid03-interrupted.json",
     "counts": {
-      "passed": 30,
+      "passed": 31,
       "inconclusive": 1,
-      "not-run": 4,
-      "pending": 1
+      "not-run": 4
     },
     "acceptedFinancial": 18,
     "journals": 22,
     "drCr": 1680,
-    "status": "publication-closing"
+    "status": "closed-expired"
   },
   "latestRapid03Continuation": {
     "review": "reviews/REVIEW-20261030-rapid03-continuation.md",

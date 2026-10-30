@@ -3,10 +3,9 @@
   "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
   "liveStamp": "v2.5.23 · b89dd78",
   "counts": {
-    "passed": 30,
+    "passed": 31,
     "inconclusive": 1,
-    "not-run": 4,
-    "pending": 1
+    "not-run": 4
   },
   "unresolved": 0,
   "acceptedFinancial": 18,
@@ -45,12 +44,12 @@
     "scope": "18acceptedfinancialsubmissions,2refundsNOTexecuted; old36casepartialrun; visibleUI only"
   },
   "clock": {
-    "mode": "active",
-    "chargedMs": 31680030,
+    "mode": "closed",
+    "chargedMs": 32396895,
     "explicitPausedMs": 2639522,
     "allUnpausedGapsCharged": true,
-    "includesInitialPublication": false,
-    "metadataOnlyTail": false
+    "includesInitialPublication": true,
+    "metadataOnlyTail": true
   },
   "checkpoint18LateMs": 2178,
   "checkpoint20LateMs": 13402,
@@ -206,7 +205,7 @@
     },
     {
       "id": "R03-END",
-      "status": "pending"
+      "status": "passed"
     }
   ],
   "releaseAcceptance": "not-established"
