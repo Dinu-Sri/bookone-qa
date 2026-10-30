@@ -2,6 +2,8 @@
 
 Product `6152aa33b8d4563036fbf5374220417ef320f01b` on `fix/v2524-rapid04-qualification`, VERSION **2.5.24**, CHG [CHG-20261030-rapid04-rental-security](https://github.com/Dinu-Sri/BookOne/blob/fix/v2524-rapid04-qualification/docs/changes/CHG-20261030-rapid04-rental-security.md). QA companion branch `qa/rapid04-coding-qualification` stacked on published [PR 91](https://github.com/Dinu-Sri/bookone-qa/pull/91) `f256d2386786e2520d165fb860babca2e623b199`. Rapid03 results `eed69cf7f63d10d13aa872f43c82830241a26f43` remain immutable.
 
+Review PRs (open, not merged): product [BookOne #9](https://github.com/Dinu-Sri/BookOne/pull/9); QA [bookone-qa #92](https://github.com/Dinu-Sri/bookone-qa/pull/92) stacked on [PR 91](https://github.com/Dinu-Sri/bookone-qa/pull/91).
+
 Do not merge or deploy. Light has **no** executable Rapid04 queue. `queues/PLAN-RAPID04-qualification.json` stays specified-not-run / `executable:false`. `queues/MISSION-v2524-RAPID-04.json` has `executionReady: false` and unbound date/SHA.
 
 ## Product candidate

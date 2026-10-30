@@ -1,6 +1,6 @@
 # Rapid04 coding qualification delivered — awaiting Medium bind
 
-Product `6152aa33b8d4563036fbf5374220417ef320f01b` v2.5.24 on `fix/v2524-rapid04-qualification`. QA `qa/rapid04-coding-qualification` stacked on PR91 `f256d23`. [Handoff](handoffs/CODING-MISSION-20261030-rapid04-complete.md), [AUTH request](decisions/AUTH-20261030-isolated-rental-company.md), [pin impact](changes/IMPACT-20261030-v2524-pin.md). Operator MISSION-v2524-RAPID-04 `executionReady=false`. PLAN 40 cases remain specified-not-run. Do not start Light. Do not merge/deploy. Isolated runtime lanes and HTTP rental codec not-run. Full check NOTGREEN (Windows workflow-governance 3221226505; Linux CI 40997582714 at f256d23). Backup LAST.
+Product `6152aa33b8d4563036fbf5374220417ef320f01b` v2.5.24 ([BookOne PR 9](https://github.com/Dinu-Sri/BookOne/pull/9)). QA [PR 92](https://github.com/Dinu-Sri/bookone-qa/pull/92) stacked on PR91 `f256d23`. [Handoff](handoffs/CODING-MISSION-20261030-rapid04-complete.md), [AUTH request](decisions/AUTH-20261030-isolated-rental-company.md), [pin impact](changes/IMPACT-20261030-v2524-pin.md). Operator MISSION-v2524-RAPID-04 `executionReady=false`. PLAN 40 cases remain specified-not-run. Do not start Light. Do not merge/deploy. Isolated runtime lanes and HTTP rental codec not-run. Full check NOTGREEN (Windows workflow-governance 3221226505; Linux CI 40997582714 at f256d23). Backup LAST.
 
 # Medium review complete — Rapid04 coding/fixture qualification first
 
