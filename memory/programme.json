@@ -196,7 +196,7 @@
   "configurationGuide": "docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md",
   "runtimeManifest": "batches/runtime.json",
   "runtimeGuide": "docs/POSTGRES_RUNTIME.md",
-  "currentCodingHandoff": "handoffs/CODING-MISSION-20261025-light08-exec2.md",
+  "currentCodingHandoff": "handoffs/CODING-MISSION-20261030-rapid04-complete.md",
   "lastBatchRunsScope": "Last committed local summary exports; newer clean candidate CI evidence is lastCleanSourceCi",
   "activeFindings": [
     "BUG-0044",
@@ -1998,5 +1998,14 @@
     "executable": false,
     "legacySourcePinPreserved": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
     "releaseAcceptance": "not-established"
+  },
+  "latestRapid04MediumReview": {
+    "date": "2026-10-30",
+    "qaBase": "cf8ddcb38d813226de466873d1679b4051251297",
+    "liveProduct": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
+    "review": "reviews/REVIEW-20261030-v2524-live-readiness.md",
+    "handoff": "handoffs/CODING-MISSION-20261030-rapid04-review-followup.md",
+    "status": "hold-coding-CI-and-fixture-gates",
+    "lightExecutable": false
   }
 }

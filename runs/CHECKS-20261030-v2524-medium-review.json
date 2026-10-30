@@ -1,0 +1,53 @@
+{
+  "qaReviewBase": "cf8ddcb38d813226de466873d1679b4051251297",
+  "liveProduct": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
+  "liveStamp": "v2.5.24 · e5bb589",
+  "candidate": "6152aa33b8d4563036fbf5374220417ef320f01b",
+  "identicalProductTree": "171a90e3244af06b18e2cfa0c0de1181d190ba13",
+  "localRapid04Controls": {
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "localMetadataChecks": [
+    "validate",
+    "workflows:check",
+    "library:check",
+    "rulebook:check"
+  ],
+  "ci": {
+    "runtime": {
+      "run": 41000512103,
+      "job": 123883563313,
+      "qa": "06a4d4120961210eaf0ca1170642dd649c154613",
+      "qaTreeSameAsReviewBase": true,
+      "passed": 130,
+      "failed": 1,
+      "rental": {
+        "passed": 11,
+        "failed": [
+          "D-112"
+        ]
+      },
+      "boundary": "13 explicit lanes; product commands/synthetic sessions, not deployed credential browser"
+    },
+    "validation": {
+      "run": 41000512118,
+      "job": 123883563367,
+      "status": "failed-backup-plan-candidate-pin-mismatch"
+    },
+    "http": {
+      "run": 41000512110,
+      "status": "failed-at-http-run",
+      "counts": "not-retrieved",
+      "logFetches": "two502; no rootcause claim"
+    }
+  },
+  "fixtureAuth": "pending-not-granted",
+  "fixtureLocators": "not-found-local; owner question pending",
+  "lightExecutionReady": false,
+  "reviewOnly": true,
+  "newBusinessActions": 0,
+  "noMergeDeploy": true,
+  "backupLast": true
+}

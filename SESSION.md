@@ -1,3 +1,13 @@
+# Current Medium review — live v2.5.24 HOLD for complete Light release
+
+Read reviews/REVIEW-20261030-v2524-live-readiness.md, runs/CHECKS-20261030-v2524-medium-review.json and handoffs/CODING-MISSION-20261030-rapid04-review-followup.md. Actual deployedmergee5bb589267035ffb031b6c083f4e911bb7d04aac/v2.5.24·e5bb589 has same tree as6152aa33. Fresh7controls/metadata pass; retrieved CI rental11pass1fail D112, aggregate130pass1fail within explicitruntime boundaries. Current Linuxfullcheckfails stale archivecatalog/planpin, distinctfromWindowscrash; HTTPfails/no detailedcountretrieved. Source-reviewed after-return reservation/deposit-event continuity and rental auditreader mismatch remain. No new business/auth/config/grant; originalcompanyInventoryoff unchanged.
+
+NEXT groupedcodingfollowup plus actualprivateA/B/Viewerfixture/AUTH qualification, then Medium freezes candidate/date/fullbatch/guards. Current11-caseplanningMISSION executionReady=false; no closure/deniedcases. Never execute it or40pointPLAN, resetoldclocks or replayRapid03. Ownerfixturequestionpending; deployisnotgrant. No merge/deploy/launch;backupLAST. Historicalhandoffclaims below describe earlier sessions.
+
+# Rapid04 coding qualification delivered — awaiting Medium bind
+
+Read [handoff](handoffs/CODING-MISSION-20261030-rapid04-complete.md), [AUTH](decisions/AUTH-20261030-isolated-rental-company.md), [pin impact](changes/IMPACT-20261030-v2524-pin.md). Product v2.5.24. QA `qa/rapid04-coding-qualification`. `executionReady=false`. Do not Light-execute PLAN or the planning mission. Do not merge/deploy.
+
 # Medium review complete — Rapid04 coding/fixture qualification first
 
 Read [review](reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.
