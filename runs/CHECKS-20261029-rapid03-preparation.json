@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-29",
+  "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "liveStamp": "v2.5.23 · b89dd78",
+  "liveReadOnlyObserved": true,
+  "businessSubmissions": 0,
+  "focused": {
+    "passed": 121,
+    "failed": 0,
+    "skipped": 0,
+    "firstSandbox": {
+      "passed": 65,
+      "failed": 42,
+      "reason": "Windows rename restrictions"
+    },
+    "firstHost": {
+      "passed": 112,
+      "failed": 1,
+      "reason": "oracle arithmetic caught and corrected before publication"
+    }
+  },
+  "actualControls": {
+    "positiveUiAndClaims": 2,
+    "refusedZeroUiAndClaims": 5
+  },
+  "fullCheck": "NOTGREEN: sandboxCorepackDNS; hostmissingdependency in cleancheckout, historicalWindowsgovernanceunresolved",
+  "guardModulesChanged": false,
+  "caseCount": 36,
+  "conditionalJournals": 24,
+  "conditionalDrCr": 1800,
+  "releaseAcceptance": "not-established"
+}

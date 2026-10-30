@@ -1937,5 +1937,53 @@
     "newJournals": 16,
     "drCr": 880,
     "next": "Grouped coding fixes/qualification, Medium review, substantial regression; no replay."
+  },
+  "latestRapid03Preparation": {
+    "date": "2026-10-29",
+    "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+    "queue": "queues/MISSION-v2523-RAPID-03.json",
+    "handoff": "handoffs/HANDOFF-20261029-rapid03-sol-light.md",
+    "review": "reviews/REVIEW-20261029-v2523-rapid03.md",
+    "cases": 36,
+    "financialSubmissions": 20,
+    "newJournals": 24,
+    "drCr": 1800,
+    "executed": false,
+    "status": "conditional-ready-fresh-gates-required"
+  },
+  "latestRapid03Results": {
+    "date": "2026-10-30",
+    "status": "complete-consumed",
+    "executionQa": "456d9f7462748e2e9d157875a4d95438b01ed6f8",
+    "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+    "run": "runs/RUN-20261030-rapid03-cont1.md",
+    "checks": "runs/CHECKS-20261030-rapid03-cont1.json",
+    "handoff": "handoffs/CODING-MISSION-20261030-rapid03-complete.md",
+    "counts": {
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "inconclusive": 0,
+      "not-run": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "unresolved": 0,
+    "combinedFinancialActionsAcrossTwoFingerprints": 20,
+    "originalPartialCountsPreserved": true,
+    "next": "Medium review and substantial next-family fixture/runtime qualification; never replay either consumed queue",
+    "noLaunchMergeDeploy": true,
+    "backupLast": true
+  },
+  "latestRapid03Continuation": {
+    "review": "reviews/REVIEW-20261030-rapid03-continuation.md",
+    "handoff": "handoffs/HANDOFF-20261030-rapid03-continuation-sol-light.md",
+    "queue": "queues/MISSION-v2523-RAPID-03-CONT1.json",
+    "date": "2026-10-30",
+    "cases": 10,
+    "financialSubmissions": 2,
+    "newJournals": 2,
+    "drCr": 120,
+    "executed": false
   }
 }

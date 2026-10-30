@@ -1,3 +1,13 @@
+# Rapid03 workflows complete — 30 October 2026
+
+Product b89dd788b9bec9dc66cb49d22f7b8c2c92015df7 / live v2.5.23 · b89dd78. [Continuation results](runs/RUN-20261030-rapid03-cont1.md), [checks](runs/CHECKS-20261030-rapid03-cont1.json), [consolidated handoff](handoffs/CODING-MISSION-20261030-rapid03-complete.md). New30Oct executionQA456d9f7462748e2e9d157875a4d95438b01ed6f8: 10passed/0pending,0unresolved;2customer cashrefunds40/80 accepted/reconciled. Original29Oct executionQA057f31853b706a068fd268614c6b1a79c4b352ff remains31passed/1inconclusive/4not-run-budget;18financialactions22journals1680. Across separate fingerprints all20 financial actions/24journals1800 complete, netcash/AR/AP/stock/income0; never combine into one original-batch pass.
+
+All62protected/223priorjournals/43moves/settings/masters preserved. Closing225journals27048.11,cash580AR1906.21AP1490,income1849.50/assets3386.21. Both queues CONSUMED; never replay originalinvoice/receipt or refunds, never repair four historical badcredits. Fresh125focused/actual2positive5zeroUIclaimrefusals and originalOwner auth gates passed. Fullcheck remains NOTGREEN (missingdependency/historicalWindowsgovernance). Clock CLOSED,1251983ms charged/0paused; metadata-only tail disclosed.
+
+NEXT: Medium reviews consolidated result and qualifies a substantial next-family batch with legitimate rental fixture, real denied actors/foreign tenant, funded bank/card positives and shared runtime/race/fault/upgrade/storage controls as applicable. Quantity-boundary inertness remains unproved; no invalid submit authorized. No new wrong-money bug in this continuation. No launch/merge/deploy;backup/restore LAST. Historical instructions below are not active execution requests.
+
+<!-- RAPID03-COMPLETE-END -->
+
 # BookOne QA agent rules
 
 These are operating instructions for the QA project. The owner authorizes changes to all testing data at https://bookone.clossyan.com; production is outside this agent's access. This does not authorize unrelated infrastructure operations, production writes, source deletion, or publication. Preserve applicable higher-priority instructions and the user's explicit scope. Repository changes must also follow BookOne's own AGENTS.md.
@@ -207,3 +217,7 @@ Owner instruction effective 2026-10-16: **maintaining these records is a MUST fo
 113. Rapid02 original28October run is expired/consumed; read RUN-20261029-rapid02-interrupted and review20261029. Fouracceptedfinancialevents immutable: physicalcashpurchase240/refunds60+180 complete andservicecashpurchase80 readonly. New23case CONT1 helper/queue/oracle fixed29Oct only, exactpublishedQA NEWclock/freshgates; remainingservice refunds+newAR/APcycles only. Nooldintent/purchase replay, oldsource dates28 preserved; newtargets29/due31. Preservecashrefundcreditopen-statefailure andbudgetfailure.
 
 114. Rapid02 C1 executed29October2026 at dba97b79aa6c5743523345aec4693bc876a07cfa is consumed; read runs/RUN-20261029-rapid02-cont1.md/checks and handoffs/CODING-MISSION-20261029-rapid02-consolidated.md. All12 financial submissions/16journals880 complete; never replay transactions or queues. Next grouped coding fixes/fixture qualification then Medium review and substantial regression on reviewed candidate; preserve first failures/audit gap/no launch claim.
+
+115. Next Rapid03 regression uses queues/MISSION-v2523-RAPID-03.json/oracle/scripts/rapid03-run.mjs at exactpublishedQA and productb89dd788b9bec9dc66cb49d22f7b8c2c92015df7. Read review/handoff20261029-v2523/Rapid03. NEW36case/120-20clock/freshgates; fixed29OctoberUTC/due31/final5minute refusal. OldRapid02 consumed; no transaction repair/replay. Includes fresh supplierrefund+AR/APsettlements+ordinarycustomer cashrefund; rental/deniedactor fixtures unqualified. No merge/deploy/launch.
+
+116. Rapid03 original29Oct36case is expired/consumed; read RUN-20261030-rapid03-interrupted/checks/review.18financialevents accepted,CF invoice120/receipt120 read-only. NEW10case CONT1fixed30OctUTC/due31 onlyremainingrefund40/80, exactpublishedQA NEWclock/freshgates. Neverrecreateinvoice/receipt oroldworkflowevents. Preserveoldclockfullychargedgap/firstfailures,all62protected,source29dates;newtargets30. No merge/deploy/launch.
