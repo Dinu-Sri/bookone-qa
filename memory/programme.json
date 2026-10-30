@@ -1985,5 +1985,18 @@
     "newJournals": 2,
     "drCr": 120,
     "executed": false
+  },
+  "latestMediumReview": {
+    "date": "2026-10-30",
+    "resultsQa": "eed69cf7f63d10d13aa872f43c82830241a26f43",
+    "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+    "status": "coding-fixture-qualification-before-Light",
+    "review": "reviews/REVIEW-20261030-rapid03-closure-rapid04.md",
+    "handoff": "handoffs/CODING-MISSION-20261030-rapid04-qualification.md",
+    "plan": "queues/PLAN-RAPID04-qualification.json",
+    "specifiedCheckpoints": 40,
+    "executable": false,
+    "legacySourcePinPreserved": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
+    "releaseAcceptance": "not-established"
   }
 }
