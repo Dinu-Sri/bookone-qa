@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "id": "ORACLE-FIRST-CUSTOMER-M1B",
+  "status": "independent-synthetic-arithmetic-specified-not-executed",
+  "executionReady": false,
+  "profile": {
+    "vatRegistered": true,
+    "vatRatePercent": 18,
+    "pricing": "tax-exclusive",
+    "allSupplies": "synthetic-standard-taxable-full-input-recovery-example-only",
+    "legalApplicability": "not-certified; customer tax confirmation remains a launch gate",
+    "purchaseApproval": false,
+    "postGrniOnReceipt": false,
+    "costing": "last; one cost batch only; actual customer costing must be separately qualified",
+    "businessDate": null,
+    "dueDate": null
+  },
+  "accountRoles": {
+    "cash": "1000 (verify actual account)",
+    "bank": "UNBOUND_BANK_ASSET",
+    "card": "UNBOUND_CARD_RECEIVABLE_OR_CLEARING",
+    "ar": "1300",
+    "ap": "2100",
+    "inventory": "5100",
+    "cogs": "5000",
+    "revenue": "4000",
+    "returns": "4100",
+    "expense": "6800",
+    "inputVat": "UNBOUND_INPUT_VAT",
+    "outputVat": "2200 (verify actual account)"
+  },
+  "opening": {
+    "physicalQty": 0,
+    "physicalValueCents": 0,
+    "cashCents": 0,
+    "bankCents": 50000,
+    "cardCents": 0,
+    "arCents": 0,
+    "apCents": 0,
+    "meaning": "NEW isolated run-owned masters. Supported synthetic bank funding500 must be prepared/reconciled separately before workflow opening; funding journal excluded from fourteen workflow journals. No real money transfer."
+  },
+  "events": [
+    {
+      "id": "P03",
+      "netCents": 60000,
+      "grossCents": 70800,
+      "tender": null,
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "inventory",
+              "side": "debit",
+              "amountCents": 60000
+            },
+            {
+              "accountRole": "inputVat",
+              "side": "debit",
+              "amountCents": 10800
+            },
+            {
+              "accountRole": "ap",
+              "side": "credit",
+              "amountCents": 70800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "netCents": 60000,
+      "grossCents": 70800,
+      "tender": null,
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "ar",
+              "side": "debit",
+              "amountCents": 70800
+            },
+            {
+              "accountRole": "revenue",
+              "side": "credit",
+              "amountCents": 60000
+            },
+            {
+              "accountRole": "outputVat",
+              "side": "credit",
+              "amountCents": 10800
+            },
+            {
+              "accountRole": "cogs",
+              "side": "debit",
+              "amountCents": 36000
+            },
+            {
+              "accountRole": "inventory",
+              "side": "credit",
+              "amountCents": 36000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "netCents": 25000,
+      "grossCents": 29500,
+      "tender": "cash",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "cash",
+              "side": "debit",
+              "amountCents": 29500
+            },
+            {
+              "accountRole": "ar",
+              "side": "credit",
+              "amountCents": 29500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "netCents": 35000,
+      "grossCents": 41300,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "bank",
+              "side": "debit",
+              "amountCents": 41300
+            },
+            {
+              "accountRole": "ar",
+              "side": "credit",
+              "amountCents": 41300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "netCents": 60000,
+      "grossCents": 70800,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "ap",
+              "side": "debit",
+              "amountCents": 70800
+            },
+            {
+              "accountRole": "bank",
+              "side": "credit",
+              "amountCents": 70800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "netCents": 12000,
+      "grossCents": 14160,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "bank",
+              "side": "debit",
+              "amountCents": 14160
+            },
+            {
+              "accountRole": "inventory",
+              "side": "credit",
+              "amountCents": 12000
+            },
+            {
+              "accountRole": "inputVat",
+              "side": "credit",
+              "amountCents": 2160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "netCents": 10000,
+      "grossCents": 11800,
+      "tender": "cash",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "returns",
+              "side": "debit",
+              "amountCents": 10000
+            },
+            {
+              "accountRole": "outputVat",
+              "side": "debit",
+              "amountCents": 1800
+            },
+            {
+              "accountRole": "cash",
+              "side": "credit",
+              "amountCents": 11800
+            },
+            {
+              "accountRole": "inventory",
+              "side": "debit",
+              "amountCents": 6000
+            },
+            {
+              "accountRole": "cogs",
+              "side": "credit",
+              "amountCents": 6000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "netCents": 12000,
+      "grossCents": 14160,
+      "tender": null,
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "ar",
+              "side": "debit",
+              "amountCents": 14160
+            },
+            {
+              "accountRole": "revenue",
+              "side": "credit",
+              "amountCents": 12000
+            },
+            {
+              "accountRole": "outputVat",
+              "side": "credit",
+              "amountCents": 2160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "netCents": 4000,
+      "grossCents": 4720,
+      "tender": "card",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "card",
+              "side": "debit",
+              "amountCents": 4720
+            },
+            {
+              "accountRole": "ar",
+              "side": "credit",
+              "amountCents": 4720
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "netCents": 8000,
+      "grossCents": 9440,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "bank",
+              "side": "debit",
+              "amountCents": 9440
+            },
+            {
+              "accountRole": "ar",
+              "side": "credit",
+              "amountCents": 9440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "netCents": 4000,
+      "grossCents": 4720,
+      "tender": "card",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "returns",
+              "side": "debit",
+              "amountCents": 4000
+            },
+            {
+              "accountRole": "outputVat",
+              "side": "debit",
+              "amountCents": 720
+            },
+            {
+              "accountRole": "card",
+              "side": "credit",
+              "amountCents": 4720
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "netCents": 8000,
+      "grossCents": 9440,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "returns",
+              "side": "debit",
+              "amountCents": 8000
+            },
+            {
+              "accountRole": "outputVat",
+              "side": "debit",
+              "amountCents": 1440
+            },
+            {
+              "accountRole": "bank",
+              "side": "credit",
+              "amountCents": 9440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "netCents": 8000,
+      "grossCents": 9440,
+      "tender": null,
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "expense",
+              "side": "debit",
+              "amountCents": 8000
+            },
+            {
+              "accountRole": "inputVat",
+              "side": "debit",
+              "amountCents": 1440
+            },
+            {
+              "accountRole": "ap",
+              "side": "credit",
+              "amountCents": 9440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "netCents": 8000,
+      "grossCents": 9440,
+      "tender": "bank",
+      "journals": [
+        {
+          "entries": [
+            {
+              "accountRole": "ap",
+              "side": "debit",
+              "amountCents": 9440
+            },
+            {
+              "accountRole": "bank",
+              "side": "credit",
+              "amountCents": 9440
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stockEvents": [
+    {
+      "id": "P02",
+      "qty": 10,
+      "valueCents": 60000
+    },
+    {
+      "id": "P06",
+      "qty": -6,
+      "valueCents": -36000
+    },
+    {
+      "id": "P10",
+      "qty": -2,
+      "valueCents": -12000
+    },
+    {
+      "id": "P11",
+      "qty": 1,
+      "valueCents": 6000
+    }
+  ],
+  "allPass": {
+    "workflowJournals": 14,
+    "debitCents": 412520,
+    "creditCents": 412520,
+    "balanceDeltasDebitPositive": {
+      "inventory": 18000,
+      "inputVat": 10080,
+      "ap": 0,
+      "ar": 0,
+      "revenue": -72000,
+      "outputVat": -9000,
+      "cogs": 30000,
+      "cash": 17700,
+      "bank": -24780,
+      "returns": 22000,
+      "card": 0,
+      "expense": 8000
+    },
+    "totalMoneyDeltaCents": -7080,
+    "stockQty": 3,
+    "stockValueCents": 18000,
+    "netIncomeCents": 12000,
+    "netTaxAssetCents": 1080,
+    "closingTenderCents": {
+      "cash": 17700,
+      "bank": 25220,
+      "card": 0
+    },
+    "stockMovements": 4,
+    "arCents": 0,
+    "apCents": 0
+  },
+  "limits": [
+    "No external bank/card authorization, acquirer refund or fee/settlement acceptance from ledger tender entries",
+    "No customer tax/legal approval from synthetic VAT arithmetic",
+    "No runtime/browser pass from an oracle",
+    "Funding/master/settings setup excluded from workflow deltas but included in complete fixture preservation/reconciliation"
+  ]
+}

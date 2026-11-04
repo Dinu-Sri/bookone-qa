@@ -2037,14 +2037,28 @@
   "firstCustomerScope": {
     "date": "2026-11-04",
     "ownerRequired": [
-      "buy-and-sell-physical-goods",
-      "sell-services"
+      "physical-goods",
+      "services",
+      "POS",
+      "VAT-and-nonVAT",
+      "cash-bank-card"
     ],
-    "scope": "reviews/FIRST-CUSTOMER-SCOPE-20261104.md",
-    "nextPriority": "current-deployed-physical-and-service-complete-workflow-acceptance",
-    "rentalDeferral": "proposed-not-needed-unless-customer-requires",
     "deploymentOwner": "human-owner",
+    "programme": "docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md",
+    "mission1": "handoffs/HANDOFF-20261104-first-customer-m1-plan.md",
+    "plannedMissions": 4,
+    "plannedLightRuns": 5,
+    "groupedRetestAllowance": [
+      1,
+      2
+    ],
+    "estimatedRuns": [
+      5,
+      7
+    ],
+    "specifiedCheckpoints": 80,
     "lightExecutable": false,
-    "launchAccepted": false
+    "launchAccepted": false,
+    "next": "Medium actual live fingerprint and reusable fixture/transport qualification, then NEW exact-bound M1A release"
   }
 }
