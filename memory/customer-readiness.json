@@ -1675,5 +1675,18 @@
     "lightExecutable": false,
     "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/95",
     "campaignAcceptance": "not-established"
+  },
+  "currentFirstCustomerProgramme": {
+    "path": "docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md",
+    "ownerRequired": [
+      "physical-goods",
+      "services",
+      "POS",
+      "VAT/nonVAT",
+      "cash/bank/card"
+    ],
+    "mission1": "handoffs/HANDOFF-20261104-first-customer-m1-plan.md",
+    "status": "planned-not-executable-not-accepted",
+    "historicalGateStatuses": "preserved; not current first-customer launch approvals"
   }
 }

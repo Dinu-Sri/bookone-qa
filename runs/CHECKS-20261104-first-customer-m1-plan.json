@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-04",
+  "scope": "specification-and-independent-arithmetic-only",
+  "profiles": [
+    "non-VAT",
+    "synthetic-VAT18-tax-exclusive"
+  ],
+  "specifiedCases": 80,
+  "profileCases": 40,
+  "workflowJournalsPerProfile": 14,
+  "oracleDebitsCents": {
+    "nonVAT": 356000,
+    "VAT": 412520
+  },
+  "validation": "both queue schemas valid; initialize refused both executionReady=false plans; every expected journal balanced; explicit final totals, stock, tax and nonnegative tender sequence verified; same-tender service receipts/refunds fully clear card, dependency IDs resolve and both closing-recovery groups remain independent",
+  "browserExecuted": false,
+  "businessExecuted": false,
+  "customerAcceptance": false,
+  "liveFingerprintVerified": false,
+  "lightExecutable": false,
+  "commands": [
+    "node scripts/validate-first-customer-m1-plan.mjs",
+    "node scripts/validate.mjs",
+    "git diff --check"
+  ],
+  "publicationBaseQa": "f306d04af9135a27b502aeed47826f2747775d8f",
+  "productMergeVerified": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "mergeTreeEqualsReviewedCandidate": true
+}

@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "id": "PLAN-FIRST-CUSTOMER-M1B",
+  "displayName": "First customer Mission1B VAT physical+service complete workflows",
+  "executionReady": false,
+  "status": "specified-awaiting-medium-live-fixture-date-and-transport-binding-NOT-LIGHT-EXECUTABLE",
+  "candidate": "v2.5.25",
+  "productSha": null,
+  "reviewedCandidate": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+  "mergedProduct": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "reviewedTree": "07ff418256d8bdd56fb1569203e6baa4f03aaa44",
+  "liveObserved": false,
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 15
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": null,
+    "stopBeforeMidnightMinutes": 5
+  },
+  "oracle": "queues/ORACLE-FIRST-CUSTOMER-M1B.json",
+  "fixture": {
+    "alias": "VAT-QUALIFICATION-PENDING",
+    "privateBinding": null,
+    "qualified": false,
+    "foreignCompanyB": "preserve-denial-fixture-do-not-convert",
+    "profileIsolation": "Separate legitimate tax-profile companies preferred; never change original company or silently flip A during same fingerprint."
+  },
+  "transport": {
+    "status": "UNBOUND",
+    "required": "Existing persisted desktop guard; new exact-bound execution copy and observed per-case button allowlists required. No generic old helper."
+  },
+  "cases": [
+    {
+      "id": "M1B-G01",
+      "title": "Candidate and clock",
+      "expected": "NEW120/20 clock before browser/auth, exact released QA/full live SHA/tree/stamp. A merged PR alone is not live proof.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-G02",
+      "title": "Actual guarded-tool qualification",
+      "expected": "Fresh focused and actual two-positive/five-zero-UI-and-claim refusal controls; no second driver.",
+      "dependsOn": [
+        "M1B-G01"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-G03",
+      "title": "Identity, module and profile",
+      "expected": "Fresh legitimate Owner/fixture/profile, Inventory enabled, tax/pricing/accounts/purchase settings verified; no module grants during Light.",
+      "dependsOn": [
+        "M1B-G02"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-G04",
+      "title": "Opening and funding",
+      "expected": "Capture funded bank500, cash/card0 and all stock/accounts/documents. Exclude setup journals from workflow oracle, preserve them.",
+      "dependsOn": [
+        "M1B-G03"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-G05",
+      "title": "New masters",
+      "expected": "Run-owned physical unit cost60/sell100, service40, expense80, legitimate supplier/customer/warehouse; physical opening0.",
+      "dependsOn": [
+        "M1B-G04"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-G06",
+      "title": "Tax and tender preview",
+      "expected": "Verify profile18% tax-exclusive prices, full recoverable synthetic input VAT if applicable; cash/bank/card correct mapped accounts. No legal sign-off inferred.",
+      "dependsOn": [
+        "M1B-G05"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P01",
+      "title": "Purchase order10x60",
+      "expected": "Order 708 including tax; no stock/journal.",
+      "dependsOn": [
+        "M1B-G06"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P02",
+      "title": "Receive10",
+      "expected": "GRN+10 units/value600, no GL with GRNIoff; original PO/source intact.",
+      "dependsOn": [
+        "M1B-P01"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P03",
+      "title": "Supplier bill",
+      "expected": "Bill 708, capitalise600 exactly once; AP gross, no duplicate10 stock.",
+      "dependsOn": [
+        "M1B-P02"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P04",
+      "title": "Sales quotation6x100",
+      "expected": "Quote 708, no stock or posting.",
+      "dependsOn": [
+        "M1B-P03"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P05",
+      "title": "Sales order",
+      "expected": "One quote-to-order conversion; no premature stock/GL.",
+      "dependsOn": [
+        "M1B-P04"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P06",
+      "title": "Invoice and fulfill6",
+      "expected": "Gross 708; stock-6/value360/COGS360, AR gross. Supported conversion/fulfillment posting point must be reviewed before release.",
+      "dependsOn": [
+        "M1B-P05"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P07",
+      "title": "Cash partial receipt",
+      "expected": "Receive 295 cash, exact source/date/account and remaining AR.",
+      "dependsOn": [
+        "M1B-P06"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P08",
+      "title": "Bank final receipt",
+      "expected": "Receive 413 bank; AR0, preserve earlier cash receipt.",
+      "dependsOn": [
+        "M1B-P07"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P09",
+      "title": "Pay supplier by bank",
+      "expected": "Pay 708 bank; AP0; current funded bank check before write.",
+      "dependsOn": [
+        "M1B-P08"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P10",
+      "title": "Supplier return2 and bank refund",
+      "expected": "Source-linked return2@60/refund 141.6 to bank; stock-2/value120, reverse original input tax; refunded/paid/zero, no AP residue.",
+      "dependsOn": [
+        "M1B-P09"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P11",
+      "title": "Customer return1 and cash refund",
+      "expected": "Source-linked return1@100/refund 118 cash; reverse original tax and COGS60; stock+1; refunded/paid/zero.",
+      "dependsOn": [
+        "M1B-P08"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P12",
+      "title": "Source preservation",
+      "expected": "Exactly purchased10/returned2; sold6/returned1; source dates/tax/receipt lineage intact, remaining quantities correct.",
+      "dependsOn": [
+        "M1B-P10",
+        "M1B-P11"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P13",
+      "title": "Physical document/history",
+      "expected": "Reopen all source/credit/receipt/remittance previews and persisted Activity with actor/action/source; no physical print.",
+      "dependsOn": [
+        "M1B-P12"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-P14",
+      "title": "Physical closing",
+      "expected": "Seven workflow journals; stock3/value180/COGS300, net revenue500/profit200; AR/AP0 and exact tender/tax deltas.",
+      "dependsOn": [
+        "M1B-P13"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S01",
+      "title": "Service quote3x40",
+      "expected": "Quote 141.6, no stock/journal.",
+      "dependsOn": [
+        "M1B-G06"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S02",
+      "title": "Service order",
+      "expected": "Convert once, no stock/journal.",
+      "dependsOn": [
+        "M1B-S01"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S03",
+      "title": "Service invoice",
+      "expected": "Delivered service gross 141.6, net revenue120; no stock/COGS.",
+      "dependsOn": [
+        "M1B-S02"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S04",
+      "title": "Card partial receipt",
+      "expected": "Record 47.2 to verified card receivable/clearing; later refund40 net uses this same tender. This is not a real processor charge.",
+      "dependsOn": [
+        "M1B-S03"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S05",
+      "title": "Bank final receipt",
+      "expected": "Record 94.4 bank; AR0; later refund80 net uses the same bank tender, card receipt preserved.",
+      "dependsOn": [
+        "M1B-S04"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S06",
+      "title": "First service refund",
+      "expected": "Return1x40, gross 47.2 to supported card ledger account; correct original tax. Unsupported card refund path blocks only this dependent branch, never substitute cash and claim card passed.",
+      "dependsOn": [
+        "M1B-S05"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S07",
+      "title": "Remaining service refund",
+      "expected": "Return2x40 gross 94.4 bank; source exhausted, credits refunded/paid/zero.",
+      "dependsOn": [
+        "M1B-S06"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S08",
+      "title": "Delivered service expense bill",
+      "expected": "Net expense80 plus applicable input VAT; AP gross 94.4, no stock/COGS.",
+      "dependsOn": [
+        "M1B-G06"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S09",
+      "title": "Service vendor payment",
+      "expected": "Pay 94.4 bank; AP0, no card/cash substitution.",
+      "dependsOn": [
+        "M1B-S08"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S10",
+      "title": "Service history/print",
+      "expected": "Inspect invoice, two receipt allocations, both refunds, bill/remittance and Activity; source/date/tax preserved.",
+      "dependsOn": [
+        "M1B-S07",
+        "M1B-S09"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-S11",
+      "title": "Service closing",
+      "expected": "Seven journals, service revenue fully reversed, expense80; no physical movement/COGS, exact tender and tax deltas.",
+      "dependsOn": [
+        "M1B-S10"
+      ],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-X01",
+      "title": "Historical/source preservation",
+      "expected": "Original QA and all older records untouched; new masters/sources only, no old financial replay.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-X02",
+      "title": "Tax and date boundaries",
+      "expected": "Original invoice/return tax and issue/receipt/refund dates preserved; prior-date reports exclude new events.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-X03",
+      "title": "Safe amount/quantity feedback",
+      "expected": "Read-only invalid amount/quantity feedback and cent boundaries; no invalid live submit. Authoritative denial stays with supported isolated runners.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-X04",
+      "title": "Shared deterministic regressions",
+      "expected": "Reuse valid exact-pin PG/HTTPS evidence; affected/new-codec tests run only in marked empty isolated runtime. No live race/fault injection.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-X05",
+      "title": "Tender integrity",
+      "expected": "Independent cash/bank/card balances, mapping and available funding; no payment processor/fees/settlement certification from ledger balances.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false
+    },
+    {
+      "id": "M1B-C01",
+      "title": "Full journals and stock",
+      "expected": "Fourteen workflow journals; DR=CR 4125.2; four physical movements, stock3/value180. Do not fold setup funding or other profile events into this total.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false,
+      "recovery": true
+    },
+    {
+      "id": "M1B-C02",
+      "title": "Full report reconciliation",
+      "expected": "Cash 177, bank -247.8, card0 deltas; income120; AR/AP0; VAT roles and assets=liabilities+equity against fresh openings.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false,
+      "recovery": true
+    },
+    {
+      "id": "M1B-C03",
+      "title": "Consolidated disposition",
+      "expected": "One severity-ranked record of every failure and blocked/missing layer; continue independent eligible lanes; no overall launch claim.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false,
+      "recovery": true
+    },
+    {
+      "id": "M1B-C04",
+      "title": "Publication and close",
+      "expected": "Publish sanitized batch/run/checks/handoff, close conservative clock,0unresolved or explicit uncertain-action recovery disposition. Never replay.",
+      "dependsOn": [],
+      "precondition": "Unreleased plan: Medium must bind deployed fullSHA/tree/stamp, exact QA/date, qualified profile/actors/account roles/guarded UI paths and current openings before execution.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "status": "specified-not-run",
+      "executable": false,
+      "recovery": true
+    }
+  ],
+  "releaseAcceptance": "not-established"
+}
