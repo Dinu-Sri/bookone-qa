@@ -1,3 +1,11 @@
+# Fixture setup complete — 4 November 2026
+
+Status: OWNER AUTHORIZED30October2026; APPLIED to isolated company A4November2026. Direct humanreply authorized AOwner/AViewer/BOwner creation, A-only Inventory/Rental and private credential persistence; separately confirmed signup terms and provided existing platform login. Current run saved A Pro+Inventory+Rental only, POS/HRoff, independently reloaded and verified fresh Owner/Viewer sessions. B and originalcompany remain Starter/moduleoff. No blanket grant to other companies.
+
+Read [actual setup result](../runs/RUN-20261104-rapid04-fixture-setup.md). Private credentials/IDs stay ignored; no permissions should be inferred from this historic request beyond the recorded human scope. No additional access grant, merge/deploy or Light execution authorized. The request below is preserved historical context.
+
+<!-- FIXTURE-FINISH-20261104-END -->
+
 # AUTH-20261030-isolated-rental-company — REQUEST, not granted
 
 Status: awaiting-owner-Control-Room-decision. This record does not grant access.
