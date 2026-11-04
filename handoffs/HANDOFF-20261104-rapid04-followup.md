@@ -12,7 +12,7 @@ One consolidated coding/fixture handover. **No merge, no deploy, no Light execut
 | CHG | [CHG-20261104-rapid04-followup](https://github.com/Dinu-Sri/BookOne/blob/5ea0d6e243a1bd37889240e15b10ea86ef3c94ba/docs/changes/CHG-20261104-rapid04-followup.md) |
 | Live baseline left untouched | v2.5.24 · `e5bb589267035ffb031b6c083f4e911bb7d04aac` |
 | QA branch | `qa/rapid04-v2525-followup` |
-| QA SHA | `503e49456c14969b923f2591027018dec5e4011b` |
+| QA SHA | PR HEAD on that branch (publication commit of this handoff) |
 | QA parent fixtures | PR93 `1781dba56d2f9315d71a8ea23cc226feabf4b117` |
 | Private locator | ignored `qa/.local/private/bookone-rapid04-fixtures.json` (AOwner / AViewer / BOwner). Do not recreate. |
 
