@@ -1,3 +1,7 @@
+# First-customer priority — physical goods plus services, 4 November 2026
+
+Owner confirmed both buy/sell physical goods and sell services. Read reviews/FIRST-CUSTOMER-SCOPE-20261104.md. Next substantial Light business batch should qualify these workflows on the actual owner-deployed candidate; rental is proposed for deferral from first launch, not the immediate priority. Final POS/tender/locations/tax/staff requirements remain to be confirmed. Existing rental PLAN remains non-executable. Owner personally handles deployments; no agent deployment. No launch approval or new dated execution queue yet.
+
 # Current Medium review — v2.5.25 isolated checks green; deploy/live fixture next
 
 QA PR95 https://github.com/Dinu-Sri/bookone-qa/pull/95 reviews product5ea0d6e243a1bd37889240e15b10ea86ef3c94ba / v2.5.25 · 5ea0d6e and QA506db5b. Tested QA5043390ae43ca4bd677b7705252582a1003ec341; fresh PG136/136 (rental17/17), HTTPS30/30, Linuxvalidation and B–F source checks green. Preserve first HTTPS26/4; two harness defects corrected without changing expected money/permission outcomes. Read reviews/REVIEW-20261104-v2525-medium.md, runs/CHECKS-20261104-v2525-medium-review.json and handoffs/HANDOFF-20261104-v2525-next-batch.md.

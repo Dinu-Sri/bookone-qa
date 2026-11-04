@@ -2033,5 +2033,18 @@
     "next": "Groupedcodingfollowup plus supportedbay/fleet/settingspreparation before executableLightbatch",
     "oldClockClosedChargedMs": 460780457,
     "noAccountReplay": true
+  },
+  "firstCustomerScope": {
+    "date": "2026-11-04",
+    "ownerRequired": [
+      "buy-and-sell-physical-goods",
+      "sell-services"
+    ],
+    "scope": "reviews/FIRST-CUSTOMER-SCOPE-20261104.md",
+    "nextPriority": "current-deployed-physical-and-service-complete-workflow-acceptance",
+    "rentalDeferral": "proposed-not-needed-unless-customer-requires",
+    "deploymentOwner": "human-owner",
+    "lightExecutable": false,
+    "launchAccepted": false
   }
 }
