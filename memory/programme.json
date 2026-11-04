@@ -2007,5 +2007,26 @@
     "handoff": "handoffs/CODING-MISSION-20261030-rapid04-review-followup.md",
     "status": "hold-coding-CI-and-fixture-gates",
     "lightExecutable": false
+  },
+  "latestRapid04FixtureSetup": {
+    "date": "2026-11-04",
+    "executionQa": "c9eb6510d3549f28d53b902fe8fa686c274a70b2",
+    "productSha": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
+    "run": "runs/RUN-20261104-rapid04-fixture-setup.md",
+    "handoff": "handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md",
+    "counts": {
+      "passed": 4,
+      "failed": 0,
+      "blocked": 0,
+      "inconclusive": 0,
+      "not-run": 0,
+      "pending": 0,
+      "running": 1
+    },
+    "accountModuleComplete": true,
+    "rentalBusinessReady": false,
+    "next": "Groupedcodingfollowup plus supportedbay/fleet/settingspreparation before executableLightbatch",
+    "oldClockClosedChargedMs": 460780457,
+    "noAccountReplay": true
   }
 }

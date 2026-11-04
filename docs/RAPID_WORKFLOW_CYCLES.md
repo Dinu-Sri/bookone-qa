@@ -1,3 +1,13 @@
+# Fixture setup complete — 4 November 2026
+
+Read [setup results](../runs/RUN-20261104-rapid04-fixture-setup.md), [checks](../runs/CHECKS-20261104-rapid04-fixture-setup.json) and [fixture handoff](../handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md). Three accounts created on30October were reused: A Owner, A Viewer and B Owner. A alone is now Pro with Inventory/Rental on; POS/HR off. B and original QA remain Starter with Inventory/Rental off. Fresh logins/roles and saved settings verified. Credentials/company/member IDs remain ignored/private. Original QA context restored.
+
+Current execution QA c9eb6510d3549f28d53b902fe8fa686c274a70b2; product e5bb589267035ffb031b6c083f4e911bb7d04aac / live v2.5.24 · e5bb589. New4Nov remaining-only run 4passed/1running/0pending, no unresolved action; one module save and nine auth transitions, no new accounts or financial events. Clock active, 815264ms charged/0paused. Old30Oct clock closed460780457ms/0paused, full usage gap retained; no date retarget/replay.
+
+NEXT remains grouped coding follow-up for D-112, after-return reservation/deposit continuity, Activity mapping and current CI pin/HTTP failures. New prerequisite: A has no locations/products/stock, and ordinary Locations Type offers only Branch/Warehouse/POS counter/Office, no on-rent/wash/repair; supported bay setup must be supplied. Rental defaults still On confirm/Manager override; no settings changed. Account/module setup complete does not make the full rental fixture or Light mission ready. No merge/deploy/launch; backup/restore LAST. Historical pending-authorization notes below are superseded.
+
+<!-- FIXTURE-FINISH-20261104-END -->
+
 # Medium review complete — Rapid04 coding/fixture qualification first
 
 Read [review](../reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](../handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](../queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.
