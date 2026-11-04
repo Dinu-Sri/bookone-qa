@@ -1660,5 +1660,20 @@
     "executable": false,
     "legacySourcePinPreserved": "0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c",
     "releaseAcceptance": "not-established"
+  },
+  "latestIndependentReview": {
+    "date": "2026-11-04",
+    "qaBase": "506db5baa0106784ead44749416639b9c47accdd",
+    "testedQa": "5043390ae43ca4bd677b7705252582a1003ec341",
+    "productSha": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+    "review": "reviews/REVIEW-20261104-v2525-medium.md",
+    "checks": "runs/CHECKS-20261104-v2525-medium-review.json",
+    "handoff": "handoffs/HANDOFF-20261104-v2525-next-batch.md",
+    "status": "isolated-green-await-owner-deploy-live-fixture-and-new-Light-binding",
+    "postgresPassed": 136,
+    "httpsPassed": 30,
+    "lightExecutable": false,
+    "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/95",
+    "campaignAcceptance": "not-established"
   }
 }
