@@ -21,7 +21,9 @@
         "HTTP-010",
         "HTTP-011",
         "HTTP-012",
-        "HTTP-013"
+        "HTTP-013",
+        "HTTP-014",
+        "HTTP-015"
       ]
     },
     {
@@ -40,7 +42,9 @@
         "HTTP-110",
         "HTTP-111",
         "HTTP-112",
-        "HTTP-113"
+        "HTTP-113",
+        "HTTP-114",
+        "HTTP-115"
       ]
     }
   ],
@@ -96,6 +100,14 @@
     {
       "suffix": "013",
       "name": "Inventory settings real form denies assigned Viewer; Owner persisted positive and posted facts unchanged"
+    },
+    {
+      "suffix": "014",
+      "name": "Owner/Viewer GET on-rent and Activity with hire marker; foreign GET has no own hire; no business effects"
+    },
+    {
+      "suffix": "015",
+      "name": "invoiceHireCharges codec Viewer/foreign write denial against seeded hire order; rental and posted snapshots unchanged"
     }
   ],
   "limits": [
