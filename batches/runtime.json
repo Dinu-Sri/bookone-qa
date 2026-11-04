@@ -150,7 +150,12 @@
         "D-117",
         "D-118",
         "RT-023",
-        "E-104"
+        "E-104",
+        "D-113",
+        "D-114",
+        "D-116",
+        "D-119",
+        "D-120"
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-rental-money-fleet-permissions-fault"

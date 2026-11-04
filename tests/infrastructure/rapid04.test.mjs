@@ -113,5 +113,39 @@ test('rental-lifecycle expected includes dirty-return and agreed-charge adapters
   assert.ok(lane.expected.includes('D-104'));
   assert.ok(lane.expected.includes('D-112'));
   assert.ok(lane.expected.includes('D-117'));
-  assert.equal(lane.expected.length, 12);
+  assert.ok(lane.expected.includes('D-113'));
+  assert.ok(lane.expected.includes('D-114'));
+  assert.ok(lane.expected.includes('D-116'));
+  assert.ok(lane.expected.includes('D-119'));
+  assert.ok(lane.expected.includes('D-120'));
+  assert.equal(lane.expected.length, 17);
+});
+
+test('D-112 source-status preservation is unchanged', () => {
+  const src = fs.readFileSync(path.join(root, 'tests/runtime/rental.test.ts'), 'utf8');
+  assert.match(src, /it\('\[D-112\] agreed damage 200 links hire source without converting it and posts 4450'/);
+  assert.match(src, /expect\(source\.status\)\.toBe\(before\.status\)/);
+  assert.match(src, /expect\(source\.status\)\.not\.toBe\('converted'\)/);
+});
+
+test('HTTP rental GET/write codecs are required slots 014/015 and 114/115', () => {
+  const http = JSON.parse(fs.readFileSync(path.join(root, 'batches/http-runtime.json')));
+  assert.ok(http.lanes[0].expected.includes('HTTP-014'));
+  assert.ok(http.lanes[0].expected.includes('HTTP-015'));
+  assert.ok(http.lanes[1].expected.includes('HTTP-114'));
+  assert.ok(http.lanes[1].expected.includes('HTTP-115'));
+  assert.equal(http.lanes[0].expected.length, 15);
+  assert.equal(http.lanes[1].expected.length, 15);
+});
+
+test('40-point BINDINGS map every PLAN id and stay non-executable', () => {
+  const bindings = JSON.parse(fs.readFileSync(path.join(root, plan40.layerBindings)));
+  assert.equal(bindings.executionReady, false);
+  assert.equal(bindings.cases.length, 40);
+  const ids = bindings.cases.map((c) => c.id);
+  assert.deepEqual(ids, plan40.cases.map((c) => c.id));
+  for (const row of bindings.cases) {
+    assert.equal(row.executable, false);
+    assert.ok(Array.isArray(row.layers) && row.layers.length > 0);
+  }
 });

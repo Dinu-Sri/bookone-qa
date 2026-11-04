@@ -58,6 +58,20 @@ async function financial(actor,handle,payload){const encoded=await handle.codec(
  if(typeof encoded==='string'){body=Buffer.from(encoded);contentType='text/plain;charset=UTF-8';}else{const req=new Request(BASE,{method:'POST',body:encoded});body=Buffer.from(await req.arrayBuffer());contentType=req.headers.get('content-type');}
  return request('/sales/payments/new',actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Next-Action':handle.id,Accept:'text/x-component','Content-Type':contentType},body});
 }
+async function hireChargeHandle(actor){
+ const page=await request('/inventory/on-rent',actor);if(page.status!==200)throw new Incomplete('rental-page-unavailable');
+ const scripts=[...page.body.matchAll(/<script\b[^>]*src="([^"]+)"/g)].map(m=>m[1]).filter(p=>p.startsWith('/_next/static/')).slice(0,40);const ids=new Set();
+ for(const path of scripts){const r=await request(path,actor);if(r.status!==200)continue;for(const m of r.body.matchAll(/\(\s*["']([a-f0-9]{40,64})["']\s*,[^;\n]{0,800}?["']invoiceHireCharges["']\s*\)/g))ids.add(m[1]);}
+ if(ids.size!==1)throw new Incomplete('hire-charge-action-reference-unavailable');
+ const req=createRequire(join(WEB,'package.json'));let codec;
+ try{codec=req('next/dist/compiled/react-server-dom-webpack/client.node').encodeReply;}catch{throw new Incomplete('pinned-action-codec-unavailable');}
+ if(typeof codec!=='function')throw new Incomplete('pinned-action-codec-unavailable');return {id:[...ids][0],codec};
+}
+async function hireCharge(actor,handle,payload){const encoded=await handle.codec([payload]);let body,contentType;
+ if(typeof encoded==='string'){body=Buffer.from(encoded);contentType='text/plain;charset=UTF-8';}else{const req=new Request(BASE,{method:'POST',body:encoded});body=Buffer.from(await req.arrayBuffer());contentType=req.headers.get('content-type');}
+ return request('/inventory/on-rent',actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Next-Action':handle.id,Accept:'text/x-component','Content-Type':contentType},body});
+}
+const rentalPostedTables=['rental_events','rental_booking_lines',...postedTables,'audit_log'];
 async function laneCases(lane,f){
  const actors={};let i=2;for(const [name,a] of Object.entries(f.actors))actors[name]={...a,ip:'127.0.0.'+i++,jar:new CookieJar(),verified:false,ownRead:false};
  const rows=[],offset=lane.credential==='runtime'?100:0;let handle=null,financialVerified=false;
@@ -130,13 +144,30 @@ async function laneCases(lane,f){
   c(saved,'same-form-owner-settings-positive-persisted');o('ownerSettingSaved',Number(saved));
   const historyUnchanged=await snapshot(postedTables)===posted;c(historyUnchanged,'settings-save-preserves-posted-finance-and-stock');o('postedFactsUnchanged',Number(historyUnchanged));
  });
+ await test(14,async(c,o)=>{
+  if(!actors.owner.ownRead||!actors.viewer.ownRead||!actors.foreign.ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  if(!f.hire?.id||!f.hire.marker||!f.hire.number)throw new Incomplete('rental-hire-fixture-unavailable');
+  const before=await snapshot();
+  for(const key of ['owner','viewer']){const a=actors[key];const onRent=await request('/inventory/on-rent',a);c(onRent.status===200&&onRent.body.includes(f.hire.marker),'own-on-rent-renders-hire-marker');o(key+'OnRentStatus',onRent.status);const audit=await request('/journal/audit',a);c(audit.status===200&&audit.body.includes('Activity'),'own-activity-page-renders');c(!audit.body.includes(f.foreign.marker),'own-activity-no-foreign-invoice');o(key+'AuditStatus',audit.status);}
+  const foreignOnRent=await request('/inventory/on-rent',actors.foreign);c((foreignOnRent.status===200||denied(foreignOnRent))&&!foreignOnRent.body.includes(f.hire.marker)&&!foreignOnRent.body.includes(f.hire.number),'foreign-on-rent-no-own-hire');o('foreignOnRentStatus',foreignOnRent.status);
+  const foreignAudit=await request('/journal/audit',actors.foreign);c((foreignAudit.status===200||denied(foreignAudit))&&!foreignAudit.body.includes(f.hire.marker)&&!foreignAudit.body.includes(f.hire.number),'foreign-activity-no-own-hire');o('foreignAuditStatus',foreignAudit.status);
+  c(await snapshot()===before,'rental-get-no-business-effects');
+ });
+ await test(15,async(c,o)=>{
+  if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  if(!f.hire?.id)throw new Incomplete('rental-hire-fixture-unavailable');
+  const handle=await hireChargeHandle(actors.owner);const payload={documentId:f.hire.id,damageCharge:1,applyDeposit:false};
+  let before=await snapshot(rentalPostedTables);const deniedViewer=await hireCharge(actors.viewer,handle,payload);c(deniedViewer.status<500,'viewer-hire-charge-transport-not-server-error');c(await snapshot(rentalPostedTables)===before,'viewer-hire-charge-zero-business-effects');
+  before=await snapshot(rentalPostedTables);await hireCharge(actors.foreign,handle,payload);c(await snapshot(rentalPostedTables)===before,'foreign-hire-charge-zero-business-effects');
+  o('hireActionTransportVerified',1);
+ });
  return rows;
 }
 try{
  assert.equal(process.env.GITHUB_ACTIONS,'true','Only ephemeral CI may launch/reset this HTTP fixture');httpTarget(BASE,process.env.QA_HTTP_ISOLATION);httpDatabase(process.env.QA_RUNTIME_ADMIN_URL,process.env.QA_RUNTIME_ISOLATION);
  stage='source-guard';const verify=spawnSync(process.execPath,['scripts/verify-product.mjs'],{encoding:'utf8'});assert.equal(verify.status,0);
  const ref=JSON.parse(readFileSync('product-ref.json','utf8'));const preparation=JSON.parse(readFileSync('.local/runtime/preparation.json','utf8'));assert.equal(preparation.productSha,ref.commit);assert.equal(preparation.complete,true);
- assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
+ assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:15},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:15},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
  sql=postgres(process.env.QA_RUNTIME_ADMIN_URL,{max:1});const [guard]=await sql`select * from qa_runtime_guard`;assert.equal(guard.marker,'isolated-bookone-qa-v1');assert.equal(guard.product_sha,ref.commit);
  const runtime=JSON.parse(readFileSync('.local/runtime/connection.json','utf8')).url;httpDatabase(runtime,process.env.QA_RUNTIME_ISOLATION);
  summary.fingerprint={productSha:ref.commit,productStamp:'v'+readFileSync('work/product/VERSION','utf8').trim()+' · '+ref.commit.slice(0,7),qaSha:git('rev-parse','HEAD'),qaDirty:!!git('status','--porcelain'),qaContentHash:digest(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+digest(readFileSync(p))).join('\n')),node:process.version,productLockHash:digest(readFileSync('work/product/pnpm-lock.yaml')),fixtureVersion:manifest.fixtureVersion,transport:'canonical-localhost-TLS-pinned-IPv4-Next-custom-server',schemaMigrations:preparation.migrations.length};

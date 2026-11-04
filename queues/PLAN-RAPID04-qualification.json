@@ -4,7 +4,7 @@
   "status": "awaiting-fixture-and-control-qualification-NOT-LIGHT-EXECUTABLE",
   "basedOnQa": "eed69cf7f63d10d13aa872f43c82830241a26f43",
   "reviewedProduct": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
-  "proposedCandidate": "must be reviewed/frozen after coding qualification",
+  "proposedCandidate": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
   "executionDate": null,
   "datePolicy": "Medium binds exact UTC date/local hire interval/due dates after prerequisites; never reuse expired Rapid03 date or silently change a released contract.",
   "clockPolicy": "Future NEW120total/100execution/20closing; preflight15min cap with one consolidated blocker disposition, no business on failed lane gate; no reset/replay.",
@@ -51,6 +51,7 @@
     },
     "recognitionLimit": "After-return earned hire example only; RF04/RF09/expert applicability remains open; dirty return does not imply agreed charge."
   },
+  "layerBindings": "queues/BINDINGS-RAPID04.json",
   "cases": [
     {
       "id": "G01",
