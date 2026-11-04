@@ -4,13 +4,13 @@
   "liveStamp": "v2.5.24 · e5bb589",
   "dateContract": "2026-11-04 UTC; remaining setup only",
   "counts": {
-    "passed": 4,
+    "passed": 5,
     "failed": 0,
     "blocked": 0,
     "inconclusive": 0,
     "not-run": 0,
     "pending": 0,
-    "running": 1
+    "running": 0
   },
   "unresolvedSubmissions": 0,
   "acceptedSubmissions": 10,
@@ -96,11 +96,11 @@
     "noReplay": true
   },
   "clock": {
-    "mode": "active",
-    "chargedMs": 815264,
+    "mode": "closed",
+    "chargedMs": 1104216,
     "pausedMs": 0,
-    "includesInitialPublication": false,
-    "metadataOnlyTail": false
+    "includesInitialPublication": true,
+    "metadataOnlyTail": true
   },
   "accountModuleSetupComplete": true,
   "rentalBusinessFixtureReady": false,

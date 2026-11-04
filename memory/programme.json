@@ -2015,13 +2015,13 @@
     "run": "runs/RUN-20261104-rapid04-fixture-setup.md",
     "handoff": "handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md",
     "counts": {
-      "passed": 4,
+      "passed": 5,
       "failed": 0,
       "blocked": 0,
       "inconclusive": 0,
       "not-run": 0,
       "pending": 0,
-      "running": 1
+      "running": 0
     },
     "accountModuleComplete": true,
     "rentalBusinessReady": false,
