@@ -1,3 +1,9 @@
+# Current — 11 November browser/native controls blocked
+
+Read reviews/REVIEW-20261111-browser-control-block.md and runs/CHECKS-20261111-native-control-qualification.json. Visible login stampv2.5.25 · a6eda60 matches reviewed merge prefix; full server-build attestation/auth/business gates not complete. DOM API returns timeoutMs error; explicit options hit selector deadline. Native read passed, harmless mode-click failed geometry and remains consumed/uncertain; AX/screenshot app mismatch prevents qualification. All auth/business/master/settings native clicks now hard refused in quarantined diagnostic adapter. Do not enable it by metadata or execute Mission1 PLANs.
+
+Fresh host48guardunits pass; restricted39/9 retained, metadata passed. No Login/Logout or business submission occurred; original sources untouched. Both inertproofsets/clocks closed; first parserfailure and lateruncertainclick retained. Next repair supportedcontrolconnection, then freshactualread/click/refusalproof BEFOREnewlogin/fixture/executabledateboundM1A. Owner deploys personally; no agent deployment or launch. BackupLAST.
+
 # Current — first customer programme and Mission1 specification
 
 Owner requires physical goods+services+POS, both VAT/non-VAT and cash/bank/card. Owner personally deploys; no agent deployment. Read docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md and handoffs/HANDOFF-20261104-first-customer-m1-plan.md. Four missions now have FIVE planned Light runs because Mission1 has two40-checkpoint profile batches; allow1–2grouped retests (estimate5–7, not guaranteed). Plans and independent14-journal oracles prepared; no execution or launch acceptance.
