@@ -1,3 +1,7 @@
+# Current — combined VAT/POS prerequisite Light qualification ready
+
+Read handoffs/HANDOFF-20261111-combined-qualification-sol-light.md and queues/MISSION-COMBQUAL-20261111.json.22fixedcases/NEW45total35execution10closing/fixed11NovUTC. Read-onlyUI/source/fixtureinspection, onlyfreshguardedAOwnerLogout/LoginallowedCQ04. NOsignup/grant/settings/master/financial/shift/device/physicalprintwrites. MissingseparateVAT/nonVATPOSfixturesareconcretequalificationblocks, notpermissiontobypass. Collectallindependentgatesandonesanitizedreadiness/setup/codinghandoffforMedium.80pointPLANremainsnonexecutable. ExactcleanpinandPRinroot COMBINED-QUALIFICATION-SOL-LIGHT.md. PreservecompletedA/B/original/closedclocks; noagentmerge/deploy/launch;backupLAST.
+
 # Current — owner requested combined VAT + POS Light batch
 
 Read handoffs/PLAN-20261111-m1b-pos-combined.md and queues/PLAN-M1B-POS-COMBINED.json:80specifiedpoints,executionReadyfalse; proposal180total/150execution/30closing. SeparateVATandnonVATPOSfixtures/modules, taxconversion andsafePOSautoprint/shiftclose controls requireMediumqualificationBEFOREexactboundrelease. No newLightprompt executableyet; neverexecutePLAN/oldM1A. Fulloracleeventbinding/date/QA/livegatespending. OfficeVATgrossBSassets710/liability90/netassets620; combinedVAToffice+POSgrossassets1760/liability90/netassets1670; independentnonVATPOSassets500. Mixedproductbasketincluded,split-tenderunqualified. Oneconsolidatedbatchpublication;ownerdeploysonly;backupLAST.
