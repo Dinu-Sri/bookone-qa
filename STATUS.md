@@ -1,3 +1,21 @@
+# Current — Medium reviewed M1AR; qualify VAT plus remaining coverage next
+
+Read reviews/REVIEW-20261111-m1ar-medium.md and checks. BoundednonVATmoneyflowsaccepted;34pass/3inconclusive retained, no newproductfixjustified. AllthreeCIworkflowsonresultse5b34725 passed. Receipt/remittancepages exist and load persistedpaymentfacts; missinglivepreview/amountcenttests remain gaps. NEXT Mediumqualifies separatelegitimateVATfixture and prepares substantialVATphysical/servicebatch plus theseclosures; no executableVATqueueyet. Neverreplay consumedM1Aactions; preserveforeignB/originalQA/closedclocks. Ownerdeploysonly;noagentmerge/deploy/launch;backupLAST.
+
+# Current — Mission1A remaining run completed11November
+
+PR99 https://github.com/Dinu-Sri/bookone-qa/pull/99. ExecutionQA642942b0630765864fde1af1cfc725ae85dadb04 remains in clean launch-mission01a-remaining-execution. All37dispositions34passed3inconclusive/0pending/unresolved. All13financialsubmissions/13journals2840 accepted; acrossruns17journals4180,stock3value180,cash150bank290card0,ARAP0,income120/assets620. ClockCLOSED1591491ms/0paused includesinitialpublicationa479700; metadata-onlytail.
+
+Read runs/RUN-20261111-m1ar.md,checks and handoffs/HANDOFF-20261111-m1ar-consolidated.md. NEXT Mediumreview of fullphysical/servicefinancialresults and missingstandalonereceipt/remittancepreview plusfullamountcentfeedbacklayers. No wrongmoneydefectproven; no codingchatmessage. AllM1Aqueues/financialevents consumed, neverreplay. No newexecutablemission. VAT/POS/authorization/customeropening/recoveryremain;backupLAST. Ownerdeploysonly;noagentmerge/deploy/launch. Nativefallbackquarantined; oldfailuresretained.
+
+Historical pointers below superseded.
+
+# Current — 11November remaining-only Mission1A Light release
+
+Owner will select Light; read handoffs/HANDOFF-20261111-m1a-remaining-sol-light.md, reviews/REVIEW-20261111-m1a-remaining.md and queues/MISSION-v2525-M1AR-20261111.json. NEW37case queue/sixfreshgates, fixed11NovUTC/due14Nov, NEW120/20clock beforebrowser/auth. Existing A bank500/AP600/inventory600/stock10,4journals1340/3moves. Private sources in ../launch-mission01a-execution/.local/m1a/RUN-20261111-M1A/remaining-bindings.json; originalrun15pass1blocked30notrun, clockCLOSED12088320ms/0paused inclwholecreditgap,0unresolved. Neverrepeat funding/masters/PO/GRN/bill/bankpurchase/refund or oldrequests. Corrected dedicatedquote Save quotation; conversions Convert to order then To invoice once. Remaining13journals2840; fullacrossruns17/4180,stock3/value180,income120,ARAP0. Preserveoldcontracts/failures/history; originalbrowserguard only/nativequarantined. Noagentmerge/deploy/launch;backupLAST. Productcodingdecision afterMediumreviewsLightresults.
+
+Historical pointers below are superseded for next-task selection.
+
 # Current — restored controls and NEW11November Mission1A
 
 Read reviews/REVIEW-20261111-m1a-release.md. Original browser controls now pass actualtitle/click+5zero-actionrefusals; nativefallback remainsquarantined. Fresh AOwnerlogin/read-onlyprofile/openings/forms qualified, oneauth/no financial/master/settings/grantwrite. Current nonVAT/noApproval/GRNIoff/lastcost/negativeAllow, cash1000/bank1100/card1200, owner equity3000.
