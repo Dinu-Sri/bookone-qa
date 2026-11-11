@@ -1,3 +1,9 @@
+# Current — 11November remaining-only Mission1A Light release
+
+Owner will select Light; read handoffs/HANDOFF-20261111-m1a-remaining-sol-light.md, reviews/REVIEW-20261111-m1a-remaining.md and queues/MISSION-v2525-M1AR-20261111.json. NEW37case queue/sixfreshgates, fixed11NovUTC/due14Nov, NEW120/20clock beforebrowser/auth. Existing A bank500/AP600/inventory600/stock10,4journals1340/3moves. Private sources in ../launch-mission01a-execution/.local/m1a/RUN-20261111-M1A/remaining-bindings.json; originalrun15pass1blocked30notrun, clockCLOSED12088320ms/0paused inclwholecreditgap,0unresolved. Neverrepeat funding/masters/PO/GRN/bill/bankpurchase/refund or oldrequests. Corrected dedicatedquote Save quotation; conversions Convert to order then To invoice once. Remaining13journals2840; fullacrossruns17/4180,stock3/value180,income120,ARAP0. Preserveoldcontracts/failures/history; originalbrowserguard only/nativequarantined. Noagentmerge/deploy/launch;backupLAST. Productcodingdecision afterMediumreviewsLightresults.
+
+Historical pointers below are superseded for next-task selection.
+
 # Current — restored controls and NEW11November Mission1A
 
 Read reviews/REVIEW-20261111-m1a-release.md. Original browser controls now pass actualtitle/click+5zero-actionrefusals; nativefallback remainsquarantined. Fresh AOwnerlogin/read-onlyprofile/openings/forms qualified, oneauth/no financial/master/settings/grantwrite. Current nonVAT/noApproval/GRNIoff/lastcost/negativeAllow, cash1000/bank1100/card1200, owner equity3000.
