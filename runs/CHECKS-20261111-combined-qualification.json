@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "executionQa": "42d9671660edc1eecdbf17a68d76e03139c4ffc8",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "actualProof": {
+    "positive": 2,
+    "zeroActionRefusals": 5,
+    "proofClocks": "allclosed"
+  },
+  "authAccepted": 2,
+  "financialMasterSettingsGrantShiftWrites": 0,
+  "unresolved": 0,
+  "expectedFinalCounts": {
+    "passed": 15,
+    "blocked": 4,
+    "inconclusive": 3
+  },
+  "focusedTests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "metadata": "passed",
+  "businessReleaseReady": false,
+  "sourceFindings": [
+    "forcedcommercialofficeconversion",
+    "POSautoprintwithoutqualifiedmanualpath"
+  ],
+  "liveFinancialDefectsReproduced": 0
+}
