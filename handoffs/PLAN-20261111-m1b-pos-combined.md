@@ -1,0 +1,37 @@
+# Combined Mission1B + Mission2 plan for Sol Light
+
+Owner requested11November2026 that VAToffice andPOS be combined into one substantial Lightmission. This supersedes the earlier separate-run sequencing, while preserving their independent acceptance gates.80specifiedcheckpoints:6freshgates/24VAToffice/26VATPOS/10nonVATPOS/6carry-forward/8closure. Read queues/PLAN-M1B-POS-COMBINED.json. executionReady=false; no exactQA/livefixture/date/actionbuttons or operatorrun exists yet. Do NOT execute this PLAN or oldM1Aqueues.
+
+## Scope and pacing
+
+One proposed180minute envelope:150execution/30closing,15minute freshpreflight. Fixturepreparation is a separate reviewedguardedMediumrun BEFORE Lightrelease; don't spendLightmissioncreatingunknowncompanies or repeatedlyattemptingblockedgrants. Preserve run-owned sources between phases, recordper-lanecheckpoints; one consolidatedbug/resultspublication. Failures blockdependentwrites, independent qualifiedlanes continue. If legitimatefixtures/supportedUIcannotfitone envelope, reportunexecutedcases and review a remaining-onlysuccessor ratherthan hidegaps or repeatmoney. Duration is a proposal, not a launchpromise.
+
+## Fixture/release work Medium must complete
+
+Reuse saved legitimateaccounts; originalA's completednonVATprofile/money remains unchanged. ForeignB remainsdenialfixture. Qualify separateVATpositivecompany withInventory+POS and legitimateowner, plus a separate nonVATPOSpositivefixture for parity; don't invent existing grants or repurposeforeignB. Any newsecurity-sensitivegrant orterms acceptance follows action-timecontrols, with concretepreparedreviewableform beforeaskingowner; priorauthorizations persist whereapplicable. Credentials/IDs staycentralignored. No newaccounts/grants/settings/auth/businessactions occurred during this planningturn.
+
+Exactowner-deployedcandidate/stamp/source/tree trace, realcontrolproofs, taxprofile, locations/registeraccounts and refund/conversioncontracts mandatory. Pinnedbaseline reviewedforplanning a6eda602bc67f20eb86736cbeceabc9cdd841769; actualnextcandidateunbound. Synthetic18percent tax-exclusive/fullinputrecovery is arithmetic, not customer/legalVATapproval. Current dedicatedquotation form hardcodescommercial/local; verify intended taxinvoice conversion/settings/UI before promisingVATquote708. If existing flow cannot producecorrectVATdocuments throughsupportedUI, groupcodingqualification FIRST; never alterpolicy to fitproduct or silently swapconversion for directinvoice. Review POS lineprice/taxcalculation independently as well.
+
+POSsource supports cash/card/bank and mixed-productbaskets. Mixed TENDER splitting is separatelyunqualified: source maps mixedto registerdefault and notesparts; do not treat that as successfulcash/card split. Requiredscope tests separatecash/card/bank; do not claimsplit-tenderacceptance. Authoritative role/tenant/race/faultvariants needqualifiedisolatedruntime and Mission3, not invalidliveactions.
+
+Printinggate: current POS finishPrint opensreceipt?autoprint=1 forbrowser/both and mayinvokethermal/drawerhardware; closebutton saysClose shift & print Z. Qualify supportedpreview/manualprintconfiguration or controlledbrowser printdialoghandling that preventsphysicalprinting. Do not injectJS, patchbrowserbehavior, connectdevices or changeguard to evadecontrols. Receipt/Z modal inspection alone doesnotqualifyactualcommit. If no safe supported path, recordconcreteblock and resolve once BEFORE release; no repetitiveblockedLightqueue.
+
+## Independent target outcomes — conditional specification
+
+OfficeVATcorrects originalplan'spaidbillrefundassumption: ordinaryAPcredit141.60 BEFOREvendorpay566.40, plus separatebankcashpurchase/refund141.60. Bankopening500/equity500. Purchaseinventory600/input108; serviceexpense80/input14.40; purchasecreditreverseinventory120/input21.60. Physicalsales600/output108, customerreturn100/output18, COGSnet300. Servicerevenue120/output21.60 fullyreversed40+80. Closingcash177/bank252.20/card0/inventory180/inputVAT100.80/outputVAT90/nettaxasset10.80/ARAP0/income120;assets710.00,liabilities90,equity500+income120. NETassets620. Do not hideoutputVATliability by claiming grossBSassets620. Grossassetstaxpresentation must beverifiedandbound.
+
+VATPOSseparatemasters: bankequityfund1000/cashfloat50equity, physicalpurchase10x60+VAT108=708 andbankpay708. Shiftfloat50 isdrawer metadata, never secondledgerfunding. Cashgoods2gross236 tender250/change14 ->refund118+118; cardservice3gross141.60 ->refund47.20+94.40; bankmixedproductphysical1+service1gross165.20 ->fullrefund165.20. Norefundagainstunrelatedsource. AllPOSsalerevenue/outputVAT/COGS/tenders net0; purchasedstock10/value600/inputVAT108 retained. Zcashsales236/refunds236/float50/count50/variance0; card141.60/141.60;bank165.20/165.20. CombinedVATfixtureafteroffice+POS cash227/bank544.20/inventory780/inputVAT208.80 =grossassets1760;outputVATliability90; equity1550+income120=1670 netassets.
+
+NonVATPOSseparatefixture:bankequityfund500,buygoods2x60=120/paybank120,float0. Cashgoods100/refund100, cardservice40/refund40, bankmixedphysical100+service40/refund140. Finalbank380/stock2value120/incomeVATARAP0/assets500=equity500;shiftcash0/count0/variance0. This extendsbothprofilePOScoverage withoutchangingcompletedA.
+
+Allamounts independentlyrecomputed inintegercents atrelease; bindper-eventjournals, taxrounding/lineprices, stockmoves, sourceallocations andfulfillmenttiming. Do not inferjournalcount frombuttoncount; publish testedfulloraclebeforeexecution. Planningtargets are not runtimepasses. Separateoffice/POSmasters avoid cross-lane stock/COGS ambiguity. TaxgrossBSassetspresentation corrects earlierM1Bplanning netasset620 shorthand; preserveoldoracle ratherthan editconsumedcontracts.
+
+## Carry-forward and final control
+
+Read-onlyverifyM1ARstandalonereceipts250/350/40/80 andremittances480/80 using actualpaymenttransactionIDs/supportedlinks. AuditallocationUUIDs aredifferent. No recreatepaymentsjusttocaptureprint. CaptureimmediatepersistedreceiptlinksforNEWpayments BEFOREsettlement removesopenrows. Fullamount/centfeedbackwhileownedunpaidsources exist; safeunsavedinvalidinputs only, serverdenialsisolated. Preserveexhaustedsource0andoldSaveenabledobservations.
+
+One exactboundqueue/helper/fullLightprompt needs freshcandidate/fixture/openings/source/control/dategates; NEWclockbeforebrowser/auth; actualpersistedintents/oneguardedsubmit/readback; stopforunknownoutcomes; no replay/historyrepair. FixedUTCday/duecontractboundatrelease, final5minute rolloverrefusal; retainunpausedcreditgaps. Evidence mustincludeeveryaccount/side/tax/quantity/source/date, taxreportsandprior-dateexclusion, shiftZ/closedstate, receipt/refundpreviews, actor/actiontrace and fullclosingBS/PnL/CF/GL/trial. Publishall80dispositions withmissinglayers, severity-rankedconsolidatedcodinghandoff, closeclockincludinginitialpublication. Mediumreviews next. Noagentmerge/deploy/launch;ownerdeploysonly;backupLAST. Mission3(customerroles/isolation/openings) andMission4(finalregression/recovery)remainafterthiscombinedbatch.
+
+## Instructions for Sol Light after release
+
+Execute ONLY the NEWpublished exactbound successor and completefullprompt suppliedbyMedium afterabovequalification. Thisdocument and80pointPLAN are preparation, not executableauthorization. If no releasedsuccessor exists, reportthe namedmissinggates once; do not initializePLAN,flipflags, inventfixtures/dates/buttons orrunoldqueues.

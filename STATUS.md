@@ -1,3 +1,7 @@
+# Current — owner requested combined VAT + POS Light batch
+
+Read handoffs/PLAN-20261111-m1b-pos-combined.md and queues/PLAN-M1B-POS-COMBINED.json:80specifiedpoints,executionReadyfalse; proposal180total/150execution/30closing. SeparateVATandnonVATPOSfixtures/modules, taxconversion andsafePOSautoprint/shiftclose controls requireMediumqualificationBEFOREexactboundrelease. No newLightprompt executableyet; neverexecutePLAN/oldM1A. Fulloracleeventbinding/date/QA/livegatespending. OfficeVATgrossBSassets710/liability90/netassets620; combinedVAToffice+POSgrossassets1760/liability90/netassets1670; independentnonVATPOSassets500. Mixedproductbasketincluded,split-tenderunqualified. Oneconsolidatedbatchpublication;ownerdeploysonly;backupLAST.
+
 # Current — Medium reviewed M1AR; qualify VAT plus remaining coverage next
 
 Read reviews/REVIEW-20261111-m1ar-medium.md and checks. BoundednonVATmoneyflowsaccepted;34pass/3inconclusive retained, no newproductfixjustified. AllthreeCIworkflowsonresultse5b34725 passed. Receipt/remittancepages exist and load persistedpaymentfacts; missinglivepreview/amountcenttests remain gaps. NEXT Mediumqualifies separatelegitimateVATfixture and prepares substantialVATphysical/servicebatch plus theseclosures; no executableVATqueueyet. Neverreplay consumedM1Aactions; preserveforeignB/originalQA/closedclocks. Ownerdeploysonly;noagentmerge/deploy/launch;backupLAST.
