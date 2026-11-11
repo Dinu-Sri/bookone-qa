@@ -2,12 +2,6 @@
   "schemaVersion": 1,
   "executionQa": "642942b0630765864fde1af1cfc725ae85dadb04",
   "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
-  "countsBeforePublication": {
-    "passed": 32,
-    "inconclusive": 3,
-    "pendingClosure": 2,
-    "unresolved": 0
-  },
   "actualFinancial": {
     "submissions": 13,
     "journals": 13,
@@ -41,5 +35,20 @@
     "service standalone receipt/remittance previews",
     "full amount/cent feedback matrix"
   ],
-  "releaseAcceptance": "not-established"
+  "releaseAcceptance": "not-established",
+  "counts": {
+    "passed": 34,
+    "inconclusive": 3,
+    "failed": 0,
+    "blocked": 0,
+    "pending": 0,
+    "unresolved": 0
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1591491,
+    "pausedMs": 0,
+    "initialPublication": "a479700",
+    "tail": "metadata-only"
+  }
 }
