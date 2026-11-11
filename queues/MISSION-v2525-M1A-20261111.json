@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-M1A-20261111",
+  "displayName": "Mission1A non-VAT complete physical/service/AP-credit and supplier bank refund",
+  "executionReady": true,
+  "status": "medium-reviewed-conditional-fresh-gates-required-not-executed",
+  "candidate": "v2.5.25",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "reviewedCandidate": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+  "mergedProduct": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "reviewedTree": "07ff418256d8bdd56fb1569203e6baa4f03aaa44",
+  "liveObserved": true,
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 15
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-11",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "oracle": "queues/ORACLE-v2525-M1A-20261111.json",
+  "fixture": {
+    "alias": "existing-A-Owner-private",
+    "qualified": "fresh auth/read-only qualification complete; new masters/funding performed by fixed fixture cases",
+    "foreignCompanyB": "preserve",
+    "privateBinding": "external ignored private fixture file; no public IDs"
+  },
+  "transport": {
+    "entry": "dispatchPersistedDesktopAction",
+    "module": "scripts/operator-desktop-cua.mjs",
+    "host": "mcp__cua_repl.js",
+    "nativeFallback": "quarantined-not-authorized"
+  },
+  "cases": [
+    {
+      "id": "M1A-G01",
+      "title": "Candidate and clock",
+      "expected": "Open NEW120total/100execution/20closing clock before fresh browser/auth; compare exact publishedQA, product merge/tree/visible stamp. Current11Nov/due14Nov; no rollover past23:55UTC.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-G02",
+      "title": "Actual guarded-tool qualification",
+      "expected": "Fresh actual guard title/harmless Accounting click plus5zero-action-and-claim refusals before new auth/business; sourcehash-bound current CUA tab. Native remains blocked.",
+      "dependsOn": [
+        "M1A-G01"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-G03",
+      "title": "Identity, module and profile",
+      "expected": "Fresh guarded A signout/protectedreload redirects then saved AOwner Login Rememberoff; correct company/Owner/Inventory/noVAT/noApproval/GRNIoff/lastcost. Negative stock currentlyAllow; no invalid submit/launch acceptance.",
+      "dependsOn": [
+        "M1A-G02"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ]
+    },
+    {
+      "id": "M1A-F01",
+      "title": "New own warehouse",
+      "expected": "Add only M1A-20261111-WH warehouse/codeM1A1111; original3hirebays unchanged, nojournal/stock.",
+      "dependsOn": [
+        "M1A-G03"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Add location"
+      ]
+    },
+    {
+      "id": "M1A-F02",
+      "title": "New physical product",
+      "expected": "SKU M1A1111-P, physical, unitcost60/sell100/standardtax, accounts4000/5000/5100, openingqty0; nojournal/movement.",
+      "dependsOn": [
+        "M1A-F01"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save product"
+      ]
+    },
+    {
+      "id": "M1A-F03",
+      "title": "New service product",
+      "expected": "SKU M1A1111-S, Service unitcost0/sell40/standardtax, revenue4000, opening0; no stock/journal.",
+      "dependsOn": [
+        "M1A-F02"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save product"
+      ]
+    },
+    {
+      "id": "M1A-F04",
+      "title": "Synthetic bank opening500",
+      "expected": "Supported MoneyIn Owner contribution500 to1100Bank on11Nov: Dr1100500/Cr3000500, onejournal; zero revenue/tax/AR/AP/stock. Not external bank transfer.",
+      "dependsOn": [
+        "M1A-F03"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record contribution"
+      ]
+    },
+    {
+      "id": "M1A-G04",
+      "title": "Opening and funding",
+      "expected": "After separately tagged owner contribution500: bank500, equity500, cash/card0, all other accounts0, own stock0; preserve funding1journal and current master/settings maps.",
+      "dependsOn": [
+        "M1A-F04"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-G05",
+      "title": "New masters",
+      "expected": "Exactly new M1A physical60/100 and service0/40, new warehouse; opening stock0. Preserve existing three hire bays, default register and other company data.",
+      "dependsOn": [
+        "M1A-G04"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-G06",
+      "title": "Tax and tender preview",
+      "expected": "NonVAT/defaultTax0/standard product status; verify cash1000/bank1100/card1200 and prices/dates. Existing supported APcredit and cash_purchase bank-refund paths match revised oracle.",
+      "dependsOn": [
+        "M1A-G05"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-P15",
+      "title": "Independent bank cash-purchase120",
+      "expected": "New cash_purchase2x60 paid1100Bank, Dr5100120/Cr1100120; noAP, stock+2; new source linked only to P16.",
+      "dependsOn": [
+        "M1A-G06"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save cash purchase"
+      ]
+    },
+    {
+      "id": "M1A-P16",
+      "title": "Full bank supplier refund120",
+      "expected": "Return exactly P15 two units, refund1100Bank120; Dr1100120/Cr5100120, source exhausted; credit refunded/paid120/balance0, stock-2; original payment preserved.",
+      "dependsOn": [
+        "M1A-P15"
+      ],
+      "precondition": "Current11NovAOwner under fresh guard and private own fixtures. No original/foreign company writes; unique intent/readback.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "M1A-P01",
+      "title": "Purchase order10x60",
+      "expected": "Order 600 including tax; no stock/journal.",
+      "dependsOn": [
+        "M1A-G06"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase order"
+      ]
+    },
+    {
+      "id": "M1A-P02",
+      "title": "Receive10",
+      "expected": "GRN+10 units/value600, no GL with GRNIoff; original PO/source intact.",
+      "dependsOn": [
+        "M1A-P01"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Receive goods (GRN)",
+        "Save GRN"
+      ]
+    },
+    {
+      "id": "M1A-P03",
+      "title": "Supplier bill",
+      "expected": "Bill 600, capitalise600 exactly once; AP gross, no duplicate10 stock.",
+      "dependsOn": [
+        "M1A-P02"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "To purchase bill",
+        "Create purchase bill",
+        "Save purchase"
+      ]
+    },
+    {
+      "id": "M1A-P04",
+      "title": "Sales quotation6x100",
+      "expected": "Quote 600, no stock or posting.",
+      "dependsOn": [
+        "M1A-P03"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ]
+    },
+    {
+      "id": "M1A-P05",
+      "title": "Sales order",
+      "expected": "One quote-to-order conversion; no premature stock/GL.",
+      "dependsOn": [
+        "M1A-P04"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Convert to order"
+      ]
+    },
+    {
+      "id": "M1A-P06",
+      "title": "Invoice and fulfill6",
+      "expected": "Gross 600; stock-6/value360/COGS360, AR gross. Supported conversion/fulfillment posting point must be reviewed before release.",
+      "dependsOn": [
+        "M1A-P05"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "To invoice",
+        "Post"
+      ]
+    },
+    {
+      "id": "M1A-P07",
+      "title": "Cash partial receipt",
+      "expected": "Receive 250 cash, exact source/date/account and remaining AR.",
+      "dependsOn": [
+        "M1A-P06"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-P08",
+      "title": "Bank final receipt",
+      "expected": "Receive 350 bank; AR0, preserve earlier cash receipt.",
+      "dependsOn": [
+        "M1A-P07"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-P10",
+      "title": "Ordinary source-linked AP credit120 before supplier settlement",
+      "expected": "Return2x60 against credit bill: Dr2100 AP120/Cr5100 stock120, source balance480, ordinary credit not cash-refunded, stock2 after prior sale. No bank movement.",
+      "dependsOn": [
+        "M1A-P08"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "M1A-P09",
+      "title": "Pay supplier by bank",
+      "expected": "Pay remaining480 through1100Bank after APcredit120; source balance0, preserve receipt and credit allocations, no duplicate600outflow.",
+      "dependsOn": [
+        "M1A-P10"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-P11",
+      "title": "Customer return1 and cash refund",
+      "expected": "Source-linked return1@100/refund 100 cash; reverse original tax and COGS60; stock+1; refunded/paid/zero.",
+      "dependsOn": [
+        "M1A-P08"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "M1A-P12",
+      "title": "Source preservation",
+      "expected": "Exactly purchased10/returned2; sold6/returned1; source dates/tax/receipt lineage intact, remaining quantities correct.",
+      "dependsOn": [
+        "M1A-P09",
+        "M1A-P11"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-P13",
+      "title": "Physical document/history",
+      "expected": "Reopen all source/credit/receipt/remittance previews and persisted Activity with actor/action/source; no physical print.",
+      "dependsOn": [
+        "M1A-P12"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-P14",
+      "title": "Physical closing",
+      "expected": "Seven primary physical journals, DR2920; stock3/value180/COGS300/revenue600/returns100, AR/AP0; cash+150/bank-130/card0. Supplemental cash-purchase roundtrip separately bound.",
+      "dependsOn": [
+        "M1A-P13"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-S01",
+      "title": "Service quote3x40",
+      "expected": "Quote 120, no stock/journal.",
+      "dependsOn": [
+        "M1A-G06"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ]
+    },
+    {
+      "id": "M1A-S02",
+      "title": "Service order",
+      "expected": "Convert once, no stock/journal.",
+      "dependsOn": [
+        "M1A-S01"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Convert to order"
+      ]
+    },
+    {
+      "id": "M1A-S03",
+      "title": "Service invoice",
+      "expected": "Delivered service gross 120, net revenue120; no stock/COGS.",
+      "dependsOn": [
+        "M1A-S02"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "To invoice",
+        "Post"
+      ]
+    },
+    {
+      "id": "M1A-S04",
+      "title": "Card partial receipt",
+      "expected": "Record 40 to verified card receivable/clearing; later refund40 net uses this same tender. This is not a real processor charge.",
+      "dependsOn": [
+        "M1A-S03"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-S05",
+      "title": "Bank final receipt",
+      "expected": "Record 80 bank; AR0; later refund80 net uses the same bank tender, card receipt preserved.",
+      "dependsOn": [
+        "M1A-S04"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-S06",
+      "title": "First service refund",
+      "expected": "Return1x40, gross 40 to supported card ledger account; correct original tax. Unsupported card refund path blocks only this dependent branch, never substitute cash and claim card passed.",
+      "dependsOn": [
+        "M1A-S05"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "M1A-S07",
+      "title": "Remaining service refund",
+      "expected": "Return2x40 gross 80 bank; source exhausted, credits refunded/paid/zero.",
+      "dependsOn": [
+        "M1A-S06"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "M1A-S08",
+      "title": "Delivered service expense bill",
+      "expected": "Net expense80 plus applicable input VAT; AP gross 80, no stock/COGS.",
+      "dependsOn": [
+        "M1A-G06"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase"
+      ]
+    },
+    {
+      "id": "M1A-S09",
+      "title": "Service vendor payment",
+      "expected": "Pay 80 bank; AP0, no card/cash substitution.",
+      "dependsOn": [
+        "M1A-S08"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "M1A-S10",
+      "title": "Service history/print",
+      "expected": "Inspect invoice, two receipt allocations, both refunds, bill/remittance and Activity; source/date/tax preserved.",
+      "dependsOn": [
+        "M1A-S07",
+        "M1A-S09"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-S11",
+      "title": "Service closing",
+      "expected": "Seven journals, service revenue fully reversed, expense80; no physical movement/COGS, exact tender and tax deltas.",
+      "dependsOn": [
+        "M1A-S10"
+      ],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-X01",
+      "title": "Historical/source preservation",
+      "expected": "Original QA and all older records untouched; new masters/sources only, no old financial replay.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-X02",
+      "title": "Tax and date boundaries",
+      "expected": "Original invoice/return tax and issue/receipt/refund dates preserved; prior-date reports exclude new events.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-X03",
+      "title": "Safe amount/quantity feedback",
+      "expected": "Read-only invalid amount/quantity feedback and cent boundaries; no invalid live submit. Authoritative denial stays with supported isolated runners.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-X04",
+      "title": "Shared deterministic regressions",
+      "expected": "Reuse valid exact-pin PG/HTTPS evidence; affected/new-codec tests run only in marked empty isolated runtime. No live race/fault injection.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-X05",
+      "title": "Tender integrity",
+      "expected": "Independent cash/bank/card balances, mapping and available funding; no payment processor/fees/settlement certification from ledger balances.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "M1A-C01",
+      "title": "Full journals and stock",
+      "expected": "Sixteen workflow journals, DR=CR3680 and six stock movements; plus one separately tagged owner funding journal500 => fullrun17journals/DR4180. Stock3/value180.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    },
+    {
+      "id": "M1A-C02",
+      "title": "Full report reconciliation",
+      "expected": "Relative to funded workflow opening: cash+150/bank-210/card0; AR/AP0; income120; final bank290/cash150/stock180/assets620, owner equity500+income120; all VAT0.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    },
+    {
+      "id": "M1A-C03",
+      "title": "Consolidated disposition",
+      "expected": "One severity-ranked record of every failure and blocked/missing layer; continue independent eligible lanes; no overall launch claim.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    },
+    {
+      "id": "M1A-C04",
+      "title": "Publication and close",
+      "expected": "Publish sanitized batch/run/checks/handoff, close conservative clock,0unresolved or explicit uncertain-action recovery disposition. Never replay.",
+      "dependsOn": [],
+      "precondition": "NEW11November120/20 clock, current A Owner/profile/openings, unchanged restored source guard proof; fixed dependency must pass. Read actual per-case UI/company/tender/date before each unique intent.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    }
+  ],
+  "releaseAcceptance": "not-established",
+  "reportedShortSha": "a6eda60",
+  "sourceCorrection": "Original planning P10 treated paid credit-bill return as cash refund. P10 is ordinary APcredit BEFORE payment480; separate P15/P16 bank cash_purchase refund covers actual supplier refund. Original plans/oracles retained.",
+  "buildEvidence": "Owner-reported deployment, observed v2.5.25 a6eda60, resolved known merged fullSHA and reviewed tree equality; independent server digest not attested; no release acceptance."
+}

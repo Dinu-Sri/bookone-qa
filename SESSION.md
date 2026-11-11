@@ -1,3 +1,13 @@
+# Current — restored controls and NEW11November Mission1A
+
+Read reviews/REVIEW-20261111-m1a-release.md. Original browser controls now pass actualtitle/click+5zero-actionrefusals; nativefallback remainsquarantined. Fresh AOwnerlogin/read-onlyprofile/openings/forms qualified, oneauth/no financial/master/settings/grantwrite. Current nonVAT/noApproval/GRNIoff/lastcost/negativeAllow, cash1000/bank1100/card1200, owner equity3000.
+
+NEW queues/MISSION-v2525-M1A-20261111.json + oracle + scripts/launch-m1a-run.mjs:46fixedcases, funding500 separately,16workflowjournalsDR3680/sixmoves/stock3value180/income120/ARAP0. Fullincludingfunding17journalsDR4180, finalcash150/bank290/card0/assets620=equity500+income120. Original40pointPLANs remainnonexecutableunchanged. P10correctedtoAPcreditbeforepayment480; separatebankcashpurchase/refund120 added, not a productbug.
+
+Exact productmergea6eda602bc67f20eb86736cbeceabc9cdd841769, reviewedtree07ff418256d8bdd56fb1569203e6baa4f03aaa44; ownerdeployment+visiblev2.5.25 a6eda60 trace, noindependentserverdigestclaim. NEW120/20clock beforefreshbrowser/auth; actualproof+privateAowner/owncompany/settings/openings/tenders beforewrites; fixed11NovUTC/due14Nov/final5minrefusal. Neverreplayoldrequests orrepairoldmoney. PreserveforeignB/originalQA andallhistoricalfailures; noagentsdeploy; backupLAST. No execution/launchpassfromthisrelease.
+
+Historical records below remain preserved.
+
 # Current — 11 November browser/native controls blocked
 
 Read reviews/REVIEW-20261111-browser-control-block.md and runs/CHECKS-20261111-native-control-qualification.json. Visible login stampv2.5.25 · a6eda60 matches reviewed merge prefix; full server-build attestation/auth/business gates not complete. DOM API returns timeoutMs error; explicit options hit selector deadline. Native read passed, harmless mode-click failed geometry and remains consumed/uncertain; AX/screenshot app mismatch prevents qualification. All auth/business/master/settings native clicks now hard refused in quarantined diagnostic adapter. Do not enable it by metadata or execute Mission1 PLANs.
