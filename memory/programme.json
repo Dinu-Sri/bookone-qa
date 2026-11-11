@@ -2060,5 +2060,16 @@
     "lightExecutable": false,
     "launchAccepted": false,
     "next": "Medium actual live fingerprint and reusable fixture/transport qualification, then NEW exact-bound M1A release"
+  },
+  "latestControlQualification": {
+    "date": "2026-11-11",
+    "review": "reviews/REVIEW-20261111-browser-control-block.md",
+    "checks": "runs/CHECKS-20261111-native-control-qualification.json",
+    "status": "blocked-browserDOM-and-nativegeometry-screenshot",
+    "actualReadPassed": true,
+    "actualClickQualified": false,
+    "authSubmissions": 0,
+    "businessSubmissions": 0,
+    "next": "Restore supported browser control; fresh proof then qualify Mission1A"
   }
 }
