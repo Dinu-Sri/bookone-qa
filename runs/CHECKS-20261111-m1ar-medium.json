@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "reviewedResults": "e5b34725bd2f48b13db77add03a276e2cc50ce5e",
+  "executionQa": "642942b0630765864fde1af1cfc725ae85dadb04",
+  "ledgerAudit": "passed34/3/0unresolved;19acceptedintents;13per-eventjournalchecks",
+  "ci": {
+    "exactResultsCommit": true,
+    "postgres": "success43027313663",
+    "sourceContracts": "success43027313871",
+    "repositoryValidation": "success43027313766"
+  },
+  "codingFixRequiredNow": false,
+  "next": "separatequalifiedVATfulljourney plus remainingprint/amountcentcoverage",
+  "newBusinessActions": 0,
+  "launchAcceptance": false
+}

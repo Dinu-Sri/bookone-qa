@@ -1,3 +1,7 @@
+# Current — Medium reviewed M1AR; qualify VAT plus remaining coverage next
+
+Read reviews/REVIEW-20261111-m1ar-medium.md and checks. BoundednonVATmoneyflowsaccepted;34pass/3inconclusive retained, no newproductfixjustified. AllthreeCIworkflowsonresultse5b34725 passed. Receipt/remittancepages exist and load persistedpaymentfacts; missinglivepreview/amountcenttests remain gaps. NEXT Mediumqualifies separatelegitimateVATfixture and prepares substantialVATphysical/servicebatch plus theseclosures; no executableVATqueueyet. Neverreplay consumedM1Aactions; preserveforeignB/originalQA/closedclocks. Ownerdeploysonly;noagentmerge/deploy/launch;backupLAST.
+
 # Current — Mission1A remaining run completed11November
 
 PR99 https://github.com/Dinu-Sri/bookone-qa/pull/99. ExecutionQA642942b0630765864fde1af1cfc725ae85dadb04 remains in clean launch-mission01a-remaining-execution. All37dispositions34passed3inconclusive/0pending/unresolved. All13financialsubmissions/13journals2840 accepted; acrossruns17journals4180,stock3value180,cash150bank290card0,ARAP0,income120/assets620. ClockCLOSED1591491ms/0paused includesinitialpublicationa479700; metadata-onlytail.
