@@ -10,11 +10,6 @@
   "authAccepted": 2,
   "financialMasterSettingsGrantShiftWrites": 0,
   "unresolved": 0,
-  "expectedFinalCounts": {
-    "passed": 15,
-    "blocked": 4,
-    "inconclusive": 3
-  },
   "focusedTests": {
     "passed": 4,
     "failed": 0
@@ -25,5 +20,21 @@
     "forcedcommercialofficeconversion",
     "POSautoprintwithoutqualifiedmanualpath"
   ],
-  "liveFinancialDefectsReproduced": 0
+  "liveFinancialDefectsReproduced": 0,
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "passed": 15,
+    "failed": 0,
+    "blocked": 4,
+    "inconclusive": 3,
+    "not-run": 0
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 328922,
+    "pausedMs": 0,
+    "initialPublication": "b5174b5",
+    "tail": "metadataonly"
+  }
 }
