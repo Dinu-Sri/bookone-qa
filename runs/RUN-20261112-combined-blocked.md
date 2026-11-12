@@ -1,0 +1,11 @@
+# Combined mission execution — blocked by QA helper
+
+Exact execution a6308df978075664197caa4c030c01c6b9afcb69, product dae17abcba12d6810c8f8c3fe4a74fb28280a026; actual live v2.5.27 dae17ab. Fixed12NovemberUTC contract preserved. NEW180/150/30 clock started before browser/auth; all unpaused gaps charged.
+
+All80 dispositioned:3passed/1failed/76blocked,0pending/unresolved. Fresh actual two positive UI proofs and five0UI refusals passed; seven proof clocks closed. Host focused118/118 and metadata1076files/792scenarios passed. G04 failed: combined-v2527-cua imports combined-v2527-run, whose unguarded top-level process.argv throws `process is not defined` in actual CUA host. This precedes dispatchCombined invocation, so persisted Logout intent was independently resolved refused: zero UI dispatch/claim. Original tool exception and intent preserved privately. No financial, stock, settings, master, shift, print or authentication action was dispatched. No product monetary defect inferred.
+
+Accepted-event reconciliation:0 events,0 expected journal/stock/tender deltas,0owned sources. Prior transactions untouched by this run; current closing financial row equality was not re-read and is not claimed. Complete financial workflows and reports were not executed; no launch acceptance. Both V/N original setups and all old sources remain consumed/protected. No active helper/queue/oracle changes or bypass.
+
+Grouped QA coding handoff: make file-side helper imports safe in CUA host (guard process availability and keep CLI execution separate); inspect checkFrozen's execFileSync use for supported host compatibility as well. Add a meaningful actual-host import/guard test: Node unit118 passing did not detect this host failure. Prove fresh positive click and zero-action refusals using corrected wrapper before new auth/business. Freeze a new reviewed dated remaining-only successor; no blind replay of old intent, no edits inside this consumed run. No product deployment or data repair needed from current evidence.
+
+Closing Z checkpoints remain explicitly blocked rather than claiming their requested workflow acceptance. This consolidated record supplies the actual narrower reconciliation, preservation and handoff. Metadata-only clock closure follows initial publication. Owner alone merges/deploys; recovery LAST.
