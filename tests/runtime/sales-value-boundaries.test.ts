@@ -56,25 +56,25 @@ it.each([['RT-036','header'],['RT-037','line']])('[%s] excessive %s discount ref
  observe(id,{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),arCents:await balance('1300'),vatBalanceCents:await balance('2200')});expect(r.ok).toBe(false);expect(after).toEqual(before);
 });
 it('[RT-038] cumulative linked returns cannot exceed original source quantity and refundable value',async()=>{
- const p=await setup('service',false);const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));const credit=await create(input(p,'sales_return',{sourceDocumentId:invoice}));expect(cent((await doc(credit)).total)).toBe(10000);
- const before=await snapshot(),r=await createCommercialDocument(input(p,'sales_return',{sourceDocumentId:invoice})),after=await snapshot();const [returns]=await admin`select count(*)::int as n,coalesce(sum(total),0)::text as value from business_documents where source_document_id=${invoice} and document_type='sales_return' and voided_at is null`;
+ const p=await setup('service',false);const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));const credit=await create(input(p,'sales_return',{invoiceKind:'commercial',sourceDocumentId:invoice}));expect(cent((await doc(credit)).total)).toBe(10000);
+ const before=await snapshot(),r=await createCommercialDocument(input(p,'sales_return',{invoiceKind:'commercial',sourceDocumentId:invoice})),after=await snapshot();const [returns]=await admin`select count(*)::int as n,coalesce(sum(total),0)::text as value from business_documents where source_document_id=${invoice} and document_type='sales_return' and voided_at is null`;
  observe('RT-038',{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),returnCount:returns.n,returnTotalCents:cent(returns.value),expectedMaxReturnCents:10000,arCents:await balance('1300')});expect(r.ok).toBe(false);expect(after).toEqual(before);
 });
 it('[B-105] fully paid invoice cash refund retains receipt and settles credit once',async()=>{
  const p=await setup('service',false);const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
  const invoiceTx=(await doc(invoice)).transactionId!;const receiptBefore=await receiptState(invoiceTx);expect(receiptBefore.allocations).toHaveLength(1);expect(receiptBefore.transactions).toHaveLength(1);expect(receiptBefore.journals).toHaveLength(1);expect(receiptBefore.lines).toHaveLength(2);
- const credit=await create(input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'1000'}));const d=await doc(credit),receiptAfter=await receiptState(invoiceTx);
+ const credit=await create(input(p,'sales_return',{invoiceKind:'commercial',sourceDocumentId:invoice,paymentAccountCode:'1000'}));const d=await doc(credit),receiptAfter=await receiptState(invoiceTx);
  observe('B-105',{cashCents:await balance('1000'),arCents:await balance('1300'),creditBalanceCents:cent(d.balanceDue),creditPaidCents:cent(d.paidAmount),receiptAllocationsBefore:receiptBefore.allocations.length,receiptAllocationsAfter:receiptAfter.allocations.length,receiptRowsUnchanged:Number(JSON.stringify(receiptBefore)===JSON.stringify(receiptAfter)),revenueCents:await balance('4000'),returnRevenueCents:await balance('4100')});
  expect(await balance('1000')).toBe(0);expect(await balance('1300')).toBe(0);expect(cent(d.balanceDue)).toBe(0);expect(cent(d.paidAmount)).toBe(10000);expect(receiptAfter).toEqual(receiptBefore);expect(await balance('4000')).toBe(-10000);expect(await balance('4100')).toBe(10000);await noStockAndBalanced();
 });
 it('[RT-039] linked paid-invoice refund denies revenue tender with zero mutations',async()=>{
  const p=await setup('service',false);const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
- const before=await snapshot(),r=await createCommercialDocument(input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'4000'})),after=await snapshot();
+ const before=await snapshot(),r=await createCommercialDocument(input(p,'sales_return',{invoiceKind:'commercial',sourceDocumentId:invoice,paymentAccountCode:'4000'})),after=await snapshot();
  observe('RT-039',{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),cashCents:await balance('1000'),arCents:await balance('1300')});expect(r.ok).toBe(false);expect(after).toEqual(before);
 });
 it('[RT-041] second linked cash refund cannot exceed the paid source refundable amount',async()=>{
  const p=await setup('service',false);const invoice=await create(input(p,'sales_invoice',{invoiceKind:'commercial'}));expect((await receiveCustomerPayments({paymentDate:DATE,paymentAccountCode:'1000',allocations:[{documentId:invoice,amount:100}]})).ok).toBe(true);
- const payload=input(p,'sales_return',{sourceDocumentId:invoice,paymentAccountCode:'1000'});await create(payload);expect(await balance('1000')).toBe(0);
+ const payload=input(p,'sales_return',{invoiceKind:'commercial',sourceDocumentId:invoice,paymentAccountCode:'1000'});await create(payload);expect(await balance('1000')).toBe(0);
  const before=await snapshot(),r=await createCommercialDocument(payload),after=await snapshot();const [returns]=await admin`select count(*)::int as n,coalesce(sum(total),0)::text as value from business_documents where source_document_id=${invoice} and document_type='sales_return' and voided_at is null`;
  observe('RT-041',{accepted:Number(r.ok),unchanged:Number(JSON.stringify(before)===JSON.stringify(after)),returnCount:returns.n,returnTotalCents:cent(returns.value),expectedMaxReturnCents:10000,cashCents:await balance('1000'),expectedCashCents:0});expect(r.ok).toBe(false);expect(after).toEqual(before);expect(await balance('1000')).toBe(0);
 });
