@@ -1,0 +1,9 @@
+# Actual host repair qualification
+
+Frozen executable QA02c0530118f277dad2f4c2f2180e7a90c6bc8e65, clean detached launch-combined-terra-execution. Successor80cases repeats3fresh gates plus77unfinished,48financial/workflow events all unconsumed. No previous financial source replay. Owner now assigns repeat execution to GPT-6.1 Terra Medium, superseding Sol Light. Fixed12NovUTC/due14Nov unchanged.
+
+Actual CUA imports pure verifier, wrapper AND CLI successfully without process global. Full repaired wrapper authorized one preflight VLogout:1UI call; independent later /login Sign In readback confirms acceptance. Five full-wrapper negative paths(exit/intent/fingerprint/clock/wrongday) each0UI. All six qualification clocks closed. No financial/settings/master/stock/shift/print writes. Browser now signed out; successor must login Remember off and fresh actual profile/openings. Private proof under execution.local/host-qualification; no credentials published. This auth-only qualification is separate from future business mission, whose clock has not started.
+
+Fix: move frozen verification to pure file/hash module with exact detached HEAD check; no CLI import or subprocess in browser path. Keep Git dirty/source checks in terminal request stage; retain original guard, source hashes, oracle, ledger, dates, source caps and once-only intents. CLI entry now checks process existence. No guard bypass. All source-level22 tests plus2 host-import regressions pass24/24. First23/1 test result retained: static regex matched comment substring subprocess.; corrected word boundary, not executable behavior. Metadata1081files/792scenarios valid. Actual-host proof is the primary acceptance for the earlier defect. No product fix/deployment needed.
+
+Execution remains pinned02c0530; subsequent review/test metadata only. Root full prompt COMBINED-V2527-TERRA-MEDIUM.md. Old PR107 queue stays consumed and clock closed. Owner deployment only; no launch approval; recovery last.
