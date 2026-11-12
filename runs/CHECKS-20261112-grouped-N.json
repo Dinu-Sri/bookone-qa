@@ -1,0 +1,301 @@
+{
+  "executionQA": "cc0a820f30f090affde0c74f2707774c017e10cf",
+  "product": "e741a6a9b68969bfc58be70fb8459de479da2cdd",
+  "stage": "CLOSED-metadata-only-tail",
+  "rows": [
+    {
+      "id": "NG01",
+      "status": "passed",
+      "actual": "Fresh28hosttests, live v2.5.26, currentday, actual2positive5zero proof;7clocksclosed"
+    },
+    {
+      "id": "NG02",
+      "status": "passed",
+      "actual": "Fresh saved admin login independently qualified protected Control Room and exact existing N target; malformed missing-id navigation404 retained, no mutation"
+    },
+    {
+      "id": "N22",
+      "status": "passed",
+      "actual": "Fullreload actual N Pro InventoryPOSon RentalHRoff"
+    },
+    {
+      "id": "N23",
+      "status": "passed",
+      "actual": "Fresh N Owner protected workspace and POS navigation verified; Rememberoff"
+    },
+    {
+      "id": "N24",
+      "status": "passed",
+      "actual": "Fresh settings N VAToff commercial/local already correct; no settings save repeated"
+    },
+    {
+      "id": "N25",
+      "status": "passed",
+      "actual": "Delayed original save independently persisted exactly one N-WH-1112 Warehouse; matching location selector id bound. Early reload/pending observation preserved; NEVER retried."
+    },
+    {
+      "id": "N26",
+      "status": "passed",
+      "actual": "After completed response and fullreload defaultREG01 manual persisted"
+    },
+    {
+      "id": "N27",
+      "status": "passed",
+      "actual": "Fullreload dedicatedNREGmanual active warehousecash1000; default also manual"
+    },
+    {
+      "id": "N28",
+      "status": "passed",
+      "actual": "Exactly2Nproducts(goods100/60 qty0,service40/0nonstock) plus customer/vendor balances0 saved/readback"
+    },
+    {
+      "id": "N29",
+      "status": "passed",
+      "actual": "Unsaved N invoice commercial/local TAXdisabled with Cash/Bank/Card choices; dedicated POS manual/no shift inspected; actual POS tender commits remain future business acceptance"
+    },
+    {
+      "id": "N30",
+      "status": "passed",
+      "actual": "21 current N opening views fully loaded: zero accounts/GL/trial/BS/PnL/journals/stock quantities/values/movements; empty alltime documents/POS shifts. Opening quantity0 and parties balances0."
+    },
+    {
+      "id": "NG03",
+      "status": "passed",
+      "actual": "N remaining setup qualified and zero openings captured; initial consolidated publication b8101e2 in PR104. All12cases dispositioned, zero unresolved submissions; finance0. Big mission correctly withheld for purchase VAT conversion source gate."
+    }
+  ],
+  "submissions": {
+    "total": 12,
+    "accepted": 12,
+    "refused": 0,
+    "unresolved": 0
+  },
+  "effects": {
+    "moduleSaves": 1,
+    "taxSaves": 0,
+    "warehouses": 1,
+    "defaultManualSaves": 1,
+    "dedicatedRegisters": 1,
+    "products": 2,
+    "customers": 1,
+    "vendors": 1,
+    "newAccounts": 0,
+    "newCompanies": 0,
+    "financial": 0,
+    "stock": 0,
+    "shifts": 0,
+    "print": 0
+  },
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 5400000,
+    "reserveMs": 1500000,
+    "chargedMs": 1568151,
+    "pausedMs": 0,
+    "lastAt": 1794470091773,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1794468523622
+      },
+      {
+        "action": "check",
+        "at": 1794468670289,
+        "elapsedMs": 146667,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468670314,
+        "elapsedMs": 25,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468791376,
+        "elapsedMs": 121062,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468791411,
+        "elapsedMs": 35,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468875598,
+        "elapsedMs": 84187,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468875627,
+        "elapsedMs": 29,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468953803,
+        "elapsedMs": 78176,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794468953829,
+        "elapsedMs": 26,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469044238,
+        "elapsedMs": 90409,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469044261,
+        "elapsedMs": 23,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469096018,
+        "elapsedMs": 51757,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469096051,
+        "elapsedMs": 33,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469290369,
+        "elapsedMs": 194318,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469290398,
+        "elapsedMs": 29,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469345465,
+        "elapsedMs": 55067,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469345504,
+        "elapsedMs": 39,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469404935,
+        "elapsedMs": 59431,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469404962,
+        "elapsedMs": 27,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469443641,
+        "elapsedMs": 38679,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469443666,
+        "elapsedMs": 25,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469478555,
+        "elapsedMs": 34889,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469478579,
+        "elapsedMs": 24,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469510172,
+        "elapsedMs": 31593,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469510205,
+        "elapsedMs": 33,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794469599454,
+        "elapsedMs": 89249,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794470091622,
+        "elapsedMs": 492168,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794470091773,
+        "elapsedMs": 151,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "bigMissionReleased": false,
+  "releaseBlock": "Supported PO/GRN-to-bill inputVAT selector missing; source evidence only",
+  "ci": {
+    "qaValidation": "success",
+    "postgres": {
+      "passed": 136,
+      "failed": 0,
+      "run": 43175782711
+    },
+    "batchA": "success",
+    "sourceBF": "success",
+    "archiveHelpers": "success",
+    "campaign": {
+      "passed": 310,
+      "failed": 0,
+      "executedGate": "passed",
+      "acceptance": "not-established",
+      "exit": 1
+    },
+    "https": {
+      "passed": 30,
+      "failed": 0,
+      "scope": "previous exact-product run43154119498; not rerun at latestQA"
+    }
+  },
+  "counts": {
+    "passed": 12,
+    "pending": 0,
+    "running": 0,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 0,
+    "unresolved": 0
+  },
+  "initialPublication": "b8101e2"
+}
