@@ -72,7 +72,16 @@
     "assertionsReviewed": 30,
     "assertionsPending": 762
   },
-  "clockClosure": "metadata-tail-after-initial-publication; full unpaused credit gap charged",
+  "clockClosure": {
+    "initialPublication": "a6308df978075664197caa4c030c01c6b9afcb69",
+    "chargedMs": 11084752,
+    "includesInitialPublication": true,
+    "explicitPausedMs": 0,
+    "totalExceeded": true,
+    "mode": "closed",
+    "boundary": "Entire unpaused credit gap charged; no auth/business after budget expiry; this commit is metadata-only closure tail",
+    "totalBudgetMs": 3600000
+  },
   "executionAcceptance": "not-established",
   "launchAcceptance": "not-established",
   "agentMergeOrDeployment": false
