@@ -8,7 +8,7 @@ import {initialize,transition,report,guard} from './operator-queue.mjs';
 import {openClock,clockReport} from './operator-clock.mjs';
 import {authorizeCombined} from './combined-v2527-policy.mjs';
 import {assertExecutionDate,desktopSourceHashes} from './operator-desktop-cua.mjs';
-const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT1-20261112.json';
+const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT2-20261112.json';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=p=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 import {combinedSourceHashes as frozenHashes,checkFrozen} from './combined-v2527-frozen.mjs';
