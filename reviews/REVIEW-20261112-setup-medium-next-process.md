@@ -1,0 +1,30 @@
+# Medium review and next substantial process — 12 November 2026
+
+Decision: retain partial setup acceptance, do not release the80-point business PLAN. Correct a material omission in Light's handoff: local Docker was unavailable, but exact-candidate GitHub isolated runtime DID execute and has failed assertions. Historical result/clock/first failures remain immutable; this is new review evidence.
+
+## Independently inspected CI
+
+- PostgreSQL run43160813092/job130991275697 at producte741a6a9b68969bfc58be70fb8459de479da2cdd, QA synthetic PR merge3d0afd6152e279bacfeb56e7a5dc2533fc21dc52:131passed/5failed across13lanes. All postgres-rls9, commercial14, concurrency3, physical13+13, commercial-deep8, archive15, rental17, transfer4, payment4, valuation6 and role-scope19 passed. Sales-value-boundaries6passed/5failed. Counts are runtime executions, not total product coverage.
+- Failed RT-035 expects commercial invoice VAT1800/gross11800; actual0/10000. New reviewed v2.5.26 contract explicitly gives commercial invoices no outputVAT. This assertion is stale, not evidence of a product regression under that contract.
+- RT-038/B-105/RT-039/RT-041 fail at shared create helper before their intended refund/cap assertions. `setup('service',false)` is paired with input default `invoiceKind:'tax_invoice'`. New candidate refuses explicit tax invoice on non-VAT tenant. Update legitimate non-VAT fixtures to commercial/local while retaining ALL original refund/no-extra-mutation/receipt/source-cap assertions. No claim that these intended refund assertions passed.
+- QA validation run43160813123/job130991275968 stops at backup:plan:check: historical5ea0d6e backup candidate differs from product-refe741a6a. Later pnpmcheck stages did not execute. No Windows-only explanation for this Linux failure. Backup execution remains LAST; deliberately review successor planning pins rather than weaken equality or claim old acceptance transfers.
+- Real-login HTTPS run43154119498/job130969956089:30passed/0failed/0blocked; actual producte741a6a, QAsyntheticmerge dccffc281a85a1bb89321ce977dcc12ff7a2df42. Fresh schema and real HTTPS Next login/actions exercised, including owner and nonowner lanes. Not deployed Chrome/hydration, full business, storage, upgrades or recovery acceptance.
+
+Primary evidence: https://github.com/Dinu-Sri/bookone-qa/actions/runs/43160813092 ; https://github.com/Dinu-Sri/bookone-qa/actions/runs/43160813123 ; https://github.com/Dinu-Sri/bookone-qa/actions/runs/43154119498 . Source inspected: tests/runtime/sales-value-boundaries.test.ts and scripts/validate-backup-plan.mjs at resultsQA d376f47. Raw remote logs inspected through connector; no credentials/rawlogs republished.
+
+## Review of setup and oracle
+
+V setup and bounded zero financial openings accepted, subject to fresh readback at release. N existing account/onboarding preserved; N feature/master qualification remains open. Auth transient failures do not prove product credential bugs. Sequential entry recovered A but is not a proved root-cause fix. Explicit outcome readbacks must replace the hardcoded-accepted inline convenience function; two historical corrections remain appended, not silently rewritten. No product coding fix currently established.
+
+48-event arithmetic balances and conditional final amounts agree, but is still a proposed oracle: it aggregates stock across office/POS SKUs and does not freeze every per-SKU/location balance, actual action buttons, source IDs, dates or protected-route set. Medium must expand those at business release. V18's passed opening read is bounded evidence despite V17 inconclusive; it does not make the conversion-detail gate pass. Unit196 and HTTPS30 do not override five red runtime cases.
+
+## Next process and release boundary
+
+ONE grouped QA engineering/qualification cycle before the combined financial run:
+1. New isolated QA worktree from this reviewed result; align the five tax-contract runtime cases and deliberately review current-candidate planning/catalog references. Keep historical backup plans and executed queues available; create/review successors where necessary. Never remove an assertion or weaken tenant/return limits merely to get green.
+2. Run exact-candidate Linux QA validation, all136 PostgreSQL cases, real-login30 and changed original/adjacent source contracts. Confirm expected case discovery/no skips and actual product/QA fingerprints. Preserve first failures. If another genuine product failure emerges, publish ONE consolidated coding handoff before further financial execution; don't assume every red result is harness drift.
+3. In a NEW exact-bound remaining-only setup run, reuse N, complete its Inventory/POS/taxoff/warehouse/manual registers/2products/customer/vendor and current zero openings. Read-only refresh V setup and A preservation. No signup/onboarding/Vwrite replay. Freeze setup helper first; fresh actual controls/date/actor gates, one-time intent, explicit accepted/refused/inconclusive parameter, bounded new-attempt policy only after definite refusal. No blind replay/unknown-outcome retry. This is setup, not authority for business actions.
+4. Medium reviews grouped results and binds ONE substantial VAToffice+VATPOS+nonVATPOS batch (existing80point plan scope) with carried payment-print/amountcent cases and proposed48event oracle expanded perSKU/location/event. New clock/date/exactQA/guard/action/source bindings required. No intermediate financial smoke transactions. Do not execute80PLAN or48event proposal as a queue.
+5. Light executes that business batch through independent per-submission reconciliation and one consolidated defect handoff. Product fixes, if proven, follow as a grouped cycle. Mission3 isolation/customer opening work and Mission4 final recovery still remain before customer launch.
+
+Budget proposal: QA engineering/CI and N setup are preparatory; financial Light batch retains180minutes150execution30closing after gates. Do not promise combined prep+48events will fit one3hour window. No further owner deployment needed unless a new product candidate is required. Owner alone deploys; no merge/launch/backup execution here.
