@@ -1,3 +1,9 @@
+# Current — 12 November v2.5.26 Light SETUP mission released
+
+Read handoffs/HANDOFF-20261112-v2526-setup-sol-light.md, docs/V2526_SETUP_BOUNDARY.md and queues/MISSION-V2526-SETUP-20261112.json. 33 fixed checkpoints; NEW150/120/30 clock before browser/auth; fixed12NovUTC/final5minute refusal. Exact clean execution pin is in root V2526-SETUP-SOL-LIGHT.md. Setup only: isolated V/N owner/company, Inventory+POS, tax/manual register/warehouse/zero-opening masters; NO funding/money/stock/shift/physical-print actions. Existing A/B/original and all consumed sources/closed clocks protected. Actual fresh proof, saved auth and applicable prepared-form confirmation/readback mandatory. Host33/33 QA-control tests + metadata/syntax passed; initial restricted23/9 EPERM retained. Actual setup NOT STARTED; product196 only coding-reported; isolated candidate checks/current openings pending. Light publishes one consolidated readiness/setup/coding handoff; Medium reviews before big80point queue release. Old combinedPLAN remains executionReady=false. No agent merge/deploy/launch; owner deploys; backup LAST.
+
+Historical pointers below are superseded for next-task selection.
+
 # Current — v2.5.26 live prefix and source reviewed
 
 Producte741a6a9b68969bfc58be70fb8459de479da2cdd/tree9954c832b35078af89c49adb2c31fe0165373dd9 matchesGitHub; actualfreshlivev2.5.26 e741a6a observedread-only. Read reviews/REVIEW-20261112-v2526-live-source.md. VAT/manualprintsourcealignscontract;196tests/typecheckCODINGREPORTED,notindependentlyrerun;no liveVAT/POSacceptance. NEWcombinedqueuemustcorrectquotes/ordersnet/informationalVAT,onlyinvoicepostsVAT. NEXTfreshdatedguardedseparatefixture/setup/livequalification+candidatechecks,thenMediumexactboundcombinedLightrelease;80PLANstillnonexecutable. CompletedA/foreignBprotected;old11Novclocksclosed/queuesconsumed;noagentmerge/deploy/launch;ownerdeploysonly;backupLAST.
