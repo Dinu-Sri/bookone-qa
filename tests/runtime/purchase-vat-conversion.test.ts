@@ -4,6 +4,7 @@ import {createCommercialDocument,convertDocument} from '@product/web/app/actions
 import {admin,seed,resetFixture,closeFixture} from './support/fixture';
 import * as schema from '@product/schema/index';
 import {TENANT_A} from './support/session';
+import {observe} from './support/observations';
 beforeEach(resetFixture);afterAll(closeFixture);
 const DATE='2026-11-12',cent=(n:unknown)=>Math.round(Number(n)*100);
 async function setup(registered=true){
@@ -27,6 +28,11 @@ async function doc(id:string){return(await seed.select().from(schema.businessDoc
 async function bal(code:string){const[r]=await admin`select coalesce(sum(case when l.side='debit' then l.amount else -l.amount end),0)::text as n from journal_lines l join accounts a on a.id=l.account_id where a.tenant_id=${TENANT_A} and a.code=${code}`;return cent(r.n);}
 async function stock(p:string){const[r]=await admin`select coalesce(sum(qty_on_hand),0)::text as n from inventory_stock_levels where product_id=${p}`;return Number(r.n);}
 async function snapshot(){const o={};for(const t of ['business_documents','business_document_lines','transactions','journal_entries','journal_lines','inventory_movements','inventory_stock_levels','inventory_cost_layers','inventory_cost_layer_consumptions','audit_log'])o[t]=await admin.unsafe(`select * from ${t} order by id`);return o;}
+async function deniedDuplicate(id:string,caseId:string){
+ const allowed=['No remaining quantity to convert.','This bill exceeds the remaining quantity on the purchase order.','This bill exceeds the remaining quantity on the goods receipt.'];
+ try{const r=await convertDocument(id,'purchase');observe(caseId,{accepted:Number(r.ok),thrownDenial:0});expect(r.ok).toBe(false);expect(allowed).toContain(r.error);}
+ catch(e){if(!(e instanceof Error)||!allowed.includes(e.message))throw e;observe(caseId,{accepted:0,thrownDenial:1});}
+}
 async function chain(p:string,options:any={}){const po=await created(input(p)),grn=await converted(po,'goods_receipt'),bill=await converted(grn,'purchase',options);return{po,grn,bill};}
 it('[RT-070] actual claimed PO GRN bill posts108 inputVAT and stock10 only once',async()=>{
  const p=await setup(),po=await created(input(p));expect((await doc(po)).invoiceKind).toBe('tax_invoice');expect(cent((await doc(po)).taxTotal)).toBe(0);expect(await bal('2300')).toBe(0);expect(await stock(p)).toBe(0);
@@ -35,7 +41,7 @@ it('[RT-070] actual claimed PO GRN bill posts108 inputVAT and stock10 only once'
 });
 it('[RT-071] actual bill override noinput stays600 and duplicate conversion adds nothing',async()=>{
  const p=await setup(),c=await chain(p,{invoiceKind:'commercial'});expect([cent((await doc(c.bill)).taxTotal),cent((await doc(c.bill)).total),await bal('2300'),await bal('2100'),await stock(p)]).toEqual([0,60000,0,-60000,10]);
- const before=await snapshot();expect((await convertDocument(c.grn,'purchase')).ok).toBe(false);expect(await snapshot()).toEqual(before);
+ const before=await snapshot();await deniedDuplicate(c.grn,'RT-071');expect(await snapshot()).toEqual(before);
 });
 it('[RT-072] nonVAT explicit input claim rejects with zero persisted effects',async()=>{
  const p=await setup(false);const before=await snapshot();for(const type of ['purchase_order','goods_receipt','purchase']){const r=await createCommercialDocument(input(p,type));expect(r.ok).toBe(false);expect(r.error).toMatch(/input VAT.*VAT registration/i);expect(await snapshot()).toEqual(before);}
@@ -46,5 +52,5 @@ it('[RT-073] actual linked return uses stored18 after setting15 and preserves bi
  expect([cent(d.taxTotal),cent(d.total),await bal('2300'),await bal('2100'),await stock(p)]).toEqual([2160,14160,8640,-56640,8]);expect(cent((await doc(c.bill)).taxTotal)).toBe(cent(original.taxTotal));
 });
 it('[RT-074] direct PO bill claims108 and second conversion cannot duplicate stock',async()=>{
- const p=await setup(),po=await created(input(p)),bill=await converted(po,'purchase');expect([cent((await doc(bill)).total),await bal('2300'),await stock(p)]).toEqual([70800,10800,10]);const before=await snapshot();expect((await convertDocument(po,'purchase')).ok).toBe(false);expect(await snapshot()).toEqual(before);
+ const p=await setup(),po=await created(input(p)),bill=await converted(po,'purchase');expect([cent((await doc(bill)).total),await bal('2300'),await stock(p)]).toEqual([70800,10800,10]);const before=await snapshot();await deniedDuplicate(po,'RT-074');expect(await snapshot()).toEqual(before);
 });
