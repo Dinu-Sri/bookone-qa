@@ -1,3 +1,7 @@
+# Current — v2.5.27 candidate qualified; owner deployment/live verification next
+
+QA PR105 testedhead0df6f6f / synthetic315eaddd: PG141/141 incl5actualpurchaseVATconversioncases, HTTPS30/30, fullQAcheck/BatchA/BF/archivegreen. Campaign315pass0fail but fullcoverageacceptancenotestablished. Read reviews/REVIEW-20261112-v2527-candidate.md and CHECKS. ProductPR11 externallymerged dae17abcba12d6810c8f8c3fe4a74fb28280a026, treeequalsreviewed3d6119ea2b4437ae50b06eaefb54c95063257dbf/tree78973f5a9298ce615f5c8cda17f77b2de714bfa2. No agentmerge/deploy. Ownerdeployment NOTobserved; expectedmerge stampv2.5.27 dae17ab, verifyactualfullSHA/tree/stamp. NEXT ownerdeployment thenMediumfreshliveV/Nprofile/openings/sourcebindings and newdatedbigLightrelease. Do not repeatV/Nsetup/oldqueues/funding. No newproductfixindicated; allfirstfailurespreserved;backupLAST;nocustomerlaunchapproval.
+
 # Current — N complete; purchase VAT coding handoff ready
 
 PR104 final12/12Nqualified, zero pending/unresolved; clock CLOSED1568151ms/0paused inclinitialb8101e2. Candidatee741a6a QAalignment PG136/136 and implementedcampaign310/0, validation/source/archivegreen. Big business remains NOTRELEASED: supported PO/GRN inputVAT conversion gap. Read handoffs/CODING-20261112-PURCHASE-VAT-CONVERSION.md; root PURCHASE-VAT-CONVERSION-CODING-PROMPT.md ownerrelay. No productfinancialreproduction, no finance/stock/shift/print action. Preserve V/Nsetup and allhistoricalmoney; neverresume consumed queues/clocks. Ownerdeploysonly aftercodingreview;backupLAST.
