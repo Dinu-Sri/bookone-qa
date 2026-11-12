@@ -1,0 +1,3 @@
+# Qualification boundary
+
+This mission permits read-only UI/source/privatefixture inspection and exactly guarded ordinary saved AOwner Logout/Login in CQ04. It permits no financial/master/settings/modulegrant/signup/shift/print/device/storage/recovery writes. Existingaccounts may be inspected locally; only actualauthorizedcurrentactor browserreads. Do notassume newlyqualifiedVAT/POSactor from AOwner. No financial oracle is claimed by this boundary-file hash. The original80pointPLAN remains executionReady=false. Newbusinessrelease requiresMediumreviewedcandidate/fixture/source/date/tender/action/fulloraclebindings.

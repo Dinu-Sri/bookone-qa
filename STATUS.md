@@ -1,3 +1,19 @@
+# Current — v2.5.26 live prefix and source reviewed
+
+Producte741a6a9b68969bfc58be70fb8459de479da2cdd/tree9954c832b35078af89c49adb2c31fe0165373dd9 matchesGitHub; actualfreshlivev2.5.26 e741a6a observedread-only. Read reviews/REVIEW-20261112-v2526-live-source.md. VAT/manualprintsourcealignscontract;196tests/typecheckCODINGREPORTED,notindependentlyrerun;no liveVAT/POSacceptance. NEWcombinedqueuemustcorrectquotes/ordersnet/informationalVAT,onlyinvoicepostsVAT. NEXTfreshdatedguardedseparatefixture/setup/livequalification+candidatechecks,thenMediumexactboundcombinedLightrelease;80PLANstillnonexecutable. CompletedA/foreignBprotected;old11Novclocksclosed/queuesconsumed;noagentmerge/deploy/launch;ownerdeploysonly;backupLAST.
+
+# Current — 12November Medium review/coding handoff ready
+
+PR101 closurebe43029 published; read reviews/REVIEW-20261112-combined-qualification-medium.md and handoffs/CODING-20261112-combined-vat-pos-controls.md. Root copy COMBINED-VAT-POS-CODING-PROMPT.md for ownerrelay. No otherchatmessage sent. Two source-level constraints: VATconversion forcedcommercial, POSautomaticreceipt/Zprint needs supportedmanualcontrol. SeparateVAT/nonVATPOSfixtures remain unbound; nofixturewrites.80pointPLANnotready. Oldqualification15pass4blocked3inconclusive/0unresolved/clockCLOSED328922ms; neverresume/reset11Novcontracts. Ownerdeploysonly;nextcodingcandidateMediumreview->ownerdeployment->freshdatedsetup/livequalification->combinedLightrelease. Noagentmerge/deploy/launch;backupLAST.
+
+# Current — combined prerequisite qualification complete
+
+PR101 results:15passed/4blocked/3inconclusive,0pending/unresolved; exactexecution42d9671660edc1eecdbf17a68d76e03139c4ffc8 preserved. ClockCLOSED328922ms/0paused inclinitialpublicationb5174b5;metadata-onlytail. Read handoffs/HANDOFF-20261111-combined-qualification-results.md andchecks. Freshactual2+5proof/authpassed;0financial/master/settings/grant/shiftwrites;A17journals4180/6moves/balancesunchanged. SeparateVAT/nonVATPOSfixturesnotbound. Forcedcommercialofficeconversion andPOSautoprintwithoutqualifiedmanualpath requireMediumsource/contractreview; actualPOSrouteNoshiftaccessible,currentmodulegrantunverified. Historicalreceiptbindingsmissing. NEXTMediumreviewoneconsolidatedsetup/codingqualificationhandoff;80pointPLANnotexecutable. Nooldqueuereplay/merge/deploy/launch;ownerdeploysonly;backupLAST.
+
+# Current — combined VAT/POS prerequisite Light qualification ready
+
+Read handoffs/HANDOFF-20261111-combined-qualification-sol-light.md and queues/MISSION-COMBQUAL-20261111.json.22fixedcases/NEW45total35execution10closing/fixed11NovUTC. Read-onlyUI/source/fixtureinspection, onlyfreshguardedAOwnerLogout/LoginallowedCQ04. NOsignup/grant/settings/master/financial/shift/device/physicalprintwrites. MissingseparateVAT/nonVATPOSfixturesareconcretequalificationblocks, notpermissiontobypass. Collectallindependentgatesandonesanitizedreadiness/setup/codinghandoffforMedium.80pointPLANremainsnonexecutable. ExactcleanpinandPRinroot COMBINED-QUALIFICATION-SOL-LIGHT.md. PreservecompletedA/B/original/closedclocks; noagentmerge/deploy/launch;backupLAST.
+
 # Current — owner requested combined VAT + POS Light batch
 
 Read handoffs/PLAN-20261111-m1b-pos-combined.md and queues/PLAN-M1B-POS-COMBINED.json:80specifiedpoints,executionReadyfalse; proposal180total/150execution/30closing. SeparateVATandnonVATPOSfixtures/modules, taxconversion andsafePOSautoprint/shiftclose controls requireMediumqualificationBEFOREexactboundrelease. No newLightprompt executableyet; neverexecutePLAN/oldM1A. Fulloracleeventbinding/date/QA/livegatespending. OfficeVATgrossBSassets710/liability90/netassets620; combinedVAToffice+POSgrossassets1760/liability90/netassets1670; independentnonVATPOSassets500. Mixedproductbasketincluded,split-tenderunqualified. Oneconsolidatedbatchpublication;ownerdeploysonly;backupLAST.
