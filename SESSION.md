@@ -1,3 +1,7 @@
+# Current — N complete; purchase VAT coding handoff ready
+
+PR104 final12/12Nqualified, zero pending/unresolved; clock CLOSED1568151ms/0paused inclinitialb8101e2. Candidatee741a6a QAalignment PG136/136 and implementedcampaign310/0, validation/source/archivegreen. Big business remains NOTRELEASED: supported PO/GRN inputVAT conversion gap. Read handoffs/CODING-20261112-PURCHASE-VAT-CONVERSION.md; root PURCHASE-VAT-CONVERSION-CODING-PROMPT.md ownerrelay. No productfinancialreproduction, no finance/stock/shift/print action. Preserve V/Nsetup and allhistoricalmoney; neverresume consumed queues/clocks. Ownerdeploysonly aftercodingreview;backupLAST.
+
 # Current — grouped QA aligned and N qualified; coding purchase VAT conversion FIRST
 
 Read reviews/REVIEW-20261112-grouped-alignment-N-complete.md and handoffs/CODING-20261112-PURCHASE-VAT-CONVERSION.md. Producte741a6a: independentQAfullcheck/BatchA/BF/archive pass; PostgreSQL136/136; campaign310pass0fail but coverageacceptanceunestablished; priorHTTPS30/30 exactproduct. N remaining setup complete/zero financial openings, no accounts/onboarding/Vwrites repeated. Fixed executioncc0a820, publication/clock closure tail follows. MainbigLight NOTRELEASED: PO/GRN-to-bill lacks supported ClaiminputVAT selector/sourceprofile; directbill does support it. Source-levelfinding, no livewrongmoney. NEXT groupedproductcoding thenMediumreview/ownerdeployment/executablebigbatch. No financial smoke/substitution/historyrepair. Ownerdeploysonly;backupLAST.

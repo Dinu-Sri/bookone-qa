@@ -1,7 +1,7 @@
 {
   "executionQA": "cc0a820f30f090affde0c74f2707774c017e10cf",
   "product": "e741a6a9b68969bfc58be70fb8459de479da2cdd",
-  "stage": "initial-publication-NG03-running",
+  "stage": "CLOSED-metadata-only-tail",
   "rows": [
     {
       "id": "NG01",
@@ -60,8 +60,8 @@
     },
     {
       "id": "NG03",
-      "status": "running",
-      "actual": "Publication running"
+      "status": "passed",
+      "actual": "N remaining setup qualified and zero openings captured; initial consolidated publication b8101e2 in PR104. All12cases dispositioned, zero unresolved submissions; finance0. Big mission correctly withheld for purchase VAT conversion source gate."
     }
   ],
   "submissions": {
@@ -90,10 +90,10 @@
     "schemaVersion": 1,
     "totalMs": 5400000,
     "reserveMs": 1500000,
-    "chargedMs": 1075832,
+    "chargedMs": 1568151,
     "pausedMs": 0,
-    "lastAt": 1794469599454,
-    "mode": "active",
+    "lastAt": 1794470091773,
+    "mode": "closed",
     "events": [
       {
         "action": "open",
@@ -248,6 +248,18 @@
         "at": 1794469599454,
         "elapsedMs": 89249,
         "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794470091622,
+        "elapsedMs": 492168,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794470091773,
+        "elapsedMs": 151,
+        "priorMode": "active"
       }
     ]
   },
@@ -275,5 +287,15 @@
       "failed": 0,
       "scope": "previous exact-product run43154119498; not rerun at latestQA"
     }
-  }
+  },
+  "counts": {
+    "passed": 12,
+    "pending": 0,
+    "running": 0,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 0,
+    "unresolved": 0
+  },
+  "initialPublication": "b8101e2"
 }
