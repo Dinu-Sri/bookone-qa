@@ -1,3 +1,7 @@
+# Current — v2.5.26 live prefix and source reviewed
+
+Producte741a6a9b68969bfc58be70fb8459de479da2cdd/tree9954c832b35078af89c49adb2c31fe0165373dd9 matchesGitHub; actualfreshlivev2.5.26 e741a6a observedread-only. Read reviews/REVIEW-20261112-v2526-live-source.md. VAT/manualprintsourcealignscontract;196tests/typecheckCODINGREPORTED,notindependentlyrerun;no liveVAT/POSacceptance. NEWcombinedqueuemustcorrectquotes/ordersnet/informationalVAT,onlyinvoicepostsVAT. NEXTfreshdatedguardedseparatefixture/setup/livequalification+candidatechecks,thenMediumexactboundcombinedLightrelease;80PLANstillnonexecutable. CompletedA/foreignBprotected;old11Novclocksclosed/queuesconsumed;noagentmerge/deploy/launch;ownerdeploysonly;backupLAST.
+
 # Current — 12November Medium review/coding handoff ready
 
 PR101 closurebe43029 published; read reviews/REVIEW-20261112-combined-qualification-medium.md and handoffs/CODING-20261112-combined-vat-pos-controls.md. Root copy COMBINED-VAT-POS-CODING-PROMPT.md for ownerrelay. No otherchatmessage sent. Two source-level constraints: VATconversion forcedcommercial, POSautomaticreceipt/Zprint needs supportedmanualcontrol. SeparateVAT/nonVATPOSfixtures remain unbound; nofixturewrites.80pointPLANnotready. Oldqualification15pass4blocked3inconclusive/0unresolved/clockCLOSED328922ms; neverresume/reset11Novcontracts. Ownerdeploysonly;nextcodingcandidateMediumreview->ownerdeployment->freshdatedsetup/livequalification->combinedLightrelease. Noagentmerge/deploy/launch;backupLAST.
