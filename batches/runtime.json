@@ -243,6 +243,19 @@
       ],
       "credential": "runtime",
       "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session"
+    },
+    {
+      "name": "purchase-vat-conversion",
+      "file": "tests/runtime/purchase-vat-conversion.test.ts",
+      "expected": [
+        "RT-070",
+        "RT-071",
+        "RT-072",
+        "RT-073",
+        "RT-074"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-product-command-conversion"
     }
   ]
 }
