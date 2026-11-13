@@ -11,3 +11,7 @@ Partial V closing independently observed: bank 500, inventory 600, input VAT 122
 The remaining financial, POS, carried amount-matrix and full-run closure cases are blocked or not established; no customer launch approval. Medium should review saved quotation date handling and the incomplete pre-submit observation, decide the fate of the existing quotation and date contract, and prepare a newly reviewed remaining-only successor with current openings and fresh gates. No clock or queue replay, no compensating entries, no deployment by agents; recovery remains last.
 
 Initial sanitized publication is made while the clock is active. Final dispositions, clock closure and metadata-only tail follow; this record does not claim the full mission passed.
+
+## Closure metadata
+
+Final ledger: 18 passed, 1 failed, 45 blocked, 2 inconclusive, 0 pending and 0 unresolved. Z8 was recorded inconclusive before closure because its closure had not yet occurred; the clock subsequently closed at 1,125,283 ms charged, zero paused, including initial results publication `2cfe310`. This is the metadata-only closure tail. E02–E08 are consumed (E08 accepted but failed its date contract); 29 V events E09–E37 remain unconsumed. The E08 quotation has no accepted successor binding because its case failed. A successor must explicitly review its actual existing source, date and eligibility; never replay it. The execution checkout stays detached at `9ca065440205eab013534f0e04e42ea1d470306c` and the private run remains preserved.
