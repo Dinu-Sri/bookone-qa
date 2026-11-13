@@ -1,0 +1,9 @@
+# CONT6 partial execution — named date qualification stop
+
+Execution QA76eb880e51b3f8aa04b55f742e30113bd7478e85, 13 November 2026 UTC. Fresh clock started before browser/auth; metadata validation passed, sandbox suite encountered Windows temporary rename EPERM, host suite105/105 passed. Actual title and inert Sales controls succeeded once each; five refusals each0UI; seven proof clocks closed. Fresh protected V Owner authentication, expected build, accounts, journal, stock, VAT/manual register, bills and no shifts observed. Reviewed carry imported against exact closed CONT5 hashes.
+
+DATEQ FAILED: unique form-scoped named issueDate/dueDate inputs were visible and enabled and filled13Nov/15Nov. After adding an existing product and changing quantity, the visible form showed quote date13Nov and good-through13Dec. The immediate field value after fill and before product interaction was not independently captured; cause and point of change remain unproven. Unsaved form cancelled; existing single draft remained. No QFIX intent, business submission, new quotation, master or financial write. Do not claim a proven product persistence defect or replay any prior event.
+
+All29 remaining workflow events and QFIX remain unconsumed. V opening bank500 inventory600 inputVAT122.40 AP802.40 equity500 expense80, stock10/value600, five journals DrCr1585.60. Existing draft remains wrong date13Dec. N prior transactions and historical sources preserved; full historical equality not retested. Next Medium must review actual supported date-input behavior and CUA fill semantics, capture immediate field values at each step, and prepare a new reviewed remaining-only successor. No unguarded draft edit, no launch approval; owner deploys and recovery remains last.
+
+Initial sanitized publication occurs before clock closure; final dispositions and clock are recorded in a metadata-only tail.
