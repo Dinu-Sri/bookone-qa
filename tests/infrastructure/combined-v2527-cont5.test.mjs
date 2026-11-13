@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+const read=n=>JSON.parse(fs.readFileSync(new URL('../../queues/'+n,import.meta.url))),old=read('MISSION-COMBINED-V2527-CONT4-20261113.json'),p=read('MISSION-COMBINED-V2527-CONT5-20261113.json');
+test('new run identity preserves all remaining capabilities and excludes consumed events',()=>{assert.notEqual(p.id,old.id);const copy=structuredClone(p);copy.id=old.id;copy.displayName=old.displayName;assert.deepEqual(copy,old);assert.equal(p.cases.length,66);assert.equal(p.cases.filter(c=>c.businessSubmission).length,36);assert(!p.cases.some(c=>c.id==='E01'||c.oracleEvent?.lane==='N'));for(const c of p.cases)for(const d of c.dependsOn??[])assert(p.cases.some(x=>x.id===d));});
