@@ -8,9 +8,10 @@ import {initialize,transition,report,guard} from './operator-queue.mjs';
 import {openClock,clockReport} from './operator-clock.mjs';
 import {authorizeCombined} from './combined-v2527-policy.mjs';
 import {assertExecutionDate,desktopSourceHashes} from './operator-desktop-cua.mjs';
-const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT5-20261113.json';
+const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT6-20261113.json';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=p=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+import {verifyCarry} from './combined-v2527-carry.mjs';
 import {combinedSourceHashes as frozenHashes,checkFrozen} from './combined-v2527-frozen.mjs';
 export const combinedSourceHashes=()=>frozenHashes(root);
 const atomic=(p,v)=>{const tmp=p+'.'+randomUUID()+'.tmp';fs.writeFileSync(tmp,JSON.stringify(v,null,2)+'\n',{flag:'wx',mode:0o600});fs.renameSync(tmp,p);};
@@ -28,12 +29,21 @@ function main(){
  }
  const fp=read(path.join(dir,'fingerprint.json'));let state=read(path.join(dir,'state.json'));guard(plan,state,fp);
  if(cmd==='summary'){console.log(JSON.stringify(report(plan,state,fp),null,2));return;}
+ if(cmd==='carry'){
+  assertExecutionDate(plan);checkFrozen(root,fp,plan);
+  const prior=path.resolve(root,caseId??''),manifest=path.resolve(root,submissionId??'');
+  if(!manifest.startsWith(privateRoot))throw Error('Private manifest required');
+  const sources=verifyCarry(plan,state,prior,manifest);
+  if(Object.keys(read(path.join(dir,'owned-sources.json'))).length)throw Error('Never overwrite carried bindings');
+  atomic(path.join(dir,'owned-sources.json'),sources);console.log('Reviewed carry sources imported once');return;
+ }
  if(cmd==='bind'){
   // bind RUN_DIR CASE private-binding.json (third positional argument)
   const file=path.resolve(root,submissionId??'');if(!file.startsWith(privateRoot))throw Error('Binding evidence must stay private');
   const b=read(file),c=plan.cases.find(c=>c.id===caseId),row=state.cases.find(c=>c.id===caseId);
   if(!c?.outputSymbol||row?.status!=='passed'||row.submissions?.filter(s=>s.outcome==='accepted'&&!s.action.startsWith('AUTH:')).length!==1)throw Error('Only independently passed accepted event can bind');
   if(b.companyAlias!==c.companyAlias||b.eventId!==c.oracleEvent.id||b.accepted!==true||!b.evidence?.trim()||!b.observedAt||!/^[a-f0-9-]{36}$/i.test(b.id??''))throw Error('Actual source UUID/company/event/readback evidence required');
+  if(c.correctionOnly){const carried=read(path.join(dir,'owned-sources.json'))[c.companyAlias+':'+c.sourceRequired];if(!carried||b.id!==carried.id||b.url!==carried.url)throw Error('Correction binding must retain original draft');}
   const u=new URL(b.url);if(u.origin!=='https://bookone.clossyan.com'||u.username||u.password||u.searchParams.has('autoprint'))throw Error('Owned source supported UI URL required');
   const sources=read(path.join(dir,'owned-sources.json')),key=c.companyAlias+':'+c.outputSymbol;if(sources[key])throw Error('Never replace consumed source binding');sources[key]=b;atomic(path.join(dir,'owned-sources.json'),sources);console.log('Private source binding saved');return;
  }
@@ -53,5 +63,3 @@ function main(){
  console.log(JSON.stringify({requestPath:path.join(dir,submissionId+'.request.json'),intentPersisted:true,instruction:'Require actual exit0. Dispatch once through combined-v2527-cua.mjs inside actual CUA invocation; independently read persisted state before explicit outcome.'}));
 }
 if(typeof process!=='undefined'&&process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main();
-
-
