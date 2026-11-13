@@ -7,3 +7,5 @@ DATEQ FAILED: unique form-scoped named issueDate/dueDate inputs were visible and
 All29 remaining workflow events and QFIX remain unconsumed. V opening bank500 inventory600 inputVAT122.40 AP802.40 equity500 expense80, stock10/value600, five journals DrCr1585.60. Existing draft remains wrong date13Dec. N prior transactions and historical sources preserved; full historical equality not retested. Next Medium must review actual supported date-input behavior and CUA fill semantics, capture immediate field values at each step, and prepare a new reviewed remaining-only successor. No unguarded draft edit, no launch approval; owner deploys and recovery remains last.
 
 Initial sanitized publication occurs before clock closure; final dispositions and clock are recorded in a metadata-only tail.
+
+Closure metadata: 12 passed, 1 failed, 46 blocked, 2 inconclusive, 0 pending/unresolved. Clock CLOSED391783ms/0paused, including initial publication ab9a1cd. Z8 was inconclusive before final closure; this is the metadata-only tail. QFIX and E09–E37 remain unconsumed. Never reset/replay CONT6; prepare a newly reviewed successor after investigating date interaction.
