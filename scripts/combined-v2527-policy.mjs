@@ -16,7 +16,7 @@ export function authorizeCombined(plan,state,caseId,url,button,review,ownedSourc
   if(!c.oracleEvent||review.oracleEventId!==c.oracleEvent.id||JSON.stringify(review.expectedLines)!==JSON.stringify(c.oracleEvent.lines))throw Error('Prepared accounting delta differs from frozen oracle');
   if(JSON.stringify(review.fields)!==JSON.stringify(c.fields))throw Error('Prepared amounts, quantities or tender differ from frozen form');
   if(row?.submissions?.some(s=>!/^AUTH:/.test(s.action)))throw Error('Only one business intent per event, never retry even after refusal');
-  if(review.issueDate!=='2026-11-12'||review.dueDate!=='2026-11-14')throw Error('Wrong committed date contract');
+  if(review.issueDate!==plan.dateContract?.executionDate||review.dueDate!==plan.dueDate)throw Error('Wrong committed date contract');
   if(review.protectedSourcesUnchanged!==true||review.onlyRunOwnedSources!==true||review.sourceCapsVerified!==true)throw Error('Source preservation/eligibility evidence required');
   if(c.sourceRequired){const source=ownedSources[c.companyAlias+':'+c.sourceRequired];if(!source||source.id!==review.sourceId||source.companyAlias!==c.companyAlias||source.accepted!==true)throw Error('Required source is not an accepted run-owned binding');}
   if(c.sourceRequired&&/\/returns\/new$/.test(u.pathname)&&u.searchParams.get('from')!==review.sourceId)throw Error('Return URL must bind the owned original source');

@@ -1,0 +1,3968 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-COMBINED-V2527-CONT5-20261113",
+  "displayName": "Terra remaining V mission after publication gate closure",
+  "executionReady": true,
+  "candidate": "v2.5.27",
+  "productSha": "dae17abcba12d6810c8f8c3fe4a74fb28280a026",
+  "productTree": "78973f5a9298ce615f5c8cda17f77b2de714bfa2",
+  "reviewedCandidateSha": "3d6119ea2b4437ae50b06eaefb54c95063257dbf",
+  "reportedShortSha": "dae17ab",
+  "budget": {
+    "totalMinutes": 180,
+    "executionMinutes": 150,
+    "closingReserveMinutes": 30,
+    "preflightMinutes": 15
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-13",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "dueDate": "2026-11-15",
+  "oracle": "docs/COMBINED-V2527-ORACLE-CONT4-20261113.json",
+  "cases": [
+    {
+      "id": "G01",
+      "title": "New clock and clean exact QA",
+      "expected": "NEW180/150/30 clock before browser/auth; compare HEAD with root release pin; fixed13NovUTC/due15Nov, stop23:55UTC. No old clock or queue replay.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "G02",
+      "title": "Actual deployed fingerprint",
+      "expected": "Fresh v2.5.27 · dae17ab; owner deployment report/full merge SHA/tree equals reviewed candidate. No independent image-digest claim.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "dependsOn": [
+        "G01"
+      ]
+    },
+    {
+      "id": "G03",
+      "title": "Actual supported control proof",
+      "expected": "Actual title/read and harmless Sales click each1UI/1claim, five refusals exit/intent/fingerprint/clock/date each0UI/0claim. Close all proof clocks; native adapter remains quarantined.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "dependsOn": [
+        "G02"
+      ]
+    },
+    {
+      "id": "G04",
+      "title": "Fresh V Owner authentication",
+      "expected": "Use saved vOwner; Remember off; independently confirm protected V Owner/company after completed login before navigation. Preserve any failed/inert first attempt; no account creation or grant.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "dependsOn": [
+        "G03"
+      ]
+    },
+    {
+      "id": "G05",
+      "title": "V zero openings and configured fixture",
+      "expected": "Fresh actual V Owner, VAT18 TAX/local, dedicated manual register, current bank500/equity500 from consumed CONT2 E01; all other account balances and stock zero, exactly one funding journal. Preserve funding; never repeat it. Recheck profile, products, parties, warehouse, no open V shift.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "dependsOn": [
+        "G04"
+      ]
+    },
+    {
+      "id": "G06",
+      "title": "Historical preservation and execution eligibility",
+      "expected": "Use prior protected-source maps for A/B/original and consumed queues. A17journals/DrCr4180/6moves/qty3value180/cash150bank290income120assets620; original225journals43moves/gap120/fourbadcredits remain historical. Capture current accessible baselines; do not claim missing historical row equality. Review PR105 exact CI and frozen helper/policy tests. No new grants/settings/masters. CONT2 V equity500 and all N eleven events consumed. N bank380 inventory120 equity500 and closed dedicated shift; all old sources preserved. Read-only closures may inspect N; no N business capability remains.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "dependsOn": [
+        "G05"
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "V separate-bank-cashpurchase",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":2,\"unitNetCents\":6000,\"tender\":\"bank\",\"claimInputVAT\":true}. Refund max2 units/gross14160. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender. Reviewed preview exception: actual form Total is net120 despite Claim input VAT18. Preserve this failed UX observation. Confirm net120, tax selection18 and independently calculated VAT21.60/gross141.60 before submission; acceptance REQUIRES persisted gross141.60, Dr5100 120 Dr2300 21.60 Cr1100 141.60 and stock+2. Any persisted mismatch stops new submissions, no repair.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save cash purchase"
+      ],
+      "allowedPaths": [
+        "^/purchase/expenses/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "G06"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "separate-bank-cashpurchase",
+        "lines": [
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 12000
+          },
+          {
+            "account": "inputVAT",
+            "side": "DR",
+            "cents": 2160
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 14160
+          }
+        ],
+        "drCents": 14160,
+        "crCents": 14160,
+        "stockDelta": 2,
+        "stockQty": 2,
+        "balancesSignedDebitCents": {
+          "bank": 35840,
+          "equity": -50000,
+          "inventory": 12000,
+          "inputVAT": 2160
+        },
+        "source": "office-bank-cashpurchase",
+        "cap": "Refund max2 units/gross14160",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 2,
+            "valueCents": 12000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "separate-bank-cashpurchase"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 2,
+        "unitNetCents": 6000,
+        "tender": "bank",
+        "claimInputVAT": true
+      },
+      "outputSymbol": "separate-bank-cashpurchase",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E03",
+      "title": "V separate-bank-cashpurchase-refund",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":2,\"grossCents\":14160,\"tender\":\"bank\",\"claimInputVAT\":true}. Consumed2 units/gross14160; remaining0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save purchase return"
+      ],
+      "allowedPaths": [
+        "^/purchase/returns/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E02"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "separate-bank-cashpurchase-refund",
+        "lines": [
+          {
+            "account": "bank",
+            "side": "DR",
+            "cents": 14160
+          },
+          {
+            "account": "inventory",
+            "side": "CR",
+            "cents": 12000
+          },
+          {
+            "account": "inputVAT",
+            "side": "CR",
+            "cents": 2160
+          }
+        ],
+        "drCents": 14160,
+        "crCents": 14160,
+        "stockDelta": -2,
+        "stockQty": 0,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 0,
+          "inputVAT": 0
+        },
+        "source": "office-bank-cashpurchase",
+        "cap": "Consumed2 units/gross14160; remaining0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 0,
+            "valueCents": 0
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "separate-bank-cashpurchase-refund"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 2,
+        "grossCents": 14160,
+        "tender": "bank",
+        "claimInputVAT": true
+      },
+      "sourceRequired": "separate-bank-cashpurchase",
+      "outputSymbol": "separate-bank-cashpurchase-refund",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E04",
+      "title": "V office-PO",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":10,\"unitNetCents\":6000,\"netCents\":60000,\"claimInputVAT\":true}. No posting. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save purchase order"
+      ],
+      "allowedPaths": [
+        "^/purchase/orders/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E03"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-PO",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 0,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 0,
+          "inputVAT": 0
+        },
+        "source": "office-PO",
+        "cap": "No posting",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 0,
+            "valueCents": 0
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-PO"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 10,
+        "unitNetCents": 6000,
+        "netCents": 60000,
+        "claimInputVAT": true
+      },
+      "outputSymbol": "office-PO",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E05",
+      "title": "V office-GRN",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":10,\"claimInputVAT\":true,\"noGL\":true}. 10 units; bill exactly once, never duplicate stock. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Receive goods (GRN)"
+      ],
+      "allowedPaths": [
+        "^/purchase/orders/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E04"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-GRN",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 10,
+        "stockQty": 10,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 0,
+          "inputVAT": 0
+        },
+        "source": "office-GRN",
+        "cap": "10 units; bill exactly once, never duplicate stock",
+        "memo": "Stock value60000; GL inventory remains0 until bill if GRNIoff",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-GRN"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 10,
+        "claimInputVAT": true,
+        "noGL": true
+      },
+      "sourceRequired": "office-PO",
+      "outputSymbol": "office-GRN",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E06",
+      "title": "V office-bill",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":10,\"unitNetCents\":6000,\"grossCents\":70800,\"claimInputVAT\":true,\"noSecondStockMovement\":true}. One bill70800 against original10units; no duplicate stock. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "To purchase bill"
+      ],
+      "allowedPaths": [
+        "^/purchase/receipts/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E05"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-bill",
+        "lines": [
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 60000
+          },
+          {
+            "account": "inputVAT",
+            "side": "DR",
+            "cents": 10800
+          },
+          {
+            "account": "AP",
+            "side": "CR",
+            "cents": 70800
+          }
+        ],
+        "drCents": 70800,
+        "crCents": 70800,
+        "stockDelta": 0,
+        "stockQty": 10,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 60000,
+          "inputVAT": 10800,
+          "AP": -70800
+        },
+        "source": "office-GRN",
+        "cap": "One bill70800 against original10units; no duplicate stock",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-bill"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 10,
+        "unitNetCents": 6000,
+        "grossCents": 70800,
+        "claimInputVAT": true,
+        "noSecondStockMovement": true
+      },
+      "sourceRequired": "office-GRN",
+      "outputSymbol": "office-bill",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E07",
+      "title": "V office-service-expense",
+      "expected": "Exactly once, {\"description\":\"COMB27 service expense\",\"quantity\":1,\"unitNetCents\":8000,\"grossCents\":9440,\"expenseAccount\":\"6800\",\"claimInputVAT\":true,\"noStock\":true}. Delivered service80+VAT14.40. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save purchase"
+      ],
+      "allowedPaths": [
+        "^/purchase/purchases/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E06"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-expense",
+        "lines": [
+          {
+            "account": "expense",
+            "side": "DR",
+            "cents": 8000
+          },
+          {
+            "account": "inputVAT",
+            "side": "DR",
+            "cents": 1440
+          },
+          {
+            "account": "AP",
+            "side": "CR",
+            "cents": 9440
+          }
+        ],
+        "drCents": 9440,
+        "crCents": 9440,
+        "stockDelta": 0,
+        "stockQty": 10,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 60000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000
+        },
+        "source": "service-expense",
+        "cap": "Delivered service80+VAT14.40",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-expense"
+      },
+      "fields": {
+        "description": "COMB27 service expense",
+        "quantity": 1,
+        "unitNetCents": 8000,
+        "grossCents": 9440,
+        "expenseAccount": "6800",
+        "claimInputVAT": true,
+        "noStock": true
+      },
+      "outputSymbol": "office-service-expense",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E08",
+      "title": "V office-quote",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":6,\"unitNetCents\":10000,\"netCents\":60000,\"previewVATCents\":10800,\"noGL\":true}. Net60000; VAT preview10800; futureinvoice70800. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save quotation"
+      ],
+      "allowedPaths": [
+        "^/sales/quotations/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E07"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-quote",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 10,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 60000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000
+        },
+        "source": "office-quote",
+        "cap": "Net60000; VAT preview10800; futureinvoice70800",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-quote"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 6,
+        "unitNetCents": 10000,
+        "netCents": 60000,
+        "previewVATCents": 10800,
+        "noGL": true
+      },
+      "outputSymbol": "office-quote",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E09",
+      "title": "V office-order",
+      "expected": "Exactly once, {\"copyProfile\":true,\"noGL\":true}. Copy TAX/local; net60000; no VAT posting. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Convert to order"
+      ],
+      "allowedPaths": [
+        "^/sales/quotations/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E08"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-order",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 10,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 60000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000
+        },
+        "source": "office-order",
+        "cap": "Copy TAX/local; net60000; no VAT posting",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-order"
+      },
+      "fields": {
+        "copyProfile": true,
+        "noGL": true
+      },
+      "sourceRequired": "office-quote",
+      "outputSymbol": "office-order",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E10",
+      "title": "V office-tax-invoice",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":6,\"grossCents\":70800,\"vatRate\":18}. 6units/gross70800 receipt cap. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "To invoice"
+      ],
+      "allowedPaths": [
+        "^/sales/orders/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E09"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-tax-invoice",
+        "lines": [
+          {
+            "account": "AR",
+            "side": "DR",
+            "cents": 70800
+          },
+          {
+            "account": "revenue",
+            "side": "CR",
+            "cents": 60000
+          },
+          {
+            "account": "outputVAT",
+            "side": "CR",
+            "cents": 10800
+          },
+          {
+            "account": "COGS",
+            "side": "DR",
+            "cents": 36000
+          },
+          {
+            "account": "inventory",
+            "side": "CR",
+            "cents": 36000
+          }
+        ],
+        "drCents": 106800,
+        "crCents": 106800,
+        "stockDelta": -6,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 70800,
+          "revenue": -60000,
+          "outputVAT": -10800,
+          "COGS": 36000
+        },
+        "source": "office-invoice",
+        "cap": "6units/gross70800 receipt cap",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-tax-invoice"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 6,
+        "grossCents": 70800,
+        "vatRate": 18
+      },
+      "sourceRequired": "office-order",
+      "outputSymbol": "office-tax-invoice",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E11",
+      "title": "V office-service-quote",
+      "expected": "Exactly once, {\"sku\":\"V-O-S\",\"quantity\":3,\"unitNetCents\":4000,\"netCents\":12000,\"previewVATCents\":2160,\"noGL\":true}. Net12000; preview2160; future14160. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save quotation"
+      ],
+      "allowedPaths": [
+        "^/sales/quotations/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E10"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-quote",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 70800,
+          "revenue": -60000,
+          "outputVAT": -10800,
+          "COGS": 36000
+        },
+        "source": "service-quote",
+        "cap": "Net12000; preview2160; future14160",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-quote"
+      },
+      "fields": {
+        "sku": "V-O-S",
+        "quantity": 3,
+        "unitNetCents": 4000,
+        "netCents": 12000,
+        "previewVATCents": 2160,
+        "noGL": true
+      },
+      "outputSymbol": "office-service-quote",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E12",
+      "title": "V office-service-order",
+      "expected": "Exactly once, {\"copyProfile\":true,\"noGL\":true}. No posting; TAX/local copied. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Convert to order"
+      ],
+      "allowedPaths": [
+        "^/sales/quotations/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E11"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-order",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 70800,
+          "revenue": -60000,
+          "outputVAT": -10800,
+          "COGS": 36000
+        },
+        "source": "service-order",
+        "cap": "No posting; TAX/local copied",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-order"
+      },
+      "fields": {
+        "copyProfile": true,
+        "noGL": true
+      },
+      "sourceRequired": "office-service-quote",
+      "outputSymbol": "office-service-order",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E13",
+      "title": "V office-service-invoice",
+      "expected": "Exactly once, {\"sku\":\"V-O-S\",\"quantity\":3,\"grossCents\":14160,\"vatRate\":18}. 3x40 gross14160. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "To invoice"
+      ],
+      "allowedPaths": [
+        "^/sales/orders/[^/]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E12"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-invoice",
+        "lines": [
+          {
+            "account": "AR",
+            "side": "DR",
+            "cents": 14160
+          },
+          {
+            "account": "revenue",
+            "side": "CR",
+            "cents": 12000
+          },
+          {
+            "account": "outputVAT",
+            "side": "CR",
+            "cents": 2160
+          }
+        ],
+        "drCents": 14160,
+        "crCents": 14160,
+        "stockDelta": 0,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 84960,
+          "revenue": -72000,
+          "outputVAT": -12960,
+          "COGS": 36000
+        },
+        "source": "service-invoice",
+        "cap": "3x40 gross14160",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-invoice"
+      },
+      "fields": {
+        "sku": "V-O-S",
+        "quantity": 3,
+        "grossCents": 14160,
+        "vatRate": 18
+      },
+      "sourceRequired": "office-service-order",
+      "outputSymbol": "office-service-invoice",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "CARRY-AR",
+      "title": "Two unpaid invoice amount/cent matrix",
+      "expected": "Before any collection: owned physical708 +service141.60 =849.60 AR. On unsaved allocation form try blank/0/-1/nonnumber/Infinity/3decimal/onecent below/equal/above per-row cap and combined total. Capture normalization/feedback/enabled state, never submit invalid or mutate source. Clear form and independently verify unchanged balances.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": false,
+      "dependsOn": [
+        "E13"
+      ]
+    },
+    {
+      "id": "CARRY-AP",
+      "title": "Two unpaid supplier bill amount/cent matrix",
+      "expected": "Before AP credit/payment: goods708 +expense94.40 =802.40 AP. Same unsaved cent matrix on both sources; no invalid submit or over-allocation. Clear and independently verify unchanged balances.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": false,
+      "dependsOn": [
+        "E13"
+      ]
+    },
+    {
+      "id": "E14",
+      "title": "V office-cash-collection",
+      "expected": "Exactly once, {\"amountCents\":29500,\"tender\":\"cash\",\"singleAllocation\":true}. RemainingAR41300. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/sales/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E13",
+        "E10"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-cash-collection",
+        "lines": [
+          {
+            "account": "cash",
+            "side": "DR",
+            "cents": 29500
+          },
+          {
+            "account": "AR",
+            "side": "CR",
+            "cents": 29500
+          }
+        ],
+        "drCents": 29500,
+        "crCents": 29500,
+        "stockDelta": 0,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 50000,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 55460,
+          "revenue": -72000,
+          "outputVAT": -12960,
+          "COGS": 36000,
+          "cash": 29500
+        },
+        "source": "office-invoice",
+        "cap": "RemainingAR41300",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-cash-collection"
+      },
+      "fields": {
+        "amountCents": 29500,
+        "tender": "cash",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-tax-invoice",
+      "outputSymbol": "office-cash-collection",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "requiresDisposed": [
+        "CARRY-AR",
+        "CARRY-AP"
+      ]
+    },
+    {
+      "id": "E15",
+      "title": "V office-bank-collection",
+      "expected": "Exactly once, {\"amountCents\":41300,\"tender\":\"bank\",\"singleAllocation\":true}. AR exhausted0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/sales/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E14",
+        "E10"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-bank-collection",
+        "lines": [
+          {
+            "account": "bank",
+            "side": "DR",
+            "cents": 41300
+          },
+          {
+            "account": "AR",
+            "side": "CR",
+            "cents": 41300
+          }
+        ],
+        "drCents": 41300,
+        "crCents": 41300,
+        "stockDelta": 0,
+        "stockQty": 4,
+        "balancesSignedDebitCents": {
+          "bank": 91300,
+          "equity": -50000,
+          "inventory": 24000,
+          "inputVAT": 12240,
+          "AP": -80240,
+          "expense": 8000,
+          "AR": 14160,
+          "revenue": -72000,
+          "outputVAT": -12960,
+          "COGS": 36000,
+          "cash": 29500
+        },
+        "source": "office-invoice",
+        "cap": "AR exhausted0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 4,
+            "valueCents": 24000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-bank-collection"
+      },
+      "fields": {
+        "amountCents": 41300,
+        "tender": "bank",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-tax-invoice",
+      "outputSymbol": "office-bank-collection",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E16",
+      "title": "V office-AP-credit",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":2,\"grossCents\":14160,\"tender\":\"AP-credit\",\"claimInputVAT\":true}. Return2units before vendor payment; remainingAP56640. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save purchase return"
+      ],
+      "allowedPaths": [
+        "^/purchase/returns/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E15",
+        "E06"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-AP-credit",
+        "lines": [
+          {
+            "account": "AP",
+            "side": "DR",
+            "cents": 14160
+          },
+          {
+            "account": "inventory",
+            "side": "CR",
+            "cents": 12000
+          },
+          {
+            "account": "inputVAT",
+            "side": "CR",
+            "cents": 2160
+          }
+        ],
+        "drCents": 14160,
+        "crCents": 14160,
+        "stockDelta": -2,
+        "stockQty": 2,
+        "balancesSignedDebitCents": {
+          "bank": 91300,
+          "equity": -50000,
+          "inventory": 12000,
+          "inputVAT": 10080,
+          "AP": -66080,
+          "expense": 8000,
+          "AR": 14160,
+          "revenue": -72000,
+          "outputVAT": -12960,
+          "COGS": 36000,
+          "cash": 29500
+        },
+        "source": "office-bill",
+        "cap": "Return2units before vendor payment; remainingAP56640",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 2,
+            "valueCents": 12000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-AP-credit"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 2,
+        "grossCents": 14160,
+        "tender": "AP-credit",
+        "claimInputVAT": true
+      },
+      "sourceRequired": "office-bill",
+      "outputSymbol": "office-AP-credit",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E17",
+      "title": "V office-vendor-payment",
+      "expected": "Exactly once, {\"amountCents\":56640,\"tender\":\"bank\",\"singleAllocation\":true}. AP exhausted0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/purchase/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E16",
+        "E06"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-vendor-payment",
+        "lines": [
+          {
+            "account": "AP",
+            "side": "DR",
+            "cents": 56640
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 56640
+          }
+        ],
+        "drCents": 56640,
+        "crCents": 56640,
+        "stockDelta": 0,
+        "stockQty": 2,
+        "balancesSignedDebitCents": {
+          "bank": 34660,
+          "equity": -50000,
+          "inventory": 12000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 14160,
+          "revenue": -72000,
+          "outputVAT": -12960,
+          "COGS": 36000,
+          "cash": 29500
+        },
+        "source": "office-bill",
+        "cap": "AP exhausted0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 2,
+            "valueCents": 12000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-vendor-payment"
+      },
+      "fields": {
+        "amountCents": 56640,
+        "tender": "bank",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-bill",
+      "outputSymbol": "office-vendor-payment",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E18",
+      "title": "V office-customer-return",
+      "expected": "Exactly once, {\"sku\":\"V-O-G\",\"quantity\":1,\"grossCents\":11800,\"tender\":\"cash\",\"inheritSourceVAT18\":true}. Refund1unit gross11800; storedVAT18%. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save return"
+      ],
+      "allowedPaths": [
+        "^/sales/returns/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E17",
+        "E10"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-customer-return",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 10000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 1800
+          },
+          {
+            "account": "cash",
+            "side": "CR",
+            "cents": 11800
+          },
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 6000
+          },
+          {
+            "account": "COGS",
+            "side": "CR",
+            "cents": 6000
+          }
+        ],
+        "drCents": 17800,
+        "crCents": 17800,
+        "stockDelta": 1,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 34660,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 14160,
+          "revenue": -72000,
+          "outputVAT": -11160,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 10000
+        },
+        "source": "office-invoice",
+        "cap": "Refund1unit gross11800; storedVAT18%",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-customer-return"
+      },
+      "fields": {
+        "sku": "V-O-G",
+        "quantity": 1,
+        "grossCents": 11800,
+        "tender": "cash",
+        "inheritSourceVAT18": true
+      },
+      "sourceRequired": "office-tax-invoice",
+      "outputSymbol": "office-customer-return",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E19",
+      "title": "V office-service-card",
+      "expected": "Exactly once, {\"amountCents\":4720,\"tender\":\"card\",\"singleAllocation\":true}. Remaining9440. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/sales/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E18",
+        "E13"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-card",
+        "lines": [
+          {
+            "account": "card",
+            "side": "DR",
+            "cents": 4720
+          },
+          {
+            "account": "AR",
+            "side": "CR",
+            "cents": 4720
+          }
+        ],
+        "drCents": 4720,
+        "crCents": 4720,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 34660,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 9440,
+          "revenue": -72000,
+          "outputVAT": -11160,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 10000,
+          "card": 4720
+        },
+        "source": "service-invoice",
+        "cap": "Remaining9440",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-card"
+      },
+      "fields": {
+        "amountCents": 4720,
+        "tender": "card",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-service-invoice",
+      "outputSymbol": "office-service-card",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E20",
+      "title": "V office-service-bank",
+      "expected": "Exactly once, {\"amountCents\":9440,\"tender\":\"bank\",\"singleAllocation\":true}. AR0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/sales/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E19",
+        "E13"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-bank",
+        "lines": [
+          {
+            "account": "bank",
+            "side": "DR",
+            "cents": 9440
+          },
+          {
+            "account": "AR",
+            "side": "CR",
+            "cents": 9440
+          }
+        ],
+        "drCents": 9440,
+        "crCents": 9440,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 44100,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -11160,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 10000,
+          "card": 4720
+        },
+        "source": "service-invoice",
+        "cap": "AR0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-bank"
+      },
+      "fields": {
+        "amountCents": 9440,
+        "tender": "bank",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-service-invoice",
+      "outputSymbol": "office-service-bank",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E21",
+      "title": "V office-service-refund1",
+      "expected": "Exactly once, {\"sku\":\"V-O-S\",\"quantity\":1,\"grossCents\":4720,\"tender\":\"card\",\"inheritSourceVAT18\":true}. Refund1 gross4720; remaining9440. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save return"
+      ],
+      "allowedPaths": [
+        "^/sales/returns/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E20",
+        "E13"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-refund1",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 4000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 720
+          },
+          {
+            "account": "card",
+            "side": "CR",
+            "cents": 4720
+          }
+        ],
+        "drCents": 4720,
+        "crCents": 4720,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 44100,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -10440,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 14000,
+          "card": 0
+        },
+        "source": "service-invoice",
+        "cap": "Refund1 gross4720; remaining9440",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-refund1"
+      },
+      "fields": {
+        "sku": "V-O-S",
+        "quantity": 1,
+        "grossCents": 4720,
+        "tender": "card",
+        "inheritSourceVAT18": true
+      },
+      "sourceRequired": "office-service-invoice",
+      "outputSymbol": "office-service-refund1",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E22",
+      "title": "V office-service-refund2",
+      "expected": "Exactly once, {\"sku\":\"V-O-S\",\"quantity\":2,\"grossCents\":9440,\"tender\":\"bank\",\"inheritSourceVAT18\":true}. Refund2 gross9440; exhausted0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save return"
+      ],
+      "allowedPaths": [
+        "^/sales/returns/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E21",
+        "E13"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-service-refund2",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 8000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 1440
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 9440
+          }
+        ],
+        "drCents": 9440,
+        "crCents": 9440,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 34660,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": -9440,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "service-invoice",
+        "cap": "Refund2 gross9440; exhausted0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-service-refund2"
+      },
+      "fields": {
+        "sku": "V-O-S",
+        "quantity": 2,
+        "grossCents": 9440,
+        "tender": "bank",
+        "inheritSourceVAT18": true
+      },
+      "sourceRequired": "office-service-invoice",
+      "outputSymbol": "office-service-refund2",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E23",
+      "title": "V office-expense-payment",
+      "expected": "Exactly once, {\"amountCents\":9440,\"tender\":\"bank\",\"singleAllocation\":true}. AP0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/purchase/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E22",
+        "E07"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "office-expense-payment",
+        "lines": [
+          {
+            "account": "AP",
+            "side": "DR",
+            "cents": 9440
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 9440
+          }
+        ],
+        "drCents": 9440,
+        "crCents": 9440,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 25220,
+          "equity": -50000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "service-expense",
+        "cap": "AP0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "office-expense-payment"
+      },
+      "fields": {
+        "amountCents": 9440,
+        "tender": "bank",
+        "singleAllocation": true
+      },
+      "sourceRequired": "office-service-expense",
+      "outputSymbol": "office-expense-payment",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E24",
+      "title": "V pos-bank-equity",
+      "expected": "Exactly once, {\"amountCents\":100000,\"account\":\"1100\",\"category\":\"3000\",\"kind\":\"synthetic-equity-funding\"}. No historical source; exact future private binding required. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record contribution"
+      ],
+      "allowedPaths": [
+        "^/$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E23"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-bank-equity",
+        "lines": [
+          {
+            "account": "bank",
+            "side": "DR",
+            "cents": 100000
+          },
+          {
+            "account": "equity",
+            "side": "CR",
+            "cents": 100000
+          }
+        ],
+        "drCents": 100000,
+        "crCents": 100000,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 125220,
+          "equity": -150000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 17700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "new-owned-source",
+        "cap": "No historical source; exact future private binding required",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "pos-bank-equity"
+      },
+      "fields": {
+        "amountCents": 100000,
+        "account": "1100",
+        "category": "3000",
+        "kind": "synthetic-equity-funding"
+      },
+      "outputSymbol": "pos-bank-equity",
+      "invoiceKind": "none",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E25",
+      "title": "V pos-cash-equity",
+      "expected": "Exactly once, {\"amountCents\":5000,\"account\":\"1000\",\"category\":\"3000\",\"kind\":\"synthetic-equity-funding\"}. No historical source; exact future private binding required. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record contribution"
+      ],
+      "allowedPaths": [
+        "^/$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E24"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-cash-equity",
+        "lines": [
+          {
+            "account": "cash",
+            "side": "DR",
+            "cents": 5000
+          },
+          {
+            "account": "equity",
+            "side": "CR",
+            "cents": 5000
+          }
+        ],
+        "drCents": 5000,
+        "crCents": 5000,
+        "stockDelta": 0,
+        "stockQty": 3,
+        "balancesSignedDebitCents": {
+          "bank": 125220,
+          "equity": -155000,
+          "inventory": 18000,
+          "inputVAT": 10080,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "new-owned-source",
+        "cap": "No historical source; exact future private binding required",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 0,
+            "valueCents": 0
+          }
+        },
+        "outputSymbol": "pos-cash-equity"
+      },
+      "fields": {
+        "amountCents": 5000,
+        "account": "1000",
+        "category": "3000",
+        "kind": "synthetic-equity-funding"
+      },
+      "outputSymbol": "pos-cash-equity",
+      "invoiceKind": "none",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E26",
+      "title": "V pos-stock-bill",
+      "expected": "Exactly once, {\"sku\":\"V-P-G\",\"quantity\":10,\"unitNetCents\":6000,\"grossCents\":70800,\"claimInputVAT\":true}. 10units x60 +VAT. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Save purchase"
+      ],
+      "allowedPaths": [
+        "^/purchase/purchases/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E25"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-stock-bill",
+        "lines": [
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 60000
+          },
+          {
+            "account": "inputVAT",
+            "side": "DR",
+            "cents": 10800
+          },
+          {
+            "account": "AP",
+            "side": "CR",
+            "cents": 70800
+          }
+        ],
+        "drCents": 70800,
+        "crCents": 70800,
+        "stockDelta": 10,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 125220,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": -70800,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "pos-bill",
+        "cap": "10units x60 +VAT",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-stock-bill"
+      },
+      "fields": {
+        "sku": "V-P-G",
+        "quantity": 10,
+        "unitNetCents": 6000,
+        "grossCents": 70800,
+        "claimInputVAT": true
+      },
+      "outputSymbol": "pos-stock-bill",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E27",
+      "title": "V pos-vendor-payment",
+      "expected": "Exactly once, {\"amountCents\":70800,\"tender\":\"bank\",\"singleAllocation\":true}. AP0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "allowedPaths": [
+        "^/purchase/payments/new$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E26"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-vendor-payment",
+        "lines": [
+          {
+            "account": "AP",
+            "side": "DR",
+            "cents": 70800
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 70800
+          }
+        ],
+        "drCents": 70800,
+        "crCents": 70800,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "pos-bill",
+        "cap": "AP0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-vendor-payment"
+      },
+      "fields": {
+        "amountCents": 70800,
+        "tender": "bank",
+        "singleAllocation": true
+      },
+      "sourceRequired": "pos-stock-bill",
+      "outputSymbol": "pos-vendor-payment",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112"
+    },
+    {
+      "id": "E28",
+      "title": "V pos-shift-open",
+      "expected": "Exactly once, {\"openingFloatCents\":5000,\"metadataOnly\":true}. Float5000 metadata only; no duplicate funding. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Open shift & sell"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E27"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-shift-open",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -72000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "V-shift",
+        "cap": "Float5000 metadata only; no duplicate funding",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-shift-open"
+      },
+      "fields": {
+        "openingFloatCents": 5000,
+        "metadataOnly": true
+      },
+      "outputSymbol": "pos-shift-open",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E29",
+      "title": "V pos-cash-sale",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-G\",\"quantity\":2,\"unitNetCents\":10000}],\"grossCents\":23600,\"tender\":\"cash\",\"cashTenderedCents\":25000,\"changeCents\":1400}. 2units gross23600; tender25000/change1400. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete sale · LKR 236.00"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E28"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-cash-sale",
+        "lines": [
+          {
+            "account": "cash",
+            "side": "DR",
+            "cents": 23600
+          },
+          {
+            "account": "revenue",
+            "side": "CR",
+            "cents": 20000
+          },
+          {
+            "account": "outputVAT",
+            "side": "CR",
+            "cents": 3600
+          },
+          {
+            "account": "COGS",
+            "side": "DR",
+            "cents": 12000
+          },
+          {
+            "account": "inventory",
+            "side": "CR",
+            "cents": 12000
+          }
+        ],
+        "drCents": 35600,
+        "crCents": 35600,
+        "stockDelta": -2,
+        "stockQty": 11,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 66000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -92000,
+          "outputVAT": -12600,
+          "COGS": 42000,
+          "cash": 46300,
+          "returns": 22000,
+          "card": 0
+        },
+        "source": "pos-cash-sale",
+        "cap": "2units gross23600; tender25000/change1400",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 8,
+            "valueCents": 48000
+          }
+        },
+        "outputSymbol": "pos-cash-sale"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-G",
+            "quantity": 2,
+            "unitNetCents": 10000
+          }
+        ],
+        "grossCents": 23600,
+        "tender": "cash",
+        "cashTenderedCents": 25000,
+        "changeCents": 1400
+      },
+      "outputSymbol": "pos-cash-sale",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E30",
+      "title": "V pos-cash-refund1",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-G\",\"quantity\":1,\"unitNetCents\":10000}],\"grossCents\":11800,\"tender\":\"cash\"}. Cumulative refund1unit(s); remaining1units. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete refund · LKR 118.00"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E29"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-cash-refund1",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 10000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 1800
+          },
+          {
+            "account": "cash",
+            "side": "CR",
+            "cents": 11800
+          },
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 6000
+          },
+          {
+            "account": "COGS",
+            "side": "CR",
+            "cents": 6000
+          }
+        ],
+        "drCents": 17800,
+        "crCents": 17800,
+        "stockDelta": 1,
+        "stockQty": 12,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 72000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -92000,
+          "outputVAT": -10800,
+          "COGS": 36000,
+          "cash": 34500,
+          "returns": 32000,
+          "card": 0
+        },
+        "source": "pos-cash-sale",
+        "cap": "Cumulative refund1unit(s); remaining1units",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 9,
+            "valueCents": 54000
+          }
+        },
+        "outputSymbol": "pos-cash-refund1"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-G",
+            "quantity": 1,
+            "unitNetCents": 10000
+          }
+        ],
+        "grossCents": 11800,
+        "tender": "cash"
+      },
+      "sourceRequired": "pos-cash-sale",
+      "outputSymbol": "pos-cash-refund1",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E31",
+      "title": "V pos-cash-refund2",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-G\",\"quantity\":1,\"unitNetCents\":10000}],\"grossCents\":11800,\"tender\":\"cash\"}. Cumulative refund2unit(s); remaining0units. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete refund · LKR 118.00"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E30",
+        "E29"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-cash-refund2",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 10000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 1800
+          },
+          {
+            "account": "cash",
+            "side": "CR",
+            "cents": 11800
+          },
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 6000
+          },
+          {
+            "account": "COGS",
+            "side": "CR",
+            "cents": 6000
+          }
+        ],
+        "drCents": 17800,
+        "crCents": 17800,
+        "stockDelta": 1,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -92000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 42000,
+          "card": 0
+        },
+        "source": "pos-cash-sale",
+        "cap": "Cumulative refund2unit(s); remaining0units",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-cash-refund2"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-G",
+            "quantity": 1,
+            "unitNetCents": 10000
+          }
+        ],
+        "grossCents": 11800,
+        "tender": "cash"
+      },
+      "sourceRequired": "pos-cash-sale",
+      "outputSymbol": "pos-cash-refund2",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E32",
+      "title": "V pos-card-service-sale",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-S\",\"quantity\":3,\"unitNetCents\":4000}],\"grossCents\":14160,\"tender\":\"card\"}. Refund cap14160. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete sale · LKR 141.60"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E31"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-card-service-sale",
+        "lines": [
+          {
+            "account": "card",
+            "side": "DR",
+            "cents": 14160
+          },
+          {
+            "account": "revenue",
+            "side": "CR",
+            "cents": 12000
+          },
+          {
+            "account": "outputVAT",
+            "side": "CR",
+            "cents": 2160
+          }
+        ],
+        "drCents": 14160,
+        "crCents": 14160,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -104000,
+          "outputVAT": -11160,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 42000,
+          "card": 14160
+        },
+        "source": "pos-card-sale",
+        "cap": "Refund cap14160",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-card-service-sale"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-S",
+            "quantity": 3,
+            "unitNetCents": 4000
+          }
+        ],
+        "grossCents": 14160,
+        "tender": "card"
+      },
+      "outputSymbol": "pos-card-service-sale",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E33",
+      "title": "V pos-card-refund1",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-S\",\"quantity\":1,\"unitNetCents\":4000}],\"grossCents\":4720,\"tender\":\"card\"}. Remaining9440. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete refund · LKR 47.20"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E32"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-card-refund1",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 4000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 720
+          },
+          {
+            "account": "card",
+            "side": "CR",
+            "cents": 4720
+          }
+        ],
+        "drCents": 4720,
+        "crCents": 4720,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -104000,
+          "outputVAT": -10440,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 46000,
+          "card": 9440
+        },
+        "source": "pos-card-sale",
+        "cap": "Remaining9440",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-card-refund1"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-S",
+            "quantity": 1,
+            "unitNetCents": 4000
+          }
+        ],
+        "grossCents": 4720,
+        "tender": "card"
+      },
+      "sourceRequired": "pos-card-service-sale",
+      "outputSymbol": "pos-card-refund1",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E34",
+      "title": "V pos-card-refund2",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-S\",\"quantity\":2,\"unitNetCents\":4000}],\"grossCents\":9440,\"tender\":\"card\"}. Exhausted0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete refund · LKR 94.40"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E33",
+        "E32"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-card-refund2",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 8000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 1440
+          },
+          {
+            "account": "card",
+            "side": "CR",
+            "cents": 9440
+          }
+        ],
+        "drCents": 9440,
+        "crCents": 9440,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -104000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 54000,
+          "card": 0
+        },
+        "source": "pos-card-sale",
+        "cap": "Exhausted0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-card-refund2"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-S",
+            "quantity": 2,
+            "unitNetCents": 4000
+          }
+        ],
+        "grossCents": 9440,
+        "tender": "card"
+      },
+      "sourceRequired": "pos-card-service-sale",
+      "outputSymbol": "pos-card-refund2",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E35",
+      "title": "V pos-bank-mixed-sale",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-G\",\"quantity\":1,\"unitNetCents\":10000},{\"sku\":\"V-P-S\",\"quantity\":1,\"unitNetCents\":4000}],\"grossCents\":16520,\"tender\":\"bank\"}. MixedPRODUCT goods100/service40; gross16520. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete sale · LKR 165.20"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E34"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-bank-mixed-sale",
+        "lines": [
+          {
+            "account": "bank",
+            "side": "DR",
+            "cents": 16520
+          },
+          {
+            "account": "revenue",
+            "side": "CR",
+            "cents": 14000
+          },
+          {
+            "account": "outputVAT",
+            "side": "CR",
+            "cents": 2520
+          },
+          {
+            "account": "COGS",
+            "side": "DR",
+            "cents": 6000
+          },
+          {
+            "account": "inventory",
+            "side": "CR",
+            "cents": 6000
+          }
+        ],
+        "drCents": 22520,
+        "crCents": 22520,
+        "stockDelta": -1,
+        "stockQty": 12,
+        "balancesSignedDebitCents": {
+          "bank": 70940,
+          "equity": -155000,
+          "inventory": 72000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -118000,
+          "outputVAT": -11520,
+          "COGS": 36000,
+          "cash": 22700,
+          "returns": 54000,
+          "card": 0
+        },
+        "source": "pos-bank-sale",
+        "cap": "MixedPRODUCT goods100/service40; gross16520",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 9,
+            "valueCents": 54000
+          }
+        },
+        "outputSymbol": "pos-bank-mixed-sale"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-G",
+            "quantity": 1,
+            "unitNetCents": 10000
+          },
+          {
+            "sku": "V-P-S",
+            "quantity": 1,
+            "unitNetCents": 4000
+          }
+        ],
+        "grossCents": 16520,
+        "tender": "bank"
+      },
+      "outputSymbol": "pos-bank-mixed-sale",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E36",
+      "title": "V pos-bank-mixed-refund",
+      "expected": "Exactly once, {\"products\":[{\"sku\":\"V-P-G\",\"quantity\":1,\"unitNetCents\":10000},{\"sku\":\"V-P-S\",\"quantity\":1,\"unitNetCents\":4000}],\"grossCents\":16520,\"tender\":\"bank\"}. Full source exhausted0. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Complete refund · LKR 165.20"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E35"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-bank-mixed-refund",
+        "lines": [
+          {
+            "account": "returns",
+            "side": "DR",
+            "cents": 14000
+          },
+          {
+            "account": "outputVAT",
+            "side": "DR",
+            "cents": 2520
+          },
+          {
+            "account": "bank",
+            "side": "CR",
+            "cents": 16520
+          },
+          {
+            "account": "inventory",
+            "side": "DR",
+            "cents": 6000
+          },
+          {
+            "account": "COGS",
+            "side": "CR",
+            "cents": 6000
+          }
+        ],
+        "drCents": 22520,
+        "crCents": 22520,
+        "stockDelta": 1,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -118000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 68000,
+          "card": 0
+        },
+        "source": "pos-bank-sale",
+        "cap": "Full source exhausted0",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-bank-mixed-refund"
+      },
+      "fields": {
+        "products": [
+          {
+            "sku": "V-P-G",
+            "quantity": 1,
+            "unitNetCents": 10000
+          },
+          {
+            "sku": "V-P-S",
+            "quantity": 1,
+            "unitNetCents": 4000
+          }
+        ],
+        "grossCents": 16520,
+        "tender": "bank"
+      },
+      "sourceRequired": "pos-bank-mixed-sale",
+      "outputSymbol": "pos-bank-mixed-refund",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "E37",
+      "title": "V pos-shift-close",
+      "expected": "Exactly once, {\"countedCashCents\":5000,\"varianceCents\":0,\"metadataOnly\":true}. Expected float/count5000 variance0; cash in/out23600 each; card14160 each;bank16520 each; no GL. Reconcile this event's frozen journal lines, per-SKU stock, linked status/caps and committed dates independently after full rerender.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Close shift & print Z"
+      ],
+      "allowedPaths": [
+        "^/pos$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "vOwner",
+      "companyAlias": "V",
+      "businessSubmission": true,
+      "dependsOn": [
+        "E36"
+      ],
+      "oracleEvent": {
+        "lane": "V",
+        "id": "pos-shift-close",
+        "lines": [],
+        "drCents": 0,
+        "crCents": 0,
+        "stockDelta": 0,
+        "stockQty": 13,
+        "balancesSignedDebitCents": {
+          "bank": 54420,
+          "equity": -155000,
+          "inventory": 78000,
+          "inputVAT": 20880,
+          "AP": 0,
+          "expense": 8000,
+          "AR": 0,
+          "revenue": -118000,
+          "outputVAT": -9000,
+          "COGS": 30000,
+          "cash": 22700,
+          "returns": 68000,
+          "card": 0
+        },
+        "source": "V-shift",
+        "cap": "Expected float/count5000 variance0; cash in/out23600 each; card14160 each;bank16520 each; no GL",
+        "memo": "",
+        "stockBySku": {
+          "V-O-G": {
+            "quantity": 3,
+            "valueCents": 18000
+          },
+          "V-P-G": {
+            "quantity": 10,
+            "valueCents": 60000
+          }
+        },
+        "outputSymbol": "pos-shift-close"
+      },
+      "fields": {
+        "countedCashCents": 5000,
+        "varianceCents": 0,
+        "metadataOnly": true
+      },
+      "outputSymbol": "pos-shift-close",
+      "invoiceKind": "tax_invoice",
+      "saleChannel": "local",
+      "locationCode": "V-WH-1112",
+      "registerCode": "V-REG-1112"
+    },
+    {
+      "id": "R01",
+      "title": "V office stock/source closure",
+      "expected": "V-O-G3/value180; source PO/GRN billed once, bill returned2 and paid566.40/AP0, physicalinvoice returned1 gross118/paid708, cashpurchase2/refund2 exhausted; serviceinvoice receipts141.60/refunds141.60 exhausted.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "V report/ledger closure",
+      "expected": "V cash227,bank544.20,card0,AR/AP0,inventory780,inputVAT208.80,outputVAT90; revenue1180,returns680,COGS300,expense80,income120; grossassets1760,liability90,netassets1670,equity1550+profit120. Trialbalance debit=credit. Use whole-run full V oracle, not office subtotal.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "V POS tender and Z closure",
+      "expected": "Dedicated V shift closed exactly once; cash sales/refunds236each, card141.60each,bank165.20each; float/count50 variance0; no duplicate GL on open/close. V-P-G10/value600; each service stock delta0.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "N source/stock closure",
+      "expected": "N-P-G2/value120; purchase120 paid/AP0; three sale sources fully refunded (100/40/140), cash/card/VAT/AR/AP/income0, bank380,assets500,equity500.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "R06",
+      "title": "V tax/preview/print closure",
+      "expected": "New V tax invoice numbers and printed net/tax/gross/source company correct. PO/GRN and quotes/orders informational net600/120 with futureinvoice708/141.60. Linked returns store18%. No print/autoprint/serial/drawer action on sale/refund/Z; manual preview only.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "N commercial print/history",
+      "expected": "New N preview correct commercial/net/gross/zeroVAT; dates/parties/tender/source links correct, no tax numbering; manual no physical print/serial/drawer. No mixed-tender claim.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "R08",
+      "title": "All stock movement correspondence",
+      "expected": "Compare every goods movement by own source/SKU/location/quantity/cost60 with oracle; no service movements; GRN10 followed by bill0 delta. Distinguish intermediate GRNI timing from closing stockGL equality.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "R09",
+      "title": "Scoped reports",
+      "expected": "Capture P&L/BS/trial/GL/AR/AP aging/cashflow and VAT reports with correct company/date and reconcile to event oracle. Unavailable report is explicit blocked/inconclusive, not green.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "R10",
+      "title": "Audit/date/source history",
+      "expected": "Every accepted document, receipt, refund and shift has actual persisted actor/company/action/date/source evidence or explicit gap. Journal/allocation UUID is not paymentTransactionId; no fabricated history pass.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "R11",
+      "title": "No duplicate or hardware effects",
+      "expected": "Inspect new source references/counts and receipt/Z previews for single posting; no replay duplicate submit tests, no hardware, no browser print dialog or autoprint URLs, no account/grant/settings/master edits.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "CARRY-RECEIPT",
+      "title": "Customer payment receipt regression",
+      "expected": "Use actual new paymentTransactionId from UI-supported payment record, /sales/payments/receipt?payment=<actualId>; read persisted amount/date/payer/tender/allocation, preview only. Never substitute settlement_allocations.id.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "CARRY-REMIT",
+      "title": "Vendor remittance regression",
+      "expected": "Supported payment= route with actual new vendor paymentTransactionId; persisted amount/date/payee/bank/source allocation, preview only; preserve earlier inconclusive fixtures.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "CARRY-CENTS",
+      "title": "Cent boundary disposition",
+      "expected": "Consolidate both carried unsaved matrix observations against exact prepayment849.60/802.40 and per-row caps, distinguish UI feedback from server denial; no invalid financial submission.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": [
+        "E37"
+      ]
+    },
+    {
+      "id": "CARRY-PRINT",
+      "title": "Manual suppression evidence",
+      "expected": "All V/N sales/refunds/Z automatic effects absent on actual manual registers; preview links no autoprint=1. Source/CI evidence distinct from actual browser observations; real hardware/card processor acceptance not established.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "businessSubmission": false,
+      "allowAuth": true,
+      "allowedActors": [
+        "vOwner",
+        "nOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "Z1",
+      "title": "Resolve every submission",
+      "expected": "Independently read all claims/feedback/persisted source records. No replay. Inconclusive readbacks remain unresolved until actual accepted/refused state is established; no forced accepted labels.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z2",
+      "title": "Partial or complete monetary reconciliation",
+      "expected": "Recompute actual accepted-only journal/tender/AR/AP/VAT/revenue/stock deltas against exact event oracle; if partial, do not demand complete final values or post balancing repairs.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z3",
+      "title": "Preservation check",
+      "expected": "Compare current openings and protected-source summaries to closings; V/N existing settings/masters preserved, A/B/original untouched; disclose narrower baseline evidence and deployment-added locations.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z4",
+      "title": "All80 dispositions",
+      "expected": "Disposition all66 remaining checkpoints with no pending/running or unresolved intents; do not claim blocked cases tested.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z5",
+      "title": "Consolidated coding handoff",
+      "expected": "One grouped defect handoff with expected/actual, first evidence, source/tree/live/QA pins, original+adjacent regression scope. Do not ask coding to re-fix independently passing source tests without live evidence.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z6",
+      "title": "Coverage and launch register",
+      "expected": "Update launch programme/module coverage by source/runtime/live/complete workflow; launch still requires authorization/isolation, customer openings/tax confirmation and recovery last. No launch approval.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z7",
+      "title": "Sanitized publication",
+      "expected": "Publish branch/PR once with run/checks/closing/bug/handoff pointers and no credentials/privateIDs/raw evidence. No merge/deploy or other-chat message. Include initial publication in charged clock.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    },
+    {
+      "id": "Z8",
+      "title": "Close clock and future pointer",
+      "expected": "Close180-minute run clock with all unpaused gaps charged; record explicit pauses only; metadata-only clock tail after initial publication; exact next Medium review and no replay of accepted events.",
+      "precondition": "Fresh exact QA/live/actual control/actor/profile/opening gates passed; same fixed UTC day; no unresolved intent; run-owned source caps verified.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "businessSubmission": false,
+      "recovery": true,
+      "dependsOn": []
+    }
+  ]
+}
