@@ -20,7 +20,7 @@ export function authorizeCombined(plan,state,caseId,url,button,review,ownedSourc
   if(review.protectedSourcesUnchanged!==true||review.onlyRunOwnedSources!==true||review.sourceCapsVerified!==true)throw Error('Source preservation/eligibility evidence required');
   if(c.sourceRequired){const source=ownedSources[c.companyAlias+':'+c.sourceRequired];if(!source||source.id!==review.sourceId||source.companyAlias!==c.companyAlias||(c.correctionOnly?source.accepted!==false:source.accepted!==true))throw Error('Required source is not an accepted run-owned binding');}
   if(c.correctionOnly&&(u.pathname!==new URL(ownedSources[c.companyAlias+':'+c.sourceRequired].url).pathname+'/edit'||review.currentDraftVerified!==true||review.namedDatesVerified!==true))throw Error('Existing reviewed draft and named-date evidence required');
-  if(c.sourceRequired&&/\/returns\/new$/.test(u.pathname)&&u.searchParams.get('from')!==review.sourceId)throw Error('Return URL must bind the owned original source');
+  if(c.sourceRequired&&u.pathname==='/purchase/returns/new'&&u.searchParams.get('from')!==review.sourceId)throw Error('Return URL must bind the owned original source');
   if(c.sourceRequired&&/^\/(sales\/(quotations|orders)|purchase\/(orders|receipts))\/[^/]+$/.test(u.pathname)&&u.pathname.split('/').at(-1)!==review.sourceId)throw Error('Conversion URL must bind the owned original source');
   if(c.allowedPaths.includes('^/pos$')&&(review.registerCode!==c.registerCode||review.manualPrintVerified!==true||review.hardwareDisconnected!==true||!review.shiftEvidence?.trim()))throw Error('Safe bound POS register and actual shift context required');
   if(review.invoiceKind!==c.invoiceKind||review.saleChannel!=='local')throw Error('Wrong VAT/channel profile');
