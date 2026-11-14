@@ -59,6 +59,14 @@
     "executionRunInitialized": false,
     "acceptedCarryBindings": 16
   },
-  "publication": "pending exact authorization after prior automatic rejection",
+  "publication": {
+    "status": "published",
+    "ownerApproval": "Yes—publish and finish the remaining tests",
+    "repository": "Dinu-Sri/bookone-qa",
+    "branch": "qa/combined-cont8-source-guard",
+    "verifiedHead": "30e76177eaf06c6e3ed36f8dfc9a185d608dbbf0",
+    "draftPr": "https://github.com/Dinu-Sri/bookone-qa/pull/117",
+    "executionPinContained": "27952b5923c1f09634dbda24f86c3bbe0cedddcd"
+  },
   "boundary": "QA guard checks and harmless qualification only; no new auth/business/stock/shift/settings/master submission and no product posting acceptance claimed."
 }
