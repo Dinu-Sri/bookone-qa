@@ -1,0 +1,23 @@
+# CONT9 interim — payment outcome unresolved
+
+Execution QA e8977162c6e652d7bec60552d029e6984412da34, published PR117; private run .local/combined/RUN-20261114-CONT9. New clock ACTIVE, not closed, because one submitted intent remains unresolved. E25 synthetic cash equity50 accepted and reconciled DR cash50 CR equity50. E26 POS stock bill PUR-20261114-0003 accepted: gross708, input VAT108, ten goods at60, DR inventory600/inputVAT108 CR AP708, stock POS10/value600 and office3/value180. Do not repeat either event. E27 vendor payment708 bank was dispatched once, but the operator navigated away before the application redirect completed and may have interrupted the request. This was an execution error.
+
+Repeated read-only bill detail and AP list showed open708/paid0, transactions and journal showed no matching payment, and the tenant financial audit showed no later allocation. This establishes no recorded payment was observed as of these checks; it does not conclusively establish final request outcome or a product refusal. The E27 readback and case are inconclusive with unresolved submission. Never replay the consumed intent, change its result without evidence, or proceed with further writes while unresolved. E28–E37 have no business intent. Read-only recovery/owner-supported investigation must establish final request outcome before any successor is reviewed. No wrong-money defect is proven.
+
+Last observed V cash227 bank1252.20 card0 AR0 AP708 inventory780 inputVAT208.80 outputVAT90 equity1550 revenue720 returns220 COGS300 expense80. No V POS shift opened. Prior E18–E24 accepted/consumed, and prior historical transactions, failures and N Walk-in preserved. Host161/161 and fresh two positive/five refusal controls passed; guarded V Owner authentication and fresh profile/opening gates passed. No customer launch approval; owner deploys only; recovery last.
+
+The run cannot be closed under its contract while E27 remains unresolved. Clock continues to charge all elapsed time, including interruptions; never reset. This is an interim publication, not the consolidated closure.
+
+## Read-only database recovery — uncertainty resolved
+
+Owner explicitly authorized scoped read-only database diagnostics through Portainer. A container postgres session used default_transaction_read_only=on and statement_timeout=5000; transaction_read_only was verified on. Scoped SELECTs confirmed the exact bill open708/paid0/balance708, zero linked settlement allocations, zero matching tenant/bill payment transactions and zero other active database work. The payment-path/time request-log query returned no rows; this does not prove an explicit server denial or exact failure cause. No database mutation, configuration change, deployment or payment replay occurred; diagnostic session ended.
+
+E27 submission has a later readback adjudicating NOT APPLIED (ledger outcome refused), with the original inconclusive readback preserved. The case remains inconclusive for the unsuccessful attempt;0unresolved submissions now. The consumed request must not replay. A reviewed successor needs a fresh, separately guarded attempt to settle the confirmed-unpaid bill plus ten unsubmitted POS events. CONT9 remains active pending remaining dispositions/review; no reset. Private evidence retained and excluded from publication.
+
+## CONT9 closing disposition — 14 November UTC
+
+E25/E26 remain accepted/consumed; E27 case remains inconclusive for its unsuccessful attempt, with original uncertain readback and later READ ONLY database not-applied adjudication both retained. All10 POS actions remain unsubmitted and blocked under the consumed queue. Other unreached checks are explicitly blocked; no retroactive full workflow pass. Scoped preservation and partial reconciliation retained. Z4/Z7/Z8 are finishing publication/closure; final counts and charged clock follow in a metadata-only tail. Initial closing publication occurs while the original unpaused clock is active. Owner requested executable Light successor, which will have a new settlement capability only after fresh unpaid-source checks; no old request replay.
+
+## Final CONT9 clock metadata
+
+CONT9 CLOSED 3,049,293ms/0paused, including closing publication a7131df. Final41 dispositions:14passed/24blocked/3inconclusive,0pending/0unresolved. No new business/auth after closing publication. Metadata-only tail. E25/E26 consumed; E27 old intent consumed/not-applied, original uncertainty preserved; E28–E37 unsubmitted. New Light successor is separately reviewed and must not reset or reuse CONT9.

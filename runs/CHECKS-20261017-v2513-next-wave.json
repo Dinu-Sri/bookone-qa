@@ -1,0 +1,681 @@
+{
+  "run": "RUN-20261017-v2513-next-wave",
+  "productVersion": "2.5.13",
+  "productSha": "1a1020127c4ff0f11ccd9d84d736c6b18b235fca",
+  "qaIntentSha": "fd012b914a5e8ab8cbf0d300a7669f2f40b50124",
+  "method": "bounded manual browser assertions; no full workbook or release acceptance",
+  "checks": [
+    {
+      "id": "N13-001",
+      "group": "R",
+      "expected": "AR16Oct181/aggregate251",
+      "actual": "PreservedINV0003 181;total251",
+      "status": "passed"
+    },
+    {
+      "id": "N13-002",
+      "group": "R",
+      "expected": "AR17Oct180/aggregate250",
+      "actual": "INV0003 180;total250",
+      "status": "passed"
+    },
+    {
+      "id": "N13-003",
+      "group": "R",
+      "expected": "AR15Oct0",
+      "actual": "No openreceivables;total0",
+      "status": "passed"
+    },
+    {
+      "id": "N13-004",
+      "group": "B",
+      "expected": "ExistingBS unchanged246.50",
+      "actual": "246.50=246.50;AR174.50/AP160/Inventory180/bank-88;earnings86.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-005",
+      "group": "R",
+      "expected": "AP15Oct excludes16Octbills0",
+      "actual": "TotalopenAP0;noopenpayables",
+      "status": "passed"
+    },
+    {
+      "id": "N13-006",
+      "group": "R",
+      "expected": "Preserved invoice current180",
+      "actual": "INV0003 paid76.50/due180",
+      "status": "passed"
+    },
+    {
+      "id": "N13-007",
+      "group": "R",
+      "expected": "Invoice detail subtotal270 less13.50 total256.50",
+      "actual": "Detail270/13.50/256.50 and line270",
+      "status": "passed"
+    },
+    {
+      "id": "N13-008",
+      "group": "R",
+      "expected": "Print subtotal270 less13.50 equals256.50",
+      "actual": "Invoice preview270.00/−13.50/256.50;lineqty3 price100 discount30 net270",
+      "status": "passed"
+    },
+    {
+      "id": "N13-009",
+      "group": "R",
+      "expected": "Saved quote subtotal270/discount13.50/total256.50",
+      "actual": "QT0003 detail270/13.50/256.50;Notposted",
+      "status": "passed"
+    },
+    {
+      "id": "N13-010",
+      "group": "RETURN",
+      "expected": "Fresh physical source preview256.50",
+      "actual": "3x100/line10%/header5% preview256.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-011",
+      "group": "RETURN",
+      "expected": "Fresh physical source saves256.50",
+      "actual": "INV20261017-0005 open256.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-012",
+      "group": "RETURN",
+      "expected": "Fresh full-source return preview256.50",
+      "actual": "qty3 line270 header13.50 total256.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-013",
+      "group": "RETURN",
+      "expected": "Partial1 preview85.50",
+      "actual": "line90/header4.50/total85.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-014",
+      "group": "RETURN",
+      "expected": "Partial1 posts85.50",
+      "actual": "SR0004 total85.50 qty1 price100 line90",
+      "status": "passed"
+    },
+    {
+      "id": "N13-015",
+      "group": "RETURN",
+      "expected": "Remaining2 previews171",
+      "actual": "qty2 line180/header9/total171",
+      "status": "passed"
+    },
+    {
+      "id": "N13-016",
+      "group": "RETURN",
+      "expected": "Linked return price-edit preview must match saved source credit171 or reject edit",
+      "actual": "Price200 givespreview361;acceptedSR0005=171",
+      "status": "failed"
+    },
+    {
+      "id": "N13-017",
+      "group": "RETURN",
+      "expected": "Remaining2 credit remains source171",
+      "actual": "SR0005 accepted171 despite price edit",
+      "status": "passed"
+    },
+    {
+      "id": "N13-018",
+      "group": "RETURN",
+      "expected": "Excess fourth returned unit denied actionably",
+      "actual": "Immediate status This return exceeds remaining quantity on original invoice.",
+      "status": "passed"
+    },
+    {
+      "id": "N13-019",
+      "group": "RETURN",
+      "expected": "Fresh return pair plus invoice exactly3 journal entries",
+      "actual": "21→24,4542.50→5415.50;noexcessreturnentry",
+      "status": "passed"
+    },
+    {
+      "id": "N13-020",
+      "group": "RETURN",
+      "expected": "Remaining2 original cost120 andAR171",
+      "actual": "SR0005 Drinventory120/CrCOGS120/CrAR171/DrSalesReturns171",
+      "status": "passed"
+    },
+    {
+      "id": "N13-021",
+      "group": "RETURN",
+      "expected": "Partial1 original cost60/AR85.50",
+      "actual": "SR0004 Drinventory60/CrCOGS60;DrSalesReturns85.50/CrAR85.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-022",
+      "group": "SERVICE",
+      "expected": "Service quote3x200 total600",
+      "actual": "QT0004 persisted600;explicitService inline SKU Q-D2513-1710-C-T8AZ",
+      "status": "passed"
+    },
+    {
+      "id": "N13-023",
+      "group": "SERVICE",
+      "expected": "Service quote noGL",
+      "actual": "QT0004 Notposted",
+      "status": "passed"
+    },
+    {
+      "id": "N13-024",
+      "group": "SERVICE",
+      "expected": "Quote→order preserves600",
+      "actual": "SO20261017-0003 confirmed600;qty3price200/copiednotes",
+      "status": "passed"
+    },
+    {
+      "id": "N13-025",
+      "group": "SERVICE",
+      "expected": "Service order→invoice preserves600",
+      "actual": "INV0006 persisted600/posted AR600",
+      "status": "passed"
+    },
+    {
+      "id": "N13-026",
+      "group": "SERVICE",
+      "expected": "Prior fresh return source settled",
+      "actual": "INV0005 listpaid256.50 afterSR85.50+171",
+      "status": "passed"
+    },
+    {
+      "id": "N13-027",
+      "group": "SERVICE",
+      "expected": "Receipt250 leavesAR350",
+      "actual": "INV0006 reloadpaid250/balance350",
+      "status": "passed"
+    },
+    {
+      "id": "N13-028",
+      "group": "SERVICE",
+      "expected": "Receipt350 settles remainingAR0",
+      "actual": "INV0006 paid600/balance0",
+      "status": "passed"
+    },
+    {
+      "id": "N13-029",
+      "group": "SERVICE",
+      "expected": "Second service receipt identity350/date17/account1100",
+      "actual": "Printed350.00/17Oct/Bank1100 forINV0006",
+      "status": "passed"
+    },
+    {
+      "id": "N13-030",
+      "group": "SERVICE",
+      "expected": "Converted order UI offers no duplicate conversion",
+      "actual": "SO0003 Actions No actions available;server bypassnotrun",
+      "status": "passed"
+    },
+    {
+      "id": "N13-031",
+      "group": "SERVICE",
+      "expected": "Quote/order no journals;invoice600+receipts250/350 exactly1200debits",
+      "actual": "24→27,5415.50→6615.50;one invoice andtwo paymententries",
+      "status": "passed"
+    },
+    {
+      "id": "N13-032",
+      "group": "SERVICE",
+      "expected": "Service GL only DrAR600/CrRevenue600;noInventory/COGS",
+      "actual": "Expanded serviceinvoice journal has exactly2 lines AR1300/Revenue4000",
+      "status": "passed"
+    },
+    {
+      "id": "N13-033",
+      "group": "MIXED",
+      "expected": "Physical200+Service80+Digital50 header10%=297",
+      "actual": "Preview line330/header33/total297;explicitDigital inline saveSKU Q-D2513-1710-D-XI7J;ServiceSKUretained",
+      "status": "passed"
+    },
+    {
+      "id": "N13-034",
+      "group": "MIXED",
+      "expected": "Mixed saved subtotal330/discount33/total297",
+      "actual": "INV0007 detail330/33/297;3source lines quantities2/1/2",
+      "status": "passed"
+    },
+    {
+      "id": "N13-035",
+      "group": "MIXED",
+      "expected": "Mixed first receipt100 leaves197",
+      "actual": "Printed100/date17/Bank1100 and reload paid100/due197",
+      "status": "passed"
+    },
+    {
+      "id": "N13-036",
+      "group": "MIXED",
+      "expected": "Mixed second receipt50 leaves147",
+      "actual": "Printed50/date17/Bank1100;reload paid150/due147",
+      "status": "passed"
+    },
+    {
+      "id": "N13-037",
+      "group": "MIXED",
+      "expected": "Onephysical+onedigital return preview112.50",
+      "actual": "Line125/header12.50/total112.50 after service removal",
+      "status": "passed"
+    },
+    {
+      "id": "N13-038",
+      "group": "MIXED",
+      "expected": "Mixed partial return posts112.50",
+      "actual": "SR0006 total112.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-039",
+      "group": "MIXED",
+      "expected": "Mixed partial return leaves due34.50",
+      "actual": "INV0007 paid262.50/balance34.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-040",
+      "group": "MIXED",
+      "expected": "Remainingmixed preview184.50/date18 after independent rerender",
+      "actual": "Native date18;line205/header20.50/total184.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-041",
+      "group": "MIXED",
+      "expected": "Future mixed return persisted184.50/date18",
+      "actual": "SR20261018-0007 partial184.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-042",
+      "group": "MIXED",
+      "expected": "Future full cumulative credits close invoice currently",
+      "actual": "INV0007 paid297/balance0",
+      "status": "passed"
+    },
+    {
+      "id": "N13-043",
+      "group": "MIXED",
+      "expected": "AR17 reconstructs currently closed invoice34.50",
+      "actual": "INV0007 historical34.50;aggregate284.50 inclold250",
+      "status": "passed"
+    },
+    {
+      "id": "N13-044",
+      "group": "HISTORY",
+      "expected": "AR18 applies same-day future credit and aggregate250",
+      "actual": "Total250,onlyoldINV2/3;INV7absent",
+      "status": "passed"
+    },
+    {
+      "id": "N13-045",
+      "group": "HISTORY",
+      "expected": "Receive payments uses current debt rather than historical reconstructed amount",
+      "actual": "Currentform only70/180;closedINV5/6/7absent",
+      "status": "passed"
+    },
+    {
+      "id": "N13-046",
+      "group": "MIXED",
+      "expected": "Mixed5postings add984debits/credits",
+      "actual": "Journal27→32,total6615.50→7599.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-047",
+      "group": "MIXED",
+      "expected": "Futuremixedreturn restores only physical cost60",
+      "actual": "SR0007 Drinventory60/CrCOGS60;AR184.50/returns184.50;fourlines",
+      "status": "passed"
+    },
+    {
+      "id": "N13-048",
+      "group": "MIXED",
+      "expected": "Cumulative mixed credits297",
+      "actual": "112.50+184.50=297;invoice0",
+      "status": "passed"
+    },
+    {
+      "id": "N13-049",
+      "group": "MIXED",
+      "expected": "Mixed invoice COGS only physical120",
+      "actual": "INV0007 exact4lines AR297/revenue297/COGS120/inventory120;nodigital/serviceCOGS",
+      "status": "passed"
+    },
+    {
+      "id": "N13-050",
+      "group": "MIXED",
+      "expected": "Mixed partial return onlyphysicalcost60",
+      "actual": "SR0006 exact4lines returns112.50/AR112.50/inventory60/COGS60",
+      "status": "passed"
+    },
+    {
+      "id": "N13-051",
+      "group": "VENDOR",
+      "expected": "Service vendor bill3x100 header14.5%=256.50",
+      "actual": "PUR0005 persisted300/43.50/256.50;referenceAP-A",
+      "status": "passed"
+    },
+    {
+      "id": "N13-052",
+      "group": "VENDOR",
+      "expected": "Purchase detail subtotal adds header once",
+      "actual": "300−43.50=256.50 correct",
+      "status": "passed"
+    },
+    {
+      "id": "N13-053",
+      "group": "VENDOR",
+      "expected": "Vendor valid50/date17/account1100 persists",
+      "actual": "Remittance50/17Oct/Bank1100;PUR0005 paid50/due206.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-054",
+      "group": "VENDOR",
+      "expected": "Source-linked purchase form inherits correct supplier",
+      "actual": "SourcePUR0005 D2513Vendor but form selectsBW261016Supplier",
+      "status": "failed"
+    },
+    {
+      "id": "N13-055",
+      "group": "VENDOR",
+      "expected": "Source supplier mismatch rejected or canonical supplier enforced",
+      "actual": "PR0004 wrongBW supplier85.50 accepted;sourceD2513bill paid135.50/due121",
+      "status": "failed"
+    },
+    {
+      "id": "N13-056",
+      "group": "VENDOR",
+      "expected": "Purchase qty1 header prorated preview85.50",
+      "actual": "100−14.50=85.50 atdate18",
+      "status": "passed"
+    },
+    {
+      "id": "N13-057",
+      "group": "VENDOR",
+      "expected": "Purchase partial amount85.50 persisted date18",
+      "actual": "PR0004=85.50/date18 (wrong supplier, not matching-party acceptance)",
+      "status": "passed"
+    },
+    {
+      "id": "N13-058",
+      "group": "VENDOR",
+      "expected": "Correct supplier remaining2 preview171",
+      "actual": "qty2/header29/total171/date18/sourceD2513Vendor",
+      "status": "passed"
+    },
+    {
+      "id": "N13-059",
+      "group": "VENDOR",
+      "expected": "Correct supplier remaining2 createscredit171 with121 applied50creditdue",
+      "actual": "PR0005 correctD2513Vendor total171/paid121/balance50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-060",
+      "group": "VENDOR",
+      "expected": "AP17 reconstructs fully closed source206.50 despite future returns",
+      "actual": "AP17 PUR0005=206.50;aggregate806.50 inclold600",
+      "status": "passed"
+    },
+    {
+      "id": "N13-061",
+      "group": "VENDOR",
+      "expected": "Separate bill100 open with distinct supplier reference",
+      "actual": "PUR0006 open100/refAP-B;PUR0005 stayspaid256.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-062",
+      "group": "VENDOR",
+      "expected": "Separate genuine18Octpayment100 persists",
+      "actual": "Remittance100/18Oct/Bank1100/PUR0006",
+      "status": "passed"
+    },
+    {
+      "id": "N13-063",
+      "group": "VENDOR",
+      "expected": "AP17 includes later fullypaid bill100",
+      "actual": "PUR0006 historical100;aggregate906.50 incl600+206.50",
+      "status": "passed"
+    },
+    {
+      "id": "N13-064",
+      "group": "VENDOR",
+      "expected": "AP18 applies future return/payment same-day and leavesonlyold600",
+      "actual": "AP18 aggregate600,onlyoldPUR0004",
+      "status": "passed"
+    },
+    {
+      "id": "N13-065",
+      "group": "VENDOR",
+      "expected": "Pay vendors current list excludesfullycredited/paidnewbills",
+      "actual": "OnlyoldPUR0004balance600;newPUR5/6absent",
+      "status": "passed"
+    },
+    {
+      "id": "N13-066",
+      "group": "NUMERIC",
+      "expected": "Line150% rejects explicitly beforepost",
+      "actual": "Immediate status Percentage line discount cannot exceed100%;redirected toinvoicelist,noinvoicecreated (earlier same-call assumed retained form corrected).",
+      "status": "passed"
+    },
+    {
+      "id": "N13-067",
+      "group": "NUMERIC",
+      "expected": "Validation retainsentered customer andlines forcorrection",
+      "actual": "150% rejection redirected list;Newinvoice blankcustomer,nolines;allenteredworkdiscarded",
+      "status": "failed"
+    },
+    {
+      "id": "N13-068",
+      "group": "NUMERIC",
+      "expected": "Rounding source3units/2.99 must be confirmed beforeuse",
+      "actual": "FirstsourceINV0008 persisted1unit/0.99;settledpre-submitvaluecapturemissing;fixtureinvalidfor3unitcase. PreserveandstartseparateExact3 source.",
+      "status": "inconclusive"
+    },
+    {
+      "id": "N13-069",
+      "group": "NUMERIC",
+      "expected": "Fresh verified3-unit source2.99",
+      "actual": "Fullsettledform qty3@1/header0.01 andINV0009 saved2.99",
+      "status": "passed"
+    },
+    {
+      "id": "N13-070",
+      "group": "NUMERIC",
+      "expected": "Aftertwo accepted1unitcredits exact2 credited,oneunit/.99 remains",
+      "actual": "SR0008=1 andSR0009=1 forINV0009source2.99",
+      "status": "passed"
+    },
+    {
+      "id": "N13-071",
+      "group": "NUMERIC",
+      "expected": "Finalremainingunit previews/saves residual.99 andcloses exact2.99",
+      "actual": "Preview1.00;rejected exceeds remainingvalue;fullqty returnblocked",
+      "status": "failed"
+    },
+    {
+      "id": "N13-072",
+      "group": "LEDGER",
+      "expected": "Final journal count42 (21 intended new postings incl invalid fixture)",
+      "actual": "Baseline21→42;noexcess/invalid/finalroundingrejectionjournal",
+      "status": "passed"
+    },
+    {
+      "id": "N13-073",
+      "group": "LEDGER",
+      "expected": "Exact finaldebit/credit8368.48",
+      "actual": "4542.50+873+1200+984+763+0.99+2.99+1+1=8368.48;integrityOK",
+      "status": "passed"
+    },
+    {
+      "id": "N13-074",
+      "group": "LEDGER",
+      "expected": "Vendor service bill usesExpense6800 not inventory",
+      "actual": "PUR0005 DrExpense256.50/CrAP256.50 only",
+      "status": "passed"
+    },
+    {
+      "id": "N13-075",
+      "group": "LEDGER",
+      "expected": "Supplier service return reversesExpense not inventory",
+      "actual": "PR0004/5 DrAP85.50/171,CrExpense85.50/171 only;partyfailureseparate",
+      "status": "passed"
+    },
+    {
+      "id": "N13-076",
+      "group": "LEDGER",
+      "expected": "Digital invoice no physical GL",
+      "actual": "INV0009 onlyDrAR2.99/CrRevenue2.99",
+      "status": "passed"
+    },
+    {
+      "id": "N13-077",
+      "group": "LEDGER",
+      "expected": "Digital return no physical GL",
+      "actual": "SR0009 onlyDrReturns1/CrAR1",
+      "status": "passed"
+    },
+    {
+      "id": "N13-078",
+      "group": "LEDGER",
+      "expected": "Rounding finalrejection leavescorrectcurrentremaining.99",
+      "actual": "INV0009 paid2/balance.99;sourceqty3 retained",
+      "status": "passed"
+    },
+    {
+      "id": "N13-079",
+      "group": "REPORT",
+      "expected": "Netrevenue928.48 incl retainedfixtureandbothroundingremainders",
+      "actual": "Gross2015.98 lessreturns1087.50=928.48",
+      "status": "passed"
+    },
+    {
+      "id": "N13-080",
+      "group": "REPORT",
+      "expected": "Expense160 andCOGS180 afterfullreturnreversals",
+      "actual": "GeneralExpense160;COGS180",
+      "status": "passed"
+    },
+    {
+      "id": "N13-081",
+      "group": "REPORT",
+      "expected": "Octoberprofit588.48",
+      "actual": "928.48−160−180=588.48",
+      "status": "passed"
+    },
+    {
+      "id": "N13-082",
+      "group": "REPORT",
+      "expected": "Cashflow492",
+      "actual": "Baseline-108+service600+mixed150−vendor150=492",
+      "status": "passed"
+    },
+    {
+      "id": "N13-083",
+      "group": "REPORT",
+      "expected": "Bank512",
+      "actual": "−88+600+150−50−100=512;BS512",
+      "status": "passed"
+    },
+    {
+      "id": "N13-084",
+      "group": "REPORT",
+      "expected": "AR26.48",
+      "actual": "174.50−150+0.99+0.99=26.48;BS26.48",
+      "status": "passed"
+    },
+    {
+      "id": "N13-085",
+      "group": "REPORT",
+      "expected": "AP110",
+      "actual": "160−50=110;BS110, partyintegrityfailureseparate",
+      "status": "passed"
+    },
+    {
+      "id": "N13-086",
+      "group": "REPORT",
+      "expected": "InventoryGL180 unchangedafterreturnedphysicals",
+      "actual": "BS180;baseline180 withnet0newphysicalGL",
+      "status": "passed"
+    },
+    {
+      "id": "N13-087",
+      "group": "REPORT",
+      "expected": "Assets698.48",
+      "actual": "cash−20+bank512+AR26.48+inventory180=698.48",
+      "status": "passed"
+    },
+    {
+      "id": "N13-088",
+      "group": "REPORT",
+      "expected": "Liabilities+equity698.48",
+      "actual": "AP110+currentearnings588.48=698.48",
+      "status": "passed"
+    },
+    {
+      "id": "N13-089",
+      "group": "PARTY",
+      "expected": "Sales source picker inherits original customer",
+      "actual": "INV0008 pickedCUS0008 RoundingCustomer bydefault",
+      "status": "passed"
+    },
+    {
+      "id": "N13-090",
+      "group": "PARTY",
+      "expected": "Mismatching customer rejected or canonical sourcecustomer enforced",
+      "actual": "ChangedtoCUS0005;SR0010 underReturnCustomer0.99 accepted,originalCUS0008 INV0008settled0",
+      "status": "failed"
+    },
+    {
+      "id": "N13-091",
+      "group": "PARTY",
+      "expected": "Full digital credit0.99 stillmatches source value",
+      "actual": "SR0010total0.99;INV0008 paid0.99/due0;attributionfailureseparate",
+      "status": "passed"
+    },
+    {
+      "id": "N13-092",
+      "group": "FINAL",
+      "expected": "Final43entries/debitscredits8369.47 aftercustomer identitytest",
+      "actual": "42→43;8368.48+0.99=8369.47;integrityOK",
+      "status": "passed"
+    },
+    {
+      "id": "N13-093",
+      "group": "FINAL",
+      "expected": "FinalAR25.49 after0.99 sourceclosure",
+      "actual": "26.48−0.99=25.49;BS25.49",
+      "status": "passed"
+    },
+    {
+      "id": "N13-094",
+      "group": "FINAL",
+      "expected": "Finalprofit587.49",
+      "actual": "588.48−0.99=587.49;BS/currentincome587.49",
+      "status": "passed"
+    },
+    {
+      "id": "N13-095",
+      "group": "FINAL",
+      "expected": "Finalassets=liabilitiesequity697.49",
+      "actual": "Cash−20+bank512+AR25.49+inventory180=697.49;AP110+earnings587.49=697.49",
+      "status": "passed"
+    }
+  ],
+  "counts": {
+    "passed": 88,
+    "failed": 6,
+    "inconclusive": 1
+  },
+  "endBuild": "v2.5.13 · 1a10201",
+  "acceptance": "withheld;P1sourcepartyintegrityopen"
+}

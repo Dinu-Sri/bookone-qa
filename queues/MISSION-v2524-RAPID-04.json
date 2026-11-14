@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-CYCLE4",
+  "displayName": "Rapid04 rental and denied-actor qualification (not Light-executable)",
+  "candidate": "v2.5.24",
+  "productSha": "UNBOUND_UNTIL_MEDIUM_BINDS_REVIEWED_CANDIDATE",
+  "reportedShortSha": "unbound",
+  "executionReady": false,
+  "status": "awaiting-medium-date-candidate-fixture-binding-NOT-LIGHT-EXECUTABLE",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 15
+  },
+  "oracle": "queues/ORACLE-v2524-RAPID-04.json",
+  "specification": "queues/PLAN-RAPID04-qualification.json",
+  "strategy": "docs/RAPID_WORKFLOW_CYCLES.md",
+  "qaPin": "Medium binds exact QA SHA, live stamp, isolated company A/B locator, and UTC date after reviewing product v2.5.24. This file must not execute.",
+  "transport": {
+    "entry": "dispatchPersistedDesktopAction",
+    "module": "scripts/operator-desktop-cua.mjs",
+    "host": "mcp__cua_repl.js",
+    "compatibility": "ID retains RAPID-01 prefix so unchanged adapter allowedButtons enforcement applies. Old Rapid01–03 helpers/queues are not modified."
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": null,
+    "stopBeforeMidnightMinutes": 5
+  },
+  "fixturePolicy": "Isolated company A with Inventory+Rental on (Pro or equivalent Control Room flags), foreign company B, A Owner/Viewer. Original trading company untouched. Private locator only.",
+  "scopeExclusions": [
+    "Do not execute this planning template",
+    "Do not change original QA company modules or replay Rapid03",
+    "Archive/recovery LAST"
+  ],
+  "cases": [
+    {
+      "id": "R04-GATE",
+      "title": "Fresh exact candidate, isolated A/B actors, guard proof",
+      "dependsOn": [],
+      "expected": "NEW120/20 clock. Exact bound SHA/stamp/A+B fixtures. Actual tool positive/refusal proof before business.",
+      "precondition": "Medium-bound date/candidate/fixture. Isolated A Inventory+Rental on. Foreign B exists. Original company preserved.",
+      "evidence": ["observations", "sourceAndBindings", "preservation"],
+      "lane": "common",
+      "businessSubmission": false,
+      "allowedButtons": ["Logout", "Login"]
+    },
+    {
+      "id": "R04-QUOTE",
+      "title": "Quote 10 rental units at 50",
+      "dependsOn": ["R04-GATE"],
+      "expected": "Hold 10, no journal, fleet 20/1000.",
+      "precondition": "A Owner, rental product 20@50, hire dates bound by Medium.",
+      "evidence": ["observations", "sourceAndBindings", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Post"]
+    },
+    {
+      "id": "R04-ORDER",
+      "title": "Convert quote to order, one reservation",
+      "dependsOn": ["R04-QUOTE"],
+      "expected": "Reserved 10, quote bookings cancelled, no journal.",
+      "precondition": "Quote from R04-QUOTE.",
+      "evidence": ["observations", "sourceAndBindings", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Post"]
+    },
+    {
+      "id": "R04-DEPOSIT",
+      "title": "Collect cash deposit 1000",
+      "dependsOn": ["R04-ORDER"],
+      "expected": "Dr1000 Cr2400, held1000, no income.",
+      "precondition": "Cash 1000 funded. Tender Cash 1000.",
+      "evidence": ["observations", "journalAndStock", "sourceAndBindings"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Collect deposit"]
+    },
+    {
+      "id": "R04-DISPATCH",
+      "title": "Dispatch 10 warehouse to on-rent",
+      "dependsOn": ["R04-DEPOSIT"],
+      "expected": "On-rent 10, owned 20/value 1000, no COGS.",
+      "precondition": "Reserved 10.",
+      "evidence": ["observations", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Dispatch"]
+    },
+    {
+      "id": "R04-RETURN",
+      "title": "Return 8 good + 2 dirty, no charge",
+      "dependsOn": ["R04-DISPATCH"],
+      "expected": "Warehouse 18 wash 2 on-rent 0. No 4450.",
+      "precondition": "Dispatched 10. Charge fields 0.",
+      "evidence": ["observations", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Record return"]
+    },
+    {
+      "id": "R04-WASH",
+      "title": "Release 2 wash to warehouse",
+      "dependsOn": ["R04-RETURN"],
+      "expected": "Warehouse 20 wash 0, no GL.",
+      "precondition": "Wash 2.",
+      "evidence": ["observations", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Mark ready"]
+    },
+    {
+      "id": "R04-INVOICE",
+      "title": "After-return hire invoice 500",
+      "dependsOn": ["R04-WASH"],
+      "expected": "Dr1300 Cr4400, no COGS, no duplicate reservation.",
+      "precondition": "After-return timing. Returned.",
+      "evidence": ["observations", "journalAndStock", "sourceAndBindings"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Post"]
+    },
+    {
+      "id": "R04-RECEIPT",
+      "title": "Receive 500 for hire invoice",
+      "dependsOn": ["R04-INVOICE"],
+      "expected": "Dr1000 Cr1300. Original receipt kept later.",
+      "precondition": "Hire invoice 500 open.",
+      "evidence": ["observations", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Record payment"]
+    },
+    {
+      "id": "R04-CHARGE",
+      "title": "Agreed damage 200 and apply deposit 200",
+      "dependsOn": ["R04-RECEIPT"],
+      "expected": "Dr1300 Cr4450 and Dr2400 Cr1300. Hire order not converted.",
+      "precondition": "Operator types 200. Apply deposit checked. Dirty qty is not the authority.",
+      "evidence": ["observations", "journalAndStock", "sourceAndBindings"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Invoice hire charges"]
+    },
+    {
+      "id": "R04-REFUND",
+      "title": "Refund remaining deposit 800",
+      "dependsOn": ["R04-CHARGE"],
+      "expected": "Dr2400 Cr1000, open 0, cash +700 lifecycle.",
+      "precondition": "Open deposit 800. Tender Cash 1000.",
+      "evidence": ["observations", "journalAndStock"],
+      "lane": "rental",
+      "businessSubmission": true,
+      "allowedButtons": ["Refund deposit"]
+    }
+  ]
+}

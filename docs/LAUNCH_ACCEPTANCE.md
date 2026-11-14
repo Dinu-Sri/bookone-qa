@@ -1,4 +1,62 @@
+# Fixture setup complete — 4 November 2026
+
+Read [setup results](../runs/RUN-20261104-rapid04-fixture-setup.md), [checks](../runs/CHECKS-20261104-rapid04-fixture-setup.json) and [fixture handoff](../handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md). Three accounts created on30October were reused: A Owner, A Viewer and B Owner. A alone is now Pro with Inventory/Rental on; POS/HR off. B and original QA remain Starter with Inventory/Rental off. Fresh logins/roles and saved settings verified. Credentials/company/member IDs remain ignored/private. Original QA context restored.
+
+Current execution QA c9eb6510d3549f28d53b902fe8fa686c274a70b2; product e5bb589267035ffb031b6c083f4e911bb7d04aac / live v2.5.24 · e5bb589. New4Nov remaining-only run 5passed/0running/0pending, no unresolved action; one module save and nine auth transitions, no new accounts or financial events. Clock closed, 1104216ms charged/0paused. Old30Oct clock closed460780457ms/0paused, full usage gap retained; no date retarget/replay.
+
+NEXT remains grouped coding follow-up for D-112, after-return reservation/deposit continuity, Activity mapping and current CI pin/HTTP failures. New prerequisite: A has no locations/products/stock, and ordinary Locations Type offers only Branch/Warehouse/POS counter/Office, no on-rent/wash/repair; supported bay setup must be supplied. Rental defaults still On confirm/Manager override; no settings changed. Account/module setup complete does not make the full rental fixture or Light mission ready. No merge/deploy/launch; backup/restore LAST. Historical pending-authorization notes below are superseded.
+
+<!-- FIXTURE-FINISH-20261104-END -->
+
+# Rapid04 coding qualification — still not launch acceptance
+
+[Handoff](../handoffs/CODING-MISSION-20261030-rapid04-complete.md) delivers a reviewable v2.5.24 prerequisite batch (dispatch permission, agreed charges, cash tender, charge source-link) plus fail-closed operator controls. Isolated company A/B Control Room grant is **requested, not granted**. Operator plan is not Light-executable. Isolated runtime/HTTP rental/credential layers remain not-run. No launch percentage. Backup/restore LAST.
+
+# Medium review complete — Rapid04 coding/fixture qualification first
+
+Read [review](../reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](../handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](../queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.
+
+NEXT: coding/fixture owner delivers one qualified rental/realactor/runtime/control batch, Medium reviews exactcandidate/fixtures and releases an executable Light queue. The40point plan is NOT executable; no date/actor/guard or permissions invented, no repeated blocked Light attempt. Preserve all prior225journal/43move/source history; future minimum64protected sources includes newcustomerrefunds. No merge/deploy/launch;backupLAST.
+
+# Rapid03 workflows complete — 30 October 2026
+
+Product b89dd788b9bec9dc66cb49d22f7b8c2c92015df7 / live v2.5.23 · b89dd78. [Continuation results](../runs/RUN-20261030-rapid03-cont1.md), [checks](../runs/CHECKS-20261030-rapid03-cont1.json), [consolidated handoff](../handoffs/CODING-MISSION-20261030-rapid03-complete.md). New30Oct executionQA456d9f7462748e2e9d157875a4d95438b01ed6f8: 10passed/0pending,0unresolved;2customer cashrefunds40/80 accepted/reconciled. Original29Oct executionQA057f31853b706a068fd268614c6b1a79c4b352ff remains31passed/1inconclusive/4not-run-budget;18financialactions22journals1680. Across separate fingerprints all20 financial actions/24journals1800 complete, netcash/AR/AP/stock/income0; never combine into one original-batch pass.
+
+All62protected/223priorjournals/43moves/settings/masters preserved. Closing225journals27048.11,cash580AR1906.21AP1490,income1849.50/assets3386.21. Both queues CONSUMED; never replay originalinvoice/receipt or refunds, never repair four historical badcredits. Fresh125focused/actual2positive5zeroUIclaimrefusals and originalOwner auth gates passed. Fullcheck remains NOTGREEN (missingdependency/historicalWindowsgovernance). Clock CLOSED,1251983ms charged/0paused; metadata-only tail disclosed.
+
+NEXT: Medium reviews consolidated result and qualifies a substantial next-family batch with legitimate rental fixture, real denied actors/foreign tenant, funded bank/card positives and shared runtime/race/fault/upgrade/storage controls as applicable. Quantity-boundary inertness remains unproved; no invalid submit authorized. No new wrong-money bug in this continuation. No launch/merge/deploy;backup/restore LAST. Historical instructions below are not active execution requests.
+
+<!-- RAPID03-COMPLETE-END -->
+
 # BookOne launch acceptance register
+
+## Rapid03 interrupted results and30October continuation
+
+[Partial run](../runs/RUN-20261030-rapid03-interrupted.md) verifies new supplierrefund state and both allocationfeedback fixes with complete adjacent workflows. Ordinarycustomer invoice/receipt posted; refund40/80 notexecuted before creditgap/dateexpiry. Separate reviewed10case30Octobercontinuation completesremainingrefund lifecycle, no oldtransaction replay. Historicalbadcredits/quantityboundaryinertness/rental/realroles/tenant/race/fault/upgrade/storage gaps remain.
+
+## Next grouped regression — Rapid03
+
+[Review](../reviews/REVIEW-20261029-v2523-rapid03.md) and [Light batch](../handoffs/HANDOFF-20261029-rapid03-sol-light.md) bind newv2.5.23 fullsupplierrefund/AR/AP/customer-cashrefund workflows and actualaudit read. Preparation/livebuild qualification only, no defectclosure. Rental/realdeniedactors/foreign-tenant/race/fault/storage remainopen.
+
+## Current Rapid02 C1 result
+
+[Results](../runs/RUN-20261029-rapid02-cont1.md) and [coding handoff](../handoffs/CODING-MISSION-20261029-rapid02-consolidated.md): all remaining money workflows complete and reconciled; supplier refund state and allocation feedback failures persist, financial audit remains inconclusive. No whole-family/security/rental/customer-refund or launch acceptance. Next grouped coding fix/qualification before substantial regression; historical prepared batches below are consumed.
+
+## Next substantial execution — Rapid02
+
+[Review](../reviews/REVIEW-20261028-cont3-and-rapid02.md) and [Light batch](../handoffs/HANDOFF-20261028-rapid02-sol-light.md):28 checkpoints for full physical/service supplier cash refunds and two-stage multi-source customer/vendor settlement. Preparation/control qualification only; no new business execution or acceptance. Rental fixture/full-product permission, ordinary customer cash-refund tender and persisted audit remain shared qualification work in the [grouped handoff](../handoffs/CODING-MISSION-20261028-rapid02-shared-gaps.md); no grant/quick-create/hidden-action workaround. Fixed28OctoberUTC and fresh exact candidate/actor/profile/openings/guard gates. Fullcheck remains notgreen from Windowsgovernance; focused checks/proof recorded separately. Preserve previous results; backupLAST.
+
+## Latest continuation — CONT3, 28 October 2026
+
+[Run](../runs/RUN-20261028-rapid01-cont3.md), [checks](../runs/CHECKS-20261028-rapid01-cont3.json) and [grouped handoff](../handoffs/CODING-MISSION-20261028-rapid01-cont3.md): remaining physical and delivered-service monetary workflows completed with11 new accepted balanced journals and independent combined reconciliation. Existing bill600 and purchase credit60 were not repeated. All earlier protected/journal/stock data remained intact. Two pre-submit feedback assertions failed without invalid submission; three closure cases lack persisted financial audit evidence. Receipt/remittance and document previews are now positively observed. No whole-family or launch acceptance: refund/rental, real authorization/tenant/race/fault, upgrade/storage and expert gates remain open; backup/restore LAST. Medium reviews this consolidated result before a new substantial batch. Earlier run statements below describe historical scope, not current fixture state.
+
+## Latest execution — Rapid01, 28 October 2026
+
+[Run](../runs/RUN-20261028-rapid01-exec1.md) and [consolidated handoff](../handoffs/CODING-MISSION-20261028-rapid01-exec1.md): digital monetary and mixed core cycles reconciled; fixed-date receipt failure, conversion/calendar incompatibility, unbilled physical GRN and incomplete service/audit layers remain. Receipt/invoice/credit previews are observed available. Six accepted journals do not establish complete physical/service/rental/refund/security or launch acceptance. Next batch must resolve dates once and complete physical/service lifecycles using reviewed current sources/openings.
+
+## Prepared execution cycle — Rapid01, 27 October 2026
+
+[Sol Light handoff](../handoffs/HANDOFF-20261027-rapid-cycle01-sol-light.md) selects41checkpoints across physical purchasing/stock/sales/returns/settlement, digital, delivered service and mixed trading. Use fresh current openings and new source documents; collect one consolidated defect batch and retest fixes plus adjacent workflows. The mission is conditionally executable after its actual guard/actor/profile/source gates. Preparation is not execution or launch acceptance. Missing cash-refund/rental fixtures/controls, receipt/remittance/audit layers, real role/tenant/races/faults, upgrades and archive/recovery remain explicit future acceptance work. No narrower launch scope or overall pass percentage is approved by this cycle.
 
 This register explains the existing machine-readable gates in [customer-readiness.json](../memory/customer-readiness.json). Gate status and evidence links live there; this document defines how to decide acceptance. Passing test percentages are not a readiness percentage. All requested physical, service/digital, rental and mixed scope remains required. No narrower launch scope has been approved.
 

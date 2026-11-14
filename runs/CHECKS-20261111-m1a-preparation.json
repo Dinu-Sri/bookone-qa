@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "liveStamp": "v2.5.25 · a6eda60",
+  "buildEvidence": "ownerdeployment/visibleprefix/reviewedmergedtree;notindependentserverdigest",
+  "restoredActualProof": {
+    "positive": 2,
+    "zeroUIAndClaimRefusals": 5,
+    "clockStatus": "all7closed"
+  },
+  "readOnlyQualification": {
+    "passed": 4,
+    "closingAwaitingPublication": 1,
+    "authSubmissions": 1,
+    "businessSubmissions": 0,
+    "masterSettingsGrantWrites": 0,
+    "sourceCorrection": "ordinarybillreturnAPcredit;cash_purchase-returnbankrefund"
+  },
+  "focusedFinancialTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "metadata": "passed",
+  "newQueueCases": 46,
+  "prepared": true,
+  "executed": false,
+  "releaseAcceptance": "not-established"
+}

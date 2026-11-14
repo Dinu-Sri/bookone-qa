@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "kind": "sanitized-medium-preparation-clock",
+  "mode": "closed",
+  "chargedMs": 5979705,
+  "explicitPausedMs": 0,
+  "totalMinutes": 120,
+  "closingReserveMinutes": 20,
+  "boundary": "All unpaused gaps, including the credit interruption, were charged. No retrospective idle subtraction or measured model-credit claim. No business transaction in preparation. Publication after this close is a metadata-only tail. Sol Light must start a NEW execution clock and ledger."
+}

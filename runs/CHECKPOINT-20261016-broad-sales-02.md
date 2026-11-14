@@ -1,0 +1,9 @@
+# Broad workflow checkpoint 2
+
+Stable observed v2.5.11/0bcdf4d. Continued synthetic session; no auth acceptance. Purchase list after duplicate supplier bill crash contained only PUR0001=240. Over-balance vendor300 submit stayed form with no feedback, no dialog; valid100 saved remittance. PUR0001 then paid100/due140. Create return once made PR0001 physical4×60=240, allocated140 with due100. Original bill now paid240/due0 still offered Create return; second deliberate click made PR0002 another posted4×60=240. Confirm cumulative returned8 against billed4; stock/GL effects still to reconcile.
+
+Vendor remittance URL for actual100,2026-10-16 trusted edited total/amt999/date2020-01-01: printable advice confirms999 on2020-01-01. Customer receipt actual75.50 later exhibits same editable999/date2020 defect. One integrity finding, two variants; no claim ledger was changed by address edits.
+
+QT0001 physical3×100, initial % line selector10,header5% incorrectly computed line290/header14.50/total275.50 (independent expected270/13.50/256.50). Saved275.50 → SO0001 confirmed275.50 → INV0001 open275.50. Details label subtotal275.50 despite line290/discount14.50. Customer overpayment300 on due275.50 stayed form/no feedback/dialog; subsequent75.50 saved receipt. Full invoice-loaded return preview omitted header discount and showed290; save persisted SR0001=275.50 (backend corrected amount). SR modal physical3/line290/total275.50. Extra1 return attempt against fully returned original redirected to list with still one return; no extra visible document. No retry.
+
+Next: repeat conversion guards, full GL/AR/AP/report reconciliation; wider forms/settings/validation then consolidated report. Created records retained; prior fixtures untouched; no release approval. Raw screenshots stay browser session, sanitized outcomes only.

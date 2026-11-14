@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "controls": [
+    {
+      "id": "CTL-ACTOR",
+      "title": "Verify actor and configuration",
+      "expected": "Fresh intended login/session identity; role, tenant, entity/domain, module, location/brand, tax/costing/approval/clock settings verified. Names/sidebar alone do not identify actor.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-TENANT",
+      "title": "Known foreign record denial",
+      "expected": "Run valid own positive and known existing foreign record/object with foreign positive. Cover read/write/export/cache/file boundaries. No foreign data or cross-tenant business mutation.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-ROLE",
+      "title": "Effective role/module/scope",
+      "expected": "Own authorized same-action positive; Viewer/revoked/suspended/restricted role denial on real record. No denied financial/document/stock/allocation/business CREATE effect; telemetry policy separate.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-LOCK",
+      "title": "Dates and closed periods",
+      "expected": "Try before/on/after configured period boundary with actual server check, stale form and correction path. Invalid/locked dates do not post; source history retained.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-RETRY",
+      "title": "Intent identity and ambiguous response",
+      "expected": "Double click/reload/back/timeout after commit; inspect persisted state before replay. At most one accepted effect per declared identity; different-key duplicate policy explicitly reviewed.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-RACE",
+      "title": "Independent concurrent connections",
+      "expected": "Contend for final stock/capacity/balance in isolated infrastructure. Assert both results and persisted conservation; Promise.all on one fake transaction does not prove a race.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-FAULT",
+      "title": "Durable boundary atomicity",
+      "expected": "Ephemeral approved fault at each relevant header/line/stock/journal/allocation/object/audit boundary. Assert rollback or explicit resumable contract, preserve first failure; no shared staging fault injection.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-HISTORY",
+      "title": "Snapshots and configuration transition",
+      "expected": "Rename/reprice/reclassify/toggle settings after posting, reopen stale draft and inspect history/print/export. Issued facts unchanged; changed draft policy explicit; record required compatibility.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-REPORT",
+      "title": "Independent readback and reconciliation",
+      "expected": "Reload persisted records and reconcile exact account/amount/tax/date/tenant/domain/location, stock quantity/value, AR/AP/deposit/fleet, P&L/BS/as-of and source/audit links as applicable.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-UI",
+      "title": "Truthful form and recovery",
+      "expected": "Required fields, invalid input, browser submit variants, retained errors/inputs, busy overlay clearing, read-only receipt recovery and keyboard/navigation. Route load or screenshot alone is not correctness.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-FILE",
+      "title": "Files and exports",
+      "expected": "Applicable record attachments, private object authorization before signing, actual bytes/MIME/limits, safe text export, replacement failure and orphan cleanup; exact thresholds pinned from supported configuration.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-TAX",
+      "title": "Tax and legal applicability",
+      "expected": "Confirm stored classifications, registration, entity/framework, effective source date and expert decision. Synthetic rate arithmetic does not certify legal eligibility; unknown support blocks affected acceptance.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-UPGRADE",
+      "title": "Prior-version preservation",
+      "expected": "Actual prior-release golden records/files upgraded under supported migrations; semantic counts/balances/identity and files preserved. Fresh current schema alone is not upgrade evidence.",
+      "status": "draft",
+      "execution": "not-run"
+    },
+    {
+      "id": "CTL-BOUNDARY",
+      "title": "Data boundaries and precision",
+      "expected": "Explicit zero/negative/at/below/above monetary/quantity/date/length limits, Unicode/whitespace and unsupported enums. Use exact supported bounds; no invented normalization or money from malformed input.",
+      "status": "draft",
+      "execution": "not-run"
+    }
+  ]
+}

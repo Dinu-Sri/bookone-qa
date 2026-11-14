@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2519-LIGHT-04",
+  "candidate": "v2.5.19",
+  "reportedShortSha": "4c3a304",
+  "productSha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+  "qaPlanningBase": "c318ac38df72888df673e838793c197df5495563",
+  "status": "planned-not-executed",
+  "observedLive": {
+    "stamp": "v2.5.19 · 4c3a304",
+    "date": "2026-10-21",
+    "scope": "read-only planning;fresh actor/openings still mandatory"
+  },
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 105,
+    "closingReserveMinutes": 15
+  },
+  "ux": {
+    "version": "1.0.0",
+    "sha256": "383d18ad74978af67e9e75d855c77c87b45a92beb00c101a3338dd0abd01e57f"
+  },
+  "note": "28 fixed slots;25 staging/planning/close,3 isolated blocked. One writer; no deployment crossing. Partial UXW assertions do not accept whole canonical cases. Unknowns to Medium; continue independent safe cases. No credit/model routing claim.",
+  "cases": [
+    {
+      "id": "M19-GATE",
+      "title": "Pin exact live candidate",
+      "dependsOn": [],
+      "precondition": "Read fresh live sidebar/login stamp; verify source commit and QA execution head before any write.",
+      "expected": "Require v2.5.19 · 4c3a304 and full4c3a304e6adc985c591ecb7934382b8929f9b189. Master3e9ffee is a later docs-only commit, NOT an alternate candidate for this queue. A changed deployment stops writes and needs Medium/new queue.",
+      "uxRefs": [],
+      "evidence": [
+        "liveStamp",
+        "fullProductSha",
+        "qaRevision",
+        "freeze"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-ACTOR",
+      "title": "Fresh login, settings and actual openings",
+      "dependsOn": [
+        "M19-GATE"
+      ],
+      "precondition": "Existing private QA N141710 fixture; own company Owner. Sign out/in using supported flow, Remember me off; never print credentials.",
+      "expected": "Verify actor/company and actual TB/journal/stock plus complete sales/VAT/purchase/inventory settings. Historical anchor122 journals13243.63,AR1306.21,AP1090,InvGL660,stock780,GRNI0,VAT46.71,COGS420,profit829.50,assets1966.21 is comparison only. Record drift before planning any effects. Bind VATfalse18%,lastcost,negativeBlock,approvalfalse,requiredsuppliertrue,duplicateblocktrue,RequireGRNfalse,PostGRNIfalse; save/reload each planned transition and restore actual openings at END.",
+      "uxRefs": [],
+      "evidence": [
+        "freshLogin",
+        "actorCompany",
+        "openingBalances",
+        "openingStock",
+        "openingSettings",
+        "profileReload"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-HISTORY",
+      "title": "Preserved failure and legacy draft readback",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Read-only supported UI: INV0032 open300; INV0018 draft10; INV0030 amount draft256.50; INV0031 posted/credited256.50.",
+      "expected": "Do not Save/Post/credit/repair any preserved record. Record actual state; confirm INV0032 still open300 and draft0030 edit economics256.50. Missing historical fixture blocks its substep; no recreation. Zero GL/AR/stock writes.",
+      "uxRefs": [
+        "UXW-006"
+      ],
+      "evidence": [
+        "documents",
+        "editPreview",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-FIX-A",
+      "title": "Fresh physical purchase source A",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "New synthetic physical SKU M19-RETURN,stock0,catalogue sell10,unitcost60; new/verified own vendorA; VATfalse,RequireGRNfalse,PostGRNIfalse,requiredsuppliertrue; unique supplier ref M19-A.",
+      "expected": "Create exactly one direct bill3×60=180. DrInventory180/CrAP180; stock3/value180,source balance180,GRNI unchanged. Verify stored Physical class and SKU, source identity, cost and reference. No GRN substitute or use of old consumed PUR0007.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "evidence": [
+        "fixtureIdentity",
+        "bill",
+        "journal",
+        "stock",
+        "sourceBalance"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-FIX-B",
+      "title": "Different-vendor discounted source B",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Own vendorB distinct fromA; service/manual expense line1×100,line discount0,header5%=5,VATfalse,expense6800,unique ref M19-B.",
+      "expected": "Create exactly one service bill95; Dr6800/CrAP95; source vendorB,qty1,price100,header5,total95. No stock/COGS/GRNI. Retain bill open95 at close.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "evidence": [
+        "fixtureIdentity",
+        "bill",
+        "journal",
+        "sourceBalance",
+        "stockUnchanged"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-PICK-EMPTY",
+      "title": "Generic picker empty to A without reload",
+      "dependsOn": [
+        "M19-FIX-A"
+      ],
+      "precondition": "New purchase return generic path, no source; sourceA remains3/180.",
+      "expected": "SelectA through visible Find bill. WITHOUT reload require vendorA locked,lines3×60,source quantity3,header0,remaining3/value180,total180,price60 readonly. Qty1preview60. Capture same render; no submit yet. Original OBS-M18-PURCHASE-PICKER-STATE preserved separately.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "evidence": [
+        "before",
+        "selectedSource",
+        "renderedLines",
+        "preview",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-PICK-AB",
+      "title": "Switch A to B and back",
+      "dependsOn": [
+        "M19-PICK-EMPTY",
+        "M19-FIX-B"
+      ],
+      "precondition": "No financial submit on picker form; distinct sourcesA3×60/header0 andB1×100/header5.",
+      "expected": "Use supported picker source-change controls: A→B replaces vendor,ancestry,qty1,price100,header5,total95; returnB→A restores qty3/60/header0/180. No mixed fields or writes. If same-form source switch unavailable, record capability gap; do not claim A→B from two fresh pages. Late-response branch is separate blocked slot.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "evidence": [
+        "sourceA",
+        "sourceB",
+        "restoredA",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-PICK-CLEAR",
+      "title": "Clear and reselect source",
+      "dependsOn": [
+        "M19-FIX-A"
+      ],
+      "precondition": "SourceA still3/180, no posted return; use supported clear/unlinked/new controls only.",
+      "expected": "If supported clear exists, remove source and confirm no stale source-bound vendor/line/header/total, then reselectA3×60/180. If clear unsupported, mark that substep blocked; do not tamper with query/hidden props or equate navigation to clear. Continue PARTIAL from a fresh correct A form.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "evidence": [
+        "clearDisposition",
+        "reselectedA",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-PARTIAL",
+      "title": "One purchase return at60",
+      "dependsOn": [
+        "M19-FIX-A"
+      ],
+      "precondition": "ReopenA through supported UI, verify coherent3×60/180. Prior picker failure does not authorize posting wrong lines; use fresh route only after correct preflight.",
+      "expected": "Setqty1; preview60 and source price60 locked; submit ONCE. Persisted credit60,DrAP60/CrInventory60; sourceA due120/remaining2,newSKU2/value120,GRNI0. View/print source/row/total agree. No cash/COGS. If preview inconsistent, fail and stop dependent returns.",
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "evidence": [
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "stock",
+        "print"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-REMAIN",
+      "title": "Remaining two and over-return denial",
+      "dependsOn": [
+        "M19-PARTIAL"
+      ],
+      "precondition": "Fresh reopenA after accepted credit60.",
+      "expected": "Prefillqty2/value120,originalsourceqty3. Setqty3 or split2+2 only if offered; clear exceeded constraint, no fictitious discount. If Save offered submit once and require refusal/all fields retained/zero new credit,GL/AP/stock. Disabled Save proves only client boundary. Do not infer server enforcement.",
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "evidence": [
+        "prefill",
+        "invalidPreview",
+        "denialLayer",
+        "retainedFields",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-PUR-SPLIT",
+      "title": "Purchase added-row source price and close",
+      "dependsOn": [
+        "M19-PARTIAL"
+      ],
+      "precondition": "A remaining2 at60; catalogue sell10/current cost60,originalsourceqty3. Use new return form after conclusive invalid refusal.",
+      "expected": "Create supported1+1 rows; BOTH price60 readonly,source facts retained,rows120=footer120. Submit one credit120 only if coherent. DrAP120/CrInventory120; sourceA0/remaining0,newSKU0/value0. No cash/COGS. This confirms purchase cost-source locking; do not claim catalogue COST differs unless independently bound.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "evidence": [
+        "rowsAndLocks",
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "stock"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-ZERO",
+      "title": "Exhausted source has no accepted additional return",
+      "dependsOn": [
+        "M19-PUR-SPLIT"
+      ],
+      "precondition": "A fully returned; preserve A/B and all historical sources.",
+      "expected": "Supported picker/detail shows remaining0/value0 and no accepted positive credit. Zero/disabled controls recorded at actual layer; no forged requests. ReopenB remains95 unchanged; no journal/stock writes.",
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "evidence": [
+        "zeroSource",
+        "entryDisposition",
+        "sourceB",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-SALES-FIX",
+      "title": "Fresh digital source at100 vs catalogue10",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Verified stored Digital product; catalogue sell10; invoice3×100,no discounts/VAT,owncustomer; notes M19-SPLIT; separate from old INV0032.",
+      "expected": "Save/post exactly one freshinvoice300,DrAR/CrSales300,no stock/COGS. Record actual sourceNumber/privateID alias; catalogue10 remains unchanged. All following split writes target THIS new source only.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "evidence": [
+        "catalogue",
+        "invoice",
+        "journal",
+        "sourceBalance",
+        "stockUnchanged"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-SALES-DENY",
+      "title": "Split2+2 exceeds source3",
+      "dependsOn": [
+        "M19-SALES-FIX"
+      ],
+      "precondition": "Fresh linkedreturn; append same product via catalogue picker.",
+      "expected": "Added rows source100 readonly; set2+2,require qty4>3 explanation and no fake balancing discount. One Save only if offered: refusal retains dates/notes/lines/discounts and zero new credit/GL/AR/stock. Capture immediate response+persisted readback. Clear refusal before correction; ambiguous outcome stops dependent action.",
+      "uxRefs": [
+        "UXW-011",
+        "UXW-002"
+      ],
+      "evidence": [
+        "locks",
+        "invalidPreview",
+        "denialLayer",
+        "retainedFields",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-SALES-CLOSE",
+      "title": "Valid1+1+1 source100, footer300 and post",
+      "dependsOn": [
+        "M19-SALES-FIX",
+        "M19-SALES-DENY"
+      ],
+      "precondition": "Conclusive invalid refusal; same retained form if usable, otherwise record explicit fresh-form correction. Fresh source remainsopen300.",
+      "expected": "Correct only quantities/row split to1+1+1; allprices100 readonly,eachrow100,sum300=footer300. Submit once; persistedcredit300,DrReturns/CrAR300,source0; View/printlinegross300,discount0,header0,net300. No stock/COGS. Any discrepancy stops posting; original INV0032 staysopen300.",
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "evidence": [
+        "rowsAndFooter",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "print",
+        "oldFixtureUnchanged"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-DRAFT",
+      "title": "Discounted draft and full return adjacency",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "New Digital3×100,line10%,header5%,VATfalse; issue21/delivery22/due28Oct,unique notes; ordinary invoice sourcePricedLines empty.",
+      "expected": "Draft/save/reopen/edit/rerender retainsSKU/class/dates/notes and line-net270,header13.50,total256.50. No GL until one explicit Post; DrARCrSales256.50 then one linked fullreturn256.50/source0. Inspect added split rows as available: line net90 each; no compulsory split action if it would repeat the financial event. No stock/COGS.",
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "evidence": [
+        "draft",
+        "reopenedFields",
+        "post",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-TAX",
+      "title": "Historical VAT302.67 adjacency",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "FreshDigital3×100,line10%,header5%; setVATregisteredtrue18 and verify actual stored/taxinvoice classification; no legal eligibility claim.",
+      "expected": "One invoice302.67=supply256.50+VAT46.17. DisableVATregisteredfalse/reload BEFORE linked fullreturn. Preview/post/View/print credit302.67,DrReturns256.50+DrVAT46.17/CrAR302.67,source0,no stock/COGS. If classification/support unverified, block instead of guessing. Restore planned false before other cases and actual openings at END.",
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "evidence": [
+        "taxProfile",
+        "source",
+        "historicalPreview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "settingsReload"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-F7",
+      "title": "Fresh residual ladder after shared row changes",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Separate Digital7×1/header.05,VATfalse; post6.95; no priorreturns.",
+      "expected": "Seven separate qty1credits expected.99,.99,.99,.99,.99,1,1. Checkpoint EACH intent/preview/post/View/journal/sourcequantity/value before next; cumulative6.95/source0/header budget.05 conserved. Partial ladder records every completed step; failure stops dependent ladder only. Fresh arithmetic does NOT certify legacy101c/104c.",
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "evidence": [
+        "source",
+        "eachPreview",
+        "eachCreditBreakdown",
+        "eachJournal",
+        "eachRemaining",
+        "conservation"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-SUPPLIER",
+      "title": "All-field server refusal then corrected bill10",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Fresh manualservice1×10/6800/vendor; requiredsuppliertrue; refblank; distinct dates21/22/28Oct,notes/selects captured.",
+      "expected": "Submit once and distinguish native/client vs actual server refusal; all recoverable fields retained,zeroGL/AP/stock. If conclusive server refusal, changeONLY supplierref to M19-SUP and submit once: exactly one bill10 Dr6800CrAP; original dates/notes retained. No blind rekey/retry. Retainopen10 at close. Whole-slot pass requires the conclusive server refusal AND exactly one corrected bill10. If native validation prevents the server branch, report it blocked/partial; do not remove native constraints to force a request.",
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "evidence": [
+        "submittedFields",
+        "refusal",
+        "retainedFields",
+        "correctedBill",
+        "journal",
+        "unchangedState"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-LISTS",
+      "title": "Shared lists, status and no-write busy cleanup",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Known original/new document numbers; original restored settings; no destructive action.",
+      "expected": "Search exact documentnumber andparty,unmatchedquery,clear; pagination/sort where enough rows. First/last row Actions target correct object and remain visible; cancel confirmation. GET filter/query/back/Cancel never leaves write overlay. No writes; record absent pagination dataset as missing branch, not false full pass.",
+      "uxRefs": [
+        "UXW-004",
+        "UXW-013",
+        "UXW-014",
+        "UXW-015"
+      ],
+      "evidence": [
+        "search",
+        "filterSort",
+        "rowActions",
+        "busyCleanup",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-UNLINKED",
+      "title": "Shared source-less forms retain normal pricing",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Read-only unsaved quote,invoice,salesorder,purchaseorder,receipt,directpurchase/import/expense forms as supported; own SKU cataloguesell10/unitcost60 and taxfalse verified.",
+      "expected": "For each actual available consumer select product: sales/defaultsell10; purchase/cost60 when linePriceModecost by observed form contract. Edit qty/dates/notes then trigger normal rerender; fields/rows persist with no source lock/pricing pollution. Cancel every unsaved form; noGL/stock/new saved docs. List untested/unsupported consumers individually; do not claim full business workflows from this form-level smoke.",
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "evidence": [
+        "consumerMatrix",
+        "normalPrices",
+        "rerenderFields",
+        "cancel",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-QUOTE",
+      "title": "Product search/manual/discount refusal",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "New quote,owncustomer,Digital1×10; issue21/due28Oct,notes; exactSKU/fuzzy/multiple/no-match paths if fixtures exist.",
+      "expected": "Keyboard catalogue add exactlyonce; focus retained,details expansion stable. 150%clientrefusal retainsallfields; correctonly150→0,verifydates afterrerender/nativekeyboardcommit,Saveonequote10/noGL. Separate unsaved Manual line must not autocreateSKU; cancel. No source pricing on unlinked quote.",
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "evidence": [
+        "searchAndFocus",
+        "refusal",
+        "retainedFields",
+        "savedQuote",
+        "noGL"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-KEYBOARD",
+      "title": "Bounded keyboard/help/dialog checks",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Existing StatusHelp,ConfirmDialog,rowmenu and unsaved own invoice; no writes.",
+      "expected": "Complete representative field selection/product search/menu/help/cancel keyboard-only; visible logical focus,Escape as supported,return focus and modal containment,icon names. Record exact state/route and defects. This is partial UXW-017/018 evidence, NOT screen-reader or full accessibility acceptance; don't force absent tooltips.",
+      "uxRefs": [
+        "UXW-017",
+        "UXW-018"
+      ],
+      "evidence": [
+        "keyboardSteps",
+        "focus",
+        "helpDialog",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-NARROW",
+      "title": "390px and320px affected-form smoke",
+      "dependsOn": [
+        "M19-ACTOR"
+      ],
+      "precondition": "Authorized viewport capability; original viewport captured; unsaved return/form with longsynthetictext.",
+      "expected": "Inspect at390 then320CSSpx: party/source/rows/totals/actions/menu usable,focusedcontrolnotentirelyobscured; realtables may scroll. Capture sanitized view. Reset viewport before END. No source posting. Missing capability blocks rather than simulating with CSS/evaluate. No200%text/400%zoom/screenreader claim.",
+      "uxRefs": [
+        "UXW-021",
+        "UXW-022"
+      ],
+      "evidence": [
+        "viewport",
+        "formAndMenu",
+        "focus",
+        "reset",
+        "noWrites"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M19-LATE",
+      "title": "Controlled late-response source race",
+      "dependsOn": [],
+      "precondition": "No reviewed isolated fault environment available.",
+      "expected": "Record BLOCKED infrastructure,ownerMedium+engineering,nextprepareisolatedapprovedfixture; preserve expectedB cannot be overwritten by lateA. No network interception,stress/fault injection on shared staging and no helper-unit substitution.",
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "evidence": [
+        "environmentDisposition",
+        "preservedExpectation",
+        "nextAction"
+      ],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M19-U7",
+      "title": "Authentic legacy101c upgrade",
+      "dependsOn": [],
+      "precondition": "Priorv2.5.14 compiledapp/auth/DB environment still unavailable.",
+      "expected": "Record BLOCKED per RESIDUAL_FIXTURE_PLAN; retain original101c expectation and evidence. No fabricated pre-state,stagingdowngrade/historicalrepair or fresh-ladder substitution. Ownerengineering prepares isolated authentic fixture.",
+      "uxRefs": [],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlan",
+        "nextAction"
+      ],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M19-U10",
+      "title": "Authentic legacy104c upgrade",
+      "dependsOn": [],
+      "precondition": "Priorv2.5.14 compiledapp/auth/DB environment still unavailable.",
+      "expected": "Record BLOCKED per RESIDUAL_FIXTURE_PLAN; retain original104c expectation and evidence. No fabricated pre-state,stagingdowngrade/historicalrepair or fresh-ladder substitution. Ownerengineering prepares isolated authentic fixture.",
+      "uxRefs": [],
+      "evidence": [
+        "environmentDisposition",
+        "fixturePlan",
+        "nextAction"
+      ],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M19-END",
+      "title": "Restore, reconcile and publish",
+      "dependsOn": [],
+      "precondition": "Reserve15active minutes; inspect all submission intents; no automatic replay.",
+      "expected": "Compare actual openings+actual recorded writes,including failures. If all planned financial branches pass: A+180-60-120=0inventory/AP; Bservice95+supplier10=105expense/AP; sale/fullcredit pairs net0; newSKU0; GRNI/cash/COGS/tax/control stock unchanged. From unchanged anchor AP1195,profit724.50,AR1306.21,InvGL660,stock780,assets1966.21. Journal count/turnover derive from actual submissions,not guessed counts. Restore ALL opening sales/VAT/purchase/inventory maps and viewport,save/reloadverify. Preserve failurefixtures,oldINV0032open300 and inheritedstock-GLgap120. Publish immutable checks/run/newbugs/handoff,explicit not-runbudgetscope,endstamp identical. No payments/writeoffs/reset/cleanup/merge/deploy; archiveLAST.",
+      "uxRefs": [],
+      "evidence": [
+        "actualDeltas",
+        "trialBalance",
+        "stock",
+        "fixtureRegister",
+        "settingsReload",
+        "viewportReset",
+        "endStamp",
+        "publishedHandoff"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    }
+  ],
+  "preparedDate": "2026-10-22"
+}

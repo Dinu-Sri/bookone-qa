@@ -1,0 +1,132 @@
+{
+  "productSha": "1a1020127c4ff0f11ccd9d84d736c6b18b235fca",
+  "parentSha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "source": "Exact pinned GitHub commit diff; not a complete runtime graph",
+  "review": "Independent QA actual-diff review; source not expected-result oracle",
+  "files": [
+    {
+      "path": "VERSION",
+      "gitBlobSha": "d9ba762bd3c96fd2f41594bf8f48ddede85feaf1",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "gitBlobSha": "52787e730eceb41170c4de8187fa9abd30cec796",
+      "status": "modified",
+      "additions": 113,
+      "deletions": 24
+    },
+    {
+      "path": "apps/web/src/app/actions/document-print.ts",
+      "gitBlobSha": "834290cc9f131b51df2b0bcf2cce0cfb7e1fb95d",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/app/purchase/print/[id]/page.tsx",
+      "gitBlobSha": "15e50e2e2dca8259f068c3d2752c39a658e2134e",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/app/purchase/returns/new/page.tsx",
+      "gitBlobSha": "ed0b98998275a09e281c17f17d5f51e86c147a31",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "apps/web/src/components/module/commercial-doc-screens.tsx",
+      "gitBlobSha": "6ba52d5e219bdc9a05f3fda5f1eaa1a8524d1e29",
+      "status": "modified",
+      "additions": 26,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/components/module/document-lines-editor.tsx",
+      "gitBlobSha": "faf0b2a6d14192d4c486cb4d95792479b1988894",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 0
+    },
+    {
+      "path": "apps/web/src/components/purchase/commercial-document-detail.tsx",
+      "gitBlobSha": "425eb5124e348648ae96627dba388ac072f7ebf1",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "apps/web/src/components/sales/sales-document-form.tsx",
+      "gitBlobSha": "c3ef585447695ee6a75828aa0888b92da498ef09",
+      "status": "modified",
+      "additions": 18,
+      "deletions": 1
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "gitBlobSha": "1212c91f59a8c6032a3293a3bedba0d762be6c8c",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 0
+    },
+    {
+      "path": "docs/TASK_LOG.md",
+      "gitBlobSha": "feedb4382c4bcb270b6b55dd3f7f10ad26ae332a",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0
+    },
+    {
+      "path": "docs/changes/CHG-20261017-aging-return-preview-subtotal.md",
+      "gitBlobSha": "2b0c7541a4eb1daf43c4cb4078f5b628f59359f6",
+      "status": "added",
+      "additions": 26,
+      "deletions": 0
+    },
+    {
+      "path": "packages/accounting/src/document-guards.ts",
+      "gitBlobSha": "2c7d908ef24ef49fce29dbc37910f9d1796f3926",
+      "status": "modified",
+      "additions": 117,
+      "deletions": 1
+    },
+    {
+      "path": "packages/accounting/src/index.ts",
+      "gitBlobSha": "db939d8dbe3d0288aced2e0cd6c9556a67c65331",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 1
+    },
+    {
+      "path": "packages/accounting/test/document-guards.test.ts",
+      "gitBlobSha": "29a2125cd27cedc2bec6acb6dcd2977a5b640bf6",
+      "status": "modified",
+      "additions": 74,
+      "deletions": 0
+    }
+  ],
+  "directEntities": [
+    "businessDocuments",
+    "businessDocumentLines",
+    "settlementAllocations",
+    "transactions",
+    "parties",
+    "inventoryProducts",
+    "accounts"
+  ],
+  "maintenance": "Original business-map remains exact ead3a82 study; new candidate diff is this explicit overlay. No silent source/execution pin advance. Unmapped/unknown changes broaden review.",
+  "directJourneys": [
+    "WB-PHY.J05",
+    "WB-PHY.J06",
+    "WB-HYB.J02",
+    "WB-CORE.J03",
+    "WB-CORE.J04",
+    "WB-CORE.J06"
+  ],
+  "dependents": "All business books share accounting/source/identity/print/history controls; taxonomy mapping is not execution."
+}

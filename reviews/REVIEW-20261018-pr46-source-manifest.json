@@ -1,0 +1,126 @@
+{
+  "repository": "Dinu-Sri/BookOne",
+  "commit": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "gitBlob": "ea405ee2f3f8e7c382cee4d3b1b6f6ae797d450a",
+      "sha256": "0b2f343b5b11237993c6c2fec252e05118d75aa56b04de2d08a73093de5b99fa",
+      "rawGitBlobVerified": false,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "docs/QA_CHANGE_CONTRACT.md",
+      "gitBlob": "333d519c4a9270e8c2e9bd4177b489654d27d18f",
+      "sha256": "9150e09fe247837d6ead546629250c2ef75697de353e6c438f6f13154d86f03c",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/lib/idempotency.ts",
+      "gitBlob": "3a852f62e7a4d392d9c9ad72ae1494343e059e1b",
+      "sha256": "cb3aa1c6e87a1c97dc0800b4b0f702450e7e484bf0e606e15684cc560b0b6acf",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/lib/idempotency-result.ts",
+      "gitBlob": "7e180b2ff9a637908338fe61f9a9fcf9b7972467",
+      "sha256": "7d800a6b0391d9fba26cdb86cdd73d350fae76cb405818ef0ce3a26d3ca51af7",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/sales/commercial-document-list.tsx",
+      "gitBlob": "2bf40c6cfeae382e03fe8b5c340dbcbaae0fa25e",
+      "sha256": "203c4a9fafa1580f281811ee58c1cf0894f913c25448b3e3ac9c34d8e4c3851e",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/sales/quotation-form.tsx",
+      "gitBlob": "7164b3b08895f0b527c5cac86c96bf78a9475d94",
+      "sha256": "2355ab92a4d514fd840109e93fa79d6d2e1e45746c24f68a1a914a67ff7c4d25",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/sales/quotation-snapshot.tsx",
+      "gitBlob": "bbbd69828b1797755f7212275fb2386a70371241",
+      "sha256": "f6f7cd61d40f35700dcc29e77049a8d3eaabb64fac35a031ac0eab62d558537a",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/print/document-print-sheet.tsx",
+      "gitBlob": "b49c5e51af5dc6d50b3ccb6e83f8744568320ebb",
+      "sha256": "97c915a0d91c3659095a882fa1b902dbc021639855439425dfbe471be4dae839",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/print/print-preview-button.tsx",
+      "gitBlob": "5caa704b5d0a8c573c14ad98a07ae22c8f6921b2",
+      "sha256": "536cca011ad5504322c686f704a35a13fb7890649347d2c04cff7a98c15ba7f2",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/module/party-name-fields.tsx",
+      "gitBlob": "49e0adc9a4ae61e3b07dfb2998678547993fc07e",
+      "sha256": "1c8e8e5e6d2f6f9172dce516afbc94dd1619fda057efdbeb1a9804d6eccdb312",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/ui/form-busy.tsx",
+      "gitBlob": "446db7ea6c07bc7ce4cfba547ebf7909c76189ee",
+      "sha256": "3505fd90641790fb6b2fdfb619719b96e0ac9cd37300cb130cccaa440115c8c2",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/components/purchase/commercial-document-detail.tsx",
+      "gitBlob": "425eb5124e348648ae96627dba388ac072f7ebf1",
+      "sha256": "5076781302dff7bc06c4cbeb33a192c2eb05b33a0d6a0b26b8f1c3d37916f9f6",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/app/actions/purchase-settings.ts",
+      "gitBlob": "fc4445215cc74e5113be119396c49e9a37c3c147",
+      "sha256": "224c5f41debe11191025c4b79565a48991a24fd9b88dbccddea5fe9664f9f29b",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "gitBlob": "0bd485d106b10be4cacc79ca7bdebbc0dda4deab",
+      "sha256": "0cd3724e12cd9599e9bbc8cbef9eb6e1fed3bd022aee20388e9b20337905e7b6",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/app/sales/returns/page.tsx",
+      "gitBlob": "db913fd5ac1472d88bb395b05f77e76e19b2a187",
+      "sha256": "f375396f639161696fc3807737075d1e55240c4ff3563c78a90bb5e9dca36fb8",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/app/sales/quotations/new/page.tsx",
+      "gitBlob": "9c420a72886271d2e38f227c01151ed8f1631af7",
+      "sha256": "cc86751c78a4638682471514a760fe0b0f91277769b44ea1e4c39295130cdba7",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    },
+    {
+      "path": "apps/web/src/app/sales/invoices/[id]/edit/page.tsx",
+      "gitBlob": "51e3a07e5519d7a112788eea764acb1d266643c9",
+      "sha256": "6200be2c2bacbab576d87db4552b425d640eba655ca8f1becf2acaa41fef5ffc",
+      "rawGitBlobVerified": true,
+      "provenance": "GitHub fetch_file pinned commit; connector-text normalization possible if raw mismatch"
+    }
+  ],
+  "boundary": "Pinned connector source text, raw Git blob equality only where flagged; no runtime/schema acceptance"
+}

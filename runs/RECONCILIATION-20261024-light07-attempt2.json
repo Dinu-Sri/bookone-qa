@@ -1,0 +1,19 @@
+{
+  "scope": "Actual accepted partial branch only",
+  "acceptedFinancialEvents": 2,
+  "journalsDelta": 2,
+  "debitDeltaCents": 80000,
+  "creditDeltaCents": 80000,
+  "ARDeltaCents": 60000,
+  "APDeltaCents": 20000,
+  "salesDeltaCents": 60000,
+  "expenseDeltaCents": 20000,
+  "liquidDeltaCents": 0,
+  "netIncomeDeltaCents": 40000,
+  "assetsDeltaCents": 60000,
+  "liabilitiesDeltaCents": 20000,
+  "allOtherTrialAccountsUnchanged": true,
+  "catalogueUnchanged": true,
+  "fullSevenEventOracleExecuted": false,
+  "rawBaselinesPrivate": true
+}

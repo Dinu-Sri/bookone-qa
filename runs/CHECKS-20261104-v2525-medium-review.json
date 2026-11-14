@@ -1,0 +1,1107 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-04",
+  "kind": "independent-medium-candidate-review",
+  "productSha": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+  "productStamp": "v2.5.25 · 5ea0d6e",
+  "codingQa": "506db5baa0106784ead44749416639b9c47accdd",
+  "testedReviewQa": "5043390ae43ca4bd677b7705252582a1003ec341",
+  "ciQa": "d22e724722126df74fb56df544587674a113335b",
+  "ciTree": "40b96b3a817101753c00085202fb214107623872",
+  "ciTreeEqualsReviewHead": true,
+  "local": {
+    "focusedPassed": 19,
+    "focusedFailed": 0,
+    "metadata": "passed",
+    "productUnits": "author-reported-310-not-independently-rerun"
+  },
+  "postgres": {
+    "runUrl": "https://github.com/Dinu-Sri/bookone-qa/actions/runs/41860758098",
+    "fingerprint": {
+      "productSha": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+      "productStamp": "v2.5.25 · 5ea0d6e",
+      "qaSha": "d22e724722126df74fb56df544587674a113335b",
+      "qaDirty": false,
+      "node": "v22.23.4",
+      "qaContentHash": "e6242e0d4a340217799a353df28c82d20b4fc0e75c9eef291e6c80b9aa0b3a7a",
+      "preparationHash": "786670fdaef4a08e080c7354c12cd8db8ddca894bcd7a2a5c6dcbcac2365f3a7",
+      "fixtureVersion": "runtime-v1",
+      "environment": "ephemeral-loopback-PostgreSQL16"
+    },
+    "passed": 136,
+    "failed": 0,
+    "lanes": [
+      {
+        "lane": "postgres-rls",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "RT-001",
+            "status": "passed"
+          },
+          {
+            "id": "RT-002",
+            "status": "passed"
+          },
+          {
+            "id": "RT-003",
+            "status": "passed"
+          },
+          {
+            "id": "RT-004",
+            "status": "passed"
+          },
+          {
+            "id": "RT-012",
+            "status": "passed"
+          },
+          {
+            "id": "RT-013",
+            "status": "passed"
+          },
+          {
+            "id": "RT-014",
+            "status": "passed"
+          },
+          {
+            "id": "RT-015",
+            "status": "passed"
+          },
+          {
+            "id": "RT-016",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "commercial-lifecycle",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "B-101",
+            "status": "passed"
+          },
+          {
+            "id": "B-102",
+            "status": "passed"
+          },
+          {
+            "id": "B-103",
+            "status": "passed"
+          },
+          {
+            "id": "E-115",
+            "status": "passed"
+          },
+          {
+            "id": "E-116",
+            "status": "passed"
+          },
+          {
+            "id": "E-117",
+            "status": "passed"
+          },
+          {
+            "id": "RT-008",
+            "status": "passed"
+          },
+          {
+            "id": "RT-009",
+            "status": "passed"
+          },
+          {
+            "id": "RT-010",
+            "status": "passed"
+          },
+          {
+            "id": "RT-011",
+            "status": "passed"
+          },
+          {
+            "id": "B-104",
+            "status": "passed"
+          },
+          {
+            "id": "RT-060",
+            "status": "passed"
+          },
+          {
+            "id": "RT-061",
+            "status": "passed"
+          },
+          {
+            "id": "RT-062",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "reversal-concurrency",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "RT-005",
+            "status": "passed"
+          },
+          {
+            "id": "RT-006",
+            "status": "passed"
+          },
+          {
+            "id": "RT-007",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "physical-lifecycle",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "C-101",
+            "status": "passed"
+          },
+          {
+            "id": "C-102",
+            "status": "passed"
+          },
+          {
+            "id": "C-103",
+            "status": "passed"
+          },
+          {
+            "id": "C-104",
+            "status": "passed"
+          },
+          {
+            "id": "C-105",
+            "status": "passed"
+          },
+          {
+            "id": "C-106",
+            "status": "passed"
+          },
+          {
+            "id": "C-107",
+            "status": "passed"
+          },
+          {
+            "id": "C-115",
+            "status": "passed"
+          },
+          {
+            "id": "C-116",
+            "status": "passed"
+          },
+          {
+            "id": "RT-017",
+            "status": "passed"
+          },
+          {
+            "id": "RT-018",
+            "status": "passed"
+          },
+          {
+            "id": "RT-019",
+            "status": "passed"
+          },
+          {
+            "id": "RT-020",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "physical-nonowner",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "C-201",
+            "status": "passed"
+          },
+          {
+            "id": "C-202",
+            "status": "passed"
+          },
+          {
+            "id": "C-203",
+            "status": "passed"
+          },
+          {
+            "id": "C-204",
+            "status": "passed"
+          },
+          {
+            "id": "C-205",
+            "status": "passed"
+          },
+          {
+            "id": "C-206",
+            "status": "passed"
+          },
+          {
+            "id": "C-207",
+            "status": "passed"
+          },
+          {
+            "id": "C-215",
+            "status": "passed"
+          },
+          {
+            "id": "C-216",
+            "status": "passed"
+          },
+          {
+            "id": "RT-117",
+            "status": "passed"
+          },
+          {
+            "id": "RT-118",
+            "status": "passed"
+          },
+          {
+            "id": "RT-119",
+            "status": "passed"
+          },
+          {
+            "id": "RT-120",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "commercial-deep",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "B-106",
+            "status": "passed"
+          },
+          {
+            "id": "B-107",
+            "status": "passed"
+          },
+          {
+            "id": "B-108",
+            "status": "passed"
+          },
+          {
+            "id": "B-111",
+            "status": "passed"
+          },
+          {
+            "id": "B-112",
+            "status": "passed"
+          },
+          {
+            "id": "B-113",
+            "status": "passed"
+          },
+          {
+            "id": "E-108",
+            "status": "passed"
+          },
+          {
+            "id": "E-113",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "archive-persistence",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "S-0774",
+            "status": "passed"
+          },
+          {
+            "id": "S-0775",
+            "status": "passed"
+          },
+          {
+            "id": "S-0776",
+            "status": "passed"
+          },
+          {
+            "id": "S-0778",
+            "status": "passed"
+          },
+          {
+            "id": "S-0780",
+            "status": "passed"
+          },
+          {
+            "id": "S-0781",
+            "status": "passed"
+          },
+          {
+            "id": "S-0782",
+            "status": "passed"
+          },
+          {
+            "id": "S-0783",
+            "status": "passed"
+          },
+          {
+            "id": "S-0784",
+            "status": "passed"
+          },
+          {
+            "id": "S-0785",
+            "status": "passed"
+          },
+          {
+            "id": "S-0787",
+            "status": "passed"
+          },
+          {
+            "id": "S-0788",
+            "status": "passed"
+          },
+          {
+            "id": "S-0789",
+            "status": "passed"
+          },
+          {
+            "id": "S-0793",
+            "status": "passed"
+          },
+          {
+            "id": "RT-027",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "rental-lifecycle",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "D-101",
+            "status": "passed"
+          },
+          {
+            "id": "D-102",
+            "status": "passed"
+          },
+          {
+            "id": "D-103",
+            "status": "passed"
+          },
+          {
+            "id": "D-104",
+            "status": "passed"
+          },
+          {
+            "id": "D-105",
+            "status": "passed"
+          },
+          {
+            "id": "D-109",
+            "status": "passed"
+          },
+          {
+            "id": "D-110",
+            "status": "passed"
+          },
+          {
+            "id": "D-112",
+            "status": "passed"
+          },
+          {
+            "id": "D-117",
+            "status": "passed"
+          },
+          {
+            "id": "D-118",
+            "status": "passed"
+          },
+          {
+            "id": "RT-023",
+            "status": "passed"
+          },
+          {
+            "id": "E-104",
+            "status": "passed"
+          },
+          {
+            "id": "D-113",
+            "status": "passed"
+          },
+          {
+            "id": "D-114",
+            "status": "passed"
+          },
+          {
+            "id": "D-116",
+            "status": "passed"
+          },
+          {
+            "id": "D-119",
+            "status": "passed"
+          },
+          {
+            "id": "D-120",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "stock-transfer",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "C-109",
+            "status": "passed"
+          },
+          {
+            "id": "RT-021",
+            "status": "passed"
+          },
+          {
+            "id": "RT-022",
+            "status": "passed"
+          },
+          {
+            "id": "C-114",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "payment-boundaries",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "RT-024",
+            "status": "passed"
+          },
+          {
+            "id": "B-115",
+            "status": "passed"
+          },
+          {
+            "id": "RT-025",
+            "status": "passed"
+          },
+          {
+            "id": "RT-026",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "inventory-valuation",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "C-111",
+            "status": "passed"
+          },
+          {
+            "id": "RT-032",
+            "status": "passed"
+          },
+          {
+            "id": "RT-028",
+            "status": "passed"
+          },
+          {
+            "id": "RT-030",
+            "status": "passed"
+          },
+          {
+            "id": "RT-031",
+            "status": "passed"
+          },
+          {
+            "id": "RT-029",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "sales-value-boundaries",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "B-114",
+            "status": "passed"
+          },
+          {
+            "id": "RT-040",
+            "status": "passed"
+          },
+          {
+            "id": "RT-033",
+            "status": "passed"
+          },
+          {
+            "id": "RT-034",
+            "status": "passed"
+          },
+          {
+            "id": "RT-035",
+            "status": "passed"
+          },
+          {
+            "id": "RT-036",
+            "status": "passed"
+          },
+          {
+            "id": "RT-037",
+            "status": "passed"
+          },
+          {
+            "id": "RT-038",
+            "status": "passed"
+          },
+          {
+            "id": "B-105",
+            "status": "passed"
+          },
+          {
+            "id": "RT-039",
+            "status": "passed"
+          },
+          {
+            "id": "RT-041",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "lane": "role-scope-boundaries",
+        "status": "passed",
+        "cases": [
+          {
+            "id": "B-109",
+            "status": "passed"
+          },
+          {
+            "id": "RT-042",
+            "status": "passed"
+          },
+          {
+            "id": "RT-043",
+            "status": "passed"
+          },
+          {
+            "id": "RT-044",
+            "status": "passed"
+          },
+          {
+            "id": "RT-045",
+            "status": "passed"
+          },
+          {
+            "id": "RT-046",
+            "status": "passed"
+          },
+          {
+            "id": "RT-047",
+            "status": "passed"
+          },
+          {
+            "id": "RT-048",
+            "status": "passed"
+          },
+          {
+            "id": "RT-049",
+            "status": "passed"
+          },
+          {
+            "id": "RT-050",
+            "status": "passed"
+          },
+          {
+            "id": "RT-051",
+            "status": "passed"
+          },
+          {
+            "id": "RT-052",
+            "status": "passed"
+          },
+          {
+            "id": "RT-053",
+            "status": "passed"
+          },
+          {
+            "id": "RT-054",
+            "status": "passed"
+          },
+          {
+            "id": "RT-055",
+            "status": "passed"
+          },
+          {
+            "id": "RT-056",
+            "status": "passed"
+          },
+          {
+            "id": "RT-057",
+            "status": "passed"
+          },
+          {
+            "id": "RT-058",
+            "status": "passed"
+          },
+          {
+            "id": "RT-059",
+            "status": "passed"
+          }
+        ]
+      }
+    ]
+  },
+  "https": {
+    "runUrl": "https://github.com/Dinu-Sri/bookone-qa/actions/runs/41860757738",
+    "fingerprint": {
+      "productSha": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+      "productStamp": "v2.5.25 · 5ea0d6e",
+      "qaSha": "d22e724722126df74fb56df544587674a113335b",
+      "qaDirty": false,
+      "qaContentHash": "e6242e0d4a340217799a353df28c82d20b4fc0e75c9eef291e6c80b9aa0b3a7a",
+      "node": "v22.23.4",
+      "productLockHash": "a16590128c58e226e3c1c4798397d892e6dec6cc07f5b9473f95622afbc7676e",
+      "fixtureVersion": "http-v4-canonical-loopback",
+      "transport": "canonical-localhost-TLS-pinned-IPv4-Next-custom-server",
+      "schemaMigrations": 45,
+      "nextBuildId": "8kPriDs6_H19SRgSYSsgO",
+      "nextVersion": "15.5.19",
+      "betterAuthVersion": "1.6.20"
+    },
+    "setup": "passed",
+    "totals": {
+      "passed": 30,
+      "failed": 0,
+      "blocked": 0
+    },
+    "lanes": [
+      {
+        "lane": "owner-db-baseline",
+        "cases": [
+          {
+            "id": "HTTP-001",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "anonymousStatus": 307,
+              "anonymousRedirectSameOrigin": 1,
+              "anonymousRedirectBackendOrigin": 0,
+              "anonymousRedirectBackendTlsOrigin": 0,
+              "anonymousRedirectLoginPath": 1,
+              "anonymousRedirectExpectedFrom": 1,
+              "anonymousRedirectLocalhostBackend": 0,
+              "anonymousRedirectHostLocalhost": 1,
+              "anonymousRedirectHttps": 1,
+              "anonymousRedirectLoopbackPort": 3443,
+              "verifiedActors": 6,
+              "expectedActors": 6,
+              "wrongPasswordStatus": 401
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-002",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerStatus": 200,
+              "viewerStatus": 200,
+              "foreignStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-003",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "foreignStatus": 307
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-004",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerProfileChanged": 0,
+              "ownerProfileSaved": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-005",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerControlStatus": 307,
+              "viewerControlStatus": 307,
+              "platformControlStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-006",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "staleSessionAuthenticated": 0
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-007",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerReceiptStatus": 200,
+              "viewerReceiptStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-008",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "paidCents": 17500,
+              "balanceCents": 42500,
+              "expectedPaidCents": 17500,
+              "newJournalLines": 2,
+              "actionTransportVerified": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-009",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "legacyViewerBecameOwner": 0,
+              "legacyOwnerRepair": 1,
+              "paidAfterLegacyViewerCents": 17500,
+              "finalPaidCents": 20000,
+              "expectedFinalPaidCents": 20000
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-010",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-011",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-012",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-013",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-014",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerOnRentStatus": 200,
+              "ownerAuditStatus": 200,
+              "viewerOnRentStatus": 200,
+              "viewerAuditStatus": 200,
+              "foreignOnRentStatus": 307,
+              "foreignAuditStatus": 307
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-015",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "hireActionTransportVerified": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          }
+        ]
+      },
+      {
+        "lane": "nonowner-nobypassrls",
+        "cases": [
+          {
+            "id": "HTTP-101",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "anonymousStatus": 307,
+              "anonymousRedirectSameOrigin": 1,
+              "anonymousRedirectBackendOrigin": 0,
+              "anonymousRedirectBackendTlsOrigin": 0,
+              "anonymousRedirectLoginPath": 1,
+              "anonymousRedirectExpectedFrom": 1,
+              "anonymousRedirectLocalhostBackend": 0,
+              "anonymousRedirectHostLocalhost": 1,
+              "anonymousRedirectHttps": 1,
+              "anonymousRedirectLoopbackPort": 3443,
+              "verifiedActors": 6,
+              "expectedActors": 6,
+              "wrongPasswordStatus": 401
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-102",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerStatus": 200,
+              "viewerStatus": 200,
+              "foreignStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-103",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "foreignStatus": 307
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-104",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerProfileChanged": 0,
+              "ownerProfileSaved": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-105",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerControlStatus": 307,
+              "viewerControlStatus": 307,
+              "platformControlStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-106",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "staleSessionAuthenticated": 0
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-107",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerReceiptStatus": 200,
+              "viewerReceiptStatus": 200
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-108",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "paidCents": 17500,
+              "balanceCents": 42500,
+              "expectedPaidCents": 17500,
+              "newJournalLines": 2,
+              "actionTransportVerified": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-109",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "legacyViewerBecameOwner": 0,
+              "legacyOwnerRepair": 1,
+              "paidAfterLegacyViewerCents": 17500,
+              "finalPaidCents": 20000,
+              "expectedFinalPaidCents": 20000
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-110",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-111",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-112",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-113",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "viewerSettingChanged": 0,
+              "ownerSettingSaved": 1,
+              "postedFactsUnchanged": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-114",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "ownerOnRentStatus": 200,
+              "ownerAuditStatus": 200,
+              "viewerOnRentStatus": 200,
+              "viewerAuditStatus": 200,
+              "foreignOnRentStatus": 307,
+              "foreignAuditStatus": 307
+            },
+            "missing": [],
+            "evidenceComplete": true
+          },
+          {
+            "id": "HTTP-115",
+            "status": "passed",
+            "failedAssertions": [],
+            "observations": {
+              "hireActionTransportVerified": 1
+            },
+            "missing": [],
+            "evidenceComplete": true
+          }
+        ]
+      }
+    ]
+  },
+  "previousHttps": {
+    "run": 41851603366,
+    "passed": 26,
+    "failed": 4,
+    "blocked": 0,
+    "failures": [
+      "HTTP-007",
+      "HTTP-107",
+      "HTTP-013",
+      "HTTP-113"
+    ],
+    "disposition": "preserved-harness-errors-corrected-30-case-retest-passed"
+  },
+  "campaign": {
+    "run": 41851603437,
+    "executedGate": "passed",
+    "acceptedFullWorkflows": 0,
+    "definedWorkflows": 137,
+    "partialBindings": 67,
+    "withoutBindings": 70,
+    "acceptance": "not-established"
+  },
+  "live": {
+    "verifiedThisReview": false,
+    "browser": "selected-Chrome-2-unavailable",
+    "lastObservedStamp": "v2.5.24 · e5bb589",
+    "productPr10": "open-unmerged-at-review"
+  },
+  "fixture": {
+    "accountsAndModules": "completed-PR93-reuse",
+    "rentalBusinessFixtureReady": false
+  },
+  "lightExecutable": false,
+  "noMergeDeploy": true,
+  "productAcceptance": "not-established"
+}

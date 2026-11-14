@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-CYCLE3",
+  "displayName": "Rapid03 v2.5.23 grouped regression and ordinary customer cash refund",
+  "candidate": "v2.5.23",
+  "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "reportedShortSha": "b89dd78",
+  "executionReady": true,
+  "status": "reviewed-conditional-fresh-execution-gates-required-not-executed",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 20
+  },
+  "oracle": "queues/ORACLE-v2523-RAPID-03.json",
+  "strategy": "docs/RAPID_WORKFLOW_CYCLES.md",
+  "qaPin": "Exact published preparation commit in localcopyableprompt; compare cleanHEAD before init/browser. Anynewday/product/guardchange needs newreviewedmission, not editedexpectations.",
+  "transport": {
+    "entry": "dispatchPersistedDesktopAction",
+    "module": "scripts/operator-desktop-cua.mjs",
+    "host": "mcp__cua_repl.js",
+    "compatibility": "ID deliberately retains RAPID-01 prefix so unchangedadapter exact allowedButtons enforcement applies. All guard modules unchanged; newhelper/queue/oracle only."
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-10-29",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "fixturePolicy": "New R03 run-owned sources only; original actor/current profile, existing physical/digital/customer/vendors. No masters/settings/grants/company changes. Prior Rapid02 and all earlier sources protected, including four historically open cash-refund credits.",
+  "scheduling": "Full physical supplier cash cycle, full service supplier cash cycle, new AR/AP two-source settlements, then NEW ordinary customer service cash-refund full cycle. Continue independent qualified lanes, no unknown-effect dependencies. Fresh funds before each payout.",
+  "scopeExclusions": [
+    "Rental lifecycle needs legitimate isolated Inventory+Rental enabled fixture; no settings/grants changes in this batch",
+    "Real denied-role/foreign-tenant/race/fault/upgrade/storage claims unqualified here; preserve gaps, no bypass",
+    "Bank/card customer-refund positives unfunded/unqualified; inspect options only, no funding transfers",
+    "Historical repair/replay and physical printing; backup/restore LAST"
+  ],
+  "cases": [
+    {
+      "id": "R03-GATE",
+      "title": "Fresh exact candidate, guard proof and original actor",
+      "dependsOn": [],
+      "expected": "NEW120/20 clock BEFORE browser/auth. Fresh focused tests and actual2positive/5zeroUI/claim refusal proof. Exact b89dd78/v2.5.23 product and exact publishedQA; agent guarded Logout→protectedreload redirect→originalQA Login Rememberoff. First failures retained; no blind retry.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "common",
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ]
+    },
+    {
+      "id": "R03-OPEN",
+      "title": "Full current openings and qualify new-source forms",
+      "dependsOn": [
+        "R03-GATE"
+      ],
+      "expected": "Capture current settings3/account definitions32, all journals/TB/PNL/BS/cashflow/datedARAP/catalogue/levels/all stock movement pages and union of prior32 protected routes plus12 C1 sources (deduplicate actual URLs: expected44). Private C1 source map includes original service purchase duplicate, do not count45. Hints only:201journals25248.11,cash580,AR1906.21,AP1490,inventoryGL900/value1020,qty8cost60,moves40; reread all. Qualify exact ordinary return source picker/tender1000 and Creditonly; no masters/settings/grants. Fresh cash>=240. Capture historical four refund credits open0paid balances60/180/40/40 unchanged; new fix must not repair them.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "common",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-P-BUY",
+      "title": "Physical cash purchase4x60=240",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "New cashpurchase4physical@60=240 to existing physicalsupplier, cash1000, date/delivery29Oct due31, unique supplierref. One journal Dr5100 240/Cr1000 240; qty+4, one movement; noAP.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "physicalCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save cash purchase"
+      ]
+    },
+    {
+      "id": "R03-P-BOUND",
+      "title": "Safe excessive-return client boundary",
+      "dependsOn": [
+        "R03-P-BUY"
+      ],
+      "expected": "Source owncashpurchase4; enter qty5 at60, expect explicitremainingqty/range feedback and disabled/inertSave. Do NOT submit inconsistent amount. Confirm zero documents/journals/stock/cash effects, restore correct form or navigate away.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "physicalCash",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-P-RETURN1",
+      "title": "First physical cash refund1x60",
+      "dependsOn": [
+        "R03-P-BUY"
+      ],
+      "expected": "Create linkedpurchase_return1@60=60, remaining source4 then3; Dr1000 60/Cr5100 60, qty-1, one movement, noAP. Exactsource type cash_purchase and account1000 independently proven; no extra vendor payment/receipt. Date29 due31. NEW credit must persist refunded, paid=total, balance0 on detail/list/reload; exactly one cash reversal, original purchase payment unchanged. Use visible cash1000 tender.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "physicalCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R03-P-RETURN2",
+      "title": "Refund remaining physical3x60",
+      "dependsOn": [
+        "R03-P-RETURN1"
+      ],
+      "expected": "Reopen owncashpurchase source picker and fresh remaining3/value180; linkedpurchase_return3@60=180, Dr1000 180/Cr5100 180, qty-3. Cumulativeqtyreturns4/value240, noAP, no more remaining. No duplicate purchase/return. NEW credit must persist refunded, paid=total, balance0 on detail/list/reload; exactly one cash reversal, original purchase payment unchanged. Use visible cash1000 tender.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "physicalCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R03-P-HISTORY",
+      "title": "Physical cash-refund full closure",
+      "dependsOn": [
+        "R03-P-RETURN2"
+      ],
+      "expected": "Cash/stock/inventory net0 from this lane;3journalsDrCr480, movements+4,-1,-3. Purchase and both refund credits source/history/payment state agree with settled cash; refund credits should have zero open payable/receivable. Original payment preserved, no duplicate/refund money beyondsource. Loaded previews, periodreports, inventorycost and source remaining checked. Persisted actor/action audit unavailable means this layer inconclusive, not entire money rejection. Activity now available: filter each actual source/payment allocation via observed record IDs, bind actor/action/event/source/amount; save private evidence. Missing rows/assertions remain inconclusive, do not pass from journals. Historical missing-audit result stays historical.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "physicalCash",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-S-BUY",
+      "title": "Manual service cash expense2x40=80",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "New delivered manualService expense2x40=80, expense6800, cash1000 existingservicevendor, SaveasproductOFF, unique reference. Dr6800 80/Cr1000 80, date/delivery29 due31; noAP/stock/COGS/master.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "serviceCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save cash purchase"
+      ]
+    },
+    {
+      "id": "R03-S-RETURN1",
+      "title": "First service supplier cash refund40",
+      "dependsOn": [
+        "R03-S-BUY"
+      ],
+      "expected": "Sourcecashpurchase manualService2x40; linkedreturn1x40 Dr1000 40/Cr6800 40, noAP/stock/master. Preserve original supplier/description/type/expense and source ancestry, date29 due31. NEW credit must persist refunded, paid=total, balance0 on detail/list/reload; exactly one cash reversal, original purchase payment unchanged. Use visible cash1000 tender.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "serviceCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R03-S-RETURN2",
+      "title": "Remaining service supplier cash refund40",
+      "dependsOn": [
+        "R03-S-RETURN1"
+      ],
+      "expected": "Freshsource remaining1x40; linkedreturn40 Dr1000 40/Cr6800 40; originalexpense/payment remain, cumulative80 exact, noAP/stock/master, date29 due31. NEW credit must persist refunded, paid=total, balance0 on detail/list/reload; exactly one cash reversal, original purchase payment unchanged. Use visible cash1000 tender.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "serviceCash",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R03-S-HISTORY",
+      "title": "Service cash-refund full closure",
+      "dependsOn": [
+        "R03-S-RETURN2"
+      ],
+      "expected": "Lane cash/expense/AP/income0,3journalsDrCr160 and no stockmovement. Validate purchase/two returned credits settlement state and preserved original payment, allpreview/history/report layers separately; missing persisted audit staysinconclusive. Activity now available: filter each actual source/payment allocation via observed record IDs, bind actor/action/event/source/amount; save private evidence. Missing rows/assertions remain inconclusive, do not pass from journals. Historical missing-audit result stays historical.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "serviceCash",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-AR-INVOICE1",
+      "title": "Service credit invoice3x40=120",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "NewmanualService3x40=120, existingcustomer, Credit, date/delivery29 due31; Dr1300 120/Cr4000 120, noCOGS/stock/master.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ]
+    },
+    {
+      "id": "R03-AR-INVOICE2",
+      "title": "Digital credit invoice2x40=80",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "New own existingdigital2x40=80 to samecustomer, Credit date/delivery29 due31; Dr1300 80/Cr4000 80, noCOGS/stock/master.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ]
+    },
+    {
+      "id": "R03-AR-CREDIT",
+      "title": "Service allowance40 on owninvoice1",
+      "dependsOn": [
+        "R03-AR-INVOICE1"
+      ],
+      "expected": "Sourcecredit1x40 date29 due31 linked ownserviceinvoice120; Dr4100 40/Cr1300 40, invoice1remaining80; no cash/stock/COGS/master. Explicit Credit only; return applied40, paid40/balance0; cash0, not refunded. Preserve this comparator against ordinary cash-refund lane.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "R03-AR-BOUND",
+      "title": "Multi-selected customer over-allocation feedback",
+      "dependsOn": [
+        "R03-AR-CREDIT",
+        "R03-AR-INVOICE2"
+      ],
+      "expected": "Only new80/80 sources selected. Enter81/80,total161: values retained, per-source accessible error/aria-invalid and described error, Record payment disabled; independently zero persisted effects, no invalidSubmit. Exercise exact80/80, partial30/20, deselect/reselect and safe80.01 invalid,80.00 valid without posting extra amounts. Restore actual30/20 for next case. No native/hiddenfield bypass, no server-denial claim.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-AR-PART",
+      "title": "Receive partial30/20 on both sources",
+      "dependsOn": [
+        "R03-AR-CREDIT",
+        "R03-AR-INVOICE2"
+      ],
+      "expected": "One guardedRecordpayment with only newinvoice1=30 andinvoice2=20, total50 cash1000 date29. Two independentallocation journals:Dr1000/Cr1300 30and20. Sourcebalances50/60; no unrelated allocations/stock.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R03-AR-FINAL",
+      "title": "Receive final50/60 on both sources",
+      "dependsOn": [
+        "R03-AR-PART"
+      ],
+      "expected": "Freshremaining50/60; only those sourceallocations,total110 cash1000 date29. Two journalsDr1000/Cr1300 50and60. Bothsourcebalance0; originalpartial receipt/allocation rows preserved; no replay.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R03-AR-HISTORY",
+      "title": "Multi-invoice customer complete closure",
+      "dependsOn": [
+        "R03-AR-FINAL"
+      ],
+      "expected": "Lane7journalsDrCr400, cash+160 AR0 revenue+200 returns+40 income+160; no stock/COGS. Both receipts eachshow two correctallocations, sourcecredit/originalpartial rows preserved. Document/credit/receipts/previews/aging/GL/audit independently; missingaudit remainsinconclusive. Activity now available: filter each actual source/payment allocation via observed record IDs, bind actor/action/event/source/amount; save private evidence. Missing rows/assertions remain inconclusive, do not pass from journals. Historical missing-audit result stays historical.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerAllocation",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-AP-BILL1",
+      "title": "Service credit bill3x40=120",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "NewdeliveredmanualService expense3x40=120 approved6800 existingservicevendor, unique supplierref date/delivery29 due31. Dr6800 120/Cr2100 120, no cash/stock/master.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase"
+      ]
+    },
+    {
+      "id": "R03-AP-BILL2",
+      "title": "Service credit bill2x40=80",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "NewmanualService expense2x40=80 samevendor/6800, distinctsupplierref date/delivery29 due31. Dr6800 80/Cr2100 80 no cash/stock/master.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase"
+      ]
+    },
+    {
+      "id": "R03-AP-CREDIT",
+      "title": "Supplier allowance40 on ownbill1",
+      "dependsOn": [
+        "R03-AP-BILL1"
+      ],
+      "expected": "Linkedpurchasecredit1x40 sourcebill120 date29 due31, Dr2100 40/Cr6800 40, bill1remaining80; no cash/stock/master. Ordinary AP allowance paid40/balance0, not refunded; no cash tender selected. Positive comparator.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R03-AP-BOUND",
+      "title": "Multi-selected vendor over-allocation feedback",
+      "dependsOn": [
+        "R03-AP-CREDIT",
+        "R03-AP-BILL2"
+      ],
+      "expected": "Only new80/80 sources selected. Enter81/80,total161: values retained, per-source accessible error/aria-invalid and described error, Record payment disabled; independently zero persisted effects, no invalidSubmit. Exercise exact80/80, partial30/20, deselect/reselect and safe80.01 invalid,80.00 valid without posting extra amounts. Restore actual30/20 for next case. No native/hiddenfield bypass, no server-denial claim.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-AP-PART",
+      "title": "Pay partial30/20 on both sources",
+      "dependsOn": [
+        "R03-AP-CREDIT",
+        "R03-AP-BILL2"
+      ],
+      "expected": "Freshcash>=50. OneRecordpayment selects only newbill1=30/bill2=20,total50 cash1000,date29; twojournalsDr2100/Cr1000 30and20. Remaining50/60, no unrelatedallocation/stock.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R03-AP-FINAL",
+      "title": "Pay final50/60 on both sources",
+      "dependsOn": [
+        "R03-AP-PART"
+      ],
+      "expected": "Freshcash>=110/source50and60; oneRecordpayment total110 onlythosebills cash1000 date29; twojournalsDr2100/Cr1000 50and60; bothbill0, preservedfirstallocations and no stock.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R03-AP-HISTORY",
+      "title": "Multi-bill vendor complete closure",
+      "dependsOn": [
+        "R03-AP-FINAL"
+      ],
+      "expected": "Lane7journalsDrCr400 cash-160 AP0 expense+160 income-160; no stock. Bothremittances twoallocations each; firstpayment/sourcecredit preserved. Full previews/history/report/audit separately, missingaudit remainsinconclusive. Activity now available: filter each actual source/payment allocation via observed record IDs, bind actor/action/event/source/amount; save private evidence. Missing rows/assertions remain inconclusive, do not pass from journals. Historical missing-audit result stays historical.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "vendorAllocation",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-CF-INVOICE",
+      "title": "New delivered service credit invoice120",
+      "expected": "New manualService3x40=120 to existing customer, Credit, issue/delivery29 due31, no master: Dr1300 120/Cr4000 120; no stock/COGS/cash. SaveasproductOFF. Distinct source from AR allocation lane.",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ],
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-CF-RECEIPT",
+      "title": "Collect120 on own invoice",
+      "expected": "Only own CF invoice balance120, cash1000,date29; one allocation journalDr1000/Cr1300 120. Sourcepaid120/balance0, receipt identity/rows saved before refunds.",
+      "dependsOn": [
+        "R03-CF-INVOICE"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ],
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-CF-TENDER",
+      "title": "Ordinary return tender and safe limits",
+      "expected": "Search/select only new paid CF invoice in ordinary sales return form. Source3x40; check Creditonly default and visible1000/1100/1200 options, revenue4000 absent (UI exclusion only, no server-denial claim). Choose1000,qty1,total40. Safely inspect qty4 invalid/remaining3 without submitting; restore1. No bank/card positive or role/tenant assertion; freshcash>=40.",
+      "dependsOn": [
+        "R03-CF-RECEIPT"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": false,
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-CF-RETURN1",
+      "title": "Ordinary partial customer cash refund40",
+      "expected": "Linked new paid CF invoice,1x40, visible refundfrom1000,date29due31. Dr4100 40/Cr1000 40. New returnrefunded/paid40/balance0; originalinvoicepaid120/balance0 and receipt unchanged; source remaining2/value80; noAR/stock/COGS/master.",
+      "dependsOn": [
+        "R03-CF-TENDER"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ],
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-CF-RETURN2",
+      "title": "Ordinary final customer cash refund80",
+      "expected": "Fresh source remaining2x40=80, cash>=80. Linked ordinary return2x40 cash1000/date29due31; Dr4100 80/Cr1000 80,refunded/paid80/balance0. Source exhausted0; originalinvoicepaid120/0 and originalreceipt unchanged. Exactly one reversal per return, noAP/AR/stock/COGS/master.",
+      "dependsOn": [
+        "R03-CF-RETURN1"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ],
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-CF-HISTORY",
+      "title": "Full ordinary customer cash refund closure",
+      "expected": "4journalsDrCr360, cash0 AR0 revenue+120 returns+120 income0 stock0; originalreceipt exact preservation, cumulativeqty3/value120 exhausted, bothcredit statuses/refunded settlement persist. Source/invoice/credits/receipt previews and date/aging/GL/Activity actor/action/source/event amounts verified. No physicalprint. Missing supported audit stays inconclusive.",
+      "dependsOn": [
+        "R03-CF-RETURN2"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": false,
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-AUDIT",
+      "title": "Read-only old event audit and new posts",
+      "expected": "Activity /journal/audit is actual persisted read surface, not journal labels. Bind oldC1 document CREATE and allocation ALLOCATE to actual private source IDs/amounts/actor. For new posts use record/table filters so100recent cap cannot silently omit evidence. No historical result relabel. Owner positive only; Cashier/foreign-tenant denial unqualified without legitimate actors and MUST remain separate gaps.",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": false,
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-MODULE",
+      "title": "Read-only rental prerequisite disposition",
+      "expected": "Read product-create actual module/plan ceiling message with originalOwner; confirm no write control. No permission escalation/settings/module change/quickcreate. Rental remains blocked-family prerequisite owned by fixture owner until legitimate isolated Inventory+Rental enabled positive and denied fixtures exist. This case passes only accurate disposition/read-only preservation, never rental lifecycle acceptance.",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "customerCashRefund",
+      "businessSubmission": false,
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere."
+    },
+    {
+      "id": "R03-DATE",
+      "title": "Dated new/source/adjacent reporting",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "All newissue/payment/refund/delivery29Oct due31; commit and reread after all other form edits. Through29 closing vs28 excludes new29 effects but includes earlier28; on same29 baseline new effects isolated by opening/fingerprint/source IDs, not date alone. Prior digital28/mixed27 and all prior source dates preserved. No physicalprinting.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "common",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-COMBINED",
+      "title": "Reconcile accepted branches and preserve every old event",
+      "dependsOn": [
+        "R03-OPEN"
+      ],
+      "expected": "If all20financialsubmissions complete:24newjournalsDrCr1800 each; cash/AR/AP/inventoryGL/stockvalue/qty/COGS/netincome/assets/liabilities0 net; revenue+320 returns+160 expense+160. Only3physicalmoves+4,-1,-3. Compare ALL current opening201journal summaries/40moves/44protectedroutes/accountdefs/settings/catalogue/levels and original payments; knownstockGLgap120 retained. Hints not evidence. Partial branches actualonly; lane oracles independent.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "common",
+      "businessSubmission": false
+    },
+    {
+      "id": "R03-END",
+      "title": "Consolidated defects/results/publication and close",
+      "dependsOn": [
+        "R03-GATE"
+      ],
+      "expected": "All36cases truthful dispositions,0unresolved,exactendingbuild,acceptedbranchreconciliation,one sanitized severityranked run/checks/handoff/currentpointers PR. Clockincludes initialpublication thenclose/metadatatail;stopnewbusiness100 reserve20. Preserve firstfailures and oldopencredits. No merge/deploy/launch;backupLAST.",
+      "precondition": "Exact publishedQA/product/live stamp, original freshly qualified actor, unchanged noVAT/noApproval/GRNIoff/lastcost and current own sources. NEWclock/no unresolved/no replay. Date29OctUTC/final5minrefusal. Fresh cash/stock before outflow; controlled dates committed/reread. OldRapid02/Rapid01 sources strictlyprotected. Independent lanes continue after dispositioned failures, history gaps do not block money elsewhere.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "common",
+      "businessSubmission": false,
+      "recovery": true
+    }
+  ]
+}

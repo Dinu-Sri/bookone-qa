@@ -1,0 +1,704 @@
+{
+  "id": "WB-SVC",
+  "revision": 1,
+  "title": "Service businesses",
+  "profileIds": [
+    "BP-03"
+  ],
+  "familyRefs": [
+    "WF-SVC-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-SVC.J01",
+      "revision": 1,
+      "title": "Quote, order, delivered service and invoice",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Service3 hours@200; delivered before invoicing; no VAT; cash0; no stock.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-SAL-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-101",
+        "B-102"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "parties"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Advance/milestone recognition requires a separately reviewed capability and accounting policy; completed service golden path does not certify it."
+      ],
+      "cases": [
+        {
+          "title": "Quote and order",
+          "given": "No trading.",
+          "action": "Quote3x200, convert to order.",
+          "expected": "Total600 copied with source links; no AR/revenue/cash/COGS/stock.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "service cents",
+              "operation": "mul",
+              "operands": [
+                3,
+                20000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-SVC.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Post delivered work",
+          "given": "Order for completed service600.",
+          "action": "Convert once to posted invoice.",
+          "expected": "DrAR600 Cr service revenue600; no inventory/COGS; source order linked; AR600.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Duplicate conversion",
+          "given": "Order already fully converted.",
+          "action": "Convert again or double click.",
+          "expected": "Deny extra conversion; one accepted invoice600; source remaining0.",
+          "kind": "retry",
+          "oracle": [],
+          "id": "WB-SVC.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Draft with invalid percent",
+          "given": "Draft quote line100 with percent150.",
+          "action": "Save/convert through actual action.",
+          "expected": "Explicit reject excessive discount; no silent cap or conversion; original valid draft remains.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-SVC.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Future undelivered service",
+          "given": "Work scheduled next month.",
+          "action": "Invoice now.",
+          "expected": "Billing support and revenue recognition reviewed separately; advance must not be assumed earned; deferred-policy gap remains explicit.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-SVC.J02",
+      "revision": 1,
+      "title": "Partial collections, credit and customer refund",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Completed service invoice600; bank0; expense/stock0; refund capability reviewed.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-PAY-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-103",
+        "B-104",
+        "B-105"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "settlementAllocations",
+        "transactions"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/documents.ts",
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Collect250 then350",
+          "given": "Invoice600 unpaid.",
+          "action": "Receive250, then350.",
+          "expected": "AR350 then0; bank600; revenue600 once; two persisted allocations and receipts.",
+          "kind": "partial",
+          "oracle": [
+            {
+              "label": "collections cents",
+              "operation": "add",
+              "operands": [
+                25000,
+                35000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-SVC.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Credit100 after receipt250",
+          "given": "AR350/bank250.",
+          "action": "Post linked approved service credit100.",
+          "expected": "AR250; bank250; net revenue500; no inventory or cost effects.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "remaining AR cents",
+              "operation": "sub",
+              "operands": [
+                35000,
+                10000
+              ],
+              "equals": 25000
+            }
+          ],
+          "id": "WB-SVC.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Credit paid invoice",
+          "given": "Separate invoice600 fully paid.",
+          "action": "Issue approved credit100.",
+          "expected": "Bank600 unchanged until refund; customer credit100 explicitly represented; original receipt retained.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Refund customer credit",
+          "given": "Available customer credit100.",
+          "action": "Refund100 using permitted liquid account.",
+          "expected": "Bank500; customer credit0; net revenue500; refund links credit and original receipt; no second expense/revenue.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank after refund cents",
+              "operation": "sub",
+              "operands": [
+                60000,
+                10000
+              ],
+              "equals": 50000
+            }
+          ],
+          "id": "WB-SVC.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Overpayment or overrefund",
+          "given": "AR250 or credit100.",
+          "action": "Attempt receipt300 or refund101.",
+          "expected": "Reject or explicitly route to supported reviewed advance; never silently allocate excess; no unlinked cash.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-SVC.J03",
+      "revision": 1,
+      "title": "Service discounts, tax and rounding",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Completed services; deterministic cents; ordinary no-tax fixture unless explicitly selecting synthetic tax profile.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-114",
+        "E-109"
+      ],
+      "entityRefs": [
+        "businessDocumentLines",
+        "salesSettings",
+        "taxProfiles"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Tax rate is a synthetic parameter here. Legal applicability, inclusive mode and mixed tax support remain separately expert/capability reviewed."
+      ],
+      "cases": [
+        {
+          "title": "Line and header percent",
+          "given": "3x100; line10%; header5%; tax0.",
+          "action": "Preview, save, post, reload and print.",
+          "expected": "Gross300; line discount30; net270; header13.50; final256.50 everywhere.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "discounted cents",
+              "operation": "sub",
+              "operands": [
+                30000,
+                3000,
+                1350
+              ],
+              "equals": 25650
+            }
+          ],
+          "id": "WB-SVC.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Half-cent tax tie",
+          "given": "Synthetic reviewed rate18%; net100.05; exclusive.",
+          "action": "Calculate/post with independent rounding.",
+          "expected": "VAT18.01; total118.06; reversal exactly118.06. This is arithmetic coverage, not statutory eligibility.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "total cents",
+              "operation": "add",
+              "operands": [
+                10005,
+                1801
+              ],
+              "equals": 11806
+            }
+          ],
+          "id": "WB-SVC.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Inclusive synthetic price",
+          "given": "Explicit supported inclusive gross1180 at synthetic18%.",
+          "action": "Post inclusive service.",
+          "expected": "Net1000; VAT180; total1180; no adding tax to1180 again; unsupported inclusive mode blocks.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "inclusive total cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                18000
+              ],
+              "equals": 118000
+            }
+          ],
+          "id": "WB-SVC.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Discount bounds",
+          "given": "Line100.",
+          "action": "Try percent-1,100,100.01 and fixed101.",
+          "expected": "Reject negative/excess; valid100% gives net0 only if supported zero invoice contract; no negative tax/net.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-SVC.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Settings changed during draft",
+          "given": "Saved draft600 under declared profile.",
+          "action": "Change rate/discount defaults; reopen and post.",
+          "expected": "Explicit snapshot/reconfirmation rule; posted historical600 is never recalculated silently.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-SVC.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-SVC.J04",
+      "revision": 1,
+      "title": "Service expenses, reimbursement and profitability",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Completed job revenue600; subcontractor cost200; cash1000; no inventory.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-07",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-ACC-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-102",
+        "B-116",
+        "E-101"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "accounts",
+        "transactions",
+        "journalLines"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/record-entry.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Job/milestone/reimbursement allocation support must be verified; ordinary company profit does not prove project costing."
+      ],
+      "cases": [
+        {
+          "title": "Subcontractor bill",
+          "given": "Service200 received from vendor.",
+          "action": "Post service purchase expense200.",
+          "expected": "Dr approved service cost200 CrAP200; no stock asset/quantity; job revenue600 not changed.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-SVC.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Pay supplier and collect client",
+          "given": "Client600 unpaid; supplier200 unpaid.",
+          "action": "Collect600 and pay200.",
+          "expected": "Bank1400; AR/AP0; income600-expense200=profit400.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "add",
+              "operands": [
+                100000,
+                60000,
+                -20000
+              ],
+              "equals": 140000
+            },
+            {
+              "label": "profit cents",
+              "operation": "sub",
+              "operands": [
+                60000,
+                20000
+              ],
+              "equals": 40000
+            }
+          ],
+          "id": "WB-SVC.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Expense receipt linkage",
+          "given": "Synthetic receipt for200 exists.",
+          "action": "Attach to own expense and reload.",
+          "expected": "Authorized own attachment bytes/link retained; no additional journal from uploading.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Pass-through reimbursement",
+          "given": "Expense100 intended to be rebilled to customer.",
+          "action": "Use reimbursement option only if contracted.",
+          "expected": "Principal/agent, tax and net/gross presentation require explicit policy; cannot silently treat all reimbursements as sales.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Job dimension mismatch",
+          "given": "Job/brand A earns600, B incurs200.",
+          "action": "Filter profit report by A then B.",
+          "expected": "A does not absorb B cost unless explicit allocation; global profit400; scopes reconcile.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-SVC.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-SVC.J05",
+      "revision": 1,
+      "title": "Service cancellation, advance and recurring work",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Future service booking600; proposed advance200; no delivered service; no stock.",
+      "ruleRefs": [
+        {
+          "id": "RB-ACC-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-SAL-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "B-108",
+        "B-113",
+        "B-117"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "transactions",
+        "salesSettings"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Advance, recurring and milestone capabilities/recognition are acceptance targets pending support/policy, not advertised implemented features."
+      ],
+      "cases": [
+        {
+          "title": "Advance expected accounting",
+          "given": "Reviewed advance capability selected; cash0.",
+          "action": "Receive200 before work.",
+          "expected": "Dr bank200 Cr customer advance liability200; earned revenue0. If unsupported, block rather than route directly to income.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-SVC.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Apply advance after delivery",
+          "given": "Delivered service invoice600; advance200.",
+          "action": "Apply200 then collect400.",
+          "expected": "Advance liability0; AR0; bank600; revenue600 exactly once; linked allocation/application.",
+          "kind": "partial",
+          "oracle": [
+            {
+              "label": "bank cents",
+              "operation": "add",
+              "operands": [
+                20000,
+                40000
+              ],
+              "equals": 60000
+            }
+          ],
+          "id": "WB-SVC.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cancel before delivery",
+          "given": "Advance200 held; no earned charge.",
+          "action": "Cancel and refund under approved policy.",
+          "expected": "Refundable200 returned; bank delta0; liability0; revenue0; cancellation/audit retained.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-SVC.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Milestone contract",
+          "given": "Contract1000 split40%/60%.",
+          "action": "Attempt two milestone invoices.",
+          "expected": "Exactly400 and600 only if milestone capability/recognition supported; no duplicate full1000 per milestone; otherwise explicit unsupported.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Recurring template",
+          "given": "Proposed monthly fee100 for three months.",
+          "action": "Create repeated invoices via supported scheduling only.",
+          "expected": "One100 per distinct period, total300; retries do not create extra period; do not claim a scheduler exists from manual duplication.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-SVC.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-26",
+  "queue": "MISSION-v2522-LIGHT-09-FINANCE",
+  "cases": 26,
+  "execution": "not-run",
+  "review": "Medium preparation; current-session read-only UI and pinned source",
+  "runtimeRulesLibraryUxOracleUnchanged": true,
+  "financialExpectations": "all parent rule-linked assertions byte-identical",
+  "scopeExcluded": [
+    "L08-PHYSICAL",
+    "L08-PARTIAL-SCAN",
+    "L08-HELP-D",
+    "L08-HELP-320",
+    "L08-HELP-390",
+    "L08-GAPS"
+  ],
+  "dependencyReferencesValid": true,
+  "recoveryEnd": true,
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "businessWrites": 0,
+  "sourceHashes": {
+    "scripts/operator-browser-codehost.mjs": "5b49276ea52d671031b61ef9cbf599c8274782ea94fcc0da7decc6d650b5454f",
+    "scripts/operator-browser-host.mjs": "bb43d576a505fe0abe6ae1c7edac3f41188c27cc4fe24dc457404386c0cbd5b5",
+    "scripts/operator-browser-transport.mjs": "3d9f9f9a8f7790f834a57a607813e4fe9bb4d6e902b62cde535f5cc5ea5325b9",
+    "scripts/operator-action-guard.mjs": "968866c9eb29d7e867ee7bbe6f15675dc44b1c404324b12bed55de1fe3fc7333",
+    "scripts/operator-clock.mjs": "e4f10bf7584c28e613133891c2be884280b7009371b3fd52413a3f2cfc65105c",
+    "scripts/operator-queue.mjs": "c324441b4f6ee9e108a60a97211bba1fa8be452535362b55e2e862d9f6f28268",
+    "rules/rulebook.json": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "workflows/library.json": "a18153cf65aa140b2ac71cd52b47faef142a51756967fb749581d93e326f7015",
+    "ux/workbook.json": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b",
+    "queues/ORACLE-v2522-LIGHT-08.json": "0fc09e1cc3d15d23da233c50289a374b1c125ff4a24384e6b445f48c3f7ad19c"
+  },
+  "limits": "No fresh login in diagnostic review; no server-write/role-denial acceptance; new execution must requalify all actual openings and declared capabilities."
+}

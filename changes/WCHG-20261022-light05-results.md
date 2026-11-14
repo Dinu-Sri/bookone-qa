@@ -1,0 +1,5 @@
+# WCHG —Light05 execution results
+
+Exact product de45536bc47ead3e20f401ecd5fe144bfdf7d52c, executionQA a6379c2e4c835dc710e324fca342f0bba9decd9e, unchanged fixed30-slot queue/UX1.1.0/rules/library. Adds immutable sanitized results, observations, Medium handoff and pointers; prior evidence and expectations untouched.9passed/2failed/16blocked/3inconclusive. No product code/version/deploy/access change; only authorized run-owned staging transactions/settings transitions, restored/reconciled.
+
+Generic per-submission controls used. Final environment disconnection prevented saved END/readback/clock closure; supplemental accepted restoration evidence and inconclusive close disclosed. Last measured57.3168minutes; final compliance unknown. Lightweight publication integrity checks verify30uniqueIDs/passed evidence keys, preserved oldcoverage rows and independentF7/TB/forecast arithmetic. Local Node/fullQA/product checks unavailable at publication; browser evidence is separate. No release/canonical acceptance; backuprestoreLAST.

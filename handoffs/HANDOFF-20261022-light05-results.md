@@ -1,0 +1,15 @@
+# Light05 results and continuation
+
+Product **v2.5.20 · de45536**, full de45536bc47ead3e20f401ecd5fe144bfdf7d52c; QA execution **a6379c2e4c835dc710e324fca342f0bba9decd9e**, PR56. [Run](../runs/RUN-20261022-light05-results.md), [checks](../runs/CHECKS-20261022-light05-results.json), [findings](../bugs/OBS-20261022-light05-results.md), [Medium mission](MEDIUM-MISSION-20261022-light05.md).
+
+**30 supplemental dispositions:9passed/2failed/16blocked/3inconclusive.** All planned slots are accounted for. No release or canonical-case acceptance. Product write fixture still missing: physical setup/purchase/8consumer matrix blocked before Save, not bypassed. Four isolated lanes remain blocked. Sales print passes do not erase required purchase-print block.
+
+Confirmed regressions: purchase-list dialog Escape returns focus to BODY;320px help extends7px beyond305px layout. Unknowns: view-only rich-text attributes and enabled quick-create control, neither persistence nor server bypass demonstrated. LINE exactfeedback/datefixture remains inconclusive; no replay.
+
+Fresh financial passes: service B95; supplier refusal then correction10; HEADER refusal then quote10; split300; draft/post/fullcredit256.50; VAT302.67 reversal after currentVAToff; F7 .99×5/1/1 with seven journals/View/source balances/remainingprefills. Newrecords: PUR0009open95(refM20-B),PUR0010open10(refM20-SUP),QT0005draft10;INV0041/SR0086,INV0042/SR0087,INV0043/26OCT_01/9/SR0088,INV0044/SR0089–0095 all newsourcebalances0. Never replay consumed sources.
+
+Close: **153journals/debits=credits16908.11**, AP1290/expense210/profit629.50; AR1306.21/InvGL660/stock780/inheritedgap120/VAT46.71/COGS420/GRNIcash0/assets1966.21 unchanged. AR/APaging agree; balance sheet balances. All full opening maps restored/reloaded exact and both tabs1920×855; endstamp unchanged. Preserve oldINV0032open300,QT0004draft0,quickSKU0/cost10/sell0 and every prior failure/correction.
+
+**Closing control limitation:** environment disconnected after inventory restore succeeded and all3maps reloaded equal. Generic private END remains running; M20-END-inventory-restore-1 readback and terminal/clock writes failed to save. No uncertain ERP business submission remains. This report is supplemental accepted restoration evidence with END inconclusive, not a fabricated terminal ledger. Last measured clock57.3168chargedminutes,0explicitpauses; final elapsed/wall/compliance unknown.100/15budget configured; do not backdate a pause or subtract inferred idle.
+
+On reconnection, inspect the preserved private .local/m20-light05 state/clock/stepfiles, append the accepted restoration readback supported by this report, record END inconclusive without changing prior terminal outcomes, close clock with actual unpaused elapsed (report any overrun). No new financial testing in that run. Raw sources/credentials stay private. Medium then reviews evidence/unknowns, coordinates coding fixes and prepares a NEW fixed mission. Do not rerun the frozen queue against these consumed fixtures. Actual backup/restore LAST.

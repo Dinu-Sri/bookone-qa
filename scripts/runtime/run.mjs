@@ -83,7 +83,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['RT-049']=['invoiceAccepted','paymentAccepted','unchanged','arCents'];
   observationKeys['RT-050']=['foreignFixtureReadPositive','ownReadPositive','foreignDetailDenied','foreignDimensionsAccepted','unchanged'];
   observationKeys['RT-051']=['knownInvoicePositive','warehouseJobValid','inventoryReadGranted','invoiceReadGranted','invoiceDetailDenied','unchanged'];
-  for(const id of ['D-103','D-105','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded'];
+  for(const id of ['D-103','D-104','D-105','D-112','D-117','D-118','C-109','RT-023','E-104'])observationKeys[id]=['accepted','prerequisiteAccepted','unchanged','beforeTransactions','afterTransactions','beforeJournals','afterJournals','beforeLines','afterLines','beforeAudit','afterAudit','fleetQty','fleetValueCents','dispatchedQty','collected','refunded','dispatched','returned','charged'];
   observationKeys['RT-022']=['accepted','unchanged','newStockDocs','newStockLines','newCostLayers','newConsumptions'];
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];
   observationKeys['S-0782']=['acceptedIncoherent','targetDocuments','targetJournalLines','unchanged'];

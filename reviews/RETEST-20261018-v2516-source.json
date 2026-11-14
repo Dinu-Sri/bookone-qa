@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "repository": "Dinu-Sri/BookOne",
+  "commit": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "provenance": "Exact-commit GitHub source fetch; private UTF8 snapshots; no deployed runtime acceptance",
+  "files": {
+    "apps/web/src/components/module/commercial-doc-screens.tsx": "6f0bc909a08103a90c7ff6f8d445cd05010fc34f9e65afb2fb3526e4518f018e",
+    "apps/web/src/components/module/document-lines-editor.tsx": "0d571e731581104256c96e3ca66c1903af6274e6fa961e76b3bee0bd36b512ad",
+    "apps/web/src/components/sales/invoice-document-form.tsx": "a93559cad8867497d3de460f0bcc6a185375b1b2e29a62b8158e43e53607e5d1",
+    "apps/web/src/components/sales/sales-document-form.tsx": "274e2f7f81176d5852f4ba32262b10d0b207e81eb2623f8b59f98c019982d9d9",
+    "packages/accounting/src/document-guards.ts": "24cd0e0dfc4277a8bd3fb43d388d4ad77d587f6a56bbde0ea0d08e3f38b57776"
+  }
+}

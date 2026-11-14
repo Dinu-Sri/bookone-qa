@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "kind": "sanitized-diagnostic-clock-summary",
+  "mode": "closed",
+  "chargedMs": 612796,
+  "pausedMs": 0,
+  "totalMinutes": 90,
+  "closingReserveMinutes": 15,
+  "boundary": "Initial owner-manual-session observation preceded this clock. Closed after rejected publication. Future publication is metadata-only tail; not historical or formal execution compliance."
+}

@@ -1,0 +1,45 @@
+// Small file-side setup/intent helper; never drives a browser or replays a submission.
+import fs from 'node:fs';
+import path from 'node:path';
+import {createHash,randomUUID} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {initialize,transition,report} from './operator-queue.mjs';
+import {openClock,clockReport} from './operator-clock.mjs';
+import {assertExecutionDate,desktopSourceHashes} from './operator-desktop-cua.mjs';
+const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-v2522-RAPID-02-CONT1.json';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const hash=p=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const atomic=(p,v)=>{const tmp=p+'.'+randomUUID()+'.tmp';fs.writeFileSync(tmp,JSON.stringify(v,null,2)+'\n',{flag:'wx',mode:0o600});fs.renameSync(tmp,p);};
+const [cmd,runArg,caseId,submissionId,url,button]=process.argv.slice(2);
+if(!runArg)throw Error('Use init RUN_DIR or request RUN_DIR CASE SUBMISSION URL EXACT_BUTTON');
+const dir=path.resolve(root,runArg),privateRoot=path.join(root,'.local')+path.sep;
+if(!dir.startsWith(privateRoot))throw Error('Run directory must stay inside this checkout .local/');
+const plan=read(path.join(root,planPath));
+assertExecutionDate(plan);
+if(cmd==='init'){
+ if(fs.existsSync(dir))throw Error('Never overwrite an existing run');
+ fs.mkdirSync(dir,{recursive:true,mode:0o700});
+ const qaSha=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+ const fp={productSha:plan.productSha,qaSha,liveStamp:'v2.5.22 · 211771e',rulesHash:hash('rules/rulebook.json'),libraryHash:hash('workflows/library.json'),schema:'not-attested',actor:'owner-authorized-original-QA',configuration:'rapid02-cont1-date20261029-noVAT-noApproval-GRNIoff-lastcost-existing-profile',fixture:'rapid02-cont1-'+path.basename(dir),uxHash:hash('ux/workbook.json'),oracleHash:hash(plan.oracle),desktopSources:desktopSourceHashes()};
+ atomic(path.join(dir,'clock.json'),openClock(plan.budget.totalMinutes,plan.budget.closingReserveMinutes));
+ atomic(path.join(dir,'fingerprint.json'),fp);atomic(path.join(dir,'state.json'),initialize(plan,fp));
+ console.log(JSON.stringify({runDirectory:dir,intendedFingerprintOnly:true,instruction:'Compare qaSha with final published mission commit and verify actual identity/profile/openings before business. Never treat these declarations as observations.'}));
+}else if(cmd==='request'){
+ if(!/^[A-Za-z0-9._-]+$/.test(submissionId??''))throw Error('Safe unique submission ID required');
+ if(new URL(url).origin!=='https://bookone.clossyan.com'||!button?.trim())throw Error('Observed BookOne URL and exact button required');
+ const fp=read(path.join(dir,'fingerprint.json'));let state=read(path.join(dir,'state.json'));const clock=read(path.join(dir,'clock.json'));
+ const current={...clock,chargedMs:clock.chargedMs+(clock.mode==='active'?Date.now()-clock.lastAt:0)};
+ if(!clockReport(current).allowNewBusinessSubmission)throw Error('Clock refuses new submissions');
+ const spec=plan.cases.find(c=>c.id===caseId);
+  if(!spec?.allowedButtons?.includes(button))throw Error('Button not approved for this case');
+ if(!spec)throw Error('Unknown case');for(const dep of spec.dependsOn??[])if(state.cases.find(c=>c.id===dep)?.status!=='passed')throw Error('Dependency not passed: '+dep);
+ if(state.cases.find(c=>c.id===caseId)?.status==='pending')state=transition(plan,state,fp,'start',caseId);
+ state=transition(plan,state,fp,'intent',caseId,{submissionId,action:'Click exact '+button+' on observed '+url});
+ atomic(path.join(dir,'state.json'),state);
+ const script=submissionId+'.action.json',request=submissionId+'.request.json';
+ if(fs.existsSync(path.join(dir,script))||fs.existsSync(path.join(dir,request)))throw Error('Submission files already exist; inspect state, never replay');
+ atomic(path.join(dir,script),{kind:'click',url,role:'button',name:button});
+ atomic(path.join(dir,request),{plan:path.relative(dir,path.join(root,planPath)),state:'state.json',fingerprint:'fingerprint.json',clock:'clock.json',script,caseId,submissionId,commandExitCode:0,desktopSources:desktopSourceHashes()});
+ console.log(JSON.stringify({requestPath:path.join(dir,request),intentPersisted:true,instruction:'Require this command actual exit0; invoke dispatchPersistedDesktopAction once inside mcp__cua_repl.js. Then independent readback; never click separately.'}));
+}else if(cmd==='summary')console.log(JSON.stringify(report(plan,read(path.join(dir,'state.json')),read(path.join(dir,'fingerprint.json'))),null,2));
+else throw Error('Use init/request/summary');

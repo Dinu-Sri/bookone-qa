@@ -1,0 +1,7 @@
+{
+  "appendOnly": true,
+  "executionQaSha": "3e57f1efaf5bcb3dd9d079be716b19404acf2c13",
+  "run": "runs/CHECKS-20261027-light10-exec1-run1.json",
+  "canonicalAccepted": 0,
+  "meaning": "Preserved control/identity records and partial source census only. Missing assertions remain unexecuted; no canonical acceptance."
+}

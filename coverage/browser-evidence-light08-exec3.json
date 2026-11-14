@@ -1,0 +1,7 @@
+{
+  "appendOnly": true,
+  "executionQaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276",
+  "run": "runs/CHECKS-20261026-light08-exec3-run1.json",
+  "canonicalAccepted": 0,
+  "meaning": "Control/identity/census evidence only; financial and complete help blocked. No old evidence overwritten."
+}

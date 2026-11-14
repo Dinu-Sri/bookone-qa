@@ -1,0 +1,15 @@
+# Expanded business workbook publication
+
+Owner intent: build substantial, continuously maintained business books for agents and humans, including real business journeys, edge cases and independently expected results. This extends the five starter families in PR36 with eight detailed casebooks and a source-linked semantic map.
+
+Before: protocol, five draft anchors, 27 starter steps and 44 starter variants. After: a separate detailed application library with eight books, 52 journeys and 260 cases, 14 shared control contracts, 18 independent financial examples/51 journal-state steps, field matrix, execution procedure and mapping to all 92 existing lifecycle tasks. Counts are not added to overlapping starter/inherited coverage as new accepted workflows.
+
+Source study deliberately pins product v2.5.12 ead3a82170e7a34ad625ec6ef8434e5ae65b1609; original execution pin0bcdf4d and previous findings unchanged. The map contains68 entities/164 declared references from47 source files, plus selected action and page-route inventories. Source describes implementation; canonical rulebook1.0.0 supplies intended authority. No rule text/revision changed; no legal refresh or expert approval claimed.
+
+Changes: new canonical workflows/library, casebooks, controls, worked examples and business map; generated Markdown books/indexes; dependency-free library checker/renderer/planner and16 negative-control infrastructure tests. Existing package check, workflow index/protocol/format and AGENTS/CONTRIBUTING/current pointers link the expanded layer. Existing WF/S/RT/B–F/task identities and history retained. No product code, execution pin, dependencies, migrations, infrastructure or deployment changes.
+
+Impact: all five business types and shared banking/accounting/auth/files/history; hybrid composes constituent changes. Unknown/unmapped impact broadens all52; actual-diff review and mandatory core remain required. Draft/unsupported/conditional cases need exact actor/configuration/threshold binding and independent review before execution. v1 rejects new review/binding/pass claims; future executable adapters need reviewed schema validation and evidence. Existing original adapters are not replaced.
+
+Validation: starter metadata/generated views pass; expanded metadata/reference/independent-arithmetic/generated-view checks pass;26 targeted Node tests pass (10 existing+16 new),0 failed/skipped. Planner purchase-rule and unknown-impact controls pass. Full pnpm check/CI and real product/UI execution not run in this partial checkout. See RUN-20261016-expanded-business-workbooks.md for scope.
+
+Adoption/continuation: coding agent reads handoff and links the external protocol/library into its next versioned product QA contract/CHG; QA independently reviews and binds physical journeys first, then other books. Business owner/expert resolves applicable recognition/tax/cost/fees/support questions. Prior bug repair retests remain separate. No merge/deploy authority. Actual encrypted backup/restore LAST.

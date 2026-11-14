@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "kind": "new reviewed remaining-work copy; not oldclock reset",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "observedLiveStamp": "v2.5.22 · 211771e",
+  "originalExecutionQa": "f53346e435a26cacdcebda5433b52a82246a1cf1",
+  "queue": "queues/MISSION-v2522-RAPID-02-CONT1.json",
+  "oracle": "queues/ORACLE-v2522-RAPID-02-CONT1.json",
+  "cases": 23,
+  "priorAcceptedEventsReadOnly": 4,
+  "financialSubmissionsPlanned": 12,
+  "journalsPlanned": 16,
+  "debitCreditPlanned": 880,
+  "delta": {
+    "cash": 80,
+    "income": 80,
+    "assets": 80,
+    "ar": 0,
+    "ap": 0,
+    "inventory": 0,
+    "physicalQty": 0
+  },
+  "focusedTests": {
+    "passed": 117,
+    "failed": 0,
+    "skipped": 0
+  },
+  "guardModulesChanged": false,
+  "actualProof": "prior guard path qualified; newexecution MUST freshly repeat actual title/click/refusals andlogin beforebusiness",
+  "fullCheck": "retains known NOTGREEN28October Windowsgovernance process failure; not rerun to hide history;117focused separate",
+  "businessWritesDuringPreparation": 0,
+  "sourceQualification": "read-only29Oct actual servicecashpurchase80 original28Oct/remaining2/value80; physicalcycle exhausted",
+  "dateContract": "fixed2026-10-29UTC/final5minute refusal, due31; originalsourcedates28 unchanged",
+  "releaseAcceptance": "not-established"
+}

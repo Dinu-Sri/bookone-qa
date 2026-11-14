@@ -969,14 +969,18 @@
       "id": "D-104",
       "batch": "D",
       "slug": "partial-return",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Return8 good and2 dirty: dispatched0, owned20, free18 until dirty2 washed, then free20.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Rapid04 added bounded Owner-DB command adapter (no 4450 on dirty return). Execute on isolated bookone_qa_runtime; credential/browser/history layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-105",
@@ -1109,14 +1113,18 @@
       "id": "D-112",
       "batch": "D",
       "slug": "damage-missing",
-      "status": "specified-not-implemented",
+      "status": "implemented-awaiting-evidence",
       "expected": "Approved damage charges/write-off/forfeiture settle correct accounts and fleet quantities, retain evidence and policy links.",
       "requiredLayers": [
         "persisted-lifecycle",
         "runtime-auth-rls",
         "browser"
       ],
-      "next": "Create real product command adapter and independent state oracle; execute on a verified isolated fixture; do not substitute calculation passes."
+      "next": "Rapid04 added bounded Owner-DB agreed-charge 200 with source link and no hire-order conversion. Execute on isolated bookone_qa_runtime; write-off/missing/credential/browser layers remain open.",
+      "implementedLayers": [
+        "partial-persisted-owner-command-synthetic-session"
+      ],
+      "binding": "tests/runtime/rental.test.ts"
     },
     {
       "id": "D-113",

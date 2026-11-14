@@ -1,0 +1,11 @@
+# WCHG-20261026-light08-exec3
+
+Problem: apparent continuation stall concealed published PR73 review and terminal PR74 EXEC2 results. EXEC2 lacked complete original financial/stock openings and an authentic partial-return fixture; repeating the entire queue would repeat seven already completed UI checks without resolving prerequisites.
+
+Change: new conditional32-slot EXEC3 queue and explicit preflight; separate identity from complete financial qualification, make synthetic GUARD independent of financial openings, provide supported inventory routes, record a30-minute preflight checkpoint, bound partial-return lookup, and omit seven completed UI cases from this scope. No financial/write precondition, oracle or required assertion is waived; no original record is edited. Full ACTOR/GUARD/FIXTURES gates apply to SALE/BILL and descendants. Independent help must freshly qualify its actor/read scope and actual sources.
+
+Impact: same existing digital/service accounting, source-preservation, stock-invariance, AR/AP denial and UX tooltip consumers as Light08. Existing BR-ACC-01/04/08, BR-SAL-01/02, BR-STK-03 and linked EX examples stay unchanged; source hashes in checks prove no canonical rule/library/UX/oracle drift. Physical writer remains separate. No new business feature, policy, migration, grants, role, configuration, product or runtime adapter change; canonical WB/UX revisions remain unchanged. Missing layers remain blocked. No expert or release approval.
+
+Validation:61 focused guard/transport plus21 queue/control/parent tests pass. New manifest audited for32uniqueIDs, all dependency references/acyclic graph, recovery END, unchanged financial assertions and independent integer-cent oracle. Actual connected-tool1positive title call/claim plus four0call/0claim controls. See review and checks; EXEC3 itself is not run.
+
+Owners: Light operator collects fixed evidence; Medium resolves new/ambiguous expectations or submission effects; QA/fixture owner supplies legitimate existing actor/access and authentic source fixtures. Coding agent has no new proven product defect to fix from EXEC2. Do not modify grants, fund the company, repair history, merge or deploy to unblock this mission. Backup/restore LAST.

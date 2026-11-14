@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2521-LIGHT-07",
+  "attempt": 1,
+  "clockMode": "closed",
+  "chargedMs": 396410,
+  "explicitPausedMs": 832819,
+  "chargedMinutes": 6.606833333333333,
+  "budgetMinutes": 120,
+  "reserveMinutes": 20,
+  "businessSubmissions": 0,
+  "counts": {
+    "passed": 1,
+    "blocked": 35
+  },
+  "ledgerUnresolvedSubmissions": 0,
+  "sessionDurability": "Not established; different authenticated actor reappeared after Logout without another agent Login; origin unknown.",
+  "timingLimitations": [
+    "Initial non-browser retrieval preceded clock opening",
+    "Final metadata/readback publication occurs after clock close and is disclosed separately",
+    "No model/credit or inferred idle measurement"
+  ],
+  "nextAction": "Correct existing QA fixture/session qualification, then NEW ledger/clock; do not resume terminal attempt."
+}

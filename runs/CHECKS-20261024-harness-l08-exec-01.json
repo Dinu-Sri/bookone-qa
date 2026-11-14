@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-24",
+  "scope": "QA-HARNESS-L08-EXEC-01 bounded prepare/claim exchange; no business action",
+  "parentQaSha": "fa927046fa5127d927fdd5cedea5a5279d26e3f3",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "firstFailure": "QA-HARNESS-L08-EXEC-01",
+  "tests": {
+    "guardAndTransport": 50,
+    "operatorQueue": 9,
+    "missionLight08Exec": 3,
+    "totalPassed": 62,
+    "totalFailed": 0
+  },
+  "connectedToolControls": {
+    "actualBrowserAppJs": "unavailable-in-author-session",
+    "fullExecPlanUnder16000ByteCap": true,
+    "truncatedPrepareZeroCallsZeroClaims": true,
+    "truncatedSliceZeroCallsZeroClaims": true,
+    "truncatedClaimConsumedNoReplay": true
+  },
+  "originalGuardClockQueueChanged": false,
+  "businessActions": 0,
+  "applicationConfigurationChanges": 0,
+  "bookOneDeploy": false,
+  "financialTesting": false,
+  "historicalFixturesPreserved": true,
+  "independentReview": "pending",
+  "canonicalAcceptance": "not-established"
+}

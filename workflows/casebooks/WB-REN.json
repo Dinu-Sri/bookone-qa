@@ -1,0 +1,1142 @@
+{
+  "id": "WB-REN",
+  "revision": 1,
+  "title": "Rental and event hire",
+  "profileIds": [
+    "BP-04"
+  ],
+  "familyRefs": [
+    "WF-REN-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-REN.J01",
+      "revision": 1,
+      "title": "Fleet setup, reservation and availability",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Owned20 balanced fleet units; repair0; block overlap policy; Asia/Colombo inclusive dates.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-101",
+        "D-107"
+      ],
+      "entityRefs": [
+        "inventoryProducts",
+        "rentalEvents",
+        "rentalBookingLines",
+        "inventoryStockLevels"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Reserve10",
+          "given": "Owned20/free20.",
+          "action": "Reserve10 for10–12 Oct.",
+          "expected": "Owned20/committed10/free10; no sale COGS or earned revenue; reservation links event and line.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "free qty",
+              "operation": "sub",
+              "operands": [
+                20,
+                10
+              ],
+              "equals": 10
+            }
+          ],
+          "id": "WB-REN.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Inclusive endpoint overlap",
+          "given": "Existing10–12 Oct reservation10.",
+          "action": "Reserve another15 starting12 Oct.",
+          "expected": "Under block policy deny; 12 Oct overlaps; existing reservation unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Padding boundary",
+          "given": "Existing ends12 Oct; turnaround6hours.",
+          "action": "Attempt start13 Oct then14 Oct.",
+          "expected": "Date-only padding ceil6/24=1 day;13 blocked,14 eligible subject to other commitments.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Final-capacity race",
+          "given": "Free1; two independent clients.",
+          "action": "Reserve1 concurrently.",
+          "expected": "One accepts under block; other denies; no oversubscription. Authorized explicit override is a different policy fixture.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-REN.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Hold versus firm commitment",
+          "given": "Quote hold exists with declared hold policy.",
+          "action": "Convert quote to order/invoice.",
+          "expected": "Replace/transition original commitment, do not count hold and reservation twice; semantics/expiry of holds explicitly reviewed.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J02",
+      "revision": 1,
+      "title": "Dispatch, partial returns and fleet conservation",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Owned20; reserved10; warehouse20; on-rent0; no sold goods.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-103",
+        "D-104",
+        "D-105"
+      ],
+      "entityRefs": [
+        "rentalBookingLines",
+        "inventoryStockLevels",
+        "inventoryStockDocs"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Dispatch10",
+          "given": "Reserved10 at warehouse.",
+          "action": "Dispatch10 once.",
+          "expected": "Warehouse10/on-rent10; owned20; no COGS; dispatched10 recorded with source.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "fleet qty",
+              "operation": "add",
+              "operands": [
+                10,
+                10
+              ],
+              "equals": 20
+            }
+          ],
+          "id": "WB-REN.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Partial return6",
+          "given": "On-rent10.",
+          "action": "Return6 good to warehouse.",
+          "expected": "Warehouse16/on-rent4; outstanding4; total20; booking not falsely fully returned.",
+          "kind": "partial",
+          "oracle": [],
+          "id": "WB-REN.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Final return4",
+          "given": "Outstanding4.",
+          "action": "Return4 good.",
+          "expected": "Warehouse20/on-rent0; returned cumulative10; owned20; no duplicate stock creation.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Overreturn",
+          "given": "Outstanding4.",
+          "action": "Return5.",
+          "expected": "Deny all effects; no returned5, no extra warehouse unit or duplicate transfer.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return before dispatch",
+          "given": "Reserved but not dispatched line.",
+          "action": "Submit return1.",
+          "expected": "Invalid transition denied; owned and commitment states unchanged.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-REN.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J03",
+      "revision": 1,
+      "title": "Dirty, repair, missing and wash release",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Dispatched10 from owned20; warehouse10; declared missing treatment not inferred.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-REN-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-104",
+        "D-105",
+        "D-112",
+        "D-114"
+      ],
+      "entityRefs": [
+        "rentalBookingLines",
+        "inventoryStockLevels",
+        "rentalReturnPhotos"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Missing-unit derecognition, impairment and charges require approved policy; operational bucket conservation is independently testable."
+      ],
+      "cases": [
+        {
+          "title": "Eight good and two dirty",
+          "given": "On-rent10; warehouse10.",
+          "action": "Return8 good +2 dirty.",
+          "expected": "Warehouse available18/wash2/on-rent0; owned20; dirty units unavailable; no COGS.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "fleet accounted qty",
+              "operation": "add",
+              "operands": [
+                18,
+                2
+              ],
+              "equals": 20
+            }
+          ],
+          "id": "WB-REN.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Wash release",
+          "given": "Wash2; available18.",
+          "action": "Release2 through authorized wash flow.",
+          "expected": "Available20/wash0; global owned20; no new asset or purchase.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mixed buckets",
+          "given": "On-rent10.",
+          "action": "Return6 good+2dirty+1repair+1missing.",
+          "expected": "All10 dispositioned exactly once; available16,wash2,repair1,missing1 tracked; no silent lost unit. Missing ownership/writeoff policy remains explicit.",
+          "kind": "partial",
+          "oracle": [
+            {
+              "label": "dispatched conservation",
+              "operation": "add",
+              "operands": [
+                6,
+                2,
+                1,
+                1
+              ],
+              "equals": 10
+            }
+          ],
+          "id": "WB-REN.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Negative bucket",
+          "given": "Outstanding10.",
+          "action": "Submit good-1+dirty2.",
+          "expected": "Reject invalid negative input; do not silently clamp and accept another interpretation without user confirmation.",
+          "kind": "invalid-input",
+          "oracle": [],
+          "id": "WB-REN.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Release foreign bay",
+          "given": "Real tenant B repair/wash row exists.",
+          "action": "Attempt release using tenant A actor.",
+          "expected": "Deny with own authorized release positive; no foreign transfer or object link.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-REN.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J04",
+      "revision": 1,
+      "title": "Security deposit, charge application and refund",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Event deposit1000; completed hire500+service200; no tax; bank0; deposit liability0.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-04",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-102",
+        "D-109",
+        "D-110"
+      ],
+      "entityRefs": [
+        "rentalEvents",
+        "businessDocuments",
+        "settlementAllocations",
+        "accounts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-money.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Collect refundable deposit",
+          "given": "No charges posted yet.",
+          "action": "Collect1000 into liquid bank.",
+          "expected": "Bank1000; deposit liability1000; revenue0; event/payment link and audit exist.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Invoice earned700 then apply",
+          "given": "Hire completed; deposit1000.",
+          "action": "Post hire500+service200 invoice; apply700.",
+          "expected": "Revenue700; AR700 then0; deposit liability300; bank1000; no second income on application.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "deposit remainder cents",
+              "operation": "sub",
+              "operands": [
+                100000,
+                70000
+              ],
+              "equals": 30000
+            }
+          ],
+          "id": "WB-REN.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Refund remainder300",
+          "given": "Held remaining300.",
+          "action": "Refund300 through permitted liquid tender.",
+          "expected": "Bank700; liability0; AR0; revenue700; application/refund links preserve history.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "net bank cents",
+              "operation": "sub",
+              "operands": [
+                100000,
+                30000
+              ],
+              "equals": 70000
+            }
+          ],
+          "id": "WB-REN.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Overrefund or apply unposted",
+          "given": "Remaining300 or draft invoice.",
+          "action": "Attempt refund301 or deposit application to draft.",
+          "expected": "Reject; no cash/liability/journal mutation.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-REN.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Concurrent refund",
+          "given": "Remaining300; two authorized sessions.",
+          "action": "Refund300 concurrently.",
+          "expected": "At most one accepted300; final liability0, not negative300; one linked refund.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-REN.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J05",
+      "revision": 1,
+      "title": "Invoice timing and hire revenue boundary",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Separate events for on_confirm/on_dispatch/after_return/manual; no tax; future hire600.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-ACC-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-108",
+        "D-115"
+      ],
+      "entityRefs": [
+        "rentalEvents",
+        "rentalBookingLines",
+        "rentalSettings"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts",
+        "apps/web/src/app/actions/rental-money.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Billing timing, VAT time of supply and accrual recognition are separate. Expert/policy acceptance is pending for advance hire income."
+      ],
+      "cases": [
+        {
+          "title": "On dispatch gate",
+          "given": "Timing on_dispatch; status reserved.",
+          "action": "Attempt invoice then dispatch and invoice.",
+          "expected": "Pre-dispatch denied unless explicit authorized override; after dispatch eligible under stage rule; only one invoice.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "After return gate",
+          "given": "Timing after_return; one active line still out.",
+          "action": "Attempt invoice then fully return and retry.",
+          "expected": "Early denied; fully returned eligible; partial return not falsely completed.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Manual and confirm",
+          "given": "Manual/on_confirm permitted by stage config.",
+          "action": "Post invoice before future service.",
+          "expected": "Operational permission is not earned-revenue proof; defer/recognize under reviewed accounting policy or leave acceptance blocked.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Timing override",
+          "given": "Actor lacks override authority.",
+          "action": "Submit override reason to early invoice.",
+          "expected": "Deny; authorized override needs explicit permission, reason, actor and audit; no fabricated signoff.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-REN.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Setting change after booking",
+          "given": "Event stored after_return.",
+          "action": "Change company default to on_confirm.",
+          "expected": "Existing event follows explicit snapshot policy; cannot silently alter issued/accepted booking timing.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-REN.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J06",
+      "revision": 1,
+      "title": "Extension, cancellation and overlap override",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Owned20; event A reserves10 for10–12Oct; B reserves15 for14–15Oct; turnaround1day.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-REN-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-106",
+        "D-111",
+        "D-115"
+      ],
+      "entityRefs": [
+        "rentalEvents",
+        "rentalBookingLines",
+        "rentalSettings"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Cancellation pricing/fees and allowed override roles need explicit support/policy; capacity conservation remains mandatory."
+      ],
+      "cases": [
+        {
+          "title": "Extension collision",
+          "given": "A current end12; B begins14.",
+          "action": "Extend A to14.",
+          "expected": "Recheck padded overlap; demand25 exceeds20; block under policy; original A dates unchanged.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J06.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Valid extension",
+          "given": "B absent; sufficient capacity.",
+          "action": "Extend A to13.",
+          "expected": "Dates and availability update together; pricing change explicitly agreed, not silently charged.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J06.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Authorized override",
+          "given": "Overlapping demand25 on20; override permitted for named role.",
+          "action": "Record reason and explicit override.",
+          "expected": "Overbook amount5 visible; actor/reason retained; override is not a physically available5 units.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-REN.J06.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cancel before dispatch",
+          "given": "Reserved10 and deposit1000, no charges.",
+          "action": "Cancel under approved refundable policy.",
+          "expected": "Release10 commitment; deposit remains liability until separately refunded; cancellation does not erase money/history.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-REN.J06.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Cancel after dispatch",
+          "given": "On-rent10 still outstanding.",
+          "action": "Attempt cancel event.",
+          "expected": "Do not make10 units disappear/free; require supported return/close procedure and fee policy; preserve dispatch facts.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-REN.J06.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J07",
+      "revision": 1,
+      "title": "Serialized fleet and hire kits",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Two serialized generators S1/S2; kit K requires2 chairs+1 table; chairs10,tables3.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-103",
+        "D-105",
+        "D-107"
+      ],
+      "entityRefs": [
+        "rentalSerials",
+        "rentalKitComponents",
+        "rentalBookingLines",
+        "inventoryProducts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts",
+        "apps/web/src/app/actions/inventory.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Kit expansion, component availability and serial allocation need runtime verification; table/schema presence alone does not establish complete kit workflow."
+      ],
+      "cases": [
+        {
+          "title": "Dispatch serial",
+          "given": "S1/S2 available; reserve1 generator.",
+          "action": "Dispatch1.",
+          "expected": "Exactly one eligible serial assigned to booking; status on_rent; other serial available; no duplicate serial ownership.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J07.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Serial busy or foreign",
+          "given": "S1 already on another active booking.",
+          "action": "Attempt dispatch same S1 again or use foreign serial.",
+          "expected": "Deny; no second booking ownership or cross-tenant serial transfer.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-REN.J07.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Kit capacity",
+          "given": "Chairs10/tables3; 2chairs+1table per kit.",
+          "action": "Reserve3 kits.",
+          "expected": "Require6chairs+3tables; remaining4chairs/0tables; cannot offer fourth complete kit.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "chairs needed",
+              "operation": "mul",
+              "operands": [
+                3,
+                2
+              ],
+              "equals": 6
+            }
+          ],
+          "id": "WB-REN.J07.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Kit shortage",
+          "given": "Same fleet; request4 kits.",
+          "action": "Reserve4 without override.",
+          "expected": "Tables shortage1 blocks whole kit reservation; do not reserve chairs8 while silently omitting table.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J07.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Partial kit return",
+          "given": "3 kits dispatched; one table missing.",
+          "action": "Return6chairs+2tables and mark1table missing.",
+          "expected": "Component conservation exact; kit not fully available until complete; missing-table policy separately resolved.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J07.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J08",
+      "revision": 1,
+      "title": "Rates, late returns, damage and lost equipment",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Hire rate100 per event or day chosen explicitly; replacement price500; deposit1000; reviewed charge policy pending.",
+      "ruleRefs": [
+        {
+          "id": "RB-REN-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-04",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-112",
+        "D-113",
+        "D-116"
+      ],
+      "entityRefs": [
+        "rentalSettings",
+        "inventoryProducts",
+        "rentalEvents",
+        "businessDocuments"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts",
+        "apps/web/src/app/actions/rental-money.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Charge rates, replacement/writeoff accounting, forfeiture and late-fee cutoffs require business/expert decision before execution acceptance."
+      ],
+      "cases": [
+        {
+          "title": "Completed agreed event fee",
+          "given": "Accepted one-event hire100.",
+          "action": "Complete and invoice.",
+          "expected": "Fee100 exactly once; no multiplication by date span for event rate; physical fleet ownership unchanged.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J08.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Inclusive day policy example",
+          "given": "Explicit approved day count10–12Oct inclusive at100/day.",
+          "action": "Calculate3 declared days.",
+          "expected": "Hire300 before tax; UI labels day count; actual configured policy verified, not assumed from date span.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "day fee cents",
+              "operation": "mul",
+              "operands": [
+                3,
+                10000
+              ],
+              "equals": 30000
+            }
+          ],
+          "id": "WB-REN.J08.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Late day/hour cutoff",
+          "given": "Return just before/at/after policy cutoff in Asia/Colombo.",
+          "action": "Calculate late charges with pinned clock.",
+          "expected": "Apply only approved grace/rounding/hour/day contract; record exact timestamps; no invented fee when policy absent.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J08.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Damage versus deposit",
+          "given": "Approved charge200 posted; deposit1000 held.",
+          "action": "Apply200; refund800.",
+          "expected": "Revenue/compensation account per approved policy200 once; liability0; net bank200; damage evidence linked.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "refundable cents",
+              "operation": "sub",
+              "operands": [
+                100000,
+                20000
+              ],
+              "equals": 80000
+            }
+          ],
+          "id": "WB-REN.J08.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Missing replacement cost",
+          "given": "One owned unit carrying value300; agreed charge500.",
+          "action": "Write off/charge only through supported approved flow.",
+          "expected": "Separate fleet loss300 from customer charge500; no assumption replacement price equals book value; retain evidence and source.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-REN.J08.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-REN.J09",
+      "revision": 1,
+      "title": "Rental photos, jobs, history and closeout",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Event with dispatch10, partial return, deposit1000; synthetic damage photo; real scoped roles.",
+      "ruleRefs": [
+        {
+          "id": "BR-REN-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-DAT-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-FILE-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-AUD-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "D-117",
+        "D-118",
+        "F-121"
+      ],
+      "entityRefs": [
+        "rentalReturnPhotos",
+        "rentalEvents",
+        "rentalBookingLines",
+        "tenantMembershipScopes"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/rental-bookings.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Own damage photo",
+          "given": "Authorized return actor; supported synthetic image.",
+          "action": "Attach photo during documented return.",
+          "expected": "Stored bytes/hash/booking/event/actor links match; reload own preview works; upload alone does not create charge.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-REN.J09.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Private photo access",
+          "given": "Known tenant B photo and real own photo.",
+          "action": "Request/download as tenant A.",
+          "expected": "Own allowed, foreign denied before signing; no foreign metadata in list/export.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-REN.J09.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Photo failure during return",
+          "given": "Isolated storage adapter fails at durable boundary.",
+          "action": "Submit return with image.",
+          "expected": "Declared operation is atomic or explicit partial state with safe recovery; never report full success while return/photo linkage is missing.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-REN.J09.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Rate changed after booking",
+          "given": "Accepted hire100, master now120.",
+          "action": "Reopen job, print and invoice under snapshot policy.",
+          "expected": "Original agreed100 preserved unless explicit reviewed variation; no silent120 historical rewrite.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-REN.J09.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Close with outstanding equipment",
+          "given": "Still out1 or unsettled deposit300.",
+          "action": "Attempt close/archive job.",
+          "expected": "Closeout exposes outstanding unit and liability; cannot erase them; archive is not settlement.",
+          "kind": "invalid-state",
+          "oracle": [],
+          "id": "WB-REN.J09.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

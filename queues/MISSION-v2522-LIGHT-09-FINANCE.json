@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-LIGHT-09-FINANCE",
+  "candidate": "v2.5.22",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reportedShortSha": "211771e",
+  "executionReady": true,
+  "status": "conditional-ready-fresh-financial-preflight-required-not-run",
+  "qaPlanningBase": "b0e9dc6fe47fb7d32e0a50e2246f3fba7dbce2fa",
+  "qaExecutionSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20
+  },
+  "oracle": "queues/ORACLE-v2522-LIGHT-08.json",
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "guardBoundary": "Reviewed portable bounded prepare AND claim file exchange, received-slice verification, durable unknown claims. Actual connected Browser title BookOne independently reproduced with full 37-case queue; four negative controls zero js/claims. Repeat on fresh execution ledger before business. No adapter changes during execution. Existing prior proof is not this run's GUARD. Dependencies are operator obligations; queue metadata alone does not enforce all graph edges.",
+  "cases": [
+    {
+      "id": "L08-GATE",
+      "title": "Exact new candidate and fresh controls",
+      "dependsOn": [],
+      "precondition": "No prior case required; new mission only, never resume terminalLight07.",
+      "expected": "Start NEW120-minute conservative clock with20reserved BEFORE browser setup; initialize NEW generic ledger BEFORE any session/form submission. Verify live v2.5.22 \u00b7211771e against full211771e95d6f97cac5eb281a0f8e63f0fceef8a4 and exact final published QA execution SHA of this new queue commit. Bind actual rule/library/UX hashes. Any drift stops dependent actions; no image/schema attestation invented. This is Light09 FINANCE, never resume terminal EXEC3 or EXEC2. Read linked preflight. product-ref.json remains an older deterministic-suite pin; do not run that unrelated product suite or silently update it. Live mission productSha is authoritative for this scope.",
+      "evidence": [
+        "candidate",
+        "qaSha",
+        "hashes",
+        "clock"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-GUARD",
+      "title": "Actual connected Browser-app dispatch proof",
+      "dependsOn": [
+        "L08-GATE"
+      ],
+      "precondition": "Exact candidate/QA verified and fresh synthetic inert proof inputs. No actor or business write is qualified by this technical case.",
+      "expected": "Rerun pinned guard+transport tests. Before any NEW business write, call runPersistedBrowserRequest({tools, cwd, requestPath}) so dispatchConnectedBrowser invokes the ACTUAL connected Browser app js tool: valid persisted synthetic inputs invoke one inert read-only script (document.title); rejected exit/missing intent/stale fingerprint/expired clock invoke zero actual js calls. Host prepare/claim/finish must freshly read persisted plan/state/fingerprint/clock, bind one script/submission, persist charged clock and exclusive claim before the tool, and treat isError/finish failure/crash as consumed unknown without replay. No bare authorize Boolean then independent click, guessed adapter, alternate Playwright/HTTP/CLI browser, cloned ticket or same-intent reauthorization. Passing unit tests alone is NOT this gate. Do not develop or alter guard/adapter during this fixed run.",
+      "evidence": [
+        "originalTests",
+        "actualToolPositive",
+        "zeroToolNegatives",
+        "persistedInputs",
+        "singleDispatch",
+        "transportProvenance"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-IDENTITY",
+      "title": "Fresh original private actor and own company",
+      "dependsOn": [
+        "L08-GATE"
+      ],
+      "precondition": "Exact candidate verified; NEW clock and generic ledger already open.",
+      "expected": "Read current selected page afresh; use original private QA fixture only, not unrelated browser autofill. If signed in, explicitly sign out then sign in; if already on login, sign in directly. Remember off. Checkpoint each authentication submission with unique intent and persisted readback. Verify fresh loaded own company/job/identity via supported UI. Missing private fixture is a blocker; no replacement account/company or permission change. This case proves identity only, not full financial qualification.",
+      "evidence": [
+        "freshActor",
+        "company",
+        "loadedRole",
+        "sessionReadback",
+        "noAutofillSubstitution"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-ACTOR",
+      "title": "Fresh intended fixture and actual full openings",
+      "dependsOn": [
+        "L08-IDENTITY"
+      ],
+      "precondition": "Exact candidate and fresh intended actor verified. Supported UI only. No business mutation unless GUARD and FIXTURES pass; no replay or privilege/settings workaround.",
+      "expected": "Fresh recovered existing QA N141710 login Rememberoff; credentials from original private fixture, not unrelated autofill. Checkpoint logout/login and persisted identity before business. Verify actual own company/job/module/form capabilities, full sales/purchase/inventory maps, CoA purposes, current-period locks, journals/trial/P&L/BS/aging/catalogue and stock. Bind actual viewport/locale/browser privately. Preserve all Light07 Q/order600,Ddraft100,openS600/P200 and earlier failures; current values must be read anew. No newaccount/company/module/job/grant/settings change. Read PREFLIGHT-v2522-LIGHT-09-FINANCE.json in order. Inventory routes are /inventory/products, /inventory/levels, /inventory/ledger; confirm source and current visible navigation before use. Do not guess /products or /inventory. Capture ALL pages/rows/filters/as-of dimensions before any S/P Save. Inventory writer is not a prerequisite for a separately proven existing digital/manual-service lane; actual read access, complete stock openings and relevant full-form capabilities are still mandatory. Viewable Owner or unsaved form is not server authorization proof. Missing full opening evidence blocks finance before Save. Current-period lock readback: /transactions Review column Open/Locked; bind actual current company, source row date and target YYYY-MM. This reflects tenant periodLocks, not invoice settlement. Empty rows/failure cannot mean open. Supported full-form routes and protected reference descriptions are in new preflight. Readability or blank disabled submit is not write denial/positive. Verify declared relevant job/module capabilities before any intent; first guarded positive must independently read back its actual authorized effects. No Inventory master write is required.",
+      "evidence": [
+        "freshActor",
+        "capabilities",
+        "settingsMaps",
+        "openingLedger",
+        "protectedSources",
+        "viewport"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-FIXTURES",
+      "title": "Fresh independent S/P and protected Q/D families",
+      "dependsOn": [
+        "L08-ACTOR",
+        "L08-GUARD"
+      ],
+      "precondition": "Exact candidate and fresh intended actor verified. Supported UI only. No business mutation unless GUARD and FIXTURES pass; no replay or privilege/settings workaround.",
+      "expected": "Only after GUARD passed: register NEW run-owned S fulfilled digital invoice6x100=600 and P delivered manual-service bill1x200. Existing own parties; actual selected digital/Standard/sellable product classification and account purposes proven via supported UI. VATregistrationfalse and purchaseapprovalfalse prerequisites; do not toggle. Same one existing cash/bank bookkeeping account purpose privatelybound. Old Q/order600,Ddraft100,openS600/P200 are READ-ONLY protected references, not available for new allocations/credit/payments. No source reuse/newproduct/quickcreate. Current open period/date confirmed; no lockchange. Funding must be actual opening plus accepted newSreceipts, never assumed. Register planned NEW family aliases and inputs here; actual Save/Post occurs only in SALE/BILL after gates pass. This gate never requires a new physical product or Inventory writer for a verified existing digital/manual-service lane. This planned S credit100 against350due should be fully applied/paid; do not pursue partial-return tooltip fixture in this money lane.",
+      "evidence": [
+        "familyRegistry",
+        "classification",
+        "account",
+        "configuration",
+        "dates",
+        "protectedSources"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-SALE",
+      "title": "S fulfilled digital invoice",
+      "dependsOn": [
+        "L08-FIXTURES",
+        "L08-GUARD"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Independent NEW S source digital6x100=600, noVAT/discount; do not use Q or D as fallback. Post once via supported UI, with separate intents if draft Save then Post are distinct. Required invoice posting yields DrAR600 CrSales600 exactly once, AR600, no stock/COGS. Capture all dates/fields/source/journal before continuing. Any inconsistent preview or uncertain result stops all new business until readback. Read persisted intent back before calling the dispatch function. If any checkpoint exits nonzero do not click. Any operator-control failure stays red; no retroactive compliance.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "posting",
+        "journal",
+        "stockUnchanged"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-STK-03",
+        "BR-SAL-02"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-S-JOURNAL",
+      "title": "Independent sale readback",
+      "dependsOn": [
+        "L08-SALE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "S View/original source and journal resolve exact same own invoice/date/600. Correct AR/revenue accounts, debit=credit600,noVAT/COGS/inventory movement. Protected D/Q/order remain nonposting. Expected values from oracle, not preview.",
+      "evidence": [
+        "source",
+        "journalLines",
+        "scope",
+        "unchangedFixtures"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-RECEIVE",
+      "title": "Collect first S amount",
+      "dependsOn": [
+        "L08-S-JOURNAL"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Using only fresh S, receive250 into qualified single bookkeeping cash/bank account. One receipt/allocation linked to S, Drliquid250 CrAR250; invoice remaining350, revenue still600, noVAT/stock/COGS. Verify source/payment history/journal/account and date; no external bank transfer is requested.",
+      "evidence": [
+        "intentReadback",
+        "allocation",
+        "journal",
+        "remaining",
+        "zeroRepeatRevenue"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-CREDIT",
+      "title": "Part-paid S linked credit",
+      "dependsOn": [
+        "L08-RECEIVE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "After confirmed receipt250 and AR350, create linked return/credit of exactly1of6digital units at original100, noVATdiscount. Preview/View100; source price100 must not become current catalogue10. One credit DrSalesReturns100 CrAR100; AR250, netincome500, liquid250, remaining sourceqty5. No stock/COGS. Do not create paid-credit/refund family.",
+      "evidence": [
+        "preview",
+        "intentReadback",
+        "credit",
+        "sourceLink",
+        "journal",
+        "remaining",
+        "zeroStock"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-STK-03",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-C-PRINT",
+      "title": "Credit print and source distinction",
+      "dependsOn": [
+        "L08-CREDIT"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Supported S credit print: credit-note title/source linkage/oneunit100/date/noVAT/source quantity semantics. Inspect invoice/credit totals separately. Missing control or required facts => blocked, not substituted invoice print. No account/data mutation.",
+      "evidence": [
+        "capability",
+        "creditPrint",
+        "sourceSemantics",
+        "zeroEffects"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-AR-OVER",
+      "title": "S single overpayment refusal",
+      "dependsOn": [
+        "L08-CREDIT"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Confirmed current S remaining250; attempt receipt251 once through ordinary supported UI. Expect actionable overpayment denial with no receipt/allocation/journal/liquid/AR effect and retained field map. Native max denial differs from server denial; record layer. If reviewed advance mode offered, do NOT accept it; record policy/UI branch and block expected denial if ambiguous. Inspect persisted state before correcting; no replay.",
+      "evidence": [
+        "before",
+        "intentReadback",
+        "feedback",
+        "retention",
+        "zeroEffects",
+        "layer"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-AR-CLOSE",
+      "title": "Same-form valid final S collection",
+      "dependsOn": [
+        "L08-AR-OVER"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Only after conclusive251refusal/zero effects, correct only amount to250 and submit once same form. If form cannot safely correct preserve failure; do not open alternate submission to evade idempotency. Exactly one additional Drliquid250 CrAR250; S balance0, totalreceipts500, netrevenue500, liquid+500, source credit unchanged. Uncertain intent stops all business.",
+      "evidence": [
+        "intentReadback",
+        "receipt",
+        "journal",
+        "source0",
+        "retainedFacts"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-04",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-S-HISTORY",
+      "title": "Sale settlement history and documents",
+      "dependsOn": [
+        "L08-AR-CLOSE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "S source paid/settled balance0; one linkedcredit100 and two receipts250 each, dates/accounts/source identities match. Invoice/credit/receipt previews supported and semantically accurate; unavailable receipt print remains blocked. No duplicated revenue or altered old sources.",
+      "evidence": [
+        "history",
+        "source",
+        "prints",
+        "ledger"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-S-REPORTS",
+      "title": "Receivable lane reconciliation",
+      "dependsOn": [
+        "L08-AR-CLOSE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Against actual opening: AR net0, liquid+500, Sales600 lessReturns100=netincome+500; no AP/VAT/COGS/stock changes. All S journals total Dr=Cr1200 across4accepted financial events. Compare same posted dates/dimensions/P&L/BS/TB/ARaging/cash. Do not force seven journals or totals if a step blocked; actual accepted intents determine branch delta.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journalCount",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-BILL",
+      "title": "Independent P service supplier bill",
+      "dependsOn": [
+        "L08-FIXTURES",
+        "L08-GUARD"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Create NEW manual-service bill1x200, expense purpose6800-equivalent actual CoA, existing own vendor, unique reference, noVATdiscount/stock. Require actual approvalfalse; if approvals or supplier configuration incompatible block rather than toggle. One posted DrExpense200 CrAP200; unpaid200, noinventory/GRNI/COGS. Capture all persisted fields/date/source/journal.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "fields",
+        "journal",
+        "zeroStock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-P-JOURNAL",
+      "title": "Independent bill AP/expense verification",
+      "dependsOn": [
+        "L08-BILL"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "P View balance200; journal DrExpense200 CrAP200 exactly once; existing supplier obligations unchanged; nostock/VAT/GRNI. Correct company/date/account purpose. Do not confuse total supplier AP with fresh bill remaining.",
+      "evidence": [
+        "source",
+        "journal",
+        "oldObligations",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-PAY",
+      "title": "Pay first P amount",
+      "dependsOn": [
+        "L08-P-JOURNAL"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Require verified available qualified liquid balance >=200 plus other planned commitments, from ACTOR plus actual accepted S receipts. No negative/tender workaround. If insufficient, block this and dependent Ppayment lanes; keep independent bill evidence. Book payment80 once: DrAP80 Crliquid80; P remains120, expense200 unchanged, one linked payment/journal. This is ERP test bookkeeping only, no external transfer.",
+      "evidence": [
+        "fundingGate",
+        "intentReadback",
+        "allocation",
+        "journal",
+        "remaining"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-AP-OVER",
+      "title": "P single overpayment refusal",
+      "dependsOn": [
+        "L08-PAY"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Current verified P remaining120; attempt121 once. Expect explicit denial, allfields retained and zero payment/allocation/journal/liquid/AP effects. Capture client/native/server layer; persistently resolve outcome before correction. No forced requests or replay.",
+      "evidence": [
+        "before",
+        "intentReadback",
+        "feedback",
+        "retention",
+        "zeroEffects",
+        "layer"
+      ],
+      "ruleRefs": [
+        "BR-ACC-04",
+        "BR-SAL-02"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-AP-CLOSE",
+      "title": "Same-form valid final P payment",
+      "dependsOn": [
+        "L08-AP-OVER"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "After conclusive121refusal, correctONLYamount120 and submitonce sameform. No alternate form to evade pending key. DrAP120 Crliquid120; P balance0, totalpayments200, expense remains200; no stock/VAT. If correction fails preserve red and block dependent completion.",
+      "evidence": [
+        "intentReadback",
+        "allocation",
+        "journal",
+        "source0",
+        "retainedFacts"
+      ],
+      "ruleRefs": [
+        "BR-ACC-04",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-P-HISTORY",
+      "title": "Supplier settlement and receipt semantics",
+      "dependsOn": [
+        "L08-AP-CLOSE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "One Pbill and only2payments80/120, source0, dates/account/vendor links correct. Supported payment receipt/print title and amounts; missing print/history layer remains blocked. Do not archive/delete/reverse to tidy.",
+      "evidence": [
+        "history",
+        "receiptPrint",
+        "source",
+        "zeroUnexpected"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-P-REPORTS",
+      "title": "Payable lane reconciliation",
+      "dependsOn": [
+        "L08-AP-CLOSE"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "P lane alone: AP net0, expense+200, liquid-200, noincome/VAT/GRNI/stock;3accepted financial journals Dr=Cr400. Reconcile supplier aging, source and reports at same scope. Derive partial deltas if blocked, never adopt all-pass target to match output.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journals",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-COMBINED",
+      "title": "Combined all-pass accounting oracle",
+      "dependsOn": [
+        "L08-S-REPORTS",
+        "L08-P-REPORTS"
+      ],
+      "precondition": "GATE/ACTOR/FIXTURES/GUARD passed for NEW financial families; actual supported capabilities/configuration/source/funding bound. Every business write must use reviewed dispatchBrowserAppWrite with actual Browser app js, successful persisted intent/exit and charged clock. No old protected fixture mutation, settings/grant workaround or uncertain replay.",
+      "expected": "Only if both trading families completed:7financialevents,journalsDr=Cr1600; AR/APnet0,liquid+300,netincome+300,assets+300,liabilitiesunchanged;inventory/VAT/GRNI/COGS/stock unchanged. Protected Q/order/D remain unposted. Verify BS equation/currentearnings and individual account purposes, not just balance equality. With missing/failed lanes, report exact accepted-branch oracle instead and do not pass wholecase.",
+      "evidence": [
+        "acceptedEvents",
+        "accountDeltas",
+        "equation",
+        "nonpostingSources",
+        "scope"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-AGING",
+      "title": "Fresh source aging and old-record preservation",
+      "dependsOn": [
+        "L08-ACTOR"
+      ],
+      "precondition": "Read-only actual closing of confirmed accepted partial branches is allowed even if financial GUARD is blocked. Never assume seven events or settled balances; do not pass missing required full layers.",
+      "expected": "At same as-of/date/scope, settled S/P absent from open aging or zero; D/Q/order never open posted debt. All prior open obligations/buckets/amounts unchanged. Match actual source IDs privately, not names alone. No aging cache or status-only substitution.",
+      "evidence": [
+        "asOf",
+        "freshSources",
+        "oldSources",
+        "reportEquality"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-STOCK",
+      "title": "Non-stock and catalogue invariance",
+      "dependsOn": [
+        "L08-ACTOR"
+      ],
+      "precondition": "Read-only actual closing of confirmed accepted partial branches is allowed even if financial GUARD is blocked. Never assume seven events or settled balances; do not pass missing required full layers.",
+      "expected": "Compare every original catalogue product/type/qty/value and stockledger/controlaccounts to actual opening; zero physical movement and zero COGS for Sdigital/Pservice/Q/order/D. Product count/classification unchanged. Any drift requires Medium before further business; do not edit stock/master to repair.",
+      "evidence": [
+        "catalogue",
+        "stockQuantities",
+        "stockValues",
+        "stockLedger",
+        "accounts"
+      ],
+      "ruleRefs": [
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-DRILLDOWN",
+      "title": "Seven event journals and audit adjacency",
+      "dependsOn": [
+        "L08-ACTOR"
+      ],
+      "precondition": "Read-only actual closing of confirmed accepted partial branches is allowed even if financial GUARD is blocked. Never assume seven events or settled balances; do not pass missing required full layers.",
+      "expected": "Open each actual accepted S/P journal via supported source links; correct event/date/account/liquid/source/tenant, balanced amounts and one persisted effect per logical submission. No duplicates from refused overpayments. Actual accepted7events if allpass; partially completed branch needs full actual mapping without claiming target.",
+      "evidence": [
+        "eventMap",
+        "journalLines",
+        "dates",
+        "sourceLinks",
+        "refusalZeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L08-END",
+      "title": "Restore reconcile publish and close",
+      "dependsOn": [
+        "L08-GATE"
+      ],
+      "precondition": "Recovery available after any attempted case; no failed gate bypass or new business.",
+      "expected": "Recovery runs after any attempted setup, even failed actor/guard. Stop new business at100chargedminutes and defer untouchedcases not-run-budget. Resolve actual submissions withoutreplay; derive exact accepted-branch deltas only. Restore actual opening viewport and compare complete settings/catalguetypeqtycost/oldaging/protectedQ/D/S/P; preserve all new/failedfixtures, no cleanupreversal/reset. Sameendstamp. Publish sanitized run/checks/codinghandoff/currentpointer/additivecoverage in NEWresultsbranch/PR, keep rawIDs/credentials/privatebaselines/screenshots/exports outsideGit. Closeclock throughpublication anddisclose finalmetadata tail. No release/canonical/ATacceptance. BackupLAST.",
+      "evidence": [
+        "settings",
+        "viewport",
+        "acceptedIntents",
+        "reconciliation",
+        "protectedSources",
+        "endstamp",
+        "publication",
+        "clock"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run",
+      "recovery": true
+    }
+  ],
+  "parentQueue": "queues/MISSION-v2522-LIGHT-08-EXEC3.json",
+  "reviewedTransport": {
+    "host": "scripts/operator-browser-host.mjs",
+    "coordinator": "scripts/operator-browser-transport.mjs",
+    "codeHost": "scripts/operator-browser-codehost.mjs",
+    "entry": "runPersistedBrowserRequest",
+    "authorCommit": "a9ccd4fbc360ed67fd3083f79bbd8c094eabef45",
+    "correctionCommit": "fc79951208e9dbc7272464e11405cebcf693c511"
+  },
+  "review": "reviews/REVIEW-20261026-light09-finance.md",
+  "pinMeaning": "qaExecutionSha pins reviewed executable source. fingerprint.qaSha MUST be the full final published checkout commit containing this new queue; handoff/PR names that commit. No source changes after run starts.",
+  "preflight": "queues/PREFLIGHT-v2522-LIGHT-09-FINANCE.json",
+  "omittedPriorPasses": {
+    "ids": [
+      "L08-PL-D",
+      "L08-PL-390",
+      "L08-QL-D",
+      "L08-QL-390",
+      "L08-DETAIL-D",
+      "L08-DETAIL-390",
+      "L08-SOURCE"
+    ],
+    "evidence": "runs/CHECKS-20261025-light08-exec2-results.json",
+    "meaning": "Deliberately outside this mission scope; no prior pass reused as fresh execution or finance qualification. Reopen scope with Medium if candidate/source changes."
+  },
+  "scopeBoundary": "Finance-only continuation: existing physical-master and partial-return help families excluded, not passed. Stable L08 financial IDs retained to use unchanged oracle. Full fresh preflight still mandatory."
+}

@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2521-LIGHT-07",
+  "candidate": "v2.5.21",
+  "productSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "reportedShortSha": "7458a9c",
+  "executionReady": true,
+  "status": "same-candidate-independent-business-expansion-conditional-fixtures-not-run",
+  "qaPlanningBase": "8d8bd0625a9ca0473810e3742e78ca524448cd0f",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20
+  },
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "oracle": "queues/ORACLE-v2521-LIGHT-07.json",
+  "bindingRequirements": [
+    "No new product fix:source/master/live still7458a9c. User requested larger independent check; prior10pass4fail7blocked remainimmutable.",
+    "Fresh exact QAexecutionSHA,existingactor,actualopenings and supportedcapabilities required. No privilege/profileworkaround.",
+    "All fixture amounts are independent synthetic test inputs,not existing business baselines or real bank movements.",
+    "Dependencyblocks recorded; independentfamily maycontinue only after unresolvedintentzero and its own gates. Late-response/race/auth/upgrade not spontaneously tested."
+  ],
+  "cases": [
+    {
+      "id": "L07-GATE",
+      "title": "Exact candidate and new controls",
+      "dependsOn": [],
+      "precondition": "No prior case required. Start a NEW clock and initialize a NEW generic ledger before browser setup or any session submission; verify exact published QA and full product candidate before business actions.",
+      "expected": "Verify v2.5.21 ·7458a9c against full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448 and exact published execution QA SHA. NEW generic ledger and120-minute conservative clock BEFORE browser setup,20closing reserved. Candidate drift blocks all dependent actions; no silent rebind. No image/schema attestation claimed.",
+      "evidence": [
+        "candidate",
+        "qaSha",
+        "hashes",
+        "clock"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-ACTOR",
+      "title": "Fresh actor and complete opening state",
+      "dependsOn": [
+        "L07-GATE"
+      ],
+      "precondition": "L07-GATE passed; NEW clock and ledger active. Verify actor, capabilities and actual openings in this case before business mutations; no settings or privilege changes.",
+      "expected": "Explicit existing-fixture signout/login Rememberoff; intent before every session/form submission. Verify actual identity/company/job/capabilities. Capture all sales/purchase/inventory maps, actual viewport, journals/dr/cr, CoA purposes, reports/aging, stock/catalogue and old failure fixtures privately. Prior values never substituted for current readings.",
+      "evidence": [
+        "freshActor",
+        "capabilities",
+        "settingsMaps",
+        "openingLedger",
+        "stock",
+        "viewport"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-PHYSICAL",
+      "title": "Physical-first capability gate",
+      "dependsOn": [
+        "L07-GATE",
+        "L07-ACTOR"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Read-only confirm whether already-provisioned authorized Inventory writer exists. Without it block physical master/purchase/return/source-ancestry/consumer positives before Save, name engineering owner and delivery request. Do not grant, create account/company, quick-create, or borrow tenant. This records prerequisite availability, not physical workflow execution.",
+      "evidence": [
+        "capability",
+        "blockedFamily",
+        "owner"
+      ],
+      "ruleRefs": [
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-FIXTURES",
+      "title": "Qualify independent run-owned families",
+      "dependsOn": [
+        "L07-GATE",
+        "L07-ACTOR"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Bind Q quote/order, D never-posted draft, S fulfilled digital receivable, P delivered manual-service payable. Existing own customer/vendor and Standard digital classification proven via supported UI; no product creation. Bind same one existing cash/bank bookkeeping account by purpose and actual account UI; no external payment connection. VAT registration false/rates unchanged; purchase approval false required. If incompatible, block affected family rather than toggle settings. Current date must be open; do not change locks. Dates/notes/aliases unique, committed after rerender. No historical source reuse.",
+      "evidence": [
+        "familyRegistry",
+        "classification",
+        "account",
+        "profile",
+        "dates"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01",
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-QUOTE",
+      "title": "Fresh Q quote draft",
+      "dependsOn": [
+        "L07-FIXTURES"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Create Q digital6x100=600, no discounts/VAT, declared already fulfilled synthetic supply only for later financial S family. Q remains pre-posting. Commit issue date currentrun/due+7days and notes; Save once/reopen exact600,lineqty6/unit100/dates/notes; no journals/AR/cash/stock. Verify before creating any further Q effect.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "fields",
+        "zeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-Q-EDIT",
+      "title": "Supported draft metadata edit",
+      "dependsOn": [
+        "L07-QUOTE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "On run-owned Q only change notes and supported due date to run+8days; Save once/reopen. Line facts/600/source/customer unchanged, no GL/stock. Generic quote editor need not support line rewriting; absent required metadata edit stays blocked. No old document edits.",
+      "evidence": [
+        "beforeAfter",
+        "intentReadback",
+        "persisted",
+        "zeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-Q-PRINT",
+      "title": "Quote print facts",
+      "dependsOn": [
+        "L07-Q-EDIT"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Supported print preview Q before conversion: correct quote title, original customer/source/date/due/notes,line6x100,total600,no false tax/paid state. Close preview without OS print/upload. Missing supported fields/layers explicit; no whole pass missing required fields.",
+      "evidence": [
+        "capability",
+        "semanticPrint",
+        "sourceFacts",
+        "zeroEffects"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-Q-ORDER",
+      "title": "Quote to order conversion",
+      "dependsOn": [
+        "L07-Q-EDIT"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Convert Q once through supported UI. Exactly one own order600 with source quote link, same6x100/due/notes/party; Q conversion state accurate; no revenue/AR/cash/stock. Inspect list, View and journals before disposition; delayed navigation is not failure/replay permission.",
+      "evidence": [
+        "intentReadback",
+        "order",
+        "sourceLink",
+        "lineFacts",
+        "zeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-ORDER",
+      "title": "Order history, print and conversion guard",
+      "dependsOn": [
+        "L07-Q-ORDER"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Reopen Q/order source chain, verify600/lines/source/metadata and supported order print. Converted quote must not offer an ordinary second full conversion. If control absent, record UI guard only, not server denial. Never replay conversion to obtain server proof. Required unsupported print/history stays blocked; no invoice conversion in Q family.",
+      "evidence": [
+        "sourceChain",
+        "print",
+        "uiGuard",
+        "serverGap",
+        "zeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01",
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-DRAFT",
+      "title": "Independent unposted invoice D",
+      "dependsOn": [
+        "L07-FIXTURES"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Create one NEW D invoice draft1x100=noVAT/discount. Choose explicit Save draft; if UI cannot preserve draft block before submit. Reopen draft100/unposted; no receivable/revenue/cash/stock/journal. Never post D; it remains a preserved nonposting fixture.",
+      "evidence": [
+        "intentReadback",
+        "draft",
+        "zeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-SAL-01"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-D-GUARD",
+      "title": "Draft allocation availability",
+      "dependsOn": [
+        "L07-DRAFT"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Use supported receive-payment picker read-only and D detail: unposted D cannot be an allocatable posted obligation. Do not forge IDs, force hidden controls, or submit a payment to bypass UI. Distinguish UI nonavailability from actual server denial; if actual deny layer cannot be safely executed it remains blocked, never full authorization acceptance.",
+      "evidence": [
+        "draftState",
+        "picker",
+        "zeroEffects",
+        "serverLayerGap"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-SALE",
+      "title": "S fulfilled digital invoice",
+      "dependsOn": [
+        "L07-FIXTURES"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Independent NEW S source digital6x100=600, noVAT/discount; do not use Q or D as fallback. Post once via supported UI, with separate intents if draft Save then Post are distinct. Required invoice posting yields DrAR600 CrSales600 exactly once, AR600, no stock/COGS. Capture all dates/fields/source/journal before continuing. Any inconsistent preview or uncertain result stops all new business until readback.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "posting",
+        "journal",
+        "stockUnchanged"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-STK-03",
+        "BR-SAL-02"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-S-JOURNAL",
+      "title": "Independent sale readback",
+      "dependsOn": [
+        "L07-SALE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "S View/original source and journal resolve exact same own invoice/date/600. Correct AR/revenue accounts, debit=credit600,noVAT/COGS/inventory movement. Posted D/Q must remain absent. Expected values from oracle, not preview.",
+      "evidence": [
+        "source",
+        "journalLines",
+        "scope",
+        "unchangedFixtures"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-RECEIVE",
+      "title": "Collect first S amount",
+      "dependsOn": [
+        "L07-S-JOURNAL"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Using only fresh S, receive250 into qualified single bookkeeping cash/bank account. One receipt/allocation linked to S, Drliquid250 CrAR250; invoice remaining350, revenue still600, noVAT/stock/COGS. Verify source/payment history/journal/account and date; no external bank transfer is requested.",
+      "evidence": [
+        "intentReadback",
+        "allocation",
+        "journal",
+        "remaining",
+        "zeroRepeatRevenue"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-CREDIT",
+      "title": "Part-paid S linked credit",
+      "dependsOn": [
+        "L07-RECEIVE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "After confirmed receipt250 and AR350, create linked return/credit of exactly1of6digital units at original100, noVATdiscount. Preview/View100; source price100 must not become current catalogue10. One credit DrSalesReturns100 CrAR100; AR250, netincome500, liquid250, remaining sourceqty5. No stock/COGS. Do not create paid-credit/refund family.",
+      "evidence": [
+        "preview",
+        "intentReadback",
+        "credit",
+        "sourceLink",
+        "journal",
+        "remaining",
+        "zeroStock"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-STK-03",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-C-PRINT",
+      "title": "Credit print and source distinction",
+      "dependsOn": [
+        "L07-CREDIT"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Supported S credit print: credit-note title/source linkage/oneunit100/date/noVAT/source quantity semantics. Inspect invoice/credit totals separately. Missing control or required facts => blocked, not substituted invoice print. No account/data mutation.",
+      "evidence": [
+        "capability",
+        "creditPrint",
+        "sourceSemantics",
+        "zeroEffects"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AR-OVER",
+      "title": "S single overpayment refusal",
+      "dependsOn": [
+        "L07-CREDIT"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Confirmed current S remaining250; attempt receipt251 once through ordinary supported UI. Expect actionable overpayment denial with no receipt/allocation/journal/liquid/AR effect and retained field map. Native max denial differs from server denial; record layer. If reviewed advance mode offered, do NOT accept it; record policy/UI branch and block expected denial if ambiguous. Inspect persisted state before correcting; no replay.",
+      "evidence": [
+        "before",
+        "intentReadback",
+        "feedback",
+        "retention",
+        "zeroEffects",
+        "layer"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AR-CLOSE",
+      "title": "Same-form valid final S collection",
+      "dependsOn": [
+        "L07-AR-OVER"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Only after conclusive251refusal/zero effects, correct only amount to250 and submit once same form. If form cannot safely correct preserve failure; do not open alternate submission to evade idempotency. Exactly one additional Drliquid250 CrAR250; S balance0, totalreceipts500, netrevenue500, liquid+500, source credit unchanged. Uncertain intent stops all business.",
+      "evidence": [
+        "intentReadback",
+        "receipt",
+        "journal",
+        "source0",
+        "retainedFacts"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-04",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-S-HISTORY",
+      "title": "Sale settlement history and documents",
+      "dependsOn": [
+        "L07-AR-CLOSE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "S source paid/settled balance0; one linkedcredit100 and two receipts250 each, dates/accounts/source identities match. Invoice/credit/receipt previews supported and semantically accurate; unavailable receipt print remains blocked. No duplicated revenue or altered old sources.",
+      "evidence": [
+        "history",
+        "source",
+        "prints",
+        "ledger"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-S-REPORTS",
+      "title": "Receivable lane reconciliation",
+      "dependsOn": [
+        "L07-AR-CLOSE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Against actual opening: AR net0, liquid+500, Sales600 lessReturns100=netincome+500; no AP/VAT/COGS/stock changes. All S journals total Dr=Cr1200 across4accepted financial events. Compare same posted dates/dimensions/P&L/BS/TB/ARaging/cash. Do not force seven journals or totals if a step blocked; actual accepted intents determine branch delta.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journalCount",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-BILL",
+      "title": "Independent P service supplier bill",
+      "dependsOn": [
+        "L07-FIXTURES"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Create NEW manual-service bill1x200, expense purpose6800-equivalent actual CoA, existing own vendor, unique reference, noVATdiscount/stock. Require actual approvalfalse; if approvals or supplier configuration incompatible block rather than toggle. One posted DrExpense200 CrAP200; unpaid200, noinventory/GRNI/COGS. Capture all persisted fields/date/source/journal.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "fields",
+        "journal",
+        "zeroStock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-P-JOURNAL",
+      "title": "Independent bill AP/expense verification",
+      "dependsOn": [
+        "L07-BILL"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "P View balance200; journal DrExpense200 CrAP200 exactly once; existing supplier obligations unchanged; nostock/VAT/GRNI. Correct company/date/account purpose. Do not confuse total supplier AP with fresh bill remaining.",
+      "evidence": [
+        "source",
+        "journal",
+        "oldObligations",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-PAY",
+      "title": "Pay first P amount",
+      "dependsOn": [
+        "L07-P-JOURNAL"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Require verified available qualified liquid balance >=200 plus other planned commitments, from ACTOR plus actual accepted S receipts. No negative/tender workaround. If insufficient, block this and dependent Ppayment lanes; keep independent bill evidence. Book payment80 once: DrAP80 Crliquid80; P remains120, expense200 unchanged, one linked payment/journal. This is ERP test bookkeeping only, no external transfer.",
+      "evidence": [
+        "fundingGate",
+        "intentReadback",
+        "allocation",
+        "journal",
+        "remaining"
+      ],
+      "ruleRefs": [
+        "BR-SAL-02",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AP-OVER",
+      "title": "P single overpayment refusal",
+      "dependsOn": [
+        "L07-PAY"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Current verified P remaining120; attempt121 once. Expect explicit denial, allfields retained and zero payment/allocation/journal/liquid/AP effects. Capture client/native/server layer; persistently resolve outcome before correction. No forced requests or replay.",
+      "evidence": [
+        "before",
+        "intentReadback",
+        "feedback",
+        "retention",
+        "zeroEffects",
+        "layer"
+      ],
+      "ruleRefs": [
+        "BR-ACC-04",
+        "BR-SAL-02"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AP-CLOSE",
+      "title": "Same-form valid final P payment",
+      "dependsOn": [
+        "L07-AP-OVER"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "After conclusive121refusal, correctONLYamount120 and submitonce sameform. No alternate form to evade pending key. DrAP120 Crliquid120; P balance0, totalpayments200, expense remains200; no stock/VAT. If correction fails preserve red and block dependent completion.",
+      "evidence": [
+        "intentReadback",
+        "allocation",
+        "journal",
+        "source0",
+        "retainedFacts"
+      ],
+      "ruleRefs": [
+        "BR-ACC-04",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-P-HISTORY",
+      "title": "Supplier settlement and receipt semantics",
+      "dependsOn": [
+        "L07-AP-CLOSE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "One Pbill and only2payments80/120, source0, dates/account/vendor links correct. Supported payment receipt/print title and amounts; missing print/history layer remains blocked. Do not archive/delete/reverse to tidy.",
+      "evidence": [
+        "history",
+        "receiptPrint",
+        "source",
+        "zeroUnexpected"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-P-REPORTS",
+      "title": "Payable lane reconciliation",
+      "dependsOn": [
+        "L07-AP-CLOSE"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "P lane alone: AP net0, expense+200, liquid-200, noincome/VAT/GRNI/stock;3accepted financial journals Dr=Cr400. Reconcile supplier aging, source and reports at same scope. Derive partial deltas if blocked, never adopt all-pass target to match output.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journals",
+        "stock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-COMBINED",
+      "title": "Combined all-pass accounting oracle",
+      "dependsOn": [
+        "L07-S-REPORTS",
+        "L07-P-REPORTS"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Only if both trading families completed:7financialevents,journalsDr=Cr1600; AR/APnet0,liquid+300,netincome+300,assets+300,liabilitiesunchanged;inventory/VAT/GRNI/COGS/stock unchanged. Q/order/D remain unposted. Verify BS equation/currentearnings and individual account purposes, not just balance equality. With missing/failed lanes, report exact accepted-branch oracle instead and do not pass wholecase.",
+      "evidence": [
+        "acceptedEvents",
+        "accountDeltas",
+        "equation",
+        "nonpostingSources",
+        "scope"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AGING",
+      "title": "Fresh source aging and old-record preservation",
+      "dependsOn": [
+        "L07-COMBINED"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "At same as-of/date/scope, settled S/P absent from open aging or zero; D/Q/order never open posted debt. All prior open obligations/buckets/amounts unchanged. Match actual source IDs privately, not names alone. No aging cache or status-only substitution.",
+      "evidence": [
+        "asOf",
+        "freshSources",
+        "oldSources",
+        "reportEquality"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-STOCK",
+      "title": "Non-stock and catalogue invariance",
+      "dependsOn": [
+        "L07-S-JOURNAL",
+        "L07-P-JOURNAL"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Compare every original catalogue product/type/qty/value and stockledger/controlaccounts to actual opening; zero physical movement and zero COGS for Sdigital/Pservice/Q/order/D. Product count/classification unchanged. Any drift requires Medium before further business; do not edit stock/master to repair.",
+      "evidence": [
+        "catalogue",
+        "stockQuantities",
+        "stockValues",
+        "stockLedger",
+        "accounts"
+      ],
+      "ruleRefs": [
+        "BR-STK-03"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-LISTS",
+      "title": "Search sort pagination and retained selection",
+      "dependsOn": [
+        "L07-S-HISTORY",
+        "L07-P-HISTORY"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "On Q/order/S/credit/P/payment lists supported by UI: exact run-owned identifiers return correct rows; clearingsearch restores originalscope; sort/datefilter and Next/Previous don't duplicate/omit selected fixtures; statuses/amounts match View. No new creations from filtered lists. Missing consumer not a generic route-load pass.",
+      "evidence": [
+        "search",
+        "sort",
+        "pagination",
+        "scope",
+        "viewMatch"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-EXPORT",
+      "title": "Supported scoped export accuracy",
+      "dependsOn": [
+        "L07-COMBINED"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Only exposed supported export flow; capture current filters/date/company, export privately and compare row counts/amounts/source identifiers to UI and oracle. No real customer statements, public uploads, raw artifacts in Git or guessed endpoints. Missing control/unsupported format => blocked. Hash actual file bytes; file existence alone not correctness.",
+      "evidence": [
+        "capability",
+        "scope",
+        "fileHash",
+        "rowComparison",
+        "privacy"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-DRILLDOWN",
+      "title": "Seven event journals and audit adjacency",
+      "dependsOn": [
+        "L07-COMBINED"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Open each actual accepted S/P journal via supported source links; correct event/date/account/liquid/source/tenant, balanced amounts and one persisted effect per logical submission. No duplicates from refused overpayments. Actual accepted7events if allpass; partially completed branch needs full actual mapping without claiming target.",
+      "evidence": [
+        "eventMap",
+        "journalLines",
+        "dates",
+        "sourceLinks",
+        "refusalZeroEffects"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-AUDIT",
+      "title": "Supported event history completeness",
+      "dependsOn": [
+        "L07-COMBINED"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Use real exposed audit/history surfaces for run-owned creation/conversion/collection/credit/payment and refusedoperation metadata if supported. Distinguish allowedoperational telemetry from businessCREATE. Record exact availability, actor/source/date and missing layers; no fabricated audit claim from toast/row alone; no DB/directHTTP probes.",
+      "evidence": [
+        "capability",
+        "events",
+        "actor",
+        "sourceDates",
+        "gaps"
+      ],
+      "ruleRefs": [
+        "BR-ACC-04"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-GAPS",
+      "title": "Carry known failures and isolated prerequisites",
+      "dependsOn": [
+        "L07-GATE",
+        "L07-ACTOR"
+      ],
+      "precondition": "L07-GATE and L07-ACTOR passed; exact candidate unchanged; actual own capabilities/settings/openings verified. Supported UI only; no grants/module/job changes or real external payments.",
+      "expected": "Preserve OBS-M21-01 and return-badge missinghelp as knownunfixed on sameSHA; this is NOT their retest/closure. Inventory/physical,POS,rental,real-role/foreign-record auth,busy/late,authentic101c104cupgrades,AT/bankmatching fixtures remain blocked unless separately reviewed/bound. Record owners/deliveryrequests,do not invent acceptance. Backup/restoreLAST.",
+      "evidence": [
+        "knownRed",
+        "physical",
+        "isolated",
+        "owners"
+      ],
+      "ruleRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "L07-END",
+      "title": "Restore reconcile publish and close",
+      "dependsOn": [
+        "L07-GATE"
+      ],
+      "precondition": "Recovery case runs after any attempted setup/execution, including failed actor or candidate gates. Reconcile only actual confirmed effects, restore only changes actually made, and publish truthful dispositions. No business mutation requires a failed gate to be bypassed.",
+      "expected": "At100chargedminutes stop new business; defer untouched pending slots not-run-budget. Necessary safe readback/reconciliation/actual restoration only. Preserve all attempted outcomes and every accepted source; no cleanupdelete/reversal/reset. Resolve all intents without replay. Reload all full actual settings maps, resetactualviewport, reconcile accepted S/P/Q/D branches and oldfixtures, verify sameendstamp. Publish sanitized run/checks/findings/codinghandoff/currentpointer/additivecoverage in NEWresultsbranch/PR; no rawIDs/credentials/financialbaselines/screenshots/traces inpublicGit. Close actualclock including publication; disclose finalmetadata tail. No release/fullERP/canonical acceptance.",
+      "evidence": [
+        "settings",
+        "viewport",
+        "acceptedIntents",
+        "reconciliation",
+        "oldFixtures",
+        "endstamp",
+        "publication",
+        "clock"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run",
+      "recovery": true
+    }
+  ]
+}

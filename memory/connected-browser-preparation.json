@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "status": "author-proof-independent-review-pending",
+  "handoff": "handoffs/HANDOFF-20261024-connected-browser-review.md",
+  "checks": "runs/CHECKS-20261024-connected-browser-transport.json",
+  "businessExecution": "not-run",
+  "historicalEvidence": "unchanged"
+}

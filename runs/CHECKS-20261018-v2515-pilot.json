@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261018-v2515-pilot",
+  "queue": "queues/PILOT-v2515.json",
+  "queueHash": "b2365c77c13b6af29fea5ef7fdf7851c3d6105033de0dda3a9b45b942ce9a87e",
+  "productSha": "158ddc2043b5d12f85124f77adf9bd7e36492838",
+  "observedStamp": "v2.5.15 \u00b7 158ddc2",
+  "qaBase": "ab0a997e7b5004693e761407172c9cd661ca2727",
+  "rulebookHash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "executionLibraryVersion": "1.4.0",
+  "executionLibraryHash": "ce31c7293ce305ea75aa6882ccca21b962874f6fe4fd95ef402e14a10d2a0723",
+  "maintenanceLibraryVersion": "1.4.1",
+  "actorAlias": "QA N141710",
+  "role": "Owner",
+  "actorVerification": "Explicit logout/login using intended fixture; own company and loaded role/build verified",
+  "start": "2026-10-18T09:26:55.810Z",
+  "end": "2026-10-18T09:59:59.192Z",
+  "counts": {
+    "passed": 10,
+    "failed": 1,
+    "blocked": 1,
+    "inconclusive": 0,
+    "pending": 0,
+    "running": 0
+  },
+  "scenarios": [
+    {
+      "id": "P15-01",
+      "status": "blocked",
+      "actual": "Preflight fixture conflict: fresh v2.5.15 cap intentionally changes sixth return after five0.99credits to1.00 (product diff and test). Queue requires six0.99credits before1.01. Old source is already fully quantity-returned and must remain untouched. No mutation for this scenario.",
+      "evidence": {
+        "diff": "158ddc2 document-guards.ts remainingLinkedHeaderDiscount and regression sixth unit expected1"
+      },
+      "nextAction": "Medium review: distinguish fresh ladder conservation from prior-version six0.99 upgrade fixture; preserve frozen queue and old records."
+    },
+    {
+      "id": "P15-02",
+      "status": "passed",
+      "actual": "FreshINV0010=2.99; SR0016=1/SR0017=1/SR0018=.99; source paid2.99/due0. Four journals contain only AR/revenue/returns; no stock/COGS.",
+      "evidence": {
+        "preview": "1,1,.99 observed before each Save; finalheader.01",
+        "persistedDocument": "List savedSR0016/17/18 correct amounts",
+        "journal": "Expanded rows: invoiceDr1300/Cr4000=2.99; returnsDr4100/Cr1300=1,1,.99;31journals/debits4103.05",
+        "sourceBalance": "ReloadedINV0010paid2.99/due0",
+        "unchangedState": "PriorbadfixturesINV0003partial6.95/INV0004partial300/INV0005open302.67 retained; no digitalinventory/COGS; final fullcontrol reconciliationpending",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-03",
+      "status": "passed",
+      "actual": "FreshINV0011physical3x100; stock10to7. InvalidsameSKU2+2 refused client with remainingquantity toast; retainedrows; noSR0019/returns18; journals32 unchanged after invoice; sourceopen300/due300; stock7 unchanged.",
+      "evidence": {
+        "preview": "Invalidpreview400/header100/total300, cannotpost; validguardrefuses",
+        "persistedDocument": "18returns bothbeforeafter, latestSR0018",
+        "journal": "32entries/debits4583.05: invoice adds480; deniedattempt addsnone",
+        "sourceBalance": "ReloadedINV0011open/paid0/due300",
+        "unchangedState": "Defaultstock7/value420 beforeafter; sourceandreturncounts unchanged; no server denial claim",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-04",
+      "status": "passed",
+      "actual": "FreshINV0012=300; SR0019 three1unitrows@100 persisted; sourcepaid300/due0. Stock7->4->7 at60; returnledger3x+1@60. Correct300AR/returns+180costreversal.",
+      "evidence": {
+        "preview": "Rows1+1+1price100,total300",
+        "persistedDocument": "SR0019modalshows3rows1@100/100each",
+        "journal": "ExpandedSR0019Dr4100=300/Cr1300=300;3Dr5100=60/Cr5000=60; sourceinvoicecorrect",
+        "sourceBalance": "ReloadINV0012paid300/due0",
+        "unchangedState": "Independentstocklevelsandmovementledgerconfirmed7->4->7,value420->240->420; lastcost60, priorINV0011remainsopen; FIFOnotselected",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-05",
+      "status": "passed",
+      "actual": "FreshTAXINV0013/26OCT_01/3net256.50/VAT46.17/gross302.67. FullreturnSR0020accepted302.67; sourcepaid/due0.",
+      "evidence": {
+        "preview": "Subtotal270/header13.50/gross302.67",
+        "persistedDocument": "SavedSR0020paid302.67; sourceqty3price100/line10%/header13.50",
+        "journal": "SR0020Dr4100=256.50/Dr2200=46.17/Cr1300=302.67; sourceinverse correct",
+        "sourceBalance": "ReloadedINV0013paid302.67/due0",
+        "unchangedState": "Manualservice no inventory/COGS; oldINV0005 untouched; plannedVATflagonly",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-06",
+      "status": "passed",
+      "actual": "INV0014=256.50; SR0021=85.50 andSR0022=171; sourcepaid256.50/due0; stock7->4->5->7at60.",
+      "evidence": {
+        "preview": "Qty1line90/header4.50/85.50; qty2line180/header9/171",
+        "persistedDocument": "SavedSR0021/22lists85.50/171",
+        "journal": "InvoiceDrAR256.50/CrSales256.50+cost180; returns85.50/171 and cost60/120 correctly reversed",
+        "sourceBalance": "ReloadINV0014paid256.50/due0",
+        "unchangedState": "Stocklevelsandledger-3,+1,+2at60; value420restored; earlierdenialsource preserved; no FIFOlayers claimed underlastcost",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-07",
+      "status": "passed",
+      "actual": "FreshTAXINV0015net100/VAT18/gross118, then registrationfalse verifiedreload; fullreturnSR0023remains118/sourcepaid/due0.",
+      "evidence": {
+        "preview": "Linkedreturn100net/0discount/118total undercurrentVATfalse",
+        "persistedDocument": "SR0023paid118",
+        "journal": "ReturnDr4100=100/Dr2200=18/Cr1300=118; sourceinverse; no inventory/COGS",
+        "sourceBalance": "ReloadINV0015paid118/due0; originaltax18 retained",
+        "unchangedState": "CurrentVATfalseafterreload, otherVAT18/export0/dept01unchanged; sourcehistoricaltaxnotrewritten",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-08",
+      "status": "failed",
+      "actual": "AfteroneblockedPost, onformretainsSKU/qty1/price10 but delivery19Octreset18Oct,due25Octcleared,notescleared. Freshzerostockremains0. Firsterrortoastnotcaptured.",
+      "evidence": {
+        "formBeforeAfter": "DOMvaluesbefore:delivery2026-10-19/due2026-10-25/notesP15-08...; afterdelivery2026-10-18/dueempty/notesempty; linesretained",
+        "error": "Notcapturedfirsttoast; blockedstockpathestablishedbyzerostockandnoinvoice",
+        "documentAbsence": "Invoiceliststill15/latestINV0015; noINV0016",
+        "journalAbsence": "41journals/debits7277.39 unchangedfrom priorcompletedscenario",
+        "stockUnchanged": "FreshQ-P15-ZERO-STO-AWZWDefault0beforeafter",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      },
+      "nextAction": "Medium diagnose uncontrolled form fields resetting after server action failure; preservefirstattempt and add exactfields regression. Do not close stock retention finding."
+    },
+    {
+      "id": "P15-09",
+      "status": "passed",
+      "actual": "Client150%refusedwithclear100%toast; delivery20Oct/due26Oct/notes/qty1price10discount150retained. Noinvoice/journal.",
+      "evidence": {
+        "formBeforeAfter": "Alltextboxvaluesidenticalbeforeafterincludingdatesandnotes",
+        "error": "Percentage line discount cannot exceed 100%.",
+        "documentAbsence": "15invoices/latestINV0015 afterCancel",
+        "journalAbsence": "41journals/debits7257.39unchanged",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-10",
+      "status": "passed",
+      "actual": "FreshownpartyINV0016=1; linkedcustomerdisabled/unitpricereadonly/linediscountlocked; validownpartySR0024=1accepted/sourcepaid. UIboundaryonly.",
+      "evidence": {
+        "loadedActor": "FreshfixtureQA N141710login/loadedOwner/owncompany, unchanged",
+        "sourceIdentity": "LoadedINV0016andmatchedN14PhysicalCustomer; sourceqty1/price1; SR0024accepted",
+        "formLocks": "VisibleDOMcustomerselectdisabled, unitPriceReadonly, discountTypeDisabled, discountValueReadonly; no server/foreignclaims",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-11",
+      "status": "passed",
+      "actual": "FreshDigitalQ-P15-DIGITAL--H5BZ; negativeblock; INV0017=1andSR0025=1accepted/sourcepaid1/due0. No inventory/COGS.",
+      "evidence": {
+        "preview": "Invoice1/linkedreturn1",
+        "persistedDocument": "SavedINV0017/SR0025correct",
+        "journal": "InvoiceDr1300/Cr4000=1; returnDr4100/Cr1300=1; no5100/5000;45journals/debits7261.39",
+        "sourceBalance": "ReloadINV0017paid1/due0",
+        "unchangedState": "Digitalquickcreatedwithoutstock; physicaldenialdidnotblockdigital; plannednegativeblockactive; VATfalse",
+        "endStamp": "v2.5.15 \u00b7 158ddc2"
+      }
+    },
+    {
+      "id": "P15-12",
+      "status": "passed",
+      "actual": "45journals/debitscredits7261.39; AR706.21/AP540/inventoryGL300/VAT46.71/profit419.50/assets1006.21=liabilitiesequity. Opening120stockGLgapunchanged; exactdeltasreconcile. VATfalse/negativeallow/lastcostrestored.",
+      "evidence": {
+        "trialBalance": "Dr1860+82.17+900+1485.42+660+2273.80=7261.39; Cr1560+128.88+660+2144.92+1200+1567.59=7261.39",
+        "controlAccountDeltas": "OpeningAR406.21->706.21(+300), inventory480->300(-180), profit299.50->419.50(+120), AP540/VAT46.71/cash0unchanged. Physical10->7/value600->420 retains120priorgap.",
+        "fixtureRegister": "8freshinvoicesINV0010-0017;10returnsSR0016-0025; INV0011open300forrejectedreturn, allothernewsourcesfullyreturned;2newcatalogSKUszeroPhysical/Digital; none deleted",
+        "settingsReload": "VATregistrationfalse/rate18/export0/dept01; negativeallow/costinglast reloaded",
+        "endStamp": "v2.5.15 \u00b7 158ddc2 unchanged"
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "case": "P15-08",
+      "field": "evidence.journalAbsence",
+      "original": "7277.39",
+      "correct": "7257.39",
+      "reason": "QA transcription typo; actualUI41journals7257.39; independentrunarithmeticagrees. Originalterminalrecordpreserved."
+    }
+  ],
+  "acceptance": "not-established",
+  "canonicalBindings": "unchanged/unbound/not-run",
+  "scope": "12 bounded browser scenarios, not whole-workbook/release acceptance",
+  "metrics": {
+    "checkpointedExecutionMinutes": 33.1,
+    "modelSetting": "Not independently observable; user requested cost-aware Light pilot; no automatic switch claimed",
+    "credits": "unavailable",
+    "additionalUserInterventions": 0,
+    "automaticBrowserAdapters": "none; supported browser actions by operator, deterministic checkpoint CLI",
+    "mediumReview": "required for P15-01 fixture conflict, P15-08 failure and pilot evidence review"
+  }
+}

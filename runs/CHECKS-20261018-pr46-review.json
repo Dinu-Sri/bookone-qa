@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "candidate": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "qaBase": "51208f40db047c5b7251a86b4c25061c198fc4a1",
+  "liveStamp": "v2.5.16 \u00b7 b2c5205",
+  "actor": "fresh-explicit-QA-N141710-login/owncompany/Owner",
+  "observations": [
+    {
+      "id": "R46-DRAFT-READ",
+      "status": "observed",
+      "actual": "Original0018stilldraft10;allvisiblefieldvaliditytrue,SKUdash;notresubmitted"
+    },
+    {
+      "id": "R46-MANUAL-POSITIVE",
+      "status": "passed-bounded",
+      "actual": "NewmanualServiceINV0027draft10reopened/onePost10;DrAR10CrSales10;fullSR0051credit10/DrReturns10CrAR10;sourcepaid;noCOGSstock"
+    },
+    {
+      "id": "R46-DATE-FILL",
+      "status": "harness-failure-reproduced",
+      "actual": "fill+Tab changedDOMtemporarily but line rerender resetcontrolledquote dates todefaults;no save-time date-lossclaim"
+    },
+    {
+      "id": "R46-DATE-KEY",
+      "status": "passed-unsaved-control",
+      "actual": "fill+ArrowUp+ArrowDown onissue then due retained17Oct/25Oct2026afterlineedit;noquotesaved"
+    },
+    {
+      "id": "R46-RETURN-VIEW",
+      "status": "evidence-gap-confirmed",
+      "actual": "ReturnsroutehasView/Actions;noPrint/detail config. Snapshotdialogshowslines/total,notheader/tax/allocation breakdown. No hiddenAPIused."
+    },
+    {
+      "id": "R46-PURCHASE-PROFILE",
+      "status": "read-only-observed",
+      "actual": "Approvalfalse,requiredsupplierfalse,duplicateblocktrue,requireGRNfalse,postGRNIfalse,termsNet30/expense6800. No settings saved."
+    }
+  ],
+  "sourceProbe": {
+    "result": "reviews/REVIEW-20261018-pr46-idempotency.json",
+    "passed": 2,
+    "failed": 1,
+    "exitCode": 1,
+    "boundary": "Actual pinned idempotency helpers with synthetic DB adapter; commercial rejection path statically traced; not live DB or auth replay"
+  },
+  "opening": {
+    "journals": 78,
+    "turnover": 10455.51
+  },
+  "closing": {
+    "journals": 80,
+    "turnover": 10475.51,
+    "AR": 1006.21,
+    "AP": 540,
+    "inventoryGL": 120,
+    "VAT": 46.71,
+    "profit": 539.5,
+    "assets": 1126.21,
+    "stockQty": 4,
+    "stockValue": 240
+  },
+  "settingsChanges": 0,
+  "unresolvedFinancialIntents": [],
+  "preserved": "PR46andpriorrunfilesunchanged;0018and0025preserved;new0027/SR0051pairnet0",
+  "releaseAcceptance": "not-established",
+  "canonicalCaseAcceptance": "not-established",
+  "validation": {
+    "planningTests": {
+      "passed": 4,
+      "failed": 0
+    },
+    "queueValidation": "18fixedIDs-valid",
+    "sourceProbeExitCode": 1,
+    "sourceProbePassed": 2,
+    "sourceProbeFailed": 1,
+    "fullRepositoryCheck": "not-run-partial-checkout",
+    "sourceSetupFailure": "firstexport-fromstripSyntaxErrorbeforeassertions;correctedunchangedexpectations;privateattemptretained"
+  }
+}

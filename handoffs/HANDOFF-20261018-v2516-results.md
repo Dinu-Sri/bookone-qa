@@ -1,0 +1,23 @@
+# Medium review after v2.5.16 Light mission
+
+Read [run](../runs/RUN-20261018-v2516-light.md), [exact18-slot results/corrections/fixtures](../runs/CHECKS-20261018-v2516-light.json), and [review intake](../reviews/REVIEW-20261018-v2516-mission-intake.md). Productb2c5205a1bf52fbd327a948325810670467d21b4; QAexecutionbase4cb309158dc6405f61bfce09e45386919c6875b0. Livev2.5.16·b2c5205 start/end; candidate unapproved.
+
+All18slots disposed:9passed/2failed/3blocked/4inconclusive. One failed slot is a fixture/harness issue with appended correction, not a confirmed product defect. No pending/running financial intent. Do not restart the completed queue or reuse consumed ladders.
+
+The repairs have substantial bounded live evidence: server-refused invoice retains all17fields (error wording missed), client150% retains allfields, fresh7/10/3 ladders complete with every preview matching credit, physical85.50/171 and costs60/120, tax302.67 and historicalVAT118, duplicate denial and valid1+1+1price100. Source13pass remains source-only. No blanket closure of legacy residual, full workflows or release gates.
+
+## Medium priorities
+
+1. **Draft Post failure:** INV-20261017-0018draft10 saved/reopened all17fields; one Post did not post, journal unchanged. Missing error capture and SKU displayed as dash despiteLinked. Read-only inspect exact draft/source/current code before a fresh reproduction. Do not claim product ID loss or root cause from display alone; do not replay0018. Add a separately reviewed fixture with immediate error capture and supported dates/classification; retain original failure.
+2. **Quote date fixture correction:** Q01's original record called save-time date loss. The saved pre-submit map proves issue18Oct/goodthru17Nov already before submission. Attempted17/25Octfill did not stick. Client retention and quote10 save observed; distinct dates not tested. Preserve correction prominently, diagnose controlled-date entry, then run a new fixture. This is not a confirmed product date-loss bug.
+3. **Persisted return representation:** all7/10/3 monetary ladders correct/source0; modal omits header/adjustment detail. Bind a supported persisted detail/print/export or isolated real-runtime readback before closing fullrepresentation obligations. No hidden browser state/internal API shortcuts. Fresh cap passes do not close authentic legacy1.01/1.04 upgrades.
+4. **E01 error wording:** same-form all17fields retained/no mutations, but transient toast missed. Fresh independent source-bound server denial with immediate capture required; avoid retroactively turning inconclusive into pass. Same rejected physical form's eventual supported correction remains separate/unexecuted.
+5. **Duplicate invalid-preview display:** copied2+added2 vs source3 shows subtotal400, discount100,total300 before correct refusal. Assess whether unsupported quantity should produce explicit validation before showing an apparent discount. No return accepted. Register a new display-edge specification only after expectation review; no finance rule change made here.
+6. **Purchase negative path:** only one existing vendor option; missing-vendor server fixture unreachable through supported UI. PO10 positive succeeds/datesnotes retained, GLnotposted. Design a legitimate reachable server refusal or declare this particular branch inaccessible; no hidden field tampering.
+7. **U07/U10:** infrastructure operator prepares isolated authenticv2.5.14compiledapp/auth/DB and in-placecandidateupgrade under [fixture plan](../docs/workflows/RESIDUAL_FIXTURE_PLAN.md). No staging downgrade/reset/SQLfabrication, consumed-source edits or backup/restore.
+
+## Safe continuation
+
+Final78journals/debits=credits10455.51; AR1006.21/AP540/inventoryGL120/VAT46.71/COGS420/profit539.50/assets1126.21. Widget4×60=240; inherited120stock/GLgap unchanged. INV0025 intentionally open300/cost180 explains all net run deltas. Draft0018/quote0001/PO0001 preserved; all other new posted invoices fully credited. VATfalse18/export0/dept01, negativeAllow,lastcost restored/reloaded. Inspect fresh build/actor/openings for the next new run.
+
+Medium should review these outcomes and fixture/evidence gaps before issuing the next fixed Light mission. Then continue the planned PO→partialGRN→billing→GRNI/approval/stock journeys with independent expectations and verified configuration. Keep business books, risk/control mappings and intake maintained under mandatory AGENTS73–87. Existing rulebook1.0.0/library1.5.0/272draftunboundcases unchanged; this run grants zero fullcanonical acceptance. Expert/statutory reviews remain pending. Actual encrypted backup/restore LAST. No merge/deploy/reset/payment/historical repair/direct message authorized by this handoff.

@@ -1,0 +1,324 @@
+{
+  "kind": "bounded-manual-browser-checks",
+  "date": "2026-10-16",
+  "build": "v2.5.11 ·0bcdf4d",
+  "totals": {
+    "checks": 62,
+    "passed": 45,
+    "failed": 17,
+    "findingGroups": 9
+  },
+  "checks": [
+    {
+      "id": "ENV01",
+      "status": "passed",
+      "observation": "Live stamp remains v2.5.11 ·0bcdf4d at start/continuation/end."
+    },
+    {
+      "id": "P01",
+      "status": "passed",
+      "observation": "Saved physical SKU Q-BW261016-PHY-A9HZ, cost60; form10×60=600."
+    },
+    {
+      "id": "P02",
+      "status": "passed",
+      "observation": "PO0002 persisted supplier,invoice reference,qty10,cost60,total600."
+    },
+    {
+      "id": "P03",
+      "status": "passed",
+      "observation": "PO detail explicitly Not posted; no recognition journal attributed to PO."
+    },
+    {
+      "id": "P04",
+      "status": "passed",
+      "observation": "Partial GRN0001 persisted4×60=240,Not posted under GRNIoff."
+    },
+    {
+      "id": "P05",
+      "status": "passed",
+      "observation": "GRN0001→PUR0001 persisted240,paid0,due240."
+    },
+    {
+      "id": "P06",
+      "status": "passed",
+      "observation": "PUR0001 journal Dr5100 inventory240/Cr2100 AP240."
+    },
+    {
+      "id": "P07",
+      "status": "failed",
+      "observation": "PO after indirect GRN→bill still Billed0/Remaining10."
+    },
+    {
+      "id": "P08",
+      "status": "failed",
+      "observation": "PO allowed GRN0002 qty7 after receipt4 of ordered10."
+    },
+    {
+      "id": "P09",
+      "status": "failed",
+      "observation": "Duplicate supplier invoice conversion produced application exception instead of validation."
+    },
+    {
+      "id": "P10",
+      "status": "passed",
+      "observation": "After exception purchase list contained only PUR0001; no second bill journal in final11."
+    },
+    {
+      "id": "PAY01",
+      "status": "failed",
+      "observation": "Vendor over-balance300 on due240 has no visible error or dialog."
+    },
+    {
+      "id": "PAY02",
+      "status": "passed",
+      "observation": "Vendor valid payment100 persisted; original bill paid100/due140."
+    },
+    {
+      "id": "PAY03",
+      "status": "passed",
+      "observation": "Unmodified vendor remittance showed100/date16Oct."
+    },
+    {
+      "id": "PAY04",
+      "status": "failed",
+      "observation": "Edited vendor remittance printed999/date1Jan2020."
+    },
+    {
+      "id": "RET01",
+      "status": "passed",
+      "observation": "First purchase return PR0001 persisted4×60=240; allocated140,credit due100."
+    },
+    {
+      "id": "RET02",
+      "status": "failed",
+      "observation": "Second full purchase return PR0002 accepted another4×60=240."
+    },
+    {
+      "id": "RET03",
+      "status": "failed",
+      "observation": "Duplicate PR0002 created DrAP240/CrInventory240 instead of zero effects."
+    },
+    {
+      "id": "S01",
+      "status": "failed",
+      "observation": "Physical quote3×100 line10% +header5% expected256.50;form275.50."
+    },
+    {
+      "id": "S02",
+      "status": "failed",
+      "observation": "QT0001 saved wrong275.50 and line290 instead of270."
+    },
+    {
+      "id": "S03",
+      "status": "passed",
+      "observation": "QT→SO preserved recorded source275.50 and3×100/line290; does not validate original calculation."
+    },
+    {
+      "id": "S04",
+      "status": "passed",
+      "observation": "SO modal correctly labelled Sales order and rendered recorded customer/lines."
+    },
+    {
+      "id": "S05",
+      "status": "passed",
+      "observation": "SO→INV produced one posted INV0001,source marked converted."
+    },
+    {
+      "id": "S06",
+      "status": "failed",
+      "observation": "Invoice/GL inherited wrong275.50 from invalid quote calculation."
+    },
+    {
+      "id": "S07",
+      "status": "passed",
+      "observation": "Converted SO actions No actions available; no repeat invoice created."
+    },
+    {
+      "id": "S08",
+      "status": "passed",
+      "observation": "Converted quote no Convert/Edit action; no repeat order created."
+    },
+    {
+      "id": "PAY05",
+      "status": "failed",
+      "observation": "Customer over-balance300 on due275.50 has no visible feedback/dialog."
+    },
+    {
+      "id": "PAY06",
+      "status": "passed",
+      "observation": "Customer valid75.50 generated receipt75.50."
+    },
+    {
+      "id": "PAY07",
+      "status": "failed",
+      "observation": "Edited customer receipt prints999/date1Jan2020 rather than75.50/date16Oct."
+    },
+    {
+      "id": "RET04",
+      "status": "failed",
+      "observation": "Invoice-loaded full return preview290 omits recorded header14.50."
+    },
+    {
+      "id": "RET05",
+      "status": "passed",
+      "observation": "Saved SR0001 uses correct recorded275.50 despite wrong preview."
+    },
+    {
+      "id": "RET06",
+      "status": "passed",
+      "observation": "SR0001 journal DrReturns275.50/CrAR275.50 and stock/COGS reversal180."
+    },
+    {
+      "id": "RET07",
+      "status": "passed",
+      "observation": "Extra1 return against fully returned invoice created no additional visible SR or journal; UI redirected silently."
+    },
+    {
+      "id": "VAL01",
+      "status": "failed",
+      "observation": "New free-text service2×100 untouched %10 computed190 rather than180."
+    },
+    {
+      "id": "VAL02",
+      "status": "passed",
+      "observation": "Toggling line selector LKR→% recalculates same service input to180."
+    },
+    {
+      "id": "VAL03",
+      "status": "failed",
+      "observation": "Explicit150% line discount saved QT0002 zero draft rather than rejecting."
+    },
+    {
+      "id": "M01",
+      "status": "passed",
+      "observation": "Saved Service SKU Q-BW261016-CON-S5VI and Digital SKU Q-BW261016-DIG-SIGR."
+    },
+    {
+      "id": "M02",
+      "status": "passed",
+      "observation": "Mixed service50+digital20 saved INV0002 draft70 for new Mixed Customer."
+    },
+    {
+      "id": "M03",
+      "status": "passed",
+      "observation": "Draft detail Not posted; Edit action reopened both recorded lines,total70."
+    },
+    {
+      "id": "M04",
+      "status": "passed",
+      "observation": "Edit→Post changed INV0002 to open70."
+    },
+    {
+      "id": "M05",
+      "status": "passed",
+      "observation": "Mixed invoice journal only DrAR70/CrSales70; no Inventory/COGS journal lines."
+    },
+    {
+      "id": "C01",
+      "status": "passed",
+      "observation": "Cash purchase CSH0001 service20 persisted paid20."
+    },
+    {
+      "id": "C02",
+      "status": "passed",
+      "observation": "Cash purchase journal Dr6800 expense20/Cr1000 cash20; noAP lines."
+    },
+    {
+      "id": "A01",
+      "status": "passed",
+      "observation": "Service PUR0002 persisted40 and due15Nov2026."
+    },
+    {
+      "id": "A02",
+      "status": "passed",
+      "observation": "AR asof16Oct shows current unpaid INV0002=70."
+    },
+    {
+      "id": "A03",
+      "status": "failed",
+      "observation": "AR asof15Oct incorrectly includes invoice issued16Oct=70."
+    },
+    {
+      "id": "A04",
+      "status": "passed",
+      "observation": "AP asof16Oct before settlement shows PUR0002=40/due15Nov."
+    },
+    {
+      "id": "A05",
+      "status": "failed",
+      "observation": "AP asof15Oct before settlement incorrectly includes future-issued PUR0002=40."
+    },
+    {
+      "id": "A06",
+      "status": "passed",
+      "observation": "Second vendor payment40 saved; actual remittance/journal date16Oct,APaging0 afterward."
+    },
+    {
+      "id": "R01",
+      "status": "passed",
+      "observation": "Final11 journals and total debits1976.50 equal independent sum of recorded postings."
+    },
+    {
+      "id": "R02",
+      "status": "passed",
+      "observation": "Journal UI reports all11 balanced; earlier seven-entry checkpoint total1806.50."
+    },
+    {
+      "id": "R03",
+      "status": "passed",
+      "observation": "Final net income10 agrees70 service/digital revenue−20cash expense−40service expense; original sale/fullreturn cancel."
+    },
+    {
+      "id": "R04",
+      "status": "passed",
+      "observation": "Final net cashflow−84.50 agrees75.50−100−20−40; four cash movements."
+    },
+    {
+      "id": "R05",
+      "status": "passed",
+      "observation": "Final AR−5.50 agrees70−75.50 after original invoice/fullreturn cancel."
+    },
+    {
+      "id": "R06",
+      "status": "passed",
+      "observation": "Final AP−340 agrees240−100−240−240+40−40; includes confirmed invalid duplicate return."
+    },
+    {
+      "id": "R07",
+      "status": "passed",
+      "observation": "Final assets−330 and liabilities+equity−330 agree; current earnings10 included."
+    },
+    {
+      "id": "UI01",
+      "status": "passed",
+      "observation": "Invoice search Mixed Customer yields exactly INV0002."
+    },
+    {
+      "id": "UI02",
+      "status": "passed",
+      "observation": "Unmatched invoice search shows No matches."
+    },
+    {
+      "id": "UI03",
+      "status": "passed",
+      "observation": "Clear search restores exactly two invoices without stuck overlay."
+    },
+    {
+      "id": "CFG01",
+      "status": "passed",
+      "observation": "Read-only company profile Sri Lanka/LKR/Asia-Colombo."
+    },
+    {
+      "id": "CFG02",
+      "status": "passed",
+      "observation": "Read-only inventory last cost/negative allow; no setting changed."
+    },
+    {
+      "id": "CFG03",
+      "status": "passed",
+      "observation": "Read-only purchase duplicate blockingON; approval/requiredInvoice/requiredGRN/GRNIOFF; Net30/6800."
+    }
+  ],
+  "acceptance": "not-customer-ready;no full-workflow or authorization certification"
+}

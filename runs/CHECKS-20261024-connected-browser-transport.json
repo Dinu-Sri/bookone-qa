@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "scope": "Synthetic tooling preparation only",
+  "baseQaSha": "a6fdda6ab48aed1f2fdb3abdde1be04558f20bf3",
+  "tests": {
+    "originalGuard": 26,
+    "transport": 18,
+    "totalPassed": 44,
+    "totalFailed": 0
+  },
+  "repositoryCheck": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "note": "Existing dependencies reused; automatic dependency install disabled."
+  },
+  "connectedToolControls": [
+    {
+      "control": "exit",
+      "executed": false,
+      "actualBrowserCalls": 0,
+      "uncertain": false
+    },
+    {
+      "control": "intent",
+      "executed": false,
+      "actualBrowserCalls": 0,
+      "uncertain": false
+    },
+    {
+      "control": "fingerprint",
+      "executed": false,
+      "actualBrowserCalls": 0,
+      "uncertain": false
+    },
+    {
+      "control": "clock",
+      "executed": false,
+      "actualBrowserCalls": 0,
+      "uncertain": false
+    },
+    {
+      "control": "positive",
+      "executed": true,
+      "actualBrowserCalls": 1,
+      "uncertain": false,
+      "observedTitle": "BookOne"
+    }
+  ],
+  "firstHostFailure": {
+    "beforeBrowserDispatch": true,
+    "actualBrowserCalls": 0,
+    "cause": "Host lacked structuredClone",
+    "correction": "Explicit JSON-only cloning, then fresh proof fixtures"
+  },
+  "originalGuardClockQueueChanged": false,
+  "businessActions": 0,
+  "applicationConfigurationChanges": 0,
+  "independentReview": "pending",
+  "canonicalAcceptance": "not-established"
+}

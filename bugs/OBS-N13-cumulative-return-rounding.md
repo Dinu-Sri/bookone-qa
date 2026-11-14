@@ -1,0 +1,9 @@
+# OBS-N13-ROUNDING — fractional-cent discount strands the last return unit
+
+P2/open; candidate v2.5.13 ·1a10201/full1a1020127c4ff0f11ccd9d84d736c6b18b235fca. Source **INV-20261017-0009**,D2513RoundingExact3Customer; explicitDigitalSKU Q-D2513-1710-D-XI7J,qty3@1,fixedheader0.01,total2.99,date17Oct. Settled pre-submit qty/price/discount and saved value were independently observed. Do not confuse this source with invalid initial1-unit INV0008.
+
+Return1unit twice in distinct deliberate submissions: each preview1/header0, each accepted1; **SR0008/SR0009**. One unit and0.99 sourcevalue remain. Third1-unit return previews1/header0, then rejects with **This return exceeds the remaining value on the original invoice.** No third SR/journal; reload sourcepaid2/due0.99/qty3 retained. Required full quantity cannot be returned through this source-priced path.
+
+Expected: deterministic cumulative rounding that conserves source qty3 AND value2.99, including a residual-cent allocation. Given first two credits1+1 already accepted, final preview/post must be0.99; do not require changing source price, returning fractional quantity or creating an unrelated adjustment to hide this remainder. Alternative stable allocations may assign the cent earlier but must allow complete source reversal. No invented cash refund or stock effect for digital lines.
+
+Owner coding agent; map WB-HYB.J02.C07, BR source-return/value/rounding invariants. Test full versus split returns, repeated partials, uneven quantities, line+header discounts, tax buckets, shared SKU/different prices, service/digital/physical and purchase analogues. Those adjacent classes are regression requirements, not executed claims here. Critical source conservation regressions need failure-sensitivity evidence before gate use. Original accepted credits remain preserved; no repair/reset performed. Rulebook1.0.0 unchanged/expert pending; numeric conservation itself is independently determinable.

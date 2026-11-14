@@ -1,0 +1,11 @@
+# CONT9 remaining-only review, 14 November UTC
+
+CONT8 closed with E18–E24 accepted and consumed. E24 bank1000 synthetic owner contribution was verified by saved transaction row, balanced DR bank1000/CR equity1000 journal and account balances; the observed UI disclosed only a short journal prefix. Its disposition remains inconclusive for the frozen output-binding requirement. No wrong posting is established; never replay E24.
+
+The remaining queue has E25–E37 only. E25 depends on the verified fresh CONT8 closing gate and creates a distinct cash50 owner contribution. No later event uses E24 or E25 as a source document. Therefore the successor does not require an unused E25 output UUID; it preserves the once-only intent and independent journal/balance verification. The contribution is synthetic ledger QA, not a real transfer. Other event-specific source bindings remain required wherever a payment or return uses a source. No change to product or previously frozen run.
+
+Carry version3 verifies hashes of the closed CONT8 fingerprint, clock, entire disposition state and owned sources, requires exact prior execution pin, no unresolved intent, independent accepted readback for each E18–E24, E24's preserved inconclusive disposition, and no prior submission for any E25–E37. This transitively preserves the prior CONT5/CONT7 carry, whose hashes were checked during CONT8. Fresh opening and preservation gates precede import. No invented UUID or hidden API is used.
+
+Opening V cash177 bank1252.20 card0 AR/AP0 inventory180 inputVAT100.80 outputVAT90 equity1500 revenue720 returns220 COGS300 expense80; office stock3/value180 POS0 and no V shift. Existing13/15Nov source dates stay unchanged. New mission explicitly fixed14NovUTC/due16Nov for new documents; on a later UTC day require an explicit newly reviewed successor. Stop new submits23:55UTC. Prior feedback defects retained. Final conditional balances are unchanged from the CONT8 oracle.
+
+Local focused79/79 passed, including actual closed CONT8 carry, tamper and already-consumed refusal tests, source/desktop guards and exact remaining event fields. New execution requires fresh actual gates, full host tests, NEW180/150/30 clock, independent per-event readbacks, and sanitized consolidated publication. Owner alone deploys; recovery last.

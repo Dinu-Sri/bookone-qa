@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "ORACLE-v2523-RAPID-03-CONT1",
+  "authority": [
+    "BR-ACC-01",
+    "BR-SAL-02"
+  ],
+  "profile": {
+    "businessDate": "2026-10-30",
+    "dueDate": "2026-10-31",
+    "originalSourceDate": "2026-10-29",
+    "currency": "LKR",
+    "vatRegistered": false,
+    "purchaseApproval": false,
+    "postGrniOnReceipt": false,
+    "costing": "last",
+    "settingsMutation": false
+  },
+  "lanes": {
+    "customerCashRefund": {
+      "events": [
+        {
+          "id": "RC1-RETURN1",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "4100",
+                  "debitCents": 4000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 4000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "RC1-RETURN2",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "4100",
+                  "debitCents": 8000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 8000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ]
+    }
+  },
+  "allPass": {
+    "financialSubmissions": 2,
+    "journals": 2,
+    "debitCents": 12000,
+    "creditCents": 12000,
+    "cashDeltaCents": -12000,
+    "arDeltaCents": 0,
+    "apDeltaCents": 0,
+    "returnsDeltaCents": 12000,
+    "incomeDeltaCents": -12000,
+    "assetsDeltaCents": -12000,
+    "stockDelta": 0,
+    "stockMovements": 0
+  },
+  "meaning": "Remainingonly. Earlier18financialevents22journals1680 are readonly opening; neverreplay. Combinedtwofingerprints20events24journals1800, not oneoriginalrunpass."
+}

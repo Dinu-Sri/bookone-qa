@@ -1,0 +1,113 @@
+{
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 5400000,
+    "reserveMs": 900000,
+    "chargedMs": 4701172,
+    "pausedMs": 244520,
+    "lastAt": 1793088701723,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1793083756031
+      },
+      {
+        "action": "pause",
+        "at": 1793083967699,
+        "elapsedMs": 211668,
+        "priorMode": "active",
+        "reason": "Observed execution interruption before fresh authentication; no submissions pending"
+      },
+      {
+        "action": "resume",
+        "at": 1793084212219,
+        "elapsedMs": 244520,
+        "priorMode": "paused"
+      },
+      {
+        "action": "check",
+        "at": 1793084294462,
+        "elapsedMs": 82243,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084296465,
+        "elapsedMs": 2003,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084368480,
+        "elapsedMs": 72015,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084370526,
+        "elapsedMs": 2046,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088135271,
+        "elapsedMs": 3764745,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088234189,
+        "elapsedMs": 98918,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088338739,
+        "elapsedMs": 104550,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088391484,
+        "elapsedMs": 52745,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088422462,
+        "elapsedMs": 30978,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088463968,
+        "elapsedMs": 41506,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088497617,
+        "elapsedMs": 33649,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088558014,
+        "elapsedMs": 60397,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1793088701723,
+        "elapsedMs": 143709,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "chargedMinutes": 78.35286666666667,
+  "resultsPR": 82,
+  "executionStoppedAt75MinuteThreshold": true,
+  "publicationBoundary": "Clock closed after initial results PR publication. This clock record, PR base correction and final verification are metadata-only tail; no browser or business cases after closure.",
+  "unresolvedSubmissions": 0
+}

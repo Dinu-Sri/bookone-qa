@@ -1,0 +1,4633 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "productRepository": "Dinu-Sri/BookOne",
+  "productSha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productVersion": "2.5.12",
+  "evidenceScope": "Static schema/module/action/route study. Not a runtime trace, complete call graph or supported-feature certification.",
+  "nodes": [
+    {
+      "id": "tenantRoles",
+      "label": "tenant_roles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "slug",
+        "templateKey",
+        "templateVersion",
+        "isLocked",
+        "customizedAt",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantRolePermissions",
+      "label": "tenant_role_permissions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "roleId",
+        "permissionKey",
+        "level",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantMembershipRoles",
+      "label": "tenant_membership_roles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "membershipId",
+        "roleId",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantPermissionOverrides",
+      "label": "tenant_permission_overrides",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "permissionKey",
+        "effect",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantTeams",
+      "label": "tenant_teams",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "roleId",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantTeamMembers",
+      "label": "tenant_team_members",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "teamId",
+        "userId",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantMembershipScopes",
+      "label": "tenant_membership_scopes",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "membershipId",
+        "scopeType",
+        "targetId",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantInvites",
+      "label": "tenant_invites",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "email",
+        "roleId",
+        "invitedBy",
+        "tokenHash",
+        "status",
+        "expiresAt",
+        "acceptedAt",
+        "acceptedUserId",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "accounts",
+      "label": "accounts",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/accounts.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "code",
+        "name",
+        "type",
+        "normalSide",
+        "parentCode",
+        "isActive",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "auditLog",
+      "label": "audit_log",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/audit-log.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "action",
+        "tableName",
+        "recordId",
+        "oldValues",
+        "newValues",
+        "ipAddress",
+        "notes",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "businessDocuments",
+      "label": "business_documents",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "partyId",
+        "transactionId",
+        "documentType",
+        "documentNumber",
+        "issueDate",
+        "dueDate",
+        "status",
+        "sourceDocumentId",
+        "discountId",
+        "discountTotal",
+        "brandId",
+        "locationId",
+        "bookDomain",
+        "subtotal",
+        "taxTotal",
+        "total",
+        "paidAmount",
+        "balanceDue",
+        "currency",
+        "notes",
+        "saleChannel",
+        "invoiceKind",
+        "deliveryDate",
+        "placeOfSupply",
+        "paymentMode",
+        "taxInvoiceNumber",
+        "supplierInvoiceNumber",
+        "exportCountry",
+        "exportRef",
+        "additionalInfo",
+        "freightAmount",
+        "dutyAmount",
+        "otherCharges",
+        "vatRate",
+        "amountInWords",
+        "purchaserTin",
+        "purchaserPhone",
+        "purchaserAddress",
+        "registerId",
+        "shiftId",
+        "posMode",
+        "sourcePosSaleId",
+        "postedAt",
+        "printStyleId",
+        "printStyleSnapshot",
+        "publicToken",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "businessDocumentLines",
+      "label": "business_document_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "documentId",
+        "productId",
+        "accountId",
+        "lineRef",
+        "description",
+        "quantity",
+        "unitPrice",
+        "unitCost",
+        "discountPercent",
+        "discountAmount",
+        "lineTotal",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenantMemberships",
+      "label": "tenant_memberships",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "role",
+        "primaryRoleId",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "companyProfiles",
+      "label": "company_profiles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "legalName",
+        "tradingName",
+        "registrationNumber",
+        "country",
+        "baseCurrency",
+        "timezone",
+        "addressLine1",
+        "addressLine2",
+        "city",
+        "postalCode",
+        "phone",
+        "email",
+        "website",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "taxProfiles",
+      "label": "tax_profiles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "tin",
+        "vatNumber",
+        "svatNumber",
+        "taxOffice",
+        "defaultTaxRate",
+        "taxBasis",
+        "invoicePrefix",
+        "billPrefix",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "financialYears",
+      "label": "financial_years",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "label",
+        "startDate",
+        "endDate",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "brands",
+      "label": "brands",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "code",
+        "status",
+        "notes",
+        "website",
+        "bankDetails",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "locations",
+      "label": "locations",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "brandId",
+        "name",
+        "code",
+        "locationType",
+        "address",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "companyDomains",
+      "label": "company_domains",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "domain",
+        "verificationToken",
+        "status",
+        "verifiedAt",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "documentStyles",
+      "label": "document_styles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/document-styles.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "docKind",
+        "brandId",
+        "isActive",
+        "version",
+        "accentColor",
+        "logoImageKey",
+        "logoPosition",
+        "showSku",
+        "showTin",
+        "showPhone",
+        "showEmail",
+        "showBank",
+        "bankDetails",
+        "footerNotes",
+        "fontFamily",
+        "showQr",
+        "typeScale",
+        "baseFontPx",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "healthCheckRuns",
+      "label": "health_check_runs",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/health-check.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "status",
+        "suite",
+        "seed",
+        "stepsJson",
+        "createdJson",
+        "summary",
+        "errorMessage",
+        "startedAt",
+        "finishedAt",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "inventorySettings",
+      "label": "inventory_settings",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "negativeStockPolicy",
+        "costingMethod",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "inventoryProducts",
+      "label": "inventory_products",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sku",
+        "name",
+        "description",
+        "longDescription",
+        "productType",
+        "unit",
+        "unitCost",
+        "sellPrice",
+        "revenueAccountCode",
+        "cogsAccountCode",
+        "inventoryAccountCode",
+        "expenseAccountCode",
+        "category",
+        "categoryId",
+        "brandId",
+        "barcode",
+        "sellable",
+        "purchasable",
+        "taxStatus",
+        "reorderLevel",
+        "reorderQty",
+        "preferredVendorId",
+        "notes",
+        "imageKey",
+        "hireUnit",
+        "turnaroundHours",
+        "depositAmount",
+        "replacementPrice",
+        "tracksSerials",
+        "isActive",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "inventoryProductCategories",
+      "label": "inventory_product_categories",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "slug",
+        "parentId",
+        "brandId",
+        "locationId",
+        "sortOrder",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "inventoryStockLevels",
+      "label": "inventory_stock_levels",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "productId",
+        "locationId",
+        "qtyOnHand",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "inventoryStockDocs",
+      "label": "inventory_stock_docs",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "docType",
+        "documentNumber",
+        "docDate",
+        "status",
+        "fromLocationId",
+        "toLocationId",
+        "reason",
+        "notes",
+        "transactionId",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "inventoryStockDocLines",
+      "label": "inventory_stock_doc_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "stockDocId",
+        "productId",
+        "quantity",
+        "unitCost",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "inventoryCostLayers",
+      "label": "inventory_cost_layers",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "productId",
+        "locationId",
+        "qtyReceived",
+        "qtyRemaining",
+        "unitCost",
+        "receivedOn",
+        "sourceType",
+        "sourceId",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "inventoryCostLayerConsumptions",
+      "label": "inventory_cost_layer_consumptions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "layerId",
+        "productId",
+        "qty",
+        "unitCost",
+        "sourceType",
+        "sourceId",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "inventoryMovements",
+      "label": "inventory_movements",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "movementType",
+        "productId",
+        "quantity",
+        "unitCost",
+        "fromLocationId",
+        "toLocationId",
+        "referenceType",
+        "referenceId",
+        "transactionId",
+        "memo",
+        "movementDate",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "journalEntries",
+      "label": "journal_entries",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "transactionId",
+        "brandId",
+        "locationId",
+        "bookDomain",
+        "memo",
+        "entryDate",
+        "isBalanced",
+        "notes",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "journalLines",
+      "label": "journal_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "journalEntryId",
+        "accountId",
+        "brandId",
+        "locationId",
+        "side",
+        "amount",
+        "memo",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "opsRequestLogs",
+      "label": "ops_request_logs",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/ops.ts",
+      "fields": [
+        "id",
+        "createdAt",
+        "kind",
+        "path",
+        "durationMs",
+        "status",
+        "message"
+      ]
+    },
+    {
+      "id": "opsIdempotency",
+      "label": "ops_idempotency",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/ops.ts",
+      "fields": [
+        "tenantId",
+        "key",
+        "resultJson",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "parties",
+      "label": "parties",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/parties.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "kind",
+        "code",
+        "phone",
+        "email",
+        "address",
+        "taxId",
+        "creditLimit",
+        "paymentTermsDays",
+        "notes",
+        "displayName",
+        "legalName",
+        "partyType",
+        "isCustomer",
+        "isVendor",
+        "nic",
+        "brn",
+        "tin",
+        "vatNumber",
+        "svatNumber",
+        "taxStatus",
+        "phoneMobile",
+        "phoneLandline",
+        "website",
+        "addressLine1",
+        "addressLine2",
+        "city",
+        "district",
+        "province",
+        "postalCode",
+        "country",
+        "contactPerson",
+        "contactPhone",
+        "contactEmail",
+        "preferredCurrency",
+        "bankName",
+        "bankBranch",
+        "bankAccountName",
+        "bankAccountNo",
+        "bankSwift",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "platformAuditEvents",
+      "label": "platform_audit_events",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/platform.ts",
+      "fields": [
+        "id",
+        "actorUserId",
+        "targetTenantId",
+        "action",
+        "summary",
+        "meta",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "posRegisters",
+      "label": "pos_registers",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "code",
+        "name",
+        "locationId",
+        "printMode",
+        "thermalDeviceHint",
+        "receiptFooter",
+        "defaultPaymentAccountCode",
+        "isActive",
+        "sortOrder",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "posShifts",
+      "label": "pos_shifts",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "registerId",
+        "openedBy",
+        "closedBy",
+        "status",
+        "openingFloat",
+        "closingCashCount",
+        "expectedCash",
+        "varianceCash",
+        "notes",
+        "openedAt",
+        "closedAt",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "purchaseSettings",
+      "label": "purchase_settings",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/purchase-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "requireBillApproval",
+        "requireSupplierInvoiceNo",
+        "blockDuplicateBills",
+        "requireGrnBeforeBill",
+        "postGrniOnReceipt",
+        "defaultPaymentTerms",
+        "defaultExpenseAccount",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "bankStatementProfiles",
+      "label": "bank_statement_profiles",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "bankHint",
+        "columnMap",
+        "signConvention",
+        "dateFormatHint",
+        "skipRows",
+        "sheetName",
+        "successCount",
+        "version",
+        "bankAccountId",
+        "currentVersionId",
+        "profileStatus",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankStatementProfileVersions",
+      "label": "bank_statement_profile_versions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "profileId",
+        "versionNumber",
+        "status",
+        "columnMappings",
+        "amountRules",
+        "dateRules",
+        "rowFilters",
+        "structureFingerprint",
+        "sampleSignatures",
+        "notes",
+        "createdBy",
+        "approvedBy",
+        "createdAt",
+        "approvedAt",
+        "supersededAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankStatementImports",
+      "label": "bank_statement_imports",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "period",
+        "fileName",
+        "status",
+        "rowCount",
+        "matchedCount",
+        "unmatchedCount",
+        "metadata",
+        "bankAccountId",
+        "bookDomain",
+        "fileSha256",
+        "storageKey",
+        "periodFrom",
+        "periodTo",
+        "parserProfileId",
+        "source",
+        "wizardStatus",
+        "wizardStep",
+        "draftPayload",
+        "draftVersion",
+        "contentFingerprint",
+        "openingBalance",
+        "closingBalance",
+        "totalMoneyIn",
+        "totalMoneyOut",
+        "idempotencyKey",
+        "profileVersionId",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankStatementLines",
+      "label": "bank_statement_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "importId",
+        "matchedTransactionId",
+        "rowNumber",
+        "transactionDate",
+        "description",
+        "amount",
+        "status",
+        "raw",
+        "reviewedByUserId",
+        "reviewedAt",
+        "notes",
+        "fingerprint",
+        "direction",
+        "balanceAfter",
+        "externalRef",
+        "matchScore",
+        "matchMethod",
+        "matchCandidates",
+        "proposedAction",
+        "createdTransactionId",
+        "confidence",
+        "valueDate",
+        "debitAmount",
+        "creditAmount",
+        "validationStatus",
+        "validationMessages",
+        "sourceRowHash",
+        "transformLog",
+        "reconciliationStatus",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankStatementImportEvents",
+      "label": "bank_statement_import_events",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "importId",
+        "userId",
+        "lineId",
+        "action",
+        "detail",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "bankImportIssues",
+      "label": "bank_import_issues",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "importId",
+        "lineId",
+        "issueType",
+        "severity",
+        "status",
+        "title",
+        "detail",
+        "resolution",
+        "resolutionDetail",
+        "applyToSimilar",
+        "resolvedBy",
+        "resolvedAt",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "periodLocks",
+      "label": "period_locks",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "period",
+        "status",
+        "lockedAt",
+        "unlockedAt",
+        "notes",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationSessions",
+      "label": "bank_reconciliation_sessions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "bankAccountId",
+        "bookDomain",
+        "periodFrom",
+        "periodTo",
+        "statementReference",
+        "status",
+        "statementOpeningBalance",
+        "statementClosingBalance",
+        "bookOpeningBalanceSnapshot",
+        "bookClosingBalanceSnapshot",
+        "outstandingNet",
+        "adjustmentNet",
+        "differenceAmount",
+        "toleranceAmount",
+        "sourceFileCount",
+        "bankLineCount",
+        "resolvedCaseCount",
+        "openCaseCount",
+        "version",
+        "preparedBy",
+        "reconciledBy",
+        "reconciledAt",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationSessionImports",
+      "label": "bank_reconciliation_session_imports",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sessionId",
+        "importId",
+        "attachedBy",
+        "attachedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationCases",
+      "label": "bank_reconciliation_cases",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sessionId",
+        "caseType",
+        "confidence",
+        "state",
+        "matchScore",
+        "matchMethod",
+        "explanation",
+        "reasonCodes",
+        "userLabel",
+        "resultLabel",
+        "createdTransactionId",
+        "exclusionReason",
+        "deferredUntil",
+        "sortDate",
+        "sortAmount",
+        "version",
+        "confirmedBy",
+        "confirmedAt",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationCaseBankLines",
+      "label": "bank_reconciliation_case_bank_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "caseId",
+        "bankLineId",
+        "allocatedAmount",
+        "role",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationCaseBookTransactions",
+      "label": "bank_reconciliation_case_book_transactions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "caseId",
+        "transactionId",
+        "allocatedAmount",
+        "role",
+        "createdAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationOutstandingItems",
+      "label": "bank_reconciliation_outstanding_items",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sessionId",
+        "transactionId",
+        "caseId",
+        "reason",
+        "expectedClearDate",
+        "status",
+        "createdBy",
+        "createdAt",
+        "resolvedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationEvents",
+      "label": "bank_reconciliation_events",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sessionId",
+        "caseId",
+        "userId",
+        "action",
+        "beforeValues",
+        "afterValues",
+        "reason",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "bankReconciliationSnapshots",
+      "label": "bank_reconciliation_snapshots",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "sessionId",
+        "summary",
+        "createdBy",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "rentalSettings",
+      "label": "rental_settings",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "allowHirePerEvent",
+        "allowHirePerDay",
+        "allowHirePerHour",
+        "defaultHireUnit",
+        "allowInvoiceOnConfirm",
+        "allowInvoiceOnDispatch",
+        "allowInvoiceAfterReturn",
+        "allowInvoiceManual",
+        "defaultInvoiceTiming",
+        "allowInvoiceTimingOverride",
+        "allowDepositPerEvent",
+        "allowDepositPerItem",
+        "defaultDepositMode",
+        "defaultEventDepositAmount",
+        "defaultEventDepositPercent",
+        "overlapPolicy",
+        "defaultTurnaroundHours",
+        "defaultLateFeePerDay",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "rentalEvents",
+      "label": "rental_events",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "documentId",
+        "eventDate",
+        "hireFrom",
+        "hireTo",
+        "venue",
+        "guestCount",
+        "deliverAt",
+        "collectAt",
+        "packingNotes",
+        "depositHeld",
+        "depositApplied",
+        "depositRefunded",
+        "overlapOverrideReason",
+        "overlapOverriddenBy",
+        "invoiceTiming",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "rentalBookingLines",
+      "label": "rental_booking_lines",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "documentId",
+        "documentLineId",
+        "productId",
+        "locationId",
+        "qty",
+        "hireFrom",
+        "hireTo",
+        "status",
+        "dispatchedQty",
+        "returnedQty",
+        "damagedQty",
+        "missingQty",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "rentalReturnPhotos",
+      "label": "rental_return_photos",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "bookingLineId",
+        "documentId",
+        "imageKey",
+        "caption",
+        "createdBy",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "rentalKitComponents",
+      "label": "rental_kit_components",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "kitProductId",
+        "componentProductId",
+        "qty",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "rentalSerials",
+      "label": "rental_serials",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "productId",
+        "serialCode",
+        "status",
+        "bookingLineId",
+        "notes",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "salesDiscounts",
+      "label": "sales_discounts",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/sales-discounts.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "name",
+        "code",
+        "discountType",
+        "value",
+        "isActive",
+        "startsOn",
+        "endsOn",
+        "notes",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "salesSettings",
+      "label": "sales_settings",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "vatRatePercent",
+        "exportVatRatePercent",
+        "vatRegistered",
+        "taxInvoiceDeptCode",
+        "taxInvoiceSerialReset",
+        "defaultSaleChannel",
+        "defaultInvoiceKind",
+        "enforceCreditLimit",
+        "editLockDays",
+        "invoicePrefix",
+        "invoicePostfix",
+        "invoicePad",
+        "invoiceReset",
+        "quotePrefix",
+        "quotePostfix",
+        "quotePad",
+        "quoteReset",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "taxInvoiceSequences",
+      "label": "tax_invoice_sequences",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "yearYy",
+        "monthMmm",
+        "deptCode",
+        "lastSerial",
+        "updatedAt"
+      ]
+    },
+    {
+      "id": "salesInvoiceSources",
+      "label": "sales_invoice_sources",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "invoiceId",
+        "salesOrderId",
+        "createdAt"
+      ]
+    },
+    {
+      "id": "settlementAllocations",
+      "label": "settlement_allocations",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/settlement-allocations.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "paymentTransactionId",
+        "invoiceTransactionId",
+        "allocatedAmount",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "tenants",
+      "label": "tenants",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/tenants.ts",
+      "fields": [
+        "id",
+        "name",
+        "slug",
+        "plan",
+        "environment",
+        "status",
+        "modules",
+        "entityKind",
+        "capabilityTier",
+        "rbacEnforced",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "transactions",
+      "label": "transactions",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "userId",
+        "accountingType",
+        "direction",
+        "party",
+        "description",
+        "amount",
+        "currency",
+        "paymentMethod",
+        "paymentAccountId",
+        "brandId",
+        "locationId",
+        "bookDomain",
+        "transferSourceAccountId",
+        "reversesTransactionId",
+        "reversedByTransactionId",
+        "date",
+        "receiptRef",
+        "categoryCode",
+        "categoryName",
+        "categoryConfidence",
+        "categorySource",
+        "invoiceRef",
+        "isAlreadySettled",
+        "notes",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    },
+    {
+      "id": "users",
+      "label": "users",
+      "kind": "schema-entity",
+      "sourcePath": "packages/db/src/schema/users.ts",
+      "fields": [
+        "id",
+        "tenantId",
+        "activeTenantId",
+        "email",
+        "name",
+        "passwordHash",
+        "role",
+        "createdAt",
+        "updatedAt",
+        "voidedAt"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "invitedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "tenantInvites"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "acceptedUserId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/access.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "tenantInvites"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/accounts.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "accounts"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/audit-log.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "auditLog"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/audit-log.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "auditLog"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "parties",
+      "relation": "schema-reference",
+      "field": "partyId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "sourceDocumentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "salesDiscounts",
+      "relation": "schema-reference",
+      "field": "discountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocuments"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocumentLines"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "documentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocumentLines"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocumentLines"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "accountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/business-documents.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "businessDocumentLines"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "tenantMemberships"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "tenantMemberships"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "companyProfiles"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "taxProfiles"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "financialYears"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "brands"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "locations"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "locations"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/company-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "companyDomains"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/document-styles.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "documentStyles"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProducts"
+    },
+    {
+      "to": "inventoryProductCategories",
+      "relation": "schema-reference",
+      "field": "categoryId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProducts"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProducts"
+    },
+    {
+      "to": "parties",
+      "relation": "schema-reference",
+      "field": "preferredVendorId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProducts"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProductCategories"
+    },
+    {
+      "to": "inventoryProductCategories",
+      "relation": "schema-reference",
+      "field": "parentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProductCategories"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProductCategories"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryProductCategories"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockLevels"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockLevels"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockLevels"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocs"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocs"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "fromLocationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocs"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "toLocationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocs"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocs"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocLines"
+    },
+    {
+      "to": "inventoryStockDocs",
+      "relation": "schema-reference",
+      "field": "stockDocId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocLines"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryStockDocLines"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryCostLayers"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "fromLocationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "toLocationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/inventory.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "inventoryMovements"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalEntries"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalEntries"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalEntries"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalEntries"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-entries.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalEntries"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalLines"
+    },
+    {
+      "to": "journalEntries",
+      "relation": "schema-reference",
+      "field": "journalEntryId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalLines"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "accountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalLines"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalLines"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/journal-lines.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "journalLines"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/parties.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "parties"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "targetTenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/platform.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "platformAuditEvents"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posRegisters"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posRegisters"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posShifts"
+    },
+    {
+      "to": "posRegisters",
+      "relation": "schema-reference",
+      "field": "registerId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posShifts"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "openedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posShifts"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "closedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/pos.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "posShifts"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfiles"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "bankAccountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfiles"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfileVersions"
+    },
+    {
+      "to": "bankStatementProfiles",
+      "relation": "schema-reference",
+      "field": "profileId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfileVersions"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "createdBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfileVersions"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "approvedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementProfileVersions"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImports"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImports"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "bankAccountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImports"
+    },
+    {
+      "to": "bankStatementProfiles",
+      "relation": "schema-reference",
+      "field": "parserProfileId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImports"
+    },
+    {
+      "to": "bankStatementProfileVersions",
+      "relation": "schema-reference",
+      "field": "profileVersionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImports"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementLines"
+    },
+    {
+      "to": "bankStatementImports",
+      "relation": "schema-reference",
+      "field": "importId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementLines"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "matchedTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementLines"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "reviewedByUserId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementLines"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "createdTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementLines"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImportEvents"
+    },
+    {
+      "to": "bankStatementImports",
+      "relation": "schema-reference",
+      "field": "importId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImportEvents"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImportEvents"
+    },
+    {
+      "to": "bankStatementLines",
+      "relation": "schema-reference",
+      "field": "lineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankStatementImportEvents"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankImportIssues"
+    },
+    {
+      "to": "bankStatementImports",
+      "relation": "schema-reference",
+      "field": "importId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankImportIssues"
+    },
+    {
+      "to": "bankStatementLines",
+      "relation": "schema-reference",
+      "field": "lineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankImportIssues"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "resolvedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankImportIssues"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "periodLocks"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "periodLocks"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessions"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "bankAccountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessions"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "preparedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessions"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "reconciledBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessions"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessionImports"
+    },
+    {
+      "to": "bankReconciliationSessions",
+      "relation": "schema-reference",
+      "field": "sessionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessionImports"
+    },
+    {
+      "to": "bankStatementImports",
+      "relation": "schema-reference",
+      "field": "importId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessionImports"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "attachedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSessionImports"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCases"
+    },
+    {
+      "to": "bankReconciliationSessions",
+      "relation": "schema-reference",
+      "field": "sessionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCases"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "createdTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCases"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "confirmedBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCases"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBankLines"
+    },
+    {
+      "to": "bankReconciliationCases",
+      "relation": "schema-reference",
+      "field": "caseId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBankLines"
+    },
+    {
+      "to": "bankStatementLines",
+      "relation": "schema-reference",
+      "field": "bankLineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBankLines"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBookTransactions"
+    },
+    {
+      "to": "bankReconciliationCases",
+      "relation": "schema-reference",
+      "field": "caseId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBookTransactions"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationCaseBookTransactions"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationOutstandingItems"
+    },
+    {
+      "to": "bankReconciliationSessions",
+      "relation": "schema-reference",
+      "field": "sessionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationOutstandingItems"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "transactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationOutstandingItems"
+    },
+    {
+      "to": "bankReconciliationCases",
+      "relation": "schema-reference",
+      "field": "caseId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationOutstandingItems"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "createdBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationOutstandingItems"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationEvents"
+    },
+    {
+      "to": "bankReconciliationSessions",
+      "relation": "schema-reference",
+      "field": "sessionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationEvents"
+    },
+    {
+      "to": "bankReconciliationCases",
+      "relation": "schema-reference",
+      "field": "caseId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationEvents"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationEvents"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSnapshots"
+    },
+    {
+      "to": "bankReconciliationSessions",
+      "relation": "schema-reference",
+      "field": "sessionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSnapshots"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "createdBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/reconciliation.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "bankReconciliationSnapshots"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalEvents"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "documentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalEvents"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "overlapOverriddenBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalEvents"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalBookingLines"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "documentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalBookingLines"
+    },
+    {
+      "to": "businessDocumentLines",
+      "relation": "schema-reference",
+      "field": "documentLineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalBookingLines"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalBookingLines"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalBookingLines"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalReturnPhotos"
+    },
+    {
+      "to": "rentalBookingLines",
+      "relation": "schema-reference",
+      "field": "bookingLineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalReturnPhotos"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "documentId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalReturnPhotos"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "createdBy",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalReturnPhotos"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalKitComponents"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "kitProductId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalKitComponents"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "componentProductId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalKitComponents"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalSerials"
+    },
+    {
+      "to": "inventoryProducts",
+      "relation": "schema-reference",
+      "field": "productId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalSerials"
+    },
+    {
+      "to": "rentalBookingLines",
+      "relation": "schema-reference",
+      "field": "bookingLineId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/rental.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "rentalSerials"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-discounts.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "salesDiscounts"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "salesSettings"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "taxInvoiceSequences"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "salesInvoiceSources"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "invoiceId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "salesInvoiceSources"
+    },
+    {
+      "to": "businessDocuments",
+      "relation": "schema-reference",
+      "field": "salesOrderId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/sales-settings.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "salesInvoiceSources"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/settlement-allocations.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "settlementAllocations"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "paymentTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/settlement-allocations.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "settlementAllocations"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "invoiceTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/settlement-allocations.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "settlementAllocations"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "users",
+      "relation": "schema-reference",
+      "field": "userId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "paymentAccountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "brands",
+      "relation": "schema-reference",
+      "field": "brandId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "locations",
+      "relation": "schema-reference",
+      "field": "locationId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "accounts",
+      "relation": "schema-reference",
+      "field": "transferSourceAccountId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "reversesTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "transactions",
+      "relation": "schema-reference",
+      "field": "reversedByTransactionId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/transactions.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "transactions"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "tenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/users.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "users"
+    },
+    {
+      "to": "tenants",
+      "relation": "schema-reference",
+      "field": "activeTenantId",
+      "targetField": "id",
+      "sourcePath": "packages/db/src/schema/users.ts",
+      "evidence": "declared foreign-key reference; execution/authorization not established",
+      "from": "users"
+    }
+  ],
+  "processes": [
+    {
+      "id": "buy-to-pay",
+      "entityRefs": [
+        "parties",
+        "businessDocuments",
+        "businessDocumentLines",
+        "inventoryStockLevels",
+        "inventoryMovements",
+        "inventoryCostLayers",
+        "settlementAllocations",
+        "journalLines"
+      ],
+      "description": "PO \u2192 receipt \u2192 bill \u2192 supplier payment/return. Receipt and bill have distinct quantity and valuation effects."
+    },
+    {
+      "id": "quote-to-cash",
+      "entityRefs": [
+        "parties",
+        "inventoryProducts",
+        "businessDocuments",
+        "businessDocumentLines",
+        "settlementAllocations",
+        "journalLines"
+      ],
+      "description": "Quote/order \u2192 posted invoice \u2192 payment \u2192 credit/refund. Preserve source lineage and recognition/settlement separation."
+    },
+    {
+      "id": "stock-conservation",
+      "entityRefs": [
+        "inventoryProducts",
+        "inventoryStockLevels",
+        "inventoryStockDocs",
+        "inventoryCostLayers",
+        "inventoryCostLayerConsumptions",
+        "inventoryMovements"
+      ],
+      "description": "Opening/receipt \u2192 issue \u2192 return/transfer/adjustment; quantity and valuation independently reconcile."
+    },
+    {
+      "id": "hire-to-return",
+      "entityRefs": [
+        "inventoryProducts",
+        "rentalEvents",
+        "rentalBookingLines",
+        "rentalSerials",
+        "rentalKitComponents",
+        "rentalReturnPhotos",
+        "inventoryStockLevels"
+      ],
+      "description": "Reserve \u2192 dispatch \u2192 return buckets \u2192 wash/repair release; ownership, capacity and charges are distinct."
+    },
+    {
+      "id": "deposit-to-settlement",
+      "entityRefs": [
+        "rentalEvents",
+        "businessDocuments",
+        "transactions",
+        "settlementAllocations",
+        "journalLines"
+      ],
+      "description": "Collect liability \u2192 earned charge invoice \u2192 apply \u2192 refund remaining; no second revenue."
+    },
+    {
+      "id": "statement-to-close",
+      "entityRefs": [
+        "bankStatementImports",
+        "bankStatementLines",
+        "bankReconciliationSessions",
+        "bankReconciliationCases",
+        "bankReconciliationOutstandingItems",
+        "periodLocks"
+      ],
+      "description": "Parse \u2192 deduplicate \u2192 match/create \u2192 resolve outstanding \u2192 close \u2192 lock; import/match is not another money event."
+    },
+    {
+      "id": "identity-to-authority",
+      "entityRefs": [
+        "users",
+        "tenants",
+        "tenantMemberships",
+        "tenantRoles",
+        "tenantRolePermissions",
+        "tenantPermissionOverrides",
+        "tenantMembershipScopes"
+      ],
+      "description": "Actor + current tenant + effective job/ceiling/module/domain/scope; verify every actual boundary."
+    },
+    {
+      "id": "record-to-report",
+      "entityRefs": [
+        "transactions",
+        "journalEntries",
+        "journalLines",
+        "accounts",
+        "businessDocuments",
+        "settlementAllocations"
+      ],
+      "description": "Exact account/date/scope postings \u2192 subledgers \u2192 reports; distinguish current balances from historical as-of."
+    }
+  ],
+  "actions": [
+    {
+      "symbol": "getOrCreateSessionFromImport",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "rebuildSessionSuggestions",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listReconciliationSessions",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "openReconciliationSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmCaseMatch",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "bulkConfirmStrongMatches",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "undoCaseMatch",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "markCaseOutstanding",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createCaseEntry",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "finishReconciliationSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmTransferCase",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "rejectTransferCase",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "searchGroupBookCandidates",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmGroupMatch",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "excludeCase",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "reopenReconciliationSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "exportReconciliationSummary",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getCompareBoard",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "matchBankToBook",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listUnmatchedBankLinesForSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmManyBanksOneBook",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "searchBookForSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listGuidedQueue",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getReconciliationReportData",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "voidBankImport",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listBankImports",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "resolveImportToSession",
+      "sourcePath": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listCashbookRows",
+      "sourcePath": "apps/web/src/app/actions/cashbook.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listYearDomainTotals",
+      "sourcePath": "apps/web/src/app/actions/cashbook.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "searchInvoicesForReturn",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "loadInvoiceForReturn",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "loadOrdersForInvoice",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listCommercialDocuments",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createCommercialDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createCommercialDocumentFromForm",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getPurchaseOrderRemainingLines",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "convertDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "convertDocumentAction",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createReturnFromBillAction",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "convertMultipleOrdersToInvoice",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getInvoicePrintData",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listActiveDiscounts",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getCommercialDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listOpenApBills",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listOpenArInvoices",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getApAgingSummary",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getArAgingSummary",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getPurchasePrintData",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "approvePurchaseDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "approvePurchaseDocumentAction",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "rejectPurchaseDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "rejectPurchaseDocumentAction",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getSupplierPerformance",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "deleteCommercialDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "archiveCommercialDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "restoreCommercialDocument",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "updateCommercialDocumentHeaderFromForm",
+      "sourcePath": "apps/web/src/app/actions/commercial-docs.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listDocuments",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createDocument",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createDocumentFromForm",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "allocateDocumentPayment",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "allocateDocumentPaymentFromForm",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "payVendorBills",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "receiveCustomerPayments",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "loadPaymentPrintFacts",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getDocumentFormOptions",
+      "sourcePath": "apps/web/src/app/actions/documents.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "completeEntityOnboarding",
+      "sourcePath": "apps/web/src/app/actions/entity-onboarding.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listProducts",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getProduct",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listPhysicalProductOptions",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listProductDimensionOptions",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createQuickProduct",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createProductFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "updateProductFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "archiveProductFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "restoreProductFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getProductDeleteBlockers",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "deleteProductFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listStockLevels",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listStockMovements",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listStockDocs",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createStockDocFromForm",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createStockTransfer",
+      "sourcePath": "apps/web/src/app/actions/inventory.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getPosBootstrap",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "openPosShift",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "completePosSale",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listRecentPosSales",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "lookupPosSale",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "completePosReturn",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getShiftZReport",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "previewShiftZReport",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "closePosShift",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listPosShifts",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getPosReceiptData",
+      "sourcePath": "apps/web/src/app/actions/pos-session.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getReconciliationForPeriod",
+      "sourcePath": "apps/web/src/app/actions/reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createBankStatementImport",
+      "sourcePath": "apps/web/src/app/actions/reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "updateBankStatementLineStatus",
+      "sourcePath": "apps/web/src/app/actions/reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "lockPeriod",
+      "sourcePath": "apps/web/src/app/actions/reconciliation.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "recordEntry",
+      "sourcePath": "apps/web/src/app/actions/record-entry.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "createReversingEntry",
+      "sourcePath": "apps/web/src/app/actions/record-entry.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "reverseTransactionFromForm",
+      "sourcePath": "apps/web/src/app/actions/record-entry.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "reverseTransactionById",
+      "sourcePath": "apps/web/src/app/actions/record-entry.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "checkRentalAvailability",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "persistRentalBookings",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "cancelBookingsForDocument",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "loadRentalEventForDocument",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "assertHireInvoiceTiming",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listRentalCalendar",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "currentlyOnRentQty",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listRentalJobs",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "dispatchRentalLine",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "returnRentalLine",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "extendRentalHire",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listFleetBays",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "releaseFleetBay",
+      "sourcePath": "apps/web/src/app/actions/rental-bookings.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getRentalMoneyState",
+      "sourcePath": "apps/web/src/app/actions/rental-money.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "collectRentalDeposit",
+      "sourcePath": "apps/web/src/app/actions/rental-money.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "refundRentalDeposit",
+      "sourcePath": "apps/web/src/app/actions/rental-money.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "invoiceHireCharges",
+      "sourcePath": "apps/web/src/app/actions/rental-money.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "previewStatementMapping",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "commitStatementImport",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "commitStatementBatch",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getStatementBatch",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getStatementImport",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listRecentStatementImports",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "listBankImportsForHub",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmStatementLinks",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "manualLinkStatementLine",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "confirmStatementCreates",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "skipStatementLines",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "undoStatementCreates",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "voidStatementImport",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getStatementImportSummary",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "runStatementMatchPass",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "searchBookCandidatesForMatch",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "markLinesUnmatched",
+      "sourcePath": "apps/web/src/app/actions/statement-import.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "uploadReceipt",
+      "sourcePath": "apps/web/src/app/actions/upload-receipt.ts",
+      "evidence": "exported declaration only; not executed"
+    },
+    {
+      "symbol": "getReceiptDownloadUrl",
+      "sourcePath": "apps/web/src/app/actions/upload-receipt.ts",
+      "evidence": "exported declaration only; not executed"
+    }
+  ],
+  "routes": [
+    {
+      "file": "apps/web/src/app/accounts/page.tsx",
+      "route": "/accounts"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/bank-imports/page.tsx",
+      "route": "/cashbook/bank-imports"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/import-studio/page.tsx",
+      "route": "/cashbook/import-studio"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/import/page.tsx",
+      "route": "/cashbook/import"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/match/page.tsx",
+      "route": "/cashbook/match"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/page.tsx",
+      "route": "/cashbook"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/recon/[sessionId]/guided/page.tsx",
+      "route": "/cashbook/recon/[sessionId]/guided"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/recon/[sessionId]/page.tsx",
+      "route": "/cashbook/recon/[sessionId]"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/recon/[sessionId]/report/page.tsx",
+      "route": "/cashbook/recon/[sessionId]/report"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/settings/page.tsx",
+      "route": "/cashbook/settings"
+    },
+    {
+      "file": "apps/web/src/app/cashbook/summary/page.tsx",
+      "route": "/cashbook/summary"
+    },
+    {
+      "file": "apps/web/src/app/company/backup/page.tsx",
+      "route": "/company/backup"
+    },
+    {
+      "file": "apps/web/src/app/company/brands/page.tsx",
+      "route": "/company/brands"
+    },
+    {
+      "file": "apps/web/src/app/company/details/page.tsx",
+      "route": "/company/details"
+    },
+    {
+      "file": "apps/web/src/app/company/document-styles/[id]/page.tsx",
+      "route": "/company/document-styles/[id]"
+    },
+    {
+      "file": "apps/web/src/app/company/document-styles/new/page.tsx",
+      "route": "/company/document-styles/new"
+    },
+    {
+      "file": "apps/web/src/app/company/document-styles/page.tsx",
+      "route": "/company/document-styles"
+    },
+    {
+      "file": "apps/web/src/app/company/domains/page.tsx",
+      "route": "/company/domains"
+    },
+    {
+      "file": "apps/web/src/app/company/inventory/page.tsx",
+      "route": "/company/inventory"
+    },
+    {
+      "file": "apps/web/src/app/company/locations/page.tsx",
+      "route": "/company/locations"
+    },
+    {
+      "file": "apps/web/src/app/company/purchase/page.tsx",
+      "route": "/company/purchase"
+    },
+    {
+      "file": "apps/web/src/app/company/rental/page.tsx",
+      "route": "/company/rental"
+    },
+    {
+      "file": "apps/web/src/app/company/sales/page.tsx",
+      "route": "/company/sales"
+    },
+    {
+      "file": "apps/web/src/app/company/tax/page.tsx",
+      "route": "/company/tax"
+    },
+    {
+      "file": "apps/web/src/app/company/team/[userId]/page.tsx",
+      "route": "/company/team/[userId]"
+    },
+    {
+      "file": "apps/web/src/app/company/team/groups/page.tsx",
+      "route": "/company/team/groups"
+    },
+    {
+      "file": "apps/web/src/app/company/team/jobs/page.tsx",
+      "route": "/company/team/jobs"
+    },
+    {
+      "file": "apps/web/src/app/company/team/page.tsx",
+      "route": "/company/team"
+    },
+    {
+      "file": "apps/web/src/app/control-room/access/page.tsx",
+      "route": "/control-room/access"
+    },
+    {
+      "file": "apps/web/src/app/control-room/companies/[id]/page.tsx",
+      "route": "/control-room/companies/[id]"
+    },
+    {
+      "file": "apps/web/src/app/control-room/companies/new/page.tsx",
+      "route": "/control-room/companies/new"
+    },
+    {
+      "file": "apps/web/src/app/control-room/companies/page.tsx",
+      "route": "/control-room/companies"
+    },
+    {
+      "file": "apps/web/src/app/control-room/health-check/page.tsx",
+      "route": "/control-room/health-check"
+    },
+    {
+      "file": "apps/web/src/app/control-room/modules/page.tsx",
+      "route": "/control-room/modules"
+    },
+    {
+      "file": "apps/web/src/app/control-room/page.tsx",
+      "route": "/control-room"
+    },
+    {
+      "file": "apps/web/src/app/dashboard/page.tsx",
+      "route": "/dashboard"
+    },
+    {
+      "file": "apps/web/src/app/design-system/page.tsx",
+      "route": "/design-system"
+    },
+    {
+      "file": "apps/web/src/app/docs/[[...slug]]/page.tsx",
+      "route": "/docs/[[...slug]]"
+    },
+    {
+      "file": "apps/web/src/app/documents/page.tsx",
+      "route": "/documents"
+    },
+    {
+      "file": "apps/web/src/app/i/[token]/page.tsx",
+      "route": "/i/[token]"
+    },
+    {
+      "file": "apps/web/src/app/inventory/adjustments/new/page.tsx",
+      "route": "/inventory/adjustments/new"
+    },
+    {
+      "file": "apps/web/src/app/inventory/adjustments/page.tsx",
+      "route": "/inventory/adjustments"
+    },
+    {
+      "file": "apps/web/src/app/inventory/calendar/page.tsx",
+      "route": "/inventory/calendar"
+    },
+    {
+      "file": "apps/web/src/app/inventory/categories/page.tsx",
+      "route": "/inventory/categories"
+    },
+    {
+      "file": "apps/web/src/app/inventory/ledger/page.tsx",
+      "route": "/inventory/ledger"
+    },
+    {
+      "file": "apps/web/src/app/inventory/levels/page.tsx",
+      "route": "/inventory/levels"
+    },
+    {
+      "file": "apps/web/src/app/inventory/on-rent/[documentId]/packing/page.tsx",
+      "route": "/inventory/on-rent/[documentId]/packing"
+    },
+    {
+      "file": "apps/web/src/app/inventory/on-rent/page.tsx",
+      "route": "/inventory/on-rent"
+    },
+    {
+      "file": "apps/web/src/app/inventory/products/[id]/edit/page.tsx",
+      "route": "/inventory/products/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/inventory/products/new/page.tsx",
+      "route": "/inventory/products/new"
+    },
+    {
+      "file": "apps/web/src/app/inventory/products/page.tsx",
+      "route": "/inventory/products"
+    },
+    {
+      "file": "apps/web/src/app/inventory/transfers/new/page.tsx",
+      "route": "/inventory/transfers/new"
+    },
+    {
+      "file": "apps/web/src/app/inventory/transfers/page.tsx",
+      "route": "/inventory/transfers"
+    },
+    {
+      "file": "apps/web/src/app/invite/[token]/page.tsx",
+      "route": "/invite/[token]"
+    },
+    {
+      "file": "apps/web/src/app/invite/complete/page.tsx",
+      "route": "/invite/complete"
+    },
+    {
+      "file": "apps/web/src/app/journal/page.tsx",
+      "route": "/journal"
+    },
+    {
+      "file": "apps/web/src/app/login/page.tsx",
+      "route": "/login"
+    },
+    {
+      "file": "apps/web/src/app/onboarding/page.tsx",
+      "route": "/onboarding"
+    },
+    {
+      "file": "apps/web/src/app/ops/logs/page.tsx",
+      "route": "/ops/logs"
+    },
+    {
+      "file": "apps/web/src/app/page.tsx",
+      "route": "/"
+    },
+    {
+      "file": "apps/web/src/app/parties/customers/[id]/edit/page.tsx",
+      "route": "/parties/customers/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/parties/customers/new/page.tsx",
+      "route": "/parties/customers/new"
+    },
+    {
+      "file": "apps/web/src/app/parties/customers/page.tsx",
+      "route": "/parties/customers"
+    },
+    {
+      "file": "apps/web/src/app/parties/page.tsx",
+      "route": "/parties"
+    },
+    {
+      "file": "apps/web/src/app/parties/vendors/[id]/edit/page.tsx",
+      "route": "/parties/vendors/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/parties/vendors/new/page.tsx",
+      "route": "/parties/vendors/new"
+    },
+    {
+      "file": "apps/web/src/app/parties/vendors/page.tsx",
+      "route": "/parties/vendors"
+    },
+    {
+      "file": "apps/web/src/app/pos/customer-display/page.tsx",
+      "route": "/pos/customer-display"
+    },
+    {
+      "file": "apps/web/src/app/pos/page.tsx",
+      "route": "/pos"
+    },
+    {
+      "file": "apps/web/src/app/pos/receipt/[id]/page.tsx",
+      "route": "/pos/receipt/[id]"
+    },
+    {
+      "file": "apps/web/src/app/pos/z-report/[shiftId]/page.tsx",
+      "route": "/pos/z-report/[shiftId]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/aging/page.tsx",
+      "route": "/purchase/aging"
+    },
+    {
+      "file": "apps/web/src/app/purchase/bills/new/page.tsx",
+      "route": "/purchase/bills/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/bills/page.tsx",
+      "route": "/purchase/bills"
+    },
+    {
+      "file": "apps/web/src/app/purchase/expenses/[id]/page.tsx",
+      "route": "/purchase/expenses/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/expenses/[id]/print/page.tsx",
+      "route": "/purchase/expenses/[id]/print"
+    },
+    {
+      "file": "apps/web/src/app/purchase/expenses/new/page.tsx",
+      "route": "/purchase/expenses/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/expenses/page.tsx",
+      "route": "/purchase/expenses"
+    },
+    {
+      "file": "apps/web/src/app/purchase/import/[id]/page.tsx",
+      "route": "/purchase/import/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/import/new/page.tsx",
+      "route": "/purchase/import/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/import/page.tsx",
+      "route": "/purchase/import"
+    },
+    {
+      "file": "apps/web/src/app/purchase/orders/[id]/page.tsx",
+      "route": "/purchase/orders/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/orders/new/page.tsx",
+      "route": "/purchase/orders/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/orders/page.tsx",
+      "route": "/purchase/orders"
+    },
+    {
+      "file": "apps/web/src/app/purchase/payments/new/page.tsx",
+      "route": "/purchase/payments/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/payments/page.tsx",
+      "route": "/purchase/payments"
+    },
+    {
+      "file": "apps/web/src/app/purchase/payments/remittance/page.tsx",
+      "route": "/purchase/payments/remittance"
+    },
+    {
+      "file": "apps/web/src/app/purchase/print/[id]/page.tsx",
+      "route": "/purchase/print/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/purchases/[id]/page.tsx",
+      "route": "/purchase/purchases/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/purchases/new/page.tsx",
+      "route": "/purchase/purchases/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/purchases/page.tsx",
+      "route": "/purchase/purchases"
+    },
+    {
+      "file": "apps/web/src/app/purchase/receipts/[id]/page.tsx",
+      "route": "/purchase/receipts/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/receipts/new/page.tsx",
+      "route": "/purchase/receipts/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/receipts/page.tsx",
+      "route": "/purchase/receipts"
+    },
+    {
+      "file": "apps/web/src/app/purchase/returns/[id]/page.tsx",
+      "route": "/purchase/returns/[id]"
+    },
+    {
+      "file": "apps/web/src/app/purchase/returns/new/page.tsx",
+      "route": "/purchase/returns/new"
+    },
+    {
+      "file": "apps/web/src/app/purchase/returns/page.tsx",
+      "route": "/purchase/returns"
+    },
+    {
+      "file": "apps/web/src/app/purchase/suppliers/page.tsx",
+      "route": "/purchase/suppliers"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/from-import/page.tsx",
+      "route": "/reconciliation/from-import"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/import/page.tsx",
+      "route": "/reconciliation/import"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/page.tsx",
+      "route": "/reconciliation"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/session/[sessionId]/guided/page.tsx",
+      "route": "/reconciliation/session/[sessionId]/guided"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/session/[sessionId]/page.tsx",
+      "route": "/reconciliation/session/[sessionId]"
+    },
+    {
+      "file": "apps/web/src/app/reconciliation/session/[sessionId]/report/page.tsx",
+      "route": "/reconciliation/session/[sessionId]/report"
+    },
+    {
+      "file": "apps/web/src/app/reports/page.tsx",
+      "route": "/reports"
+    },
+    {
+      "file": "apps/web/src/app/reset-password/page.tsx",
+      "route": "/reset-password"
+    },
+    {
+      "file": "apps/web/src/app/sales/aging/page.tsx",
+      "route": "/sales/aging"
+    },
+    {
+      "file": "apps/web/src/app/sales/discounts/[id]/edit/page.tsx",
+      "route": "/sales/discounts/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/sales/discounts/new/page.tsx",
+      "route": "/sales/discounts/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/discounts/page.tsx",
+      "route": "/sales/discounts"
+    },
+    {
+      "file": "apps/web/src/app/sales/invoices/[id]/edit/page.tsx",
+      "route": "/sales/invoices/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/sales/invoices/[id]/page.tsx",
+      "route": "/sales/invoices/[id]"
+    },
+    {
+      "file": "apps/web/src/app/sales/invoices/[id]/print/page.tsx",
+      "route": "/sales/invoices/[id]/print"
+    },
+    {
+      "file": "apps/web/src/app/sales/invoices/new/page.tsx",
+      "route": "/sales/invoices/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/invoices/page.tsx",
+      "route": "/sales/invoices"
+    },
+    {
+      "file": "apps/web/src/app/sales/orders/new/page.tsx",
+      "route": "/sales/orders/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/orders/page.tsx",
+      "route": "/sales/orders"
+    },
+    {
+      "file": "apps/web/src/app/sales/payments/new/page.tsx",
+      "route": "/sales/payments/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/payments/page.tsx",
+      "route": "/sales/payments"
+    },
+    {
+      "file": "apps/web/src/app/sales/payments/receipt/page.tsx",
+      "route": "/sales/payments/receipt"
+    },
+    {
+      "file": "apps/web/src/app/sales/pos/new/page.tsx",
+      "route": "/sales/pos/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/pos/page.tsx",
+      "route": "/sales/pos"
+    },
+    {
+      "file": "apps/web/src/app/sales/pos/shifts/page.tsx",
+      "route": "/sales/pos/shifts"
+    },
+    {
+      "file": "apps/web/src/app/sales/quotations/[id]/edit/page.tsx",
+      "route": "/sales/quotations/[id]/edit"
+    },
+    {
+      "file": "apps/web/src/app/sales/quotations/[id]/page.tsx",
+      "route": "/sales/quotations/[id]"
+    },
+    {
+      "file": "apps/web/src/app/sales/quotations/[id]/print/page.tsx",
+      "route": "/sales/quotations/[id]/print"
+    },
+    {
+      "file": "apps/web/src/app/sales/quotations/new/page.tsx",
+      "route": "/sales/quotations/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/quotations/page.tsx",
+      "route": "/sales/quotations"
+    },
+    {
+      "file": "apps/web/src/app/sales/returns/new/page.tsx",
+      "route": "/sales/returns/new"
+    },
+    {
+      "file": "apps/web/src/app/sales/returns/page.tsx",
+      "route": "/sales/returns"
+    },
+    {
+      "file": "apps/web/src/app/settings/page.tsx",
+      "route": "/settings"
+    },
+    {
+      "file": "apps/web/src/app/transactions/page.tsx",
+      "route": "/transactions"
+    }
+  ],
+  "sources": [
+    {
+      "path": "VERSION",
+      "gitBlobSha": "dfe30ee17332053b26bdb0a29e3ad4933c927141",
+      "normalizedSha256": "97fb271a943eed418221a51f0af7c20f47cadffb9ae1224bd261508d924c165e",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/VERSION",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/bank-reconciliation.ts",
+      "gitBlobSha": "bc31eb9a2a9d65fd0c3370c443f4ef676e373d5d",
+      "normalizedSha256": "cd749289feebe3ad54e32b77f368ce1b1a53d1f68ba05bfbb7b093151a2078f1",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/bank-reconciliation.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/cashbook.ts",
+      "gitBlobSha": "239a2f58e384826eee95e4b903e74e962bc7dd76",
+      "normalizedSha256": "945d0441ac145a7738be6d5b102de80c373d40ea841a690215d450abc041297b",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/cashbook.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/commercial-docs.ts",
+      "gitBlobSha": "8370779461ca550752f0f26883f352e794f80c99",
+      "normalizedSha256": "1c1cfe09de571ef23ce773137e5bc4253a473ac76c4b1484eaf75d18c764a2a9",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/commercial-docs.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/documents.ts",
+      "gitBlobSha": "2114c39b1c68b6ec1d7dfbffbc9497ee0092f0db",
+      "normalizedSha256": "67ce3e03ed10adf02d81b0d34d8a7476687bad34e9cbfefb5cd1883a42e45505",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/documents.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/entity-onboarding.ts",
+      "gitBlobSha": "f8193c1dd71e45bc716ee08f604cc53e3f3632db",
+      "normalizedSha256": "4df8464f6c781586aebe6a2ccd9117c29aac82cb4a8e2ff4482b00267efafb8e",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/entity-onboarding.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/inventory.ts",
+      "gitBlobSha": "a5ef3a5e3681e34baaa45f2c194438912e0e7b66",
+      "normalizedSha256": "c386d72b3984f602c3a49fc3939dd5dfe6d60865bd7af88c632eb92a9c45dcf4",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/inventory.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/pos-session.ts",
+      "gitBlobSha": "8a344e8e61abd4e796c96418938a1ab9d1c2e1ad",
+      "normalizedSha256": "227e56185b5c53b86342e81df5de11decc0c6f763ec7646178df32ffbf9ab0e4",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/pos-session.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/reconciliation.ts",
+      "gitBlobSha": "74ec8c9da9d879782ac81a4dabf421407981412e",
+      "normalizedSha256": "eb3ec1486841dd8dbc1cbdcec2f04ee614c913236d1607c181276d5064672fef",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/reconciliation.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/record-entry.ts",
+      "gitBlobSha": "4560df8d412eca97f2a35e4572f857568c39db67",
+      "normalizedSha256": "f53c59901e09c203eed1bdbfd46ccf345de8b0e885620aca63671ccad96aa7b7",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/record-entry.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/rental-bookings.ts",
+      "gitBlobSha": "01a149a27661da2ed8c43063800b09348bec8d18",
+      "normalizedSha256": "256bff8f2c4e7f73794f97a4429d57081176e25d149c65d800805166ced97bf8",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/rental-bookings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/rental-money.ts",
+      "gitBlobSha": "0817bdc3d1428250a821457a759f7c3f9c0adc27",
+      "normalizedSha256": "83f51da447b8e3ed7f11e7e64394634d5e4cc4485ad2c0cfc231ba093e752e24",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/rental-money.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/statement-import.ts",
+      "gitBlobSha": "04b2871e4350869326d3b17a32e4ca40236524e6",
+      "normalizedSha256": "4536a6fc9c4793a3539b90071a02d1b04fff4848dcceb21fe52975f78b12a58d",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/statement-import.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/app/actions/upload-receipt.ts",
+      "gitBlobSha": "5790d1fd30b78b33ecd9c96a5622bede567d7ba0",
+      "normalizedSha256": "c80c759b4a33db991946820aa4b0d246417fb4f7946c4e7926d14dc4f9f36672",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/app/actions/upload-receipt.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "apps/web/src/lib/platform-modules.ts",
+      "gitBlobSha": "e1c4513cc99419cfaa401c49808c3b5975cf562e",
+      "normalizedSha256": "8ae9df41f181addaf567ef07a5f74ed413c60448a9dd2f4162738588635c19af",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/apps/web/src/lib/platform-modules.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "docs/changes/CHG-20261016-broad-workflow-findings.md",
+      "gitBlobSha": "678f9122f59ae1408596d0a7dd05f529c68a321b",
+      "normalizedSha256": "dd99122538a0347218091655de8a2daebef53f3a9b5583919e3a243ca22efccf",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/docs/changes/CHG-20261016-broad-workflow-findings.md",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/accounting/src/engine/document-posting.ts",
+      "gitBlobSha": "7edde3a85d30c791430f4660a95fbabef8fcd9e9",
+      "normalizedSha256": "a4f33127747ca47674200551e7c36fa0ffffad18fddb60eb248ce4612c91806b",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/accounting/src/engine/document-posting.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/accounting/src/rental-availability.ts",
+      "gitBlobSha": "a0a60d29edb5be0840ccb80c2c80a3f64d522ca2",
+      "normalizedSha256": "b72266051acd76693cc12cce6d905e57446284cf31807d8acf027ce58b286daa",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/accounting/src/rental-availability.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/accounting/src/rental-invoice-timing.ts",
+      "gitBlobSha": "3894ef85933b69c60919fb23f74269a0c9cdcc5a",
+      "normalizedSha256": "0ecf13a42b8d2747348bb9fafa804b9615922e3d6511e6e05d07778176e267d6",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/accounting/src/rental-invoice-timing.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/auth/src/permissions/catalog.ts",
+      "gitBlobSha": "971c34fca329a4fbf39c5fc66311ba299714df61",
+      "normalizedSha256": "763e1960e38cbad849b47ec564adbfbd96ae7a983e208f8b2873c8206719c0fa",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/auth/src/permissions/catalog.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/auth/src/permissions/ceiling.ts",
+      "gitBlobSha": "0747ece631e474a09adcbcaeff6be8dc41b60b0f",
+      "normalizedSha256": "c83d36ce494bec14f81b696746fbc6da817fa1828c4aa9185d6fd6ba968351b9",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/auth/src/permissions/ceiling.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/access.ts",
+      "gitBlobSha": "bb668758912215205892daf6ed75797d7bf1668d",
+      "normalizedSha256": "43e2433855345774549d6580827d9f4eacd9be3ff06e126c756bdb31ee24cb76",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/access.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/accounts.ts",
+      "gitBlobSha": "59db4492f86d46a0b8b3d0d85e5b60865ea63ba5",
+      "normalizedSha256": "7b887a9b54ceaab5e553afbdad4d46f614bb451a7772baa6c422cd0826a51971",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/accounts.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/audit-log.ts",
+      "gitBlobSha": "50a61b8bfb38339a423cc1225c9093f56d5727bc",
+      "normalizedSha256": "d40eb35f179d8d686d3404ffecf020ad80f61525ea20de4d8c85d489b329be26",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/audit-log.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/business-documents.ts",
+      "gitBlobSha": "421465a1c34ea2f029ffc688f40184daa70cda76",
+      "normalizedSha256": "adb65a810c3538bed7803d9d8c5dd64451bb3acde130d6430a88bcb68639f6e7",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/business-documents.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/company-settings.ts",
+      "gitBlobSha": "c9306902da44bd61ecc1e6764724097f049a6f37",
+      "normalizedSha256": "c4731eafb6934789e9de6c55205d964becd802a8cbcc4b6292fec577d3488c07",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/company-settings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/document-styles.ts",
+      "gitBlobSha": "d1c0c5dd457fc6de955f9033b8bfbd0e940606fc",
+      "normalizedSha256": "896d21b4e8c7c0176383a95ea8dff790ef68c9e5428a8b302990c8b939a43e2e",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/document-styles.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/health-check.ts",
+      "gitBlobSha": "01eb2d2aa443680ff6016222c18f8fafc56353cd",
+      "normalizedSha256": "b07f1d9c4740b713bc497e595960ae6feb06e5482676e304b1b72eafdaf078f8",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/health-check.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/inventory-settings.ts",
+      "gitBlobSha": "60a32c2b5e41f6f038796ed3ed167ecc9970ab41",
+      "normalizedSha256": "945ca8c45728a803a900b389ff2a005590cd22eb595245f8a33e1365c04afaa8",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/inventory-settings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/inventory.ts",
+      "gitBlobSha": "ee26f0f28a50f572895e1025c98bfe07e31028ee",
+      "normalizedSha256": "9e697a8dde5791e1d08cf970bbb41f355b45e7eb960d0cb7be4b1b9e6212030c",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/inventory.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/journal-entries.ts",
+      "gitBlobSha": "e10287126581434cbbf29208ae7db76d335d11ec",
+      "normalizedSha256": "962e3e9418d6f76ce8e38d5249d99631efb3dc79352f5f0e7af80ffb376d7e95",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/journal-entries.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/journal-lines.ts",
+      "gitBlobSha": "a4d7814380c444463b402f927f69a76ff6ad51d0",
+      "normalizedSha256": "918885d51b7b6ba1c6951d1da5ac3955b56aea0a114f84bbdcbe9cc460f24b03",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/journal-lines.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/ops.ts",
+      "gitBlobSha": "01dd7d6b8d5a54eb92000fe4d59fcb615a0d4041",
+      "normalizedSha256": "9f056e4f18e1966bf05ade6212166eda71aa4ecff4f733a73ea5f9d1decf9746",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/ops.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/parties.ts",
+      "gitBlobSha": "0b737d1220a2105590157a991f1df1bb9b19354a",
+      "normalizedSha256": "08296d13a076dd5caf7bda3979aa92580135e7401019033ba1df7ce2c78ff901",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/parties.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/platform.ts",
+      "gitBlobSha": "327afbacb2017e9a68e3463e30b3fd0abdbc440a",
+      "normalizedSha256": "4ad2c348d24c0f559234a2f9650be717f1a580f94de66d29117b5708b59952f5",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/platform.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/pos.ts",
+      "gitBlobSha": "60dc1fd8a4160635d23c846ba0d63af6876203c2",
+      "normalizedSha256": "dbf768552e92ba06d63d781098341ea4018a62ddd6f002614473c81b203e17cb",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/pos.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/purchase-settings.ts",
+      "gitBlobSha": "35ca9a6be8d60f50f1ab61e277a00abe655832a1",
+      "normalizedSha256": "a8ea93f673661e216b1cae5cfb85b9a22c9d8e8a74d63bd23f058a1b01ffbd62",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/purchase-settings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/reconciliation.ts",
+      "gitBlobSha": "3d9480f64b22adc6f06079148f471269351aafa8",
+      "normalizedSha256": "7497cfaac8a4e68b110713ffef787bf1f65567d16416a9f31cdbbd53b4385a15",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/reconciliation.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/rental-settings.ts",
+      "gitBlobSha": "57bbd7c01bd8092d5a8170ceef8f503904299efc",
+      "normalizedSha256": "839f13d9006c125f395fc3479a610b59b2ebf4be006d70116bce19df1748c5cc",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/rental-settings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/rental.ts",
+      "gitBlobSha": "dc7d0ec714008eb8afc1abc0053e05955174d325",
+      "normalizedSha256": "18942495378fa4a3ac1d92a0e2c1af5b4aa0b74ddecd7d4c58edd88fa0574357",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/rental.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/sales-discounts.ts",
+      "gitBlobSha": "6caa798705dcacd89efc48bb96ce89412dc071ac",
+      "normalizedSha256": "3ef3fc407e971ac2e32c3b89ee806b7ded4b137f8093182cc053e43a39c4ba6b",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/sales-discounts.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/sales-settings.ts",
+      "gitBlobSha": "0fa5465b47f6988d36ad39effa9c1af6cf670b38",
+      "normalizedSha256": "c0e7a5c8cec3aad7af5969ecbe91657e49a055b51d8023288a887df161c0170a",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/sales-settings.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/settlement-allocations.ts",
+      "gitBlobSha": "16a9b5ffb9339528c5282f77b65bc50d3fd403bd",
+      "normalizedSha256": "5c71dd5177805034514e5314ba11a0a824c5d935f86307533be6bd507fd3cc2b",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/settlement-allocations.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/tenants.ts",
+      "gitBlobSha": "8d8223b9a5776539ab77c9d7c33e14f7aa43574f",
+      "normalizedSha256": "aba6e2c049d4badae1ab670f1388e35cb008d06b2acca7b889c75ffb89c6c526",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/tenants.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/transactions.ts",
+      "gitBlobSha": "a5ce05b340bcd1b3f1f7c4a03babb52298d4556b",
+      "normalizedSha256": "6cdb1c646b0cba2273edfdfb37e3c33d07a403468f8347401af5feff32b4e271",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/transactions.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/db/src/schema/users.ts",
+      "gitBlobSha": "dcca8966e1a35b6d8ad9b27014742cd464a2e1b7",
+      "normalizedSha256": "25e08778565610d1c76c588b510994086e3be7815ae81db41eb10787e6e28da3",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/db/src/schema/users.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    },
+    {
+      "path": "packages/modules/src/index.ts",
+      "gitBlobSha": "6e9058aacf273adb7ad0d6d23aa3e7744f9c6035",
+      "normalizedSha256": "2253344eafba6bd10fae1837772247944571cb9ccb4b54cc717d2716dbfe2016",
+      "url": "https://github.com/Dinu-Sri/BookOne/blob/ead3a82170e7a34ad625ec6ef8434e5ae65b1609/packages/modules/src/index.ts",
+      "inspection": "declaration/relationship extraction; selected business transitions inspected, not full semantic audit"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "scope": "owner-authorized-desktop-readonly-recovery-not-formal-Light10-acceptance",
+  "executionQa": "3e57f1efaf5bcb3dd9d079be716b19404acf2c13",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "stamp": "v2.5.22 · 211771e",
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 7,
+    "inconclusive": 9
+  },
+  "unresolved": [],
+  "cases": [
+    {
+      "id": "L10-GATE",
+      "status": "inconclusive",
+      "actual": "Exact QA checkout and hashes recorded; 90/15 diagnostic clock and ledger initialized before further browser work. Initial manual-session observation preceded clock. Full deployed image/schema not attested.",
+      "nextAction": "Qualify formal run and deployment/identity evidence."
+    },
+    {
+      "id": "L10-GUARD",
+      "status": "blocked",
+      "actual": "70 focused tests passed after workspace TEMP correction. Actual reviewed Browser-app tool absent; no adapter substitution or guarded submission performed.",
+      "nextAction": "Review compatible persisted transport; reproduce actual-tool positive and zero-call negatives."
+    },
+    {
+      "id": "L10-IDENTITY",
+      "status": "inconclusive",
+      "actual": "Owner performed manual login. QA/Owner/company labels observed, but fresh agent credential authentication receipt and current-user identity/capability evidence unavailable.",
+      "nextAction": "Verify current identity and read/print capabilities through reviewed controls."
+    },
+    {
+      "id": "L10-SOURCES",
+      "status": "inconclusive",
+      "actual": "Consumed sales, linked credit and purchase located by run notes, dates, amounts and ancestry. Original private source registry/baselines unavailable.",
+      "nextAction": "Recover original source and profile binding."
+    },
+    {
+      "id": "L10-CREDITPRINT",
+      "status": "inconclusive",
+      "actual": "Read-only CREDIT NOTE preview matches consumed invoice source, date, one digital unit100, total100, no VAT line. Full mission prerequisites unqualified.",
+      "nextAction": "Retain partial print evidence; obtain independent review and prerequisites before formal acceptance."
+    },
+    {
+      "id": "L10-SHISTORY",
+      "status": "blocked",
+      "actual": "Invoice preview and settled source read; two250 receipts visible as distinct journals. No receipt-history/print control on inspected invoice detail/payment list.",
+      "nextAction": "Product/QA owner locate supported persisted receipt history and print; never reconstruct editable receipt URLs."
+    },
+    {
+      "id": "L10-PHISTORY",
+      "status": "blocked",
+      "actual": "Settled bill200 and two80/120 payment journals read. Payment list shows only open obligations. Purchase preview uses INVOICE/From company/Bill to vendor; not remittance proof.",
+      "nextAction": "Review purchase print role semantics and expose/locate persisted remittance history."
+    },
+    {
+      "id": "L10-JOURNALS",
+      "status": "inconclusive",
+      "actual": "All7 full journal lines match oracle and total1600 each side. All162 headers read;7 dated26Oct. Reverse source anchors/audit actor/allocation IDs unavailable in inspected entries.",
+      "nextAction": "Complete persisted allocation/audit links and original refusal-zero-effect attribution."
+    },
+    {
+      "id": "L10-SREPORTS",
+      "status": "inconclusive",
+      "actual": "Four sales events imply liquid+500 ARnet0 revenue600 returns100; current P&L/TB read. Original private baseline and historical intermediate scope unavailable.",
+      "nextAction": "Recover original openings; retain current and historical evidence separately."
+    },
+    {
+      "id": "L10-PREPORTS",
+      "status": "inconclusive",
+      "actual": "Three purchase events imply liquid-200 APnet0 expense200; current reports read. Original private baseline unavailable.",
+      "nextAction": "Recover original opening and verify source/account linkage."
+    },
+    {
+      "id": "L10-COMBINED",
+      "status": "inconclusive",
+      "actual": "Seven event lines sum1600; current journal19308.11/162, cash300, income1329.50, assets2866.21=liabilities1536.71+earnings1329.50. Matches published historical summary, not raw baseline proof.",
+      "nextAction": "Complete private source/opening and mandatory control qualification."
+    },
+    {
+      "id": "L10-AGING",
+      "status": "blocked",
+      "actual": "All8AR/10AP rows read explicitly asOf26Oct; totals1906.21/1490, settled and nonposting targets absent. Raw original row baseline unavailable.",
+      "nextAction": "Compare every row/source/bucket with original private snapshot."
+    },
+    {
+      "id": "L10-STOCK",
+      "status": "blocked",
+      "actual": "All10catalogue/7levels/31movement rows across4pages read; value780, inventoryGL660, known120gap. No movement after21Oct. Raw original baseline unavailable.",
+      "nextAction": "Recover original product/movement maps; do not repair known gap."
+    },
+    {
+      "id": "L10-PROTECTED",
+      "status": "blocked",
+      "actual": "All5 current detail pages read. Quote converted/order confirmed/draft unposted; invoice600 and bill200 open paid0; order quote ancestry visible. Exact original snapshots unavailable.",
+      "nextAction": "Recover original five detail snapshots and complete unchanged/accounting comparison."
+    },
+    {
+      "id": "L10-SETTINGS",
+      "status": "blocked",
+      "actual": "All24/7/2visible settings read and exactly equal at start/end. Current maps retained. Original serialized baseline unavailable; differing current map digest cannot establish drift. Target transaction Review badges Open. DOM client width1905 then1920, height855, lang en; no override; full locale unverified.",
+      "nextAction": "Recover original serialization/maps; verify full viewport/locale and original profile comparison."
+    },
+    {
+      "id": "L10-END",
+      "status": "inconclusive",
+      "actual": "Read-only recovery complete; no agent auth/business/settings/grant/master submissions, no physical print. Same end stamp and journal totals; no unresolved submission. Formal prerequisites remain open.",
+      "nextAction": "Review consolidated handoff; preserve historical runs and consumed events."
+    }
+  ],
+  "canonicalAcceptance": "not-established",
+  "releaseAcceptance": "not-established"
+}

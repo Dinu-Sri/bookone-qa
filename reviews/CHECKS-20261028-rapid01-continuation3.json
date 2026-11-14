@@ -1,0 +1,48 @@
+{
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "baseExecutionQa": "d3a9028e53f1f7fa19874c4c94cab03ec891b0b5",
+  "plan": "queues/MISSION-v2522-RAPID-01-CONT3.json",
+  "caseCount": 23,
+  "executionDate": "2026-10-28",
+  "focusedTests": {
+    "passed": 110,
+    "failed": 0,
+    "skipped": 0
+  },
+  "guardSourceChanged": false,
+  "newLiveQualification": false,
+  "qualification": "Conditionalfreshgatesmandatory; no newbrowseractions or businesssubmission inCONT3preparation. Prioractualguardproof/sourcehashesunchanged; Lightmustfreshlyverify.",
+  "prohibitedReplayCases": [
+    "R01-P-BILL",
+    "R01-P-PRETURN"
+  ],
+  "remainingEvents": {
+    "journalCount": 11,
+    "journalDebitCents": 272000,
+    "physicalMovementCount": 2
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 121751,
+    "explicitPausedMs": 0,
+    "metadataTail": "Publication/cleanexecutioncheckout/promptmaterialization afterpreparationclockclose; no browser/businesswork."
+  },
+  "priorRuns": {
+    "CONT1": {
+      "passed": 3,
+      "blocked": 20,
+      "clockClosedChargedMs": 417183
+    },
+    "CONT2": {
+      "passed": 4,
+      "notRunBudget": 18,
+      "inconclusive": 1,
+      "clockClosedChargedMs": 9441592,
+      "explicitPausedMs": 75207,
+      "unresolvedSubmissions": 0,
+      "closingUIReconciliationAfterInterruption": false
+    }
+  },
+  "fullRepositoryCheck": "PreviouslydocumentedWindowsgovernancefailureremainsnotgreen",
+  "releaseAcceptance": "not-established"
+}
