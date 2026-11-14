@@ -1,3 +1,9 @@
+# Current — CONT9 active, E27 outcome unresolved
+
+Read runs/RUN-20261114-cont9-interim.md. PR117 exact execution QA e8977162c6e652d7bec60552d029e6984412da34, clean launch-combined-cont9-execution, private RUN-20261114-CONT9 clock ACTIVE. E25 cash50 and E26 POS stock bill708 accepted/consumed. E27 payment708 dispatched once; operator navigated away before redirect, potentially interrupted request. Repeated bill/AP/transaction/journal/tenant audit show no payment observed; outcome unresolved, not confirmed refusal. Never replay or proceed new writes until definitive read-only recovery. E28-E37 no intent. Last observed cash227 bank1252.20 AR0 AP708 inventory780 inputVAT208.80 outputVAT90 equity1550, no V POS shift. 161 host checks and fresh gates passed. Prior E18-E24 consumed, never replay. Run cannot close while unresolved; active clock charges full elapsed gap. Owner deploys only, recoveryLAST.
+
+Historical pointers below superseded.
+
 # Current — CONT8 partial, seven accepted; binding review next
 
 Read runs/RUN-20261114-cont8-partial.md and handoffs/HANDOFF-20261114-cont8-partial.md. PR117. Exact execution QA27952b5923c1f09634dbda24f86c3bbe0cedddcd, private RUN-20261114-CONT8 CLOSED7536817ms/0paused incl initial baf6c3b; final20passed/27blocked/3inconclusive,0pending/unresolved. Seven business E18-E24 accepted/consumed; E24 synthetic bank1000 posted and journal/balances match but full source UUID not visible and required binding unqualified. Never replay E18-E24 or old funding.13 events E25-E37 unsubmitted. V cash177 bank1252.20 card0 AR/AP0 inventory180 inputVAT100.80 outputVAT90 equity1500 revenue720 returns220 COGS300 expense80; office stock3/value180 POS0, no shift. NEXT Medium reviews supported source binding and prepares fresh dated remaining-only successor; owner deploys, no launch approval, recoveryLAST.
