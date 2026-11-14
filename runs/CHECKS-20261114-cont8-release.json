@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-14",
+  "executionQa": "27952b5923c1f09634dbda24f86c3bbe0cedddcd",
+  "preparationHost": {
+    "passed": 158,
+    "failed": 0
+  },
+  "finalFocused": {
+    "passed": 77,
+    "failed": 0
+  },
+  "exactDetachedHost": {
+    "passed": 159,
+    "failed": 0
+  },
+  "metadata": {
+    "status": "metadata-valid",
+    "files": 1118,
+    "scenarios": 792,
+    "productAcceptance": "not-established"
+  },
+  "actualHost": {
+    "title": {
+      "uiCalls": 1,
+      "claims": 1
+    },
+    "inertSales": {
+      "uiCalls": 1,
+      "claims": 1
+    },
+    "refusals": 5,
+    "refusalUiCalls": 0,
+    "refusalClaims": 0
+  },
+  "actualSource": {
+    "positive": 1,
+    "refusals": 7,
+    "submitCalls": 0,
+    "hiddenSourceValue": "redacted by host; reviewed visible-number plus accepted detail URL proof"
+  },
+  "qualificationClocks": {
+    "exploratory": {
+      "mode": "closed",
+      "chargedMs": 401845,
+      "pausedMs": 0
+    },
+    "frozen": {
+      "mode": "closed",
+      "chargedMs": 116273,
+      "pausedMs": 0
+    },
+    "proofClocksClosed": 7
+  },
+  "successor": {
+    "checkpoints": 50,
+    "businessEvents": 20,
+    "executionDate": "2026-11-14",
+    "dueDate": "2026-11-16",
+    "executionRunInitialized": false,
+    "acceptedCarryBindings": 16
+  },
+  "publication": "pending exact authorization after prior automatic rejection",
+  "boundary": "QA guard checks and harmless qualification only; no new auth/business/stock/shift/settings/master submission and no product posting acceptance claimed."
+}

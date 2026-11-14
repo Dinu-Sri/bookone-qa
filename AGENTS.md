@@ -1,3 +1,9 @@
+# Current — CONT8 locally qualified; publication approval pending
+
+Exact frozen execution QA27952b5923c1f09634dbda24f86c3bbe0cedddcd, clean detached launch-combined-cont8-execution. Read handoffs/CONT8-TERRA-PROMPT.md and handoffs/HANDOFF-20261114-cont8-release.md; root COMBINED-V2527-CONT8.md controls successor selection.50checkpoints/20remaining E18-E37, explicit14Nov2026UTC/due16 NEW docs, historical13/15 preserved. Guard repaired/actual-qualified, exact detached159/159;2actualpositive+5zeroUIrefusals, source1positive+7refusals0submit, qualification clocksclosed.16accepted carry bindings from closed CONT5/CONT7; QFIX/E01-E17/allN consumed; never replay. No execution clock initialized. Sanitized branch qa/combined-cont8-source-guard awaits exact publication authorization to Dinu-Sri/bookone-qa after automatic review rejected prior push/draftPR. Do not bypass or execute while waiting publication. Owner deploys only; recoveryLAST; no launch approval.
+
+Historical pointers below superseded for next-task selection.
+
 # Current — 12 November v2.5.27 live; combined Light mission released
 
 Owner personally merged/deployed Product PR11. Actual V/N stamp v2.5.27 · dae17ab; full merged dae17abcba12d6810c8f8c3fe4a74fb28280a026, identical reviewed candidate3d6119e/tree78973f5a9298ce615f5c8cda17f77b2de714bfa2. PR105 PG141/141, HTTPS30/30, accounting210, fullcheck/BatchA/BF/archive pass; campaign315/0 but coverage/launch acceptance unestablished. Both V/N setup complete/zero financial openings; manual dedicated POS, GRNI/approval off, new Input VAT selector observed. No new financial/settings/master/stock/shift/print writes in Medium preparation. First premature auth acceptance explicitly adjudicated not-established; successor actual protected identity passed, original evidence preserved.
