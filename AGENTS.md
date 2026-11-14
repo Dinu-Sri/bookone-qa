@@ -1,4 +1,6 @@
-# Current — CONT10 VAT return preview failure; coding first
+# Current — CONT10 CLOSED; VAT return preview coding first
+
+CLOSED3575152ms/0paused includes initial result70f34436f2203421b28c7c048b8c5fd8edd5dcd3.39dispositions21passed/1failed/14blocked/3inconclusive,0pending/unresolved.
 
 Read runs/RUN-20261114-cont10-results.md and handoffs/CODING-20261114-pos-linked-return-vat.md. Exact frozen QA d10073475f8a34470367d64eb7331ce6b1d082a3, clean detached launch-combined-cont10-execution. S01 settlement708/E28 shift opening50/E29 taxable cash sale236 accepted and consumed. Original sale sold2/left2; first linked refund previews100 vs expected118, no refund intent. E30-E37 eight actions unsubmitted. V22journals/DrCr7588.80, cash463 bank544.20 inventory660 AP0 profit200; office3/value180/POS8/value480. Shift OPEN1sale236/0refunds expectedcash286, not planned50. Preserve paid bill, sale, shift and app-created Walk-in; never replay funding/purchases/settlement/opening/sale/N. Fresh N closing matched bank380/stock120/equity500, six-ticket closedshift. NEXT grouped POS source-derived VAT return preview fix, independent Medium candidate review, owner deployment then NEW dated remaining-only8 successor/current openings/old shift qualification. No executable continuation or launch approval; original dates preserved, recoveryLAST. Exact clock/dispositions/publication receipt in runs/CLOSING-20261114-cont10.md.
 

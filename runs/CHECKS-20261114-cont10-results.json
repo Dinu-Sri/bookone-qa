@@ -96,9 +96,9 @@
     "wrongPersistedRefund": "not-established"
   },
   "counts": {
-    "pending": 2,
+    "pending": 0,
     "running": 0,
-    "passed": 19,
+    "passed": 21,
     "failed": 1,
     "blocked": 14,
     "inconclusive": 3,
@@ -331,19 +331,19 @@
     {
       "id": "Z7",
       "title": "Sanitized publication",
-      "status": "pending",
+      "status": "passed",
       "businessSubmissionCount": 0
     },
     {
       "id": "Z8",
       "title": "Close clock and future pointer",
-      "status": "pending",
+      "status": "passed",
       "businessSubmissionCount": 0
     }
   ],
   "clock": {
-    "mode": "active",
-    "chargedMsAtCheckpoint": 3434027,
+    "mode": "closed",
+    "chargedMsAtCheckpoint": 3575152,
     "explicitPausedMs": 0,
     "initialPublicationIncludedWhenClosed": true
   },
