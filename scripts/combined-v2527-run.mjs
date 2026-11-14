@@ -8,7 +8,7 @@ import {initialize,transition,report,guard} from './operator-queue.mjs';
 import {openClock,clockReport} from './operator-clock.mjs';
 import {authorizeCombined} from './combined-v2527-policy.mjs';
 import {assertExecutionDate,desktopSourceHashes} from './operator-desktop-cua.mjs';
-const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT9-20261114.json';
+const root=path.resolve(import.meta.dirname,'..'),planPath='queues/MISSION-COMBINED-V2527-CONT10-20261114.json';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=p=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 import {verifyCarry} from './combined-v2527-carry.mjs';
@@ -23,7 +23,7 @@ function main(){
  if(cmd==='init'){
   assertExecutionDate(plan);if(plan.executionReady!==true)throw Error('Successor not released');if(fs.existsSync(dir))throw Error('Never overwrite any run');fs.mkdirSync(dir,{recursive:true,mode:0o700});
   const qaSha=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-  const fp={productSha:plan.productSha,qaSha,liveStamp:'v2.5.27 · dae17ab',rulesHash:hash('rules/rulebook.json'),libraryHash:hash('workflows/library.json'),schema:'not-independently-attested',actor:'actual-V-N-owner-per-case',configuration:'VAT18-or-nonVAT-local-manualPOS-GRNIoff',fixture:'V-current-CONT7-closing-N-consumed',uxHash:hash('ux/workbook.json'),oracleHash:hash(plan.oracle),desktopSources:desktopSourceHashes(),combinedSources:combinedSourceHashes()};
+  const fp={productSha:plan.productSha,qaSha,liveStamp:'v2.5.27 · dae17ab',rulesHash:hash('rules/rulebook.json'),libraryHash:hash('workflows/library.json'),schema:'not-independently-attested',actor:'actual-V-N-owner-per-case',configuration:'VAT18-or-nonVAT-local-manualPOS-GRNIoff',fixture:'V-current-CONT9-closing-N-consumed',uxHash:hash('ux/workbook.json'),oracleHash:hash(plan.oracle),desktopSources:desktopSourceHashes(),combinedSources:combinedSourceHashes()};
   atomic(path.join(dir,'clock.json'),openClock(180,30));atomic(path.join(dir,'fingerprint.json'),fp);atomic(path.join(dir,'state.json'),initialize(plan,fp));atomic(path.join(dir,'owned-sources.json'),{});
   console.log(JSON.stringify({runDirectory:dir,intendedFingerprintOnly:true,instruction:'Compare QA with published execution pin; actual live/actor/profile/opening gates still mandatory.'}));return;
  }

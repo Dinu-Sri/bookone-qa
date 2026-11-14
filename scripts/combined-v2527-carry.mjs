@@ -4,6 +4,7 @@ export function verifyCarry(plan,state,prior,manifestPath){
  if(!['G05','G06'].every(id=>state.cases.find(c=>c.id===id)?.status==='passed'))throw Error('Fresh openings and preservation required');
  if(state.cases.some(c=>c.submissions?.some(s=>!s.action.startsWith('AUTH:'))))throw Error('Carry must precede all business intents');
  const contract=plan.carryContract;if(!contract)throw Error('Missing reviewed carry contract');
+ if(contract.version===4)return verifyCont9Carry(contract,prior);
  if(contract.version===3)return verifyCont8Carry(contract,prior);
  if(contract.version===2)return verifyMultiCarry(plan,prior,manifestPath);
  const files={};for(const [name,h]of Object.entries(contract.hashes)){const bytes=fs.readFileSync(path.join(prior,name));if(hash(bytes)!==h)throw Error('Prior run changed');files[name]=JSON.parse(bytes);}
@@ -53,4 +54,16 @@ function verifyCont8Carry(contract,prior){
  for(let n=18;n<=24;n++){const row=rows.find(c=>c.id==='E'+n),a=row?.submissions?.filter(s=>s.outcome==='accepted');if(row?.status!==(n===24?'inconclusive':'passed')||a?.length!==1||!a[0].readbacks?.some(r=>r.outcome==='accepted'))throw Error('Prior accepted readback missing');}
  for(let n=25;n<=37;n++)if(rows.find(c=>c.id==='E'+n)?.submissions?.length)throw Error('Remaining event already consumed');
  const sources=files['owned-sources.json'];for(const b of Object.values(sources))if(b.accepted!==true||b.companyAlias!=='V')throw Error('Unqualified source');return sources;
+}
+
+function verifyCont9Carry(contract,prior){
+ const dir=path.resolve(prior,contract.path);if(!dir.startsWith(path.resolve(prior)+path.sep))throw Error('Carry escaped root');
+ const files={};for(const [name,h]of Object.entries(contract.hashes)){const b=fs.readFileSync(path.join(dir,name));if(hash(b)!==h)throw Error('CONT9 evidence changed: '+name);if(name.endsWith('.json'))files[name]=JSON.parse(b);}
+ if(files['clock.json'].mode!=='closed'||files['fingerprint.json'].qaSha!==contract.qaSha)throw Error('Wrong or active CONT9');
+ const rows=files['state.json'].cases;if(rows.some(c=>['pending','running'].includes(c.status)||c.submissions?.some(t=>t.outcome==='unresolved')))throw Error('CONT9 unresolved');
+ for(const id of ['E25','E26']){const c=rows.find(x=>x.id===id),a=c?.submissions?.filter(t=>t.outcome==='accepted');if(c?.status!=='passed'||a?.length!==1||!a[0].readbacks?.some(r=>r.outcome==='accepted'))throw Error('Accepted source readback missing');}
+ const old=rows.find(x=>x.id==='E27'),attempt=old?.submissions?.[0],recovery=files['E27-recovery-readback.json'];
+ if(old?.status!=='inconclusive'||old.submissions.length!==1||attempt?.outcome!=='refused'||recovery.submissionId!==attempt.submissionId||recovery.outcome!=='refused'||!attempt.readbacks?.some(r=>r.outcome==='inconclusive')||attempt.readbacks.at(-1)?.outcome!=='refused'||!recovery.actual?.includes('NOT APPLIED'))throw Error('Reviewed not-applied settlement evidence missing');
+ for(let n=28;n<=37;n++)if(rows.find(c=>c.id==='E'+n)?.submissions?.length)throw Error('POS event already consumed');
+ const sources=files['owned-sources.json'];if(!sources['V:pos-stock-bill']||sources['V:pos-vendor-payment'])throw Error('Wrong carried bill/payment');for(const b of Object.values(sources))if(b.accepted!==true||b.companyAlias!=='V')throw Error('Unqualified carried source');return sources;
 }

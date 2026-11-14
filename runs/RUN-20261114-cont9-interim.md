@@ -17,3 +17,7 @@ E27 submission has a later readback adjudicating NOT APPLIED (ledger outcome ref
 ## CONT9 closing disposition — 14 November UTC
 
 E25/E26 remain accepted/consumed; E27 case remains inconclusive for its unsuccessful attempt, with original uncertain readback and later READ ONLY database not-applied adjudication both retained. All10 POS actions remain unsubmitted and blocked under the consumed queue. Other unreached checks are explicitly blocked; no retroactive full workflow pass. Scoped preservation and partial reconciliation retained. Z4/Z7/Z8 are finishing publication/closure; final counts and charged clock follow in a metadata-only tail. Initial closing publication occurs while the original unpaused clock is active. Owner requested executable Light successor, which will have a new settlement capability only after fresh unpaid-source checks; no old request replay.
+
+## Final CONT9 clock metadata
+
+CONT9 CLOSED 3,049,293ms/0paused, including closing publication a7131df. Final41 dispositions:14passed/24blocked/3inconclusive,0pending/0unresolved. No new business/auth after closing publication. Metadata-only tail. E25/E26 consumed; E27 old intent consumed/not-applied, original uncertainty preserved; E28–E37 unsubmitted. New Light successor is separately reviewed and must not reset or reuse CONT9.
