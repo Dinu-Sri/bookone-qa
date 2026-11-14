@@ -1,3 +1,9 @@
+# Current — Light final11 plan prepared, not executable
+
+Read LIGHT-FINAL11-PLAN-20261114.md at workspace root, or handoffs/PLAN-20261114-light-final11.md in current preparation branch.11 actions: new reviewed settlement of confirmed-unpaid bill708 plus ten POS events. Plan requires closure of active CONT9 first, hash-verified successor carry, exact POS Unicode label correction (current queue contains U+00C2/U+00B7), completed-action waits before navigation, tests/qualification and published exact pin/clean checkout before Light run. New180/150/30clock/fresh gates only after release. Current CONT9 remains ACTIVE8passed/1inconclusive/32pending,0unresolved after authorized read-only database recovery; no new execution during planning. Preserve consumed E25/E26 and all prior money; never replay old E27 intent. Fixed original date unchanged; explicit dated successor review required. Owner deploys only; recoveryLAST; no launch approval.
+
+Historical pointers below preserved.
+
 # Current — CONT9 payment uncertainty resolved, not applied
 
 Read launch-combined-cont9-preparation/runs/RUN-20261114-cont9-interim.md recovery section. Owner-authorized READ ONLY database check: bill708 open/paid0, allocations0, matching payments0, other active DB work0. Request log query no matching rows; no explicit server denial claimed. E27 original inconclusive readback retained, later outcome adjudicated not-applied/refused;0unresolved now. Do not replay consumed intent. E25/E26 accepted; E28-E37 no intent. CONT9 clock ACTIVE, no reset; current queue cannot proceed dependent writes because E27 not passed. Review fresh separately guarded unpaid-bill settlement and ten POS events, then consolidate/close old queue. No DB mutation or deployment.
