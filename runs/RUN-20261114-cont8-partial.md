@@ -14,3 +14,7 @@ Accepted and independently reconciled:
 Partial V balances after E24: cash177, bank1252.20, card0, AR/AP0, inventory180, inputVAT100.80, outputVAT90, equity1500, sales720, returns220, COGS300, expense80; profit120, assets1710, liabilities90, net assets1620. Office goods3/value180, POS goods0. No V POS shift opened. N closure carried, no fresh full-row equality claimed. No product posting defect is proven by the source-binding limitation. Preserve all seven accepted submissions, prior failure evidence, Walk-in customer and all historical transactions.
 
 Next Medium reviews the exact E24 binding requirement and supported visible source evidence, then prepares a new remaining-only successor E25–E37 with current openings, fresh date review, fresh clock/gates and hash-verified carry. Do not replay E18–E24 or old funding, and do not reset this run. Owner alone deploys; no launch approval; recovery last. This initial publication occurs with the execution clock active; the metadata-only clock-closure tail follows.
+
+## Closure metadata
+
+Clock CLOSED 7,536,817ms, 0 paused, including initial publication baf6c3b. Final 50 dispositions:20 passed,27 blocked,3 inconclusive;0 pending and0 unresolved. Seven business submissions E18–E24 accepted and consumed, including the inconclusive-binding E24;13 events E25–E37 unsubmitted. No further business/auth action after the initial publication. This is a metadata-only closure tail.
