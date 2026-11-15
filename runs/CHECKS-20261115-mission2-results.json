@@ -241,11 +241,35 @@
     },
     {
       "id": "Z03",
-      "status": "pending"
+      "status": "passed",
+      "actual": "Initial consolidated sanitized results published while clock ACTIVE; exact remote head verified: eb2c4440e697822966bb94285e7372acb328f287"
     },
     {
       "id": "Z04",
-      "status": "pending"
+      "status": "passed",
+      "actual": "All41 terminal and zero unresolved; no execution proof clocks created. Official close immediately follows; authoritative clock/hash receipt will be metadata-only tail."
     }
-  ]
+  ],
+  "finalCounts": {
+    "passed": 11,
+    "failed": 0,
+    "blocked": 29,
+    "inconclusive": 1,
+    "pending": 0,
+    "running": 0,
+    "unresolved": 0
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 343321,
+    "pausedMs": 0,
+    "openedUTC": "2026-11-15T15:06:04.497Z",
+    "closedUTC": "2026-11-15T15:11:47.818Z"
+  },
+  "privateEvidenceHashes": {
+    "state.json": "e32ed3fa12124c8206ddda555512f995e7772c28e2732f05d6c5664c6f421488",
+    "clock.json": "d90937dac6ec4dfe7ec7bd48e419adc1810dfd52e3737ae1b1342c560ce68b60",
+    "fingerprint.json": "30d4381dd00b962ddbf63576bb4b911f988ea4ea70349bec23abe8028536ba06"
+  },
+  "initialPublication": "eb2c4440e697822966bb94285e7372acb328f287"
 }
