@@ -3,11 +3,11 @@
   "productSha": "ca05491f18965f757adfead48b5d98595872272c",
   "dateContract": "2026-11-15 UTC",
   "counts": {
-    "passed": 31,
+    "passed": 33,
     "failed": 0,
     "blocked": 0,
     "inconclusive": 1,
-    "pending": 2,
+    "pending": 0,
     "running": 0
   },
   "unresolvedAuth": 0,
@@ -249,11 +249,13 @@
     },
     {
       "id": "Z03",
-      "status": "pending"
+      "status": "passed",
+      "actual": "Sanitized consolidated results99b363f67112d45af694b1a69453509bb8b266cfpublishedPR119and independentlyremoteverified while mainclockACTIVE; raw/private evidence excluded."
     },
     {
       "id": "Z04",
-      "status": "pending"
+      "status": "passed",
+      "actual": "All34terminal/0unresolved auth;7proofclocksCLOSED; official mainclose immediately follows, then authoritative metadata-only clock/hash/publication tail; no furtherUI/auth/business."
     }
   ],
   "acceptance": "not-established; hydrated invalid-row accessibility and broader campaign/deployed-recovery limits remain"

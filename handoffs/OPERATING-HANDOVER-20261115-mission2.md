@@ -1,5 +1,7 @@
 # Mission2 operating handover — conditional qualification
 
+Current receipt: CONT1 CLOSED1391143ms/0paused,33passed/1inconclusive/0pending-unresolved. See HANDOFF-20261115-mission2-cont1.md and ../runs/CLOSING-20261115-mission2-cont1.md. Fresh live roles/read/report/preview/preservation and isolated recovery LAST are now completed; the older missing-tool outstanding list below is historical. Hydrated invalid AR/AP field accessibility remains inconclusive; broader launch/migration/legal-tax/deployed-recovery limits remain. Daily operating steps below still apply. This pointer update follows official close and adds no execution action.
+
 15 November2026UTC. Candidate v2.5.30 ca05491. This run could not establish fresh live gates because the required mcp__cua_repl surface is absent. These operating instructions are not live role verification, customer launch approval, migration approval or legal tax certification.
 
 1. Before entry, confirm the current build, intended company, independently protected identity and write role. Owner performs authorized writes; Viewer reads permitted records/reports. Validate both UI and server permission boundaries before rollout. Only the owner deploys.
