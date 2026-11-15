@@ -70,9 +70,9 @@
     "businessRepeated": false
   },
   "counts": {
-    "pending": 2,
+    "pending": 0,
     "running": 0,
-    "passed": 29,
+    "passed": 31,
     "failed": 0,
     "blocked": 0,
     "inconclusive": 6
@@ -292,19 +292,19 @@
     {
       "id": "Z7",
       "title": "Sanitized publication",
-      "status": "pending",
+      "status": "passed",
       "businessSubmissions": 0
     },
     {
       "id": "Z8",
       "title": "Close clock and future pointer",
-      "status": "pending",
+      "status": "passed",
       "businessSubmissions": 0
     }
   ],
   "clock": {
-    "mode": "active",
-    "chargedMs": 1518129,
+    "mode": "closed",
+    "chargedMs": 1600618,
     "explicitPausedMs": 0
   },
   "customerLaunch": "not-approved",
