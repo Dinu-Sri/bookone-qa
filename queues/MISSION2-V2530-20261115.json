@@ -1,0 +1,1669 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION2-V2530-20261115",
+  "displayName": "Full Light Mission2 qualification and final handover",
+  "executionReady": true,
+  "candidate": "v2.5.30",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "productTree": "a0a8d06415067c7e8fb2ef4959bca683954279bf",
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-15",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "budget": {
+    "totalMinutes": 180,
+    "executionMinutes": 150,
+    "closingReserveMinutes": 30
+  },
+  "oracle": "docs/MISSION2-BASELINE-20261115.json",
+  "cases": [
+    {
+      "id": "G01",
+      "title": "Fresh180/150/30clock, exact published QA/product/tree/date and old-run preservation",
+      "phase": "functional",
+      "expected": "Fresh180/150/30clock, exact published QA/product/tree/date and old-run preservation. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "G02",
+      "title": "Fresh actual two positive controls/five zeroUI refusals; close seven proof clocks",
+      "phase": "functional",
+      "expected": "Fresh actual two positive controls/five zeroUI refusals; close seven proof clocks. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01"
+      ]
+    },
+    {
+      "id": "G03",
+      "title": "Actual live v2.5.30 ca05491; stop on build/date/origin mismatch",
+      "phase": "functional",
+      "expected": "Actual live v2.5.30 ca05491; stop on build/date/origin mismatch. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02"
+      ]
+    },
+    {
+      "id": "G04",
+      "title": "Fresh guarded V Owner authentication, RememberOFF and independently protected identity",
+      "phase": "functional",
+      "expected": "Fresh guarded V Owner authentication, RememberOFF and independently protected identity. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03"
+      ]
+    },
+    {
+      "id": "V01",
+      "title": "Fresh V opening accounts/stock/ARAP/report/original closed shift versus baseline",
+      "phase": "functional",
+      "expected": "Fresh V opening accounts/stock/ARAP/report/original closed shift versus baseline. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V02",
+      "title": "Fresh V VAT18, warehouse/manual POS register and physical-hardware safety profile",
+      "phase": "functional",
+      "expected": "Fresh V VAT18, warehouse/manual POS register and physical-hardware safety profile. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V03",
+      "title": "Unsaved purchase2x60:net120 VAT21.60 gross141.60; toggle/rerender/cancel",
+      "phase": "functional",
+      "expected": "Unsaved purchase2x60:net120 VAT21.60 gross141.60; toggle/rerender/cancel. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V04",
+      "title": "Purchase/service/cash/credit/discount/conversion adjacent policy correspondence without posting",
+      "phase": "functional",
+      "expected": "Purchase/service/cash/credit/discount/conversion adjacent policy correspondence without posting. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V05",
+      "title": "Original quotation/order labels, original13/15Nov dates and nonposting/source identity",
+      "phase": "functional",
+      "expected": "Original quotation/order labels, original13/15Nov dates and nonposting/source identity. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V06",
+      "title": "Original invoice/bill/returns/payment readback; preserve historical memo strings and original118refund",
+      "phase": "functional",
+      "expected": "Original invoice/bill/returns/payment readback; preserve historical memo strings and original118refund. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V07",
+      "title": "V VAT summary output90 input208.80 netpayable-118.80; alltime/Nov correspondence and CSV",
+      "phase": "functional",
+      "expected": "V VAT summary output90 input208.80 netpayable-118.80; alltime/Nov correspondence and CSV. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V08",
+      "title": "Supported empty-period report and CSV; restore original period; no wrong tenant content",
+      "phase": "functional",
+      "expected": "Supported empty-period report and CSV; restore original period; no wrong tenant content. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V09",
+      "title": "Current live AR/AP settled-state preservation; no new live invoices/bills for matrices",
+      "phase": "functional",
+      "expected": "Current live AR/AP settled-state preservation; no new live invoices/bills for matrices. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "N01",
+      "title": "Guarded existing N Owner authentication and protected identity",
+      "phase": "functional",
+      "expected": "Guarded existing N Owner authentication and protected identity. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "N02",
+      "title": "N bank380 inventory120/equity500 and stock2; closed six-ticket shift unchanged",
+      "phase": "functional",
+      "expected": "N bank380 inventory120/equity500 and stock2; closed six-ticket shift unchanged. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "N03",
+      "title": "N nonVAT/commercial/manual register settings and original three receipts",
+      "phase": "functional",
+      "expected": "N nonVAT/commercial/manual register settings and original three receipts. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "N04",
+      "title": "N VAT summary/CSV zeros and supported period correspondence",
+      "phase": "functional",
+      "expected": "N VAT summary/CSV zeros and supported period correspondence. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "A01",
+      "title": "Guarded A Owner auth; cash150/bank290 and original owned paid invoice600 binding",
+      "phase": "functional",
+      "expected": "Guarded A Owner auth; cash150/bank290 and original owned paid invoice600 binding. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "Guarded A Viewer auth; settings/Record/Archive absent, create denied, owned read retained",
+      "phase": "functional",
+      "expected": "Guarded A Viewer auth; settings/Record/Archive absent, create denied, owned read retained. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Viewer keyboard/reader/narrow presentation and permitted report/export access",
+      "phase": "functional",
+      "expected": "Viewer keyboard/reader/narrow presentation and permitted report/export access. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "B01",
+      "title": "Guarded B Owner auth; independent protected role/company and own positive record context",
+      "phase": "functional",
+      "expected": "Guarded B Owner auth; independent protected role/company and own positive record context. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "Known foreign A invoice/N receipt deny/no disclosure; report/export isolation",
+      "phase": "functional",
+      "expected": "Known foreign A invoice/N receipt deny/no disclosure; report/export isolation. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "V10",
+      "title": "Guarded original V Owner restoration; accepted independently before final closing reads",
+      "phase": "functional",
+      "expected": "Guarded original V Owner restoration; accepted independently before final closing reads. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": true,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R01",
+      "title": "Qualified actual PostgreSQL149 outcome cases and exact product/schema/RLS fingerprint",
+      "phase": "functional",
+      "expected": "Qualified actual PostgreSQL149 outcome cases and exact product/schema/RLS fingerprint. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Actual Owner/Viewer/custom read register action outcomes and last-active/read-path controls",
+      "phase": "functional",
+      "expected": "Actual Owner/Viewer/custom read register action outcomes and last-active/read-path controls. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Raw AR/AP field matrix:blank/0/-1/abc/1abc/Infinity/NaN/1.001/cents/cap/mixed/unselected",
+      "phase": "functional",
+      "expected": "Raw AR/AP field matrix:blank/0/-1/abc/1abc/Infinity/NaN/1.001/cents/cap/mixed/unselected. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "Actual server AR/AP atomicity/cap/concurrent/idempotency/foreign/no-effect outcomes",
+      "phase": "functional",
+      "expected": "Actual server AR/AP atomicity/cap/concurrent/idempotency/foreign/no-effect outcomes. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "Real credential HTTPS36 cases; register denial/Owner persist/invalidpayment/VAT CSV",
+      "phase": "functional",
+      "expected": "Real credential HTTPS36 cases; register denial/Owner persist/invalidpayment/VAT CSV. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "R06",
+      "title": "Fresh isolated journal18%/21.60 plus fractional/return tests; VATreport actual correspondence",
+      "phase": "functional",
+      "expected": "Fresh isolated journal18%/21.60 plus fractional/return tests; VATreport actual correspondence. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "U01",
+      "title": "Affected desktop/narrow/keyboard/reader field errors/totals/readonly controls; cancel all drafts",
+      "phase": "functional",
+      "expected": "Affected desktop/narrow/keyboard/reader field errors/totals/readonly controls; cancel all drafts. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "H01",
+      "title": "Concrete operating handover and remaining limitations; synthetic not legal/migration certification",
+      "phase": "functional",
+      "expected": "Concrete operating handover and remaining limitations; synthetic not legal/migration certification. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "P01",
+      "title": "Before recovery: all functional dispositions/auth resolved; protected accounts/stock/closedshift preserved",
+      "phase": "functional",
+      "expected": "Before recovery: all functional dispositions/auth resolved; protected accounts/stock/closedshift preserved. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "D01",
+      "title": "RECOVERY LAST: publish functional receipt; new guarded CI disposable DB+storage identity",
+      "phase": "recovery",
+      "expected": "RECOVERY LAST: publish functional receipt; new guarded CI disposable DB+storage identity. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "Actual encrypted data/files export pair, hashes/version/source and Viewer/nonempty/wrongpassword refusals",
+      "phase": "recovery",
+      "expected": "Actual encrypted data/files export pair, hashes/version/source and Viewer/nonempty/wrongpassword refusals. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "D03",
+      "title": "Restore only into isolated empty target; remapped records/ARAP/stock/layers/closedshift and source preserved",
+      "phase": "recovery",
+      "expected": "Restore only into isolated empty target; remapped records/ARAP/stock/layers/closedshift and source preserved. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "D04",
+      "title": "Actual S3 paired file restore/checksum/exact bytes/source preservation and replay refusal",
+      "phase": "recovery",
+      "expected": "Actual S3 paired file restore/checksum/exact bytes/source preservation and replay refusal. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "D05",
+      "title": "Postrestore actual product app data reads/permissions; measured restore duration and honest boundary",
+      "phase": "recovery",
+      "expected": "Postrestore actual product app data reads/permissions; measured restore duration and honest boundary. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "Z01",
+      "title": "All auth intents resolved; final zero live business/config/master/grant/shift/physicalprint and preservation",
+      "phase": "closing",
+      "expected": "All auth intents resolved; final zero live business/config/master/grant/shift/physicalprint and preservation. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "Z02",
+      "title": "All cases concretely dispositioned; first failures retained and next coding/retest if needed",
+      "phase": "closing",
+      "expected": "All cases concretely dispositioned; first failures retained and next coding/retest if needed. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "Z03",
+      "title": "Sanitized consolidated publication while clock active; remote exact receipt verified",
+      "phase": "closing",
+      "expected": "Sanitized consolidated publication while clock active; remote exact receipt verified. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    },
+    {
+      "id": "Z04",
+      "title": "Close main/proof clocks0pending/unresolved; metadata-only clock/hash/publication tail",
+      "phase": "closing",
+      "expected": "Close main/proof clocks0pending/unresolved; metadata-only clock/hash/publication tail. Independently observed outcomes only; blocked/inconclusive is not a pass.",
+      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "allowAuth": false,
+      "businessSubmission": false,
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "G03",
+        "G04"
+      ]
+    }
+  ]
+}

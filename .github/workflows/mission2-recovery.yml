@@ -66,7 +66,8 @@ jobs:
           echo "S3_BUCKET=m2-recovery-$(openssl rand -hex 8)" >> "$GITHUB_ENV"
           echo "S3_ENDPOINT=http://127.0.0.1:9000" >> "$GITHUB_ENV"
           echo "S3_REGION=us-east-1" >> "$GITHUB_ENV"
-          docker run -d --name m2-isolated-minio -p 127.0.0.1:9000:9000 -e MINIO_ROOT_USER="$task_user" -e MINIO_ROOT_PASSWORD="$task_secret" minio/minio:latest server /data
+          # Official upstream container reference: https://github.com/minio/minio/blob/master/docs/orchestration/docker-compose/docker-compose.yaml
+          docker run -d --name m2-isolated-minio -p 127.0.0.1:9000:9000 -e MINIO_ROOT_USER="$task_user" -e MINIO_ROOT_PASSWORD="$task_secret" quay.io/minio/minio:RELEASE.2025-09-06T17-38-46Z server /data
           echo "QA_M2_STORAGE_IMAGE=$(docker inspect m2-isolated-minio --format '{{.Image}}')" >> "$GITHUB_ENV"
           for attempt in $(seq 1 30); do curl --fail http://127.0.0.1:9000/minio/health/live && break; sleep 1; done
           curl --fail http://127.0.0.1:9000/minio/health/live
