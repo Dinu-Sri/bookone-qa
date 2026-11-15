@@ -1,3 +1,12 @@
+# Current — Mission1 CLOSED; grouped coding next
+
+Mission1 (two-mission finish programme) CLOSED1572215ms/0paused,20passed/6failed/5inconclusive,0pending/running/unresolved. Exact execution QA24534f7b95901dba29ef933fa3c3d5045c107d05 clean detached launch-readiness-m1-execution. Initial sanitized publication3bfc96699940bcc8b9367ddd09b9ddf2efb081ea verified on draftPR118 while active. All12auth accepted; originalV restored. Zero financial/settings/master/grant/shift/physical-print intent. OriginalV/N/A/B records, dates, Walk-in and closed shifts preserved; no replay.
+
+Read runs/RUN-20261115-mission1-results.md, runs/CLOSING-20261115-mission1.md and handoffs/CODING-20261115-mission1-grouped.md in launch-readiness-m1. Priority source defect: POS register save/archive actions check tenant membership but lack write permission. Fresh Viewer enabled settings controls; invoice creation correctly denied. No successful live unauthorized write or wrong-money claim. Payment raw-validation/mixed-row preview-vs-submitted batch, purchase net/VAT/gross preview, VAT memo formatting and quote/order type clarity grouped; VAT-report scope and office-print/export/runtime limits explicit. Fresh host99/99, auth resolver33/33; actual server PG/HTTPS runtime unavailable (Docker engine absent), not substituted by staging admin.
+
+NEXT one grouped coding candidate, independent Medium exact review, owner deployment, then Mission2 affected regression/operating handover/isolated recovery LAST. Synthetic V/N openings/profile accepted within scope; no actual migration/import or legal tax certification. Vcash227/bank544.20/stock780/profit120; Nbank380/stock120/equity500, shifts closed. No new executable queue, no launch approval; never resume closed Mission1 or old business events. Metadata-only publication tail follows initial receipt.
+
+Historical pointers below preserved and superseded.
 # Current — CONT11 CLOSED; all eight complete; Medium review next
 
 CONT11 CLOSED1600618ms/0paused;31passed/6inconclusive,0pending/unresolved. All8business actions accepted. Initial publication1ca8a64da60d2df414ed7bbc56345f4f2fd162d4.

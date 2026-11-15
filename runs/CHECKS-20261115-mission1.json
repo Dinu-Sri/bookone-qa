@@ -2,8 +2,8 @@
   "dateContract": "2026-11-15 UTC",
   "executionQa": "24534f7b95901dba29ef933fa3c3d5045c107d05",
   "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
-  "publicationPhase": "initial-active-clock",
-  "clockMode": "active",
+  "publicationPhase": "final",
+  "clockMode": "closed",
   "cases": [
     {
       "id": "G01",
@@ -315,9 +315,14 @@
     },
     {
       "id": "Z4",
-      "status": "pending",
-      "actual": "",
-      "evidence": {}
+      "status": "passed",
+      "actual": "All31 checkpoints concretely dispositioned with zero pending/running/unresolved at finalization.",
+      "evidence": {
+        "observations": "20passed/6failed/5inconclusive; no failed or unavailable layer promoted to acceptance. Z6 publication verified; Z7 closure sequenced immediately after this record.",
+        "sourceAndBindings": "Frozen QA24534f7, product48e4407, exact initial publication receipt retained.",
+        "journalAndStock": "Zero financial/settings/master/grant/shift/physical-print action; existing closings retained.",
+        "preservation": "Never replay consumed requests or closed queues; no deployment or launch approval."
+      }
     },
     {
       "id": "Z5",
@@ -332,15 +337,25 @@
     },
     {
       "id": "Z6",
-      "status": "pending",
-      "actual": "",
-      "evidence": {}
+      "status": "passed",
+      "actual": "Initial sanitized results and grouped handoff published and remote draft PR118 head independently verified.",
+      "evidence": {
+        "observations": "Git push succeeded; GitHub update returned draft118 head3bfc96699940bcc8b9367ddd09b9ddf2efb081ea while original clock active. Initial restricted-network push failed DNS; authorized escalated push succeeded.",
+        "sourceAndBindings": "Frozen QA24534f7, product48e4407, exact initial publication receipt retained.",
+        "journalAndStock": "Zero financial/settings/master/grant/shift/physical-print action; existing closings retained.",
+        "preservation": "Never replay consumed requests or closed queues; no deployment or launch approval."
+      }
     },
     {
       "id": "Z7",
-      "status": "pending",
-      "actual": "",
-      "evidence": {}
+      "status": "passed",
+      "actual": "Seven proof clocks closed; initial publication verified; main clock closure executed by this finalization command after concrete dispositions.",
+      "evidence": {
+        "observations": "No browser/auth/business action after final V readbacks. Close only after all31 cases dispositioned and all12 auth outcomes accepted. Final authoritative clock values are written after successful official close.",
+        "sourceAndBindings": "Frozen QA24534f7, product48e4407, exact initial publication receipt retained.",
+        "journalAndStock": "Zero financial/settings/master/grant/shift/physical-print action; existing closings retained.",
+        "preservation": "Never replay consumed requests or closed queues; no deployment or launch approval."
+      }
     }
   ],
   "checks": {
