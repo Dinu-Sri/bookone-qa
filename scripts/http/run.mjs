@@ -41,7 +41,7 @@ function formFields(html,needle){
 }
 async function postForm(path,actor,fields){const form=new FormData();for(const [k,v] of fields)form.append(k,v);const encoded=new Request(BASE,{method:'POST',body:form});return request(path,actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Content-Type':encoded.headers.get('content-type')},body:Buffer.from(await encoded.arrayBuffer())});}
 const postedTables=['business_documents','business_document_lines','transactions','journal_entries','journal_lines','settlement_allocations','inventory_movements','inventory_stock_levels','inventory_cost_layers','inventory_cost_layer_consumptions'];
-const businessTables=['tenants','company_profiles','tax_profiles','sales_settings','purchase_settings','inventory_settings',...postedTables,'audit_log'];
+const businessTables=['tenants','company_profiles','tax_profiles','sales_settings','purchase_settings','inventory_settings','pos_registers',...postedTables,'audit_log'];
 async function snapshot(tables=businessTables){const out={};for(const t of tables)out[t]=await sql.unsafe('select * from '+t+' order by id');return JSON.stringify(out);}
 async function doc(id){const [d]=await sql`select paid_amount::text as paid,balance_due::text as due,total::text as total from business_documents where id=${id}`;return d;}
 async function membership(id,tenant){const [r]=await sql`select m.role,r.slug as job from tenant_memberships m left join tenant_roles r on r.id=m.primary_role_id where m.user_id=${id} and m.tenant_id=${tenant} and m.voided_at is null`;return r;}
@@ -163,6 +163,26 @@ async function laneCases(lane,f){
   let before=await snapshot(rentalPostedTables);const deniedViewer=await hireCharge(actors.viewer,handle,payload);c(deniedViewer.status<500,'viewer-hire-charge-transport-not-server-error');c(await snapshot(rentalPostedTables)===before,'viewer-hire-charge-zero-business-effects');
   before=await snapshot(rentalPostedTables);await hireCharge(actors.foreign,handle,payload);c(await snapshot(rentalPostedTables)===before,'foreign-hire-charge-zero-business-effects');
   o('hireActionTransportVerified',1);
+ });
+ await test(16,async(c,o)=>{
+  for(const key of ['owner','viewer'])if(!actors[key].ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  const owner=await request('/company/sales',actors.owner),viewer=await request('/company/sales',actors.viewer);
+  c(owner.status===200&&viewer.status===200,'settings-readable-by-authorized-roles');
+  c(owner.body.includes('Save VAT settings')&&owner.body.includes('Add register'),'owner-write-controls-visible');
+  c(!viewer.body.includes('Save VAT settings')&&!viewer.body.includes('Add register'),'viewer-write-controls-absent');
+  const fields=formFields(owner.body,'code');const[r]=await sql`select * from pos_registers where tenant_id=${f.tenantA} and code='M2-HTTP'`;
+  if(!r)throw new Incomplete('register-positive-fixture');
+  const payload=[...fields,['id',r.id],['code',r.code],['name','Forbidden Viewer counter'],['printMode','manual'],['defaultPaymentAccountCode','1000'],['isActive','on']];
+  const before=await snapshot();await postForm('/company/sales',actors.viewer,payload);c(await snapshot()===before,'actual-viewer-register-save-zero-effects');
+  await postForm('/company/sales',actors.owner,payload.map(([k,v])=>[k,k==='name'?'HTTP Owner edited counter':v]));const[after]=await sql`select name from pos_registers where id=${r.id}`;c(after.name==='HTTP Owner edited counter','actual-owner-register-save-persists');
+  const home=await request('/',actors.viewer);c(home.status===200&&home.body.includes('this job cannot record entries'),'viewer-simple-entry-readonly');o('registerOwnerSaved',Number(after.name==='HTTP Owner edited counter'));o('viewerDeniedUnchanged',1);
+ });
+ await test(17,async(c,o)=>{
+  if(!financialVerified||!handle)throw new Incomplete('verified-financial-action-prerequisite');let refused=0;
+  for(const amount of [0,-1,1.001]){const before=await snapshot();const r=await financial(actors.owner,handle,{paymentDate:f.date,paymentAccountCode:'1000',allocations:[{documentId:f.own.id,amount}],idempotencyKey:randomUUID()});c(r.status<500,'invalid-payment-transport-handled');const unchanged=await snapshot()===before;c(unchanged,'invalid-payment-no-business-effects');if(unchanged)refused++;}o('invalidPaymentsUnchanged',refused);
+ });
+ await test(18,async(c,o)=>{
+  for(const key of ['owner','viewer']){if(!actors[key].ownRead)throw new Incomplete('known-role-positive-prerequisite');const r=await request('/reports?report=vat',actors[key]);c(r.status===200&&r.body.includes('not a statutory VAT return'),'vat-summary-bookkeeping-page-authorized');const csv=r.body.match(/href="data:text\/csv;charset=utf-8,([^"]+)"/);c(!!csv,'vat-csv-rendered');if(csv){const text=decodeURIComponent(csv[1].replaceAll('&amp;','&'));c(text.includes('Output VAT 2200')&&text.includes('Input VAT 2300'),'csv-required-accounts');c(!text.includes(f.foreign.marker),'csv-no-foreign-marker');}o(key+'VatReportStatus',r.status);}
  });
  return rows;
 }

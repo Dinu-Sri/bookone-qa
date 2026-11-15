@@ -256,6 +256,22 @@
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-product-command-conversion"
+    },
+    {
+      "name": "missiontwo-outcomes",
+      "file": "tests/runtime/missiontwo.test.ts",
+      "expected": [
+        "RT-080",
+        "RT-081",
+        "RT-082",
+        "RT-083",
+        "RT-084",
+        "RT-085",
+        "RT-086",
+        "RT-087"
+      ],
+      "credential": "runtime",
+      "boundary": "real-PostgreSQL-non-owner-product-actions"
     }
   ]
 }

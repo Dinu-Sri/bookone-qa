@@ -25,6 +25,7 @@ it('prepare only marked ephemeral HTTP credential fixtures',async()=>{
     await seed.insert(schema.tenantMemberships).values({tenantId:TENANT_A,userId:id,role,status:'active',primaryRoleId:null});
   }
   for(const [tenantId,legalName] of [[TENANT_A,'HTTP Own Company Sentinel'],[TENANT_B,foreignName]])await seed.insert(schema.companyProfiles).values({tenantId,legalName,country:'Sri Lanka',baseCurrency:'LKR',timezone:'Asia/Colombo'});
+  await seed.insert(schema.posRegisters).values({tenantId:TENANT_A,code:'M2-HTTP',name:'Mission2 HTTP counter',printMode:'manual',isActive:'1'});
   const actors={owner:{id:OWNER,email:'owner@example.invalid',name:'Synthetic owner'},viewer:{id:VIEWER,email:'viewer@example.invalid',name:'Synthetic viewer'},foreign:{id:FOREIGN,email:'foreign.owner@http.example.invalid',name:'HTTP Foreign'},platform:{id:PLATFORM,email:'platform.admin@http.example.invalid',name:'HTTP Platform'},legacyViewer:{id:LEGACY_VIEWER,email:'legacy.viewer@http.example.invalid',name:'HTTP Legacy viewer'},legacyOwner:{id:LEGACY_OWNER,email:'legacy.owner@http.example.invalid',name:'HTTP Legacy owner'}} as any;
   for(const actor of Object.values(actors) as any[]){actor.password=randomBytes(24).toString('base64url');expect(await createCredentialLogin(actor)).toEqual({ok:true});}
   const date='2026-10-13';
