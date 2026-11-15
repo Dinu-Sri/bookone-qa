@@ -1,0 +1,265 @@
+{
+  "scope": "Hashes of private Mission1 observations; raw contents and identity/URL bindings excluded.",
+  "evidence": [
+    {
+      "file": "C03-V-sales.txt",
+      "sha256": "bfb785d7b9c7c25ff46ddf6d0edb8d6cb130df82e738a27f28ac6bfe546f979d"
+    },
+    {
+      "file": "C03-V-tax.txt",
+      "sha256": "acdf20518ec56008223b7602d7516c39bfe730e7fc3563e87bd6eef267dcdfc1"
+    },
+    {
+      "file": "E01-AP-credit.txt",
+      "sha256": "57d95845f65d917a549e8563cb4d0d3d9544dbde88c69d680208dd0db6a87ee6"
+    },
+    {
+      "file": "E01-bill.txt",
+      "sha256": "42b3fc016031088de7a4aa147a06edb94367f578726d52b98aca5b507d82eccc"
+    },
+    {
+      "file": "E01-cashpurchase.txt",
+      "sha256": "51d3f1957bc9f4d88146fbe34e6445e06237c1bc1dcc4e82ce8ef2d2838e5f6c"
+    },
+    {
+      "file": "E01-GRN.txt",
+      "sha256": "e6d42592878bee30a4a005cbd18e9c1c2790b3777dfc0285f6eac265838187d3"
+    },
+    {
+      "file": "E01-office-bank-collection.txt",
+      "sha256": "8f9616f54ebc093c1c02347a0b78791829be811f2fb55005999e6afec0480e97"
+    },
+    {
+      "file": "E01-office-cash-collection.txt",
+      "sha256": "0b0a07561050dbef0f4814b0ca33e3e702cde0de33b43db27ba0567dae058587"
+    },
+    {
+      "file": "E01-office-customer-return.txt",
+      "sha256": "73c183e38821215fa707e4b0002759c8c8ac6e3b4d00654d8dec7c6459ce5c5b"
+    },
+    {
+      "file": "E01-office-expense-payment.txt",
+      "sha256": "cfd3f257d10a9112a0433a7354b2f9123f5b630c1782b0d3810ae41ce61ed342"
+    },
+    {
+      "file": "E01-office-service-bank.txt",
+      "sha256": "ab23449bbde17fa4e689c170fe9cede5f93d3d2ceb23bb7bb2b9754f2726e1ef"
+    },
+    {
+      "file": "E01-office-service-card.txt",
+      "sha256": "d95e4ff3b4c85e28a5e21db84c9292ae39ecc7ee5b2053a56b5de4347354998a"
+    },
+    {
+      "file": "E01-office-service-expense.txt",
+      "sha256": "fd42a893c9b2c9abf9167a9a378b3faaee454886691cd752ff5d40328165ff3e"
+    },
+    {
+      "file": "E01-office-service-invoice.txt",
+      "sha256": "81eade147e7f00aaa7f5a199b0130a8173f86c1372fc4d7355eaa6085d7709ff"
+    },
+    {
+      "file": "E01-office-service-refund1.txt",
+      "sha256": "99d35d97b85202500a12d1ca61ac37c9298f931fe6df04dd0153600348041f51"
+    },
+    {
+      "file": "E01-office-service-refund2.txt",
+      "sha256": "02b95badcbd8246022bc6a7c595b32947bccf1b50b016e34b67349f532e05c27"
+    },
+    {
+      "file": "E01-office-tax-invoice.txt",
+      "sha256": "8d09282fbc01d01e673f60a2343533c979e6e498232a766cc9871eaf0a680471"
+    },
+    {
+      "file": "E01-PO.txt",
+      "sha256": "60973ae8ba0566b92a78b62f3e07fee0cdc8ef97ef504a5e9bfd7407ab558c1a"
+    },
+    {
+      "file": "E01-separate-bank-cashpurchase-refund.txt",
+      "sha256": "c2cb90007abed412c2c2338a1c41db7740b341aec16696bb06765ec6449df85f"
+    },
+    {
+      "file": "E01-vendor-payment.txt",
+      "sha256": "16acc723f0265ba37f8ac0d5e79c2f6beae406db95938852c4d9ea04a7e6918c"
+    },
+    {
+      "file": "E02-office-order.txt",
+      "sha256": "7b81d12a32d122599d186909d0518fda1cbd4ae61ca728412fda134fa5e668fc"
+    },
+    {
+      "file": "E02-office-quote.txt",
+      "sha256": "7bb7885aa079503aa02e2b86130b6aceedc4eeb72e81aa139e633963c75e546f"
+    },
+    {
+      "file": "E02-office-service-order.txt",
+      "sha256": "8320d5e5421155b6c712b3127389fe0d131b0a057c2297bad6b9f4ce6625de45"
+    },
+    {
+      "file": "E02-office-service-quote.txt",
+      "sha256": "550f3d2f2f11cdec5ebdecf0a9f40ff60cdb47e776357d7dacfd84b7f293e3fe"
+    },
+    {
+      "file": "E03-N-pos-history.txt",
+      "sha256": "83b6ceaa51a556d6417d303fea36636569c9b5893d0f8741b83a9f29e7ffc541"
+    },
+    {
+      "file": "E03-N-receipt-0.txt",
+      "sha256": "21e7f2ab32bdbf3c48c58ec3b54dcb3112cee8c99e009795cb84aaf024f9a410"
+    },
+    {
+      "file": "E03-N-receipt-1.txt",
+      "sha256": "b853ceb4d353c575c59084c9046ec92637f2e52d93417e66e7ffaf55c3a787eb"
+    },
+    {
+      "file": "E03-N-receipt-2.txt",
+      "sha256": "5fab6cdd21a3d64ce25c0dbe9a7ac55d94b28c5235b6e4bfb0204417b7889a93"
+    },
+    {
+      "file": "E03-N-shifts.txt",
+      "sha256": "17b2136f0e818b5f4381a9c66ef5e20c7da16c7b3ffc48c70cc035a5caa830f9"
+    },
+    {
+      "file": "E03-N-Z.txt",
+      "sha256": "d68850d0fd3444aa5e122eba2e396934d44939d92854199743006a69495d66cb"
+    },
+    {
+      "file": "E04-V-ledger-page2.txt",
+      "sha256": "2c50f089261cc1892811a1d8408b375d50815e05c181f7559033867a6bda6f98"
+    },
+    {
+      "file": "E04-V-ledger.txt",
+      "sha256": "aa01424d23a1fb939540696b43927b18c111458ba7c27be63e432ac694cfd02a"
+    },
+    {
+      "file": "E05-reports.txt",
+      "sha256": "bd51a2d7fd1a420bb461427715d424f3f1998159b97f159d012d8e281cf5ad06"
+    },
+    {
+      "file": "host-tests.txt",
+      "sha256": "f64889d789c4587037a348d1792be671b3a2ced4a91700e11c499d5cba9d6c21"
+    },
+    {
+      "file": "Mission1-final-V-Z.png",
+      "sha256": "cab35ac3c00e8b52ca519a105bb2906b02e96589826a4a42696807ff677d1b6f"
+    },
+    {
+      "file": "N-accounts.txt",
+      "sha256": "cbbc01e7e281479ed547428d239072be0f7f0c0a096f4d5ac1e514d92998834d"
+    },
+    {
+      "file": "N-identity.txt",
+      "sha256": "48cea9595675501c8c2dfc5839ba9ad163c4a54e82dddce316ad69af4f33f788"
+    },
+    {
+      "file": "N-ledger.txt",
+      "sha256": "44c2c56e6cea8b5328e2b5827df92adf8175570afd5116afaae140b5f160d2af"
+    },
+    {
+      "file": "N-levels.txt",
+      "sha256": "c0911d6b1fb6258639d1f23de969dc7332573165186f8d83d08565d1699704ca"
+    },
+    {
+      "file": "N-sales.txt",
+      "sha256": "19124ade40c683212deb9ecdc0bc94f92a112572224c6db09998e8152557a47a"
+    },
+    {
+      "file": "original-cap-source-matrices.json",
+      "sha256": "2933a3741bda983a4d38a7191da997840607e4182785ae30e0800033799626c9"
+    },
+    {
+      "file": "payment-source-matrix.json",
+      "sha256": "d0fef4c07e82a6f7960ede1bb5c17ab4c9ac78643ef4b6fb59ebb7b1dbf7213b"
+    },
+    {
+      "file": "proof-results.json",
+      "sha256": "2060df49af44665663600740890753a52aab7f080005f422fbcab354d631f4fa"
+    },
+    {
+      "file": "S01-A-accounts.txt",
+      "sha256": "4b291bd8a75e5c37dba0d1d7ed4ae2d1174b99b8ff77a4e989883cabeb7b03b6"
+    },
+    {
+      "file": "S01-A-document.txt",
+      "sha256": "554108d72d4edcd96e83cc4c51273bda1d0109eca7a3a945ba4e8b389233ef2d"
+    },
+    {
+      "file": "S01-A-identity.txt",
+      "sha256": "d4e051e3b2aff7c6423d3f7802681f5d377724307202897ec8f8fe5038263575"
+    },
+    {
+      "file": "S01-A-invoices.txt",
+      "sha256": "947f340fe23fc8f540b9ea2f535a058170fd244604d27eb6083165aa6cc7a62f"
+    },
+    {
+      "file": "S02-viewer-identity.txt",
+      "sha256": "9ea888f8674659f34e5f9e3ae4b369cd521289ed13d68758151df84750382a7a"
+    },
+    {
+      "file": "S02-viewer-new-invoice.txt",
+      "sha256": "222b842c900c0f0a33e714fa3070e3d21576ab412922c9fcfa1cf5b4a009e5cd"
+    },
+    {
+      "file": "S02-viewer-owned-document.txt",
+      "sha256": "5ca605648c2c465fe7ee13778feb84cede3f2e45a3bdbb672498e7f8897eee4e"
+    },
+    {
+      "file": "S02-viewer-settings.png",
+      "sha256": "a23637a3cc390f31694ad08583d9eaade21f0b30550ed25496ae27b64ac380d0"
+    },
+    {
+      "file": "S02-viewer-settings.txt",
+      "sha256": "547a4c40be66324e8e893b707a8643dae3e9c38a7aa997fbc9cd16da413030a3"
+    },
+    {
+      "file": "S03-B-foreign-document.txt",
+      "sha256": "8267afc329cdedd0a51c7d7b37e7e886ded39437e41253c03ef465cb0e829292"
+    },
+    {
+      "file": "S03-B-identity.txt",
+      "sha256": "e2e72cb993fc134365712327936220c534b8d9369d39c30689ec620a8e563c3a"
+    },
+    {
+      "file": "S04-B-foreign-receipt.txt",
+      "sha256": "60076af086c63af4d58abb227bbc606276e945a1acdbbc5b3fdba046b6ac4d43"
+    },
+    {
+      "file": "U02-purchase-preview.png",
+      "sha256": "22e45aa23357c4bcd8096598844461f6b79977ebf7b87fbb411aff9c63d3b6f0"
+    },
+    {
+      "file": "U02-purchase-preview.txt",
+      "sha256": "21a4ac24dab533eab448c45b8c4a98bb6d0febe4158d99622cb2500a6f49784f"
+    },
+    {
+      "file": "U03-expanded.txt",
+      "sha256": "f547dcfbcfee130bf334fed5a02c9a35bce9497996c3dc047fdcde85bbb4ee8c"
+    },
+    {
+      "file": "U03-journal.txt",
+      "sha256": "250fc4b99bf57dc2ce3f1d64bb646af3f53e12543a56854b02efb33c539b1aaa"
+    },
+    {
+      "file": "V-identity.txt",
+      "sha256": "5a898d50507fb3bb874a9edea8974cb76a3c0155841e77a6cf4abf9a0d412d53"
+    },
+    {
+      "file": "V-opening-accounts.txt",
+      "sha256": "def7cb708f49a8678df80827669e31216d21a3b8ba1c4555e176aef9936caac4"
+    },
+    {
+      "file": "Z1-V-restored.txt",
+      "sha256": "5a898d50507fb3bb874a9edea8974cb76a3c0155841e77a6cf4abf9a0d412d53"
+    },
+    {
+      "file": "Z2-V-accounts.txt",
+      "sha256": "8831ef327da66c3e7d7928062c71caedc1d6b3978f2a0c665361615f85fd18b2"
+    },
+    {
+      "file": "Z2-V-levels.txt",
+      "sha256": "f3d48fde7dfba029f89433b3c00784f8c5f44f714763538ab88351a5accc9dab"
+    },
+    {
+      "file": "Z2-V-Z.txt",
+      "sha256": "ac1f1cd03abb0a31d03e99f6bc6b75458958a26a476b7fc4b748c7ff3cd81cb2"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "dateContract": "2026-11-15 UTC",
+  "executionQa": "24534f7b95901dba29ef933fa3c3d5045c107d05",
+  "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "publicationPhase": "initial-active-clock",
+  "clockMode": "active",
+  "cases": [
+    {
+      "id": "G01",
+      "status": "passed",
+      "actual": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+      "evidence": {
+        "observations": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+        "sourceAndBindings": "Exact clean detached QA24534f7 published and verified; new180/150/30clock before browser/auth; old clocks closed.",
+        "journalAndStock": "Fresh host99/99 and metadata1179files/792scenarios; no business/config/master writes.",
+        "preservation": "Prior CONT11 and all earlier transactions/closedshifts preserved; actual2positive1UIeach and5refusals0UI;7proofclocksclosed."
+      }
+    },
+    {
+      "id": "G02",
+      "status": "passed",
+      "actual": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+      "evidence": {
+        "observations": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+        "sourceAndBindings": "Exact clean detached QA24534f7 published and verified; new180/150/30clock before browser/auth; old clocks closed.",
+        "journalAndStock": "Fresh host99/99 and metadata1179files/792scenarios; no business/config/master writes.",
+        "preservation": "Prior CONT11 and all earlier transactions/closedshifts preserved; actual2positive1UIeach and5refusals0UI;7proofclocksclosed."
+      }
+    },
+    {
+      "id": "G03",
+      "status": "passed",
+      "actual": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+      "evidence": {
+        "observations": "Fresh actual QAV Owner company and livev2.5.28 48e4407; Vcash227 bank544.20 inv780 observed.",
+        "sourceAndBindings": "Exact clean detached QA24534f7 published and verified; new180/150/30clock before browser/auth; old clocks closed.",
+        "journalAndStock": "Fresh host99/99 and metadata1179files/792scenarios; no business/config/master writes.",
+        "preservation": "Prior CONT11 and all earlier transactions/closedshifts preserved; actual2positive1UIeach and5refusals0UI;7proofclocksclosed."
+      }
+    },
+    {
+      "id": "G04",
+      "status": "passed",
+      "actual": "Fresh actual V Owner auth/logout/login and protected identity verified, RememberOFF.",
+      "evidence": {
+        "observations": "Actual protected QAV Owner/company after fresh guarded login.",
+        "sourceAndBindings": "Exact clean detached QA24534f7 published and verified; new180/150/30clock before browser/auth; old clocks closed.",
+        "journalAndStock": "Fresh host99/99 and metadata1179files/792scenarios; no business/config/master writes.",
+        "preservation": "Prior CONT11 and all earlier transactions/closedshifts preserved; actual2positive1UIeach and5refusals0UI;7proofclocksclosed."
+      }
+    },
+    {
+      "id": "E01",
+      "status": "passed",
+      "actual": "Original office source chain and settlement correspondence verified.",
+      "evidence": {
+        "observations": "PO/GRN net600 nonposting; bill708=credit141.60+bank566.40; original cash purchase/refund141.60; goods invoice708=295cash+413bank; return118; service141.60=47.20card+94.40bank fully returned; expense94.40 paid. Original dates and identities retained.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "E02",
+      "status": "inconclusive",
+      "actual": "Original informational details verified; independent office printable preview not established.",
+      "evidence": {
+        "observations": "Quotes/orders goods600 and service120 converted/Not posted,13/15Nov; Tax invoice label is unclear. No physical Print clicked.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Candidate type-label and safe manual preview review; retain nonposting semantics."
+    },
+    {
+      "id": "E03",
+      "status": "passed",
+      "actual": "Original N cash100/card40/bank140 commercial receipts and CLOSED six-ticket Z verified.",
+      "evidence": {
+        "observations": "E03-N-receipt-0..2.txt, E03-N-Z.txt: sales280=returns280, zero cash variance; original12Nov dates, no VAT rows/tax invoice, manual no autoprint.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      }
+    },
+    {
+      "id": "E04",
+      "status": "passed",
+      "actual": "All12 V and5 N physical movements reconcile to their original source histories.",
+      "evidence": {
+        "observations": "V ledger page1+page2 reviewed: office +2/-2/+10/-6/-2/+1=3, POS +10/-2/+1/+1/-1/+1=10; N +2/-1/+1/-1/+1=2, unit cost60. No service movement.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "E05",
+      "status": "inconclusive",
+      "actual": "VAT account/source correspondence verified; dedicated VAT report unavailable on supported Reports surface.",
+      "evidence": {
+        "observations": "V input208.80/output90, N0; live and exact Reports source expose five accounting views only. No statutory return acceptance.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Define report/export scope and qualify original+adjacent tax/source correspondence."
+    },
+    {
+      "id": "E06",
+      "status": "failed",
+      "actual": "Carried unsaved AR/AP invalid-input feedback failures remain; exact current helper confirms deficiency.",
+      "evidence": {
+        "observations": "Selected blank/zero/negative/abc/Infinity/1.001 receive no field error. No invalid payment submitted; no new open documents created.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Grouped strict raw-input/precision validation and isolated server regression."
+    },
+    {
+      "id": "U01",
+      "status": "failed",
+      "actual": "Payment preview and submitted positive-allocation batch can disagree.",
+      "evidence": {
+        "observations": "Exact helper/source: selected -1+141.60 previews140.60 but positive batch141.60; AP -1+94.40 previews93.40 but positive batch94.40; 1abc parses1. No actual wrong-money submission claim.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Use one validated allocation set; actual server cap/ownership/idempotency/atomicity tests in isolated runtime."
+    },
+    {
+      "id": "U02",
+      "status": "failed",
+      "actual": "Fresh unsaved purchase preview omits explicit VAT/gross.",
+      "evidence": {
+        "observations": "V goods2x60, Claim input VAT18 selected; subtotal120/Total120 instead of explicit VAT21.60/gross141.60. Canceled; original3 purchases preserved; old saved bill gross correct.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Fix direct/conversion cash/credit/service/nonVAT/discount/return previews with posting policy."
+    },
+    {
+      "id": "U03",
+      "status": "failed",
+      "actual": "Fresh original journal displays floating-point VAT percentage artifact.",
+      "evidence": {
+        "observations": "V POS service journal Output VAT18.000000000000004%, correct VAT21.60/gross141.60.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Format human-readable percentage without changing monetary math or historical journals."
+    },
+    {
+      "id": "U04",
+      "status": "passed",
+      "actual": "One concrete grouped coding handoff prepared.",
+      "evidence": {
+        "observations": "handoffs/CODING-20261115-mission1-grouped.md includes priority register permission gap, payment matrices, preview/format/type clarity, report decision and affected regressions.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "S01",
+      "status": "passed",
+      "actual": "Fresh existing A Owner authenticated and original paid invoice600 bound.",
+      "evidence": {
+        "observations": "Protected R04A Owner identity; bank290/cash150/ARAPcard0/equity500 match carried A baseline; invoice600 original11Nov paid0due.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      }
+    },
+    {
+      "id": "S02",
+      "status": "failed",
+      "actual": "Viewer direct invoice creation denied and owned invoice readable, but editable-looking settings and action buttons remain enabled.",
+      "evidence": {
+        "observations": "Fresh R04A Viewer identity verified. Cannot create invoices route denies; company/sales exposes enabled Save VAT settings/Add register; owned invoice exposes Archive. No Save/Archive/financial attempt. UI authorization clarity failed; server mutation vulnerability unproven.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      },
+      "nextAction": "Group Viewer presentation controls with coding handoff; verify actual server actions in isolated runtime."
+    },
+    {
+      "id": "S03",
+      "status": "passed",
+      "actual": "Fresh B Owner cannot view original A invoice.",
+      "evidence": {
+        "observations": "Protected R04B Owner/company; exact previously opened A invoice URL redirects to B invoice list No invoice yet; no foreign content.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      }
+    },
+    {
+      "id": "S04",
+      "status": "inconclusive",
+      "actual": "Foreign A invoice and N receipt denied by redirect; export boundary not exercised.",
+      "evidence": {
+        "observations": "A originalinvoice under B redirects list; original N receipt under B redirects own POS/no shift. No foreign contents or new shift. No supported read-only export path observed/exercised.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      },
+      "nextAction": "Isolated export/receipt HTTP authorization matrix in grouped candidate review; no live export guessing."
+    },
+    {
+      "id": "S05",
+      "status": "failed",
+      "actual": "Exact register save/archive source lacks operation write permission checks.",
+      "evidence": {
+        "observations": "pos-registers.ts save100/archive174 authenticate tenant membership then write; no assertPermission/equivalent. requireTenantContext354 only membership/workspace. VAT settings and Simple Entry have explicit checks. Auth resolver33/33 passed; actual action runtime not established.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Add actual action authorization plus isolated Owner/Viewer/custom-read/cross-tenant/no-mutation regression; do not claim live exploit."
+    },
+    {
+      "id": "S06",
+      "status": "inconclusive",
+      "actual": "Verified selected live role/read boundaries; full server/export/custom-role matrix remains unqualified.",
+      "evidence": {
+        "observations": "Fresh A Owner/Viewer and B Owner identities, invoice-create denial, owned read and foreign document/receipt redirects observed. Viewer controls expose write affordances; register action source defect found.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Grouped candidate action-level/RLS/HTTPS regression then deployed affected checks in Mission2."
+    },
+    {
+      "id": "C01",
+      "status": "passed",
+      "actual": "Existing synthetic V/N and A Owner/Viewer/B Owner fixtures bound per owner staging authorization.",
+      "evidence": {
+        "observations": "Fresh protected identities observed, private fixture credentials kept ignored. No real customer selection required; no unnecessary signup/grant write.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "C02",
+      "status": "passed",
+      "actual": "Frozen synthetic V/N dataset reconciles to current accounts, AR/AP and per-SKU stock.",
+      "evidence": {
+        "observations": "V227cash/544.20bank/780stock/cardARAP0/profit120, N380bank/120stock/equity500 and zeros match prior independent baseline. Original V29 journals retained; no migration/import or full ledger line re-sum claim.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "C03",
+      "status": "passed",
+      "actual": "Synthetic VAT/nonVAT, locations, tenders and manual POS configuration verified.",
+      "evidence": {
+        "observations": "Fresh V Sales registered18%, N registration unchecked/commercial, respective warehouses and manual fixture registers; original cash/bank/card receipts and zero-variance Z observed. No physical hardware or legal tax certification.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "C04",
+      "status": "inconclusive",
+      "actual": "Synthetic baseline qualified; full staging readiness conditional on authorization fixes and untested layers.",
+      "evidence": {
+        "observations": "No missing real-customer input block. Register permission gap, payment/UI defects and server/export/report acceptance limits remain.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      },
+      "nextAction": "Complete grouped coding, independent exact candidate review and owner deployment, then Mission2 regressions/handover/recoveryLAST."
+    },
+    {
+      "id": "Z1",
+      "status": "passed",
+      "actual": "All 12 authentication intents independently resolved accepted; original V Owner restored; no business/configuration/master/grant action.",
+      "evidence": {
+        "observations": "G04,E03,S01,S02,S03,Z1 each guarded logout/login once, protected identity after each login; remember OFF. Purchase preview canceled unsaved.",
+        "sourceAndBindings": "Original protected UI source paths/private bindings; exact product48e4407 and frozen QA24534f7. Raw data stays private.",
+        "journalAndStock": "Read-only mission; no financial/stock/shift/settings/master/grant write.",
+        "preservation": "All previous consumed actions and existing records preserved; no replay."
+      }
+    },
+    {
+      "id": "Z2",
+      "status": "passed",
+      "actual": "Observed protected balances/stock/original closed shifts unchanged; zero agent-initiated business writes.",
+      "evidence": {
+        "observations": "Fresh V accounts/stock/Z match baseline; fresh N accounts/stock/Z match prior accepted closing; original A accounts/invoice retained. No exhaustive historical tenant audit claim.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "Z3",
+      "status": "passed",
+      "actual": "Coverage, failures and explicit limits consolidated without promoting source checks to deployed runtime acceptance.",
+      "evidence": {
+        "observations": "runs/RUN-20261115-mission1-results.md and grouped handoff record all six old evidence areas, selected fresh role/isolation checks, synthetic dataset and outstanding report/preview/runtime limits.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "Z4",
+      "status": "pending",
+      "actual": "",
+      "evidence": {}
+    },
+    {
+      "id": "Z5",
+      "status": "passed",
+      "actual": "Mission2 dependencies and affected retest requirements concretely defined.",
+      "evidence": {
+        "observations": "Grouped product fixes -> exact independent Medium review -> owner deployment -> fresh dated Mission2 affected regressions, export/server boundaries and operating handover; isolated backup/recovery LAST; final fix requires retest.",
+        "sourceAndBindings": "Actual protected UI snapshots and immutable original source bindings; exact product48e4407/frozen QA24534f7. Evidence hashes in sanitized manifest.",
+        "journalAndStock": "No financial/settings/master/grant/shift/physical-print intent. Synthetic V/N reconciliation described in consolidated report.",
+        "preservation": "All previous consumed requests/queues, dates, original documents and Walk-in retained; no replay."
+      }
+    },
+    {
+      "id": "Z6",
+      "status": "pending",
+      "actual": "",
+      "evidence": {}
+    },
+    {
+      "id": "Z7",
+      "status": "pending",
+      "actual": "",
+      "evidence": {}
+    }
+  ],
+  "checks": {
+    "freshHost": "99/99",
+    "metadata": "1179 files /792 scenarios; pass",
+    "actualControls": "2 positive each1UI;5 refusals0UI;7 proof clocks closed",
+    "authPolicyResolver": "33/33 exact product pure resolver/module-ceiling tests; not server action integration",
+    "paymentHelpers": "Exact product parse/row/cap/mixed-batch characterization; known defects retained",
+    "isolatedRuntime": "Unavailable: local Docker engine not running; no staging DB substitute",
+    "harnessAttempts": "Auth test first attempted nonexisting package-local Vitest; next picked parent config and failed loading; explicit installed binary/config succeeded33/33. Initial wrong product-workdir ledger invocation failed before mutation; corrected execution-workdir record succeeded.",
+    "browserAttempts": "One mistaken staging hostname failed DNS with no action; corrected to verified original origin. Immediate loading snapshots were replaced by completed protected readbacks."
+  },
+  "agentActions": {
+    "authIntents": 12,
+    "authAccepted": 12,
+    "financial": 0,
+    "settings": 0,
+    "master": 0,
+    "grants": 0,
+    "shift": 0,
+    "physicalPrint": 0
+  },
+  "limits": [
+    "No independent server filesystem digest",
+    "No invalid live payment submit or new open invoice/bill",
+    "No actual successful unauthorized mutation claimed",
+    "No real-customer migration/import or legal tax certification",
+    "Office printable preview, VAT-report scope, export and complete runtime role matrix remain unqualified"
+  ]
+}
