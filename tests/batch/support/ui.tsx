@@ -4,4 +4,4 @@ export function Card({ children, ...props }: any) { return <section {...props}>{
 export function Badge({ children }: { children: ReactNode }) { return <span>{children}</span>; }
 export default function Link({ children, href, ...props }: any) { return <a href={href} {...props}>{children}</a>; }
 const Icon = () => <i />;
-export const BookOpenCheck = Icon, Landmark = Icon, LineChart = Icon, ReceiptText = Icon, Scale = Icon;
+export const BookOpenCheck = Icon, Landmark = Icon, LineChart = Icon, ReceiptText = Icon, Scale = Icon, Percent = Icon;
