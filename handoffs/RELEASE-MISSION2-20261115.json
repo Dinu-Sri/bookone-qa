@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "status": "released-for-Light-execution",
+  "dateContract": "2026-11-15 UTC",
+  "executionQaSha": "921ee84bf7fbee657f7d7d63c90ac2a92a8e8ace",
+  "executionCheckout": "C:/Users/dinus/OneDrive/文件/ChatGPT/BookOne QA Agent/launch-v2530-mission2-execution",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "productTree": "a0a8d06415067c7e8fb2ef4959bca683954279bf",
+  "requiredLiveStamp": "v2.5.30 · ca05491",
+  "sourcePinPublishedVerified": true,
+  "publicationPr": 119,
+  "publicationUrl": "https://github.com/Dinu-Sri/bookone-qa/pull/119",
+  "publicationBranch": "qa/v2530-mission2-preparation",
+  "privateBundleStaged": true,
+  "checkpointCount": 41,
+  "budget": {
+    "total": 180,
+    "execution": 150,
+    "closing": 30
+  },
+  "qualification": {
+    "accounting": 237,
+    "auth": 97,
+    "postgres": 149,
+    "https": 36,
+    "fieldComponentSsr": 24,
+    "exactCheckoutHost": 134,
+    "isolatedRecovery": "passed",
+    "actualHostProof": "2positive/5zeroUIrefusals",
+    "preparationClockClosedMs": 58847,
+    "initCanaryClockClosedMs": 47425
+  },
+  "rootPrompt": "C:/Users/dinus/OneDrive/文件/ChatGPT/BookOne QA Agent/MISSION2-V2530-LIGHT.md",
+  "rootPromptSha256": "e644d0da8217269a49e66ac7177891cacc88bae59e1199a09aac8450156036c4",
+  "fullPrompt": "handoffs/MISSION2-V2530-LIGHT.md",
+  "checks": "runs/CHECKS-20261115-mission2-release.json",
+  "lightRunInitialized": false,
+  "afterFreezeChanges": "Metadata-only release/qualification receipts/current pointers. Execution checkout remains exact clean detached pin.",
+  "preservation": "All old financial/settings/master/stock/shift actions consumed; staging auth/read/unsaved probes only, new fixtures/restores isolated CI only",
+  "acceptance": "Not customer launch approval; broader workflow/policy and deployed recovery limits explicitly retained"
+}

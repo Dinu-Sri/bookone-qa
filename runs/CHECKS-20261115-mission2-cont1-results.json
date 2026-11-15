@@ -1,0 +1,262 @@
+{
+  "qaSha": "e619b7877c2f499c799c2e3c30017995884a3e3b",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "dateContract": "2026-11-15 UTC",
+  "counts": {
+    "passed": 33,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 1,
+    "pending": 0,
+    "running": 0
+  },
+  "unresolvedAuth": 0,
+  "auth": {
+    "accepted": 12,
+    "refused": 1
+  },
+  "freshHost": {
+    "passed": 136,
+    "failed": 0
+  },
+  "actualProof": {
+    "positiveUiCalls": [
+      1,
+      1
+    ],
+    "refusedUiCalls": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clocksClosed": 7
+  },
+  "reviewedCarry": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "H01"
+  ],
+  "carryOutcomeHashesVerified": 15,
+  "recovery": {
+    "runId": 43733950248,
+    "receiptHead": "a27ccb44db7a340f20ec9671857c9f4360fcbdf3",
+    "artifactId": 14169279496,
+    "summarySha256": "1d30c4976279abb826f1c2c2d1d87cfca4508c0dc7738e03520781781343b59a",
+    "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+    "storageImage": "ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5",
+    "boundary": "actual-product-archive-actions-real-PostgreSQL-and-S3-Versity-synthetic-identity-Next-adapters",
+    "status": "passed",
+    "cases": [
+      {
+        "id": "M2-RECOVERY",
+        "status": "passed"
+      }
+    ],
+    "diagnostics": {
+      "categories": [],
+      "locations": []
+    },
+    "observations": {
+      "sourcePreserved": 1,
+      "viewerDenied": 1,
+      "nonemptyDenied": 1,
+      "wrongPasswordDenied": 1,
+      "dataRestored": 1,
+      "filesRestored": 1,
+      "fileBytesMatch": 1,
+      "stockQty": 1,
+      "closedShifts": 1,
+      "varianceCents": 0,
+      "assetsCents": 16000,
+      "liabilitiesCents": 12000,
+      "profitCents": 4000,
+      "applicationRead": 1,
+      "replayDenied": 1,
+      "observedRestoreMs": 397
+    },
+    "limits": [
+      "No deployed upload/proxy or production RPO/RTO claim",
+      "Actual product archive actions, S3 transport and restored app data helpers; credential HTTPS is a separate lane"
+    ]
+  },
+  "cases": [
+    {
+      "id": "G01",
+      "status": "passed",
+      "actual": "Exact published clean detached QA, fixed15NovUTC,new180/150/30clock,10private hashes and fresh136/136 normal-host tests; metadata valid."
+    },
+    {
+      "id": "G02",
+      "status": "passed",
+      "actual": "Actual wrapper2positive1UI each,5refusals0UI each; seven proof clocks CLOSED."
+    },
+    {
+      "id": "G03",
+      "status": "passed",
+      "actual": "Actual protected sidebar v2.5.30 ca05491,15Nov2026 and exact staging origin observed."
+    },
+    {
+      "id": "G04",
+      "status": "passed",
+      "actual": "Fresh V Owner Login independently accepted; prior logout accepted and malformed-prefill login definitively browser-refused retained; no unresolved auth."
+    },
+    {
+      "id": "V01",
+      "status": "passed",
+      "actual": "Fresh accounts cash227 bank544.20 AR/AP/card0 inventory780 inputVAT208.80 outputVAT90 equity1550; net revenue500 expenses380 profit120. Stock office3/value180 POS10/value600. Original shift CLOSED original timestamps,3sales5returns/8tickets542.80each,float/count50variance0; no writes."
+    },
+    {
+      "id": "V02",
+      "status": "passed",
+      "actual": "Fresh local VAT18 registered, export0,Tax invoice default; both registers Manual/preview only; V register warehouse correct. POS printer not connected; no hardware action. Separate legacy tax-info default0 observed, active VAT setting18 verified."
+    },
+    {
+      "id": "V03",
+      "status": "passed",
+      "actual": "Actual unsaved original vendor/warehouse/V-O-G2x60 net120 inputVAT21.60 payable141.60. NoVAT120 then18%restored141.60 through quantity rerender; issue15Nov retained. Cancelled without Save."
+    },
+    {
+      "id": "V04",
+      "status": "passed",
+      "actual": "Adjacent unsaved manual service100 less10%discount=90+VAT16.20gross106.20; credit policy opensAP, cash form paidnowDrExpense/InventoryCrBank/noAP, original nonVATtoggle120. Cancelled every draft, no Save product/purchase. Source conversions correspond to reviewed runtime carry; no original reconversion."
+    },
+    {
+      "id": "V05",
+      "status": "passed",
+      "actual": "Original quote/order converted source-linked,13Nov issue15Nov due,600 intended tax invoice VAT posts when invoiced/GLNotposted. Safe outer Print modal QUOTATION identity/lines/dates600verified then Close; no physical print or reconversion."
+    },
+    {
+      "id": "V06",
+      "status": "passed",
+      "actual": "Original paid invoice708=net600VAT108 and bill708 sourceGRN, dates13/15Nov; customer return100+18=118refunded14/16Nov; original POS SR0004 cash118receipt100+18 preserved. Original vendor payment binding opened read-only and AP0; historical floating VAT memos retained in report, no rewrite."
+    },
+    {
+      "id": "V07",
+      "status": "passed",
+      "actual": "Fresh Nov and All time VAT output90/input208.80/net-118.80 match screen and UI-exposed CSV;19correspondence rows reconcile credits/debits. Bookkeeping disclaimer present, historical floating memo strings preserved."
+    },
+    {
+      "id": "V08",
+      "status": "passed",
+      "actual": "Supported Last month Oct2026 empty report and CSV output/input/net0 no detail rows; original Nov2026 period restored."
+    },
+    {
+      "id": "V09",
+      "status": "passed",
+      "actual": "Fresh AR0/0invoices and AP0/0bills actual settled pages; no live rows manufactured for matrices. Isolated SSR/server matrix remains reviewed carry, not hydrated UI."
+    },
+    {
+      "id": "N01",
+      "status": "passed",
+      "actual": "Fresh guarded existing N Owner authentication RememberOFF and independent protected QAN Owner/company/build observed; V Logout resolved before N login."
+    },
+    {
+      "id": "N02",
+      "status": "passed",
+      "actual": "Nbank380inventory120/equity500,cashcardARAPVAT0; stock2x60value120; original12Novclosedshift3sales3returns6tickets280each,count/float/variance0 unchanged."
+    },
+    {
+      "id": "N03",
+      "status": "passed",
+      "actual": "Fresh N company VATregisteredOFF commercial/local defaults, original N register manualpreview/warehouse; all3owned receipts12Nov salesreceipt100cash40card140bank, noVATline, no print."
+    },
+    {
+      "id": "N04",
+      "status": "passed",
+      "actual": "Fresh Nov and Alltime N VAT output/input/net0 and UI CSV0/noVATdetail; disclaimer retained,November restored."
+    },
+    {
+      "id": "A01",
+      "status": "passed",
+      "actual": "Fresh AOwner protected identity,accounts cash150bank290cardARAP0equity500. Positively opened original owned INV11Nov0001paid600balance0sourceorder/date11due14Nov/6x100commercial preserved, exact URL retained privately."
+    },
+    {
+      "id": "A02",
+      "status": "passed",
+      "actual": "Fresh AViewer protected identity; SimpleEntry Read-only cannotrecord/noRecord; VATcontrolsdisabled/noSaveVAT/Addregister/Archive; original ownedpaid600invoicereadable/Archiveabsent; directnewinvoice Cannotcreateinvoices with no save."
+    },
+    {
+      "id": "A03",
+      "status": "passed",
+      "actual": "Viewer permittedVATreport/CSV0 scopedA observed.390x844actual screenshot readable totals/disclaimer/export; wide table in contained horizontal scroller. KeyboardTab supported, semantic heading/link/readonly text exposed in accessibility snapshot. Viewportreset. This is accessibility-tree inspection, not external screenreader certification."
+    },
+    {
+      "id": "B01",
+      "status": "passed",
+      "actual": "Fresh protected R04B Owner and Bcompany independently observed after RememberOFFlogin. Own invoices list usable and empty, no Ainvoice/customer disclosed; no positive invoice fabricated."
+    },
+    {
+      "id": "B02",
+      "status": "passed",
+      "actual": "Fresh BOwner on exact positively bound Ainvoice redirects ownemptyinvoices/noAdisclosure; exact positively bound Nreceipt fallsback ownBPOS/noNcontents/noShift. BscopedVATCSV0no detail, ownaccounts0preserved. No mutation or hardware click."
+    },
+    {
+      "id": "V10",
+      "status": "passed",
+      "actual": "Original VOwner fresh RememberOFFLogin independently protected QAVOwner/company/build restored, all auth outcomes resolved."
+    },
+    {
+      "id": "U01",
+      "status": "inconclusive",
+      "actual": "Affected desktop and390x844purchase net/VAT/gross readable; keyboardTab/semantic controls inspected; Viewerreadonly/report narrow verified. Draftcancelled/viewportreset. Open AR/AP rows absent, so hydrated raw-invalid error focus/reader interaction not established; SSR24 remains reviewed carry.",
+      "nextAction": "If hydrated open-row accessibility acceptance is required, qualify an isolated interactive fixture with its own reviewed UI scope; never fabricate live financial rows."
+    },
+    {
+      "id": "P01",
+      "status": "passed",
+      "actual": "All successor functional cases terminal including U01bounded-inconclusive; all13auth intents definitive12accepted/1browserrefused, no unresolved. Original VOwner restored. FinalVcash227bank544.20inventory780stock3+10/closed8ticketZvariance0/29journals/VATunchanged. Nbank380stock2value120/equity500closed6ticketZ280eachvariance0 freshlyverified; Acash150bank290originalpaid600preserved; Bown0andforeigndenial. No live business/config/master/grant/shift/print actions; all unsavedforms cancelled/viewportreset."
+    },
+    {
+      "id": "D01",
+      "status": "passed",
+      "actual": "After24functional dispositions/P01passed/authresolved actual newRUNCONT1receipt publisheda27ccb44db7a340f20ec9671857c9f4360fcbdf3verifiedPR119. Fresh receipt-associated recovery43733950248inprogress creates isolatedCI PostgreSQL/S3 target; no staging restore."
+    },
+    {
+      "id": "D02",
+      "status": "passed",
+      "actual": "Fresh receipt-associatedCI43733950248artifactM2RECOVERYpassed actual encrypteddata/pairedfile export/hash checks,Viewer/nonempty/wrongpassword denied; exactproduct and fixedstorage digest verified,sourcepreserved."
+    },
+    {
+      "id": "D03",
+      "status": "passed",
+      "actual": "Actual fresh isolatedemptytarget data restored/remapped,stock1/closedshift1variance0,assets16000liabilities12000profit4000cents; sourcepreserved. No live restore."
+    },
+    {
+      "id": "D04",
+      "status": "passed",
+      "actual": "Actual fresh S3pairedfilesrestored1/exactbytesmatch1/sourcepreserved1/replaydenied1 at pinnedVersitydigest."
+    },
+    {
+      "id": "D05",
+      "status": "passed",
+      "actual": "Actual postrestore product applicationRead1/permissionrefusals; measuredrestore397ms. Syntheticidentity/Nextadapters+actualSQL/S3; no deployedupload/proxy/productionRPO-RTOclaim."
+    },
+    {
+      "id": "Z01",
+      "status": "passed",
+      "actual": "All13authintents resolved12accepted1browserrefused; no financial/config/master/grant/shift/physicalprint intent. OriginalVOwner restored, finalVaccountsstockclosedshift matches; N/A/Bfreshpreservationobservations retained. Allproofclocksclosed, drafts cancelled/viewportreset."
+    },
+    {
+      "id": "Z02",
+      "status": "passed",
+      "actual": "All functional/recovery dispositions concrete, U01hydratedaccessibilitygap explicit; originalfirstprefillrefusal retained, no new productbug established. Initial sanitized consolidated publication follows while clockactive, then remoteverification and officialclose."
+    },
+    {
+      "id": "Z03",
+      "status": "passed",
+      "actual": "Sanitized consolidated results99b363f67112d45af694b1a69453509bb8b266cfpublishedPR119and independentlyremoteverified while mainclockACTIVE; raw/private evidence excluded."
+    },
+    {
+      "id": "Z04",
+      "status": "passed",
+      "actual": "All34terminal/0unresolved auth;7proofclocksCLOSED; official mainclose immediately follows, then authoritative metadata-only clock/hash/publication tail; no furtherUI/auth/business."
+    }
+  ],
+  "acceptance": "not-established; hydrated invalid-row accessibility and broader campaign/deployed-recovery limits remain"
+}

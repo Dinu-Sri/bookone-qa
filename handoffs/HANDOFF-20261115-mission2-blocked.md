@@ -1,0 +1,7 @@
+# Remaining-only successor required
+
+Mission2 execution consumed its new run and stopped at G02 because the session lacks the expressly required mcp__cua_repl tool. Do not reopen/reset this run or execute completed historical business events. See final closure receipt for exact counts and clock hashes.
+
+Next preparer must establish required CUA capability before releasing another executable queue; retain the real blocked run and all original qualifications. Review the current date explicitly:15Nov2026UTC only while still applicable; later UTC requires a reviewed successor contract. Freeze/publish an exact clean pin and remaining-only queue, preserve authorized reviewed carry with relevant hash/product verification, and start another new clock only for that new release.
+
+Remaining acceptance: fresh control/build/date/origin/auth gates; V/N/A/B live read/unsaved, roles/isolation/report/CSV/UX and protected closing preservation; then receipt-gated new isolated recovery LAST and consolidated publication. Existing standing staging login/logout and sanitized PR119 publication authorization persists; no additional live financial/settings/master/grant/shift/restore authority is implied. Owner alone deploys. No new product coding defect established by this missing-tool stop. Full workflow/policy, deployed recovery/RPO/RTO, real migration and legal tax acceptance remain bounded limitations.
