@@ -85,6 +85,11 @@
         "infrastructureEperm": 41
       },
       "sameCommand": true
+    },
+    "exactDetachedHost": {
+      "qaSha": "921ee84bf7fbee657f7d7d63c90ac2a92a8e8ace",
+      "passed": 134,
+      "failed": 0
     }
   },
   "actualHostControls": {
@@ -141,6 +146,23 @@
   "sourceQualificationComparison": {
     "againstHead": "16a675bcfdaafe584590d6b697f9cd2b3a301426",
     "allListedOutcomeFilesByteIdentical": true,
-    "releaseGuardAdditions": "New auth-only run/receipt/frozen-source/date controls qualified with current134host tests; clean-init canary receipt follows after freeze. No product changes."
+    "releaseGuardAdditions": "Current134 normal-host tests passed, exact clean detached init/frozen-source/consumed-directory refusal canary passed and CLOSED47425ms/0paused with0auth/business; Light run remains uninitialized."
+  },
+  "executionQaSha": "921ee84bf7fbee657f7d7d63c90ac2a92a8e8ace",
+  "cleanInitQualification": {
+    "qaSha": "921ee84bf7fbee657f7d7d63c90ac2a92a8e8ace",
+    "exactCleanDetached": true,
+    "init": "passed",
+    "consumedDirectoryRefusal": "passed",
+    "frozenSourceVerification": "passed",
+    "canaryOnly": {
+      "clock": "closed",
+      "chargedMs": 47425,
+      "pausedMs": 0,
+      "dispositions": "41 blocked guard-only;0pending/unresolved",
+      "auth": 0,
+      "business": 0
+    },
+    "lightExecutionInitialized": false
   }
 }
