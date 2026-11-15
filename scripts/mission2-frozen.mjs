@@ -1,6 +1,6 @@
 // Browser-host-safe verification: files/hashes only, no process or subprocess.
 import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
-const names=['scripts/mission2-ledger.mjs','scripts/mission2-run.mjs','scripts/mission2-policy.mjs','scripts/mission2-cua.mjs','scripts/mission2-frozen.mjs','scripts/mission2-recovery-gate.mjs','scripts/mission2-recovery.mjs'];
+const names=['scripts/mission2-ledger.mjs','scripts/mission2-run.mjs','scripts/mission2-policy.mjs','scripts/mission2-cua.mjs','scripts/mission2-frozen.mjs','scripts/mission2-recovery-gate.mjs','scripts/mission2-recovery.mjs','scripts/mission2-receipt.mjs','scripts/mission2-source-check.mjs','scripts/mission2-proof.mjs','tests/runtime/missiontwo.test.ts','tests/recovery/missiontwo.test.ts','scripts/http/run.mjs','tests/http/seed.test.ts','batches/runtime.json','batches/http-runtime.json','product-ref.json','vitest.mission2-recovery.config.ts','.github/workflows/mission2-recovery.yml'];
 const hash=(root,p)=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 export const combinedSourceHashes=root=>Object.fromEntries(names.map(p=>[p,hash(root,p)]));
 export function checkFrozen(root,fp,plan){

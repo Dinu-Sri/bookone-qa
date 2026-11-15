@@ -7,6 +7,7 @@ import {TENANT_A,TENANT_B,OWNER,VIEWER,setActor} from '../runtime/support/sessio
 import * as schema from '@product/schema/index';
 import {createCommercialDocument,getCommercialDocument} from '@product/web/app/actions/commercial-docs';
 import {getReports} from '@product/web/app/actions/workspace';
+import {loadAccessForUser} from '@product/auth/permissions/load';
 import {prepareTenantArchive,loadPreparedArchive,restoreTenantArchiveFromUpload,restoreTenantFilesArchiveFromUpload} from '@product/web/lib/tenant-archive';
 import {decryptArchivePayload} from '@product/db/archive/crypto';
 const require=createRequire(path.resolve('work/product/apps/web/package.json'));
@@ -42,7 +43,10 @@ it('[M2-RECOVERY] actual product encrypted export/data/files restore uses real i
  expect(envelope.manifest.dataSha256).toBe(hash(JSON.stringify(envelope.tables)));expect(await snapshot(TENANT_A)).toEqual(source);
  // A has business records: even the authorized source Owner must not restore over it.
  expect((await restoreTenantArchiveFromUpload(data.buffer,password)).ok).toBe(false);expect(await snapshot(TENANT_A)).toEqual(source);
- setActor(OWNER,'owner',TENANT_B);const targetBefore=await snapshot(TENANT_B);expect((await restoreTenantArchiveFromUpload(data.buffer,'wrong-password')).ok).toBe(false);expect(await snapshot(TENANT_B)).toEqual(targetBefore);
+ // The product upload wrapper authorizes the target Owner BEFORE decrypting; seed its ordinary signup membership.
+ const[targetRole]=await seed.insert(schema.tenantRoles).values({tenantId:TENANT_B,slug:'owner',name:'Target Owner',templateKey:'owner',templateVersion:'1'}).returning();
+ await seed.insert(schema.tenantMemberships).values({tenantId:TENANT_B,userId:OWNER,role:'owner',primaryRoleId:targetRole.id,status:'active'});
+ setActor(OWNER,'owner',TENANT_B);expect((await loadAccessForUser(OWNER,TENANT_B,'user'))?.allows('company.backup.write','write')).toBe(true);const targetBefore=await snapshot(TENANT_B);expect((await restoreTenantArchiveFromUpload(data.buffer,'wrong-password')).ok).toBe(false);expect(await snapshot(TENANT_B)).toEqual(targetBefore);
  const started=Date.now(),restored=await restoreTenantArchiveFromUpload(data.buffer,password);expect(restored,JSON.stringify(restored)).toMatchObject({ok:true});
  const fileResult=await restoreTenantFilesArchiveFromUpload(files.buffer,password);expect(fileResult,JSON.stringify(fileResult)).toMatchObject({ok:true,applied:1,skippedInvalid:0});
  const restoredBytes=Buffer.from(await(await s3.send(new GetObjectCommand({Bucket,Key:key.replace(TENANT_A,TENANT_B)}))).Body.transformToByteArray());expect(hash(restoredBytes)).toBe(hash(bytes));

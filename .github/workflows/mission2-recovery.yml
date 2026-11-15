@@ -67,8 +67,8 @@ jobs:
           echo "S3_ENDPOINT=http://127.0.0.1:9000" >> "$GITHUB_ENV"
           echo "S3_REGION=us-east-1" >> "$GITHUB_ENV"
           # Official public S3-compatible gateway: https://github.com/versity/versitygw/wiki/Docker
-          docker run -d --name m2-isolated-s3 -p 127.0.0.1:9000:9000 -v m2-recovery-s3:/data -e ROOT_ACCESS_KEY="$task_user" -e ROOT_SECRET_KEY="$task_secret" -e VGW_BACKEND=posix -e VGW_BACKEND_ARG=/data -e 'VGW_ARGS=--port :9000 --health /health' ghcr.io/versity/versitygw:latest
-          echo "QA_M2_STORAGE_IMAGE=$(docker image inspect ghcr.io/versity/versitygw:latest --format '{{index .RepoDigests 0}}')" >> "$GITHUB_ENV"
+          docker run -d --name m2-isolated-s3 -p 127.0.0.1:9000:9000 -v m2-recovery-s3:/data -e ROOT_ACCESS_KEY="$task_user" -e ROOT_SECRET_KEY="$task_secret" -e VGW_BACKEND=posix -e VGW_BACKEND_ARG=/data -e 'VGW_ARGS=--port :9000 --health /health' ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5
+          echo "QA_M2_STORAGE_IMAGE=ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5" >> "$GITHUB_ENV"
           for attempt in $(seq 1 30); do curl --fail http://127.0.0.1:9000/health && break; sleep 1; done
           curl --fail http://127.0.0.1:9000/health
       - name: Actual product data and file export restore and application readback
