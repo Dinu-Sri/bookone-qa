@@ -7,7 +7,7 @@ export function checkRecoveryReceipt(r,plan){
   assert.deepEqual(r.qualifications.map(x=>x.kind).sort(),['https','postgres']);
   for(const q of r.qualifications){assert.ok(Number.isSafeInteger(q.runId)&&q.runId>0);assert.equal(q.status,'passed');assert.equal(q.productSha,r.productSha);assert.match(q.qaSha,/^[a-f0-9]{40}$/);}
  }else{
-  assert.equal(r.mode,'light-functional-dispositioned');assert.equal(r.clockMode,'active');assert.equal(r.runId,'RUN-20261115-MISSION2');
+  assert.equal(r.mode,'light-functional-dispositioned');assert.equal(r.clockMode,'active');assert.equal(r.runId,'RUN-20261115-MISSION2-CONT1');
   assert.ok(plan?.cases?.length);const required=plan.cases.filter(c=>c.phase==='functional').map(c=>c.id);
   assert.deepEqual(r.cases.map(c=>c.id).sort(),required.sort());for(const c of r.cases)assert.ok(['passed','failed','blocked','inconclusive'].includes(c.status));
  }

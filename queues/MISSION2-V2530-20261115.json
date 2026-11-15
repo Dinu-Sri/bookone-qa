@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "id": "MISSION2-V2530-20261115",
-  "displayName": "Full Light Mission2 qualification and final handover",
+  "id": "MISSION2-V2530-CONT1-20261115",
+  "displayName": "Mission2 remaining-only CONT1",
   "executionReady": true,
   "candidate": "v2.5.30",
   "productSha": "ca05491f18965f757adfead48b5d98595872272c",
@@ -946,290 +946,10 @@
       ]
     },
     {
-      "id": "R01",
-      "title": "Qualified actual PostgreSQL149 outcome cases and exact product/schema/RLS fingerprint",
-      "phase": "functional",
-      "expected": "Qualified actual PostgreSQL149 outcome cases and exact product/schema/RLS fingerprint. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "R02",
-      "title": "Actual Owner/Viewer/custom read register action outcomes and last-active/read-path controls",
-      "phase": "functional",
-      "expected": "Actual Owner/Viewer/custom read register action outcomes and last-active/read-path controls. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "R03",
-      "title": "Raw AR/AP field matrix:blank/0/-1/abc/1abc/Infinity/NaN/1.001/cents/cap/mixed/unselected",
-      "phase": "functional",
-      "expected": "Raw AR/AP field matrix:blank/0/-1/abc/1abc/Infinity/NaN/1.001/cents/cap/mixed/unselected. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "R04",
-      "title": "Actual server AR/AP atomicity/cap/concurrent/idempotency/foreign/no-effect outcomes",
-      "phase": "functional",
-      "expected": "Actual server AR/AP atomicity/cap/concurrent/idempotency/foreign/no-effect outcomes. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "R05",
-      "title": "Real credential HTTPS36 cases; register denial/Owner persist/invalidpayment/VAT CSV",
-      "phase": "functional",
-      "expected": "Real credential HTTPS36 cases; register denial/Owner persist/invalidpayment/VAT CSV. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "R06",
-      "title": "Fresh isolated journal18%/21.60 plus fractional/return tests; VATreport actual correspondence",
-      "phase": "functional",
-      "expected": "Fresh isolated journal18%/21.60 plus fractional/return tests; VATreport actual correspondence. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
       "id": "U01",
       "title": "Affected desktop/narrow/keyboard/reader field errors/totals/readonly controls; cancel all drafts",
       "phase": "functional",
       "expected": "Affected desktop/narrow/keyboard/reader field errors/totals/readonly controls; cancel all drafts. Independently observed outcomes only; blocked/inconclusive is not a pass.",
-      "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
-      "evidence": [
-        "observations",
-        "sourceAndBindings",
-        "journalAndStock",
-        "preservation"
-      ],
-      "allowedButtons": [],
-      "allowedPaths": [
-        "^/login$",
-        "^/(?!login$).*"
-      ],
-      "maxSubmissions": 8,
-      "allowAuth": false,
-      "businessSubmission": false,
-      "allowedActors": [
-        "vOwner",
-        "nOwner",
-        "aOwner",
-        "aViewer",
-        "bOwner"
-      ],
-      "allowedCompanies": [
-        "V",
-        "N",
-        "A",
-        "B"
-      ],
-      "dependsOn": [
-        "G01",
-        "G02",
-        "G03",
-        "G04"
-      ]
-    },
-    {
-      "id": "H01",
-      "title": "Concrete operating handover and remaining limitations; synthetic not legal/migration certification",
-      "phase": "functional",
-      "expected": "Concrete operating handover and remaining limitations; synthetic not legal/migration certification. Independently observed outcomes only; blocked/inconclusive is not a pass.",
       "precondition": "Exact new QA/date/build/control/identity gates; preserve old runs; resolve any auth before another action.",
       "evidence": [
         "observations",
@@ -1665,5 +1385,19 @@
         "G04"
       ]
     }
-  ]
+  ],
+  "reviewedCarry": {
+    "from": "RUN-20261115-MISSION2",
+    "cases": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "H01"
+    ],
+    "receipt": "runs/CHECKS-20261115-mission2-results.json",
+    "boundary": "Prior reviewed qualification and handover only; never import intents. Reverify exact relevant product/test hashes before reliance; refresh handover with final outcomes."
+  }
 }
