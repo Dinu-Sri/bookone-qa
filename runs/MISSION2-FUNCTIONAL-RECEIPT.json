@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "mode": "preparation-ci",
+  "liveAcceptance": false,
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "dateContract": "2026-11-15",
+  "qaSha": "29017f89ac6eae563879d552483cf3d74e2f8566",
+  "authUnresolved": 0,
+  "protectedDataPreserved": true,
+  "qualifications": [
+    {
+      "kind": "postgres",
+      "runId": 43718253921,
+      "status": "passed",
+      "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+      "qaSha": "29017f89ac6eae563879d552483cf3d74e2f8566",
+      "cases": 149
+    },
+    {
+      "kind": "https",
+      "runId": 43718253840,
+      "status": "passed",
+      "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+      "qaSha": "29017f89ac6eae563879d552483cf3d74e2f8566",
+      "cases": 36
+    }
+  ]
+}
