@@ -1,0 +1,251 @@
+{
+  "dateContract": "2026-11-15 UTC",
+  "qaSha": "921ee84bf7fbee657f7d7d63c90ac2a92a8e8ace",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "productTree": "a0a8d06415067c7e8fb2ef4959bca683954279bf",
+  "freshHost": {
+    "passed": 134,
+    "failed": 0
+  },
+  "freshMetadata": "valid; productAcceptance not-established",
+  "qualificationSourceHashesVerified": 15,
+  "evidenceLayer": "R01-R06 reviewed published carry, not rerun; no fresh live stamp/auth/roles/reports/preservation",
+  "liveActions": 0,
+  "recoveryStarted": false,
+  "acceptance": "not-established",
+  "cases": [
+    {
+      "id": "G01",
+      "status": "passed",
+      "actual": "NEW180/150/30 clock initialized once15NovUTC; clean detached exact QA and published PR119 ancestor verified. Fresh normal-host134/134 and metadata validation exit0. Product/tree pinned; live stamp remains preparation-only."
+    },
+    {
+      "id": "G02",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "G03",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "G04",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V02",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V03",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V04",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V05",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V06",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V07",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V08",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V09",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "N01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "N02",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "N03",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "N04",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "A01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "A02",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "A03",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "B01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "B02",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "V10",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "R01",
+      "status": "passed",
+      "actual": "Reviewed PostgreSQL149 actual nonowner/NOBYPASSRLS outcomes and45 migrations; exact product and relevant source hashes match. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "R02",
+      "status": "passed",
+      "actual": "Reviewed actual isolated register Owner persistence, Viewer/custom-read zero effects, last-active refusal and nonmutating list. Foreign ID has no effects but saved redirect; no stronger explicit-error claim. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "R03",
+      "status": "passed",
+      "actual": "Reviewed SSR24 actual field contracts and helper/server invalid matrices. This is not hydrated open-row browser or keyboard interaction evidence. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "R04",
+      "status": "passed",
+      "actual": "Reviewed isolated PostgreSQL AR/AP atomicity, cap, concurrency/idempotency and foreign/Viewer no-effect outcomes. No live payment dispatched. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "R05",
+      "status": "passed",
+      "actual": "Reviewed real credential HTTPS36 outcomes; successful GitHub job independently checked. Synthetic isolated server, not deployed role verification. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "R06",
+      "status": "passed",
+      "actual": "Reviewed isolated persisted VAT journal18%/21.60, fractional/return and report correspondence qualification. No new staging journal or historical memo edit. Reviewed carry, not rerun this execution."
+    },
+    {
+      "id": "U01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "H01",
+      "status": "passed",
+      "actual": "Concrete operating handover authored in handoffs/OPERATING-HANDOVER-20261115-mission2.md; explicitly conditional on live qualification and not customer launch approval."
+    },
+    {
+      "id": "P01",
+      "status": "blocked",
+      "actual": "Required mcp__cua_repl is absent from this session. G02 actual controls cannot run; fresh build/auth/live observation gates cannot be established. No UI or request dispatched.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "D01",
+      "status": "blocked",
+      "actual": "Fresh recovery LAST not started: P01 preservation blocked; no valid functional recovery receipt emitted. Earlier preparation recovery is not replayed.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "D02",
+      "status": "blocked",
+      "actual": "Fresh recovery LAST not started: P01 preservation blocked; no valid functional recovery receipt emitted. Earlier preparation recovery is not replayed.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "D03",
+      "status": "blocked",
+      "actual": "Fresh recovery LAST not started: P01 preservation blocked; no valid functional recovery receipt emitted. Earlier preparation recovery is not replayed.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "D04",
+      "status": "blocked",
+      "actual": "Fresh recovery LAST not started: P01 preservation blocked; no valid functional recovery receipt emitted. Earlier preparation recovery is not replayed.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "D05",
+      "status": "blocked",
+      "actual": "Fresh recovery LAST not started: P01 preservation blocked; no valid functional recovery receipt emitted. Earlier preparation recovery is not replayed.",
+      "nextAction": "Restore required mcp__cua_repl capability, review and publish a NEW remaining-only successor with current UTC contract and fresh clock/gates; never reopen this consumed run."
+    },
+    {
+      "id": "Z01",
+      "status": "inconclusive",
+      "actual": "Ledger has zero auth/submissions/unresolved; no live business/config/master/grant/shift/physical-print actions. Fresh protected preservation cannot be observed without required CUA.",
+      "nextAction": "Fresh protected preservation in a reviewed remaining-only successor after required tool is restored."
+    },
+    {
+      "id": "Z02",
+      "status": "passed",
+      "actual": "All functional/recovery cases have explicit bounded dispositions; closing publication and official closure follow. Original preparation failures retained by reference; no new product defect established."
+    },
+    {
+      "id": "Z03",
+      "status": "pending"
+    },
+    {
+      "id": "Z04",
+      "status": "pending"
+    }
+  ]
+}
