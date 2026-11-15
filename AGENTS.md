@@ -1,3 +1,10 @@
+# Current — v2.5.30 independently reviewed; Mission2 preparation next
+
+Owner reports livev2.5.30 ca05491. Exact productca05491f18965f757adfead48b5d98595872272c/treea0a8d06415067c7e8fb2ef4959bca683954279bf/parentba840d008051d8753b6c921ef1b674dd6478cc0b verified. CI Docker43706904461 and ProductionCheck43706904528 alljobs success independently observed. Combined v2.5.28→v2.5.30 source reviewed; exact detached product under launch-v2530-mission2-preparation/work/product clean, independent accounting237/237 and auth97/97 pass. Register tests are source/policy, not actual action/PG outcome proof. SimpleEntry canWrite server-prop compile fix confirmed. No new coding defect established in bounded review.
+
+Read launch-v2530-mission2-preparation/reviews/REVIEW-20261115-v2530-mission2.md and handoffs/MISSION2-V2530-PREPARATION-20261115.md there. PREPARATION ONLY: no released executable QA pin/queue, no browser/live-stamp/auth/new clock, no new business/config/data actions. Owner-reported deployment is not independently observed liveUI. NEXT qualify isolated actual-server/RLS/payment/restore harness and reviewed fixture/capabilities, freeze/publish new clean QA pin, then NEWclock/fresh15NovUTC gates and Mission2 affected regression/handover/recoveryLAST. LaterUTC requires reviewed date successor. Historical memos stay unchanged; new memo proof belongs on fresh isolated journal. No replay of CLOSED Mission1/CONT11 or old money/shifts. Owner deploys only; no launchapproval.
+
+Historical pointers below preserved and superseded.
 # Current — Mission1 CLOSED; grouped coding next
 
 Mission1 (two-mission finish programme) CLOSED1572215ms/0paused,20passed/6failed/5inconclusive,0pending/running/unresolved. Exact execution QA24534f7b95901dba29ef933fa3c3d5045c107d05 clean detached launch-readiness-m1-execution. Initial sanitized publication3bfc96699940bcc8b9367ddd09b9ddf2efb081ea verified on draftPR118 while active. All12auth accepted; originalV restored. Zero financial/settings/master/grant/shift/physical-print intent. OriginalV/N/A/B records, dates, Walk-in and closed shifts preserved; no replay.
