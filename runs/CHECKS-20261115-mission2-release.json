@@ -1,0 +1,146 @@
+{
+  "dateContract": "2026-11-15 UTC",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "productTree": "a0a8d06415067c7e8fb2ef4959bca683954279bf",
+  "liveObserved": "v2.5.30 · ca05491 at actual login; no auth/business",
+  "qualificationHead": "16a675bcfdaafe584590d6b697f9cd2b3a301426",
+  "testedPrMergeQa": "bd502c5e8816c4c18028e7006439f10265f29ae6",
+  "checks": {
+    "accounting": "237/237 exact product independent local",
+    "auth": "97/97 exact product independent local; source/policy depth",
+    "postgres": {
+      "runId": 43720148985,
+      "passed": 149,
+      "failed": 0
+    },
+    "https": {
+      "runId": 43720149029,
+      "passed": 36,
+      "failed": 0,
+      "blocked": 0
+    },
+    "components": {
+      "runId": 43720149176,
+      "passed": 24,
+      "failed": 0,
+      "boundary": "actual AllocationAmountField SSR, not hydrated browser"
+    },
+    "recovery": {
+      "runId": 43720149067,
+      "status": "passed",
+      "boundary": "actual-product-archive-actions-real-PostgreSQL-and-S3-Versity-synthetic-identity-Next-adapters",
+      "storageImage": "ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5",
+      "observations": {
+        "sourcePreserved": 1,
+        "viewerDenied": 1,
+        "nonemptyDenied": 1,
+        "wrongPasswordDenied": 1,
+        "dataRestored": 1,
+        "filesRestored": 1,
+        "fileBytesMatch": 1,
+        "stockQty": 1,
+        "closedShifts": 1,
+        "varianceCents": 0,
+        "assetsCents": 16000,
+        "liabilitiesCents": 12000,
+        "profitCents": 4000,
+        "applicationRead": 1,
+        "replayDenied": 1,
+        "observedRestoreMs": 204
+      }
+    },
+    "repositoryValidation": {
+      "runId": 43720149039,
+      "status": "success"
+    },
+    "batchA": {
+      "runId": 43720149014,
+      "status": "success"
+    },
+    "batchBF": {
+      "runId": 43720149060,
+      "status": "success"
+    },
+    "archiveHelpers": {
+      "runId": 43720149045,
+      "status": "success"
+    },
+    "campaign": {
+      "runId": 43720148967,
+      "implementedPassed": 323,
+      "implementedFailed": 0,
+      "executedGate": "passed",
+      "processExit": 1,
+      "reason": "Explicit unimplemented workflow/policy acceptance remains; not an assertion failure or full acceptance",
+      "acceptedFullWorkflows": 0,
+      "definedWorkflows": 137
+    },
+    "host": {
+      "normal": {
+        "passed": 134,
+        "failed": 0
+      },
+      "restricted": {
+        "passed": 93,
+        "infrastructureEperm": 41
+      },
+      "sameCommand": true
+    }
+  },
+  "actualHostControls": {
+    "positive": 2,
+    "positiveUiCalls": [
+      1,
+      1
+    ],
+    "refusals": 5,
+    "refusedUiCalls": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "proofClocksClosed": 7,
+    "qualificationClockClosedMs": 58847,
+    "pausedMs": 0
+  },
+  "firstFailuresRetained": [
+    "Initial dependent archive pin stale and HTTP expected15 guard; corrected without product change",
+    "Old source render adapter lacked new Percent icon; corrected adapter, unchanged label assertions pass",
+    "Transient Vite config filename race excluded as generated intermediate, actual sources retained in hashes",
+    "Docker Desktop unavailable locally; DockerHub/Quay image unavailable on CI; public S3-compatible gateway qualified and digest pinned",
+    "Initial recovery target lacked its normal Owner membership; actual permission gate refused; corrected synthetic signup fixture and qualified actual export/restore",
+    "Restricted host suite93pass/41EPERM temp rename/subprocess failures; identical normal-host suite134/134, no reduced tests"
+  ],
+  "limits": [
+    "No live protected company writes or old action replay",
+    "No independent deployed filesystem/schema/DB role attestation",
+    "No hydrated open AR/AP browser rows fabricated on settled V/N",
+    "Recovery is isolated actual product actions, SQL and S3 transport with synthetic identity/Next adapters; deployed upload/proxy and production RPO/RTO not established",
+    "Campaign full workflow/policy acceptance not established"
+  ],
+  "sourceHashes": {
+    "product-ref.json": "71998e71cc0892e4927984a0d257742f72143b4aadb95fcef012745643e43486",
+    "scripts/runtime/run.mjs": "71101b8dec2c3fd12d494a52b11c5993083b18fd5ddb273d1e8d254a584b1c6c",
+    "scripts/runtime/prepare.mjs": "376e6ccdfc8378e4178502891735901b5c5be61d08e296c573527c183ae3fa8b",
+    "scripts/runtime/target.mjs": "b389dbf5e307f971d824447356beed8804e59ba58bb264637baa2ae9782c5c2f",
+    "tests/runtime/missiontwo.test.ts": "af50bb10337f7f08342e6023fb6d240d932e2de3113530d21ac512553b4ad85c",
+    "scripts/http/run.mjs": "2755d7a9d0d1f209e089aca7561975634608f50a322fd927147c62ea9dea8c8c",
+    "tests/http/seed.test.ts": "fedf617f342d2f2d387996a8929cdb8296cd48d1b2aaf2d39f2f28ac3cb8d3b2",
+    "batches/runtime.json": "54beccee496f172f805faa26beded5de66ee8293dd48bb4ed8c3b43be5cae621",
+    "batches/http-runtime.json": "0ecea20f894a9ccf107417382fdad92af085588467838f59870fe24b1e42dbc3",
+    "tests/recovery/missiontwo.test.ts": "d7d3b0eedda5a203fdcd67e3131d10221c23a6f21a303776d0b0db2b53cd644a",
+    "scripts/mission2-recovery.mjs": "25d7a67bd4fc3a86a064fb84d4d37ef11bdbb5eeb2972238df2df05d14c02772",
+    "vitest.mission2-recovery.config.ts": "e094e37715a140cdf3517c96434ea1e1a3f30be8fb2b43a8ab0bbe393eb918a7",
+    ".github/workflows/mission2-recovery.yml": "a8a6f50f087c2e62b42ebdae1fcc8ba3eae0b03a49e422b420e6245ff1b7e6c5",
+    "tests/components/mission2-payments.test.tsx": "45fd58f359ff52497e7e5ecf4621d2d74949f620a0092de0fcad322ad71a24c6",
+    "vitest.mission2-components.config.ts": "ef37b340fcc2ac1b46472e86515d9a0612c8009b2f5701f008bc50a54694522d"
+  },
+  "lightExecutionInitialized": false,
+  "sourceQualificationComparison": {
+    "againstHead": "16a675bcfdaafe584590d6b697f9cd2b3a301426",
+    "allListedOutcomeFilesByteIdentical": true,
+    "releaseGuardAdditions": "New auth-only run/receipt/frozen-source/date controls qualified with current134host tests; clean-init canary receipt follows after freeze. No product changes."
+  }
+}
