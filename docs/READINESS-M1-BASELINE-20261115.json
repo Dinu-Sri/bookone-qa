@@ -26,5 +26,5 @@
     "shift": "CLOSED six tickets variance0"
   },
   "priorRuns": "All prior runs including CONT11 CLOSED; no replay or balance repairs",
-  "customer": "Not yet bound; require actual owner-supplied company/staff/source data before customer acceptance"
+  "customer": "Owner explicitly directs synthetic staging data and approach; reuse V/N and A Owner/Viewer/B Owner where sufficient. No real customer data required for Mission1; migration/import acceptance separate."
 }

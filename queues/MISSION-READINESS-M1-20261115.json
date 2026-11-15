@@ -805,7 +805,7 @@
     {
       "id": "C01",
       "title": "Bind intended real customer company and staff duties",
-      "expected": "Bind intended real customer company and staff duties. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "expected": "Bind existing synthetic V/N companies and A Owner/Viewer/B Owner roles as staging readiness fixtures; no real customer selected or required by owner",
       "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
       "evidence": [
         "observations",
@@ -844,7 +844,7 @@
     {
       "id": "C02",
       "title": "Reconcile customer opening accounts/AR/AP/stock source data",
-      "expected": "Reconcile customer opening accounts/AR/AP/stock source data. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "expected": "Reconcile frozen synthetic opening dataset to V/N prior independent oracle, current accounts, AR/AP and per-SKU stock; distinguish balance reconciliation from untested migration/import",
       "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
       "evidence": [
         "observations",
@@ -883,7 +883,7 @@
     {
       "id": "C03",
       "title": "Confirm customer tax/location/tender configuration and operating needs",
-      "expected": "Confirm customer tax/location/tender configuration and operating needs. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "expected": "Confirm synthetic VAT18/nonVAT, local warehouse, cash/bank/card and manual POS settings; no actual tax registration certification or hardware claim",
       "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
       "evidence": [
         "observations",
@@ -922,7 +922,7 @@
     {
       "id": "C04",
       "title": "Customer-readiness acceptance or explicit missing-input block",
-      "expected": "Customer-readiness acceptance or explicit missing-input block. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "expected": "Adjudicate synthetic staging customer readiness and explicit gaps; do not block merely because real customer not selected",
       "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
       "evidence": [
         "observations",
