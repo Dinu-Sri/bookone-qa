@@ -1,0 +1,30 @@
+{
+  "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "productTree": "06cb8f5c967ff3edab6361123ddc029778f087b0",
+  "date": "2026-11-15",
+  "scope": "READONLY with guarded existing-identity auth only",
+  "financialActions": 0,
+  "settingsActions": 0,
+  "masterActions": 0,
+  "permissionChanges": 0,
+  "V": {
+    "journals": 29,
+    "drCrCents": 867840,
+    "cashCents": 22700,
+    "bankCents": 54420,
+    "inventoryCents": 78000,
+    "ar": 0,
+    "ap": 0,
+    "card": 0,
+    "profitCents": 12000,
+    "shift": "CLOSED eight tickets variance0"
+  },
+  "N": {
+    "bankCents": 38000,
+    "stockValueCents": 12000,
+    "equityCents": 50000,
+    "shift": "CLOSED six tickets variance0"
+  },
+  "priorRuns": "All prior runs including CONT11 CLOSED; no replay or balance repairs",
+  "customer": "Not yet bound; require actual owner-supplied company/staff/source data before customer acceptance"
+}

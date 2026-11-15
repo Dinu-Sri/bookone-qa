@@ -1,0 +1,1235 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-READINESS-M1-20261115",
+  "displayName": "Two-mission finish programme: Mission1 evidence, UI and customer readiness",
+  "executionReady": true,
+  "candidate": "v2.5.28",
+  "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "productTree": "06cb8f5c967ff3edab6361123ddc029778f087b0",
+  "reviewedCandidateSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "reportedShortSha": "48e4407",
+  "budget": {
+    "totalMinutes": 180,
+    "executionMinutes": 150,
+    "closingReserveMinutes": 30,
+    "preflightMinutes": 15
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-15",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "dueDate": "2026-11-17",
+  "oracle": "docs/READINESS-M1-BASELINE-20261115.json",
+  "cases": [
+    {
+      "id": "G01",
+      "title": "Fresh clock, exact published QA and preserved closed runs",
+      "expected": "Fresh clock, exact published QA and preserved closed runs. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "G02",
+      "title": "Actual product build and current V/N baseline",
+      "expected": "Actual product build and current V/N baseline. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "G03",
+      "title": "Fresh actual2positive/5zeroUI control proof; close7proof clocks",
+      "expected": "Fresh actual2positive/5zeroUI control proof; close7proof clocks. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "G04",
+      "title": "Fresh guarded V Owner authentication and protected identity",
+      "expected": "Fresh guarded V Owner authentication and protected identity. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E01",
+      "title": "Office PO/GRN/bill/return/payment source closure",
+      "expected": "Office PO/GRN/bill/return/payment source closure. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E02",
+      "title": "Office informational quote/order and tax previews",
+      "expected": "Office informational quote/order and tax previews. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E03",
+      "title": "Original N commercial receipts and closed Z",
+      "expected": "Original N commercial receipts and closed Z. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E04",
+      "title": "All historical V/N goods movements versus sources",
+      "expected": "All historical V/N goods movements versus sources. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E05",
+      "title": "VAT report availability and accounting correspondence",
+      "expected": "VAT report availability and accounting correspondence. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "E06",
+      "title": "Carried AR/AP invalid-input matrix adjudication",
+      "expected": "Carried AR/AP invalid-input matrix adjudication. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "U01",
+      "title": "Payment row-validation and batch/server boundary review",
+      "expected": "Payment row-validation and batch/server boundary review. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "U02",
+      "title": "Purchase net/VAT/gross truthful preview review",
+      "expected": "Purchase net/VAT/gross truthful preview review. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "U03",
+      "title": "VAT percentage display precision review",
+      "expected": "VAT percentage display precision review. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "U04",
+      "title": "One grouped coding handoff with exact/adjacent retest scope",
+      "expected": "One grouped coding handoff with exact/adjacent retest scope. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S01",
+      "title": "Existing A Owner actual identity and protected company baseline",
+      "expected": "Existing A Owner actual identity and protected company baseline. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S02",
+      "title": "Existing A Viewer actual identity and read-only route boundaries",
+      "expected": "Existing A Viewer actual identity and read-only route boundaries. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S03",
+      "title": "Existing B Owner foreign company/data isolation",
+      "expected": "Existing B Owner foreign company/data isolation. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S04",
+      "title": "Read-only document/receipt/export foreign-record denial",
+      "expected": "Read-only document/receipt/export foreign-record denial. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S05",
+      "title": "Candidate server authorization/runtime qualification",
+      "expected": "Candidate server authorization/runtime qualification. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "S06",
+      "title": "Staff-role and company-isolation coverage adjudication",
+      "expected": "Staff-role and company-isolation coverage adjudication. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "C01",
+      "title": "Bind intended real customer company and staff duties",
+      "expected": "Bind intended real customer company and staff duties. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "C02",
+      "title": "Reconcile customer opening accounts/AR/AP/stock source data",
+      "expected": "Reconcile customer opening accounts/AR/AP/stock source data. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "C03",
+      "title": "Confirm customer tax/location/tender configuration and operating needs",
+      "expected": "Confirm customer tax/location/tender configuration and operating needs. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "C04",
+      "title": "Customer-readiness acceptance or explicit missing-input block",
+      "expected": "Customer-readiness acceptance or explicit missing-input block. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z1",
+      "title": "All auth outcomes resolved, zero financial/settings/master actions",
+      "expected": "All auth outcomes resolved, zero financial/settings/master actions. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z2",
+      "title": "Protected source/account/stock preservation closing",
+      "expected": "Protected source/account/stock preservation closing. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z3",
+      "title": "Consolidated evidence coverage and defects",
+      "expected": "Consolidated evidence coverage and defects. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z4",
+      "title": "All Mission1 checkpoints concretely dispositioned",
+      "expected": "All Mission1 checkpoints concretely dispositioned. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z5",
+      "title": "Mission2 scope and final retest dependencies",
+      "expected": "Mission2 scope and final retest dependencies. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z6",
+      "title": "Sanitized publication before clock closure",
+      "expected": "Sanitized publication before clock closure. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    },
+    {
+      "id": "Z7",
+      "title": "Close all clocks and record publication tail",
+      "expected": "Close all clocks and record publication tail. Independently record evidence and limits; blocked/inconclusive is not a pass. No live financial, configuration, access-grant or master write.",
+      "precondition": "Fresh date/exact candidate/control/auth appropriate to observation; preserve all prior accepted sources; no unresolved auth before another action.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 8,
+      "actor": "per-read",
+      "companyAlias": "per-read",
+      "allowedActors": [
+        "vOwner",
+        "nOwner",
+        "aOwner",
+        "aViewer",
+        "bOwner"
+      ],
+      "allowedCompanies": [
+        "V",
+        "N",
+        "A",
+        "B"
+      ],
+      "allowAuth": true,
+      "businessSubmission": false,
+      "dependsOn": []
+    }
+  ]
+}
