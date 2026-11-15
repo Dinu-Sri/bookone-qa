@@ -1,0 +1,11 @@
+# v2.5.28 / CONT11 review
+
+Owner reports production deployment. Product master48e44072f43d8d26338d793c6692767e8b7d2082/tree06cb8f5c967ff3edab6361123ddc029778f087b0, version2.5.28; actual protected browser showsv2.5.28 ·48e4407. No independent server-digest attestation. Diff reviewed: original source vatRate/discount/prior return caps feed shared linked-return preview and modal, server source selection remains linked; manual effects preserved. Independent accounting17files223/223 pass using existing installed dependencies with isolated package-local config; isolated PostgreSQL runtime not independently run here. This is not live refund posting acceptance.
+
+Actual unsaved preview: original14Nov cashsale236/TAX18/sold2/left2; goods1 net100 VAT18 refund118, exact finalbutton118. Modal canceled, navigated away without final intent/submit. Current accounts unchanged: cash463 bank544.20 inventory660 AP0 outputVAT126 profit200. Same original14Nov OPEN shift still one sale236/0returns/float50/expected286. No business/auth/settings/master/hardware/physical print action during preparation.
+
+Explicitly reviewed15NovUTC/newdue17 metadata; original14Nov source/openedAt preserved. Server `pos-session.ts` selects open shift by tenant/register/status without current-day constraint; new sale/return issueDate is UTCnow and close timestamp is now. Existing overnight shift reuse permitted, not a historical-date edit. Fresh execution gates plus unsaved QPOS must reconfirm same shift/source and exact values; stop on drift.
+
+New37point queue exposes ONLY E30-E37. Separate v2528 helper names preserve all old executable files and consumed runs. Hash-verified CONT10 carry includes accepted readbacks and closed artifacts; policy requires original shift binding/proof as well as current source/amount/date/manual mode. Independent oracle recomputation:7journals1089.60 +1metadata close, V29/8678.40 final. Original S01/E28/E29 and all older money/N consumed. No executable repeated payment/opening/sale capability. Closing reconciles full cross-run shift and publishes once with chargedclock.
+
+Focused/host outcomes and exact release pins are recorded in release receipt; restricted temporary-file failures remain distinguished from host results. Owner deploys only; no launch approval; recoveryLAST.

@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-CONT2",
+  "candidate": "v2.5.22",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reportedShortSha": "211771e",
+  "executionReady": true,
+  "status": "reviewed-actual-purchase-return-button-completedbill-recovery",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 20
+  },
+  "oracle": "queues/ORACLE-v2522-RAPID-01-CONT2.json",
+  "strategy": "docs/RAPID_WORKFLOW_CYCLES.md",
+  "transport": {
+    "entry": "dispatchPersistedDesktopAction",
+    "module": "scripts/operator-desktop-cua.mjs",
+    "host": "mcp__cua_repl.js",
+    "actualProof": "reviews/REVIEW-20261027-rapid01-preparation.md",
+    "meaning": "New desktop path for this mission only; original Light queues/transport/results are not retroactively approved."
+  },
+  "qaPin": "Use exact final published execution commit from this PR/handoff; helper derives HEAD and Light must compare it with the prompt. Any different candidate or adapter change requires a new reviewed run.",
+  "fixturePolicy": "Only previously run-owned GRN received10/unbilled600 and unconverted manual-servicequote200 may be continued after fresh exact private source qualification. No newPO/GRN/quote or replay of settled digital/mixed events. New downstream documents unique. CONT1 bill600 already accepted: read-only opening qualification, no newbilling.",
+  "scheduling": "D lane then P then S then M is preferred for liquid capacity. Cases may continue in other independent eligible lanes after a failure; a failed history closure does not gate another lane. Global unknown cash/stock/actor effects block affected writes until resolved. Use actual accepted deltas, never assume funds.",
+  "scopeExclusions": [
+    "Historical Light07/08/09/10 financial replay or repair",
+    "Settings/master/permissions/funding changes",
+    "Physical printer output",
+    "Unreviewed POS/rental/role/race/fault/upgrade/backup execution",
+    "New paid model/API services or agent delegation"
+  ],
+  "cases": [
+    {
+      "id": "C1-GATE",
+      "title": "Fresh candidate, clock, guarded actor and date controls",
+      "expected": "Fresh120/20clock before browser/auth; exact finalQA/product fullpins. Required focused tests and new actual title/click/refusals plus wrong-day refusal. FixedUTCday28Oct and final five-minute rollover reserve. Fresh agentLogout/Login Rememberoff and originalactor; declarations notobservations.",
+      "precondition": "Exact new date-bound candidate/actor/profile/source gates; no unresolved intent; no historical/completed-event replay.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "bindings",
+        "unchanged"
+      ],
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ]
+    },
+    {
+      "id": "C1-OPEN",
+      "title": "Fresh complete openings and unconsumed source qualification",
+      "expected": "Capture allsettings/32accounts/journal/TB/PNL/BS/cashflow/ARAPasOf28Oct/catalogue/levels/allmovements;5protectedhistorical plus completed digital/mixed sources/credits/receipts preserved. Bind originalGRN10cost60received/unbilledsourcePO600 and quote2x100draftunconverted, originaldates/parties/ancestry. No new financial effects assumed from prior summaries. Qualify allneededforms, cashfunds, noVAT/noapproval/GRNIoff/lastcost/allownegative withoutsettingschanges. Preflightcheckpoint20min. CONT1 bill600 is nowaccepted/billed and must be bound as read-only opening. No GRN rebilling.",
+      "precondition": "Exact new date-bound candidate/actor/profile/source gates; no unresolved intent; no historical/completed-event replay.",
+      "dependsOn": [
+        "C1-GATE"
+      ],
+      "evidence": [
+        "observations",
+        "bindings",
+        "unchanged"
+      ]
+    },
+    {
+      "id": "R01-P-BILL",
+      "title": "Bill this GRN10x60=600 once; stock already received: zero new qty. InventoryDr600/APCr600. No approval/settings workaround.",
+      "dependsOn": [
+        "C1-OPEN"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "READ-ONLY qualification of the already accepted own CONT1 bill600 linked to originalGRN10@60. Date28Octdue31Octdelivery27Oct;AP600paid0, exactreference, one600inventory/APjournal, no duplicatequantity. Bind originalCONT1 guardedreceipt/readback plus freshpersistedactualfacts. Never click conversion or create anotherbill. This accepted bill is current opening, not a new CONT2 event.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "businessSubmission": false
+    },
+    {
+      "id": "R01-P-PRETURN",
+      "title": "Before payment, create source-linked purchase return1x60=60 against this new bill; AP540, stock-1.",
+      "dependsOn": [
+        "R01-P-BILL"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Before payment, create source-linked purchase return1x60=60 against this new bill; AP540, stock-1. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR60, with the oracle's exact account lines. Physical quantity delta-1; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-PRETURN",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase return"
+      ]
+    },
+    {
+      "id": "R01-P-OVERPAY",
+      "title": "Vendor over-allocation boundary",
+      "dependsOn": [
+        "R01-P-PRETURN"
+      ],
+      "precondition": "Only the bound NEW run source and fresh independently verified remaining balance/quantity; no unresolved submission.",
+      "expected": "New bill balance540 after return60. In vendor form enter541 ONLY for this bill, capture native/client refusal and retained date/account/allocation. Do not submit an inconsistent preview. Verify source/journals unchanged; no server-denial claim. Legitimate later pay540 remains independently eligible after fresh funds check. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "clientFeedback",
+        "retainedFields",
+        "zeroEffects"
+      ],
+      "businessSubmission": false
+    },
+    {
+      "id": "R01-P-INVOICE",
+      "title": "Post physical6x100=600 credit invoice at bound originalcost60; cost360.",
+      "dependsOn": [
+        "R01-P-PRETURN"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Post physical6x100=600 credit invoice at bound originalcost60; cost360. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR960, with the oracle's exact account lines. Physical quantity delta-6; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-INVOICE",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Post"
+      ]
+    },
+    {
+      "id": "R01-P-RECEIPT1",
+      "title": "Receive250 on this invoice into cash1000; AR350.",
+      "dependsOn": [
+        "R01-P-INVOICE"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Receive250 on this invoice into cash1000; AR350. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR250, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-RECEIPT1",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-P-SRETURN",
+      "title": "Source-linked return1unit original100/cost60; credit outstanding AR, no cash refund; AR250.",
+      "dependsOn": [
+        "R01-P-RECEIPT1"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Source-linked return1unit original100/cost60; credit outstanding AR, no cash refund; AR250. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR160, with the oracle's exact account lines. Physical quantity delta1; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-SRETURN",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "R01-P-OVERRECEIPT",
+      "title": "Customer over-allocation boundary",
+      "dependsOn": [
+        "R01-P-SRETURN"
+      ],
+      "precondition": "Only the bound NEW run source and fresh independently verified remaining balance/quantity; no unresolved submission.",
+      "expected": "New invoice balance250 after receipt250 and credit100. Enter251 ONLY for this invoice, capture native/client refusal and retained date/account/allocation. Do not submit inconsistent preview. Verify source/journal unchanged; no server-denial claim. Legitimate receipt250 depends on accepted return, not boundary pass. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "clientFeedback",
+        "retainedFields",
+        "zeroEffects"
+      ],
+      "businessSubmission": false
+    },
+    {
+      "id": "R01-P-RECEIPT2",
+      "title": "Receive remaining250; invoice0.",
+      "dependsOn": [
+        "R01-P-SRETURN"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Receive remaining250; invoice0. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR250, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-RECEIPT2",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-P-PAY",
+      "title": "Pay remaining540 on this bill only from cash1000 AFTER fresh liquid availability>=540; no top-up/negative workaround.",
+      "dependsOn": [
+        "R01-P-RECEIPT2",
+        "R01-P-PRETURN"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Pay remaining540 on this bill only from cash1000 AFTER fresh liquid availability>=540; no top-up/negative workaround. Use the exact new source/inputs from oracle physical. One accepted journal Dr=Cr LKR540, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "oracleEvent": "R01-P-PAY",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-P-HISTORY",
+      "title": "physical history/print/report closure",
+      "dependsOn": [
+        "R01-P-PAY"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Read source, all new linked allocations/journals/audit, available document/credit/receipt/remittance previews; no physical print. Check every physical closing oracle delta against fresh openings. Missing print/audit layer stays blocked/inconclusive; this closure does NOT gate other lanes or erase successful transition evidence. Source/display labels alone do not prove persisted audit. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "physical",
+      "businessSubmission": false
+    },
+    {
+      "id": "R01-S-ORDER",
+      "title": "Convert this quote once into order200; verify ancestry/date/qty and no GL. Use actual supported detail conversion control.",
+      "dependsOn": [
+        "C1-OPEN"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Convert this quote once into order200; verify ancestry/date/qty and no GL. Use actual supported detail conversion control. Use the exact new source/inputs from oracle service. Zero journal. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-ORDER",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Convert to order"
+      ]
+    },
+    {
+      "id": "R01-S-INVOICE",
+      "title": "Convert this order through supported flow to invoice200; inspect whether this action posts immediately and read persisted outcome BEFORE considering Post. Never issue another creation/post if conversion already posted.",
+      "dependsOn": [
+        "R01-S-ORDER"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Convert this order through supported flow to invoice200; inspect whether this action posts immediately and read persisted outcome BEFORE considering Post. Never issue another creation/post if conversion already posted. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR200, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-INVOICE",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "To invoice",
+        "Post"
+      ]
+    },
+    {
+      "id": "R01-S-RECEIPT1",
+      "title": "Receive50; service AR150.",
+      "dependsOn": [
+        "R01-S-INVOICE"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Receive50; service AR150. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR50, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-RECEIPT1",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-S-CREDIT",
+      "title": "Source-linked credit1unit100 for delivered-service allowance; AR50; no stock/cash.",
+      "dependsOn": [
+        "R01-S-RECEIPT1"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Source-linked credit1unit100 for delivered-service allowance; AR50; no stock/cash. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR100, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-CREDIT",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ]
+    },
+    {
+      "id": "R01-S-RECEIPT2",
+      "title": "Receive remaining50; source0.",
+      "dependsOn": [
+        "R01-S-CREDIT"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Receive remaining50; source0. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR50, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-RECEIPT2",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-S-BILL",
+      "title": "New delivered manual-service expense bill1x80=80 to approved expense6800; distinct supplier invoice reference; zero stock; AP80.",
+      "dependsOn": [
+        "R01-S-RECEIPT2"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "New delivered manual-service expense bill1x80=80 to approved expense6800; distinct supplier invoice reference; zero stock; AP80. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR80, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-BILL",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save purchase"
+      ]
+    },
+    {
+      "id": "R01-S-PAY",
+      "title": "Pay80 on this bill only from cash1000 if fresh available funds>=80; source0.",
+      "dependsOn": [
+        "R01-S-BILL"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Pay80 on this bill only from cash1000 if fresh available funds>=80; source0. Use the exact new source/inputs from oracle service. One accepted journal Dr=Cr LKR80, with the oracle's exact account lines. Physical quantity delta0; preserve original source ancestry. Verify immediate feedback AND independently persisted source/journal/movement readback before disposition. All amounts are LKR. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "oracleEvent": "R01-S-PAY",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Record payment"
+      ]
+    },
+    {
+      "id": "R01-S-HISTORY",
+      "title": "service history/print/report closure",
+      "dependsOn": [
+        "R01-S-PAY"
+      ],
+      "precondition": "Exact candidate, declared own fixture/profile, current openings and required dependencies verified. No unresolved submission or changed actor/configuration. Only new run-owned documents; protected/historical sources untouched.",
+      "expected": "Read source, all new linked allocations/journals/audit, available document/credit/receipt/remittance previews; no physical print. Check every service closing oracle delta against fresh openings. Missing print/audit layer stays blocked/inconclusive; this closure does NOT gate other lanes or erase successful transition evidence. Source/display labels alone do not prove persisted audit. New issue/payment/conversion date2026-10-28; due2026-10-31. Preserve source issue/delivery dates separately. Native commit and re-read final controlled dates AFTER all other fields rerender before intent. No submission at UTC rollover. Case source/actor/purpose/account must match freshly bound own inputs.",
+      "evidence": [
+        "intentReadback",
+        "source",
+        "journalAndStock",
+        "unchanged"
+      ],
+      "lane": "service",
+      "businessSubmission": false
+    },
+    {
+      "id": "C1-DATE-ADJACENT",
+      "title": "Original and adjacent dated reporting/print/history checks",
+      "expected": "Read-only compare originaldigital receipt28Oct and mixedreceipt27Oct against their27Oct source docs, dated28Oct closing and asOf27 aging. No newdigital/mixed events. Check new receipt/remittance/invoice/credit/bill previews and sources; original27Oct quote→28Oct order→28Oct invoice lineage. Financialaudit gap explicit; no physicalprinting.",
+      "precondition": "Exact new date-bound candidate/actor/profile/source gates; no unresolved intent; no historical/completed-event replay.",
+      "dependsOn": [
+        "C1-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "bindings",
+        "unchanged"
+      ]
+    },
+    {
+      "id": "C1-COMBINED",
+      "title": "Accepted continuation branches reconcile",
+      "expected": "Sum ONLY confirmed accepted remaining12financialevents ifbothcomplete: DrCr2780; cash-20; inventoryGL-360; physicalqty-6/currentstockvalue-360;ARnet0/AP-600;netincome+220/assets-380. Threephysicalmovements. Bill600 is acceptedpreviousphase/opening, never replay. Fullchain across exactphaseevidence remainsseparate fromnewrun delta; preserveoriginalstockGLgap120. Compare allprotected/settings/unaffectedrows and oldevents. Partialbranches neverforce targets.",
+      "precondition": "Exact new date-bound candidate/actor/profile/source gates; no unresolved intent; no historical/completed-event replay.",
+      "dependsOn": [
+        "C1-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "bindings",
+        "unchanged"
+      ]
+    },
+    {
+      "id": "C1-END",
+      "title": "One consolidated closure and results",
+      "expected": "Allcases truthfuldispositions, no unresolvedsubmission, exactendingcandidate, acceptedbranchreconciliation, one sanitizedresults/codinghandoffPR/currentpointers; closeclockthroughpublication withmetadatatail. Stopnewbusiness100reserve20; no merge/deploy/launchclaim;backupLAST.",
+      "precondition": "Exact new date-bound candidate/actor/profile/source gates; no unresolved intent; no historical/completed-event replay.",
+      "dependsOn": [
+        "C1-GATE"
+      ],
+      "evidence": [
+        "observations",
+        "bindings",
+        "unchanged"
+      ],
+      "recovery": true
+    }
+  ],
+  "bookReferences": [
+    "workflows/casebooks/WB-PHY.json",
+    "workflows/casebooks/WB-DIG.json",
+    "workflows/casebooks/WB-SVC.json",
+    "workflows/casebooks/WB-HYB.json"
+  ],
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-10-28",
+    "stopBeforeMidnightMinutes": 5,
+    "meaning": "New issue/payment/conversion dates28Oct; existing source issue/delivery27Oct preserved; due31Oct. No product policy change."
+  }
+}

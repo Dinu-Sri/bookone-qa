@@ -1,0 +1,841 @@
+{
+  "id": "WB-HYB",
+  "revision": 5,
+  "title": "Hybrid businesses and cross-module jobs",
+  "profileIds": [
+    "BP-05"
+  ],
+  "familyRefs": [
+    "WF-HYB-001"
+  ],
+  "journeys": [
+    {
+      "id": "WB-HYB.J01",
+      "revision": 1,
+      "title": "Mixed hire, service, goods and digital event",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Completed hire500+service200+physical300 cost180+digital100; deposit1000; physical stock10@60; sold3; fleet20.",
+      "ruleRefs": [
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-04",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-101",
+        "E-110"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "inventoryProducts",
+        "rentalEvents",
+        "settlementAllocations"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/rental-money.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Post four-class invoice",
+          "given": "All fulfillment assumptions explicitly confirmed.",
+          "action": "Invoice1100.",
+          "expected": "AR1100/revenue1100; physical COGS180/stock7/value420; fleet owned20 unchanged; service/digital no stock.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "mixed total cents",
+              "operation": "add",
+              "operands": [
+                50000,
+                20000,
+                30000,
+                10000
+              ],
+              "equals": 110000
+            }
+          ],
+          "id": "WB-HYB.J01.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Apply deposit and settle",
+          "given": "Deposit1000 liability; AR1100.",
+          "action": "Apply1000; receive100.",
+          "expected": "Liability0; AR0; net bank1100; revenue1100 once; profit920 before other costs.",
+          "kind": "partial",
+          "oracle": [
+            {
+              "label": "profit cents",
+              "operation": "sub",
+              "operands": [
+                110000,
+                18000
+              ],
+              "equals": 92000
+            }
+          ],
+          "id": "WB-HYB.J01.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return one sold good",
+          "given": "Source physical3@100/cost60.",
+          "action": "Credit1 physical.",
+          "expected": "Stock8/value480; revenue1000; COGS120; customer credit100 if fully settled; fleet/service/digital unchanged.",
+          "kind": "correction",
+          "oracle": [],
+          "id": "WB-HYB.J01.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return hire separately",
+          "given": "Hire units dispatched10.",
+          "action": "Receive all10 through rental returns.",
+          "expected": "Fleet state restores; no reversal of physical goods sale or hire revenue merely because equipment returned.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J01.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Digital delivery gap",
+          "given": "Invoice and payment complete; entitlement not established.",
+          "action": "Assess full mixed-job completion.",
+          "expected": "Financial subjourney may be observed, but full digital fulfillment remains unsupported/unaccepted until independently verified.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J01.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-HYB.J02",
+      "revision": 5,
+      "title": "Shared discounts, mixed returns and tax buckets",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Physical300 +service200; header discount50; no tax baseline; independent proportional shares.",
+      "ruleRefs": [
+        {
+          "id": "BR-SAL-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-03",
+          "revision": 1
+        },
+        {
+          "id": "RB-LK-03",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-102",
+        "E-109"
+      ],
+      "entityRefs": [
+        "businessDocuments",
+        "businessDocumentLines",
+        "salesDiscounts"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts"
+      ],
+      "supportDisposition": "requires-policy-or-capability-review",
+      "policyGaps": [
+        "Mixed tax legal classification and product support require independent expert/capability review; tax-free arithmetic remains directly specified."
+      ],
+      "cases": [
+        {
+          "title": "Proportional discount",
+          "given": "Gross500/header50.",
+          "action": "Post with stable reviewed allocation.",
+          "expected": "Physical discount30/net270; service discount20/net180; total450; physical COGS unchanged180.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "discount allocation cents",
+              "operation": "add",
+              "operands": [
+                3000,
+                2000
+              ],
+              "equals": 5000
+            },
+            {
+              "label": "net cents",
+              "operation": "add",
+              "operands": [
+                27000,
+                18000
+              ],
+              "equals": 45000
+            }
+          ],
+          "id": "WB-HYB.J02.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Return physical component",
+          "given": "Physical source net270 for3 units.",
+          "action": "Return1.",
+          "expected": "Credit90; restore cost60; service net180 unchanged; total remaining360.",
+          "kind": "correction",
+          "oracle": [
+            {
+              "label": "remaining invoice cents",
+              "operation": "sub",
+              "operands": [
+                45000,
+                9000
+              ],
+              "equals": 36000
+            }
+          ],
+          "id": "WB-HYB.J02.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Remainder tie",
+          "given": "Three positive equal lines1.00; header0.01.",
+          "action": "Allocate with largest remainder/stable line ID tie.",
+          "expected": "Discount shares0.01/0/0 in stable declared order; net total2.99; no lost cent or order-dependent surprise.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "net cents",
+              "operation": "sub",
+              "operands": [
+                300,
+                1
+              ],
+              "equals": 299
+            }
+          ],
+          "id": "WB-HYB.J02.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Mixed taxable and exempt",
+          "given": "Physical taxable, service exempt under reviewed fixture.",
+          "action": "Post mixed tax buckets.",
+          "expected": "Per-line classification retained or unsupported explicit refusal; never apply blanket tax to exempt line.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J02.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Source header discount preview",
+          "given": "Stored original net275.50 including header discount.",
+          "action": "Open linked return preview then post permitted full return.",
+          "expected": "Preview/post/credit all275.50; do not omit header discount or use changed master default. Partial-source variant: separate source3x100, line10%, header5%, total256.50, cost180. Qty1 preview AND post85.50/cost60; remaining2 preview AND post171/cost120; cumulative256.50/cost180. UI previews must use source proportions rather than fixed copied discounts30/13.50.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-HYB.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Editable source price cannot create misleading linked-return preview",
+          "given": "Source3x100,line10%,header5%=256.50,cost180; oneunit alreadycredited85.50; remaining2.",
+          "action": "Try changing copied unitprice100 to200 on remaining2; compare preview,validation and accepted source credit.",
+          "expected": "Lock source economic fields or explicitly reject unsupported repricing. If source price remains100, preview and persisted credit both171/cost120; never preview361 and silently save171. No source/ledger history rewrite.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "remaining source credit cents",
+              "operation": "mul",
+              "operands": [
+                2,
+                8550
+              ],
+              "equals": 17100
+            }
+          ],
+          "id": "WB-HYB.J02.C06",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Sequential return rounding exhausts original quantity and value",
+          "given": "Digital sourceqty3@1,fixedheader0.01,total2.99; no physical stock/COGS. Two accepted oneunitcredits1 each leaveoneunit/value0.99.",
+          "action": "Return finalremainingunit through source-linked form.",
+          "expected": "Preview/post residual0.99 under declared cumulative rounding rule; cumulative3units/2.99 and sourcebalance0. Do not preview1 and reject legitimate finalunit as valueexcess. Other valid stable allocations may put the cent earlier but must conserve exact full source amount.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "remaining cents",
+              "operation": "sub",
+              "operands": [
+                299,
+                100,
+                100
+              ],
+              "equals": 99
+            },
+            {
+              "label": "cumulative source cents",
+              "operation": "add",
+              "operands": [
+                100,
+                100,
+                99
+              ],
+              "equals": 299
+            }
+          ],
+          "id": "WB-HYB.J02.C07",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C08",
+          "title": "Aggregate duplicate return lines before enforcing source quantity",
+          "given": "Sourceqty3 of one stable SKU/description; priorreturned0; submitted current linesqty2+2 with the same key.",
+          "action": "Attempt source-linked sales and purchase returns, then inspect source/return/audit/ledger/stock snapshots.",
+          "expected": "Reject aggregate4>3 atomically. No return, credit, inventory movement or business CREATE history; sourcebalance and original party unchanged. Also test legitimate duplicate source lines and prior+current totals; individual line checks cannot establish conservation.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "current total units",
+              "operation": "add",
+              "operands": [
+                2,
+                2
+              ],
+              "equals": 4
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C09",
+          "title": "Closing taxable return preserves net discount and tax exactly",
+          "given": "Separate source3x100,linefixed30,header13.50: net256.50; hypothetical supported18% tax46.17; gross302.67; no priorreturns. Verify stored eligible tax configuration before live use; this fixture does not establish statutory applicability.",
+          "action": "Preview/post permitted full return on both sides; repeat partial1+remaining2 and compare tax/source allocations.",
+          "expected": "Full return retains line discount30 and header13.50; net256.50,tax46.17,gross302.67. Sales reverses source AR/revenue/tax and restores physical cost180; purchase reverses AP/inputtax/inventory as applicable. Do not treat gross302.67 as net residual or erase header13.50 and then tax270. Assert source party/date/quantity, audit and unchanged unrelated records; unresolved tax support blocks live tax acceptance.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "gross cents",
+              "operation": "add",
+              "operands": [
+                25650,
+                4617
+              ],
+              "equals": 30267
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C10",
+          "title": "Closing residual above final unit line value stays representable",
+          "given": "No tax digital sources:7x1/header0.05,total6.95 and10x1/header0.05,total9.95. Declared rounding gives accepted first6x0.99=5.94 or9x0.99=8.91.",
+          "action": "Return finalunit; compare preview, net line/discount arithmetic, persisted credit, sourcebalance and audit.",
+          "expected": "Conserve source value: final1.01 or1.04 under this declared prior allocation. Represent residual through an explicit valid allocation adjustment, or allocate prior returns differently so final credit is representable; never claim helper total1.01/1.04 while line1 minus nonnegative discount gives1.00. No unexplained revenue/stock/party changes. New regression includes both existing3unit last0.99 and fullsource anchors.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "seven-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                695,
+                594
+              ],
+              "equals": 101
+            },
+            {
+              "label": "ten-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                995,
+                891
+              ],
+              "equals": 104
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C11",
+          "title": "Non-closing return respects exhausted header budget in preview and posting",
+          "given": "Fresh digital source7x1/header0.05/net6.95. Declared round-half-up per-unit capped-header fixture: five accepted one-unit credits0.99 consume all0.05 header; source has2units/value2.00 left. Also source10x1/header0.05 withfive0.99priorcredits.",
+          "action": "Return one more unit before closing; compare displayed header/total, persisted lines/header/net, source remainingqty/value, GL and unchanged state; then close remainingunits.",
+          "expected": "Under this declared allocation, no header discount remains: sixth-unit preview and posting both1.00/header0; every subsequent preview equals its accepted credit. Fresh totals conserve6.95 or9.95 and sourceclosesat0; no undocumented adjustment or retroactive rewrite of prior credits. This fixture profile is not a universal rounding policy. Existing legacy residual1.01/1.04 expectations remain in C10.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "remaining header cents",
+              "operation": "sub",
+              "operands": [
+                5,
+                5
+              ],
+              "equals": 0
+            },
+            {
+              "label": "sixth credit cents",
+              "operation": "sub",
+              "operands": [
+                100,
+                0
+              ],
+              "equals": 100
+            },
+            {
+              "label": "seven-unit fresh cumulative cents",
+              "operation": "add",
+              "operands": [
+                99,
+                99,
+                99,
+                99,
+                99,
+                100,
+                100
+              ],
+              "equals": 695
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-HYB.J03",
+      "revision": 1,
+      "title": "Modules, plans, entity types and existing history",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Separate company/sole-proprietor/personal/pending entities; explicit module flags and supported plan.",
+      "ruleRefs": [
+        {
+          "id": "RB-CONFIG-01",
+          "revision": 1
+        },
+        {
+          "id": "RB-CONFIG-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-103",
+        "E-104",
+        "E-115",
+        "E-116",
+        "E-117"
+      ],
+      "entityRefs": [
+        "tenants",
+        "tenantMemberships",
+        "tenantRoles",
+        "companyProfiles"
+      ],
+      "sourcePaths": [
+        "apps/web/src/lib/platform-modules.ts",
+        "packages/auth/src/permissions/ceiling.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Plan versus custom modules",
+          "given": "Growth default inventory on; explicit inventory false.",
+          "action": "Load permissions and submit physical write.",
+          "expected": "Actual persisted false is honored; default plan does not silently re-enable; UI and server both reflect effective capability.",
+          "kind": "normal",
+          "oracle": [],
+          "id": "WB-HYB.J03.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Module off with history",
+          "given": "Posted invoice/stock movement exists.",
+          "action": "Disable relevant module then view history and attempt new write.",
+          "expected": "Preserve authorized historical read/report; reject new unsupported write; no deletion/reclassification of issued facts.",
+          "kind": "history",
+          "oracle": [],
+          "id": "WB-HYB.J03.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Viewer allow override",
+          "given": "Viewer receives allow override on write key.",
+          "action": "Attempt same write with Owner positive control.",
+          "expected": "Ceiling still prevents elevation; own Viewer no financial/document writes.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-HYB.J03.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Owner explicit deny",
+          "given": "Owner has write permission explicitly denied.",
+          "action": "Submit cached create form.",
+          "expected": "Effective deny applies per authoritative policy; UI visibility does not overrule server ceiling.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-HYB.J03.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "HR advertised coming soon",
+          "given": "Module catalog has hr key but not implemented payroll.",
+          "action": "Try to include payroll in supported workbook execution.",
+          "expected": "Record future capability/backlog; no payroll acceptance or fake salary workflow from a module key alone.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J03.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-HYB.J04",
+      "revision": 1,
+      "title": "Locations, brands, book domains and workspace switch",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Tenants A/B; A brands Red/Blue and business/personal domains; identical document numbers but distinct IDs.",
+      "ruleRefs": [
+        {
+          "id": "BR-SEC-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SEC-02",
+          "revision": 1
+        },
+        {
+          "id": "RB-CONFIG-02",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-08",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-105",
+        "E-106",
+        "E-107"
+      ],
+      "entityRefs": [
+        "companyProfiles",
+        "brands",
+        "locations",
+        "businessDocuments",
+        "tenantMembershipScopes"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/record-entry.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Independent scopes",
+          "given": "A/Red sales100, A/Blue sales200.",
+          "action": "Run scoped report/export and global.",
+          "expected": "Red100/Blue200/global300; own line identities retained; no number-based mixing.",
+          "kind": "normal",
+          "oracle": [
+            {
+              "label": "global cents",
+              "operation": "add",
+              "operands": [
+                10000,
+                20000
+              ],
+              "equals": 30000
+            }
+          ],
+          "id": "WB-HYB.J04.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Business versus personal",
+          "given": "Business income100; personal income50.",
+          "action": "Filter both domains.",
+          "expected": "100 and50 remain separate; global150 only if explicitly requested and authorized; AR/AP/files follow same domain contract.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J04.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "A to B to A",
+          "given": "A form/report cached; B active after verified switch.",
+          "action": "Navigate back and submit stale A form while B context active.",
+          "expected": "Deny or explicitly rebind/reconfirm under supported contract; no A data written into B and no stale A cache in B.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-HYB.J04.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same document number",
+          "given": "A INV001 and B INV001 both real.",
+          "action": "Open/pay/export one by known foreign ID.",
+          "expected": "Tenant scope uses authoritative IDs/session, not number match; foreign denied with own positive.",
+          "kind": "boundary",
+          "oracle": [],
+          "id": "WB-HYB.J04.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Scope revocation",
+          "given": "Role location A scope revoked in another session.",
+          "action": "Read and mutate using stale tab.",
+          "expected": "Fresh server permission context denies revoked scope; cache/file/export access refreshed; prior writes not erased.",
+          "kind": "permissions",
+          "oracle": [],
+          "id": "WB-HYB.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "WB-HYB.J05",
+      "revision": 1,
+      "title": "Shared-resource contention and partial failure",
+      "status": "draft",
+      "risk": "P1",
+      "fixture": "Hybrid job has physical last1, rental free1 and AR100; isolated two-client runtime.",
+      "ruleRefs": [
+        {
+          "id": "BR-ACC-03",
+          "revision": 1
+        },
+        {
+          "id": "BR-ACC-04",
+          "revision": 1
+        },
+        {
+          "id": "BR-STK-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-REN-01",
+          "revision": 1
+        }
+      ],
+      "legacyTaskRefs": [
+        "E-111",
+        "E-113",
+        "E-114"
+      ],
+      "entityRefs": [
+        "inventoryStockLevels",
+        "rentalBookingLines",
+        "businessDocuments",
+        "transactions"
+      ],
+      "sourcePaths": [
+        "apps/web/src/app/actions/commercial-docs.ts",
+        "apps/web/src/app/actions/rental-bookings.ts",
+        "apps/web/src/app/actions/documents.ts"
+      ],
+      "supportDisposition": "source-observed-contract; acceptance-unverified",
+      "policyGaps": [],
+      "cases": [
+        {
+          "title": "Physical sale versus rental booking",
+          "given": "Different product IDs/classes each1 available.",
+          "action": "Post both concurrently.",
+          "expected": "Each locks correct resource; goods may sell1 and fleet reserve1; no shared quantity bucket conflation.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-HYB.J05.C01",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Same stock sale race",
+          "given": "Two goods invoices contend for last1.",
+          "action": "Post together under block policy.",
+          "expected": "One accepts; total COGS once; no negative inventory or orphan second invoice.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-HYB.J05.C02",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Parallel AR collections",
+          "given": "AR100; two receipts80.",
+          "action": "Submit concurrently.",
+          "expected": "No allocated160; policy permits one80 with20 remaining or reviewed exact alternatives; rejected80 has zero cash.",
+          "kind": "concurrency",
+          "oracle": [],
+          "id": "WB-HYB.J05.C03",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Missing mandatory account",
+          "given": "Inventory or deposit account missing/inactive/foreign.",
+          "action": "Post mixed transaction.",
+          "expected": "Whole business operation fails before partial journals/stock/reservations, with actionable configuration error.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-HYB.J05.C04",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Fault after stock before journal",
+          "given": "Ephemeral isolated fixture and approved injected fault.",
+          "action": "Force intermediate durable-boundary failure.",
+          "expected": "Rollback all intended business effects; operational telemetry separately allowed; retry yields at most one complete operation.",
+          "kind": "failure",
+          "oracle": [],
+          "id": "WB-HYB.J05.C05",
+          "execution": "not-run",
+          "binding": null
+        }
+      ],
+      "controlRefs": [
+        "CTL-ACTOR",
+        "CTL-TENANT",
+        "CTL-ROLE",
+        "CTL-LOCK",
+        "CTL-RETRY",
+        "CTL-RACE",
+        "CTL-FAULT",
+        "CTL-HISTORY",
+        "CTL-REPORT",
+        "CTL-UI"
+      ],
+      "review": {
+        "qaReviewer": null,
+        "businessOwner": null,
+        "record": null
+      },
+      "acceptance": "not-assessed"
+    }
+  ],
+  "schemaVersion": 1,
+  "author": "independent-QA-agent",
+  "productStudySha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "productStudyVersion": "2.5.12",
+  "rulebookVersion": "1.0.0",
+  "moneyConvention": "LKR, two decimal places; numerical examples in rupees unless oracle label says cents",
+  "execution": "not-run",
+  "acceptance": "not-assessed"
+}

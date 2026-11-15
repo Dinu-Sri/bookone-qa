@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "executionQa": "a6fa69020c9d62b9a3c03ceadf13627db52e0ea5",
+  "release": "ceacdb17c1b4577e11f6876593637a83ea1b6cc7",
+  "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "productTree": "06cb8f5c967ff3edab6361123ddc029778f087b0",
+  "liveStamp": "v2.5.28 · 48e4407",
+  "dateContract": "15Nov2026UTC newevents;14Novoriginalsource/opening preserved;newdue17metadata N/A onPOS",
+  "host": {
+    "passed": 106,
+    "failed": 0,
+    "metadataFiles": 1158,
+    "scenarios": 792
+  },
+  "controls": {
+    "positiveOneUi": 2,
+    "refusalsZeroUi": 5,
+    "proofClocksClosed": 7
+  },
+  "actions": {
+    "total": 8,
+    "accepted": 8,
+    "financialJournals": 7,
+    "drCrCents": 108960,
+    "metadataClose": 1,
+    "uncertain": 0,
+    "replayed": 0
+  },
+  "V": {
+    "journals": 29,
+    "drCrCents": 867840,
+    "cashCents": 22700,
+    "bankCents": 54420,
+    "cardCents": 0,
+    "arCents": 0,
+    "apCents": 0,
+    "inventoryCents": 78000,
+    "inputVatCents": 20880,
+    "outputVatCents": 9000,
+    "equityCents": 155000,
+    "revenueCents": 118000,
+    "returnsCents": 68000,
+    "cogsCents": 30000,
+    "expenseCents": 8000,
+    "profitCents": 12000,
+    "assetsCents": 176000,
+    "officeQty": 3,
+    "posQty": 10
+  },
+  "shift": {
+    "status": "CLOSED",
+    "opened": "2026-11-14T15:44:09Z",
+    "closed": "2026-11-15T05:06:08Z",
+    "sales": 3,
+    "refunds": 5,
+    "saleCents": 54280,
+    "refundCents": 54280,
+    "tickets": 8,
+    "floatCents": 5000,
+    "countedCents": 5000,
+    "varianceCents": 0
+  },
+  "N": {
+    "freshClosingMatched": true,
+    "bankCents": 38000,
+    "stockQty": 2,
+    "stockValueCents": 12000,
+    "equityCents": 50000,
+    "closedTickets": 6,
+    "businessRepeated": false
+  },
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "passed": 31,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 6
+  },
+  "unresolved": [],
+  "cases": [
+    {
+      "id": "G01",
+      "title": "New clock and clean exact QA",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "G02",
+      "title": "Actual deployed fingerprint",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "G03",
+      "title": "Actual supported control proof",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "G04",
+      "title": "Fresh V Owner authentication",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "G05",
+      "title": "Fresh CONT8 closing and POS fixture",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "G06",
+      "title": "Historical preservation and execution eligibility",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "QPOS",
+      "title": "Unsaved fixed VAT return and overnight shift qualification",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "E30",
+      "title": "V pos-cash-refund1",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E31",
+      "title": "V pos-cash-refund2",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E32",
+      "title": "V pos-card-service-sale",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E33",
+      "title": "V pos-card-refund1",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E34",
+      "title": "V pos-card-refund2",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E35",
+      "title": "V pos-bank-mixed-sale",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E36",
+      "title": "V pos-bank-mixed-refund",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "E37",
+      "title": "V pos-shift-close",
+      "status": "passed",
+      "businessSubmissions": 1
+    },
+    {
+      "id": "R01",
+      "title": "V office stock/source closure",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R02",
+      "title": "V report/ledger closure",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R03",
+      "title": "V POS tender and Z closure",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R04",
+      "title": "N source/stock closure",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R06",
+      "title": "V tax/preview/print closure",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R07",
+      "title": "N commercial print/history",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R08",
+      "title": "All stock movement correspondence",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R09",
+      "title": "Scoped reports",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R10",
+      "title": "Audit/date/source history",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "R11",
+      "title": "No duplicate or hardware effects",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "CARRY-RECEIPT",
+      "title": "Customer payment receipt regression",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "CARRY-REMIT",
+      "title": "Vendor remittance regression",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "CARRY-CENTS",
+      "title": "Cent boundary disposition",
+      "status": "inconclusive",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "CARRY-PRINT",
+      "title": "Manual suppression evidence",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z1",
+      "title": "Resolve every submission",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z2",
+      "title": "Partial or complete monetary reconciliation",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z3",
+      "title": "Preservation check",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z4",
+      "title": "All successor dispositions",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z5",
+      "title": "Consolidated coding handoff",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z6",
+      "title": "Coverage and launch register",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z7",
+      "title": "Sanitized publication",
+      "status": "passed",
+      "businessSubmissions": 0
+    },
+    {
+      "id": "Z8",
+      "title": "Close clock and future pointer",
+      "status": "passed",
+      "businessSubmissions": 0
+    }
+  ],
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1600618,
+    "explicitPausedMs": 0
+  },
+  "customerLaunch": "not-approved",
+  "recovery": "LAST"
+}
