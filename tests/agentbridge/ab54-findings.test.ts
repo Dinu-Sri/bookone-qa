@@ -14,4 +14,3 @@ describe('independent acceptance expectations, failures retained',()=>{
  it('connected agent cannot grant a human-only approval even with carried approve capability',async()=>{const{service,proposalId}=await setup();const r=await dispatchTool(service,{...actor,connectionId:'synthetic-client'},'grant_approval',{proposalId});expect(r).toMatchObject({ok:false});});
  it('configured live OCR must do more than throw an unconditional blocked stub',async()=>{const extractor=liveExtractorFromEnv({AGENT_BRIDGE_OCR_ENDPOINT:'http://127.0.0.1:1',AGENT_BRIDGE_OCR_KEY:'synthetic-never-used'});await expect(extractor.extract({contentHash:'synthetic'})).rejects.not.toThrow('remote smoke is BLOCKED');});
 });
-

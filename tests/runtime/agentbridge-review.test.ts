@@ -69,5 +69,3 @@ it('AB-REC-01 actual tenant archive includes the persisted AgentBridge document 
     expect(snapshot.rowCounts.agent_bridge_blobs).toBe(2);
   });
 });
-
-

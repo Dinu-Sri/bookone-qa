@@ -72,9 +72,21 @@
   "decision": "coding repair required; no activation or launch approval",
   "hashes": {
     "product-ref.json": "729687d20148edbd013433ace17d12d57ee68409e76d2a94ed0cea5d7129a159",
-    "tests/agentbridge/ab54-findings.test.ts": "649b4c8e317fb6b25e0dce5f5e84231a42bbf20d0a476a8bad477899df441c24",
-    "tests/runtime/agentbridge-review.test.ts": "2d22e68ac453f635fc45737013116332a32c4c6ea8bc407b525bff7c363960e8",
-    "vitest.ab54-review.config.mjs": "a17bc834715c3ce8af7099c0e5df8d7ccd3455124bdb42bb154b249165a8a4ef",
-    "vitest.ab54-runtime.config.ts": "ffff35b49c99cb05a89763c67bcb475016d6efb475d05bdb2590f0043dd8b9c8"
+    "tests/agentbridge/ab54-findings.test.ts": "eb752d970b5816f027d9752dd8caf0ce2d741c8b45d06ac7832edff021b480f2",
+    "tests/runtime/agentbridge-review.test.ts": "69e964e86af197e473197017fd16ca7a7a6d0cd44bce6085b2cb5ecca23dd4e7",
+    "vitest.ab54-review.config.mjs": "f6c2a374f46bbee122e01dcac58cd2a69fe74af6e0dc01bb127b96ad0b6dded0",
+    "vitest.ab54-runtime.config.ts": "0fddce67934f16386948588d4a473e39e0e11f70a45a745238ee9604deb97b04"
+  },
+  "hashBoundary": "Git index blob bytes",
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/121",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 899539,
+    "pausedMs": 0
+  },
+  "cleanup": {
+    "temporaryBrowserTab": "closed",
+    "localDatabase": "stopped; data retained",
+    "unresolvedAuth": 0
   }
 }
