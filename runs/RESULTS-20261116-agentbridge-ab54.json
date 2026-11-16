@@ -1,0 +1,80 @@
+{
+  "dateContract": "2026-11-16 UTC",
+  "productSha": "ab54e3493dfbc6cb91d7c9991ae58f2e44610591",
+  "service": {
+    "passed": 0,
+    "failed": 5,
+    "cases": [
+      {
+        "name": "independent acceptance expectations, failures retained unsupported paid invoice cannot be approved and posted while blocking issues remain",
+        "status": "failed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained different keys concurrent on same approved proposal cause at most one posting call",
+        "status": "failed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained tokens without finite expiry are rejected even when their signature is valid",
+        "status": "failed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained connected agent cannot grant a human-only approval even with carried approve capability",
+        "status": "failed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained configured live OCR must do more than throw an unconditional blocked stub",
+        "status": "failed"
+      }
+    ]
+  },
+  "postgres": {
+    "passed": 3,
+    "failed": 2,
+    "cases": [
+      {
+        "name": "AB-DB-01 positive scoped upload persists a real document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-02 separate tenant cannot read the positive fixture under non-owner RLS",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-03 returned runtime service retains the authorized tenant scope at call time",
+        "status": "failed"
+      },
+      {
+        "name": "AB-DB-04 scoped supported approval posts an actual balanced ERP bill matching its preview",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-01 actual tenant archive includes the persisted AgentBridge document and blob",
+        "status": "failed"
+      }
+    ]
+  },
+  "migrationsApplied": 46,
+  "branchProtection": {
+    "masterProtected": false,
+    "requiredContexts": [],
+    "rulesets": []
+  },
+  "staging": {
+    "stamp": "v2.7.0 · ab54e34",
+    "inboxEnabled": false,
+    "draftOnly": true,
+    "postingDisabled": true,
+    "settingsChanged": false,
+    "businessActions": 0,
+    "priorRunsReplayed": false
+  },
+  "recovery": "LAST: actual export omitted AgentBridge records; full restore blocked",
+  "decision": "coding repair required; no activation or launch approval",
+  "hashes": {
+    "product-ref.json": "729687d20148edbd013433ace17d12d57ee68409e76d2a94ed0cea5d7129a159",
+    "tests/agentbridge/ab54-findings.test.ts": "649b4c8e317fb6b25e0dce5f5e84231a42bbf20d0a476a8bad477899df441c24",
+    "tests/runtime/agentbridge-review.test.ts": "2d22e68ac453f635fc45737013116332a32c4c6ea8bc407b525bff7c363960e8",
+    "vitest.ab54-review.config.mjs": "a17bc834715c3ce8af7099c0e5df8d7ccd3455124bdb42bb154b249165a8a4ef",
+    "vitest.ab54-runtime.config.ts": "ffff35b49c99cb05a89763c67bcb475016d6efb475d05bdb2590f0043dd8b9c8"
+  }
+}
