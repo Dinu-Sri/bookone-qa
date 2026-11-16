@@ -152,5 +152,25 @@
     "priorRunsReplayed": false
   },
   "recovery": "LAST: exact DB-backed attachment bytes restored; source unchanged; posted-money recovery blocked by approval prerequisite",
-  "decision": "AB-11 permission integration defect; AB-04 focused coding repair; no activation/launch approval"
+  "decision": "AB-11 permission integration defect; AB-04 focused coding repair; no activation/launch approval",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 642349,
+    "pausedMs": 0
+  },
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/123",
+  "cleanup": {
+    "temporaryTab": "closed",
+    "isolatedDatabase": "stopped; data retained",
+    "unresolvedAuth": 0
+  },
+  "hashBoundary": "Git blob bytes",
+  "hashes": {
+    "product-ref.json": "1db10b31eda231bbd0e977934e4eb6e2674daaf16416af72d236e3ae24d5d55f",
+    "tests/agentbridge/v273-permissions.test.ts": "13923312d36bdbbc556518626a175d9090e477f5d9180150456757138b64a49a",
+    "tests/runtime/agentbridge-v273.test.ts": "c435db9540865ba9653883cc9c1137084bee95f2d39440e0387afe0575fd5ab0",
+    "vitest.v273-permissions.config.mjs": "e15c960b04b3af660069eba7d2ffde22c49c1b2b5ca7a7aa9c67ce8281bee7e8",
+    "vitest.v273-runtime.config.ts": "d215f3eb82526f9287ba12997d18148ac6a82fea3948a56506c64d6457723b85",
+    "scripts/agentbridge-v273-review.mjs": "abd07166f6be7f3e99f22ed94ae03fdf467fb3c9b982b39ebe5611a1f288047f"
+  }
 }
