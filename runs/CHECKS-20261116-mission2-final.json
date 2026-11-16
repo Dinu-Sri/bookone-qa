@@ -40,7 +40,8 @@
     },
     {
       "id": "F08",
-      "status": "pending"
+      "status": "passed",
+      "actual": "Initial sanitized result857d06b0a3a903ee323365120109db2265e09f74verified on draftPR120 successor ofPR119 while clockACTIVE; official close immediately follows and metadata-only tail."
     }
   ],
   "evidenceHashes": {
@@ -405,5 +406,10 @@
     "First build missing real lucide dependency; installed pinned real package",
     "Generic spy locator timed out after ARpositive; read actual DOM and captured one call without replay",
     "Restricted shutdowncheck EACCES retained; normalhost ECONNREFUSED verified"
-  ]
+  ],
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 379220,
+    "pausedMs": 0
+  }
 }
