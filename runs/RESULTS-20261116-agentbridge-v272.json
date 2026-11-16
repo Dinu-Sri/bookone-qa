@@ -1,0 +1,120 @@
+{
+  "dateContract": "2026-11-16 UTC",
+  "productSha": "29675262eaa2dc36f7e4d6a19730aa517295b352",
+  "version": "2.7.2",
+  "productSuite": {
+    "passed": 39,
+    "failed": 0
+  },
+  "originalServiceAcceptance": {
+    "passed": 5,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "independent acceptance expectations, failures retained unsupported paid invoice cannot be approved and posted while blocking issues remain",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained different keys concurrent on same approved proposal cause at most one posting call",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained tokens without finite expiry are rejected even when their signature is valid",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained connected agent cannot grant a human-only approval even with carried approve capability",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained configured live OCR must do more than throw an unconditional blocked stub",
+        "status": "passed"
+      }
+    ]
+  },
+  "runtimeAcceptance": {
+    "passed": 5,
+    "failed": 3,
+    "cases": [
+      {
+        "name": "AB-DB-01 positive scoped upload persists a real document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-02 separate tenant cannot read the positive fixture under non-owner RLS",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-03 returned runtime service retains the authorized tenant scope at call time",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-04 scoped supported approval posts an actual balanced ERP bill matching its preview",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-05 connected Viewer cannot post using stale post scope after current permission resolution",
+        "status": "failed"
+      },
+      {
+        "name": "AB-DB-06 fresh service reconciles simulated lost response to both posted receipt and document",
+        "status": "failed"
+      },
+      {
+        "name": "AB-REC-01 actual tenant archive includes the persisted AgentBridge document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-02 fresh encrypted restore retrieves exact AgentBridge attachment bytes without changing source",
+        "status": "failed"
+      }
+    ]
+  },
+  "migrationsApplied": 47,
+  "reconciliation": {
+    "role": {
+      "rolsuper": false,
+      "rolbypassrls": false
+    },
+    "rows": [
+      {
+        "alias": "source",
+        "documents": 3,
+        "blobs": 3,
+        "retrievablekeypairs": 3,
+        "bills": 2,
+        "journalnet": "0.00"
+      },
+      {
+        "alias": "restoredTarget",
+        "documents": 3,
+        "blobs": 3,
+        "retrievablekeypairs": 0,
+        "bills": 2,
+        "journalnet": "0.00"
+      }
+    ]
+  },
+  "ci": {
+    "docker": 43852425488,
+    "productionCheck": 43852425530,
+    "conclusion": "success"
+  },
+  "branchProtection": {
+    "masterProtected": false,
+    "requiredContexts": [],
+    "rulesets": []
+  },
+  "staging": {
+    "stamp": "v2.7.2 · 2967526",
+    "inboxEnabled": false,
+    "draftOnly": true,
+    "postingDisabled": true,
+    "settingsChanged": false,
+    "businessActions": 0,
+    "authSubmissions": 0,
+    "priorRunsReplayed": false
+  },
+  "recovery": "LAST: encrypted restore succeeded but restored attachment retrieval failed; source unchanged",
+  "decision": "AB-03 coding repair required; no activation or launch approval"
+}
