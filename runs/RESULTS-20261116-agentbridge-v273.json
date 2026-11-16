@@ -1,0 +1,156 @@
+{
+  "dateContract": "2026-11-16 UTC",
+  "productSha": "382f0d8f7e242817d046b20c0f16fa05a0a3153a",
+  "version": "2.7.3",
+  "productSuite": {
+    "passed": 44,
+    "failed": 0
+  },
+  "originalServiceAcceptance": {
+    "passed": 5,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "independent acceptance expectations, failures retained unsupported paid invoice cannot be approved and posted while blocking issues remain",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained different keys concurrent on same approved proposal cause at most one posting call",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained tokens without finite expiry are rejected even when their signature is valid",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained connected agent cannot grant a human-only approval even with carried approve capability",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained configured live OCR must do more than throw an unconditional blocked stub",
+        "status": "passed"
+      }
+    ]
+  },
+  "permissionResolverAcceptance": {
+    "passed": 1,
+    "failed": 3,
+    "cases": [
+      {
+        "name": "owner template approval and post grants work through the real permission resolver",
+        "status": "failed"
+      },
+      {
+        "name": "accountant template approval and post grants work through the real permission resolver",
+        "status": "failed"
+      },
+      {
+        "name": "purchasing template approval and post grants work through the real permission resolver",
+        "status": "failed"
+      },
+      {
+        "name": "Viewer stays denied even when capability grants are copied into its job",
+        "status": "passed"
+      }
+    ]
+  },
+  "runtimeAcceptance": {
+    "passed": 6,
+    "failed": 1,
+    "cases": [
+      {
+        "name": "AB-DB-01 positive scoped upload persists a real document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-02 separate tenant cannot read the positive fixture under non-owner RLS",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-03 returned runtime service retains the authorized tenant scope at call time",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-04 scoped supported approval posts an actual balanced ERP bill matching its preview",
+        "status": "failed"
+      },
+      {
+        "name": "AB-DB-05 connected Viewer cannot post using stale post scope after current permission resolution",
+        "status": "blocked",
+        "reason": "Legitimate Owner approval prerequisite blocked by AB-11"
+      },
+      {
+        "name": "AB-DB-06 fresh service reconciles simulated lost response to both posted receipt and document",
+        "status": "blocked",
+        "reason": "Legitimate Owner approval prerequisite blocked by AB-11"
+      },
+      {
+        "name": "AB-DB-07 stale Viewer token refuses at permission check before proposal lookup",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-01 actual tenant archive includes the persisted AgentBridge document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-02 fresh encrypted restore retrieves exact AgentBridge attachment bytes without changing source",
+        "status": "passed"
+      }
+    ],
+    "blocked": 2
+  },
+  "ownerPermission": {
+    "job": "owner",
+    "approvalGrantPresent": true,
+    "postGrantPresent": true,
+    "approvalAllowed": false,
+    "postAllowed": false
+  },
+  "migrationsApplied": 47,
+  "reconciliation": {
+    "role": {
+      "rolsuper": false,
+      "rolbypassrls": false
+    },
+    "rows": [
+      {
+        "alias": "source",
+        "documents": 1,
+        "blobs": 1,
+        "retrievablekeypairs": 1,
+        "bills": 0,
+        "journalnet": "0"
+      },
+      {
+        "alias": "restoredTarget",
+        "documents": 1,
+        "blobs": 1,
+        "retrievablekeypairs": 1,
+        "bills": 0,
+        "journalnet": "0"
+      }
+    ]
+  },
+  "ci": {
+    "docker": 43879381604,
+    "productionCheck": 43879381524,
+    "conclusion": "success"
+  },
+  "branchProtection": {
+    "masterProtected": false,
+    "requiredContexts": [],
+    "rulesets": []
+  },
+  "staging": {
+    "stamp": "v2.7.3 · 382f0d8",
+    "inboxEnabled": false,
+    "draftOnly": true,
+    "postingDisabled": true,
+    "settingsChanged": false,
+    "businessActions": 0,
+    "authSubmissions": 0,
+    "priorRunsReplayed": false
+  },
+  "recovery": "LAST: exact DB-backed attachment bytes restored; source unchanged; posted-money recovery blocked by approval prerequisite",
+  "decision": "AB-11 permission integration defect; AB-04 focused coding repair; no activation/launch approval"
+}
