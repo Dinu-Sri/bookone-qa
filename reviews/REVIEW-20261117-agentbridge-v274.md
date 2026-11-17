@@ -8,6 +8,8 @@ User reported a new production update. Initial public-browser observation of the
 
 Feature-candidate Production Check43896025299 succeeds. Merged-master Production Check44007311027 succeeds; Docker44007310935 quality and CoreGuard succeed, with image publication tracked separately in the final receipt. Do not substitute the old v2.7.3 image or badge as new-release evidence. Executed tests remain honestly pinned to bd16a84; the merged source is qualified by exact tree equivalence, not a fabricated second test run.
 
+Final observation: Docker44007310935 Build & push also completed successfully. A NEW browser tab then showed public `v2.7.3 ·382f0d8`; protected Owner Purchase settings independently showed the same old version with17Nov date. Current company Inbox OFF/draft-only ON/posting-stop ON, unchanged. Navigation timeout resolved by observing the completed page, with no repeated submission. Live deployment of v2.7.4 remains unverified; owner Portainer re-pull/update of the now-published `sha-9eb13da` image is next. No new merge is needed.
+
 ## Independent qualification
 
 | Lane | Result |
@@ -30,7 +32,7 @@ Actual archive inclusion and encrypted data restore ran LAST after functional ca
 
 Initial Vitest database suite collected zero cases due to a Drizzle ESM/CJS require cycle. Retained original report privately; v274 QA config inlines the existing Drizzle dependency in Vitest. Product code, role privileges and expected business answers unchanged. The corrected suite executed and passed all9cases. Full auth regression was added because shared grant resolution/job persistence changed;123cases pass. Old dated config/test filenames are reusable independent tests, not imports of old execution receipts or consumed business actions. No prior run/clock reopened.
 
-Live work was public-version reading only: zero login/logout submissions, zero financial/settings/master/grant/shift/restore actions and no historical replay. Prior staging company flags were not re-attested in this public-only17Nov check; no changes were made. Credentials, raw snapshots, tokens and fixture IDs remain private/ignored.
+Live work was public/protected read-only verification using the existing Owner session: zero login/logout submissions, zero financial/settings/master/grant/shift/restore actions and no historical replay. Final current-company flags re-attested as OFF/ON/ON, unchanged. Temporary tabs closed. Credentials, raw snapshots, tokens and fixture IDs remain private/ignored. A reconciliation command was first invoked from the product directory and found no QA script; corrected the working directory and retained the error. It made no database change.
 
 ## Remaining acceptance boundaries
 

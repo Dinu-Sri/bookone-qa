@@ -826,20 +826,51 @@
     "productionCheckRun": 44007311027,
     "productionCheck": "success",
     "dockerRun": 44007310935,
-    "docker": "in_progress"
+    "docker": "success",
+    "quality": "success",
+    "coreguard": "success",
+    "imageTag": "ghcr.io/dinu-sri/bookone-web:sha-9eb13da"
   },
   "live": {
     "url": "https://bookone.clossyan.com/login",
     "initialObservedStamp": "v2.7.3 · 382f0d8",
-    "finalVerification": "awaiting image publication",
+    "finalVerification": "new release not observed live; owner Portainer Update/Re-pull required",
     "authSubmissions": 0,
     "businessWrites": 0,
-    "configurationWrites": 0
+    "configurationWrites": 0,
+    "finalObservedPublicStamp": "v2.7.3 · 382f0d8",
+    "finalObservedProtectedStamp": "v2.7.3 · 382f0d8",
+    "companyFlags": {
+      "inboxEnabled": false,
+      "draftOnly": true,
+      "postingDisabled": true
+    },
+    "expectedNewStamp": "v2.7.4 · 9eb13da"
   },
   "branchProtection": {
     "masterProtected": false,
     "rulesets": []
   },
   "recovery": "LAST: posted bill/journal and exact DB-backed attachment bytes restored; approvals revoked; safety flags on; source unchanged",
-  "decision": "Reported-defect candidate qualification passed; live deployment and remaining activation scope not certified"
+  "decision": "Reported-defect candidate qualification passed; live deployment and remaining activation scope not certified",
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/124",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1088392,
+    "pausedMs": 0
+  },
+  "cleanup": {
+    "temporaryTabs": "closed",
+    "isolatedDatabase": "stopped; data retained",
+    "unresolvedAuth": 0
+  },
+  "hashBoundary": "Git index blob bytes",
+  "hashes": {
+    "product-ref.json": "f13ad7b6d708e1c579be7d803e9b1782caa14b472b7a1d87d8ece2e47fcc32d2",
+    "tests/runtime/agentbridge-v273.test.ts": "1cd7f9023f834940c4ac749eec999121aee4ebac08bc737cebe81872f82be27d",
+    "tests/agentbridge/v273-permissions.test.ts": "13923312d36bdbbc556518626a175d9090e477f5d9180150456757138b64a49a",
+    "vitest.v274-runtime.config.ts": "ec6dc91ec15fab5ba573bb759dcc69a62f59a263fee47ffd00f76dc41ffb4fa9",
+    "vitest.v274-auth.config.mjs": "aa80115f2a734800a85cf6fd998229d1b56ef9cf9a8998e3d66d1648d5355b75",
+    "scripts/agentbridge-v274-review.mjs": "a8070f756bdc8015550ebb0f9538877dd009f29f6734899f756c24dd8ce931f6"
+  }
 }

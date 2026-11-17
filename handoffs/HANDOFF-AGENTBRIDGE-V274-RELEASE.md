@@ -9,6 +9,8 @@ The focused repair candidate passes independent qualification:
 
 **PR17 merged during qualification.** Master `9eb13dabc3bd988bec2ed9e6bb2d17ded05db767` has the exact tested tree/no content diff. Initial live observation showed v2.7.3; final image/live verification is in the result receipt. Do not request another merge or replay old QA money. Keep existing-company posting disabled during verification.
 
+**Final release check:** merged-SHA Production Check44007311027 and Docker44007310935 (quality, CoreGuard, Build & push) all succeed. Final public AND protected known URL still show v2.7.3 ·382f0d8. Owner should now Update the intended Portainer stack with Re-pull ON using `ghcr.io/dinu-sri/bookone-web:sha-9eb13da` (or verify latest resolves to that release). Expected live identity: `v2.7.4 ·9eb13da`. Do not interpret green image publication as an already-completed deployment.
+
 Owner's concrete next steps:
 
 1. Preserve merged master9eb13da/treeaa7ff89 and review the independent result. The content comparison is already reconciled; no source test replay is required solely because the merge commit has a different SHA.
