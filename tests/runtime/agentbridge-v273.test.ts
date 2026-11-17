@@ -79,6 +79,12 @@ it('AB-DB-04 scoped supported approval posts an actual balanced ERP bill matchin
     expect(Number(bill.total)).toBe(1180);
     const [balance]=await admin`select sum(case when side='debit' then amount::numeric else -amount::numeric end)::text as net from journal_lines`;
     expect(Number(balance.net)).toBe(0);
+    const journal=await admin`select a.code,l.side,l.amount::numeric::text as amount from journal_lines l join accounts a on a.id=l.account_id order by a.code`;
+    expect(journal).toEqual([
+      {code:'2100',side:'credit',amount:'1180.00'},
+      {code:'2300',side:'debit',amount:'180.00'},
+      {code:'6800',side:'debit',amount:'1000.00'},
+    ]);
     const [count]=await admin`select count(*)::int as n from business_documents`;
     expect(count.n).toBe(1);
   });
@@ -158,4 +164,9 @@ it('AB-REC-02 fresh encrypted restore retrieves exact AgentBridge attachment byt
     expect(attachment?.bytes, 'Restored attachment must be retrievable by its restored document key').toBeDefined();
     expect(Buffer.from(attachment.bytes).toString('base64')).toBe(original.content);
   }
+  const [linked]=await admin`select count(*)::int as n from agent_bridge_operations o join business_documents b on b.id::text=o.receipt_json->>'billId' and b.tenant_id=o.tenant_id where o.tenant_id=${TENANT_B} and o.receipt_json->>'status'='posted'`;
+  expect(linked.n).toBe(1);
+  const [approvals]=await admin`select count(*)::int as total,count(*) filter(where revoked_at is null)::int as live from agent_bridge_approvals where tenant_id=${TENANT_B}`;
+  expect(approvals.total).toBeGreaterThan(0);
+  expect(approvals.live).toBe(0);
 });
