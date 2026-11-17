@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "dateContract": "2026-11-17 UTC",
+  "status": "CLOSED",
+  "productCommit": "9eb13dabc3bd988bec2ed9e6bb2d17ded05db767",
+  "productTree": "aa7ff89b146d8f2532dd5a5ef350a0e530e21d6b",
+  "initialPublication": "fb1f8e075757e009fc941698679e4d2b8499903b",
+  "pullRequest": "https://github.com/Dinu-Sri/bookone-qa/pull/125",
+  "chargedMs": 7149349,
+  "pausedMs": 0,
+  "clockMode": "closed",
+  "pendingActions": 0,
+  "unresolvedDispatchedActions": 0,
+  "newFinancialIntents": 0,
+  "deploymentActions": 0,
+  "grantSaves": 0,
+  "backupPairsCreated": 1,
+  "dataRestoreIntents": 1,
+  "dataRestoresAccepted": 1,
+  "filesPackRestores": 0,
+  "originalOwnerRestored": true,
+  "originalDashboard": {
+    "receivables": 0,
+    "netPosition": 120,
+    "cashAvailable": 771.2,
+    "payables": 0,
+    "postedEntries": 23
+  },
+  "rawArchiveProof": {
+    "originalBytes": 922,
+    "archivedBytes": 922,
+    "equal": true,
+    "sha256": "39228476e3f38894725b2d636a3710cf97a7cae3e981d5e7e0e8dbeb2ac06537"
+  },
+  "publicationExcludes": [
+    "credentials",
+    "private identifiers",
+    "raw evidence",
+    "encrypted backups",
+    "backup password",
+    "abandoned local preparation"
+  ],
+  "acceptanceLimits": [
+    "No actual UI preview/approval/posting success",
+    "No actual UI Viewer/nonmember qualification in this run",
+    "No external authenticated MCP client qualification",
+    "No attachments-pack restore or restored raw UI download proof",
+    "Preservation bounded to observed UI and archived source; no full database equality claim"
+  ],
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 10800000,
+    "reserveMs": 1800000,
+    "chargedMs": 7149349,
+    "pausedMs": 0,
+    "lastAt": 1794894650095,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1794887500746
+      },
+      {
+        "action": "check",
+        "at": 1794887941920,
+        "elapsedMs": 441174,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794889073921,
+        "elapsedMs": 1132001,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794892631324,
+        "elapsedMs": 3557403,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794893051671,
+        "elapsedMs": 420347,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794893262262,
+        "elapsedMs": 210591,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794893534593,
+        "elapsedMs": 272331,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794894240101,
+        "elapsedMs": 705508,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794894548723,
+        "elapsedMs": 308622,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794894650095,
+        "elapsedMs": 101372,
+        "priorMode": "active"
+      }
+    ]
+  }
+}
