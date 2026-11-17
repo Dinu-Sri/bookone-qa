@@ -1,3 +1,5 @@
+> Deployment update17Nov2026UTC: public AND protected Owner pages independently confirmed v2.7.4 ·9eb13da. Earlier Portainer-update next step is COMPLETE; do not repeat it. See runs/CONFIRMATION-20261117-agentbridge-v274-live.json. Posting remains disabled pending activation qualification.
+
 # v2.7.4 owner release handover
 
 The focused repair candidate passes independent qualification:
