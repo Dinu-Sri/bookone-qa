@@ -1,5 +1,7 @@
 # Pilot-01 — bank permissions, reporting integration and business availability
 
+**Expanded owner-authorized implementation scope:** read CODING-COA01-FULL-CHART-OF-ACCOUNTS.md entirely. It is now the canonical complete implementation mission, including company-created accounts and bank/advance workflows. The reproduced failures below remain mandatory regression inputs; delivering only these bank fixes does not complete COA-01.
+
 19 November2026UTC. Exact product9ed27aad107d37108ac5d9ac491b43ee3e83b88d/v2.11.4 in clean detached work/product. This is a QA repair handoff, not authorization to merge/deploy. Existing pilot acceptance request remains outstanding. Owner deploys.
 
 ## Reproduced independent failures
@@ -30,7 +32,7 @@ Actual /accounts on v2.11.4 shows grouped account balances with no create/edit i
 
 Provide an authorized business-company route to add/manage supported bank accounts, consistent with existing BookOne navigation and UI conventions. Reuse one server implementation and shared classifications; don't create parallel bank lists that diverge from the ledger or reconciliation pickers. Ensure the default business company can select a new bank in relevant receipt/payment/transfer and reconciliation flows. Preserve personal Cashbook behavior.
 
-The owner additionally asks about general company-created accounts (advances etc.). That is a broader capability proposal: a guided Chart of Accounts manager should distinguish bank/assets, supplier/staff advances/assets, customer advances/liabilities, expenses and income. Protect system control accounts, derive reporting/normal side from approved metadata, and support safe edit/archive/audit. This handoff's mandatory repair is existing bank permissions/reporting/availability; do not silently introduce advance posting/tax behavior without a separate reviewed contract. A named advance account alone is not an allocation/settlement workflow.
+The owner has now explicitly requested the full Chart of Accounts feature. Implement the guided account manager, all required integrations and advance workflows under the complete COA-01 contract, including protected controls, classification/mappings, permissions, historical integrity, opening/import/export, bank reconciliation, independent tests and recovery. A named advance account alone is not an allocation/settlement workflow. Tax behavior still requires the approved company/rule contract; do not invent it.
 
 ## Acceptance
 
