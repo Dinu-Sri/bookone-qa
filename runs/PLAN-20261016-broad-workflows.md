@@ -1,0 +1,9 @@
+# Broad workflow campaign intent — 2026-10-16
+
+Owner requests a large consolidated workflow/bug batch rather than incremental small handoffs. Starting live stamp v2.5.11 ·0bcdf4d, product0bcdf4d992c6e7254448ab27ee2e7bfc1535ec8c. QA base qa/v2510-independent-retest, prior implementation8a0bfa3574bb8ea26766f1f657b5f79123fd3573; new documentation branch qa/broad-workflows-20261016. Rulebook1.0.0 hashabcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc. No automated results reused as new evidence.
+
+Selected scope: current-session navigation reliability; purchase order/receipt/bill/payment and purchase returns; customer/quotation/order/invoice/payment/return; independent quantities, totals, AR/AP/GL and reports where supported; validation, filtering, settings and adjacent routes. Physical first, service/digital/rental/mixed retained in programme; actual encrypted backup/restore LAST. Missing prerequisites remain blocked, not passed.
+
+Current browser has prior synthetic P261016 company QA/Owner session. Private credentials from previous host are absent here; no fresh explicit login has occurred this run, so no new role/security acceptance may be claimed from this session. Initial Transactions October empty; existing non-posting PO62/vendor retained. Preserve P257 historical balances and all previous immutable runs. Record intent before writes, use distinct synthetic prefix BW261016 and retain created IDs. No financial replay, company reset, grant expansion, production access or shared stress. Check live stamp at each workflow boundary; deployment crossing invalidates single-build acceptance.
+
+Record first failures, expected/actual outcomes, dependencies, browser/config/identity limitations and exact continuation. Publish sanitized records only; no credentials, screenshots containing secrets or raw telemetry. No coding-agent direct messages or merge/deploy.

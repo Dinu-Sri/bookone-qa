@@ -18,7 +18,7 @@ Business type (rental/retail/service) is a separate dimension from legal entity 
 | BP-08 | Personal entity | Money in/out/transfer→bank import→reconcile→report | Personal-only access and classification; no unintended company-only features |
 | BP-09 | Multi-company accountant | Work in tenant A→switch B→switch A; revoke access | Membership and stale-session behaviour; no document/report/cache contamination |
 
-Default first deep profile: BP-05, followed by isolated BP-01 to BP-04 so failures can be localized. Owner can reorder priorities. BP-07/08 require implementation inventory because source docs include planned capabilities.
+Current owner order: physical BP-01 first,then service/digital/rental/hybrid;retain all-business scope. Historical mixed-first proposal is superseded by ADR-20261013-all-businesses-physical-first. BP-07/08 require implementation inventory because source docs include planned capabilities.
 
 ## Common fixture ingredients
 
@@ -68,3 +68,8 @@ Use pairwise sampling for the remaining lower-risk settings combinations; it doe
 ## Historical dataset
 
 Create it under a recorded earlier build, freeze its seed/expected assertions, upgrade a copy, and compare semantic facts: IDs, amounts, dates, status, links, allocations, ledger totals, stock valuation, attachment hashes and access. Normalize approved schema changes before comparison; byte-for-byte DB equality is not required. Test new transactions after upgrade too, including returns/payments against old documents.
+
+## Maintained workflow playbooks
+
+Start with [workflow index](workflows/README.md). Existing BP IDs stay stable;five canonical JSON families and generated human playbooks compose lifecycle tasks. Multi-location,entity/domain and multi-company profiles are overlays. Workflow/rule changes and new edges follow [the protocol](workflows/PROTOCOL.md),with independent expected outcomes and immutable candidate evidence. Existing examples here are historical/proposed anchors,not an independently editable second specification or passing workflow.
+
