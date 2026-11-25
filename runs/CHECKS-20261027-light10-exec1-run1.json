@@ -1,0 +1,208 @@
+{
+  "executionQaSha": "3e57f1efaf5bcb3dd9d079be716b19404acf2c13",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "cases": [
+    {
+      "id": "L10-GATE",
+      "status": "passed",
+      "nextAction": null,
+      "evidenceBoundary": "Preserved earlier ledger disposition; not independently rerated here."
+    },
+    {
+      "id": "L10-GUARD",
+      "status": "passed",
+      "nextAction": null,
+      "evidenceBoundary": "Preserved earlier ledger disposition; not independently rerated here."
+    },
+    {
+      "id": "L10-IDENTITY",
+      "status": "passed",
+      "nextAction": null,
+      "evidenceBoundary": "Preserved earlier ledger disposition; not independently rerated here."
+    },
+    {
+      "id": "L10-SOURCES",
+      "status": "inconclusive",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-CREDITPRINT",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-SHISTORY",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-PHISTORY",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-JOURNALS",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-SREPORTS",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-PREPORTS",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-COMBINED",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-AGING",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-STOCK",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-PROTECTED",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-SETTINGS",
+      "status": "not-run",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    },
+    {
+      "id": "L10-END",
+      "status": "inconclusive",
+      "nextAction": "Complete missing assertions in a fresh reviewed bounded readonly run; never replay consumed financial events.",
+      "evidenceBoundary": "Partial source observation or not executed within budget; no acceptance."
+    }
+  ],
+  "clockAtClosingStart": {
+    "schemaVersion": 1,
+    "totalMs": 5400000,
+    "reserveMs": 900000,
+    "chargedMs": 4557463,
+    "pausedMs": 244520,
+    "lastAt": 1793088558014,
+    "mode": "active",
+    "events": [
+      {
+        "action": "open",
+        "at": 1793083756031
+      },
+      {
+        "action": "pause",
+        "at": 1793083967699,
+        "elapsedMs": 211668,
+        "priorMode": "active",
+        "reason": "Observed execution interruption before fresh authentication; no submissions pending"
+      },
+      {
+        "action": "resume",
+        "at": 1793084212219,
+        "elapsedMs": 244520,
+        "priorMode": "paused"
+      },
+      {
+        "action": "check",
+        "at": 1793084294462,
+        "elapsedMs": 82243,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084296465,
+        "elapsedMs": 2003,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084368480,
+        "elapsedMs": 72015,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793084370526,
+        "elapsedMs": 2046,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088135271,
+        "elapsedMs": 3764745,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088234189,
+        "elapsedMs": 98918,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088338739,
+        "elapsedMs": 104550,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088391484,
+        "elapsedMs": 52745,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088422462,
+        "elapsedMs": 30978,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088463968,
+        "elapsedMs": 41506,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088497617,
+        "elapsedMs": 33649,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1793088558014,
+        "elapsedMs": 60397,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "unresolvedSubmissions": 0,
+  "canonicalAccepted": 0,
+  "releaseAcceptance": "not-established",
+  "historicalPasses": "preserved; not newly independently certified",
+  "publicationClock": "Clock active through initial publication; final close record added as metadata-only tail.",
+  "sensitiveEvidence": "Detailed source references, parties, amounts, credentials and raw browser observations excluded; retained privately."
+}
