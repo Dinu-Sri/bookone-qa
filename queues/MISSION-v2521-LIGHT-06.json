@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2521-LIGHT-06",
+  "candidate": "v2.5.21",
+  "productSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "reportedShortSha": "7458a9c",
+  "executionReady": true,
+  "status": "source-reviewed-live-stamp-observed-conditional-fixtures-not-run",
+  "reviewedProductBase": "de45536bc47ead3e20f401ecd5fe144bfdf7d52c",
+  "qaPlanningBase": "d6e9f779e27540ff31fe98b81f64e06a5fcbd353",
+  "budget": {
+    "totalMinutes": 75,
+    "executionMinutes": 60,
+    "closingReserveMinutes": 15
+  },
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "bindingRequirements": [
+    "Fresh exact published QA SHA and actual actor/settings/openings; full reviewed product SHA and observed sidebar v2.5.21 · 7458a9c on23October. No image/schema attestation claimed.",
+    "21 fixed slots, original failures immutable. No financial ladder replay. Explicit blocked/inconclusive per missing layer; continue independent safe slots.",
+    "No deployment, permission expansion, destructive confirmation or infrastructure actions. Existing view-only inventory gate remains.",
+    "Correct mappings UXW-018 dialog/help; UXW-021 responsive; UXW-005 LINE client refusal. Engineering mislabeled UXW-005 as dialog and cited stale1.0.0 hash; canonical1.1.0 hash above governs."
+  ],
+  "cases": [
+    {
+      "id": "M21-GATE",
+      "title": "Exact candidate and new controls",
+      "dependsOn": [],
+      "precondition": "Published reviewed M21 queue; private fresh run; previous Light05 ledger closed and immutable.",
+      "expected": "Verify live v2.5.21 · 7458a9c against reviewed full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448; bind exact published execution QA SHA, actual rule/library/UX hashes. Open NEW75-minute conservative clock with15closing; initialize NEW generic ledger. Drift or failed login blocks subsequent browser cases; no rebind/deploy. Image/schema not independently attested.",
+      "evidence": [
+        "candidate",
+        "qaRevision",
+        "fingerprint",
+        "clock"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-ACTOR",
+      "title": "Fresh login, controls and unchanged opening",
+      "dependsOn": [
+        "M21-GATE"
+      ],
+      "precondition": "M21-GATE passed; existing private credentials accessible; no account creation, grant or new company.",
+      "expected": "Fresh logout/login existing private QA fixture with Remember off. Verify actor/company/job and actual permitted controls; Owner label alone is insufficient. Record all actual sales/purchase/inventory maps, tab viewport, journal count/debits/credits, AR/AP/VAT/InvGL/stock/aging, selected purchase/sales sources status/balance and catalogue count. No planned settings transition. Compare actual openings privately with the previous sanitized run; investigate differences, do not adopt silently. Record legitimate Inventory writer absent/present without creating/granting/changing anything. Missing inventory write does not block separately permitted read-only document cancel/help cases.",
+      "evidence": [
+        "freshActor",
+        "capabilities",
+        "settingsMaps",
+        "openingBalances",
+        "sourceSnapshots",
+        "viewport"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-PL-D",
+      "title": "Purchase list desktop cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Use recorded desktop viewport. Select existing own synthetic purchase fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses surviving same-row Actions control. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-PL-N",
+      "title": "Purchase list 390px cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual390×844 and verify inner/layout dimensions. Select existing own synthetic purchase fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses surviving same-row Actions control. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-PD-D",
+      "title": "Purchase detail desktop cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Use recorded desktop viewport. Select existing own synthetic purchase fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses the surviving actual detail Archive trigger. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-PD-N",
+      "title": "Purchase detail 390px cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual390×844 and verify inner/layout dimensions. Select existing own synthetic purchase fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses the surviving actual detail Archive trigger. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-SL-D",
+      "title": "Sales list desktop cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Use recorded desktop viewport. Select existing own synthetic sales fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses surviving same-row Actions control. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-SL-N",
+      "title": "Sales list 390px cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual390×844 and verify inner/layout dimensions. Select existing own synthetic sales fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses surviving same-row Actions control. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-SD",
+      "title": "Sales detail adjacency desktop cancellation and focus",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Use recorded desktop viewport. Select existing own synthetic sales fixture with supported Archive control. Capture status and active opener. Open via keyboard; initial Cancel focused, Tab and Shift+Tab wrap with no BODY/background escape. Escape closes and focuses the surviving actual detail Archive trigger. Reopen and explicit Cancel, then reopen and backdrop cancel while not busy; each closes and restores same target. Never activate confirm. Persisted source status/balance, catalogue and journals unchanged. Missing supported detail control is blocked, never use a substitute as a pass. Record native labels/unique dialog label associations.",
+      "evidence": [
+        "fixture",
+        "initialFocus",
+        "tabWrap",
+        "escapeReturn",
+        "cancelReturn",
+        "backdropReturn",
+        "zeroEffects",
+        "dimensions"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-MOUNTED",
+      "title": "Mounted-trigger shared consumer",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Use one permitted existing synthetic party or discount inline Archive trigger. Keyboard open/Cancel focus/Tab+ShiftTab/Escape and explicit Cancel restore actual mounted opener; no Archive confirm. Record chosen consumer and missing other families; no inference that all shared consumers passed.",
+      "evidence": [
+        "consumer",
+        "keyboard",
+        "returnFocus",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-PRODUCT",
+      "title": "Product-list fallback capability gate",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Read supported current Inventory capability. Only if existing profile independently permits product action menu, inspect Archive dialog and cannot-delete informational dialog if naturally available, cancel only and assert same-row Actions return. If profile remains view-only or no legitimate fixture, block this slot before action; do not grant/quick-create/borrow tenant. Never press Delete to force a cannot-delete server response. Distinguish covered confirm vs unavailable cannot-delete variants; no whole-slot pass missing either required variant.",
+      "evidence": [
+        "capability",
+        "confirmReturn",
+        "cannotDeleteReturn",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-IH320",
+      "title": "Invoice help 320px rendered bounds",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual320×844; record window.innerWidth, clientWidth, scrollbar delta and actual controlled tab. Test BOTH StatusColumnHelp wide and individual StatusBadge help on supported own invoice list/detail. Open by keyboard and pointer; measure computed border-box/inline maxWidth/left/right after placement; left>=8 and right<=clientWidth-8, width<=clientWidth-16 when space allows. At320 inner/layout305 wide bubble expected <=289, left8/right<=297; do not assume305 if actual layout differs. At390 retain340 wide/260 badge when actual layout permits; genuine tables may scroll. Verify content hover remains accessible, Escape dismissal, focused control visibility and no unintended data change. Capture top/bottom/left/right anchor coverage where supported by scrolling; unavailable consumer/edge stays explicit, no fake scrollbar CSS injection.",
+      "evidence": [
+        "dimensions",
+        "columnBounds",
+        "badgeBounds",
+        "computedWidth",
+        "hoverEscape",
+        "edgeCoverage",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-RH320",
+      "title": "Sales return help 320px rendered bounds",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual320×844; record window.innerWidth, clientWidth, scrollbar delta and actual controlled tab. Test BOTH StatusColumnHelp wide and individual StatusBadge help on supported own sales return list/detail. Open by keyboard and pointer; measure computed border-box/inline maxWidth/left/right after placement; left>=8 and right<=clientWidth-8, width<=clientWidth-16 when space allows. At320 inner/layout305 wide bubble expected <=289, left8/right<=297; do not assume305 if actual layout differs. At390 retain340 wide/260 badge when actual layout permits; genuine tables may scroll. Verify content hover remains accessible, Escape dismissal, focused control visibility and no unintended data change. Capture top/bottom/left/right anchor coverage where supported by scrolling; unavailable consumer/edge stays explicit, no fake scrollbar CSS injection.",
+      "evidence": [
+        "dimensions",
+        "columnBounds",
+        "badgeBounds",
+        "computedWidth",
+        "hoverEscape",
+        "edgeCoverage",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-IH390",
+      "title": "Invoice help 390px rendered bounds",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual390×844; record window.innerWidth, clientWidth, scrollbar delta and actual controlled tab. Test BOTH StatusColumnHelp wide and individual StatusBadge help on supported own invoice list/detail. Open by keyboard and pointer; measure computed border-box/inline maxWidth/left/right after placement; left>=8 and right<=clientWidth-8, width<=clientWidth-16 when space allows. At320 inner/layout305 wide bubble expected <=289, left8/right<=297; do not assume305 if actual layout differs. At390 retain340 wide/260 badge when actual layout permits; genuine tables may scroll. Verify content hover remains accessible, Escape dismissal, focused control visibility and no unintended data change. Capture top/bottom/left/right anchor coverage where supported by scrolling; unavailable consumer/edge stays explicit, no fake scrollbar CSS injection.",
+      "evidence": [
+        "dimensions",
+        "columnBounds",
+        "badgeBounds",
+        "computedWidth",
+        "hoverEscape",
+        "edgeCoverage",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-RH390",
+      "title": "Sales return help 390px rendered bounds",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Set actual390×844; record window.innerWidth, clientWidth, scrollbar delta and actual controlled tab. Test BOTH StatusColumnHelp wide and individual StatusBadge help on supported own sales return list/detail. Open by keyboard and pointer; measure computed border-box/inline maxWidth/left/right after placement; left>=8 and right<=clientWidth-8, width<=clientWidth-16 when space allows. At320 inner/layout305 wide bubble expected <=289, left8/right<=297; do not assume305 if actual layout differs. At390 retain340 wide/260 badge when actual layout permits; genuine tables may scroll. Verify content hover remains accessible, Escape dismissal, focused control visibility and no unintended data change. Capture top/bottom/left/right anchor coverage where supported by scrolling; unavailable consumer/edge stays explicit, no fake scrollbar CSS injection.",
+      "evidence": [
+        "dimensions",
+        "columnBounds",
+        "badgeBounds",
+        "computedWidth",
+        "hoverEscape",
+        "edgeCoverage",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-RESIZE",
+      "title": "Desktop and resize/scroll adjacency",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Reset desktop and verify original actual dimensions. Check wide340/badge260 when usable layout allows, both invoice/return consumers; resize desktop→320→390→desktop with help open, then scroll/edge anchors. Re-measure containment after resize/scroll. Text/action visibility and legitimate table scrolling preserved. No DOM/CSS mutation to manufacture result.",
+      "evidence": [
+        "desktopWidths",
+        "resizeBounds",
+        "scrollBounds",
+        "content",
+        "viewportRestored"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-BUSY",
+      "title": "Busy and disappeared-row isolated DOM layer",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Run only against an already available reviewed isolated component/browser fixture with same candidate DOM wiring, real busy state and zero external writes. Assert Escape/backdrop do not dismiss busy dialog and disconnected row target safely skips focus restoration. Missing safe fixture => blocked. No confirm shared-staging Archive/Delete, fake DOM/state patch, fault injection or account permission change to obtain this state. Pure helper tests are recorded separately and cannot pass this browser slot.",
+      "evidence": [
+        "isolatedFixture",
+        "busyEscape",
+        "busyBackdrop",
+        "removedRow",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-AT",
+      "title": "Screen-reader layer",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Only if real supported assistive technology is available, record browser/AT/version and test dialog name/description, initial focus, contained navigation, cancellation return and status-help accessible reading. Otherwise blocked. DOM aria attributes and automation snapshot alone are not screen-reader execution.",
+      "evidence": [
+        "environment",
+        "announcements",
+        "navigation",
+        "helpReading",
+        "returnFocus"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-LINE",
+      "title": "Fresh LINE150 refusal and same-form correction",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Fresh verified quote-create authority and existing supported customer/product classification; GATE/ACTOR passed and no unresolved mission intent; clock allows complete sequence plus closing.",
+      "expected": "Only with separately verified quote-create scope and fresh run-owned fixture; choose existing permitted standard digital/service line quantity1×10 with no VAT/header discount. Set LINE percentage150; capture complete field map, notes, issue2026-10-23/due2026-10-30 after native keyboard commit and rerender. Verify exact dates immediately before one Save. Capture role=status/toast immediately: 'Percentage line discount cannot exceed 100%.'; full field retention and zero new quote/GL. If feedback/zero persistence uncertain, inspect persisted state and never replay. Only after conclusive refusal correct LINE150→0, leave all else, submit once and reopen the one draft net10/committed dates/notes/line; no GL/stock change. Never substitute HEADER or modify consumed sources. If insufficient time for full refusal/correction/readback, defer pending case before first Save.",
+      "evidence": [
+        "preSubmitFields",
+        "intentReadback",
+        "immediateRefusal",
+        "allFieldRetention",
+        "zeroRefusalEffects",
+        "correctedDraft",
+        "zeroGL"
+      ],
+      "uxRefs": [
+        "UXW-005"
+      ],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-BLOCKERS",
+      "title": "Disposition remaining acceptance prerequisites",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Record current evidence-backed availability of Inventory writer/physical MASTER and purchase/source-price/eight-consumer/purchase-print family; U1 rich text/U2 quick-create runtime auth; late response; authentic101c/104c upgrades. Unavailable families remain blocked with engineering/environment owner and exact delivery request. This slot is a prerequisite register, not execution or acceptance of those families. No role/module/job changes, new tenants, shared HTTP auth probes or old-build downgrade.",
+      "evidence": [
+        "physicalFamily",
+        "authorizationFamily",
+        "lateResponse",
+        "authenticUpgrades",
+        "owners"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run"
+    },
+    {
+      "id": "M21-END",
+      "title": "Restore, reconcile, publish and close",
+      "dependsOn": [
+        "M21-GATE",
+        "M21-ACTOR"
+      ],
+      "precondition": "Verified M21-GATE and fresh actor/openings in M21-ACTOR; current exact candidate throughout. Supported existing own synthetic fixture only; no Save/Post/Archive/Delete/Restore confirmation.",
+      "expected": "Stop new business at60charged minutes; defer pending slots not-run-budget. Restore actual viewport and reload all unchanged opening settings maps. Reconcile every intent, journal/debits/credits/AR/AP/VAT/stock/catalogue/source statuses/aging against ACTOR and actual accepted operations. Only allowed mutation is at most one new LINE draft10 with no GL; refusal zero effects; no Archive/Delete/Restore. Resolve uncertain submissions via readback only. Capture endstamp same candidate, zero unresolved intents and actual closed clock; preserve first failures. Publish sanitized results/checks/findings/handoff/current pointer in NEW results branch/PR. No pass if required evidence missing; report closing overrun. No release/canonical acceptance; backuprestoreLAST.",
+      "evidence": [
+        "settingsRestored",
+        "viewportRestored",
+        "reconciliation",
+        "intentResolution",
+        "endstamp",
+        "closedClock",
+        "publication"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "conditional-ready-not-run",
+      "recovery": true
+    }
+  ]
+}
