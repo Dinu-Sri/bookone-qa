@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "scope": "CUA-control-qualification-not-business-workflow",
+  "baseQa": "612c5c78f4d28b4f381c81e49c8a20e689942052",
+  "observedStamp": "v2.5.25 · a6eda60",
+  "expectedMerge": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "fullServerBuildAttested": false,
+  "browser": {
+    "tabDiscovery": "passed",
+    "documentRead": "blocked-internal-timeoutMs-error",
+    "explicitTimeoutLocator": "selector-deadline"
+  },
+  "native": {
+    "actualV1": {
+      "positivePassed": 0,
+      "positiveBlocked": 2,
+      "refusals": 5,
+      "claims": 0
+    },
+    "actualV2": {
+      "readPassed": 1,
+      "clickUncertain": 1,
+      "refusalsZeroNativeCallsAndClaims": 5,
+      "claims": 2,
+      "guardedActionCalls": 2,
+      "readonlyValidationObservations": 4
+    },
+    "screenshot": "different-app-from-AX-target;not-qualified",
+    "authAndBusinessClicks": "hard-refused-in-final-code;inert-Sign-In-mode-only-diagnostic-exception",
+    "sourceEvidence": "actualV2adapter retained privately;final quarantine unit-tested only",
+    "proofClocksClosed": 14,
+    "clockInterpretation": "independent synthetic inert fixtures;expired negative has artificial charged value;no business duration claimed"
+  },
+  "tests": {
+    "host": {
+      "passed": 48,
+      "failed": 0,
+      "newNative": 22,
+      "existingDesktop": 26
+    },
+    "restricted": {
+      "passed": 39,
+      "failed": 9,
+      "disposition": "host-environment-difference;unchanged suites pass with host filesystem access"
+    },
+    "metadata": "passed",
+    "fullPnpmCheck": "not-run-in-this-qualification"
+  },
+  "loginSubmissions": 0,
+  "businessSubmissions": 0,
+  "businessRunStarted": false,
+  "previousTransactions": "preserved-no-business-write",
+  "lightExecutable": false,
+  "releaseAcceptance": "not-established"
+}
