@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2516-LIGHT-02",
+  "date": "2026-10-18",
+  "qaBase": "8a37a1e37b74ad378089bc8a704982fb03058b5e",
+  "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "startStamp": "v2.5.16 \u00b7 b2c5205",
+  "endStamp": "v2.5.16 \u00b7 b2c5205",
+  "actor": "Fresh explicit intended QA N141710 login; own synthetic company Owner",
+  "planHash": "526d13a7c69dba7ed2c1fac5466fd3fb877da020f8c6a0553e9dfc142fef2914",
+  "fingerprintHash": "7ea86ec0340250db07ea2b7b5582dd3fd5795467009a038d9df309792203cb0a",
+  "rulebook": {
+    "version": "1.0.0",
+    "hash": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "review": "expert-pending"
+  },
+  "library": {
+    "version": "1.5.0",
+    "blob": "7b0a44449ac480d3bfac36b7868e7e47114c3556",
+    "cases": 272,
+    "canonicalAcceptance": false
+  },
+  "counts": {
+    "passed": 12,
+    "failed": 2,
+    "blocked": 4
+  },
+  "cases": [
+    {
+      "id": "M17-GATE",
+      "status": "passed",
+      "actual": "Exactlivecandidate/remoteQAverified;sourceprobe2pass1failknownsource-onlyrisk;deploymentcrossingforbidden.",
+      "evidence": {
+        "liveStamp": "v2.5.16 \u00b7 b2c5205",
+        "qaRevision": "PR47remote8a37a1e37b74ad378089bc8a704982fb03058b5e",
+        "sourceBoundary": "PublishedPR47 idempotencyprobe2pass1fail syntheticDB/staticactionflow;notruntime",
+        "deploymentFreeze": "Fixedb2c5205;anychangedstampgloballystopswrites;codinghandoffnodeployduringrun"
+      }
+    },
+    {
+      "id": "M17-ACTOR",
+      "status": "passed",
+      "actual": "Freshintendedlogin/Owner,openingsread;testprofilesavedandverifiedreload.",
+      "evidence": {
+        "freshLogin": "Logout/sign-in/intendedprivatefixture/Login;Remembermeunchecked",
+        "openingBalances": "80journals10475.51;AR1006.21/AP540/InvGL120/VAT46.71/COGS420/profit539.50/assets1126.21",
+        "openingStock": "Widget4x60value240;M16ZeroPhysical0;inheritedgap120",
+        "openingSettings": "VATfalse18/export0/dept01/localcommercial;negativeAllow/LastCost;purchaseapprovalfalse,requiredsupplierfalse,dupblocktrue,requireGRNfalse,postGRNIfalse,Net30,6800",
+        "settingsReload": "NegativeBlock/LastCost;purchaseRequiredSupplier/RequireGRN/PostGRNItrue,approvalfalse/dupblocktrue;VATfalseunchanged",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-E01",
+      "status": "passed",
+      "actual": "Stockrefusalexactshortage1,17fieldsretained,busycleared,noinvoiceGLstock.",
+      "evidence": {
+        "preview": "Physical1x10,dates17/19/25Oct/Other/notes;17entriesidentical",
+        "persistedDocument": "No newinvoice;list27totalunchanged",
+        "journal": "80entries10475.51unchanged",
+        "sourceBalance": "ARunchanged/noinvoice",
+        "unchangedState": "zeroSKU0,Widget4/value240;Postenabled",
+        "endStamp": "v2.5.16 \u00b7 b2c5205;error Insufficient stock lots need1 short1 receivegoodsfirst"
+      }
+    },
+    {
+      "id": "M17-QUOTE",
+      "status": "passed",
+      "actual": "Clientrefusalretain16fields;correctedquote10savedoncewith17Oct/25Oct/notes;zeroGL.",
+      "evidence": {
+        "preview": "Digital1x10;150refusedthen0total10",
+        "persistedDocument": "QT-20261017-0002draft10;Editissue17Oct/due25Oct/notesM17-QUOTE stable17-25",
+        "journal": "80entries10475.51unchanged",
+        "sourceBalance": "quoteonly,noARAP",
+        "unchangedState": "NoGL/stock;oldquote0001untouched",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-D18",
+      "status": "passed",
+      "actual": "Freshcatalog18Octdraft/post/return10correct;sourcepaid;allentereddatefieldsretained.",
+      "evidence": {
+        "preview": "1x10noVATdiscount10;Editunchanged",
+        "persistedDocument": "INV0028draftthenopen10thenpaid10;SR0052qty1price10credit10",
+        "journal": "Draft0GL;sourceDrAR10CrSales10;returnDrReturns10CrAR10;82entries10495.51",
+        "sourceBalance": "INV0028paid10/source0",
+        "unchangedState": "DigitalnoCOGSstock;ownpartyanddates18/19/25Octnotesretained;original0018untouched",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-D17",
+      "status": "passed",
+      "actual": "Freshcatalog17Octdraft/post/credit10correct;oldfailureunresolvednotreplayed.",
+      "evidence": {
+        "preview": "1x10;dates17/19/25Octandnotesretained",
+        "persistedDocument": "INV-20261017-0029draft/open/paid10;SR0053qty1price10credit10",
+        "journal": "17OctDrAR10CrSales10;18OctDrReturns10CrAR10;84entries10515.51",
+        "sourceBalance": "INV0029paid10/source0",
+        "unchangedState": "NoCOGSstock;original0018stillpreserved;draftzeroGL",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-DDISC",
+      "status": "failed",
+      "actual": "SavedDraft256.50reopensEdit286.50 because line10percentdiscountmissing;header13.50fixedretained. StoppedwithoutSave/Post;sourcepreserved.",
+      "evidence": {
+        "preview": "Original270-13.50=256.50;Edit300-13.50=286.50",
+        "persistedDocument": "INV0030draft256.50;Editlinepercentvalueblank/header13.50",
+        "journal": "84entries10515.51unchangedbydraft",
+        "sourceBalance": "Unposted256.50draftpreserved;noPost",
+        "unchangedState": "NoARGLstockmutation;noeconomicscorrection;firstfailurekept",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      },
+      "nextAction": "Medium/codingfixsavedlinediscounthydration;preserved0030mustnotbesavedwithwrongamount."
+    },
+    {
+      "id": "M17-SUPPLIER",
+      "status": "failed",
+      "actual": "Liveconfirmed:validbusinessrefusalretainsall16fields;reference-onlysameformcorrectionblockedThis save is already running;noacceptedpurchase/GL. No3rdattempt.",
+      "evidence": {
+        "preview": "ManualService1x10/6800/ownvendor;dates18/25Octnotes;referenceblankthenM17-SUP-REF",
+        "persistedDocument": "Purchasesstill2originaltotal;nonewPUR",
+        "journal": "84entries10515.51unchangedafterbothattempts",
+        "sourceBalance": "NoAPbill/openliabilityfromattempt",
+        "unchangedState": "All16fieldsretained;refcorrectedonly;nostockeffect;buttonavailablebutbusykeyerror",
+        "endStamp": "v2.5.16 \u00b7 b2c5205;requiredsuppliererrorthenalreadyrunningerrorcaptured"
+      },
+      "nextAction": "P1Medium/codingfixrejected-attemptidempotencylifecycle;noattemptreplay/newkeyforcing;preservefirstfailure."
+    },
+    {
+      "id": "M17-PO",
+      "status": "passed",
+      "actual": "FreshphysicalPO300confirmed,productlinked/stock0,zeroGLAP.",
+      "evidence": {
+        "preview": "5x60=300",
+        "persistedDocument": "PO-20261018-0002confirmed300;storedproductlinkpresent",
+        "journal": "84entries10515.51unchanged;POnotposted",
+        "sourceBalance": "ordered5/received0/billed0/remaining5",
+        "unchangedState": "newSKU0/value0cost60;Widget4/value240;AP540;quickcatalogrecordseparate",
+        "endStamp": "v2.5.16 \u00b7 b2c5205;requiredsupplierfalseGRNItrueRequireGRNtrueprofileverifiedreload"
+      }
+    },
+    {
+      "id": "M17-GRN2",
+      "status": "passed",
+      "actual": "Receipt2correctstock/GRNI,POpartial.",
+      "evidence": {
+        "preview": "POqty2at60=120",
+        "persistedDocument": "GRN-20261018-0001received120 qty2price60",
+        "journal": "85entries10635.51;Dr5100Inventory120Cr2150GRNI120;AP0",
+        "sourceBalance": "POordered5received2billed0remainingreceive3",
+        "unchangedState": "NewSKU2x60value120;Widget4unchanged;noAP/COGS",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-BILL2",
+      "status": "passed",
+      "actual": "GRN2bill120clearsGRNItoAPwithoutdoublestock;POcountsGRNsourcedbill.",
+      "evidence": {
+        "preview": "GRN0001qty2x60=120",
+        "persistedDocument": "PUR-20261018-0003open120/fromGRN0001",
+        "journal": "86entries10755.51;Dr2150GRNI120Cr2100AP120",
+        "sourceBalance": "POreceived2/billed2;AP+120/GRNI0;billdue120",
+        "unchangedState": "NewSKUstill2/value120cost60;nostockadditiononbill;noCOGS",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-GRN3",
+      "status": "passed",
+      "actual": "Remaining3receivedcorrectstockGRNI;POreceived5.",
+      "evidence": {
+        "preview": "qty3x60=180",
+        "persistedDocument": "GRN-20261018-0002received180qty3price60",
+        "journal": "87entries10935.51DrInventory180CrGRNI180",
+        "sourceBalance": "POreceived5/billed2;unreceived0;priorAP120unchanged",
+        "unchangedState": "NewSKU5/value300;Widget4unchanged;GRNI180awaitingbill",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-BILL3",
+      "status": "passed",
+      "actual": "SecondGRNbill180clearsGRNItoAP;all5receivedandbilledwithoutdoublestock.",
+      "evidence": {
+        "preview": "GRN0002qty3x60=180",
+        "persistedDocument": "PUR-20261018-0004open180/GRN0002source",
+        "journal": "88entries11115.51DrGRNI180CrAP180;GRNI0/APcumulative300",
+        "sourceBalance": "POordered5received5billed5remaining0;bill1due120bill2due180",
+        "unchangedState": "NewSKUstill5/value300cost60;noadditionalinventoryonbilling",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      }
+    },
+    {
+      "id": "M17-RET1",
+      "status": "blocked",
+      "actual": "No supported UI source-linked partial-return entry exposed; no return submitted; source bills retained.",
+      "evidence": {
+        "preview": "Bill direct Create return is button without qty; generic New purchase return has no source picker; list actions Pay/Open/Archive/Delete",
+        "persistedDocument": "No M17 purchase return created",
+        "journal": "88entries11115.51unchanged",
+        "sourceBalance": "PUR0003due120/PUR0004due180; newAP300",
+        "unchangedState": "NewSKU5/value300; no full or unlinked substitute",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      },
+      "nextAction": "Medium: review supported partial-return entry; pinned new page accepts from but UI exposes no link; do not fabricate URL or hidden input."
+    },
+    {
+      "id": "M17-OVER",
+      "status": "blocked",
+      "actual": "RET1 dependency blocked; fully billed PO hides conversion controls in current pre-return state only.",
+      "evidence": {
+        "preview": "No qty or Receive goods control; fully billed nothing left to convert",
+        "persistedDocument": "PO0002converted300; no extraGRN",
+        "journal": "88entries11115.51unchanged",
+        "sourceBalance": "Received5/billed5 before return; return not executed",
+        "unchangedState": "SKU5/value300; client boundary observed only; no server denial claim",
+        "endStamp": "v2.5.16 \u00b7 b2c5205"
+      },
+      "nextAction": "Medium: after supported partial return rerun exhausted PO boundary on fresh reviewed queue."
+    },
+    {
+      "id": "M17-U07",
+      "status": "blocked",
+      "actual": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed.",
+      "evidence": {
+        "environmentDisposition": "Isolated v2.5.14 app/auth/bookone_qa_runtime unavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN1.0.0 authentic6credits594/source695/remaining101 unchanged",
+        "nextAction": "QA infrastructure operator and coding agent prepare pinned old/new compiled apps with real auth; no staging downgrade/reset"
+      },
+      "nextAction": "Medium infrastructure review required."
+    },
+    {
+      "id": "M17-U10",
+      "status": "blocked",
+      "actual": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed.",
+      "evidence": {
+        "environmentDisposition": "Isolated v2.5.14 app/auth/bookone_qa_runtime unavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN1.0.0 authentic9credits891/source995/remaining104 unchanged",
+        "nextAction": "QA infrastructure operator and coding agent prepare authentic isolated old/new upgrade; preserve historical credits"
+      },
+      "nextAction": "Medium infrastructure review required."
+    },
+    {
+      "id": "M17-END",
+      "status": "passed",
+      "actual": "Actual deltas reconcile; all opening settings restored and reloaded; no unresolved financial intent; publication prepared as sanitized immutable run.",
+      "evidence": {
+        "trialBalance": "88journals11115.51debits=credits;BalanceSheet1426.21assets=liabilities+equity",
+        "controlDeltas": "AR1006.21unchanged/AP840+300/InventoryGL420+300/GRNI0/VAT46.71/COGS420/profit539.50",
+        "stockDeltas": "NewSKU5value300;Widget4value240;stock540minusGL420=inherited120unchanged",
+        "fixtureRegister": "Quote0002;INV0028/SR0052andINV0029/SR0053closed10each;draft0030preserved256.50;PO0002GRN0001/0002PUR0003/0004retained;noM17purchaseReturn",
+        "settingsReload": "Purchasefalse,false,true,false,false,Net30,6800;Inventorylast/allow;VATfalse18/export0/dept01/localcommercial/creditlimitoff;allactualopenings",
+        "endStamp": "v2.5.16 \u00b7 b2c5205;Owner same company"
+      }
+    }
+  ],
+  "checkpointEvents": [
+    {
+      "command": "start",
+      "id": "M17-GATE",
+      "status": "running",
+      "at": "2026-10-18T15:04:36.599Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-GATE",
+      "status": "passed",
+      "at": "2026-10-18T15:04:36.600Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-ACTOR",
+      "status": "running",
+      "at": "2026-10-18T15:04:50.601Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-ACTOR",
+      "status": "passed",
+      "at": "2026-10-18T15:06:19.721Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-E01",
+      "status": "running",
+      "at": "2026-10-18T15:06:20.261Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-E01",
+      "status": "passed",
+      "at": "2026-10-18T15:07:40.712Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-QUOTE",
+      "status": "running",
+      "at": "2026-10-18T15:07:41.224Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-QUOTE",
+      "status": "passed",
+      "at": "2026-10-18T15:08:47.101Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-D18",
+      "status": "running",
+      "at": "2026-10-18T15:08:47.615Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-D18",
+      "status": "passed",
+      "at": "2026-10-18T15:11:04.694Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-D17",
+      "status": "running",
+      "at": "2026-10-18T15:11:05.224Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-D17",
+      "status": "passed",
+      "at": "2026-10-18T15:13:31.973Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-DDISC",
+      "status": "running",
+      "at": "2026-10-18T15:13:32.486Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-DDISC",
+      "status": "failed",
+      "at": "2026-10-18T15:14:22.931Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-SUPPLIER",
+      "status": "running",
+      "at": "2026-10-18T15:14:23.445Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-SUPPLIER",
+      "status": "failed",
+      "at": "2026-10-18T15:16:32.416Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-PO",
+      "status": "running",
+      "at": "2026-10-18T15:16:32.936Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-PO",
+      "status": "passed",
+      "at": "2026-10-18T15:19:17.840Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-GRN2",
+      "status": "running",
+      "at": "2026-10-18T15:19:18.355Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-GRN2",
+      "status": "passed",
+      "at": "2026-10-18T15:20:29.662Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-BILL2",
+      "status": "running",
+      "at": "2026-10-18T15:20:30.169Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-BILL2",
+      "status": "passed",
+      "at": "2026-10-18T15:21:29.445Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-GRN3",
+      "status": "running",
+      "at": "2026-10-18T15:21:29.951Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-GRN3",
+      "status": "passed",
+      "at": "2026-10-18T15:22:18.935Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-BILL3",
+      "status": "running",
+      "at": "2026-10-18T15:22:19.439Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-BILL3",
+      "status": "passed",
+      "at": "2026-10-18T15:23:01.488Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-RET1",
+      "status": "running",
+      "at": "2026-10-18T15:23:02.011Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-RET1",
+      "status": "blocked",
+      "at": "2026-10-18T15:28:05.520Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-OVER",
+      "status": "running",
+      "at": "2026-10-18T15:28:20.282Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-OVER",
+      "status": "blocked",
+      "at": "2026-10-18T15:28:20.282Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-U07",
+      "status": "running",
+      "at": "2026-10-18T15:28:42.746Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-U07",
+      "status": "blocked",
+      "at": "2026-10-18T15:28:42.746Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-U10",
+      "status": "running",
+      "at": "2026-10-18T15:28:43.247Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-U10",
+      "status": "blocked",
+      "at": "2026-10-18T15:28:43.247Z"
+    },
+    {
+      "command": "start",
+      "id": "M17-END",
+      "status": "running",
+      "at": "2026-10-18T15:28:43.747Z"
+    },
+    {
+      "command": "record",
+      "id": "M17-END",
+      "status": "passed",
+      "at": "2026-10-18T15:30:42.611Z"
+    }
+  ],
+  "opening": {
+    "journals": 80,
+    "turnover": 10475.51,
+    "AR": 1006.21,
+    "AP": 540,
+    "inventoryGL": 120,
+    "stockValue": 240,
+    "GRNI": 0
+  },
+  "closing": {
+    "journals": 88,
+    "turnover": 11115.51,
+    "AR": 1006.21,
+    "AP": 840,
+    "inventoryGL": 420,
+    "stockValue": 540,
+    "GRNI": 0,
+    "VAT": 46.71,
+    "COGS": 420,
+    "profit": 539.5,
+    "assets": 1426.21
+  },
+  "reconciliation": {
+    "newJournals": 8,
+    "newTurnover": 640,
+    "newAP": 300,
+    "newInventoryGL": 300,
+    "newStockValue": 300,
+    "inheritedStockGlGap": 120,
+    "allOpeningSettingsRestoredReloaded": true,
+    "ambiguousFinancialIntents": 0
+  },
+  "correctionsAndBoundaries": [
+    "GRN1 wait targeted list URL but actual success redirected to detail; persisted readback confirmed one GRN; no retry.",
+    "PO generic REMAINING column tracks billing remainder: after first receipt shows5 while logical unreceived3; after receipt5/billed2 shows3. Do not claim UI showed receipt remainder.",
+    "RET1: direct bill Create return posts full source with no quantity input; generic New return lacks source picker, list actions no partial return. Pinned new-page source supports from parameter but no supported UI entry observed; no guessed query, hidden input or unlinked substitute.",
+    "OVER dependent blocked; pre-return fully billed PO hides conversion controls. This is read-only UI boundary only, no server-denial claim.",
+    "END pass covers observed close; durable publication verified separately in PR.",
+    "Original0018 remains unresolved; new catalog17/18Oct positives do not overwrite it."
+  ],
+  "releaseAcceptance": false,
+  "fullCanonicalCaseAcceptance": false,
+  "metrics": {
+    "extraUserPromptsDuringRun": 0,
+    "modelRoutingVerified": false,
+    "creditsObserved": null,
+    "note": "Checkpoint timestamps measure elapsed execution, not billed credits or model identity."
+  }
+}

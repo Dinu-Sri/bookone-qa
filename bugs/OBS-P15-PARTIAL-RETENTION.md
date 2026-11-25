@@ -15,3 +15,7 @@ Source observation: the pinned invoice form wraps its action with `toastIfFormEr
 Expand regression coverage to issue/delivery/due dates, notes, payment mode, dimensions, applicable tax/export fields and shared forms. Only delivery/due/notes loss was directly reproduced here. Preserve the first attempt and earlier failed records; a controlled-lines-only test is inadequate.
 
 After a fix, retest the exact server refusal with values different from defaults and unchanged business snapshots, then a supported correction in the same retained form that posts once. Keep the client 150% and normal posting controls. Do not reset, repair or write off historical fixtures. This is not release approval.
+
+## 18 October source investigation addendum
+
+The [PR43 technical review](../reviews/REVIEW-20261018-pr43.md) identifies the normal-resolution/reset mechanism from the actual form/action source and React's documented contract. An extracted client wrapper given a substituted business-error result emits one toast and resolves `undefined`; the relevant dates/notes use uncontrolled defaults. The existing live P15-08 observation supplies the before/after symptom. No separate React DOM lifecycle test or new deployed retest was run, and no fix is accepted. Preserve the original hypothesis wording as the earlier state of knowledge; this addendum records the stronger source-level evidence and remaining runtime boundary.
