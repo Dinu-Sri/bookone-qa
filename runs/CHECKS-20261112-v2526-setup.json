@@ -1,0 +1,666 @@
+{
+  "executionQA": "19f8ecd5bc35517a97d57dafdf72399c0ee478cc",
+  "product": "e741a6a9b68969bfc58be70fb8459de479da2cdd",
+  "tree": "9954c832b35078af89c49adb2c31fe0165373dd9",
+  "stage": "closed-metadata-only-tail",
+  "rows": [
+    {
+      "id": "S01",
+      "status": "passed",
+      "actual": "Clean exact QA19f8ecd; new clock before browser/auth; date12Nov verified",
+      "nextAction": null
+    },
+    {
+      "id": "S02",
+      "status": "passed",
+      "actual": "Actual visible v2.5.26 · e741a6a matches candidate prefix; full Git tree previously reviewed; no independent server attestation",
+      "nextAction": null
+    },
+    {
+      "id": "S03",
+      "status": "passed",
+      "actual": "Fresh host33/33 passed; actual title and Sales click each1UI; five refusals0UI; all7 proof clocks closed",
+      "nextAction": null
+    },
+    {
+      "id": "S04",
+      "status": "passed",
+      "actual": "Fresh logout/full-reload redirect and fresh A login accepted; initial stale SPA observation retained",
+      "nextAction": null
+    },
+    {
+      "id": "S05",
+      "status": "passed",
+      "actual": "Central V/N file absent; exactly two private synthetic owner credentials reserved before any signup; old accounts unchanged",
+      "nextAction": null
+    },
+    {
+      "id": "S06",
+      "status": "blocked",
+      "actual": "Exact candidate SHA/tree verified clean; independent accounting15files196/196 and typecheck pass. First test command inherited QA config and failed; explicit private config corrected discovery. Isolated runtime not run: Docker Linux engine pipe unavailable.",
+      "nextAction": "Medium obtain exact-candidate guarded ephemeral PostgreSQL runtime evidence; do not call196 unit tests runtime acceptance"
+    },
+    {
+      "id": "V07",
+      "status": "passed",
+      "actual": "One V signup accepted and fresh login reached onboarding; terms acceptance recorded",
+      "nextAction": null
+    },
+    {
+      "id": "V08",
+      "status": "passed",
+      "actual": "Supported Company onboarding completed once; new V owner company context observed",
+      "nextAction": null
+    },
+    {
+      "id": "V09",
+      "status": "passed",
+      "actual": "Saved platform admin login qualified; V company actual UI locator bound",
+      "nextAction": null
+    },
+    {
+      "id": "V10",
+      "status": "passed",
+      "actual": "Single module save persisted after full reload",
+      "nextAction": null
+    },
+    {
+      "id": "V11",
+      "status": "passed",
+      "actual": "V owner authenticated with Inventory/POS effective operator navigation; actual submits still governed by later cases",
+      "nextAction": null
+    },
+    {
+      "id": "V12",
+      "status": "passed",
+      "actual": "Fullreload persisted VAT registered18%,local,TAX default; no other settings changed",
+      "nextAction": null
+    },
+    {
+      "id": "V13",
+      "status": "passed",
+      "actual": "Fullreload verified exactly one V-WH-1112 Warehouse; no stock opening",
+      "nextAction": null
+    },
+    {
+      "id": "V14",
+      "status": "passed",
+      "actual": "Fullreload verifies REG-01 manual; no print/device/shift operation",
+      "nextAction": null
+    },
+    {
+      "id": "V15",
+      "status": "passed",
+      "actual": "Fullreload V-REG-1112 active/manual/location V Warehouse1112/cash1000, default also manual",
+      "nextAction": null
+    },
+    {
+      "id": "V16",
+      "status": "passed",
+      "actual": "Exactly4 products and1customer/1vendor accepted and independently listed; physical100/60 qty0, services40/0 nonstock; standard tax saved",
+      "nextAction": null
+    },
+    {
+      "id": "V17",
+      "status": "inconclusive",
+      "actual": "Unsaved VAT quote6x100 shows net600 VATpreview108 future708; manual dedicated POS register/no shift observed. Source conversion reviewed previously; actual order detail conversion controls cannot be observed without creating a document, forbidden here.",
+      "nextAction": "Medium bind conversion action from exact source plus permitted future owned source in big mission; do not create qualification transaction"
+    },
+    {
+      "id": "V18",
+      "status": "passed",
+      "actual": "21 actual opening views show zero accounts/journals/BS/PnL/trial/GL/stock movements and empty alltime documents/POS shifts; service no stock and two physical products qty0. V17 conversion live-detail gap retained independently.",
+      "nextAction": null
+    },
+    {
+      "id": "N19",
+      "status": "passed",
+      "actual": "One N signup accepted and fresh login independently reached onboarding; no bypass",
+      "nextAction": null
+    },
+    {
+      "id": "N20",
+      "status": "passed",
+      "actual": "Actual QAN Launch1112 company owner workspace after supported onboarding",
+      "nextAction": null
+    },
+    {
+      "id": "N21",
+      "status": "inconclusive",
+      "actual": "Guarded admin Login click returned but protected Control Room redirected login; persistent sign-in not established. First stale/inert SPA observations preserved; cause unproved.",
+      "nextAction": "Medium prepare remaining-only auth/setup successor with full-reload form preparation and reviewed retry policy; reuse N account"
+    },
+    {
+      "id": "N22",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N23",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N24",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N25",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N26",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N27",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N28",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N29",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "N30",
+      "status": "blocked",
+      "actual": "Dependent N admin authentication N21 not qualified; no write attempted",
+      "nextAction": "Reuse N in new reviewed remaining-only successor after auth gate"
+    },
+    {
+      "id": "S31",
+      "status": "inconclusive",
+      "actual": "A Owner restored; fresh account/BS/journal/6movement reads preserve cash150 bank290 inventory180 income120 assets620 and17journals. Receipt/remittance own payment IDs not yet qualified; no fresh B/original full historical equality claim.",
+      "nextAction": "Medium carry actual receipt/remittance ID binding and amount-cent cases into remaining business release; do not replay payments"
+    },
+    {
+      "id": "S32",
+      "status": "passed",
+      "actual": "48-event proposed integer-cent oracle independently balances every event; corrected net quote/order600/120, VAT only invoice; V grossassets1760/liability90/net1670 and Nassets500; all future funding unconsumed. Readiness remains partial for N/auth/runtime/printlinks/conversion.",
+      "nextAction": null
+    },
+    {
+      "id": "S33",
+      "status": "passed",
+      "actual": "All33 cases dispositioned; sanitized consolidated results initially published fa022124880386c05e9b5c0a56e83bb71add4939 and PR103; zero unresolved submission outcomes, no money/stock/shift/print actions; readiness partial",
+      "nextAction": null
+    }
+  ],
+  "counts": {
+    "passed": 20,
+    "blocked": 10,
+    "inconclusive": 3,
+    "running": 0,
+    "pending": 0
+  },
+  "submissions": {
+    "total": 29,
+    "rawLedgerAccepted": 29,
+    "adjudicatedAccepted": 27,
+    "adjudicatedRefused": 2,
+    "unresolvedSubmissions": 0,
+    "corrections": [
+      {
+        "submissionId": "n-admin-login-1",
+        "rawOutcome": "accepted",
+        "adjudicatedOutcome": "refused",
+        "actual": "Independent protected Control Room redirected login; session not established"
+      },
+      {
+        "submissionId": "a-restore-login-1",
+        "rawOutcome": "accepted",
+        "adjudicatedOutcome": "refused",
+        "actual": "Explicit Invalid email or password, before subsequent fresh accepted attempt"
+      }
+    ]
+  },
+  "effects": {
+    "newAccounts": 2,
+    "newCompanies": 2,
+    "moduleSaves": 1,
+    "VATSettingsSaves": 1,
+    "newWarehouses": 1,
+    "defaultRegisterManualSaves": 1,
+    "newDedicatedRegisters": 1,
+    "newProducts": 4,
+    "newCustomers": 1,
+    "newVendors": 1,
+    "financialActions": 0,
+    "stockMovementActions": 0,
+    "shiftActions": 0,
+    "physicalPrintActions": 0
+  },
+  "candidateChecks": {
+    "accountingFiles": 15,
+    "accountingPassed": 196,
+    "accountingFailed": 0,
+    "typecheck": "passed",
+    "firstTestFailure": "ancestor QA Vitest config discovery; retained; corrected with explicit private empty include config",
+    "runtime": "blocked-Docker-Linux-engine-unavailable"
+  },
+  "qaChecks": {
+    "freshHostPassed": 33,
+    "actualProof": "2 positives1UIclaim each;5 refusals0UIclaim;7clocks closed"
+  },
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 9000000,
+    "reserveMs": 1800000,
+    "chargedMs": 1764251,
+    "pausedMs": 1548739,
+    "lastAt": 1794460827512,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1794457514522
+      },
+      {
+        "action": "check",
+        "at": 1794457583211,
+        "elapsedMs": 68689,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794457583240,
+        "elapsedMs": 29,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794457616582,
+        "elapsedMs": 33342,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794457616610,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794457666685,
+        "elapsedMs": 50075,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794457666712,
+        "elapsedMs": 27,
+        "priorMode": "active"
+      },
+      {
+        "action": "pause",
+        "at": 1794457741131,
+        "elapsedMs": 74419,
+        "priorMode": "active",
+        "reason": "Waiting for required action-time acceptance of terms for new V/N accounts"
+      },
+      {
+        "action": "resume",
+        "at": 1794459289870,
+        "elapsedMs": 1548739,
+        "priorMode": "paused"
+      },
+      {
+        "action": "check",
+        "at": 1794459329054,
+        "elapsedMs": 39184,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459329084,
+        "elapsedMs": 30,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459364746,
+        "elapsedMs": 35662,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459364773,
+        "elapsedMs": 27,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459405235,
+        "elapsedMs": 40462,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459405260,
+        "elapsedMs": 25,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459447442,
+        "elapsedMs": 42182,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459447468,
+        "elapsedMs": 26,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459476083,
+        "elapsedMs": 28615,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459476115,
+        "elapsedMs": 32,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459582092,
+        "elapsedMs": 105977,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459582124,
+        "elapsedMs": 32,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459615655,
+        "elapsedMs": 33531,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459615702,
+        "elapsedMs": 47,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459642574,
+        "elapsedMs": 26872,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459642602,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459708652,
+        "elapsedMs": 66050,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459708682,
+        "elapsedMs": 30,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459751409,
+        "elapsedMs": 42727,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459751450,
+        "elapsedMs": 41,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459769958,
+        "elapsedMs": 18508,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459769990,
+        "elapsedMs": 32,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459795918,
+        "elapsedMs": 25928,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459795947,
+        "elapsedMs": 29,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459837383,
+        "elapsedMs": 41436,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459837411,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459864433,
+        "elapsedMs": 27022,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459864463,
+        "elapsedMs": 30,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459887009,
+        "elapsedMs": 22546,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459887040,
+        "elapsedMs": 31,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459910998,
+        "elapsedMs": 23958,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459911035,
+        "elapsedMs": 37,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459933476,
+        "elapsedMs": 22441,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459933501,
+        "elapsedMs": 25,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459954026,
+        "elapsedMs": 20525,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794459954051,
+        "elapsedMs": 25,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460046060,
+        "elapsedMs": 92009,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460076753,
+        "elapsedMs": 30693,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460076781,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460130646,
+        "elapsedMs": 53865,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460130673,
+        "elapsedMs": 27,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460160077,
+        "elapsedMs": 29404,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460160104,
+        "elapsedMs": 27,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460193264,
+        "elapsedMs": 33160,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460193292,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460234046,
+        "elapsedMs": 40754,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460234074,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460264423,
+        "elapsedMs": 30349,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460264451,
+        "elapsedMs": 28,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460413734,
+        "elapsedMs": 149283,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460413775,
+        "elapsedMs": 41,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460515726,
+        "elapsedMs": 101951,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460515758,
+        "elapsedMs": 32,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460686671,
+        "elapsedMs": 170913,
+        "priorMode": "active"
+      },
+      {
+        "action": "check",
+        "at": 1794460827351,
+        "elapsedMs": 140680,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794460827512,
+        "elapsedMs": 161,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "readiness": "PARTIAL-no-big-business-release",
+  "preservation": "A bounded fresh closings unchanged; no B/original write; full historical equality not claimed",
+  "initialPublication": "fa022124880386c05e9b5c0a56e83bb71add4939",
+  "pullRequest": "https://github.com/Dinu-Sri/bookone-qa/pull/103"
+}
