@@ -90,7 +90,7 @@ Necessary restoration/reconciliation is separately declared by recovery=true on 
 
 `node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly.
 
-Immediately before a business browser write, dispatch through `dispatchBrowserAppWrite`. It re-reads persisted plan/state/fingerprint/clock, charges the unpaused gap from `lastAt` to the dispatch time, and revalidates immediately before invoking the connected Browser app `js` tool. It does not trust command stdout or a prior Boolean authorization.
+Immediately before a business browser write, dispatch through `runPersistedBrowserRequest` / `dispatchConnectedBrowser` so the unchanged `dispatchBrowserAppWrite` re-reads persisted plan/state/fingerprint/clock, charges the unpaused gap from `lastAt` to the dispatch time, and revalidates immediately before invoking the connected Browser app `js` tool. It does not trust command stdout or a prior Boolean authorization. See docs/CONNECTED_BROWSER_TRANSPORT.md.
 
 ```js
 import {dispatchBrowserAppWrite} from './scripts/operator-action-guard.mjs';
@@ -114,3 +114,6 @@ Each new mission must bind budget, exact candidate/QA/UX/rule/library, actual ac
 
 Light05's scenario template is fixed but executionReady=false until Medium publishes a NEW exact-bound candidate/fixture copy. The template never invents a future version or grants permission to deploy. Preserve all previous results, corrections, settings and old consumed sources. Actual encrypted backup/restore remains LAST.
 
+## Owner priority — rapid full-workflow launch cycles, 27 October 2026
+
+Follow [RAPID_WORKFLOW_CYCLES.md](RAPID_WORKFLOW_CYCLES.md) as the default strategy. Cost efficiency includes launch progress: substantial complete-journey batches, multiple-defect discovery, consolidated coding fixes and grouped failure/adjacent regression. Medium preparation must lead to an exact-bound executable batch rather than recurring small planning loops. Preserve mandatory controls and truthful evidence; timebox and fix shared blockers once, continue independent lanes, and use new qualified fixtures/current openings for new workflows when historical snapshot comparisons remain unavailable. This direction does not turn missing historical layers into passes or authorize financial replay.
