@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "id": "ORACLE-v2522-RAPID-02-CONT1",
+  "authority": [
+    "BR-ACC-01",
+    "BR-SAL-02",
+    "BR-PUR-01",
+    "BR-STK-03"
+  ],
+  "meaning": "Fresh29Oct opening includes4accepted28Octevents; physicalcashcyclecomplete andservicecashpurchase80 readonly. Reconcileonlyremaining refunds andnewAR/APcycles; preserveold dates.",
+  "profile": {
+    "businessDate": "2026-10-29",
+    "dueDate": "2026-10-31",
+    "currency": "LKR",
+    "vatRegistered": false,
+    "purchaseApproval": false,
+    "postGrniOnReceipt": false,
+    "costing": "last",
+    "settingsMutation": false,
+    "physicalUnitCostCents": 6000
+  },
+  "lanes": {
+    "serviceCash": {
+      "events": [
+        {
+          "id": "R02-S-RETURN1",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 4000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "6800",
+                  "debitCents": 0,
+                  "creditCents": 4000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-S-RETURN2",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 4000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "6800",
+                  "debitCents": 0,
+                  "creditCents": 4000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ]
+    },
+    "customerAllocation": {
+      "events": [
+        {
+          "id": "R02-AR-INVOICE1",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1300",
+                  "debitCents": 12000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "4000",
+                  "debitCents": 0,
+                  "creditCents": 12000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AR-INVOICE2",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1300",
+                  "debitCents": 8000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "4000",
+                  "debitCents": 0,
+                  "creditCents": 8000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AR-CREDIT",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "4100",
+                  "debitCents": 4000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1300",
+                  "debitCents": 0,
+                  "creditCents": 4000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AR-PART",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 3000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1300",
+                  "debitCents": 0,
+                  "creditCents": 3000
+                }
+              ]
+            },
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 2000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1300",
+                  "debitCents": 0,
+                  "creditCents": 2000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AR-FINAL",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 5000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1300",
+                  "debitCents": 0,
+                  "creditCents": 5000
+                }
+              ]
+            },
+            {
+              "entries": [
+                {
+                  "account": "1000",
+                  "debitCents": 6000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1300",
+                  "debitCents": 0,
+                  "creditCents": 6000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ]
+    },
+    "vendorAllocation": {
+      "events": [
+        {
+          "id": "R02-AP-BILL1",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "6800",
+                  "debitCents": 12000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "2100",
+                  "debitCents": 0,
+                  "creditCents": 12000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AP-BILL2",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "6800",
+                  "debitCents": 8000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "2100",
+                  "debitCents": 0,
+                  "creditCents": 8000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AP-CREDIT",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "2100",
+                  "debitCents": 4000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "6800",
+                  "debitCents": 0,
+                  "creditCents": 4000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AP-PART",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "2100",
+                  "debitCents": 3000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 3000
+                }
+              ]
+            },
+            {
+              "entries": [
+                {
+                  "account": "2100",
+                  "debitCents": 2000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 2000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        },
+        {
+          "id": "R02-AP-FINAL",
+          "journals": [
+            {
+              "entries": [
+                {
+                  "account": "2100",
+                  "debitCents": 5000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 5000
+                }
+              ]
+            },
+            {
+              "entries": [
+                {
+                  "account": "2100",
+                  "debitCents": 6000,
+                  "creditCents": 0
+                },
+                {
+                  "account": "1000",
+                  "debitCents": 0,
+                  "creditCents": 6000
+                }
+              ]
+            }
+          ],
+          "stockQtyDelta": 0
+        }
+      ]
+    }
+  },
+  "allPass": {
+    "financialSubmissions": 12,
+    "journals": 16,
+    "debitCents": 88000,
+    "creditCents": 88000,
+    "cashDeltaCents": 8000,
+    "arDeltaCents": 0,
+    "apDeltaCents": 0,
+    "inventoryGlDeltaCents": 0,
+    "currentStockValueDeltaCents": 0,
+    "physicalQuantityDelta": 0,
+    "cogsDeltaCents": 0,
+    "revenueDeltaCents": 20000,
+    "returnsDeltaCents": 4000,
+    "expenseDeltaCents": 8000,
+    "netIncomeDeltaCents": 8000,
+    "assetsDeltaCents": 8000,
+    "liabilitiesDeltaCents": 0,
+    "physicalMovements": []
+  }
+}
