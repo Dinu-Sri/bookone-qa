@@ -1,0 +1,25 @@
+# Mission1A — restored browser and reviewed non-VAT execution
+
+The owner reported deployment live and requested sustained testing. Fresh current Chrome DOM/navigation controls now work. On11November the unchanged original persisted desktop guard performed an actual title and harmless selected Sign In mode click successfully; five exit/intent/fingerprint/clock/date negatives refused with zero actions/claims. Source hashes are retained privately. Earlier failed/native proof records remain unchanged. The native fallback is still quarantined and is not used.
+
+The visible build is v2.5.25 · a6eda60, matching owner-reported deployment and known merge a6eda602bc67f20eb86736cbeceabc9cdd841769/tree07ff418256d8bdd56fb1569203e6baa4f03aaa44. This binds the reviewed merge through the deployment report and visible version/prefix; an independent server image/digest attestation is not claimed. Prior exact-tree PG136/HTTPS30 evidence remains bounded and does not certify a new live business run.
+
+Fresh guarded saved A Owner login with Remember off succeeded; actual own company/Owner/build verified. Read-only qualification found nonVAT/defaultTax0/local commercial, lastcost, negative stock Allow, purchase approvaloff/GRNIoff, cash1000/bank1100/card1200 and valid owner equity3000/inputVAT2300. Current account balances0, Novjournal0, all-time product/return/cash-purchase lists empty, stockvalue0. Three existing hire bays and one default register are opening facts and must be preserved. No equality to an old all-time journal snapshot is inferred from a current-month zero.
+
+Supported UI verified: new product (cost/pricing/accounts/opening0), Add location/Warehouse, Money In Owner contribution credits equity3000, receipt/refund tender options and cash-purchase payment accounts. No settings/grant/master/financial write occurred in this qualification. The only auth submission was accepted once, independently read back and resolved. Native/source/role fixture IDs and raw evidence stay private.
+
+## Corrected specification before financial execution
+
+Pinned product cash-return-settlement.ts and purchase/returns/new/page.tsx explicitly give refund tender controls to cash_purchase sources. A credit-bill-linked purchase_return is an ordinary APcredit even if the bill has already been paid. Original40-point planning expected a bank refund from a settled credit bill; that assumption was wrong. This is a planning correction, not a demonstrated product defect. The original PLANs/oracles are unchanged and remain non-executable.
+
+The NEW date-bound46-case Mission1A returns2x60 against the unpaid credit bill (APcredit120), then pays remaining480. It adds a separate bank-paid cash_purchase2x60 and full source-linked bank refund120 so supplier refund coverage remains present. Customer cash refund100 and service card40/bank80 refund cycles are retained. Sixteen workflow journals DR=CR3680, six stock movements, stock3/value180, income120, AR/AP0, cash+150/bank-210/card0 versus funded opening. Separate owner contribution500 adds one setup journal: fullrun17journals/DR4180, finalcash150/bank290/stock180/assets620 =equity500+income120. No VAT or external bank/card processing is accepted by this non-VAT example.
+
+NEW explicit fixture cases add only an own warehouse and physical/service products with opening0, plus supported synthetic bank contribution500. Actual Save controls are source/visible-UI bound; source quantities/tenders/dates/funding reread before each submit. No module changes or signup. ForeignB/originalQA and all historical sources remain protected; no replay or repair.
+
+## Execution contract
+
+queues/MISSION-v2525-M1A-20261111.json, queues/ORACLE-v2525-M1A-20261111.json and scripts/launch-m1a-run.mjs. Actual published fullQA must match the clean execution checkout. NEW120total/100execution/20closing clock before fresh browser/auth; preflight15min, fixed11NovemberUTC, due14November for newly owned documents, stop new submits at23:55UTC. Fresh exact actual controls and A Owner gates before writes. One guarded intent/click, immediate feedback then independent persisted readback. Unknown/claimed actions stop business writes; no retries. Failed dependencies stop dependent writes while independent lanes continue.
+
+The declared existing negative-stock Allow setting is not a rejection test. No invalid live submits or real race/fault injection. Current customer tax applicability, POS/denied-role/customer-opening/recovery/processor acceptance remain with later programme missions. M1B needs its own qualified VAT fixture. Full trial/date/tender/stock/source/history closure and one consolidated publication are mandatory; no customer readiness inferred from this queue. Owner personally deploys; no agent merge/deploy. Backup/recovery LAST.
+
+Focused validation: five independent financial checks include mutants for missing supplier refund, wrong AP-as-cash assumption and wrong stock quantity; current source guards unchanged. Metadata checks and old planning arithmetic remain separately validated. These are preparation results, not business outcomes.
