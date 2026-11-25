@@ -114,3 +114,6 @@ Each new mission must bind budget, exact candidate/QA/UX/rule/library, actual ac
 
 Light05's scenario template is fixed but executionReady=false until Medium publishes a NEW exact-bound candidate/fixture copy. The template never invents a future version or grants permission to deploy. Preserve all previous results, corrections, settings and old consumed sources. Actual encrypted backup/restore remains LAST.
 
+## Owner priority — rapid full-workflow launch cycles, 27 October 2026
+
+Follow [RAPID_WORKFLOW_CYCLES.md](RAPID_WORKFLOW_CYCLES.md) as the default strategy. Cost efficiency includes launch progress: substantial complete-journey batches, multiple-defect discovery, consolidated coding fixes and grouped failure/adjacent regression. Medium preparation must lead to an exact-bound executable batch rather than recurring small planning loops. Preserve mandatory controls and truthful evidence; timebox and fix shared blockers once, continue independent lanes, and use new qualified fixtures/current openings for new workflows when historical snapshot comparisons remain unavailable. This direction does not turn missing historical layers into passes or authorize financial replay.
