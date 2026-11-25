@@ -14,12 +14,21 @@ const sourceHashes=()=>Object.fromEntries(sources.map(p=>[p,hash(fs.readFileSync
 const loadedHashes=sourceHashes();
 const atomic=(p,v)=>{const tmp=p+'.'+randomUUID()+'.tmp';fs.writeFileSync(tmp,JSON.stringify(v,null,2)+'\n',{flag:'wx',mode:0o600});fs.renameSync(tmp,p);};
 export const desktopSourceHashes=()=>({...loadedHashes});
+export function assertExecutionDate(plan,now=Date.now()){
+  const d=plan.dateContract;
+  if(!d)return;
+  if(d.mode!=='fixed-utc-day'||!/^\d{4}-\d{2}-\d{2}$/.test(d.executionDate)||new Date(d.executionDate+'T00:00:00Z').toISOString().slice(0,10)!==d.executionDate||d.stopBeforeMidnightMinutes!==5)throw Error('Invalid execution date contract');
+  const current=new Date(now);
+  if(!Number.isFinite(now)||current.toISOString().slice(0,10)!==d.executionDate)throw Error('Execution UTC day changed; preserve run and review continuation');
+  if(now>=Date.parse(d.executionDate+'T00:00:00Z')+86400000-300000)throw Error('UTC rollover reserve: no new submissions');
+}
 function load(requestPath){
   const request=read(requestPath),base=path.dirname(path.resolve(requestPath));
   const file=k=>path.resolve(base,request[k]);
   return {request,base,plan:read(file('plan')),state:read(file('state')),fingerprint:read(file('fingerprint')),clock:read(file('clock')),clockPath:file('clock'),script:fs.readFileSync(file('script'),'utf8')};
 }
 function bindings(live){
+  assertExecutionDate(live.plan);
   if(hash(sourceHashes())!==hash(loadedHashes)||hash(live.request.desktopSources)!==hash(loadedHashes))throw Error('Desktop source binding changed; restart at reviewed pin');
   const spec=live.plan.cases.find(c=>c.id===live.request.caseId);
   if(!spec)throw Error('Unknown case');
@@ -29,7 +38,7 @@ function bindings(live){
   const u=new URL(a.url);
   if(u.origin!=='https://bookone.clossyan.com'||u.username||u.password)throw Error('Wrong target origin');
   if(a.kind==='click'&&(a.role!=='button'||typeof a.name!=='string'||!a.name.trim()))throw Error('Exact named button required');
-  if(live.plan.id==='MISSION-v2522-RAPID-01'&&a.kind==='click'&&!spec.allowedButtons?.includes(a.name))throw Error('Button is not approved for this mission case');
+  if(live.plan.id.startsWith('MISSION-v2522-RAPID-01')&&a.kind==='click'&&!spec.allowedButtons?.includes(a.name))throw Error('Button is not approved for this mission case');
   return a;
 }
 export async function dispatchPersistedDesktopAction({requestPath,tab}){

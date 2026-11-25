@@ -38,3 +38,7 @@ Only JSON descriptors `title` and exact named `button` click are supported; acti
 ## Fresh proof at each run
 
 `node scripts/prepare-desktop-proof.mjs NEW_PRIVATE_PROOF_DIR CURRENT_OBSERVED_BOOKONE_URL` creates five synthetic nonbusiness requests. Invoke them through the actual CUA host: positive returns title BookOne with1uiCall/1claim; exit/intent/fingerprint/clock controls each0uiCalls/0claims. Do not modify or reuse consumed proof requests. A safe navigation-toggle click may prove the click branch; it must not submit business data. Keep concrete counters/title/claim receipts privately. The preparation review records the author's actual proof and limitations; Light must perform fresh proof for its own execution pin/session.
+
+## Rapid01 continuation date binding
+
+The new reviewed continuation plan adds dateContract fixed-utc-day2026-10-28 and stopBeforeMidnightMinutes5. assertExecutionDate runs in every bindings check, including after durable claim and final persisted revalidation. New fixed helper also checks before init/request. Any day mismatch, malformed calendar date or lastfiveUTCminutes refuses. A refusal after claim remains consumed; never replay. Exactbutton allowlists apply to the whole Rapid01 mission family. The original frozen queue/oracle remain unchanged. Separate sourceissue/delivery/due/targetpayment facts; no retroactive date repair.
