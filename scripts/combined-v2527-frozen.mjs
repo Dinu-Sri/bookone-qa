@@ -1,6 +1,6 @@
 // Browser-host-safe verification: files/hashes only, no process or subprocess.
 import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
-const names=['scripts/combined-v2527-carry.mjs','scripts/combined-v2527-run.mjs','scripts/combined-v2527-policy.mjs','scripts/combined-v2527-cua.mjs','scripts/combined-v2527-frozen.mjs'];
+const names=['scripts/combined-v2527-date-input.mjs','scripts/combined-v2527-carry.mjs','scripts/combined-v2527-run.mjs','scripts/combined-v2527-policy.mjs','scripts/combined-v2527-cua.mjs','scripts/combined-v2527-frozen.mjs'];
 const hash=(root,p)=>createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 export const combinedSourceHashes=root=>Object.fromEntries(names.map(p=>[p,hash(root,p)]));
 export function checkFrozen(root,fp,plan){
