@@ -1,0 +1,18 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08",
+  "attempt": "new01",
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 37
+  },
+  "newAcceptedAssertions": 0,
+  "canonicalAcceptance": "not-established",
+  "unitGuard": {
+    "passed": 26,
+    "failed": 0,
+    "actualConnectedTransportProven": false
+  },
+  "acceptedFinancialEvents": [],
+  "unresolvedSubmissions": 0
+}

@@ -1,0 +1,12 @@
+{
+  "attempt": "light08-new01",
+  "mode": "closed",
+  "chargedMs": 280459,
+  "totalMinutes": 120,
+  "reserveMinutes": 20,
+  "explicitPausedMs": 0,
+  "acceptedFinancialEvents": 0,
+  "unresolvedSubmissions": 0,
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/68",
+  "metadataTail": "This closing record and minimal SESSION pointer were published after clock close; their publication time is not included in chargedMs. Original SESSION update was automatically rejected for historical metadata egress; replaced with a minimal sanitized pointer."
+}
