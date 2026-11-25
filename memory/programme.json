@@ -2000,12 +2000,92 @@
     "releaseAcceptance": "not-established"
   },
   "latestRapid04MediumReview": {
-    "date": "2026-10-30",
-    "qaBase": "cf8ddcb38d813226de466873d1679b4051251297",
-    "liveProduct": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
-    "review": "reviews/REVIEW-20261030-v2524-live-readiness.md",
-    "handoff": "handoffs/CODING-MISSION-20261030-rapid04-review-followup.md",
-    "status": "hold-coding-CI-and-fixture-gates",
-    "lightExecutable": false
+    "date": "2026-11-04",
+    "qaBase": "506db5baa0106784ead44749416639b9c47accdd",
+    "testedQa": "5043390ae43ca4bd677b7705252582a1003ec341",
+    "productSha": "5ea0d6e243a1bd37889240e15b10ea86ef3c94ba",
+    "review": "reviews/REVIEW-20261104-v2525-medium.md",
+    "checks": "runs/CHECKS-20261104-v2525-medium-review.json",
+    "handoff": "handoffs/HANDOFF-20261104-v2525-next-batch.md",
+    "status": "isolated-green-await-owner-deploy-live-fixture-and-new-Light-binding",
+    "postgresPassed": 136,
+    "httpsPassed": 30,
+    "lightExecutable": false,
+    "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/95"
+  },
+  "latestRapid04FixtureSetup": {
+    "date": "2026-11-04",
+    "executionQa": "c9eb6510d3549f28d53b902fe8fa686c274a70b2",
+    "productSha": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
+    "run": "runs/RUN-20261104-rapid04-fixture-setup.md",
+    "handoff": "handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md",
+    "counts": {
+      "passed": 5,
+      "failed": 0,
+      "blocked": 0,
+      "inconclusive": 0,
+      "not-run": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "accountModuleComplete": true,
+    "rentalBusinessReady": false,
+    "next": "Groupedcodingfollowup plus supportedbay/fleet/settingspreparation before executableLightbatch",
+    "oldClockClosedChargedMs": 460780457,
+    "noAccountReplay": true
+  },
+  "firstCustomerScope": {
+    "date": "2026-11-04",
+    "ownerRequired": [
+      "physical-goods",
+      "services",
+      "POS",
+      "VAT-and-nonVAT",
+      "cash-bank-card"
+    ],
+    "deploymentOwner": "human-owner",
+    "programme": "docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md",
+    "mission1": "handoffs/HANDOFF-20261104-first-customer-m1-plan.md",
+    "plannedMissions": 4,
+    "plannedLightRuns": 5,
+    "groupedRetestAllowance": [
+      1,
+      2
+    ],
+    "estimatedRuns": [
+      5,
+      7
+    ],
+    "specifiedCheckpoints": 80,
+    "lightExecutable": false,
+    "launchAccepted": false,
+    "next": "Medium actual live fingerprint and reusable fixture/transport qualification, then NEW exact-bound M1A release"
+  },
+  "latestControlQualification": {
+    "date": "2026-11-11",
+    "review": "reviews/REVIEW-20261111-browser-control-block.md",
+    "checks": "runs/CHECKS-20261111-native-control-qualification.json",
+    "status": "blocked-browserDOM-and-nativegeometry-screenshot",
+    "actualReadPassed": true,
+    "actualClickQualified": false,
+    "authSubmissions": 0,
+    "businessSubmissions": 0,
+    "next": "Restore supported browser control; fresh proof then qualify Mission1A"
+  },
+  "latestM1ARelease": {
+    "date": "2026-11-11",
+    "queue": "queues/MISSION-v2525-M1A-20261111.json",
+    "oracle": "queues/ORACLE-v2525-M1A-20261111.json",
+    "helper": "scripts/launch-m1a-run.mjs",
+    "review": "reviews/REVIEW-20261111-m1a-release.md",
+    "cases": 46,
+    "workflowJournals": 16,
+    "workflowDrCrCents": 368000,
+    "includingFundingJournals": 17,
+    "includingFundingDrCrCents": 418000,
+    "status": "released-conditional-not-executed",
+    "executionDate": "2026-11-11",
+    "nativeFallback": "quarantined",
+    "oldPlans": "unchanged-nonexecutable"
   }
 }
