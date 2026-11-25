@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-18",
-  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied.",
+  "asOf": "2026-10-22",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount. Added28 Light04 mission-slot dispositions:10passed,4failed,10blocked,4inconclusive on exact4c3a304; partial evidence, no atomic-assertion total or full canonical acceptance. New workbook bindings require Medium semantic review. Publication/restoration close verified in PR54. Added8PR54 technical-review records; no new browser execution or canonical acceptance. OriginalLight04 statuses and all prior entries remain unchanged. Added30 Light05 supplemental mission dispositions on exactde45536:9pass2fail16blocked3inconclusive; partial browser/journal/print/stock evidence, not atomic assertions/full canonical acceptance. END supplemental inconclusive because local ledger/clockclose unavailable after environment disconnected; ERP restored/reconciled. Medium semantic review required.",
   "entries": [
     {
       "run": "runs/CHECKS-20261016-broad-workflows.json",
@@ -3266,6 +3266,1286 @@
       "fullCaseAcceptance": false,
       "layer": "staging-browser",
       "boundary": "Actual deltas reconcile; all opening settings restored and reloaded; no unresolved financial intent; publication prepared as sanitized immutable run."
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Exact live candidate and published QA revision verified.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Fresh intended login and openings verified; required profile cannot be established because checkbox interactions do not change state.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-PO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Zero trading delta; no settings save; all actual openings reloaded unchanged; no ambiguous financial intent.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "ExactcandidateandpublishedQArevisionverified;freshattemptpreservespriorblockedrun."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshintendedlogin/openingscaptured;plannedprofile savedandreloaded;noexistingM18bills."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Businessrefusalretainedallfields;sameformcorrectedreferencepostedexactlyonebill10."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Legacyamount-onlydraftreopenscorrect256.50;readonly,noSavePost."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshpercentdraftsave/reopen/post/fullcredit256.50correctwithpersistedbreakdown."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-PO",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "NewPhysicalcatalog/PO5x60=300withzeroGLAPstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Received2@60withcorrectGRNIposting/AP0/newstock2value120."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "RequiredbillreferenceA persisted;nativeblankrefusalonly;GRNIclearedwithoutdoublestock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining3received180withGRNI;stock5value300/APprior120unchanged."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "DuplicaterefArefusedzeroGL;uniquerefBpostedonebill180/GRNIcleared/noadditionalstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Billpickerclientnavigationloadsmetadatawithoutlines/total0;safeReloadrecovers. Separatepartialreturnpostedcorrect60;firstUIfailurepreserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining2/value120prefilled;qty3explicitinvalidwithoutfakeDiscount;oneSave refusedallfieldsretained."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "AfterpartialreturnexhaustedPOhidesconversioncontrols;clientboundaryonly."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Invalid2+2refusalretainedfields/zeroGL;validsplitrows addedfromcatalogshowunlocked10insteadsource100,lineamounts120vsfooter300;dependentcreditnotposted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All7credits0.99x5,1,1equalpreviews/persistedbreakdowns;headerbudget0.05conserved/sourceclosed."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F10",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All10credits0.99x5then1x5matchpreview/persistedbreakdown;sourceclosed9.95/header0.05conserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Threecredits1,1,0.99matchpreviews/persistedallocations;sourceclosed2.99."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Taxedsource302.67fullycreditedafterVATdisabled;historicalVAT46.17andpersistedbreakdowncorrect."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Serverstockrefusalretains17fields;client150quoteerrorretains16;onlydiscountcorrectedquote10savedwith18-26Octnotes/zeroGL."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Actualoutcomesreconciled;allsettingsrestoredreloaded;noambiguousintent;sanitizedpublicationclosing."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-HISTORY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-A",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-B",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-EMPTY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-AB",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-CLEAR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PARTIAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-REMAIN",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PUR-SPLIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ZERO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-FIX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-DENY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011",
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-CLOSE",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-TAX",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SUPPLIER",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LISTS",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-004",
+        "UXW-013",
+        "UXW-014",
+        "UXW-015"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-UNLINKED",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-QUOTE",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-KEYBOARD",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-017",
+        "UXW-018"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-NARROW",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-021",
+        "UXW-022"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LATE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PRODUCT",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-HEADER",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-SUPPLIER",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-DIALOG",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-HELP",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PRINT",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PREFILL",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-CONTROLS",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ACCESS",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-HISTORY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-MASTER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-A",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-B",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-EMPTY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-SWITCH",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-CLEAR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PARTIAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DENY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SPLIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ZERO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-QUOTE-LINE",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-QUOTE-HEADER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SUPPLIER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DIALOG",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-HELP",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-UNLINKED",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SALES-SPLIT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DISCOUNT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-CREDIT-PRINT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-LATE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-AUTH",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-END",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Supplemental inconclusive closing; original private ledger END running after environment disconnect."
     }
   ]
 }

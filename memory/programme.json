@@ -1638,5 +1638,137 @@
     "canonicalAcceptance": false,
     "settingsChanged": false,
     "nextAction": "User sign-in; thenfresh actor/build/openings and execute22fixedslots; restore/reconcile/publish"
+  },
+  "light03BlockedExecution": {
+    "run": "runs/CHECKS-20261019-light03-blocked.json",
+    "handoff": "handoffs/HANDOFF-20261019-light03-blocked.md",
+    "mediumMission": "handoffs/MEDIUM-MISSION-20261019-light03-ui.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaBase": "bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+    "counts": {
+      "passed": 2,
+      "failed": 0,
+      "blocked": 20
+    },
+    "businessSubmissions": 0,
+    "classification": "Interaction anomaly; product versus browser/control cause unknown; Medium review required",
+    "settingsSaved": false,
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "profit": 539.5,
+      "assets": 1426.21,
+      "stockValue": 540
+    },
+    "nextAction": "Medium classify UI interaction failure;newreviewedattempt after reliableprofile;nohistoricalrepair",
+    "releaseAcceptance": false
+  },
+  "light03InteractionRecovery": {
+    "schemaVersion": 1,
+    "date": "2026-10-21",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "qaParent": "fd9b40bd2c859362b3f82b95aa6d1f0e0ad4958f",
+    "actor": "Fresh intended private QA N141710 sign-in on21Oct; loaded owncompanyOwner",
+    "observations": [
+      {
+        "id": "REC21-EXTENSION",
+        "status": "observed-blocker",
+        "actual": "Browser explicitly reported another extension UI open and blocking automation; user asked to dismiss; do not infer this caused19Oct checkbox failure."
+      },
+      {
+        "id": "REC21-CHECK",
+        "status": "passed-bounded",
+        "actual": "After user continued, standard getByRole checkbox.check changed requiredsupplier false totrue; DOMcheckedtrue observed; screenshot retained privately."
+      },
+      {
+        "id": "REC21-RESTORE",
+        "status": "passed-bounded",
+        "actual": "Standard uncheck restoredfalse; noSave clicked; reload retainedfullopeningpurchaseprofilefalse,false,true,false,false,Net30,6800."
+      }
+    ],
+    "settingsSaved": false,
+    "financialSubmissions": 0,
+    "businessFixAcceptance": false,
+    "historicalRootCause": "unresolved; prior19Oct failure remainsimmutable; currentautomationblockcleared and checkboxoperatesnow",
+    "scope": "Unsavedcontrolandrestore/readbackonly;notpersistedsettingssave,fullprofile,financialworkflow,DBconcurrencyorauthzacceptance",
+    "nextAction": "Newprivateexecutionattemptforunchanged22slotqueue atverifiedsamecandidate;reverifyactualactor/openings/allprofiles;neveroverwriteterminalblockedrun",
+    "handoff": "handoffs/HANDOFF-20261021-light03-recovery.md"
+  },
+  "light03FreshResults": {
+    "run": "runs/CHECKS-20261021-light03-results.json",
+    "handoff": "handoffs/HANDOFF-20261021-light03-results.md",
+    "codingMission": "handoffs/CODING-MISSION-20261021-light03-results.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaExecutionBase": "0afd96b4dd9e317e75102c6e159df9aa0e58561a",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "counts": {
+      "passed": 18,
+      "failed": 2,
+      "blocked": 2,
+      "inconclusive": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "closing": {
+      "journals": 122,
+      "turnover": 13243.63,
+      "AR": 1306.21,
+      "AP": 1090,
+      "inventoryGL": 660,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "COGS": 420,
+      "expense6800": 10,
+      "profit": 829.5,
+      "assets": 1966.21,
+      "stockValue": 780
+    },
+    "settingsRestoredReloaded": true,
+    "ambiguousFinancialIntents": 0,
+    "checkpointMinutes": 44.6,
+    "releaseAcceptance": false,
+    "canonicalAcceptance": false,
+    "nextAction": "Codingfixpickerstate/addedsourcerowpricing;Mediumreviewsactualdiff/newcandidateandfreshfixedqueue;authenticupgradesblocked;backuprestoreLAST"
+  },
+  "uiUxCompanion20261021": {
+    "version": "1.0.0",
+    "source": "ux/workbook.json",
+    "sha256": "383d18ad74978af67e9e75d855c77c87b45a92beb00c101a3338dd0abd01e57f",
+    "rules": 32,
+    "workflowTemplates": 48,
+    "directJourneyMappings": 31,
+    "status": "specified-draft-unbound-not-run",
+    "existingBusinessLibrary": "1.5.0/272 unchanged",
+    "productStudySha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "handoff": "handoffs/HANDOFF-20261021-ux-workbook.md",
+    "next": "Coding agent adopts documentation-only product contract and incremental fixes; Medium reviews actual diff/build and binds a fresh mission. Original Light03 return findings remain unresolved."
+  },
+  "light05Results": {
+    "date": "2026-10-22",
+    "productSha": "de45536bc47ead3e20f401ecd5fe144bfdf7d52c",
+    "executionQaSha": "a6379c2e4c835dc710e324fca342f0bba9decd9e",
+    "liveStamp": "v2.5.20 · de45536",
+    "run": "runs/CHECKS-20261022-light05-results.json",
+    "handoff": "handoffs/HANDOFF-20261022-light05-results.md",
+    "medium": "handoffs/MEDIUM-MISSION-20261022-light05.md",
+    "counts": {
+      "passed": 9,
+      "failed": 2,
+      "blocked": 16,
+      "inconclusive": 3,
+      "not-run": 0
+    },
+    "restored": true,
+    "reconciled": true,
+    "ledgerAndClockClose": "not-saved-environment-disconnected",
+    "budgetCompliance": "unverified",
+    "releaseAcceptance": "not-established",
+    "next": "Medium review and control recovery; no financial replay; new fixed mission after reviewed fixes/fixtures"
   }
 }
