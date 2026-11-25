@@ -1,0 +1,4551 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "note": "347 bounded assertions include repeats/candidates. Related mappings are partial, not full canonical execution. Remaining mappings require semantic review; no execution percentage implied. Added18 v2.5.16 mission-slot records; these are scenario dispositions, not18new atomic assertions or full canonical passes. Q01 appended correction required. Added6 PR46review observations; mixed scoped observations/harness diagnostics, not six fullcanonicalcases. Sourceprobe stays separately indexed inreview; no ERP completion denominator. Added18 Light02 mission dispositions, partial UI/journal/stock evidence only; no atomic-assertion total or canonical acceptance implied. Added22Light03dispositions:2operationalpasses/20blocked,0businesssubmissions; no newbusinessassertionpass orcanonicalacceptance. Added22 fresh21OctLight03missiondispositions(18pass2fail2blocked),separatefrom19Octblockedattempt;partialUI/journal/subledger/stockevidence,notcanonicalacceptance oratomicassertioncount. Added28 Light04 mission-slot dispositions:10passed,4failed,10blocked,4inconclusive on exact4c3a304; partial evidence, no atomic-assertion total or full canonical acceptance. New workbook bindings require Medium semantic review. Publication/restoration close verified in PR54. Added8PR54 technical-review records; no new browser execution or canonical acceptance. OriginalLight04 statuses and all prior entries remain unchanged. Added30 Light05 supplemental mission dispositions on exactde45536:9pass2fail16blocked3inconclusive; partial browser/journal/print/stock evidence, not atomic assertions/full canonical acceptance. END supplemental inconclusive because local ledger/clockclose unavailable after environment disconnected; ERP restored/reconciled. Medium semantic review required.",
+  "entries": [
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "ENV01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P07",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P08",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P09",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "P10",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY04",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET02",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S02",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S06",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "S08",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY05",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "PAY07",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET04",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "RET07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "VAL03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "M05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "C01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "C02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A03",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A05",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "A06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R04",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R05",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R06",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "R07",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "UI03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-broad-workflows.json",
+      "assertion": "CFG03",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-008",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-029",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-031",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-035",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-036",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-037",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-038",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-039",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-041",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-043",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-044",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-047",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-048",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-054",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-055",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261016-v2512-browser-deep.json",
+      "assertion": "D12-067",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-016",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-031",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-036",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-037",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-038",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-039",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-041",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-043",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-044",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-047",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-048",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-054",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-055",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-067",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-068",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-069",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-070",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-071",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-072",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-073",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-074",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-075",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-076",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-077",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-078",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-079",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-080",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-081",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-082",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-083",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-084",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-085",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-086",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-087",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-088",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-089",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-090",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-091",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-092",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-093",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-094",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2513-next-wave.json",
+      "assertion": "N13-095",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-001",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-002",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-010",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-023",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-031",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-032",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-033",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-034",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261017-v2514-browser-wave.json",
+      "assertion": "B14-036",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-001",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-002",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-003",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-004",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-005",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-006",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-007",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-008",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-009",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-010",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-011",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-012",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-013",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-014",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-015",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-016",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-017",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-018",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-019",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-020",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-021",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-022",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-023",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-024",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-025",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-026",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-027",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-028",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-029",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-030",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-031",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-032",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-033",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-034",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-035",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-036",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-037",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-038",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-039",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-040",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-041",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-042",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-043",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-044",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-045",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-046",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-047",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-048",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-049",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-050",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-051",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-052",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-053",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-054",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-055",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-056",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-057",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-058",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-059",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-060",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-061",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-062",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-063",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-064",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-065",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-066",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-067",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-068",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-069",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-070",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-071",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-072",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-073",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-074",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-075",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-076",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-077",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-078",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-079",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-evidence",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-080",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-081",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-082",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-083",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-084",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-085",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-086",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2514-resume.json",
+      "assertion": "N18-087",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-E01",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-E02",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-I01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "One draft Post did not reach posted state; journal unchanged and draft remains. Error message missed. No diagnosis or replay. Missing displayed SKU is an observation, not proof of lost product identity."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-Q01",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "Captured pre-submit DOM already had default18Oct/17Nov. Date17/25 fills did not stick. Saved quote matches captured dates; no save-time date loss demonstrated. Client refusal retained16fields and valid correction saved one quote10. Original failed disposition preserved; distinct-date obligation needs fresh retest."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-F07",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-F10",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-C03",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-PART",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-HVAT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-DENY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "correction": "Invalid rows2+2 show line subtotal400, computed discount100,total300 before refusal. Earlier intent called total400 incorrectly. No accepted return. Medium assess misleading cap display; expectations unchanged."
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-SPLIT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-PO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-U07",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-v2516-light.json",
+      "assertion": "M16-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DRAFT-READ",
+      "originalStatus": "inconclusive",
+      "observedDisposition": "observed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "Original0018stilldraft10;allvisiblefieldvaliditytrue,SKUdash;notresubmitted"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-MANUAL-POSITIVE",
+      "originalStatus": "passed",
+      "observedDisposition": "passed-bounded",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "NewmanualServiceINV0027draft10reopened/onePost10;DrAR10CrSales10;fullSR0051credit10/DrReturns10CrAR10;sourcepaid;noCOGSstock"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DATE-FILL",
+      "originalStatus": "failed",
+      "observedDisposition": "harness-failure-reproduced",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "fill+Tab changedDOMtemporarily but line rerender resetcontrolledquote dates todefaults;no save-time date-lossclaim"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-DATE-KEY",
+      "originalStatus": "passed",
+      "observedDisposition": "passed-unsaved-control",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "fill+ArrowUp+ArrowDown onissue then due retained17Oct/25Oct2026afterlineedit;noquotesaved"
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-RETURN-VIEW",
+      "originalStatus": "inconclusive",
+      "observedDisposition": "evidence-gap-confirmed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-review-observation",
+      "fullCaseAcceptance": false,
+      "boundary": "ReturnsroutehasView/Actions;noPrint/detail config. Snapshotdialogshowslines/total,notheader/tax/allocation breakdown. No hiddenAPIused."
+    },
+    {
+      "run": "runs/CHECKS-20261018-pr46-review.json",
+      "assertion": "R46-PURCHASE-PROFILE",
+      "originalStatus": "passed",
+      "observedDisposition": "read-only-observed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-read-only-settings",
+      "fullCaseAcceptance": false,
+      "boundary": "Approvalfalse,requiredsupplierfalse,duplicateblocktrue,requireGRNfalse,postGRNIfalse,termsNet30/expense6800. No settings saved."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Exactlivecandidate/remoteQAverified;sourceprobe2pass1failknownsource-onlyrisk;deploymentcrossingforbidden."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshintendedlogin/Owner,openingsread;testprofilesavedandverifiedreload."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-E01",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Stockrefusalexactshortage1,17fieldsretained,busycleared,noinvoiceGLstock."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-QUOTE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Clientrefusalretain16fields;correctedquote10savedoncewith17Oct/25Oct/notes;zeroGL."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-D18",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshcatalog18Octdraft/post/return10correct;sourcepaid;allentereddatefieldsretained."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-D17",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshcatalog17Octdraft/post/credit10correct;oldfailureunresolvednotreplayed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-DDISC",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "SavedDraft256.50reopensEdit286.50 because line10percentdiscountmissing;header13.50fixedretained. StoppedwithoutSave/Post;sourcepreserved."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-SUPPLIER",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Liveconfirmed:validbusinessrefusalretainsall16fields;reference-onlysameformcorrectionblockedThis save is already running;noacceptedpurchase/GL. No3rdattempt."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-PO",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "FreshphysicalPO300confirmed,productlinked/stock0,zeroGLAP."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GRN2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Receipt2correctstock/GRNI,POpartial."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-BILL2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "GRN2bill120clearsGRNItoAPwithoutdoublestock;POcountsGRNsourcedbill."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-GRN3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining3receivedcorrectstockGRNI;POreceived5."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-BILL3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02",
+        "WB-PHY.J03.C04"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "SecondGRNbill180clearsGRNItoAP;all5receivedandbilledwithoutdoublestock."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-RET1",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "No supported UI source-linked partial-return entry exposed; no return submitted; source bills retained."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "RET1 dependency blocked; fully billed PO hides conversion controls in current pre-return state only."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-U07",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "blocked-isolated-upgrade",
+      "boundary": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "blocked-isolated-upgrade",
+      "boundary": "Authentic old compiled app/auth/database prerequisite not prepared; no upgrade executed."
+    },
+    {
+      "run": "runs/CHECKS-20261018-light02.json",
+      "assertion": "M17-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Actual deltas reconcile; all opening settings restored and reloaded; no unresolved financial intent; publication prepared as sanitized immutable run."
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Exact live candidate and published QA revision verified.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Fresh intended login and openings verified; required profile cannot be established because checkbox interactions do not change state.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-PO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-F3",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261019-light03-blocked.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "boundary": "Zero trading delta; no settings save; all actual openings reloaded unchanged; no ambiguous financial intent.",
+      "businessOperationExecuted": false
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "ExactcandidateandpublishedQArevisionverified;freshattemptpreservespriorblockedrun."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshintendedlogin/openingscaptured;plannedprofile savedandreloaded;noexistingM18bills."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-SUPPLIER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C03",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Businessrefusalretainedallfields;sameformcorrectedreferencepostedexactlyonebill10."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OLD-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Legacyamount-onlydraftreopenscorrect256.50;readonly,noSavePost."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-NEW-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J04.C06"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Freshpercentdraftsave/reopen/post/fullcredit256.50correctwithpersistedbreakdown."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-PO",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J02.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "NewPhysicalcatalog/PO5x60=300withzeroGLAPstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Received2@60withcorrectGRNIposting/AP0/newstock2value120."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL2",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-PHY.J04.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "RequiredbillreferenceA persisted;nativeblankrefusalonly;GRNIclearedwithoutdoublestock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-GRN3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C02"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining3received180withGRNI;stock5value300/APprior120unchanged."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-BILL3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C04",
+        "WB-CORE.J06.C05"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "DuplicaterefArefusedzeroGL;uniquerefBpostedonebill180/GRNIcleared/noadditionalstock."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RET1",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Billpickerclientnavigationloadsmetadatawithoutlines/total0;safeReloadrecovers. Separatepartialreturnpostedcorrect60;firstUIfailurepreserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-REMAINING",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J06.C01",
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Remaining2/value120prefilled;qty3explicitinvalidwithoutfakeDiscount;oneSave refusedallfieldsretained."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-OVER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J03.C03"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "AfterpartialreturnexhaustedPOhidesconversioncontrols;clientboundaryonly."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-DUP-SALES",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C08"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Invalid2+2refusalretainedfields/zeroGL;validsplitrows addedfromcatalogshowunlocked10insteadsource100,lineamounts120vsfooter300;dependentcreditnotposted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All7credits0.99x5,1,1equalpreviews/persistedbreakdowns;headerbudget0.05conserved/sourceclosed."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F10",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C11"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "All10credits0.99x5then1x5matchpreview/persistedbreakdown;sourceclosed9.95/header0.05conserved."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-F3",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Threecredits1,1,0.99matchpreviews/persistedallocations;sourceclosed2.99."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C09"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Taxedsource302.67fullycreditedafterVATdisabled;historicalVAT46.17andpersistedbreakdowncorrect."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-RETENTION",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-CORE.J06.C06",
+        "WB-CORE.J06.C07"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Serverstockrefusalretains17fields;client150quoteerrorretains16;onlydiscountcorrectedquote10savedwith18-26Octnotes/zeroGL."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [
+        "WB-HYB.J02.C10"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-upgrade",
+      "boundary": "Authenticoldv2.5.14compiledapp/auth/DBnotprepared;upgradeunattempted."
+    },
+    {
+      "run": "runs/CHECKS-20261021-light03-results.json",
+      "assertion": "M18-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [
+        "WB-PHY.J12.C01"
+      ],
+      "mapping": "related-partial-mission-slot",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Actualoutcomesreconciled;allsettingsrestoredreloaded;noambiguousintent;sanitizedpublicationclosing."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ACTOR",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-HISTORY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-A",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-FIX-B",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-EMPTY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-AB",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PICK-CLEAR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PARTIAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-REMAIN",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-PUR-SPLIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-ZERO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-FIX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-DENY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011",
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SALES-CLOSE",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-DRAFT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-TAX",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-SUPPLIER",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LISTS",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-004",
+        "UXW-013",
+        "UXW-014",
+        "UXW-015"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-UNLINKED",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-QUOTE",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-KEYBOARD",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-017",
+        "UXW-018"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-NARROW",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-021",
+        "UXW-022"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-LATE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "isolated-unavailable",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light04-results.json",
+      "assertion": "M19-END",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "uxRefs": [],
+      "mapping": "unmapped-medium-review-pending",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser",
+      "boundary": "Fixed mission slot disposition; see immutable checks, original expectations, missing layers and corrections. No full canonical case acceptance."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PRODUCT",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-HEADER",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-SUPPLIER",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-DIALOG",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-HELP",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PRINT",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-PREFILL",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "reviews/REVIEW-20261022-pr54.md",
+      "assertion": "R54-CONTROLS",
+      "originalStatus": "not-run",
+      "relatedWorkbookCases": [],
+      "mapping": "technical-review-no-new-execution",
+      "fullCaseAcceptance": false,
+      "layer": "source-review",
+      "boundary": "Source interpretation and future mission planning only; originalPR54 outcomes unchanged; runtime/independent approval gaps retained."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ACCESS",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-HISTORY",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-MASTER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-A",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-B",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-EMPTY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-SWITCH",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PICK-CLEAR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-PARTIAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DENY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SPLIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-ZERO",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-QUOTE-LINE",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-QUOTE-HEADER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SUPPLIER",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DIALOG",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-HELP",
+      "originalStatus": "failed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-UNLINKED",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-SALES-SPLIT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-DISCOUNT",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-TAX",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-CREDIT-PRINT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-F7",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-LATE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-U7",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-U10",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-AUTH",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Bounded mission disposition; missing layers explicit, not full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261022-light05-results.json",
+      "assertion": "M20-END",
+      "originalStatus": "inconclusive",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped-mission-slot-medium-review-required",
+      "fullCaseAcceptance": false,
+      "layer": "staging-browser-conditional",
+      "boundary": "Supplemental inconclusive closing; original private ledger END running after environment disconnect."
+    }
+  ]
+}

@@ -1,3 +1,10 @@
+## UI/UX workbook and incremental adoption —21 October2026
+
+Owner-requested shared UX companion1.0.0: **32 rules,48 draft/unbound/not-run workflow templates,12 groups,31 direct business-journey mappings** plus the shared state/field matrix for all selected business journeys. [Start here](docs/ux/README.md), [workbook](docs/ux/WORKBOOK.md), [existing design inventory](docs/ux/DESIGN_INVENTORY.md), [coding guide](docs/ux/CODING_GUIDE.md), [handoff](handoffs/HANDOFF-20261021-ux-workbook.md). Existing BookOne visual system is extended, not replaced. Four design questions remain owned/pending. New authoring checks6/6 and retained business-library guards16/16 pass; full repository check and ERP UX execution are not claimed.
+
+Existing Light03 results and both unresolved return findings below remain unchanged. The272 canonical business cases remain draft/unbound/not-run. Product instruction adoption is in a separate documentation PR; no UI code, version, deployment or customer-readiness change.
+
+
 # Current checkpoint — 2026-10-16
 
 Product v2.5.10/81a505c:303 campaign assertions and129 PostgreSQL checks pass; real credential HTTPS23passed/2failed/1blocked. BUG0053 original own-invoice case fixed; BUG0054/0055 and migration042 security review remain open. Not customer-ready;0/137full workflows accepted. Live UI v2.5.10 ·81a505c independently observed after [browser read/capture recovery](runs/RUN-20261016-browser-connection-recovered.md); fresh QA actor sign-in remains required. Start with [STATUS](STATUS.md), [SESSION](SESSION.md), [current run](runs/RUN-20261016-v2510-independent-retest.md) and [coding handoff](handoffs/HANDOFF-20261016-v2510-findings.md). `product-ref.json` is the execution pin.
@@ -70,3 +77,4 @@ This repository is public by explicit owner instruction. Review every staged fil
 ## Deep batch programme and continuity
 
 Read [SESSION.md](SESSION.md) and [DEEP_BATCH_PROGRAMME.md](docs/DEEP_BATCH_PROGRAMME.md). `pnpm batch:coverage` distinguishes60 executable source cases,18 isolated PostgreSQL cases and92 lifecycle tasks with partial implementations/open layers; no release acceptance is established. Run B–F with `pnpm batch:run --batch B --seed 261013 --profile quick` (change B to the relevant batch). A remains the mandatory shared regression. Startup memory, policies, exact work queue and immutable runs preserve progress across agents/sessions. [RUN-12](runs/RUN-20261013-v2-2-2-retest-12.md) records current scope/failures. Read [PostgreSQL execution](docs/POSTGRES_RUNTIME.md) and [settings/roles/files](docs/CONFIGURATION_AND_UPLOAD_COVERAGE.md); `pnpm matrix:check` verifies the42-row coverage plan without claiming business passes.
+

@@ -1,0 +1,9 @@
+# Mandatory workbook maintenance — draft discount roundtrip
+
+Owner/author independentQA; independent QA/business/expert review pending. Trigger: deployed a36af04 draft256.50→unmodifiededit286.50. Root-cause corroboration: pinned InvoiceDocumentForm draft initializer omits line discounts. See OBS-N14-DRAFT-DISCOUNT and live run; no product patch made.
+
+Library1.2.0→1.3.0; WB-CORE bookrevision3→4,J04revision2→3; additive stable WB-CORE.J04.C06. Worked-example revision2→3, new EX-CORE-14-01 state example. Totals8books/52journeys/270draft,unbound,not-run cases/22examples/55steps. No inherited IDs removed or old results rewritten. New expected270−13.50=256.50 is independent integer-cent arithmetic, not a changed rule. Rulebook1.0.0/hash unchanged/expertpending. New case includes cancel, unchangedsave,Post and audit/GL/stock obligations; only reported bounded branches executed.
+
+DirectCORE.J04,PHY.J05 plus other sales draft/quote/order and shared invoice/print/return/history flows require actual-diff review when fixed. Historical source map ead3a82 and automated product-ref0bcdf4d remain unchanged; candidate overlay is separate. No invented new canonical source graph or verified adapter binding. Original three source concerns and their cases remain retained.
+
+Validation: render/check and26infrastructure tests passed; manual semantic review of independently expected discounts, no-post draft control, stable IDs, missing evidence and impact. No full pnpmcheck/productsuite/DB/runtime role/stock/layer/critical-gate failure-sensitivity executed here. QA owner next reconnects supported browser, finishes interrupted sales-return checks and exact fresh-fix retests; coding agent investigates draft hydration and shared forms, supplies SHA/CHG and regressions; independent reviewer reviews draft specification. No release/merge/deploy. Actual backup/restore LAST.

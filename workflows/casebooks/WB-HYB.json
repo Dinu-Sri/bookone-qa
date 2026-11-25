@@ -1,6 +1,6 @@
 {
   "id": "WB-HYB",
-  "revision": 1,
+  "revision": 5,
   "title": "Hybrid businesses and cross-module jobs",
   "profileIds": [
     "BP-05"
@@ -146,7 +146,7 @@
     },
     {
       "id": "WB-HYB.J02",
-      "revision": 1,
+      "revision": 5,
       "title": "Shared discounts, mixed returns and tax buckets",
       "status": "draft",
       "risk": "P1",
@@ -269,10 +269,179 @@
           "title": "Source header discount preview",
           "given": "Stored original net275.50 including header discount.",
           "action": "Open linked return preview then post permitted full return.",
-          "expected": "Preview/post/credit all275.50; do not omit header discount or use changed master default.",
+          "expected": "Preview/post/credit all275.50; do not omit header discount or use changed master default. Partial-source variant: separate source3x100, line10%, header5%, total256.50, cost180. Qty1 preview AND post85.50/cost60; remaining2 preview AND post171/cost120; cumulative256.50/cost180. UI previews must use source proportions rather than fixed copied discounts30/13.50.",
           "kind": "history",
           "oracle": [],
           "id": "WB-HYB.J02.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Editable source price cannot create misleading linked-return preview",
+          "given": "Source3x100,line10%,header5%=256.50,cost180; oneunit alreadycredited85.50; remaining2.",
+          "action": "Try changing copied unitprice100 to200 on remaining2; compare preview,validation and accepted source credit.",
+          "expected": "Lock source economic fields or explicitly reject unsupported repricing. If source price remains100, preview and persisted credit both171/cost120; never preview361 and silently save171. No source/ledger history rewrite.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "remaining source credit cents",
+              "operation": "mul",
+              "operands": [
+                2,
+                8550
+              ],
+              "equals": 17100
+            }
+          ],
+          "id": "WB-HYB.J02.C06",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Sequential return rounding exhausts original quantity and value",
+          "given": "Digital sourceqty3@1,fixedheader0.01,total2.99; no physical stock/COGS. Two accepted oneunitcredits1 each leaveoneunit/value0.99.",
+          "action": "Return finalremainingunit through source-linked form.",
+          "expected": "Preview/post residual0.99 under declared cumulative rounding rule; cumulative3units/2.99 and sourcebalance0. Do not preview1 and reject legitimate finalunit as valueexcess. Other valid stable allocations may put the cent earlier but must conserve exact full source amount.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "remaining cents",
+              "operation": "sub",
+              "operands": [
+                299,
+                100,
+                100
+              ],
+              "equals": 99
+            },
+            {
+              "label": "cumulative source cents",
+              "operation": "add",
+              "operands": [
+                100,
+                100,
+                99
+              ],
+              "equals": 299
+            }
+          ],
+          "id": "WB-HYB.J02.C07",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C08",
+          "title": "Aggregate duplicate return lines before enforcing source quantity",
+          "given": "Sourceqty3 of one stable SKU/description; priorreturned0; submitted current linesqty2+2 with the same key.",
+          "action": "Attempt source-linked sales and purchase returns, then inspect source/return/audit/ledger/stock snapshots.",
+          "expected": "Reject aggregate4>3 atomically. No return, credit, inventory movement or business CREATE history; sourcebalance and original party unchanged. Also test legitimate duplicate source lines and prior+current totals; individual line checks cannot establish conservation.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "current total units",
+              "operation": "add",
+              "operands": [
+                2,
+                2
+              ],
+              "equals": 4
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C09",
+          "title": "Closing taxable return preserves net discount and tax exactly",
+          "given": "Separate source3x100,linefixed30,header13.50: net256.50; hypothetical supported18% tax46.17; gross302.67; no priorreturns. Verify stored eligible tax configuration before live use; this fixture does not establish statutory applicability.",
+          "action": "Preview/post permitted full return on both sides; repeat partial1+remaining2 and compare tax/source allocations.",
+          "expected": "Full return retains line discount30 and header13.50; net256.50,tax46.17,gross302.67. Sales reverses source AR/revenue/tax and restores physical cost180; purchase reverses AP/inputtax/inventory as applicable. Do not treat gross302.67 as net residual or erase header13.50 and then tax270. Assert source party/date/quantity, audit and unchanged unrelated records; unresolved tax support blocks live tax acceptance.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "gross cents",
+              "operation": "add",
+              "operands": [
+                25650,
+                4617
+              ],
+              "equals": 30267
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C10",
+          "title": "Closing residual above final unit line value stays representable",
+          "given": "No tax digital sources:7x1/header0.05,total6.95 and10x1/header0.05,total9.95. Declared rounding gives accepted first6x0.99=5.94 or9x0.99=8.91.",
+          "action": "Return finalunit; compare preview, net line/discount arithmetic, persisted credit, sourcebalance and audit.",
+          "expected": "Conserve source value: final1.01 or1.04 under this declared prior allocation. Represent residual through an explicit valid allocation adjustment, or allocate prior returns differently so final credit is representable; never claim helper total1.01/1.04 while line1 minus nonnegative discount gives1.00. No unexplained revenue/stock/party changes. New regression includes both existing3unit last0.99 and fullsource anchors.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "seven-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                695,
+                594
+              ],
+              "equals": 101
+            },
+            {
+              "label": "ten-unit residual cents",
+              "operation": "sub",
+              "operands": [
+                995,
+                891
+              ],
+              "equals": 104
+            }
+          ],
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-HYB.J02.C11",
+          "title": "Non-closing return respects exhausted header budget in preview and posting",
+          "given": "Fresh digital source7x1/header0.05/net6.95. Declared round-half-up per-unit capped-header fixture: five accepted one-unit credits0.99 consume all0.05 header; source has2units/value2.00 left. Also source10x1/header0.05 withfive0.99priorcredits.",
+          "action": "Return one more unit before closing; compare displayed header/total, persisted lines/header/net, source remainingqty/value, GL and unchanged state; then close remainingunits.",
+          "expected": "Under this declared allocation, no header discount remains: sixth-unit preview and posting both1.00/header0; every subsequent preview equals its accepted credit. Fresh totals conserve6.95 or9.95 and sourceclosesat0; no undocumented adjustment or retroactive rewrite of prior credits. This fixture profile is not a universal rounding policy. Existing legacy residual1.01/1.04 expectations remain in C10.",
+          "kind": "boundary",
+          "oracle": [
+            {
+              "label": "remaining header cents",
+              "operation": "sub",
+              "operands": [
+                5,
+                5
+              ],
+              "equals": 0
+            },
+            {
+              "label": "sixth credit cents",
+              "operation": "sub",
+              "operands": [
+                100,
+                0
+              ],
+              "equals": 100
+            },
+            {
+              "label": "seven-unit fresh cumulative cents",
+              "operation": "add",
+              "operands": [
+                99,
+                99,
+                99,
+                99,
+                99,
+                100,
+                100
+              ],
+              "equals": 695
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }

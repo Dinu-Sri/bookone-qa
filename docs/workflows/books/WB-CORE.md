@@ -1,6 +1,6 @@
 # WB-CORE — Shared accounting, access and document controls
 
-Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 1; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-CORE.json. Edit JSON and run pnpm library:render. Revision 6; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01, BP-02, BP-03, BP-04, BP-05. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -131,7 +131,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Type: history; execution: **not run**; adapter: **unbound**.
 - Given: Invoice600 on14Oct; payment250 on16Oct.
 - Action: Report aging as-of15Oct.
-- Expected: AR600 at cutoff, not current350; payment date matters as well as invoice issue date.
+- Expected: AR600 at cutoff, not current350; payment date matters as well as invoice issue date. Additional boundary: invoice256.50 issued16Oct, receipt75.50 on16Oct and DISTINCT receipt1 on17Oct gives AR181 as-of16Oct and180 currently; aggregate with old positive70 is251/250. Preserve credit-balance bridge separately.
 
 ### WB-CORE.J03.C03 — Future credit
 
@@ -154,6 +154,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Action: Compare TB/P&L/BS/AR/AP/export.
 - Expected: Same declared date/scope filters consistently applied or explicit bridge; totals cannot reconcile by silently dropping rows.
 
+### WB-CORE.J03.C06 — Currently closed debts remain visible before future settlements
+
+- Type: history; execution: **not run**; adapter: **unbound**.
+- Given: AR source297 issued17Oct,paid150/credit112.50 same17Oct leaves34.50; future18Octcredit184.50 closesit. AP source100 issued17Oct fullypaid18Oct, current0. Separate APsource256.50 paid50/17Oct andfullycredited18Oct, current0.
+- Action: Compare current payment lists and aging17Oct/18Oct independently for each source.
+- Expected: Currentlists excludeclosedrecords;AR17Oct34.50 then18Oct0;AP100source17Oct100 then18Oct0;AP256.50source17Oct206.50 then18Oct0. Reconstruct closed obligations rather than filtering current-open list;future credits andpayments cannot erase prior debt. Credit balances bridge to netGL separately.
+- Independent numeric checks: prior AR cents: sub(29700, 15000, 11250) = 3450; prior AP cents: sub(25650, 5000) = 20650.
+
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
 **Source observations, not expected-result authority:**
@@ -165,7 +173,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 
 **Fixture:** Posted invoice has customerOld, price100 and approved print style; open debt100; synthetic IDs.
 
-Rules: BR-DAT-01@1, BR-SAL-02@1, RB-CONFIG-01@1. Retained tasks: B-108, B-113, E-112.
+Rules: BR-DAT-01@1, BR-SAL-02@1, RB-CONFIG-01@1, BR-SAL-03@1. Retained tasks: B-108, B-113, E-112.
 
 Entities: businessDocuments, businessDocumentLines, parties, inventoryProducts. Support: source-observed-contract; acceptance-unverified.
 
@@ -183,7 +191,7 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Type: history; execution: **not run**; adapter: **unbound**.
 - Given: Issued snapshot styleV1.
 - Action: Edit current styleV2 and print old invoice.
-- Expected: Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview.
+- Expected: Historical required facts preserved; snapshot policy explicit; amounts/source/payment facts never replaced by editable preview. Detail arithmetic must also reconcile: line net270, header discount13.50, displayed subtotal270 and total256.50; do not label net total256.50 as pre-header subtotal.
 
 ### WB-CORE.J04.C03 — Archive posted unpaid invoice
 
@@ -205,6 +213,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Invoice100 posted and partially paid40.
 - Action: Try change total to50 directly.
 - Expected: Require supported correction/versioned path; no silent AR10/revenue rewrite or overwritten audit trail.
+
+### WB-CORE.J04.C06 — Draft edit roundtrip preserves line and header discounts
+
+- Type: history; execution: **not run**; adapter: **unbound**.
+- Given: Draft invoice3x100 with line10%=30 and header5%of270=13.50; stored line-net270,total256.50; no posted journal. Product catalog may change later; bind declared draft repricing policy separately.
+- Action: Save draft, reload detail, open Edit without changes, cancel; repeat save unchanged and supported Post on separate fixtures.
+- Expected: Unchanged edit must hydrate original discount semantics or equivalent explicit amounts and preview270-13.50=256.50. It must not blank line discount and show286.50. Cancel preserves draft facts/no GL; save preserves original totals and discounts; Post exactly once under valid current cost/stock policy, no duplicate draft/source and attributable audit. Changes in master price cannot silently change saved draft economics; original draft and posted controls remain distinct.
+- Independent numeric checks: line net cents: sub(30000, 3000) = 27000; draft total cents: sub(27000, 1350) = 25650.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
@@ -308,6 +324,21 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Invalid amount or server error.
 - Action: Submit, correct fields and resubmit.
 - Expected: Actionable error and retained inputs; busy overlay clears on supported completion; no second hidden request.
+
+### WB-CORE.J06.C06 — Server validation preserves long invoice entry for correction
+
+- Type: invalid-input; execution: **not run**; adapter: **unbound**.
+- Given: Unsaved new invoice with entered customer,dates,SKU,qty3,price1; linepercent150 invalid.
+- Action: Submit via Post and inspect destination,feedback,values and mutation counts; correct percent0 in same entry context.
+- Expected: Actionable excessive-percent error; preserve customer,lines,prices,dates and other entered fields for correction; no invoice/journal/party side effects from rejection. Do not redirect to list and reopen an empty form. Busy state clears and corrected valid submission posts once.
+
+### WB-CORE.J06.C07 — Stock-rule rejection preserves a valid invoice form
+
+- Type: invalid-state; execution: **not run**; adapter: **unbound**.
+- Given: Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/issue18Oct/delivery19Oct/due25Oct/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.
+- Action: Submit once; inspect actionable shortage, retained fields and before/after document,AR,GL,stock and audit snapshots. Receive goods through separate authorized workflow before retrying the retained invoice.
+- Expected: Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/issue date/delivery date/due date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback. Retaining controlled product lines while resetting dates or notes is a failure; compare every submitted field before/after. Client-only validation must retain the same fields as a separate control.
+- Independent numeric checks: short units: sub(1, 0) = 1.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 

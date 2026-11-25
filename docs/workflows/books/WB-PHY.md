@@ -1,6 +1,6 @@
 # WB-PHY — Physical retail and wholesale
 
-Generated from workflows/casebooks/WB-PHY.json. Edit JSON and run pnpm library:render. Revision 1; **draft, independent review pending; no new execution or acceptance**.
+Generated from workflows/casebooks/WB-PHY.json. Edit JSON and run pnpm library:render. Revision 2; **draft, independent review pending; no new execution or acceptance**.
 
 Product source study: 2.5.12 / ead3a82170e7a34ad625ec6ef8434e5ae65b1609. Profiles BP-01. [How to execute](../EXECUTION_GUIDE.md); [shared controls](../CONTROLS.md); [worked examples](../WORKED_EXAMPLES.md); [business map](../BUSINESS_MAP.md).
 
@@ -265,6 +265,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Action: Attempt additional return2.
 - Expected: Deny; remaining returnable1; no third unit added or extra credit. Existing customer balance unchanged.
 
+### WB-PHY.J05.C06 — Linked credit must retain source customer
+
+- Type: invalid-input; execution: **not run**; adapter: **unbound**.
+- Given: Synthetic customer A invoice1x1 with fixedheader0.01,total0.99,unpaid; distinct same-tenant customer B exists.
+- Action: Load A through supported return picker; change customer to B and submit one full linked return.
+- Expected: Inherit A on load. Reject B mismatch with zero credit/journal/allocation, or enforce immutable A before preview and posting. Never create B credit that settles A invoice. Correct A full credit0.99 closes source; no invented refund.
+- Independent numeric checks: source net cents: sub(100, 1) = 99.
+
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
 **Source observations, not expected-result authority:**
@@ -318,6 +326,14 @@ Applicable shared controls must be resolved before execution: CTL-ACTOR, CTL-TEN
 - Given: Bill belongs vendor V; vendor W selected.
 - Action: Allocate W payment to V bill.
 - Expected: Deny mismatch; no cross-party offset or cash movement.
+
+### WB-PHY.J06.C06 — Source-linked supplier inheritance and mismatch guard
+
+- Type: invalid-input; execution: **not run**; adapter: **unbound**.
+- Given: Supplier A bill3x100/header14.5%=256.50; paid50 leaves206.50; unrelated B exists.
+- Action: Open supported linked purchase-return form; inspect supplier; attempt partial1=85.50 under B, then test separate matching-A positive.
+- Expected: Copy supplier A as well as lines/header. Reject mismatched B before any return/GL/allocation, or enforce A consistently. A source must never be settled by a differently attributed B credit. Source/dimension/currency identity and original economics retained; valid partial leaves121 and remaining2=171.
+- Independent numeric checks: prior due cents: sub(25650, 5000) = 20650; valid partial due cents: sub(20650, 8550) = 12100.
 
 **Unchanged controls and evidence:** Assert unaffected products/parties, other tenants/domains/scopes, prior documents and original journals remain unchanged. Bind exact actor, baseline and relevant state fields using EXECUTION_GUIDE; do not claim a generic unchanged sentence executed. Verify persisted readback, report/subledger/stock/fleet effects, source lineage and attributable audit at each applicable transition.
 
