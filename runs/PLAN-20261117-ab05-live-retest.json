@@ -1,0 +1,14 @@
+{
+  "dateContract": "2026-11-17 UTC",
+  "qaStartPin": "b8afcdcad894f47495564e0b5cff9f6a6fb6656f",
+  "productPin": "43233f0d3fade99228f6e7590f1e7e86d6b91370",
+  "productTree": "fbda63ca4e60e44f4a512f5200f8839695a2a123",
+  "version": "2.8.0",
+  "clock": "NEW 180/150/30; prior clocks remain closed",
+  "scope": "Independent actual staging UI and exact-source regression; no separate ERP server",
+  "gates": ["clean QA/product identity", "new clock", "live public/protected identity", "original company/safety preservation", "exact regression", "fresh fixture identity before each write"],
+  "expected": {"net": 1000, "vat": 180, "gross": 1180, "debits": {"6800": 1000, "2300": 180}, "credits": {"2100": 1180}, "billCount": 1},
+  "plannedCases": ["source and CI review", "Jobs role switch without saving", "fresh synthetic no-OCR original upload", "facts/clarification/preview", "original download", "unsupported facts refusal", "connections/discovery review", "guarded supported synthetic posting if prerequisites qualified", "readback and once-only reconciliation", "backup classification", "recovery LAST into fresh empty target", "original Owner/session restoration", "sanitized consolidated publication"],
+  "preserve": ["old source A and recovery target", "all original companies, financial documents, stock and closed shifts", "all consumed Mission2/CONT events"],
+  "limits": ["No external connection credentials created without action-time approval", "No owner deployment or original-company posting enablement", "No old financial replay", "No mock result relabelled actual browser/DB proof"]
+}
