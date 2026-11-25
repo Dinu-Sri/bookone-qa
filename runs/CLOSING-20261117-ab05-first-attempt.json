@@ -1,0 +1,59 @@
+{
+  "status": "CLOSED",
+  "dateContract": "2026-11-17 UTC",
+  "product": "43233f0d3fade99228f6e7590f1e7e86d6b91370",
+  "chargedMs": 43878245,
+  "pausedMs": 0,
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 10800000,
+    "reserveMs": 1800000,
+    "chargedMs": 43878245,
+    "pausedMs": 0,
+    "lastAt": 1794970648100,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1794926769855
+      },
+      {
+        "action": "check",
+        "at": 1794927089367,
+        "elapsedMs": 319512,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794970648100,
+        "elapsedMs": 43558733,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "passed": [
+    "exact public/protected build",
+    "original dashboard and safe flags",
+    "425 exact product regression tests",
+    "live Jobs role switch",
+    "fresh company zero opening",
+    "fresh Inbox safe flags save",
+    "fresh VAT18 save",
+    "one synthetic vendor save"
+  ],
+  "blocked": [
+    "invoice receive and facts",
+    "preview approval posting",
+    "backup and recovery LAST",
+    "real external clients"
+  ],
+  "fileAttachment": {
+    "persistedDocument": false,
+    "toolWallSeconds": 43032.5057,
+    "receiveClicked": false,
+    "selected": true
+  },
+  "newFinancialIntents": 0,
+  "unresolvedDispatchedActions": 0,
+  "preservation": "Original business data untouched; fresh company retained; original Owner session remains logged into fresh company pending continuation."
+}

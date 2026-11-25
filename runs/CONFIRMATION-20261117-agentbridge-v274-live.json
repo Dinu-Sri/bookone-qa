@@ -1,0 +1,34 @@
+{
+  "dateContract": "2026-11-17 UTC",
+  "kind": "Fresh read-only live confirmation; no prior run reopened",
+  "liveUrl": "https://bookone.clossyan.com",
+  "publicStamp": "v2.7.4 · 9eb13da",
+  "protectedOwnerStamp": "v2.7.4 · 9eb13da",
+  "deployedSha": "9eb13dabc3bd988bec2ed9e6bb2d17ded05db767",
+  "reviewedCandidateSha": "bd16a8468cf4f5d14f8e84e42b6b0c78d0a45f97",
+  "sameSourceTree": "aa7ff89b146d8f2532dd5a5ef350a0e530e21d6b",
+  "companyFlags": {
+    "inboxEnabled": false,
+    "draftOnly": true,
+    "postingDisabled": true
+  },
+  "actions": {
+    "authSubmissions": 0,
+    "businessWrites": 0,
+    "configurationWrites": 0,
+    "deployments": 0,
+    "replays": 0
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 87819,
+    "pausedMs": 0
+  },
+  "cleanup": {
+    "agentTab": "closed",
+    "unresolvedAuth": 0
+  },
+  "supersedes": "Earlier17Nov old-live-stamp/deployment-next pointer only; prior test/clock receipts unchanged",
+  "decision": "Deployment identity confirmed; reported defect qualification green; no AgentBridge posting activation or blanket launch approval",
+  "next": "Controlled actual Next/browser inbox qualification plus external OCR/IdP/MCP-client and enforcement scope before activation"
+}
