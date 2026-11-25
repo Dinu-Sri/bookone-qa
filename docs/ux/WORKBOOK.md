@@ -1,8 +1,8 @@
-# BookOne UI/UX acceptance workbook — 1.0.0
+# BookOne UI/UX acceptance workbook — 1.1.0
 
 > GENERATED from ux/workbook.json. Edit the JSON and run pnpm ux:render. Every workflow remains draft, unbound and not-run. This is an additive companion to the eight business books, not another design system or proof of product compliance.
 
-Source study: BookOne a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f; QA base c7ed9c5cd31f28efac5be98a463bb96197890a46. Business library1.5.0 retains272 cases unchanged. Read [protocol](PROTOCOL.md), [design inventory](DESIGN_INVENTORY.md) and [execution](EXECUTION.md) first.
+Source study: BookOne 4c3a304e6adc985c591ecb7934382b8929f9b189; QA base 37408fc48c5a3699a2033966594d8474652ab751. Business library1.5.0 retains272 cases unchanged. Read [protocol](PROTOCOL.md), [design inventory](DESIGN_INVENTORY.md) and [execution](EXECUTION.md) first.
 
 ## Shared acceptance rules
 
@@ -310,18 +310,18 @@ Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06. Rules: UX-
 
 ### UXW-002 — Conclusive refusal then correction
 
-Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06. Rules: UX-002, UX-004, UX-005, UX-032.
+Revision2; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06. Rules: UX-002, UX-004, UX-005, UX-032.
 
 **Given:** Bill fixture with required supplier reference enabled; all dates/notes/lines captured.
 
 **Preflight:** Bind the common execution contract and this fixture at exact candidate/actor/configuration; resolve unknown policy and layer prerequisites before any mutation.
 
-1. Submit blank reference
+1. Submit blank reference once and observe the specific refusal in the same action sequence; identify native/client versus server layer.
 2. compare every field
 3. change only reference
 4. submit once.
 
-**Expected:** First refusal creates no bill/journal; all fields retained; corrected attempt creates exactly one bill with original facts.
+**Expected:** First refusal creates no bill/journal; all fields retained; corrected attempt creates exactly one bill with original facts. Expired or uncaptured toast cannot establish a server refusal. If feedback is missing, inspect persisted state and mark its layer inconclusive; do not replay solely for evidence or proceed to correction until refusal is conclusive.
 
 **Unchanged:** Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.
 
@@ -378,18 +378,18 @@ Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06. Rules: UX-
 
 ### UXW-005 — Client error retains all fields
 
-Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J04, WB-CORE.J06. Rules: UX-004, UX-005, UX-007, UX-018, UX-032.
+Revision2; P1; draft/unbound/not-run. Business journeys: WB-CORE.J04, WB-CORE.J06. Rules: UX-004, UX-005, UX-007, UX-018, UX-032.
 
-**Given:** Run-owned quote with issue2026-10-18/due2026-10-26, unique notes, two lines and invalid150% discount.
+**Given:** Two distinct run-owned quote variants: LINE150% and HEADER150%, each with declared independent valid net, exact committed issue/due dates and notes. Never treat one variant as execution of the other.
 
 **Preflight:** Bind the common execution contract and this fixture at exact candidate/actor/configuration; resolve unknown policy and layer prerequisites before any mutation.
 
-1. Capture submitted field map
-2. submit
-3. correct only150% to0
+1. Capture every field and explicitly identify LINE versus HEADER percentage input; verify dates after rerender/native keyboard commit.
+2. Submit the chosen150% variant once; observe actionable refusal and zero newly saved quote/GL.
+3. After conclusive refusal only, correct that same150% value to0; leave all other fields unchanged.
 4. save/reopen.
 
-**Expected:** Clear discount error; dates/notes/line order retained through rerender; saved expected total independently calculated; no posting.
+**Expected:** Under BR-SAL-03 reject excessive line OR header discounts; do not silently clamp an entered150% to100%. Keep dates/notes/line order/valid prices and all fields after refusal. The corrected quote saves once at independently expected net with no GL. Header raw type/value must survive server validation; a valid clamped hidden amount alone is not evidence of validating the entered percentage.
 
 **Unchanged:** Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.
 
@@ -678,19 +678,19 @@ Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-OPS.J01
 
 ### UXW-018 — Dialog menu and focus restoration
 
-Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-OPS.J01. Rules: UX-006, UX-012, UX-019, UX-020, UX-032.
+Revision2; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-OPS.J01. Rules: UX-006, UX-012, UX-019, UX-020, UX-032.
 
 **Given:** Existing ConfirmDialog, row menu, StatusHelp on representative affected screens.
 
 **Preflight:** Bind the common execution contract and this fixture at exact candidate/actor/configuration; resolve unknown policy and layer prerequisites before any mutation.
 
 1. Open via keyboard
-2. traverse
+2. Check initial focus, Tab and Shift+Tab wrap, and no focus escape to BODY/background; do not activate a destructive confirmation.
 3. Escape/cancel
 4. reopen
 5. test pointer/touch help.
 
-**Expected:** Modal contains focus while open and restores trigger; menu nonmodal semantics appropriate; help accessible and not covering essential instructions; cancellation writes nothing.
+**Expected:** Modal contains focus while open and restores trigger; menu nonmodal semantics appropriate; help accessible and not covering essential instructions; cancellation writes nothing. ConfirmDialog opens on a safe focus target, Escape/cancel dismiss only when allowed, and focus returns to its actual trigger. Busy behavior is declared and does not silently dismiss an unresolved write. Distinguish focus containment from an inaccessible keyboard trap; maintain native field behavior.
 
 **Unchanged:** Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.
 
@@ -748,7 +748,7 @@ Revision1; P1; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-OPS.J01
 
 ### UXW-021 — Narrow invoice and long content
 
-Revision1; P2; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-CORE.J04. Rules: UX-016, UX-023, UX-024, UX-032.
+Revision2; P2; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-CORE.J04. Rules: UX-016, UX-023, UX-024, UX-032.
 
 **Given:** Viewport320 and390CSSpx; long synthetic party/SKU/description; supported desktop baseline.
 
@@ -756,9 +756,9 @@ Revision1; P2; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-CORE.J0
 
 1. Create/reopen draft
 2. inspect lines/totals/actions
-3. open search/menu near edges.
+3. Open search/menu/StatusHelp near left/right/top/bottom edges at actual390/320CSSpx on the controlled tab; record actual available layout width and focused-control visibility; reset original viewport.
 
-**Expected:** No lost content/action or pagewide clipping; genuine table scroll remains operable; row amounts/labels readable; saved facts unchanged.
+**Expected:** No lost content/action or pagewide clipping; genuine table scroll remains operable; row amounts/labels readable; saved facts unchanged. Help text must remain visible inside available layout viewport: use rendered width and scrollbar-aware bounds. Preserve the320px screenshot failure; x42+340=382 at390px alone does not prove text clipping. Genuine tables may scroll; do not eliminate table scrolling as a cosmetic fix.
 
 **Unchanged:** Compare captured non-target documents, settings, actor/tenant and applicable GL/AR/AP/stock/fleet/deposit snapshots. Read-only/cancel/refusal steps create no prohibited business effects; successful writes change only the independently planned records and ledgers.
 
@@ -766,7 +766,7 @@ Revision1; P2; draft/unbound/not-run. Business journeys: WB-CORE.J06, WB-CORE.J0
 
 **Failure handling:** Checkpoint intent and immediate result; preserve first discrepancy and field map; do not post an inconsistent preview or replay an uncertain financial action; continue only independent safe cases.
 
-**Close:** Retain source/failed fixtures and evidence; restore any changed opening settings and reconcile actual writes; no deletion/reset/writeoff to clean the run.
+**Close:** Retain source/failed fixtures and evidence; restore any changed opening settings and reconcile actual writes; no deletion/reset/writeoff to clean the run. Verify dimensions on the actual tab after override AND reset; another tab remaining desktop-sized does not execute the narrow branch.
 
 ### UXW-022 — Zoom text spacing and sticky bars
 
