@@ -1,7 +1,7 @@
 // Use ONLY inside actual mcp__cua_repl with its already-bound supported tab.
 import fs from 'node:fs';import path from 'node:path';
 import {authorizeCombined} from './combined-v2527-policy.mjs';
-import {checkFrozen} from './combined-v2527-run.mjs';
+import {checkFrozen} from './combined-v2527-frozen.mjs';
 import {dispatchPersistedDesktopAction,assertExecutionDate} from './operator-desktop-cua.mjs';
 export async function dispatchCombined({requestPath,tab}){
  try{
@@ -14,3 +14,4 @@ export async function dispatchCombined({requestPath,tab}){
   return await dispatchPersistedDesktopAction({requestPath,tab});
  }catch(e){return {executed:false,uiCalls:0,reason:e.message,boundary:'Inspect durable state; no bypass or replay.'};}
 }
+
