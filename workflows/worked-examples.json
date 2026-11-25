@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 3,
+  "revision": 4,
   "convention": "Signed ledger: debit positive, credit negative. All posting amounts integer LKR cents. Account names identify purpose, not hardcoded product codes.",
   "examples": [
     {
@@ -1612,6 +1612,34 @@
             "headerDiscountCents": 1350,
             "draftTotalCents": 25650,
             "postedJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-18-01",
+      "title": "Zero-stock denial leaves financial state unchanged",
+      "caseRefs": [
+        "WB-CORE.J06.C07"
+      ],
+      "policy": "Synthetic no-tax fixture; verified physical classification and negative policy block; prior catalog creation separate from rejected invoice. No independent runtime/fault/role acceptance implied.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Attempt invoice1unit at1000cents against available0",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "availableUnits": 0,
+            "requestedUnits": 1,
+            "shortUnits": 1,
+            "newInvoiceCount": 0,
+            "newJournalCount": 0,
+            "ARDeltaCents": 0,
+            "inventoryDeltaCents": 0
           }
         }
       ],

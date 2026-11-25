@@ -811,3 +811,22 @@ Expected signed ledger: {}.
 
 Expected business state: {"grossCents":30000,"lineDiscountCents":3000,"lineNetCents":27000,"headerDiscountCents":1350,"draftTotalCents":25650,"postedJournalCount":0}.
 
+
+## EX-CORE-18-01 — Zero-stock denial leaves financial state unchanged
+
+Cases: WB-CORE.J06.C07.
+
+Assumptions: Synthetic no-tax fixture; verified physical classification and negative policy block; prior catalog creation separate from rejected invoice. No independent runtime/fault/role acceptance implied.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Attempt invoice1unit at1000cents against available0
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"availableUnits":0,"requestedUnits":1,"shortUnits":1,"newInvoiceCount":0,"newJournalCount":0,"ARDeltaCents":0,"inventoryDeltaCents":0}.
+
