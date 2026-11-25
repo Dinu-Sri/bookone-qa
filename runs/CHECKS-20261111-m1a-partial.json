@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "executionQa": "f79488cb7b8375f6118930e3750d9b813e9b3485",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "counts": {
+    "passed": 15,
+    "blocked": 1,
+    "notRunBudget": 30,
+    "pending": 0,
+    "unresolved": 0
+  },
+  "business": {
+    "masterWrites": 3,
+    "setupFundingSubmissions": 1,
+    "workflowFinancialSubmissions": 3,
+    "nonPostingPurchaseWrites": 2,
+    "authTransitions": 2,
+    "journals": 4,
+    "debitCents": 134000,
+    "creditCents": 134000,
+    "stockMovements": 3,
+    "stockQty": 10,
+    "stockValueCents": 60000
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 12088320,
+    "pausedMs": 0,
+    "includes": "all unpaused credit gap until closing; subsequent handoff publication metadata-only"
+  },
+  "failure": "QA queue quotation Post binding mismatches dedicated Save quotation; zero quote intent/UI submit; not product defect",
+  "releaseAcceptance": "not-established"
+}

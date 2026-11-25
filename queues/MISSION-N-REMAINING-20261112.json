@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-N-REMAINING-20261112",
+  "displayName": "Remaining N setup with fresh controls",
+  "executionReady": true,
+  "candidate": "v2.5.26",
+  "productSha": "e741a6a9b68969bfc58be70fb8459de479da2cdd",
+  "productTree": "9954c832b35078af89c49adb2c31fe0165373dd9",
+  "status": "setup-only-no-financial-or-shift-writes",
+  "budget": {
+    "totalMinutes": 90,
+    "executionMinutes": 65,
+    "closingReserveMinutes": 25
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-12",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "oracle": "docs/V2526_SETUP_BOUNDARY.md",
+  "cases": [
+    {
+      "precondition": "Fresh exact candidate/date/control/identity before setup; no old action replay",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "dependsOn": [],
+      "id": "NG01",
+      "title": "Fresh control/candidate gates",
+      "expected": "NEW clock before browser/auth; exact candidate live stamp and currentdate; actual2positive5zero proof, all7clocks closed; test controls exit0"
+    },
+    {
+      "precondition": "Fresh exact candidate/date/control/identity before setup; no old action replay",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Login",
+        "Logout"
+      ],
+      "allowedPaths": [
+        "^/.*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "platformAdmin",
+      "companyAlias": "N",
+      "dependsOn": [
+        "NG01"
+      ],
+      "id": "NG02",
+      "title": "Saved admin authentication",
+      "expected": "Fresh fullreload login form; saved admin sequential credential input Rememberoff; verify actual protected Control Room actor. Fresh retry only after definite refusal; unknown outcome blocks writes."
+    },
+    {
+      "id": "N22",
+      "title": "Inventory and POS grant",
+      "expected": "Only new target company: Pro if required, Inventory+POS on, unrelated optional modules off. Prepare all fields before action-time grant confirmation if required; Save changes once; fullreload/readback and identity binding.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "NG02"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Save changes"
+      ],
+      "allowedPaths": [
+        "^/control-room/companies/[A-Za-z0-9-]+$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "platformAdmin",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N23",
+      "title": "Owner effective access",
+      "expected": "Guard admin logout/new owner login Remember off; confirm actual owner/company, effective Inventory/POS write capability and existing grant after reload.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N22"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ],
+      "allowedPaths": [
+        "^/login$",
+        "^/(?!login$).*"
+      ],
+      "maxSubmissions": 4,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N24",
+      "title": "Tax settings",
+      "expected": "New N only: confirm VAT off, commercial/local. Save VAT settings at most once only if correction required; fullreload. No change to A tax profile.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N23"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Save VAT settings"
+      ],
+      "allowedPaths": [
+        "^/company/sales$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N25",
+      "title": "Warehouse",
+      "expected": "Create at most one Warehouse code N-WH-1112 with no opening quantity/value. Reuse only exact run-reserved record; actual UI persisted ID bound privately.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N23"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Add location"
+      ],
+      "allowedPaths": [
+        "^/company/locations$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N26",
+      "title": "Default register manual persistence",
+      "expected": "Before adding register, if exactly one visible Save button, select Manual / preview only for default register; guarded Save once; fullreload verifies. If ambiguous, refuse; no nth/index/DOM alteration. List may seed default register server-side; record that setup effect.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N24"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Save"
+      ],
+      "allowedPaths": [
+        "^/company/sales$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N27",
+      "title": "Dedicated manual register",
+      "expected": "Create at most one active N-REG-1112 in N-WH-1112, manual print, cash account1000, blank thermal hint/footer; Add register once; fullreload binds location/print/account. No shift opened.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N25",
+        "N26"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Add register"
+      ],
+      "allowedPaths": [
+        "^/company/sales$"
+      ],
+      "maxSubmissions": 1,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N28",
+      "title": "Zero-opening masters",
+      "expected": "Create/reuse exactly2 zero-opening products N-P-G physical100/60 and N-P-S service40/0; one N customer and one N vendor; no balances/contacts/emails. Four maximum saves.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N24",
+        "N25"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Save product",
+        "Save customer",
+        "Save vendor"
+      ],
+      "allowedPaths": [
+        "^/inventory/products/new$",
+        "^/parties/customers/new$",
+        "^/parties/vendors/new$"
+      ],
+      "maxSubmissions": 4,
+      "actor": "nOwner",
+      "companyAlias": "N"
+    },
+    {
+      "id": "N29",
+      "title": "Nonposting UI contract",
+      "expected": "Inspect commercial/local and separate cash/bank/card options; mixed products included, mixed tender excluded. No invoice/sale/refund/shift/Z/print.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N27",
+        "N28"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none"
+    },
+    {
+      "id": "N30",
+      "title": "Current zero financial openings",
+      "expected": "Full fresh account/GL/trial/BS/PnL/stock/movement/document/shift reads: zero journals, balances, stock quantities/values, purchase/sales/payments/refunds and shifts. Setup records only. Unexpected money stops release; never reset/repair.",
+      "precondition": "Fixed 12 November 2026 UTC; exact published setup QA and v2.5.26; fresh proof before writes; only new V/N fixtures; no money, stock, shift or physical printing.",
+      "dependsOn": [
+        "N29"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none"
+    },
+    {
+      "precondition": "Fresh exact candidate/date/control/identity before setup; no old action replay",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "allowedPaths": [],
+      "maxSubmissions": 0,
+      "actor": "none",
+      "companyAlias": "none",
+      "dependsOn": [],
+      "id": "NG03",
+      "title": "Preservation and publication",
+      "expected": "N zeroopening setup reconciliation; V/A readonly preserve; no account/onboarding/Vsetup repeat. Publish all12 dispositions with actual accepted/refused/inconclusive enum and closed clock. Big mission still Medium release gated.",
+      "recovery": true
+    }
+  ]
+}
