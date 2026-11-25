@@ -1,0 +1,38 @@
+{
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "storageImage": "ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5",
+  "boundary": "actual-product-archive-actions-real-PostgreSQL-and-S3-Versity-synthetic-identity-Next-adapters",
+  "status": "passed",
+  "cases": [
+    {
+      "id": "M2-RECOVERY",
+      "status": "passed"
+    }
+  ],
+  "diagnostics": {
+    "categories": [],
+    "locations": []
+  },
+  "observations": {
+    "sourcePreserved": 1,
+    "viewerDenied": 1,
+    "nonemptyDenied": 1,
+    "wrongPasswordDenied": 1,
+    "dataRestored": 1,
+    "filesRestored": 1,
+    "fileBytesMatch": 1,
+    "stockQty": 1,
+    "closedShifts": 1,
+    "varianceCents": 0,
+    "assetsCents": 16000,
+    "liabilitiesCents": 12000,
+    "profitCents": 4000,
+    "applicationRead": 1,
+    "replayDenied": 1,
+    "observedRestoreMs": 204
+  },
+  "limits": [
+    "No deployed upload/proxy or production RPO/RTO claim",
+    "Actual product archive actions, S3 transport and restored app data helpers; credential HTTPS is a separate lane"
+  ]
+}

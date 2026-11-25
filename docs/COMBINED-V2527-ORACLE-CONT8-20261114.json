@@ -1,0 +1,2309 @@
+{
+  "kind": "fixed-reviewed-business-oracle",
+  "productSha": "dae17abcba12d6810c8f8c3fe4a74fb28280a026",
+  "candidateSha": "3d6119ea2b4437ae50b06eaefb54c95063257dbf",
+  "productTree": "78973f5a9298ce615f5c8cda17f77b2de714bfa2",
+  "units": "integer LKR cents; stock units at cost60",
+  "date": "2026-11-14",
+  "dueDate": "2026-11-16",
+  "accountCodes": {
+    "cash": "1000",
+    "bank": "1100",
+    "AR": "1300",
+    "inventory": "5100",
+    "AP": "2100",
+    "outputVAT": "2200",
+    "equity": "3000",
+    "revenue": "4000",
+    "COGS": "5000",
+    "expense": "6800",
+    "inputVAT": "2300",
+    "card": "1200",
+    "returns": "4100"
+  },
+  "events": [
+    {
+      "lane": "V",
+      "id": "office-bank-equity",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 50000
+        },
+        {
+          "account": "equity",
+          "side": "CR",
+          "cents": 50000
+        }
+      ],
+      "drCents": 50000,
+      "crCents": 50000,
+      "stockDelta": 0,
+      "stockQty": 0,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000
+      },
+      "source": "new-owned-source",
+      "cap": "No historical source; exact future private binding required",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 0,
+          "valueCents": 0
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-bank-equity"
+    },
+    {
+      "lane": "V",
+      "id": "separate-bank-cashpurchase",
+      "lines": [
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 12000
+        },
+        {
+          "account": "inputVAT",
+          "side": "DR",
+          "cents": 2160
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 14160
+        }
+      ],
+      "drCents": 14160,
+      "crCents": 14160,
+      "stockDelta": 2,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 35840,
+        "equity": -50000,
+        "inventory": 12000,
+        "inputVAT": 2160
+      },
+      "source": "office-bank-cashpurchase",
+      "cap": "Refund max2 units/gross14160",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "separate-bank-cashpurchase"
+    },
+    {
+      "lane": "V",
+      "id": "separate-bank-cashpurchase-refund",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 14160
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 12000
+        },
+        {
+          "account": "inputVAT",
+          "side": "CR",
+          "cents": 2160
+        }
+      ],
+      "drCents": 14160,
+      "crCents": 14160,
+      "stockDelta": -2,
+      "stockQty": 0,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 0,
+        "inputVAT": 0
+      },
+      "source": "office-bank-cashpurchase",
+      "cap": "Consumed2 units/gross14160; remaining0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 0,
+          "valueCents": 0
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "separate-bank-cashpurchase-refund"
+    },
+    {
+      "lane": "V",
+      "id": "office-PO",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 0,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 0,
+        "inputVAT": 0
+      },
+      "source": "office-PO",
+      "cap": "No posting",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 0,
+          "valueCents": 0
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-PO"
+    },
+    {
+      "lane": "V",
+      "id": "office-GRN",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 10,
+      "stockQty": 10,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 0,
+        "inputVAT": 0
+      },
+      "source": "office-GRN",
+      "cap": "10 units; bill exactly once, never duplicate stock",
+      "memo": "Stock value60000; GL inventory remains0 until bill if GRNIoff",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-GRN"
+    },
+    {
+      "lane": "V",
+      "id": "office-bill",
+      "lines": [
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 60000
+        },
+        {
+          "account": "inputVAT",
+          "side": "DR",
+          "cents": 10800
+        },
+        {
+          "account": "AP",
+          "side": "CR",
+          "cents": 70800
+        }
+      ],
+      "drCents": 70800,
+      "crCents": 70800,
+      "stockDelta": 0,
+      "stockQty": 10,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 60000,
+        "inputVAT": 10800,
+        "AP": -70800
+      },
+      "source": "office-GRN",
+      "cap": "One bill70800 against original10units; no duplicate stock",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-bill"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-expense",
+      "lines": [
+        {
+          "account": "expense",
+          "side": "DR",
+          "cents": 8000
+        },
+        {
+          "account": "inputVAT",
+          "side": "DR",
+          "cents": 1440
+        },
+        {
+          "account": "AP",
+          "side": "CR",
+          "cents": 9440
+        }
+      ],
+      "drCents": 9440,
+      "crCents": 9440,
+      "stockDelta": 0,
+      "stockQty": 10,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 60000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000
+      },
+      "source": "service-expense",
+      "cap": "Delivered service80+VAT14.40",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-expense"
+    },
+    {
+      "lane": "V",
+      "id": "office-quote",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 10,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 60000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000
+      },
+      "source": "office-quote",
+      "cap": "Net60000; VAT preview10800; futureinvoice70800",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-quote"
+    },
+    {
+      "lane": "V",
+      "id": "office-order",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 10,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 60000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000
+      },
+      "source": "office-order",
+      "cap": "Copy TAX/local; net60000; no VAT posting",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-order"
+    },
+    {
+      "lane": "V",
+      "id": "office-tax-invoice",
+      "lines": [
+        {
+          "account": "AR",
+          "side": "DR",
+          "cents": 70800
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 60000
+        },
+        {
+          "account": "outputVAT",
+          "side": "CR",
+          "cents": 10800
+        },
+        {
+          "account": "COGS",
+          "side": "DR",
+          "cents": 36000
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 36000
+        }
+      ],
+      "drCents": 106800,
+      "crCents": 106800,
+      "stockDelta": -6,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 70800,
+        "revenue": -60000,
+        "outputVAT": -10800,
+        "COGS": 36000
+      },
+      "source": "office-invoice",
+      "cap": "6units/gross70800 receipt cap",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-tax-invoice"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-quote",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 70800,
+        "revenue": -60000,
+        "outputVAT": -10800,
+        "COGS": 36000
+      },
+      "source": "service-quote",
+      "cap": "Net12000; preview2160; future14160",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-quote"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-order",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 70800,
+        "revenue": -60000,
+        "outputVAT": -10800,
+        "COGS": 36000
+      },
+      "source": "service-order",
+      "cap": "No posting; TAX/local copied",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-order"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-invoice",
+      "lines": [
+        {
+          "account": "AR",
+          "side": "DR",
+          "cents": 14160
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 12000
+        },
+        {
+          "account": "outputVAT",
+          "side": "CR",
+          "cents": 2160
+        }
+      ],
+      "drCents": 14160,
+      "crCents": 14160,
+      "stockDelta": 0,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 84960,
+        "revenue": -72000,
+        "outputVAT": -12960,
+        "COGS": 36000
+      },
+      "source": "service-invoice",
+      "cap": "3x40 gross14160",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-invoice"
+    },
+    {
+      "lane": "V",
+      "id": "office-cash-collection",
+      "lines": [
+        {
+          "account": "cash",
+          "side": "DR",
+          "cents": 29500
+        },
+        {
+          "account": "AR",
+          "side": "CR",
+          "cents": 29500
+        }
+      ],
+      "drCents": 29500,
+      "crCents": 29500,
+      "stockDelta": 0,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 55460,
+        "revenue": -72000,
+        "outputVAT": -12960,
+        "COGS": 36000,
+        "cash": 29500
+      },
+      "source": "office-invoice",
+      "cap": "RemainingAR41300",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-cash-collection"
+    },
+    {
+      "lane": "V",
+      "id": "office-bank-collection",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 41300
+        },
+        {
+          "account": "AR",
+          "side": "CR",
+          "cents": 41300
+        }
+      ],
+      "drCents": 41300,
+      "crCents": 41300,
+      "stockDelta": 0,
+      "stockQty": 4,
+      "balancesSignedDebitCents": {
+        "bank": 91300,
+        "equity": -50000,
+        "inventory": 24000,
+        "inputVAT": 12240,
+        "AP": -80240,
+        "expense": 8000,
+        "AR": 14160,
+        "revenue": -72000,
+        "outputVAT": -12960,
+        "COGS": 36000,
+        "cash": 29500
+      },
+      "source": "office-invoice",
+      "cap": "AR exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 4,
+          "valueCents": 24000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-bank-collection"
+    },
+    {
+      "lane": "V",
+      "id": "office-AP-credit",
+      "lines": [
+        {
+          "account": "AP",
+          "side": "DR",
+          "cents": 14160
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 12000
+        },
+        {
+          "account": "inputVAT",
+          "side": "CR",
+          "cents": 2160
+        }
+      ],
+      "drCents": 14160,
+      "crCents": 14160,
+      "stockDelta": -2,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 91300,
+        "equity": -50000,
+        "inventory": 12000,
+        "inputVAT": 10080,
+        "AP": -66080,
+        "expense": 8000,
+        "AR": 14160,
+        "revenue": -72000,
+        "outputVAT": -12960,
+        "COGS": 36000,
+        "cash": 29500
+      },
+      "source": "office-bill",
+      "cap": "Return2units before vendor payment; remainingAP56640",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-AP-credit"
+    },
+    {
+      "lane": "V",
+      "id": "office-vendor-payment",
+      "lines": [
+        {
+          "account": "AP",
+          "side": "DR",
+          "cents": 56640
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 56640
+        }
+      ],
+      "drCents": 56640,
+      "crCents": 56640,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 34660,
+        "equity": -50000,
+        "inventory": 12000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 14160,
+        "revenue": -72000,
+        "outputVAT": -12960,
+        "COGS": 36000,
+        "cash": 29500
+      },
+      "source": "office-bill",
+      "cap": "AP exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-vendor-payment"
+    },
+    {
+      "lane": "V",
+      "id": "office-customer-return",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 10000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 1800
+        },
+        {
+          "account": "cash",
+          "side": "CR",
+          "cents": 11800
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 17800,
+      "crCents": 17800,
+      "stockDelta": 1,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 34660,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 14160,
+        "revenue": -72000,
+        "outputVAT": -11160,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 10000
+      },
+      "source": "office-invoice",
+      "cap": "Refund1unit gross11800; storedVAT18%",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-customer-return"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-card",
+      "lines": [
+        {
+          "account": "card",
+          "side": "DR",
+          "cents": 4720
+        },
+        {
+          "account": "AR",
+          "side": "CR",
+          "cents": 4720
+        }
+      ],
+      "drCents": 4720,
+      "crCents": 4720,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 34660,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 9440,
+        "revenue": -72000,
+        "outputVAT": -11160,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 10000,
+        "card": 4720
+      },
+      "source": "service-invoice",
+      "cap": "Remaining9440",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-card"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-bank",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 9440
+        },
+        {
+          "account": "AR",
+          "side": "CR",
+          "cents": 9440
+        }
+      ],
+      "drCents": 9440,
+      "crCents": 9440,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 44100,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -11160,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 10000,
+        "card": 4720
+      },
+      "source": "service-invoice",
+      "cap": "AR0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-bank"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-refund1",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 4000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 720
+        },
+        {
+          "account": "card",
+          "side": "CR",
+          "cents": 4720
+        }
+      ],
+      "drCents": 4720,
+      "crCents": 4720,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 44100,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -10440,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 14000,
+        "card": 0
+      },
+      "source": "service-invoice",
+      "cap": "Refund1 gross4720; remaining9440",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-refund1"
+    },
+    {
+      "lane": "V",
+      "id": "office-service-refund2",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 8000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 1440
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 9440
+        }
+      ],
+      "drCents": 9440,
+      "crCents": 9440,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 34660,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": -9440,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "service-invoice",
+      "cap": "Refund2 gross9440; exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-service-refund2"
+    },
+    {
+      "lane": "V",
+      "id": "office-expense-payment",
+      "lines": [
+        {
+          "account": "AP",
+          "side": "DR",
+          "cents": 9440
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 9440
+        }
+      ],
+      "drCents": 9440,
+      "crCents": 9440,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 25220,
+        "equity": -50000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "service-expense",
+      "cap": "AP0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "office-expense-payment"
+    },
+    {
+      "lane": "V",
+      "id": "pos-bank-equity",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 100000
+        },
+        {
+          "account": "equity",
+          "side": "CR",
+          "cents": 100000
+        }
+      ],
+      "drCents": 100000,
+      "crCents": 100000,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 125220,
+        "equity": -150000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 17700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "new-owned-source",
+      "cap": "No historical source; exact future private binding required",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "pos-bank-equity"
+    },
+    {
+      "lane": "V",
+      "id": "pos-cash-equity",
+      "lines": [
+        {
+          "account": "cash",
+          "side": "DR",
+          "cents": 5000
+        },
+        {
+          "account": "equity",
+          "side": "CR",
+          "cents": 5000
+        }
+      ],
+      "drCents": 5000,
+      "crCents": 5000,
+      "stockDelta": 0,
+      "stockQty": 3,
+      "balancesSignedDebitCents": {
+        "bank": 125220,
+        "equity": -155000,
+        "inventory": 18000,
+        "inputVAT": 10080,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "new-owned-source",
+      "cap": "No historical source; exact future private binding required",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "pos-cash-equity"
+    },
+    {
+      "lane": "V",
+      "id": "pos-stock-bill",
+      "lines": [
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 60000
+        },
+        {
+          "account": "inputVAT",
+          "side": "DR",
+          "cents": 10800
+        },
+        {
+          "account": "AP",
+          "side": "CR",
+          "cents": 70800
+        }
+      ],
+      "drCents": 70800,
+      "crCents": 70800,
+      "stockDelta": 10,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 125220,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": -70800,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "pos-bill",
+      "cap": "10units x60 +VAT",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-stock-bill"
+    },
+    {
+      "lane": "V",
+      "id": "pos-vendor-payment",
+      "lines": [
+        {
+          "account": "AP",
+          "side": "DR",
+          "cents": 70800
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 70800
+        }
+      ],
+      "drCents": 70800,
+      "crCents": 70800,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "pos-bill",
+      "cap": "AP0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-vendor-payment"
+    },
+    {
+      "lane": "V",
+      "id": "pos-shift-open",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -72000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "V-shift",
+      "cap": "Float5000 metadata only; no duplicate funding",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-shift-open"
+    },
+    {
+      "lane": "V",
+      "id": "pos-cash-sale",
+      "lines": [
+        {
+          "account": "cash",
+          "side": "DR",
+          "cents": 23600
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 20000
+        },
+        {
+          "account": "outputVAT",
+          "side": "CR",
+          "cents": 3600
+        },
+        {
+          "account": "COGS",
+          "side": "DR",
+          "cents": 12000
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 12000
+        }
+      ],
+      "drCents": 35600,
+      "crCents": 35600,
+      "stockDelta": -2,
+      "stockQty": 11,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 66000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -92000,
+        "outputVAT": -12600,
+        "COGS": 42000,
+        "cash": 46300,
+        "returns": 22000,
+        "card": 0
+      },
+      "source": "pos-cash-sale",
+      "cap": "2units gross23600; tender25000/change1400",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 8,
+          "valueCents": 48000
+        }
+      },
+      "outputSymbol": "pos-cash-sale"
+    },
+    {
+      "lane": "V",
+      "id": "pos-cash-refund1",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 10000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 1800
+        },
+        {
+          "account": "cash",
+          "side": "CR",
+          "cents": 11800
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 17800,
+      "crCents": 17800,
+      "stockDelta": 1,
+      "stockQty": 12,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 72000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -92000,
+        "outputVAT": -10800,
+        "COGS": 36000,
+        "cash": 34500,
+        "returns": 32000,
+        "card": 0
+      },
+      "source": "pos-cash-sale",
+      "cap": "Cumulative refund1unit(s); remaining1units",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 9,
+          "valueCents": 54000
+        }
+      },
+      "outputSymbol": "pos-cash-refund1"
+    },
+    {
+      "lane": "V",
+      "id": "pos-cash-refund2",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 10000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 1800
+        },
+        {
+          "account": "cash",
+          "side": "CR",
+          "cents": 11800
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 17800,
+      "crCents": 17800,
+      "stockDelta": 1,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -92000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 42000,
+        "card": 0
+      },
+      "source": "pos-cash-sale",
+      "cap": "Cumulative refund2unit(s); remaining0units",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-cash-refund2"
+    },
+    {
+      "lane": "V",
+      "id": "pos-card-service-sale",
+      "lines": [
+        {
+          "account": "card",
+          "side": "DR",
+          "cents": 14160
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 12000
+        },
+        {
+          "account": "outputVAT",
+          "side": "CR",
+          "cents": 2160
+        }
+      ],
+      "drCents": 14160,
+      "crCents": 14160,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -104000,
+        "outputVAT": -11160,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 42000,
+        "card": 14160
+      },
+      "source": "pos-card-sale",
+      "cap": "Refund cap14160",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-card-service-sale"
+    },
+    {
+      "lane": "V",
+      "id": "pos-card-refund1",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 4000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 720
+        },
+        {
+          "account": "card",
+          "side": "CR",
+          "cents": 4720
+        }
+      ],
+      "drCents": 4720,
+      "crCents": 4720,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -104000,
+        "outputVAT": -10440,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 46000,
+        "card": 9440
+      },
+      "source": "pos-card-sale",
+      "cap": "Remaining9440",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-card-refund1"
+    },
+    {
+      "lane": "V",
+      "id": "pos-card-refund2",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 8000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 1440
+        },
+        {
+          "account": "card",
+          "side": "CR",
+          "cents": 9440
+        }
+      ],
+      "drCents": 9440,
+      "crCents": 9440,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -104000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 54000,
+        "card": 0
+      },
+      "source": "pos-card-sale",
+      "cap": "Exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-card-refund2"
+    },
+    {
+      "lane": "V",
+      "id": "pos-bank-mixed-sale",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 16520
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 14000
+        },
+        {
+          "account": "outputVAT",
+          "side": "CR",
+          "cents": 2520
+        },
+        {
+          "account": "COGS",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 22520,
+      "crCents": 22520,
+      "stockDelta": -1,
+      "stockQty": 12,
+      "balancesSignedDebitCents": {
+        "bank": 70940,
+        "equity": -155000,
+        "inventory": 72000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -118000,
+        "outputVAT": -11520,
+        "COGS": 36000,
+        "cash": 22700,
+        "returns": 54000,
+        "card": 0
+      },
+      "source": "pos-bank-sale",
+      "cap": "MixedPRODUCT goods100/service40; gross16520",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 9,
+          "valueCents": 54000
+        }
+      },
+      "outputSymbol": "pos-bank-mixed-sale"
+    },
+    {
+      "lane": "V",
+      "id": "pos-bank-mixed-refund",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 14000
+        },
+        {
+          "account": "outputVAT",
+          "side": "DR",
+          "cents": 2520
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 16520
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 22520,
+      "crCents": 22520,
+      "stockDelta": 1,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -118000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 68000,
+        "card": 0
+      },
+      "source": "pos-bank-sale",
+      "cap": "Full source exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-bank-mixed-refund"
+    },
+    {
+      "lane": "V",
+      "id": "pos-shift-close",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 13,
+      "balancesSignedDebitCents": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -118000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 68000,
+        "card": 0
+      },
+      "source": "V-shift",
+      "cap": "Expected float/count5000 variance0; cash in/out23600 each; card14160 each;bank16520 each; no GL",
+      "memo": "",
+      "stockBySku": {
+        "V-O-G": {
+          "quantity": 3,
+          "valueCents": 18000
+        },
+        "V-P-G": {
+          "quantity": 10,
+          "valueCents": 60000
+        }
+      },
+      "outputSymbol": "pos-shift-close"
+    },
+    {
+      "lane": "N",
+      "id": "bank-equity",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 50000
+        },
+        {
+          "account": "equity",
+          "side": "CR",
+          "cents": 50000
+        }
+      ],
+      "drCents": 50000,
+      "crCents": 50000,
+      "stockDelta": 0,
+      "stockQty": 0,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000
+      },
+      "source": "new-owned-source",
+      "cap": "No historical source; exact future private binding required",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 0,
+          "valueCents": 0
+        }
+      },
+      "outputSymbol": "bank-equity"
+    },
+    {
+      "lane": "N",
+      "id": "stock-bill",
+      "lines": [
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 12000
+        },
+        {
+          "account": "AP",
+          "side": "CR",
+          "cents": 12000
+        }
+      ],
+      "drCents": 12000,
+      "crCents": 12000,
+      "stockDelta": 2,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 50000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": -12000
+      },
+      "source": "N-bill",
+      "cap": "2x60 noVAT",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "stock-bill"
+    },
+    {
+      "lane": "N",
+      "id": "bill-payment",
+      "lines": [
+        {
+          "account": "AP",
+          "side": "DR",
+          "cents": 12000
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 12000
+        }
+      ],
+      "drCents": 12000,
+      "crCents": 12000,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0
+      },
+      "source": "N-bill",
+      "cap": "AP0",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "bill-payment"
+    },
+    {
+      "lane": "N",
+      "id": "shift-open",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0
+      },
+      "source": "N-shift",
+      "cap": "Float0 metadata",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "shift-open"
+    },
+    {
+      "lane": "N",
+      "id": "cash-sale",
+      "lines": [
+        {
+          "account": "cash",
+          "side": "DR",
+          "cents": 10000
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 10000
+        },
+        {
+          "account": "COGS",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 16000,
+      "crCents": 16000,
+      "stockDelta": -1,
+      "stockQty": 1,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 6000,
+        "AP": 0,
+        "cash": 10000,
+        "revenue": -10000,
+        "COGS": 6000
+      },
+      "source": "N-cash-sale",
+      "cap": "Max1unit10000",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 1,
+          "valueCents": 6000
+        }
+      },
+      "outputSymbol": "cash-sale"
+    },
+    {
+      "lane": "N",
+      "id": "cash-refund",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 10000
+        },
+        {
+          "account": "cash",
+          "side": "CR",
+          "cents": 10000
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 16000,
+      "crCents": 16000,
+      "stockDelta": 1,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -10000,
+        "COGS": 0,
+        "returns": 10000
+      },
+      "source": "N-cash-sale",
+      "cap": "Exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "cash-refund"
+    },
+    {
+      "lane": "N",
+      "id": "card-service",
+      "lines": [
+        {
+          "account": "card",
+          "side": "DR",
+          "cents": 4000
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 4000
+        }
+      ],
+      "drCents": 4000,
+      "crCents": 4000,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -14000,
+        "COGS": 0,
+        "returns": 10000,
+        "card": 4000
+      },
+      "source": "N-card-sale",
+      "cap": "Max4000",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "card-service"
+    },
+    {
+      "lane": "N",
+      "id": "card-refund",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 4000
+        },
+        {
+          "account": "card",
+          "side": "CR",
+          "cents": 4000
+        }
+      ],
+      "drCents": 4000,
+      "crCents": 4000,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -14000,
+        "COGS": 0,
+        "returns": 14000,
+        "card": 0
+      },
+      "source": "N-card-sale",
+      "cap": "Exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "card-refund"
+    },
+    {
+      "lane": "N",
+      "id": "bank-mixed",
+      "lines": [
+        {
+          "account": "bank",
+          "side": "DR",
+          "cents": 14000
+        },
+        {
+          "account": "revenue",
+          "side": "CR",
+          "cents": 14000
+        },
+        {
+          "account": "COGS",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "inventory",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 20000,
+      "crCents": 20000,
+      "stockDelta": -1,
+      "stockQty": 1,
+      "balancesSignedDebitCents": {
+        "bank": 52000,
+        "equity": -50000,
+        "inventory": 6000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -28000,
+        "COGS": 6000,
+        "returns": 14000,
+        "card": 0
+      },
+      "source": "N-bank-sale",
+      "cap": "Goods100/service40 max14000",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 1,
+          "valueCents": 6000
+        }
+      },
+      "outputSymbol": "bank-mixed"
+    },
+    {
+      "lane": "N",
+      "id": "bank-refund",
+      "lines": [
+        {
+          "account": "returns",
+          "side": "DR",
+          "cents": 14000
+        },
+        {
+          "account": "bank",
+          "side": "CR",
+          "cents": 14000
+        },
+        {
+          "account": "inventory",
+          "side": "DR",
+          "cents": 6000
+        },
+        {
+          "account": "COGS",
+          "side": "CR",
+          "cents": 6000
+        }
+      ],
+      "drCents": 20000,
+      "crCents": 20000,
+      "stockDelta": 1,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -28000,
+        "COGS": 0,
+        "returns": 28000,
+        "card": 0
+      },
+      "source": "N-bank-sale",
+      "cap": "Exhausted0",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "bank-refund"
+    },
+    {
+      "lane": "N",
+      "id": "shift-close",
+      "lines": [],
+      "drCents": 0,
+      "crCents": 0,
+      "stockDelta": 0,
+      "stockQty": 2,
+      "balancesSignedDebitCents": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -28000,
+        "COGS": 0,
+        "returns": 28000,
+        "card": 0
+      },
+      "source": "N-shift",
+      "cap": "Float/count0 variance0; no GL",
+      "memo": "",
+      "stockBySku": {
+        "N-P-G": {
+          "quantity": 2,
+          "valueCents": 12000
+        }
+      },
+      "outputSymbol": "shift-close"
+    }
+  ],
+  "final": {
+    "balances": {
+      "V": {
+        "bank": 54420,
+        "equity": -155000,
+        "inventory": 78000,
+        "inputVAT": 20880,
+        "AP": 0,
+        "expense": 8000,
+        "AR": 0,
+        "revenue": -118000,
+        "outputVAT": -9000,
+        "COGS": 30000,
+        "cash": 22700,
+        "returns": 68000,
+        "card": 0
+      },
+      "N": {
+        "bank": 38000,
+        "equity": -50000,
+        "inventory": 12000,
+        "AP": 0,
+        "cash": 0,
+        "revenue": -28000,
+        "COGS": 0,
+        "returns": 28000,
+        "card": 0
+      }
+    },
+    "stock": {
+      "V": {
+        "V-O-G": 3,
+        "V-P-G": 10
+      },
+      "N": {
+        "N-P-G": 2
+      }
+    }
+  },
+  "notes": [
+    "All48 events unconsumed at release; no money or stock posted in preparation.",
+    "PO/GRN/quote/order/shift events are nonGL; GRNI off gives a temporary stock/GL timing difference until bill.",
+    "Source IDs bind privately only after independently accepted persisted UI readback.",
+    "This is synthetic ledger QA, no real bank transfer/card charge, no fiscal/legal certification.",
+    "Every event needs journal/stock/source/status/date/tender readback, not just a success toast."
+  ]
+}

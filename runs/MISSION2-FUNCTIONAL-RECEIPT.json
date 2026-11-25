@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "mode": "light-functional-dispositioned",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "qaSha": "e619b7877c2f499c799c2e3c30017995884a3e3b",
+  "dateContract": "2026-11-15",
+  "clockMode": "active",
+  "runId": "RUN-20261115-MISSION2-CONT1",
+  "authUnresolved": 0,
+  "protectedDataPreserved": true,
+  "cases": [
+    {
+      "id": "G01",
+      "status": "passed"
+    },
+    {
+      "id": "G02",
+      "status": "passed"
+    },
+    {
+      "id": "G03",
+      "status": "passed"
+    },
+    {
+      "id": "G04",
+      "status": "passed"
+    },
+    {
+      "id": "V01",
+      "status": "passed"
+    },
+    {
+      "id": "V02",
+      "status": "passed"
+    },
+    {
+      "id": "V03",
+      "status": "passed"
+    },
+    {
+      "id": "V04",
+      "status": "passed"
+    },
+    {
+      "id": "V05",
+      "status": "passed"
+    },
+    {
+      "id": "V06",
+      "status": "passed"
+    },
+    {
+      "id": "V07",
+      "status": "passed"
+    },
+    {
+      "id": "V08",
+      "status": "passed"
+    },
+    {
+      "id": "V09",
+      "status": "passed"
+    },
+    {
+      "id": "N01",
+      "status": "passed"
+    },
+    {
+      "id": "N02",
+      "status": "passed"
+    },
+    {
+      "id": "N03",
+      "status": "passed"
+    },
+    {
+      "id": "N04",
+      "status": "passed"
+    },
+    {
+      "id": "A01",
+      "status": "passed"
+    },
+    {
+      "id": "A02",
+      "status": "passed"
+    },
+    {
+      "id": "A03",
+      "status": "passed"
+    },
+    {
+      "id": "B01",
+      "status": "passed"
+    },
+    {
+      "id": "B02",
+      "status": "passed"
+    },
+    {
+      "id": "V10",
+      "status": "passed"
+    },
+    {
+      "id": "U01",
+      "status": "inconclusive"
+    },
+    {
+      "id": "P01",
+      "status": "passed"
+    }
+  ]
+}

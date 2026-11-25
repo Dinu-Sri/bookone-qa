@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "executionQa": "a6fa69020c9d62b9a3c03ceadf13627db52e0ea5",
+  "cleanCheckout": "launch-combined-cont11-execution",
+  "productSha": "48e44072f43d8d26338d793c6692767e8b7d2082",
+  "productTree": "06cb8f5c967ff3edab6361123ddc029778f087b0",
+  "liveObserved": "v2.5.28 · 48e4407",
+  "ownerReportedDeployed": true,
+  "independentServerDigest": "not-attested",
+  "dateContract": {
+    "executionDate": "2026-11-15",
+    "newDueWhereApplicable": "2026-11-17",
+    "priorSourceAndShiftOpening": "2026-11-14 preserved",
+    "overnightOpenShiftReuse": "explicitly-reviewed"
+  },
+  "tests": {
+    "accounting": {
+      "files": 17,
+      "passed": 223,
+      "failed": 0
+    },
+    "restrictedHost": {
+      "passed": 64,
+      "failed": 41,
+      "boundary": "Windows temporary-file sandbox failures preserved"
+    },
+    "hostBeforeFinalCarryTest": {
+      "passed": 105,
+      "failed": 0
+    },
+    "focusedFinal": {
+      "passed": 10,
+      "failed": 0
+    },
+    "exactDetachedFinal": {
+      "passed": 106,
+      "failed": 0
+    },
+    "isolatedPostgres": "not-run"
+  },
+  "actualPreparation": {
+    "authenticatedActor": "existing V Owner observed; no new auth",
+    "previewNetCents": 10000,
+    "previewVatCents": 1800,
+    "previewGrossCents": 11800,
+    "finalButton": "Complete refund · LKR 118.00",
+    "originalTicketSold": 2,
+    "left": 2,
+    "shiftStatus": "OPEN",
+    "shiftExistingSales": 1,
+    "shiftExistingReturns": 0,
+    "expectedCashCents": 28600,
+    "financialSubmissions": 0,
+    "settingsWrites": 0,
+    "sourceCarryQualificationCount": 26
+  },
+  "execution": {
+    "initialized": false,
+    "checkpoints": 37,
+    "remainingBusinessActions": 8,
+    "remainingFinancialJournals": 7,
+    "remainingDrCrCents": 108960,
+    "metadataClose": 1
+  },
+  "acceptance": "not-established"
+}

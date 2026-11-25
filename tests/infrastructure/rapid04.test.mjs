@@ -134,8 +134,10 @@ test('HTTP rental GET/write codecs are required slots 014/015 and 114/115', () =
   assert.ok(http.lanes[0].expected.includes('HTTP-015'));
   assert.ok(http.lanes[1].expected.includes('HTTP-114'));
   assert.ok(http.lanes[1].expected.includes('HTTP-115'));
-  assert.equal(http.lanes[0].expected.length, 15);
-  assert.equal(http.lanes[1].expected.length, 15);
+  assert.equal(http.lanes[0].expected.length, 18);
+  assert.equal(http.lanes[1].expected.length, 18);
+  for(const id of ['HTTP-016','HTTP-017','HTTP-018'])assert.ok(http.lanes[0].expected.includes(id));
+  for(const id of ['HTTP-116','HTTP-117','HTTP-118'])assert.ok(http.lanes[1].expected.includes(id));
 });
 
 test('40-point BINDINGS map every PLAN id and stay non-executable', () => {

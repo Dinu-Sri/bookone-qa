@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-14",
+  "executionQa": "d10073475f8a34470367d64eb7331ce6b1d082a3",
+  "workflowEvents": 11,
+  "checkpoints": 39,
+  "financialJournals": 9,
+  "newDebitCreditCents": 215360,
+  "expectedFinalJournalCount": 29,
+  "expectedFinalDebitCreditCents": 867840,
+  "preparationHost": {
+    "pass": 168,
+    "fail": 0
+  },
+  "finalFocused": {
+    "pass": 8,
+    "fail": 0
+  },
+  "exactDetachedHost": {
+    "pass": 169,
+    "fail": 0
+  },
+  "metadata": {
+    "status": "metadata-valid",
+    "files": 1134,
+    "scenarios": 792,
+    "productAcceptance": "not-established"
+  },
+  "actualFrozenControls": {
+    "positiveReadUi": 1,
+    "positiveClickUi": 1,
+    "refusals": 5,
+    "refusalUi": 0,
+    "proofClocksClosed": 7
+  },
+  "actualHelper": {
+    "validForm": true,
+    "refusals": 3,
+    "submitCalls": 0,
+    "pendingCompletion": "uncertain"
+  },
+  "qualificationClocks": [
+    {
+      "mode": "closed",
+      "chargedMs": 101194,
+      "pausedMs": 0
+    },
+    {
+      "mode": "closed",
+      "chargedMs": 82255,
+      "pausedMs": 0
+    }
+  ],
+  "priorCont9": {
+    "mode": "closed",
+    "chargedMs": 3049293,
+    "pausedMs": 0,
+    "passed": 14,
+    "blocked": 24,
+    "inconclusive": 3,
+    "pending": 0,
+    "unresolved": 0
+  },
+  "executionInitialized": false,
+  "boundary": "Preparation only; zero auth/business/settings/master/stock/shift submits. Light requires its own NEW clock and fresh actual gates."
+}

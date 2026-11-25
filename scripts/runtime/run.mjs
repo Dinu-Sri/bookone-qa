@@ -88,6 +88,7 @@ for (const lane of lanes.filter(l => selected === 'all' || l.name === selected))
   observationKeys['S-0781']=['matchesDeclaredSqlZero','matchesFixedScaleZero'];
   observationKeys['S-0782']=['acceptedIncoherent','targetDocuments','targetJournalLines','unchanged'];
   for(const id of ['RT-052','RT-053','RT-054','RT-055','RT-056','RT-057','RT-058','RT-059'])observationKeys[id]=['historyTotalCents','printTotalCents','readGrant','writeGrant','inventoryReadGranted','historyDetailDenied','historyPrintDenied','foreignFixturePositive','ownFixturePositive','invoiceAccepted','paymentAccepted','unchanged','allowedCount','excludedEntityVerified','membershipInactive','arCents'];
+  for(const id of ['RT-080','RT-081','RT-082','RT-083','RT-084','RT-085','RT-086','RT-087'])observationKeys[id]=['ownerCreated','ownerEdited','ownerArchived','lastActiveRefused','denied','unchanged','readAllowed','writeDenied','foreignWriteEffects','foreignLocationDenied','rejected','allocations','totalCents','arDueCents','apDueCents','outputCents','inputCents','netCents','memoCorrect'];
   const rawObservations=existsSync(observationFile)?JSON.parse(readFileSync(observationFile,'utf8')):{};
   const observations={};
   for(const [id,keys] of Object.entries(observationKeys))if(lane.expected.includes(id) && rawObservations[id]) {
