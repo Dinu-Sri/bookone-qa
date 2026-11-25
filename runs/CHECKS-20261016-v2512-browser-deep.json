@@ -1,0 +1,485 @@
+{
+  "run": "RUN-20261016-v2512-browser-deep",
+  "productVersion": "2.5.12",
+  "productSha": "ead3a82170e7a34ad625ec6ef8434e5ae65b1609",
+  "qaIntentSha": "e510fc323a2c4aadeaf051f5619a20ab8336dd60",
+  "rulebookVersion": "1.0.0",
+  "rulebookSha256": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "method": "bounded manual supported-browser assertions; not complete workbook acceptance",
+  "counts": {
+    "passed": 61,
+    "inconclusive": 2,
+    "failed": 4
+  },
+  "checks": [
+    {
+      "id": "D12-001",
+      "group": "P",
+      "expected": "PO10x60=600",
+      "actual": "PO0003 total600",
+      "status": "passed"
+    },
+    {
+      "id": "D12-002",
+      "group": "P",
+      "expected": "PO does not post GL",
+      "actual": "PO detail Not posted",
+      "status": "passed"
+    },
+    {
+      "id": "D12-003",
+      "group": "P",
+      "expected": "First GRN4x60=240",
+      "actual": "GRN0003 qty4,total240",
+      "status": "passed"
+    },
+    {
+      "id": "D12-004",
+      "group": "P",
+      "expected": "GRNIoff receipt not posted",
+      "actual": "GRN0003 Not posted",
+      "status": "passed"
+    },
+    {
+      "id": "D12-005",
+      "group": "P",
+      "expected": "GRN conversion bill240",
+      "actual": "PUR0003 posted240/open240",
+      "status": "passed"
+    },
+    {
+      "id": "D12-006",
+      "group": "P",
+      "expected": "Descendant billed count4",
+      "actual": "PO ordered10/received4/billed4/remaining6",
+      "status": "passed"
+    },
+    {
+      "id": "D12-007",
+      "group": "P",
+      "expected": "Total receiving cannot exceed10",
+      "actual": "Second GRN6; cumulative10",
+      "status": "passed"
+    },
+    {
+      "id": "D12-008",
+      "group": "P",
+      "expected": "Excess7 explicitly rejected before acceptance",
+      "actual": "Filled7; accepted6; no normalized pre-submit capture",
+      "status": "inconclusive"
+    },
+    {
+      "id": "D12-009",
+      "group": "P",
+      "expected": "Duplicate reference blocks second bill",
+      "actual": "Only PUR0003 own bill; no second posting",
+      "status": "passed"
+    },
+    {
+      "id": "D12-010",
+      "group": "P",
+      "expected": "Duplicate feedback identifies conflict",
+      "actual": "Immediate status names D2512-PO-A/PUR0003, suggests correction",
+      "status": "passed"
+    },
+    {
+      "id": "D12-011",
+      "group": "V",
+      "expected": "Payment300 against240 creates no allocation",
+      "actual": "Later valid100 leaves paid100/due140; journal delta confirms",
+      "status": "passed"
+    },
+    {
+      "id": "D12-012",
+      "group": "V",
+      "expected": "Valid vendor100 persists once",
+      "actual": "Remittance100/date16Oct/account1100",
+      "status": "passed"
+    },
+    {
+      "id": "D12-013",
+      "group": "V",
+      "expected": "Vendor print cannot trust total999",
+      "actual": "Still100 after URL tampering",
+      "status": "passed"
+    },
+    {
+      "id": "D12-014",
+      "group": "V",
+      "expected": "Vendor print cannot trust date2020",
+      "actual": "Still16Oct",
+      "status": "passed"
+    },
+    {
+      "id": "D12-015",
+      "group": "V",
+      "expected": "Supplier return240 applies140 and preserves credit100",
+      "actual": "PR0003 applied140/creditdue100",
+      "status": "passed"
+    },
+    {
+      "id": "D12-016",
+      "group": "V",
+      "expected": "Bill balance0 after supplier return",
+      "actual": "PUR0003 paid240/due0",
+      "status": "passed"
+    },
+    {
+      "id": "D12-017",
+      "group": "V",
+      "expected": "Repeated supplier return adds no record",
+      "actual": "Only one new PR0003",
+      "status": "passed"
+    },
+    {
+      "id": "D12-018",
+      "group": "V",
+      "expected": "Repeated supplier return adds no journal",
+      "actual": "Final entries match exactly ten intended new postings",
+      "status": "passed"
+    },
+    {
+      "id": "D12-019",
+      "group": "V",
+      "expected": "Distinct purchase600 remains payable",
+      "actual": "PUR0004 CycleSupplier open600",
+      "status": "passed"
+    },
+    {
+      "id": "D12-020",
+      "group": "V",
+      "expected": "Vendor excess601 against600 shows error",
+      "actual": "Immediate status Payment cannot exceed balance due.",
+      "status": "passed"
+    },
+    {
+      "id": "D12-021",
+      "group": "S",
+      "expected": "Untouched default percent applies10%",
+      "actual": "Quote line270 for3x100",
+      "status": "passed"
+    },
+    {
+      "id": "D12-022",
+      "group": "S",
+      "expected": "Header5% is13.50",
+      "actual": "Form header13.50,total256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-023",
+      "group": "S",
+      "expected": "Saved quote256.50",
+      "actual": "QT0003 total256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-024",
+      "group": "S",
+      "expected": "Quote no GL",
+      "actual": "QT0003 Not posted",
+      "status": "passed"
+    },
+    {
+      "id": "D12-025",
+      "group": "S",
+      "expected": "Conversion to order preserves256.50",
+      "actual": "SO0002 total256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-026",
+      "group": "S",
+      "expected": "Conversion to invoice preserves256.50",
+      "actual": "INV0003 posted256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-027",
+      "group": "S",
+      "expected": "Invoice DrAR/Crrevenue256.50",
+      "actual": "Exact expanded journal lines256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-028",
+      "group": "S",
+      "expected": "Physical DrCOGS/Crinventory180",
+      "actual": "Exact expanded journal lines180",
+      "status": "passed"
+    },
+    {
+      "id": "D12-029",
+      "group": "S",
+      "expected": "Subtotal270 minus13.50 equals256.50",
+      "actual": "Detail labels Subtotal256.50/Discount13.50/Total256.50; line270",
+      "status": "failed"
+    },
+    {
+      "id": "D12-030",
+      "group": "C",
+      "expected": "Customer excess300 creates no allocation",
+      "actual": "After valid75.50 AR181, no excess journal",
+      "status": "passed"
+    },
+    {
+      "id": "D12-031",
+      "group": "C",
+      "expected": "Customer excess300 against180 shows error",
+      "actual": "Immediate status Payment cannot exceed balance due.",
+      "status": "passed"
+    },
+    {
+      "id": "D12-032",
+      "group": "C",
+      "expected": "Distinct valid75.50 receipt persists",
+      "actual": "INV0003 paid75.50/due181 before future receipt",
+      "status": "passed"
+    },
+    {
+      "id": "D12-033",
+      "group": "C",
+      "expected": "Customer print ignores999",
+      "actual": "Printed persisted75.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-034",
+      "group": "C",
+      "expected": "Customer print ignores2020 date",
+      "actual": "Printed actual16Oct",
+      "status": "passed"
+    },
+    {
+      "id": "D12-035",
+      "group": "C",
+      "expected": "Initial datefill reliably creates17Oct receipt",
+      "actual": "Actual16Oct; fill reverted on independent rerender; harness limitation",
+      "status": "inconclusive"
+    },
+    {
+      "id": "D12-036",
+      "group": "C",
+      "expected": "Native date17 survives independent rerender",
+      "actual": "Verified persistent17Oct before distinct1 receipt",
+      "status": "passed"
+    },
+    {
+      "id": "D12-037",
+      "group": "C",
+      "expected": "New1 receipt persists17Oct",
+      "actual": "Receipt1/date17Oct; journal1/date17Oct",
+      "status": "passed"
+    },
+    {
+      "id": "D12-038",
+      "group": "C",
+      "expected": "Current invoice balance180",
+      "actual": "Reload INV0003 paid76.50/due180",
+      "status": "passed"
+    },
+    {
+      "id": "D12-039",
+      "group": "H",
+      "expected": "AR excludes invoice issued after15Oct cutoff",
+      "actual": "AR15Oct0",
+      "status": "passed"
+    },
+    {
+      "id": "D12-040",
+      "group": "H",
+      "expected": "AP excludes bills issued after15Oct cutoff",
+      "actual": "AP15Oct0",
+      "status": "passed"
+    },
+    {
+      "id": "D12-041",
+      "group": "H",
+      "expected": "16Oct AR remains181 after17Oct receipt1",
+      "actual": "INV0003 aging180; aggregate250 instead251",
+      "status": "failed"
+    },
+    {
+      "id": "D12-042",
+      "group": "R",
+      "expected": "Separate source invoice256.50",
+      "actual": "INV0004 posted256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-043",
+      "group": "R",
+      "expected": "Full linked return preview256.50",
+      "actual": "Qty3 preview256.50; header13.50 copied",
+      "status": "passed"
+    },
+    {
+      "id": "D12-044",
+      "group": "R",
+      "expected": "Qty1 partial preview85.50",
+      "actual": "Preview56.50; fixed discounts30 and13.50 retained",
+      "status": "failed"
+    },
+    {
+      "id": "D12-045",
+      "group": "R",
+      "expected": "Qty1 posted credit85.50",
+      "actual": "SR0002 persisted85.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-046",
+      "group": "R",
+      "expected": "Qty1 restores cost60",
+      "actual": "Journal Drinventory60/CrCOGS60",
+      "status": "passed"
+    },
+    {
+      "id": "D12-047",
+      "group": "R",
+      "expected": "Qty1 reversesAR/revenue85.50",
+      "actual": "Journal CrAR85.50/DrSalesReturns85.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-048",
+      "group": "R",
+      "expected": "Remaining2 preview171",
+      "actual": "Preview156.50",
+      "status": "failed"
+    },
+    {
+      "id": "D12-049",
+      "group": "R",
+      "expected": "Remaining2 posted credit171",
+      "actual": "SR0003 persisted171",
+      "status": "passed"
+    },
+    {
+      "id": "D12-050",
+      "group": "R",
+      "expected": "Remaining2 restores cost120",
+      "actual": "Journal Drinventory120/CrCOGS120",
+      "status": "passed"
+    },
+    {
+      "id": "D12-051",
+      "group": "R",
+      "expected": "Remaining2 reversesAR/revenue171",
+      "actual": "Journal CrAR171/DrSalesReturns171",
+      "status": "passed"
+    },
+    {
+      "id": "D12-052",
+      "group": "R",
+      "expected": "Cumulative credit equals source256.50",
+      "actual": "85.50+171=256.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-053",
+      "group": "R",
+      "expected": "Source invoice settled0",
+      "actual": "Reload INV0004 paid256.50/due0",
+      "status": "passed"
+    },
+    {
+      "id": "D12-054",
+      "group": "R",
+      "expected": "Excess return after3 adds no SR",
+      "actual": "Return list only existingSR1 and newSR2/3",
+      "status": "passed"
+    },
+    {
+      "id": "D12-055",
+      "group": "R",
+      "expected": "Excess return adds no journal",
+      "actual": "Final journal21/exact4542.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-056",
+      "group": "D",
+      "expected": "Quote150% cannot save draft",
+      "actual": "Returned list remains3 quotations; no new Validation Customer quote",
+      "status": "passed"
+    },
+    {
+      "id": "D12-057",
+      "group": "L",
+      "expected": "Exactly10 new journal entries",
+      "actual": "Baseline11\u2192final21",
+      "status": "passed"
+    },
+    {
+      "id": "D12-058",
+      "group": "L",
+      "expected": "Exact debit/credit totals4542.50",
+      "actual": "Both4542.50; integrityOK",
+      "status": "passed"
+    },
+    {
+      "id": "D12-059",
+      "group": "L",
+      "expected": "New flows add net revenue256.50",
+      "actual": "Baseline70\u2192326.50 (858.50-532)",
+      "status": "passed"
+    },
+    {
+      "id": "D12-060",
+      "group": "L",
+      "expected": "Net COGS180",
+      "actual": "P&L COGS180 after return pair reverses180",
+      "status": "passed"
+    },
+    {
+      "id": "D12-061",
+      "group": "L",
+      "expected": "Profit86.50",
+      "actual": "P&L326.50-60-180=86.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-062",
+      "group": "L",
+      "expected": "Bank minus88",
+      "actual": "BalanceSheet -88 = baseline-64.50-100+76.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-063",
+      "group": "L",
+      "expected": "AR174.50 with retained prior credit",
+      "actual": "BalanceSheet174.50 = old-5.50+180",
+      "status": "passed"
+    },
+    {
+      "id": "D12-064",
+      "group": "L",
+      "expected": "AP160 with retained supplier credits",
+      "actual": "BalanceSheet160 = old-340-100+600",
+      "status": "passed"
+    },
+    {
+      "id": "D12-065",
+      "group": "L",
+      "expected": "InventoryGL180",
+      "actual": "BalanceSheet180 = old-240+600-180",
+      "status": "passed"
+    },
+    {
+      "id": "D12-066",
+      "group": "L",
+      "expected": "Assets246.50",
+      "actual": "Cash-20+bank-88+AR174.50+inventory180=246.50",
+      "status": "passed"
+    },
+    {
+      "id": "D12-067",
+      "group": "L",
+      "expected": "Liabilities plus equity246.50",
+      "actual": "AP160+currentearnings86.50=246.50",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# v2.5.14 fresh-account browser wave intent
+
+2026-10-17 owner explicitly confirmed the prepared signup accepting Terms/Privacy/Cookies. Actor alias QA N141710; synthetic private credentials; staging bookone.clossyan.com; observed login stamp v2.5.14 a36af04. Product exacta36af042753f3ad8b40246d6cd579deac9233ba7; QA base16df6ca6f72365ad3598ff7c105a4b1517d63e2e. Separate fresh browser run; no reuse of source24/28 as live evidence.
+
+Observe supported signup, first company/default Owner/module/config state before repair. Fresh explicit login and loaded actor/role required before financial mutations. Then original fix reproductions using fresh3unit sources plus extended7/10unit residual, aggregate duplicate quantity, supported tax, stock/GL/AR/AP/audit/settings/locks; exact fixture expectations from maintained library1.2.0 and rulebook1.0.0 expert-pending. No statutory acceptance without eligible fixture. No old-company grant bypass/reset/password reset. Preserve old fixtures; financial ambiguous response requires readback, no replay. Backup/restore LAST. Register every actual creation and block separately.

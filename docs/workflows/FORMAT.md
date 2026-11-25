@@ -1,5 +1,7 @@
 # Workflow specification format v1
 
+For the expanded detailed casebook format, also read [LIBRARY](LIBRARY.md) and [EXECUTION_GUIDE](EXECUTION_GUIDE.md). Its separate `workflows/library.json` registry, WB journey/case IDs, entity/source/control links and worked-example contracts retain the WF starter anchors described here.
+
 Start by copying the closest file in `workflows/specs/`. Allocate a new stable ID for a new business goal; add a variant for a new path through an existing goal. Register new files in `workflows/catalog.json`.
 
 | Field | Authoring requirement |

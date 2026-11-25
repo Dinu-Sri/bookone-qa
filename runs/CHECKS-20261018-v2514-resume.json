@@ -1,0 +1,654 @@
+{
+  "run": "RUN-20261018-v2514-resume",
+  "layer": "bounded-manual-browser-and-financial-readback",
+  "productSha": "a36af042753f3ad8b40246d6cd579deac9233ba7",
+  "observedStamp": "v2.5.14 \u00b7 a36af04",
+  "qaBase": "3691a4bbd7b6fa63dd8b8fb0bc582c1628475249",
+  "actorAlias": "QA N141710",
+  "companyAlias": "QA N141710's Company",
+  "role": "Owner",
+  "date": "2026-10-18",
+  "rulebookVersion": "1.0.0",
+  "rulebookSha256": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+  "libraryVersion": "1.4.0",
+  "librarySha256": "ce31c7293ce305ea75aa6882ccca21b962874f6fe4fd95ef402e14a10d2a0723",
+  "counts": {
+    "passed": 70,
+    "failed": 11,
+    "inconclusive": 6
+  },
+  "checks": [
+    {
+      "id": "N18-001",
+      "status": "inconclusive",
+      "name": "Initial client exception",
+      "expected": "Usable stopped return page",
+      "actual": "Failed static chunk/client exception observed; network/cache/deploy cause not established"
+    },
+    {
+      "id": "N18-002",
+      "status": "passed",
+      "name": "Read-only reload recovery",
+      "expected": "Usable empty sales-return form",
+      "actual": "Recovered same route/build/company"
+    },
+    {
+      "id": "N18-003",
+      "status": "passed",
+      "name": "Fresh actor transition",
+      "expected": "Explicit intended fixture login before mutation",
+      "actual": "Logout/login QA N141710 completed"
+    },
+    {
+      "id": "N18-004",
+      "status": "passed",
+      "name": "Loaded context",
+      "expected": "Owncompany/Owner/v2.5.14 a36af04",
+      "actual": "All three UI signals loaded"
+    },
+    {
+      "id": "N18-005",
+      "status": "passed",
+      "name": "Financial pre-state",
+      "expected": "5journals/debitscredits2296.50",
+      "actual": "Fresh journal matches preserved checkpoint"
+    },
+    {
+      "id": "N18-006",
+      "status": "passed",
+      "name": "Discounted source full preview",
+      "expected": "270-13.50=256.50",
+      "actual": "256.50"
+    },
+    {
+      "id": "N18-007",
+      "status": "passed",
+      "name": "Source customer UI lock",
+      "expected": "Correct original customer disabled",
+      "actual": "N14PhysicalCustomer disabled/copied hint"
+    },
+    {
+      "id": "N18-008",
+      "status": "passed",
+      "name": "Source economic UI lock",
+      "expected": "Original100price and30discount/type locked",
+      "actual": "readonly100/fixed30/type disabled; no server-tamper acceptance"
+    },
+    {
+      "id": "N18-009",
+      "status": "passed",
+      "name": "First unit preview",
+      "expected": "90-4.50=85.50",
+      "actual": "85.50"
+    },
+    {
+      "id": "N18-010",
+      "status": "passed",
+      "name": "First unit posted credit",
+      "expected": "85.50 correctparty",
+      "actual": "SR0001paid85.50"
+    },
+    {
+      "id": "N18-011",
+      "status": "passed",
+      "name": "Source after first credit",
+      "expected": "256.50-85.50=171",
+      "actual": "partial/paid85.50/due171"
+    },
+    {
+      "id": "N18-012",
+      "status": "passed",
+      "name": "Remaining two preview",
+      "expected": "180-9=171",
+      "actual": "171"
+    },
+    {
+      "id": "N18-013",
+      "status": "passed",
+      "name": "Remaining two posted credit",
+      "expected": "171 correctparty",
+      "actual": "SR0002paid171"
+    },
+    {
+      "id": "N18-014",
+      "status": "passed",
+      "name": "Remaining two cost journal",
+      "expected": "DrInventory120/CrCOGS120",
+      "actual": "Exact account/amount lines"
+    },
+    {
+      "id": "N18-015",
+      "status": "passed",
+      "name": "Original invoice settled",
+      "expected": "Paid256.50/due0",
+      "actual": "Source paid/due0; original270/13.50/256.50 unchanged"
+    },
+    {
+      "id": "N18-016",
+      "status": "passed",
+      "name": "Partial-return cumulative ledger",
+      "expected": "7journals/debits2733",
+      "actual": "7/2733/balanced"
+    },
+    {
+      "id": "N18-017",
+      "status": "passed",
+      "name": "Current AR after full credits",
+      "expected": "0",
+      "actual": "Aging18Oct0"
+    },
+    {
+      "id": "N18-018",
+      "status": "passed",
+      "name": "Historical AR for currently settled source",
+      "expected": "17Oct256.50 before18Octcredits",
+      "actual": "Aging17Oct256.50"
+    },
+    {
+      "id": "N18-019",
+      "status": "passed",
+      "name": "Before-source aging exclusion",
+      "expected": "16Oct0",
+      "actual": "0"
+    },
+    {
+      "id": "N18-020",
+      "status": "passed",
+      "name": "Current payment list",
+      "expected": "No current open originalinvoice",
+      "actual": "No open invoices,total0"
+    },
+    {
+      "id": "N18-021",
+      "status": "passed",
+      "name": "Excess fourth-unit return count",
+      "expected": "No extra return",
+      "actual": "Oneattempt; still2returns"
+    },
+    {
+      "id": "N18-022",
+      "status": "passed",
+      "name": "Excess fourth-unit financial snapshot",
+      "expected": "No extra journal/debits",
+      "actual": "Still7/2733"
+    },
+    {
+      "id": "N18-023",
+      "status": "inconclusive",
+      "name": "Excess denial wording",
+      "expected": "Actionable quantity feedback",
+      "actual": "Transient toast not captured; do not invent wording"
+    },
+    {
+      "id": "N18-024",
+      "status": "passed",
+      "name": "Seven-unit noVAT source",
+      "expected": "7x1-header0.05=6.95",
+      "actual": "INV0003open6.95"
+    },
+    {
+      "id": "N18-025",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0003 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0003preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-026",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0004 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0004preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-027",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0005 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0005preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-028",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0006 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0006preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-029",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0007 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0007preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-030",
+      "status": "passed",
+      "name": "Seven-unit ladder SR0008 preview/post",
+      "expected": "One unit credit0.99,correctparty",
+      "actual": "SR0008preview0.99/savedpaid0.99"
+    },
+    {
+      "id": "N18-031",
+      "status": "failed",
+      "name": "Closing preview economic reconciliation",
+      "expected": "Residual1.01 represented by valid economicfields",
+      "actual": "Subtotal1-header0 but Total1.01",
+      "finding": "OBS-N18-RESIDUAL"
+    },
+    {
+      "id": "N18-032",
+      "status": "failed",
+      "name": "Closing preview versus saved credit",
+      "expected": "Post final1.01 from accepted5.94prior",
+      "actual": "SR0009saved1.00",
+      "finding": "OBS-N18-RESIDUAL"
+    },
+    {
+      "id": "N18-033",
+      "status": "failed",
+      "name": "Cumulative source-value conservation",
+      "expected": "Credits6.95 for seven accepted units",
+      "actual": "Credits6.94",
+      "finding": "OBS-N18-RESIDUAL"
+    },
+    {
+      "id": "N18-034",
+      "status": "failed",
+      "name": "Source closes after all units",
+      "expected": "Original due0",
+      "actual": "INV0003partial/due0.01",
+      "finding": "OBS-N18-RESIDUAL"
+    },
+    {
+      "id": "N18-035",
+      "status": "passed",
+      "name": "Duplicate test fresh source",
+      "expected": "Physical3x100,total300",
+      "actual": "INV0004open300"
+    },
+    {
+      "id": "N18-036",
+      "status": "failed",
+      "name": "Aggregate duplicate-row quantity refusal",
+      "expected": "Reject current2+2 againstsource3",
+      "actual": "SR0010accepted persisted2+2",
+      "finding": "OBS-N18-DUPLICATE-QTY"
+    },
+    {
+      "id": "N18-037",
+      "status": "failed",
+      "name": "Duplicate-row preview versus posting",
+      "expected": "No invalid posting; valid preview matches saved credit",
+      "actual": "Preview300/saved200; second row zero-priced",
+      "finding": "OBS-N18-DUPLICATE-QTY"
+    },
+    {
+      "id": "N18-038",
+      "status": "failed",
+      "name": "Invalid duplicate financial atomicity",
+      "expected": "No return/AR/GL mutation",
+      "actual": "DrReturns200/CrAR200/DrInventory120/CrCOGS120",
+      "finding": "OBS-N18-DUPLICATE-QTY"
+    },
+    {
+      "id": "N18-039",
+      "status": "failed",
+      "name": "Invalid duplicate source balance preservation",
+      "expected": "Source300unchanged",
+      "actual": "Sourcepaid200/due100",
+      "finding": "OBS-N18-DUPLICATE-QTY"
+    },
+    {
+      "id": "N18-040",
+      "status": "passed",
+      "name": "VAT configuration binding",
+      "expected": "Explicit register flagtrue/rate18 before taxfixture",
+      "actual": "Save/reloadtrue,rate18/department01"
+    },
+    {
+      "id": "N18-041",
+      "status": "passed",
+      "name": "Discounted TAX source gross",
+      "expected": "Net256.50+VAT46.17=302.67",
+      "actual": "INV0005/26OCT_01/1 open302.67"
+    },
+    {
+      "id": "N18-042",
+      "status": "passed",
+      "name": "Discounted TAX journal",
+      "expected": "DrAR302.67/CrRevenue256.50/CrVAT46.17",
+      "actual": "Exact journal observed"
+    },
+    {
+      "id": "N18-043",
+      "status": "failed",
+      "name": "Tax source-header preservation in preview",
+      "expected": "Retain original13.50 net headerdiscount",
+      "actual": "Preview270/header0/total302.67",
+      "finding": "OBS-N18-TAX-GROSS-NET"
+    },
+    {
+      "id": "N18-044",
+      "status": "failed",
+      "name": "Valid taxed full-return posting",
+      "expected": "Full source302.67 accepted exactly",
+      "actual": "Rejected exceeds remaining invoice value",
+      "finding": "OBS-N18-TAX-GROSS-NET"
+    },
+    {
+      "id": "N18-045",
+      "status": "passed",
+      "name": "Rejected taxed return business-doc snapshot",
+      "expected": "No extra return/journal",
+      "actual": "Still10returns/18journals/debits3849.56"
+    },
+    {
+      "id": "N18-046",
+      "status": "passed",
+      "name": "Rejected taxed source preservation",
+      "expected": "Sourcegross302.67/paid0/tax46.17",
+      "actual": "All source values unchanged"
+    },
+    {
+      "id": "N18-047",
+      "status": "inconclusive",
+      "name": "First intended2.99control fixture",
+      "expected": "NoVAT company profile required",
+      "actual": "UnderVATon commercial-formatINV0006posted3.53; excluded from2.99control,not classified as product failure"
+    },
+    {
+      "id": "N18-048",
+      "status": "passed",
+      "name": "No-header TAX positive source",
+      "expected": "Net100+VAT18=118",
+      "actual": "INV0007/26OCT_01/2 open118"
+    },
+    {
+      "id": "N18-049",
+      "status": "passed",
+      "name": "VAT setting restoration",
+      "expected": "Registeredfalse persisted",
+      "actual": "Save/reloadfalse; rate18 unchanged"
+    },
+    {
+      "id": "N18-050",
+      "status": "passed",
+      "name": "Source VAT after current setting off preview",
+      "expected": "Stored gross118 preserved",
+      "actual": "Preview118"
+    },
+    {
+      "id": "N18-051",
+      "status": "passed",
+      "name": "Source VAT after current setting off posting",
+      "expected": "Credit118",
+      "actual": "SR0011paid118"
+    },
+    {
+      "id": "N18-052",
+      "status": "passed",
+      "name": "VAT return account purposes",
+      "expected": "DrReturns100/DrOutputVAT18/CrAR118",
+      "actual": "Expanded journal exact"
+    },
+    {
+      "id": "N18-053",
+      "status": "passed",
+      "name": "Old taxable gross retained",
+      "expected": "Changing currentflag must not rewrite issuedgross",
+      "actual": "Invoicelist still302.67/3.53/118 for oldtaxfixtures"
+    },
+    {
+      "id": "N18-054",
+      "status": "passed",
+      "name": "Clean three-unit control source",
+      "expected": "3x1-header0.01,noVAT=2.99",
+      "actual": "INV0008open2.99"
+    },
+    {
+      "id": "N18-055",
+      "status": "passed",
+      "name": "Three-unit first credit",
+      "expected": "Preview/post1",
+      "actual": "SR0012paid1"
+    },
+    {
+      "id": "N18-056",
+      "status": "passed",
+      "name": "Three-unit second credit",
+      "expected": "Preview/post1",
+      "actual": "SR0013paid1"
+    },
+    {
+      "id": "N18-057",
+      "status": "passed",
+      "name": "Three-unit residual credit",
+      "expected": "Preview/post0.99",
+      "actual": "SR0014paid0.99"
+    },
+    {
+      "id": "N18-058",
+      "status": "passed",
+      "name": "Three-unit source settled",
+      "expected": "Original2.99 paid",
+      "actual": "INV0008paid2.99 in source list"
+    },
+    {
+      "id": "N18-059",
+      "status": "passed",
+      "name": "No-header TAX source settled",
+      "expected": "Original118paid",
+      "actual": "INV0007paid118 in source list"
+    },
+    {
+      "id": "N18-060",
+      "status": "passed",
+      "name": "Old draft preserved across settings",
+      "expected": "Draft256.50 unchanged",
+      "actual": "INV0001stilldraft256.50; draft-edit bug not rerun"
+    },
+    {
+      "id": "N18-061",
+      "status": "passed",
+      "name": "Ledger before boundary tests",
+      "expected": "25journals/debits4095.07",
+      "actual": "25/4095.07"
+    },
+    {
+      "id": "N18-062",
+      "status": "passed",
+      "name": "PNL reconciliation",
+      "expected": "925.93revenue-566.43returns-60COGS=299.50",
+      "actual": "Report net299.50 and exact account totals"
+    },
+    {
+      "id": "N18-063",
+      "status": "passed",
+      "name": "Balance Sheet AR",
+      "expected": "406.21",
+      "actual": "406.21"
+    },
+    {
+      "id": "N18-064",
+      "status": "passed",
+      "name": "Balance Sheet AP",
+      "expected": "540",
+      "actual": "540"
+    },
+    {
+      "id": "N18-065",
+      "status": "passed",
+      "name": "Balance Sheet inventory value",
+      "expected": "480",
+      "actual": "480; not quantity/layer acceptance"
+    },
+    {
+      "id": "N18-066",
+      "status": "passed",
+      "name": "Balance Sheet output VAT",
+      "expected": "46.71",
+      "actual": "46.71"
+    },
+    {
+      "id": "N18-067",
+      "status": "passed",
+      "name": "Balance Sheet earnings and equation",
+      "expected": "Currentearnings299.50,assets=liabilitiesequity886.21",
+      "actual": "All match; no balancing entry"
+    },
+    {
+      "id": "N18-068",
+      "status": "passed",
+      "name": "AR subledger reconciliation",
+      "expected": "Fouropenbalances302.67+.01+100+3.53=406.21",
+      "actual": "Exact four source rows/406.21"
+    },
+    {
+      "id": "N18-069",
+      "status": "passed",
+      "name": "AP subledger reconciliation",
+      "expected": "PUR0002balance540",
+      "actual": "Exact source/APtotal540"
+    },
+    {
+      "id": "N18-070",
+      "status": "inconclusive",
+      "name": "Net30 aging contract",
+      "expected": "Approved missing-due-date/term-derivation rule required",
+      "actual": "SubmittedblankdueDate,TermsNet30; agingissue17Oct/age1/bucket1-30; owner review intake"
+    },
+    {
+      "id": "N18-071",
+      "status": "passed",
+      "name": "Duplicate bill prerequisite",
+      "expected": "Actual duplicate blocking enabled",
+      "actual": "PurchaseSettings true read"
+    },
+    {
+      "id": "N18-072",
+      "status": "inconclusive",
+      "name": "Duplicate bill submission feedback",
+      "expected": "Observable accepted/rejected outcome",
+      "actual": "Click once, no feedback/navigation; awaited list timedout; no retry"
+    },
+    {
+      "id": "N18-073",
+      "status": "passed",
+      "name": "Duplicate attempt financial readback",
+      "expected": "No extra purchase/journal",
+      "actual": "Still2PUR/25journals/debits4095.07"
+    },
+    {
+      "id": "N18-074",
+      "status": "passed",
+      "name": "Negative-stock initial configuration",
+      "expected": "Read actual priorpolicy",
+      "actual": "last/allow"
+    },
+    {
+      "id": "N18-075",
+      "status": "passed",
+      "name": "Negative-stock block configuration",
+      "expected": "Block saved/persisted",
+      "actual": "Reloadblock"
+    },
+    {
+      "id": "N18-076",
+      "status": "passed",
+      "name": "Zero-stock physical fixture",
+      "expected": "Separate physicalcatalogcreation, no receipt/opening",
+      "actual": "Q-N18-ZERO-STO-84PS linked; subsequent need1/short1 control"
+    },
+    {
+      "id": "N18-077",
+      "status": "passed",
+      "name": "Stock shortage refusal",
+      "expected": "Reject unavailable1unit",
+      "actual": "Explicit need1/short1 error"
+    },
+    {
+      "id": "N18-078",
+      "status": "passed",
+      "name": "Stock shortage document snapshot",
+      "expected": "No new invoice",
+      "actual": "Still8invoices after denial"
+    },
+    {
+      "id": "N18-079",
+      "status": "failed",
+      "name": "Stock shortage form retention",
+      "expected": "Keep valid form for later correction",
+      "actual": "Redirecttolist,enteredformdiscarded",
+      "finding": "OBS-N18-INPUT-RETENTION"
+    },
+    {
+      "id": "N18-080",
+      "status": "passed",
+      "name": "Digital sale under block",
+      "expected": "Nonphysicalqty1 posts1 without stock availability",
+      "actual": "INV0009open1"
+    },
+    {
+      "id": "N18-081",
+      "status": "passed",
+      "name": "Digital source return under block",
+      "expected": "Preview/post1",
+      "actual": "SR0015paid1"
+    },
+    {
+      "id": "N18-082",
+      "status": "passed",
+      "name": "Digital return account purposes",
+      "expected": "No stock/COGS posting",
+      "actual": "LatestSR0015DrReturns1/CrAR1 only"
+    },
+    {
+      "id": "N18-083",
+      "status": "inconclusive",
+      "name": "First settings restoration verification",
+      "expected": "Persistedallow before handoff",
+      "actual": "Immediate reload after firstSave raced; stillblock. Preserved harness sequencing issue,not product defect"
+    },
+    {
+      "id": "N18-084",
+      "status": "passed",
+      "name": "Final settings restoration",
+      "expected": "Actual allow persisted on reload",
+      "actual": "Second supportedSave then separate reloadallow"
+    },
+    {
+      "id": "N18-085",
+      "status": "passed",
+      "name": "Final ledger financial snapshot",
+      "expected": "27journals/debitscredits4097.07",
+      "actual": "Exact27/4097.07; deniedphysicalcreatednoextraentry"
+    },
+    {
+      "id": "N18-086",
+      "status": "passed",
+      "name": "Final statement after digital roundtrip",
+      "expected": "AR406.21/AP540/inventory480/VAT46.71/profit299.50/assets886.21 unchanged",
+      "actual": "FinalBalanceSheet27entries matches everyamount"
+    },
+    {
+      "id": "N18-087",
+      "status": "passed",
+      "name": "Final live stamp",
+      "expected": "Same candidate for this run",
+      "actual": "v2.5.14 a36af04"
+    }
+  ],
+  "acceptance": "not-established",
+  "unexecuted": [
+    "server-crafted party mismatch/foreign-tenant role denial",
+    "stock master quantities/layers/locations and runtime audit snapshots",
+    "ten-unit residual ladder live",
+    "purchase-side duplicate/taxed residual analogues",
+    "PO/GRN/GRNI/approval lifecycle",
+    "period locks/concurrency/atomic-fault/upgrade/storage",
+    "remaining service/rental/hybrid fulfilment/banking/files",
+    "actual encrypted backup/restore LAST"
+  ],
+  "boundaries": "Manual assertions catalogued after run from preserved observations; plan and incremental expected notes preceded mutations. Not an automated release gate or complete canonical case binding. Runtime image/schema/DB identity not fully established."
+}

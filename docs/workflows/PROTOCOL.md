@@ -1,6 +1,6 @@
 # Workflow definition and change protocol —1.0.0
 
-Owner requested continuous,shared standards on2026-10-16. Applies to QA agents,coding agents,product/business owners,reviewers and human testers. Protocol is proposed in the accompanying PR and becomes the repository's working procedure when adopted;no automatic release authority,access grant or product deployment follows.
+Owner requested continuous,shared standards on2026-10-16. Applies to QA agents,coding agents,product/business owners,reviewers and human testers. The owner explicitly requires these as mandatory QA working procedures (2026-10-16), including maintenance, editing, expansion, correction and audit under AGENTS rules73–81. Draft business specifications still require independent review;no automatic release authority,access grant or product deployment follows.
 
 ## 1. Specification hierarchy
 
@@ -8,11 +8,13 @@ Applicable law/eligible accounting framework → canonical rules/rulebook.json a
 
 Maintain shared invariants once. Business playbooks reference stable rule IDs/revisions and add applicability,sequence,fixtures and expected effects. A genuinely new business rule goes through templates/RULE_CHANGE.md,not private wording in one playbook. Keep professional adopted-default/expert-pending distinctions. Do not claim tax/recognition/rental applicability from a country label or an AI-authored example.
 
-JSON in workflows/specs is canonical;generated playbooks are human views. Existing batches/coverage.json owns lifecycle task implementation evidence;campaigns own execution;these families compose their task IDs. Preserve S/RT/B/C/D/E/F identities. Do not count family→task mappings as executed coverage.
+JSON in workflows/specs is canonical for starter families; workflows/library.json and workflows/casebooks contain the detailed business applications. Generated playbooks/workbooks are human views. Existing batches/coverage.json owns lifecycle task implementation evidence;campaigns own execution;these families compose their task IDs. Preserve S/RT/B/C/D/E/F identities. Do not count family→task mappings as executed coverage.
 
 ## 2. Define a family and its variants
 
 A family represents a business goal and explicit start/end states,not a screen or list of fields. Use WF-PHY/SVC/DIG/REN/HYB-NNN;stable step IDs and family.VNN variants. New business concept gets a new family;new edge path usually gets a variant. Never recycle IDs. Retired items retain reason,replacement and historical links.
+
+Detailed library applications use stable WB-TYPE.JNN journeys and WB-TYPE.JNN.CNN cases, referencing applicable starter families, rules and retained lifecycle tasks. Shared CORE/BANK/OPS books compose business-specific books without replacing the canonical rulebook or existing execution registers. Library schema/version and validation are separately declared in library.json. Consult LIBRARY.md and EXECUTION_GUIDE.md before execution; outlines with unresolved bindings/policies are not execution-ready.
 
 Each specification requires: ID/revision/status/author/independent review;profiles;required capabilities and verified configuration prerequisites;rule revisions;existing task refs;feature impact tags;dependencies;synthetic opening state;preconditions;actions;expected changes and unchanged state at every step;legal/invalid transitions;required evidence layers;policy/support gaps. Account names identify purpose;bind actual fixture CoA and stored product classes before execution.
 
@@ -96,4 +98,10 @@ AGENTS.md and CONTRIBUTING.md link this protocol. Metadata checks are integrated
 Each session:read current state,rulebook,relevant playbooks and product changes;select scope and record intent. Each bug/feature:run change procedure. Each candidate:impact review+required regressions+fresh evidence. Weekly during active development:triage new edges and mapping gaps;before release:reconcile declared support against all required families/layers,open risks,expert decisions,operations/history/recovery. These are process requirements,not scheduled automations.
 
 Finish with sanitized immutable run/handoff,current pointers,unresolved questions and exact continuation. Publication follows standing owner approval and exclusions. Never publish secrets/rawtraces/realcustomerdata. Actual encrypted backup/restore remains LAST;operator recovery is separate and requires authorized isolated infrastructure.
+
+
+## Shared UI/UX companion
+
+The owner-requested [UX companion](../ux/README.md) applies alongside this protocol. Its canonical JSON and version1 schema remain separate from starter/business-case schemas. Existing rulebook/catalogue/library versions and acceptance are unchanged. UI changes require UX rule/workflow mappings plus existing business impact review; shared primitive changes require actual consumer coverage. Product agents adopt through their own existing QA contract/AGENTS.
+
 

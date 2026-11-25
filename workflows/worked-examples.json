@@ -1,0 +1,1651 @@
+{
+  "schemaVersion": 1,
+  "revision": 4,
+  "convention": "Signed ledger: debit positive, credit negative. All posting amounts integer LKR cents. Account names identify purpose, not hardcoded product codes.",
+  "examples": [
+    {
+      "id": "EX-PHY-01",
+      "title": "Complete physical purchase/sale/return/settlement",
+      "caseRefs": [
+        "WB-PHY.J05.C01",
+        "WB-PHY.J05.C02",
+        "WB-PHY.J05.C03",
+        "WB-PHY.J05.C04",
+        "WB-PHY.J12.C02"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bank": 1000000,
+        "openingEquity": -1000000
+      },
+      "steps": [
+        {
+          "action": "Purchase10@60",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 60000,
+            "AP": -60000
+          },
+          "assertBusinessState": {
+            "stockQty": 10,
+            "stockValueCents": 60000
+          }
+        },
+        {
+          "action": "Sell2@100, original cost60",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 20000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 20000
+            },
+            {
+              "account": "COGS",
+              "side": "debit",
+              "cents": 12000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 12000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 48000,
+            "AR": 20000,
+            "COGS": 12000,
+            "revenue": -20000
+          },
+          "assertBusinessState": {
+            "stockQty": 8,
+            "profitCents": 8000
+          }
+        },
+        {
+          "action": "Receive80",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 8000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 8000
+            }
+          ],
+          "assertBalances": {
+            "bank": 1008000,
+            "AR": 12000
+          },
+          "assertBusinessState": {
+            "allocationCents": 8000
+          }
+        },
+        {
+          "action": "Return1 at source100/cost60",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 10000
+            },
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 6000
+            },
+            {
+              "account": "COGS",
+              "side": "credit",
+              "cents": 6000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 54000,
+            "AR": 2000,
+            "revenue": -10000,
+            "COGS": 6000
+          },
+          "assertBusinessState": {
+            "stockQty": 9,
+            "profitCents": 4000
+          }
+        },
+        {
+          "action": "Receive20",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 2000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 2000
+            }
+          ],
+          "assertBalances": {
+            "bank": 1010000,
+            "AR": 0
+          },
+          "assertBusinessState": {
+            "customerReceiptsCents": 10000
+          }
+        },
+        {
+          "action": "Pay supplier600",
+          "journalLines": [
+            {
+              "account": "AP",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "bank": 950000,
+            "AP": 0,
+            "inventory": 54000,
+            "AR": 0
+          },
+          "assertBusinessState": {
+            "assetsCents": 1004000,
+            "profitCents": 4000,
+            "equityIncludingCurrentProfitCents": 1004000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-02",
+      "title": "GRNI partial receipt and partial bill",
+      "caseRefs": [
+        "WB-PHY.J03.C01",
+        "WB-PHY.J03.C02"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Receive6@60",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 36000
+            },
+            {
+              "account": "GRNI",
+              "side": "credit",
+              "cents": 36000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 36000,
+            "GRNI": -36000
+          },
+          "assertBusinessState": {
+            "stockQty": 6
+          }
+        },
+        {
+          "action": "Bill4 received units",
+          "journalLines": [
+            {
+              "account": "GRNI",
+              "side": "debit",
+              "cents": 24000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 24000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 36000,
+            "GRNI": -12000,
+            "AP": -24000
+          },
+          "assertBusinessState": {
+            "stockQty": 6,
+            "receivedUnbilledQty": 2
+          }
+        },
+        {
+          "action": "Receive4@60",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 24000
+            },
+            {
+              "account": "GRNI",
+              "side": "credit",
+              "cents": 24000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 60000,
+            "GRNI": -36000
+          },
+          "assertBusinessState": {
+            "stockQty": 10
+          }
+        },
+        {
+          "action": "Bill remaining6 units",
+          "journalLines": [
+            {
+              "account": "GRNI",
+              "side": "debit",
+              "cents": 36000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 36000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 60000,
+            "GRNI": 0,
+            "AP": -60000
+          },
+          "assertBusinessState": {
+            "stockQty": 10,
+            "receivedQty": 10,
+            "billedQty": 10
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-03",
+      "title": "Unpaid supplier return and payment",
+      "caseRefs": [
+        "WB-PHY.J06.C01",
+        "WB-PHY.J06.C02"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bank": 100000,
+        "openingEquity": -100000,
+        "inventory": 60000,
+        "AP": -60000
+      },
+      "steps": [
+        {
+          "action": "Return2@60 to vendor",
+          "journalLines": [
+            {
+              "account": "AP",
+              "side": "debit",
+              "cents": 12000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 12000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 48000,
+            "AP": -48000
+          },
+          "assertBusinessState": {
+            "stockQty": 8
+          }
+        },
+        {
+          "action": "Pay remaining480",
+          "journalLines": [
+            {
+              "account": "AP",
+              "side": "debit",
+              "cents": 48000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 48000
+            }
+          ],
+          "assertBalances": {
+            "AP": 0,
+            "bank": 52000,
+            "inventory": 48000
+          },
+          "assertBusinessState": {
+            "stockQty": 8
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-04",
+      "title": "Cash purchase and exact tender",
+      "caseRefs": [
+        "WB-PHY.J04.C03"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bank": 100000,
+        "openingEquity": -100000
+      },
+      "steps": [
+        {
+          "action": "Buy10@60 for immediate cash",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 60000,
+            "bank": 40000,
+            "AP": 0
+          },
+          "assertBusinessState": {
+            "stockQty": 10,
+            "openPayablesCents": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-05",
+      "title": "Moving average two receipts and sale",
+      "caseRefs": [
+        "WB-PHY.J07.C01"
+      ],
+      "policy": "No tax; explicitly selected moving average; numerical fixture only, not a statutory policy approval.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Receive10@60",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 60000
+          },
+          "assertBusinessState": {
+            "stockQty": 10
+          }
+        },
+        {
+          "action": "Receive10@80",
+          "journalLines": [
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 80000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 80000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 140000,
+            "AP": -140000
+          },
+          "assertBusinessState": {
+            "stockQty": 20,
+            "averageUnitCostCents": 7000
+          }
+        },
+        {
+          "action": "Sell5@100 cost70",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 50000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 50000
+            },
+            {
+              "account": "COGS",
+              "side": "debit",
+              "cents": 35000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 35000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 105000,
+            "AR": 50000,
+            "COGS": 35000
+          },
+          "assertBusinessState": {
+            "stockQty": 15,
+            "profitCents": 15000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-06",
+      "title": "FIFO source-cost return after master change",
+      "caseRefs": [
+        "WB-PHY.J07.C02",
+        "WB-PHY.J07.C03"
+      ],
+      "policy": "No tax; explicit FIFO; opening inventory10@60+10@80; actual return-layer placement must preserve original consumed cost.",
+      "openingSignedLedgerCents": {
+        "inventory": 140000,
+        "AP": -140000
+      },
+      "steps": [
+        {
+          "action": "Sell5@100 from first60 layer",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 50000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 50000
+            },
+            {
+              "account": "COGS",
+              "side": "debit",
+              "cents": 30000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 30000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 110000,
+            "AR": 50000,
+            "COGS": 30000
+          },
+          "assertBusinessState": {
+            "stockQty": 15,
+            "remainingFirstLayerQty": 5,
+            "secondLayerQty": 10
+          }
+        },
+        {
+          "action": "Master cost90 does not post",
+          "journalLines": [],
+          "assertBalances": {
+            "inventory": 110000,
+            "COGS": 30000
+          },
+          "assertBusinessState": {
+            "masterUnitCostCents": 9000
+          }
+        },
+        {
+          "action": "Return1 original cost60",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 10000
+            },
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 6000
+            },
+            {
+              "account": "COGS",
+              "side": "credit",
+              "cents": 6000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 116000,
+            "COGS": 24000,
+            "AR": 40000
+          },
+          "assertBusinessState": {
+            "stockQty": 16,
+            "profitCents": 16000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-PHY-07",
+      "title": "Transfer is not income; count loss is expense",
+      "caseRefs": [
+        "WB-PHY.J08.C01",
+        "WB-PHY.J08.C04"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "inventory": 60000,
+        "openingEquity": -60000
+      },
+      "steps": [
+        {
+          "action": "Transfer4 from A to B",
+          "journalLines": [],
+          "assertBalances": {
+            "inventory": 60000
+          },
+          "assertBusinessState": {
+            "locationAQty": 6,
+            "locationBQty": 4,
+            "totalQty": 10
+          }
+        },
+        {
+          "action": "Document count loss1@60 at A",
+          "journalLines": [
+            {
+              "account": "inventoryLoss",
+              "side": "debit",
+              "cents": 6000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 6000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 54000,
+            "inventoryLoss": 6000
+          },
+          "assertBusinessState": {
+            "locationAQty": 5,
+            "locationBQty": 4,
+            "totalQty": 9
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-SVC-01",
+      "title": "Service settlement does not repeat income",
+      "caseRefs": [
+        "WB-SVC.J01.C02",
+        "WB-SVC.J02.C01"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Invoice delivered3@200",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "AR": 60000,
+            "revenue": -60000
+          },
+          "assertBusinessState": {
+            "stockQtyDelta": 0,
+            "COGSCents": 0
+          }
+        },
+        {
+          "action": "Receive250",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 25000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 25000
+            }
+          ],
+          "assertBalances": {
+            "AR": 35000,
+            "bank": 25000,
+            "revenue": -60000
+          },
+          "assertBusinessState": {
+            "receiptsCents": 25000
+          }
+        },
+        {
+          "action": "Receive350",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 35000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 35000
+            }
+          ],
+          "assertBalances": {
+            "AR": 0,
+            "bank": 60000,
+            "revenue": -60000
+          },
+          "assertBusinessState": {
+            "receiptsCents": 60000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-SVC-02",
+      "title": "Part-paid service credit",
+      "caseRefs": [
+        "WB-SVC.J02.C02"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "AR": 35000,
+        "bank": 25000,
+        "revenue": -60000
+      },
+      "steps": [
+        {
+          "action": "Credit100",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 10000
+            }
+          ],
+          "assertBalances": {
+            "AR": 25000,
+            "bank": 25000,
+            "revenue": -50000
+          },
+          "assertBusinessState": {
+            "netRevenueCents": 50000,
+            "stockQtyDelta": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-SVC-03",
+      "title": "Paid credit and refund",
+      "caseRefs": [
+        "WB-SVC.J02.C03",
+        "WB-SVC.J02.C04"
+      ],
+      "policy": "No tax; approved customer-credit presentation assumed. Bind actual control-account representation/credit note links; no claim this exact account name is implemented.",
+      "openingSignedLedgerCents": {
+        "bank": 60000,
+        "revenue": -60000
+      },
+      "steps": [
+        {
+          "action": "Credit100 against settled source",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "customerCredit",
+              "side": "credit",
+              "cents": 10000
+            }
+          ],
+          "assertBalances": {
+            "bank": 60000,
+            "customerCredit": -10000,
+            "revenue": -50000
+          },
+          "assertBusinessState": {
+            "refundNotYetPaidCents": 10000
+          }
+        },
+        {
+          "action": "Refund100",
+          "journalLines": [
+            {
+              "account": "customerCredit",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 10000
+            }
+          ],
+          "assertBalances": {
+            "customerCredit": 0,
+            "bank": 50000,
+            "revenue": -50000
+          },
+          "assertBusinessState": {
+            "netReceiptsCents": 50000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-SVC-04",
+      "title": "Advance and delivered service are distinct",
+      "caseRefs": [
+        "WB-SVC.J05.C01",
+        "WB-SVC.J05.C02"
+      ],
+      "policy": "Expected target only: service advance capability and recognition policy are not established; require owner/expert review before acceptance.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Collect advance200",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 20000
+            },
+            {
+              "account": "customerAdvance",
+              "side": "credit",
+              "cents": 20000
+            }
+          ],
+          "assertBalances": {
+            "bank": 20000,
+            "customerAdvance": -20000,
+            "revenue": 0
+          },
+          "assertBusinessState": {
+            "earnedRevenueCents": 0
+          }
+        },
+        {
+          "action": "Invoice delivered600",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "AR": 60000,
+            "revenue": -60000
+          },
+          "assertBusinessState": {
+            "earnedRevenueCents": 60000
+          }
+        },
+        {
+          "action": "Apply advance200",
+          "journalLines": [
+            {
+              "account": "customerAdvance",
+              "side": "debit",
+              "cents": 20000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 20000
+            }
+          ],
+          "assertBalances": {
+            "customerAdvance": 0,
+            "AR": 40000,
+            "bank": 20000
+          },
+          "assertBusinessState": {
+            "advanceRemainingCents": 0
+          }
+        },
+        {
+          "action": "Collect remaining400",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 40000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 40000
+            }
+          ],
+          "assertBalances": {
+            "bank": 60000,
+            "AR": 0,
+            "revenue": -60000
+          },
+          "assertBusinessState": {
+            "earnedRevenueCents": 60000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-REN-01",
+      "title": "Rental deposit, completed charges, application and refund",
+      "caseRefs": [
+        "WB-REN.J04.C01",
+        "WB-REN.J04.C02",
+        "WB-REN.J04.C03"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Collect security deposit1000",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 100000
+            },
+            {
+              "account": "depositLiability",
+              "side": "credit",
+              "cents": 100000
+            }
+          ],
+          "assertBalances": {
+            "bank": 100000,
+            "depositLiability": -100000,
+            "revenue": 0
+          },
+          "assertBusinessState": {
+            "ownedFleetQty": 20
+          }
+        },
+        {
+          "action": "Invoice completed hire500+service200",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 70000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 70000
+            }
+          ],
+          "assertBalances": {
+            "AR": 70000,
+            "revenue": -70000
+          },
+          "assertBusinessState": {
+            "ownedFleetQty": 20,
+            "COGSCents": 0
+          }
+        },
+        {
+          "action": "Apply700 deposit",
+          "journalLines": [
+            {
+              "account": "depositLiability",
+              "side": "debit",
+              "cents": 70000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 70000
+            }
+          ],
+          "assertBalances": {
+            "depositLiability": -30000,
+            "AR": 0,
+            "bank": 100000
+          },
+          "assertBusinessState": {
+            "ownedFleetQty": 20
+          }
+        },
+        {
+          "action": "Refund300",
+          "journalLines": [
+            {
+              "account": "depositLiability",
+              "side": "debit",
+              "cents": 30000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 30000
+            }
+          ],
+          "assertBalances": {
+            "depositLiability": 0,
+            "bank": 70000,
+            "AR": 0,
+            "revenue": -70000
+          },
+          "assertBusinessState": {
+            "ownedFleetQty": 20
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-REN-02",
+      "title": "Dispatch, dirty returns and wash are operational transfers",
+      "caseRefs": [
+        "WB-REN.J02.C01",
+        "WB-REN.J03.C01",
+        "WB-REN.J03.C02"
+      ],
+      "policy": "No sale/disposal/impairment assumed; unit carrying value100 in opening fixture; operational transfers have no COGS. Fleet asset measurement remains expert-reviewed separately.",
+      "openingSignedLedgerCents": {
+        "fleetAsset": 200000,
+        "openingEquity": -200000
+      },
+      "steps": [
+        {
+          "action": "Dispatch10",
+          "journalLines": [],
+          "assertBalances": {
+            "fleetAsset": 200000
+          },
+          "assertBusinessState": {
+            "warehouseQty": 10,
+            "onRentQty": 10,
+            "washQty": 0,
+            "ownedQty": 20
+          }
+        },
+        {
+          "action": "Return8good2dirty",
+          "journalLines": [],
+          "assertBalances": {
+            "fleetAsset": 200000
+          },
+          "assertBusinessState": {
+            "warehouseQty": 18,
+            "onRentQty": 0,
+            "washQty": 2,
+            "ownedQty": 20
+          }
+        },
+        {
+          "action": "Wash and release2",
+          "journalLines": [],
+          "assertBalances": {
+            "fleetAsset": 200000
+          },
+          "assertBusinessState": {
+            "warehouseQty": 20,
+            "onRentQty": 0,
+            "washQty": 0,
+            "ownedQty": 20
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-HYB-01",
+      "title": "Mixed job settlement and physical-only cost",
+      "caseRefs": [
+        "WB-HYB.J01.C01",
+        "WB-HYB.J01.C02",
+        "WB-HYB.J01.C03"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "inventory": 60000,
+        "openingEquity": -60000
+      },
+      "steps": [
+        {
+          "action": "Collect deposit1000",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 100000
+            },
+            {
+              "account": "depositLiability",
+              "side": "credit",
+              "cents": 100000
+            }
+          ],
+          "assertBalances": {
+            "bank": 100000,
+            "depositLiability": -100000
+          },
+          "assertBusinessState": {
+            "physicalQty": 10,
+            "fleetOwnedQty": 20
+          }
+        },
+        {
+          "action": "Invoice hire500+service200+goods300+digital100",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 110000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 110000
+            },
+            {
+              "account": "COGS",
+              "side": "debit",
+              "cents": 18000
+            },
+            {
+              "account": "inventory",
+              "side": "credit",
+              "cents": 18000
+            }
+          ],
+          "assertBalances": {
+            "AR": 110000,
+            "inventory": 42000,
+            "COGS": 18000
+          },
+          "assertBusinessState": {
+            "physicalQty": 7,
+            "fleetOwnedQty": 20,
+            "profitCents": 92000
+          }
+        },
+        {
+          "action": "Apply1000 and receive100",
+          "journalLines": [
+            {
+              "account": "depositLiability",
+              "side": "debit",
+              "cents": 100000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 100000
+            },
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 10000
+            }
+          ],
+          "assertBalances": {
+            "AR": 0,
+            "bank": 110000,
+            "depositLiability": 0
+          },
+          "assertBusinessState": {
+            "profitCents": 92000
+          }
+        },
+        {
+          "action": "Credit one sold good source100/cost60",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10000
+            },
+            {
+              "account": "customerCredit",
+              "side": "credit",
+              "cents": 10000
+            },
+            {
+              "account": "inventory",
+              "side": "debit",
+              "cents": 6000
+            },
+            {
+              "account": "COGS",
+              "side": "credit",
+              "cents": 6000
+            }
+          ],
+          "assertBalances": {
+            "inventory": 48000,
+            "COGS": 12000,
+            "revenue": -100000,
+            "customerCredit": -10000
+          },
+          "assertBusinessState": {
+            "physicalQty": 8,
+            "fleetOwnedQty": 20,
+            "profitCents": 88000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-01",
+      "title": "Tax arithmetic fixture and exact reversal",
+      "caseRefs": [
+        "WB-SVC.J03.C02"
+      ],
+      "policy": "Synthetic rate18%, approved decimal rounding fixture. Not legal registration/time-of-supply/filing acceptance.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Post net100.05+synthetic tax18.01",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 11806
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 10005
+            },
+            {
+              "account": "outputTax",
+              "side": "credit",
+              "cents": 1801
+            }
+          ],
+          "assertBalances": {
+            "AR": 11806,
+            "revenue": -10005,
+            "outputTax": -1801
+          },
+          "assertBusinessState": {
+            "rounding": "half away from zero; tax18% synthetic"
+          }
+        },
+        {
+          "action": "Reverse exact recorded amounts",
+          "journalLines": [
+            {
+              "account": "revenue",
+              "side": "debit",
+              "cents": 10005
+            },
+            {
+              "account": "outputTax",
+              "side": "debit",
+              "cents": 1801
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 11806
+            }
+          ],
+          "assertBalances": {
+            "AR": 0,
+            "revenue": 0,
+            "outputTax": 0
+          },
+          "assertBusinessState": {
+            "originalInvoiceRetained": true
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-02",
+      "title": "Unclosed profit and report equation",
+      "caseRefs": [
+        "WB-CORE.J03.C01"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bank": 1000000,
+        "openingEquity": -1000000
+      },
+      "steps": [
+        {
+          "action": "Invoice600",
+          "journalLines": [
+            {
+              "account": "AR",
+              "side": "debit",
+              "cents": 60000
+            },
+            {
+              "account": "revenue",
+              "side": "credit",
+              "cents": 60000
+            }
+          ],
+          "assertBalances": {
+            "AR": 60000
+          },
+          "assertBusinessState": {
+            "incomeCents": 60000
+          }
+        },
+        {
+          "action": "Receive250",
+          "journalLines": [
+            {
+              "account": "bank",
+              "side": "debit",
+              "cents": 25000
+            },
+            {
+              "account": "AR",
+              "side": "credit",
+              "cents": 25000
+            }
+          ],
+          "assertBalances": {
+            "bank": 1025000,
+            "AR": 35000
+          },
+          "assertBusinessState": {
+            "receiptsCents": 25000
+          }
+        },
+        {
+          "action": "Vendor service cost200",
+          "journalLines": [
+            {
+              "account": "expense",
+              "side": "debit",
+              "cents": 20000
+            },
+            {
+              "account": "AP",
+              "side": "credit",
+              "cents": 20000
+            }
+          ],
+          "assertBalances": {
+            "expense": 20000,
+            "AP": -20000
+          },
+          "assertBusinessState": {
+            "profitCents": 40000,
+            "assetsCents": 1060000,
+            "liabilitiesCents": 20000,
+            "equityIncludingCurrentProfitCents": 1040000
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-BANK-01",
+      "title": "Bank matching is not another receipt",
+      "caseRefs": [
+        "WB-BANK.J03.C01",
+        "WB-BANK.J03.C04"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bank": 25000,
+        "revenue": -25000
+      },
+      "steps": [
+        {
+          "action": "Match bank250 to existing receipts100+150",
+          "journalLines": [],
+          "assertBalances": {
+            "bank": 25000,
+            "revenue": -25000
+          },
+          "assertBusinessState": {
+            "matchedBankCents": 25000,
+            "matchedBookCents": 25000,
+            "newJournalCount": 0
+          }
+        },
+        {
+          "action": "Record missing bank fee20",
+          "journalLines": [
+            {
+              "account": "bankFees",
+              "side": "debit",
+              "cents": 2000
+            },
+            {
+              "account": "bank",
+              "side": "credit",
+              "cents": 2000
+            }
+          ],
+          "assertBalances": {
+            "bank": 23000,
+            "bankFees": 2000,
+            "revenue": -25000
+          },
+          "assertBusinessState": {
+            "newFeeJournalCount": 1
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-BANK-02",
+      "title": "Bank transfer preserves total cash",
+      "caseRefs": [
+        "WB-BANK.J01.C02",
+        "WB-BANK.J05.C01"
+      ],
+      "policy": "No tax; completed/earned transactions; synthetic LKR cents; account purposes bind to actual approved CoA before execution.",
+      "openingSignedLedgerCents": {
+        "bankA": 115000,
+        "openingEquity": -115000
+      },
+      "steps": [
+        {
+          "action": "Transfer300 A to B",
+          "journalLines": [
+            {
+              "account": "bankB",
+              "side": "debit",
+              "cents": 30000
+            },
+            {
+              "account": "bankA",
+              "side": "credit",
+              "cents": 30000
+            }
+          ],
+          "assertBalances": {
+            "bankA": 85000,
+            "bankB": 30000,
+            "revenue": 0,
+            "expense": 0
+          },
+          "assertBusinessState": {
+            "totalCashCents": 115000
+          }
+        },
+        {
+          "action": "Match two statement sides",
+          "journalLines": [],
+          "assertBalances": {
+            "bankA": 85000,
+            "bankB": 30000
+          },
+          "assertBusinessState": {
+            "totalCashCents": 115000,
+            "additionalMoneyJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-01",
+      "title": "Duplicate quantity refusal",
+      "caseRefs": [
+        "WB-HYB.J02.C08"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceQty": 3,
+            "attemptedQty": 4,
+            "newReturnCount": 0,
+            "additionalMoneyJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-02",
+      "title": "Hypothetical taxable full-return arithmetic",
+      "caseRefs": [
+        "WB-HYB.J02.C09"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceNetCents": 25650,
+            "sourceTaxCents": 4617,
+            "sourceGrossCents": 30267,
+            "requiredFullCreditCents": 30267
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-RET-14-03",
+      "title": "Residual beyond one unit line value",
+      "caseRefs": [
+        "WB-HYB.J02.C10"
+      ],
+      "policy": "Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Bind independent expected state before live execution; no ledger posting in this arithmetic example",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "sourceGrossCents": 995,
+            "priorAcceptedCents": 891,
+            "requiredFinalCreditCents": 104,
+            "finalUnitLineNetCents": 100
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-14-01",
+      "title": "Unchanged draft discount roundtrip",
+      "caseRefs": [
+        "WB-CORE.J04.C06"
+      ],
+      "policy": "No tax; independent integer-cent state example; draft is not a posted receivable. Full draft save/post and cost policy require separately bound runtime evidence.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Save draft3x100/line10percent/header5percent, then open Edit without changing it",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "grossCents": 30000,
+            "lineDiscountCents": 3000,
+            "lineNetCents": 27000,
+            "headerDiscountCents": 1350,
+            "draftTotalCents": 25650,
+            "postedJournalCount": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    },
+    {
+      "id": "EX-CORE-18-01",
+      "title": "Zero-stock denial leaves financial state unchanged",
+      "caseRefs": [
+        "WB-CORE.J06.C07"
+      ],
+      "policy": "Synthetic no-tax fixture; verified physical classification and negative policy block; prior catalog creation separate from rejected invoice. No independent runtime/fault/role acceptance implied.",
+      "openingSignedLedgerCents": {},
+      "steps": [
+        {
+          "action": "Attempt invoice1unit at1000cents against available0",
+          "journalLines": [],
+          "assertBalances": {},
+          "assertBusinessState": {
+            "availableUnits": 0,
+            "requestedUnits": 1,
+            "shortUnits": 1,
+            "newInvoiceCount": 0,
+            "newJournalCount": 0,
+            "ARDeltaCents": 0,
+            "inventoryDeltaCents": 0
+          }
+        }
+      ],
+      "execution": "not-run",
+      "review": "pending",
+      "acceptance": "not-assessed"
+    }
+  ]
+}
