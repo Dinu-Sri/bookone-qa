@@ -1506,5 +1506,146 @@
     "status": "reviewed;source-risk-red;nextmissionplanned-not-run;candidateunapproved",
     "closingJournals": 80,
     "closingTurnover": 10475.51
+  },
+  "v2516Light02Results": {
+    "run": "runs/CHECKS-20261018-light02.json",
+    "handoff": "handoffs/HANDOFF-20261018-light02-results.md",
+    "codingMission": "handoffs/CODING-MISSION-20261018-light02.md",
+    "qaBase": "8a37a1e37b74ad378089bc8a704982fb03058b5e",
+    "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+    "liveStamp": "v2.5.16 · b2c5205",
+    "counts": {
+      "passed": 12,
+      "failed": 2,
+      "blocked": 4
+    },
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "stockValue": 540,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "COGS": 420,
+      "profit": 539.5,
+      "assets": 1426.21
+    },
+    "settingsRestoredReloaded": true,
+    "noAmbiguousFinancialIntent": true,
+    "canonicalAcceptance": false,
+    "releaseAcceptance": false,
+    "nextAction": "Medium review live pending-key failure/partial-return UI; coding fixes; new reviewed exactcandidate queue; authentic upgrades blocked; backuprestoreLAST"
+  },
+  "v2518Preflight": {
+    "candidateSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "observedLoginStamp": "v2.5.18 · a4a6d65",
+    "businessExecution": "blocked-user-sign-in-not-started",
+    "queue": "queues/MISSION-v2518-LIGHT-03.json",
+    "handoff": "handoffs/HANDOFF-20261019-v2518-light03.md",
+    "sourceChecks": "reviews/CHECKS-20261019-v2518-source.json",
+    "sourcePassed": 12,
+    "scope": "pure-functions-memory-store-not-live-fix-acceptance",
+    "canonicalAcceptance": false,
+    "settingsChanged": false,
+    "nextAction": "User sign-in; thenfresh actor/build/openings and execute22fixedslots; restore/reconcile/publish"
+  },
+  "light03BlockedExecution": {
+    "run": "runs/CHECKS-20261019-light03-blocked.json",
+    "handoff": "handoffs/HANDOFF-20261019-light03-blocked.md",
+    "mediumMission": "handoffs/MEDIUM-MISSION-20261019-light03-ui.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaBase": "bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+    "counts": {
+      "passed": 2,
+      "failed": 0,
+      "blocked": 20
+    },
+    "businessSubmissions": 0,
+    "classification": "Interaction anomaly; product versus browser/control cause unknown; Medium review required",
+    "settingsSaved": false,
+    "closing": {
+      "journals": 88,
+      "turnover": 11115.51,
+      "AR": 1006.21,
+      "AP": 840,
+      "inventoryGL": 420,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "profit": 539.5,
+      "assets": 1426.21,
+      "stockValue": 540
+    },
+    "nextAction": "Medium classify UI interaction failure;newreviewedattempt after reliableprofile;nohistoricalrepair",
+    "releaseAcceptance": false
+  },
+  "light03InteractionRecovery": {
+    "schemaVersion": 1,
+    "date": "2026-10-21",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "qaParent": "fd9b40bd2c859362b3f82b95aa6d1f0e0ad4958f",
+    "actor": "Fresh intended private QA N141710 sign-in on21Oct; loaded owncompanyOwner",
+    "observations": [
+      {
+        "id": "REC21-EXTENSION",
+        "status": "observed-blocker",
+        "actual": "Browser explicitly reported another extension UI open and blocking automation; user asked to dismiss; do not infer this caused19Oct checkbox failure."
+      },
+      {
+        "id": "REC21-CHECK",
+        "status": "passed-bounded",
+        "actual": "After user continued, standard getByRole checkbox.check changed requiredsupplier false totrue; DOMcheckedtrue observed; screenshot retained privately."
+      },
+      {
+        "id": "REC21-RESTORE",
+        "status": "passed-bounded",
+        "actual": "Standard uncheck restoredfalse; noSave clicked; reload retainedfullopeningpurchaseprofilefalse,false,true,false,false,Net30,6800."
+      }
+    ],
+    "settingsSaved": false,
+    "financialSubmissions": 0,
+    "businessFixAcceptance": false,
+    "historicalRootCause": "unresolved; prior19Oct failure remainsimmutable; currentautomationblockcleared and checkboxoperatesnow",
+    "scope": "Unsavedcontrolandrestore/readbackonly;notpersistedsettingssave,fullprofile,financialworkflow,DBconcurrencyorauthzacceptance",
+    "nextAction": "Newprivateexecutionattemptforunchanged22slotqueue atverifiedsamecandidate;reverifyactualactor/openings/allprofiles;neveroverwriteterminalblockedrun",
+    "handoff": "handoffs/HANDOFF-20261021-light03-recovery.md"
+  },
+  "light03FreshResults": {
+    "run": "runs/CHECKS-20261021-light03-results.json",
+    "handoff": "handoffs/HANDOFF-20261021-light03-results.md",
+    "codingMission": "handoffs/CODING-MISSION-20261021-light03-results.md",
+    "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+    "qaExecutionBase": "0afd96b4dd9e317e75102c6e159df9aa0e58561a",
+    "liveStamp": "v2.5.18 · a4a6d65",
+    "counts": {
+      "passed": 18,
+      "failed": 2,
+      "blocked": 2,
+      "inconclusive": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "closing": {
+      "journals": 122,
+      "turnover": 13243.63,
+      "AR": 1306.21,
+      "AP": 1090,
+      "inventoryGL": 660,
+      "GRNI": 0,
+      "VAT": 46.71,
+      "COGS": 420,
+      "expense6800": 10,
+      "profit": 829.5,
+      "assets": 1966.21,
+      "stockValue": 780
+    },
+    "settingsRestoredReloaded": true,
+    "ambiguousFinancialIntents": 0,
+    "checkpointMinutes": 44.6,
+    "releaseAcceptance": false,
+    "canonicalAcceptance": false,
+    "nextAction": "Codingfixpickerstate/addedsourcerowpricing;Mediumreviewsactualdiff/newcandidateandfreshfixedqueue;authenticupgradesblocked;backuprestoreLAST"
   }
 }

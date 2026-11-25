@@ -99,3 +99,9 @@ Each session:read current state,rulebook,relevant playbooks and product changes;
 
 Finish with sanitized immutable run/handoff,current pointers,unresolved questions and exact continuation. Publication follows standing owner approval and exclusions. Never publish secrets/rawtraces/realcustomerdata. Actual encrypted backup/restore remains LAST;operator recovery is separate and requires authorized isolated infrastructure.
 
+
+## Shared UI/UX companion
+
+The owner-requested [UX companion](../ux/README.md) applies alongside this protocol. Its canonical JSON and version1 schema remain separate from starter/business-case schemas. Existing rulebook/catalogue/library versions and acceptance are unchanged. UI changes require UX rule/workflow mappings plus existing business impact review; shared primitive changes require actual consumer coverage. Product agents adopt through their own existing QA contract/AGENTS.
+
+
