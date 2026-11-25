@@ -1,5 +1,13 @@
-# Current Light continuation
+# Current QA continuation
 
-Light04 execution results: [HANDOFF-20261022-v2519-light04-results.md](HANDOFF-20261022-v2519-light04-results.md).
+**Light07 attempt2:13passed / 1operatorcontrol failure /22blocked**, all36terminal. [Results](HANDOFF-20261024-light07-attempt2.md), [checks](../runs/CHECKS-20261024-light07-attempt2.json), [partial oracle](../runs/RECONCILIATION-20261024-light07-attempt2.json), [coding/Mediumnext](CODING-MISSION-20261024-light07-attempt2.md), [additivecoverage](../coverage/browser-evidence-light07-attempt2.json), [closedclock](../runs/CLOSE-20261024-light07-attempt2.json).
 
-Exact executedcandidatev2.5.19·4c3a304 / QA2b009339. 10 passed, 4 failed, 10 blocked, 4 inconclusive. Financial sources consumed and preserved; do not replay the mission. Read results and observations; next owner is Medium for failure/oracle/fixture/checkpoint review, then coding fixes and a NEW fixed Light queue. All opening maps/viewport restored, actual balances reconciled. Prior mission and results unchanged. Backup/restore LAST.
+Recovered intendedfixture freshloginworked; no remainingcredentialblock. Exactv2.5.21 ·7458a9c/full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448,executionQAd04c33e10d375582ea6c6184a48470233e97ed46. OneS600postingcorrectfinancially butoperatorintent rejected beforeclick;late recovery doesnotpasscontrol. Sdependentladderblocked; independentP200posted,0fundingblocksPpay. PartialtwoeventsDrCr800/AR+600/AP+200/profit+400/liquid0,reconciled;Q/order600+Ddraft100preservednonposting. Settings/catalguestock/oldaging unchanged,viewportunchanged. No newaccountingproductdefectdemonstrated; no releaseacceptance.
+
+Next fail-closedoperatorguard/Mediumreview thenNEWfresh financialladderrun. Missingorderprint/ancestry,export,audit,stockmovement andisolatedfixturesremainblocked. Prior [Light07attempt1](HANDOFF-20261024-light07-results.md) and [Light06](HANDOFF-20261023-light06-results.md) immutable. Light06focus/returnhelp findingsremainopen. No grants/cleanupreversal/tenantworkaround/merge/deploy;backupLAST.
+
+## Superseded pointer preserved during merge (PR #60 branch qa/v2521-light06-browser-blocked)
+
+Light06 attempt: [browser-blocked handoff](HANDOFF-20261023-light06-browser-blocked.md), [checks](../runs/CHECKS-20261023-light06-browser-blocked.json). Two Browser bootstrap timeouts prevented fresh tab/build/actor/openings. **0passed/0failed/20blocked/1inconclusive**, zero BookOne submissions or viewport changes. No product failure or fix acceptance established.
+New private ledger terminal, zero unresolved intents. Clock opened after connection attempts and closed before publication: timing coverage incomplete, full-attempt budget compliance unverified. Preserve this deviation; do not backdate or reuse terminal ledger.
+Next: reconnect existing local Browser extension, then NEW attempt/clock BEFORE setup using unchanged qa/v2521-light06-mission commit60198f3189459431fe32d331a0abe1ae00351743 and [mission](HANDOFF-20261023-v2521-light06.md). Fresh verify expected v2.5.21 · 7458a9c/full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448, intended actor/capabilities and actual openings. Candidate drift requires new Medium binding. Prior results/fixtures immutable; no permission bypass, deployment or financial replay. Backup/restore LAST.

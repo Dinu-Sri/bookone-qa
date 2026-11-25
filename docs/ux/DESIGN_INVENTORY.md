@@ -2,7 +2,7 @@
 
 > GENERATED from ux/design-inventory.json; no live compliance audit claimed.
 
-Product pin: a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f; date 2026-10-21.
+Product pin: 4c3a304e6adc985c591ecb7934382b8929f9b189; date 2026-10-22.
 
 ## DS-01 — apps/web/src/app/globals.css
 
@@ -89,4 +89,16 @@ Owner: Medium QA reviewer. Decision: not comprehensive UX acceptance. Next: Audi
 Existing list guide physical sizes/no page H1 preference vs accessibility semantics
 
 Owner: Product owner and Medium QA. Decision: preserve compact visual layout, add accessible structure where necessary. Next: Do not turn visual no-large-heading rule into removal of meaningful page naming; verify impacted rendering.
+
+### UXQ-005
+
+Product master module-write gate and document quick-create scope differ; Light04 fixture omitted explicit inventory write capability.
+
+Owner: Engineering security/permissions owner with Medium QA. Decision: No permission expansion or quick-create workaround is approved by this review; exact exception cause remains runtime-unverified.. Next: Define intended scope, enforce server boundary, gate read-only UI, prepare an already-authorized inventory-write fixture and denied-role tests before Light05 binding.
+
+### UXQ-006
+
+Sales return list has no print control; generic print model currently has no credit-specific kind/title.
+
+Owner: Product/coding owner with Medium QA. Decision: Missing supported credit-print capability, not a tested monetary failure; original print assertions remain missing.. Next: Implement correct credit semantics within existing print components or explicitly retain unsupported print layer; never wire an invoice-labelled fallback or claim full credit-print acceptance.
 

@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "version": "1.0.0",
-  "date": "2026-10-21",
-  "qaBase": "c7ed9c5cd31f28efac5be98a463bb96197890a46",
-  "productStudySha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
-  "productStudyVersion": "2.5.18",
+  "version": "1.1.0",
+  "date": "2026-10-22",
+  "qaBase": "37408fc48c5a3699a2033966594d8474652ab751",
+  "productStudySha": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+  "productStudyVersion": "2.5.19",
   "classification": "source-inventory-not-live-acceptance",
   "references": [
     {
@@ -111,6 +111,20 @@
       "issue": "Existing list guide physical sizes/no page H1 preference vs accessibility semantics",
       "decision": "preserve compact visual layout, add accessible structure where necessary",
       "next": "Do not turn visual no-large-heading rule into removal of meaningful page naming; verify impacted rendering."
+    },
+    {
+      "id": "UXQ-005",
+      "owner": "Engineering security/permissions owner with Medium QA",
+      "issue": "Product master module-write gate and document quick-create scope differ; Light04 fixture omitted explicit inventory write capability.",
+      "decision": "No permission expansion or quick-create workaround is approved by this review; exact exception cause remains runtime-unverified.",
+      "next": "Define intended scope, enforce server boundary, gate read-only UI, prepare an already-authorized inventory-write fixture and denied-role tests before Light05 binding."
+    },
+    {
+      "id": "UXQ-006",
+      "owner": "Product/coding owner with Medium QA",
+      "issue": "Sales return list has no print control; generic print model currently has no credit-specific kind/title.",
+      "decision": "Missing supported credit-print capability, not a tested monetary failure; original print assertions remain missing.",
+      "next": "Implement correct credit semantics within existing print components or explicitly retain unsupported print layer; never wire an invoice-labelled fallback or claim full credit-print acceptance."
     }
   ]
 }
