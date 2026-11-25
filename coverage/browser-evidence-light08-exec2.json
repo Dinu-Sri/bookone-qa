@@ -1,0 +1,342 @@
+{
+  "appendOnly": true,
+  "preserveHistoricalEntries": true,
+  "entries": [
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-GATE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-ACTOR",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-GUARD",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-PL-D",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-PL-390",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-QL-D",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-QL-390",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-DETAIL-D",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-DETAIL-390",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-HELP-D",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-HELP-320",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-HELP-390",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-SOURCE",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-PHYSICAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-FIXTURES",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-SALE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-S-JOURNAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-RECEIVE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-CREDIT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-C-PRINT",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-AR-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-AR-CLOSE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-S-HISTORY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-S-REPORTS",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-BILL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-P-JOURNAL",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-PAY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-AP-OVER",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-AP-CLOSE",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-P-HISTORY",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-P-REPORTS",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-COMBINED",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-AGING",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-STOCK",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-DRILLDOWN",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-GAPS",
+      "originalStatus": "passed",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    },
+    {
+      "run": "runs/CHECKS-20261025-light08-exec2-results.json",
+      "assertion": "L08-END",
+      "originalStatus": "blocked",
+      "relatedWorkbookCases": [],
+      "mapping": "unmapped",
+      "fullCaseAcceptance": false,
+      "scope": "Fixed mission disposition; bounded browser/technical evidence only; no full canonical acceptance."
+    }
+  ],
+  "meaning": "37 fixed mission dispositions, not 37 new atomic assertions; seven complete bounded product UI cases. Canonical mappings unaccepted.",
+  "publicationPending": true,
+  "schemaVersion": 1
+}

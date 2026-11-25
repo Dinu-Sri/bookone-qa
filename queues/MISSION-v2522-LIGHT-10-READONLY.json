@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-LIGHT-10-READONLY",
+  "candidate": "v2.5.22",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "reportedShortSha": "211771e",
+  "executionReady": false,
+  "status": "blocked-fresh-live-verification-browser-origin-context-unavailable",
+  "budget": {
+    "totalMinutes": 90,
+    "executionMinutes": 75,
+    "closingReserveMinutes": 15
+  },
+  "oracle": "queues/ORACLE-v2522-LIGHT-08.json",
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "reviewedExecutableSha": "fc79951208e9dbc7272464e11405cebcf693c511",
+  "resultsBase": "7572c5f492126b8eb59461b10fbb9f42093259bf",
+  "review": "reviews/REVIEW-20261027-light09-medium.md",
+  "scope": "Read-only completion of consumed Light09 sources. Authentication and inert proof only allowed submissions; zero business/configuration/role mutations. No prior evidence relabelled as current execution.",
+  "configurationReference": {
+    "normalizedVisibleSettingsSha256": "056e58fc2d85694610f2167d879317c260c13d8581a805a75caf8c5f7135f3e6",
+    "serialization": "Original settings fields for sales/purchase/inventory; JSON object sorted recursively with compact separators; UTF-8 SHA256. Compare checked/name/type/value fields; no hidden action inputs.",
+    "privateBaselineRequired": true
+  },
+  "pinMeaning": "fingerprint.qaSha must be exact final published review+queue commit from PR prompt; never executable-only pin. Live stamp freshly verified at execution; this review made no live observation.",
+  "cases": [
+    {
+      "id": "L10-GATE",
+      "title": "New exact-bound read-only run",
+      "dependsOn": [],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Start NEW90minute clock with15reserved BEFORE browser setup; NEW generic ledger BEFORE authentication. Exact final published QA commit and product fullSHA required; live v2.5.22 \u00b7211771e at start/end. Check unchanged runtime/rules/library/UX/oracle hashes. Fingerprint.actor=original-QA-N141710; configuration=light10-original-profile-sha256:056e58fc2d85694610f2167d879317c260c13d8581a805a75caf8c5f7135f3e6. This is a declared intended profile, not observed identity. Actual verification follows; mismatch blocks rather than editing fingerprint. schema not-attested remains explicit. Do not mutate terminal Light09 or use its expired clock.",
+      "evidence": [
+        "qaSha",
+        "candidate",
+        "hashes",
+        "clock",
+        "fingerprint"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-GATE"
+      ]
+    },
+    {
+      "id": "L10-GUARD",
+      "title": "Fresh inert actual-tool transport proof",
+      "dependsOn": [
+        "L10-GATE"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Repeat unchanged focused guard/transport tests and the documented synthetic inert titleBookOne1actualcall1claim plus exit/intent/fingerprint/clock negatives0actualcalls0claims. Use unchanged runPersistedBrowserRequest and actual Browser-app js; save concrete received results and per-control counters privately, not just a generic sentence. No fresh financial write is authorized by proof. Failure blocks session submissions; continue only independent authorized read-only recovery. No adapter changes.",
+      "evidence": [
+        "tests",
+        "positive",
+        "negativeControls",
+        "receivedResult",
+        "provenance"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-GUARD"
+      ]
+    },
+    {
+      "id": "L10-IDENTITY",
+      "title": "Fresh original fixture authentication",
+      "dependsOn": [
+        "L10-GATE",
+        "L10-GUARD"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Initialize ledger with concrete intended actor/profile aliases above before signout/login. Use original private fixture only; Rememberoff. Record each authentication submission intent, actual exit and immediate feedback/persisted identity; route supported submissions through unchanged persisted transport. Fresh current-user identity/job/module capability context must agree with intended own fixture. No unrelated autofill, replacement account, grant, company or settings change. Missing credentials blocks. Authentication does not authorize any trading action.",
+      "evidence": [
+        "intents",
+        "readbacks",
+        "identity",
+        "capabilities",
+        "configurationMatch"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-IDENTITY",
+        "L08-ACTOR"
+      ]
+    },
+    {
+      "id": "L10-SOURCES",
+      "title": "Bind already-consumed source families",
+      "dependsOn": [
+        "L10-IDENTITY"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Use supported lists View/Open and exact private IDs. Locate only Light09 run1 invoice600 dated26Oct, linked credit100/one unit, bill200/manualservice and their two receipts250/250 and payments80/120. Verify original run-owned descriptions and ancestry, not amount/name alone. Bind all five protected originals from previous preflight. No creation, conversion, payment, refund, archive or reversal. Confirm relevant read/print capabilities. Capture viewport/locale with no override. Full current configuration must match declared original profile before interpreting results.",
+      "evidence": [
+        "sourceRegistry",
+        "ancestry",
+        "capabilities",
+        "viewport",
+        "profile"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run"
+    },
+    {
+      "id": "L10-CREDITPRINT",
+      "title": "Credit-note print",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Supported S credit print: credit-note title/source linkage/oneunit100/date/noVAT/source quantity semantics. Inspect invoice/credit totals separately. Missing control or required facts => blocked, not substituted invoice print. No account/data mutation. Use consumed Light09 sources only. Read-only previews; do not send to a physical printer or create missing data. Missing supported controls or required facts stay blocked; never substitute invoice print for credit print.",
+      "evidence": [
+        "capability",
+        "creditPrint",
+        "sourceSemantics",
+        "zeroEffects"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-C-PRINT"
+      ]
+    },
+    {
+      "id": "L10-SHISTORY",
+      "title": "Sales source, receipt and print history",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "S source paid/settled balance0; one linkedcredit100 and two receipts250 each, dates/accounts/source identities match. Invoice/credit/receipt previews supported and semantically accurate; unavailable receipt print remains blocked. No duplicated revenue or altered old sources. Use consumed Light09 sources only. Read-only previews; do not send to a physical printer or create missing data. Missing supported controls or required facts stay blocked; never substitute invoice print for credit print.",
+      "evidence": [
+        "history",
+        "source",
+        "prints",
+        "ledger"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-S-HISTORY"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-PHISTORY",
+      "title": "Purchase source, remittance and print history",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "One Pbill and only2payments80/120, source0, dates/account/vendor links correct. Supported payment receipt/print title and amounts; missing print/history layer remains blocked. Do not archive/delete/reverse to tidy. Use consumed Light09 sources only. Read-only previews; do not send to a physical printer or create missing data. Missing supported controls or required facts stay blocked; never substitute invoice print for credit print.",
+      "evidence": [
+        "history",
+        "receiptPrint",
+        "source",
+        "zeroUnexpected"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-P-HISTORY"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-JOURNALS",
+      "title": "All seven event lines and audit links",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Open each actual accepted S/P journal via supported source links; correct event/date/account/liquid/source/tenant, balanced amounts and one persisted effect per logical submission. No duplicates from refused overpayments. Actual accepted7events if allpass; partially completed branch needs full actual mapping without claiming target. Read actual journal lines and source/history links for all7events. Each refused overpayment must have no extra persisted effect; historical claim of zero effects alone is bounded. Missing audit/link layers remain blocked. No replay or new denial attempt.",
+      "evidence": [
+        "eventMap",
+        "journalLines",
+        "dates",
+        "sourceLinks",
+        "refusalZeroEffects"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-DRILLDOWN"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-04"
+      ]
+    },
+    {
+      "id": "L10-SREPORTS",
+      "title": "Attribute the sales branch without recreating it",
+      "dependsOn": [
+        "L10-JOURNALS"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Against actual opening: AR net0, liquid+500, Sales600 lessReturns100=netincome+500; no AP/VAT/COGS/stock changes. All S journals total Dr=Cr1200 across4accepted financial events. Compare same posted dates/dimensions/P&L/BS/TB/ARaging/cash. Do not force seven journals or totals if a step blocked; actual accepted intents determine branch delta. Both branches already exist. Attribute S through its4individual event journals and retained original opening; current aggregate report cannot be treated as an isolated sales-only intermediate snapshot. Missing historical intermediate observations remain explicitly unavailable; no new sale/receipt/credit to recreate them.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journalCount",
+        "stock"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-S-REPORTS"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-PREPORTS",
+      "title": "Attribute the purchase branch without recreating it",
+      "dependsOn": [
+        "L10-JOURNALS"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "P lane alone: AP net0, expense+200, liquid-200, noincome/VAT/GRNI/stock;3accepted financial journals Dr=Cr400. Reconcile supplier aging, source and reports at same scope. Derive partial deltas if blocked, never adopt all-pass target to match output. Both branches already exist. Attribute P through its3individual event journals and retained original opening; distinguish those from current aggregate reports. No new bill/payment or balancing entry to recreate an intermediate state.",
+      "evidence": [
+        "expectedVsActual",
+        "reports",
+        "aging",
+        "journals",
+        "stock"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-P-REPORTS"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-COMBINED",
+      "title": "Complete same-scope reconciliation",
+      "dependsOn": [
+        "L10-SREPORTS",
+        "L10-PREPORTS"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Only if both trading families completed:7financialevents,journalsDr=Cr1600; AR/APnet0,liquid+300,netincome+300,assets+300,liabilitiesunchanged;inventory/VAT/GRNI/COGS/stock unchanged. Protected Q/order/D remain unposted. Verify BS equation/currentearnings and individual account purposes, not just balance equality. With missing/failed lanes, report exact accepted-branch oracle instead and do not pass wholecase. Original trading periodOct2026/as-of31Oct and aging26Oct retained. Read allTBrows/P&L/BS/cashflow/currentearnings and all account purposes. Compare original opening17708.11/155entries to expected19308.11/162 only if actual seven-event mapping established. Intervening unrelated activity must be separately explained, never absorbed into expected values.",
+      "evidence": [
+        "acceptedEvents",
+        "accountDeltas",
+        "equation",
+        "nonpostingSources",
+        "scope"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-COMBINED"
+      ],
+      "ruleRefs": [
+        "BR-ACC-01",
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-AGING",
+      "title": "Every original obligation and bucket",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "At same as-of/date/scope, settled S/P absent from open aging or zero; D/Q/order never open posted debt. All prior open obligations/buckets/amounts unchanged. Match actual source IDs privately, not names alone. No aging cache or status-only substitution. Explicit asOf2026-10-26 independent of today. Expected original AR1906.21/AP1490 are comparison references, not substitutes for current reading. Compare every original row and source ID; no hidden filters or missing pages.",
+      "evidence": [
+        "asOf",
+        "freshSources",
+        "oldSources",
+        "reportEquality"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-AGING"
+      ],
+      "ruleRefs": [
+        "BR-ACC-08"
+      ]
+    },
+    {
+      "id": "L10-STOCK",
+      "title": "All stock and catalogue invariants",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Compare every original catalogue product/type/qty/value and stockledger/controlaccounts to actual opening; zero physical movement and zero COGS for Sdigital/Pservice/Q/order/D. Product count/classification unchanged. Any drift requires Medium before further business; do not edit stock/master to repair. Compare exact10catalogue rows,7stocklevel lines/value780 and all31movement rows/4pages against original private baseline. Verify filters/date/scope; counts alone insufficient. KnownGL660/gap120 unchanged. If intervening activity, preserve and explain or block affected invariance, never repair.",
+      "evidence": [
+        "catalogue",
+        "stockQuantities",
+        "stockValues",
+        "stockLedger",
+        "accounts"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-STOCK"
+      ],
+      "ruleRefs": [
+        "BR-STK-03"
+      ]
+    },
+    {
+      "id": "L10-PROTECTED",
+      "title": "Finish all five original detail comparisons",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Read-only original quote600converted, order600confirmed with same quote ancestry, draft100unposted, open invoice600paid0 and bill200paid0. Compare every field/line/date/status/notes/allocations/link/accounting fact to original opening. Original IDs remain private. No conversion/edit/delete/archive/payment. Verify Q/order/D produce no journals; row visibility alone not pass. Missing private baseline blocks affected comparison.",
+      "evidence": [
+        "quote",
+        "order",
+        "draft",
+        "invoice",
+        "bill",
+        "nonposting"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-END"
+      ]
+    },
+    {
+      "id": "L10-SETTINGS",
+      "title": "Full settings and actual viewport closure",
+      "dependsOn": [
+        "L10-SOURCES"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Read every visible24/7/2 sales/purchase/inventory field and every relevant account purpose against original baseline, plus current-period Review Open/Locked readback for actual company andOct2026. Empty/error never Open. Compare normalized visible name/type/value/checked fields; exclude framework hidden action inputs explicitly. Recheck opening actual viewport/locale; restore only an override actually made by this run. No Save/settings mutation. Historical Light09 viewport baseline remains unavailable even if current run matches.",
+      "evidence": [
+        "settingsMaps",
+        "accounts",
+        "period",
+        "viewport",
+        "comparison"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-END"
+      ]
+    },
+    {
+      "id": "L10-END",
+      "title": "Publish bounded current evidence and close",
+      "dependsOn": [
+        "L10-GATE"
+      ],
+      "precondition": "Exact pinned candidate/QA, fresh verified original actor and immutable configuration/source binding; read-only supported UI only. No business action or settings/grant workaround.",
+      "expected": "Stop new cases at75chargedminutes; reserve15for closing. Preserve every failure and missing layer; pending cases not-run-budget. No unresolved session submissions. Compare current settings/viewport, document/report/stock facts and endstamp; preserve all sources. Publish sanitized run/checks/handoff/additive coverage and pointers in new resultsPR with explicit clock close through publication and any metadata tail. No historical control repair, full Light09 rerating, canonical/expert/release acceptance, merge/deploy. BackupLAST.",
+      "evidence": [
+        "dispositions",
+        "unresolved",
+        "restoration",
+        "endstamp",
+        "publication",
+        "clock"
+      ],
+      "lane": "staging-browser-readonly",
+      "readiness": "conditional-not-run",
+      "originalCaseRefs": [
+        "L08-END"
+      ],
+      "recovery": true
+    }
+  ],
+  "activationRequirement": "Medium must restore the original connected Browser context, freshly observe exact live stamp/full candidate mapping, verify unchanged reviewed sources, then publish a NEW executionReady copy with final exact QA SHA. Do not run this planning queue or change this flag locally."
+}

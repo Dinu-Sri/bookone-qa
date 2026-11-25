@@ -1,0 +1,195 @@
+{
+  "mission": "MISSION-v2522-LIGHT-08-EXEC",
+  "qaSha": "fa927046fa5127d927fdd5cedea5a5279d26e3f3",
+  "reviewCodeSha": "11206e17b8fc42260f53a9b2981c848a4b4b5c6d",
+  "productTarget": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "counts": {
+    "passed": 1,
+    "failed": 1,
+    "blocked": 35,
+    "pending": 0,
+    "running": 0
+  },
+  "cases": [
+    {
+      "id": "L08-GATE",
+      "status": "passed"
+    },
+    {
+      "id": "L08-ACTOR",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-GUARD",
+      "status": "failed"
+    },
+    {
+      "id": "L08-PL-D",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-PL-390",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-QL-D",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-QL-390",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-DETAIL-D",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-DETAIL-390",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-HELP-D",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-HELP-320",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-HELP-390",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-SOURCE",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-PHYSICAL",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-FIXTURES",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-SALE",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-S-JOURNAL",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-RECEIVE",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-CREDIT",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-C-PRINT",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-AR-OVER",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-AR-CLOSE",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-S-HISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-S-REPORTS",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-BILL",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-P-JOURNAL",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-PAY",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-AP-OVER",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-AP-CLOSE",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-P-HISTORY",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-P-REPORTS",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-COMBINED",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-AGING",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-STOCK",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-DRILLDOWN",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-GAPS",
+      "status": "blocked"
+    },
+    {
+      "id": "L08-END",
+      "status": "pending"
+    }
+  ],
+  "guardTransportTests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "harnessFailure": {
+    "id": "QA-HARNESS-L08-EXEC-01",
+    "preparedUtf8Bytes": 96775,
+    "planCaseCount": 37,
+    "codehostOutputTokenCap": 16000,
+    "exclusiveClaims": 0,
+    "actualBrowserCalls": 0,
+    "stage": "prepare output truncated; JSON.parse before dispatch",
+    "adapterChanged": false
+  },
+  "freshLogin": {
+    "completed": true,
+    "remember": false,
+    "fullOpeningsComplete": false
+  },
+  "browserBlocker": "Read-only settings navigation and subsequent supported diagnostics did not return; requests stopped. No alternate browser.",
+  "businessSubmissions": 0,
+  "acceptedFinancialEvents": [],
+  "unresolvedSubmissions": 0,
+  "settingsChanges": 0,
+  "viewportOverrides": 0,
+  "openingViewport": {
+    "width": 1534,
+    "height": 847
+  },
+  "fullClosingComparison": "blocked",
+  "releaseAcceptance": "not-established",
+  "canonicalAcceptance": "not-established"
+}

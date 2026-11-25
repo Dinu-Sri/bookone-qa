@@ -1,0 +1,11 @@
+{
+  "mode": "closed",
+  "chargedMinutes": 327.509,
+  "explicitPausedMinutes": 0.0,
+  "totalBudgetMinutes": 120,
+  "closingReserveMinutes": 20,
+  "budgetExceeded": true,
+  "closedAtUTC": "2026-10-26T16:56:03.148000+00:00",
+  "publication": "Initial auto-review rejection preserved; user subsequently explicitly authorized sanitized publication to Dinu-Sri/bookone-qa. Publication is a metadata-only tail after clock close.",
+  "metadataTail": "This clock summary and final message prepared after explicit clock close; no business actions."
+}

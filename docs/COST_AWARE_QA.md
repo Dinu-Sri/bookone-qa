@@ -88,9 +88,32 @@ Generic initialization now rejects executionReady=false plans and mismatched FUL
 
 Necessary restoration/reconciliation is separately declared by recovery=true on the reviewed case and its intent; this is not permission to replay or start new financial cases. Closing cannot pass while any mission submission remains unresolved. The ledger does not validate the truth of supplied evidence or drive the browser.
 
-`node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly. The clock is advisory and cannot interrupt a browser action or measure credits/model compute.
+`node scripts/operator-clock.mjs open .local/<new-run>/clock.json 100 15` starts100minutes with15reserved. Use check before each submission/resume, pause with an explicit observed reason, resume when work resumes and close at completion. Unpaused elapsed gaps, including unobserved interruptions, are fully charged. No retrospective idle subtraction. If allowNewBusinessSubmission=false, stop new business tests and close safely; report unavoidable restoration/publication overrun honestly.
+
+Immediately before a business browser write, dispatch through `runPersistedBrowserRequest` / `dispatchConnectedBrowser` so the unchanged `dispatchBrowserAppWrite` re-reads persisted plan/state/fingerprint/clock, charges the unpaused gap from `lastAt` to the dispatch time, and revalidates immediately before invoking the connected Browser app `js` tool. It does not trust command stdout or a prior Boolean authorization. See docs/CONNECTED_BROWSER_TRANSPORT.md.
+
+```js
+import {dispatchBrowserAppWrite} from './scripts/operator-action-guard.mjs';
+const out = await dispatchBrowserAppWrite({
+  commandExitCode: INTENT_EXIT,
+  plan, state, fingerprint, clock,
+  caseId: 'CASE',
+  submissionId: 'SUBMISSION_ID',
+  now: Date.now(),
+}, {
+  js, // connected Browser app js tool — the only write surface
+  script: 'document.querySelector("[type=submit]").click()',
+});
+if (out.chargedClock) persist the charged clock;
+if (!out.executed) stop; do not click independently;
+```
+
+A rejected start/intent, missing or stale persisted intent, unresolved other submission, fingerprint mismatch, paused/closed/malformed/backward clock, or a stale active clock that has crossed the execution threshold since the last persisted check must cause **zero** `js` calls. Reusing one authorization, an intent that became resolved, a fingerprint that changed, or a clock that expired after authorization must also cause zero further `js` calls. An uncertain `js` failure consumes the ticket and is not replayed. Do not click Post/Save after a rejected intent or after a Boolean `authorize` result. Late recovery cannot turn a failed pre-submit checkpoint into compliance. Do not substitute HTTP, a second Playwright driver, or `pnpm agent:browse` for the Browser app `js` write path.
 
 Each new mission must bind budget, exact candidate/QA/UX/rule/library, actual actor/module/job capabilities, full opening maps and source identities. Missing legitimate Inventory-write fixture blocks product-master setup before repeating an expected denial. Neither Owner label nor document quick-create success proves full Inventory permission. HEADER150 and LINE150 are separate fixtures; expired feedback is not server refusal evidence. Credit print remains its own supported-capability assertion.
 
 Light05's scenario template is fixed but executionReady=false until Medium publishes a NEW exact-bound candidate/fixture copy. The template never invents a future version or grants permission to deploy. Preserve all previous results, corrections, settings and old consumed sources. Actual encrypted backup/restore remains LAST.
 
+## Owner priority — rapid full-workflow launch cycles, 27 October 2026
+
+Follow [RAPID_WORKFLOW_CYCLES.md](RAPID_WORKFLOW_CYCLES.md) as the default strategy. Cost efficiency includes launch progress: substantial complete-journey batches, multiple-defect discovery, consolidated coding fixes and grouped failure/adjacent regression. Medium preparation must lead to an exact-bound executable batch rather than recurring small planning loops. Preserve mandatory controls and truthful evidence; timebox and fix shared blockers once, continue independent lanes, and use new qualified fixtures/current openings for new workflows when historical snapshot comparisons remain unavailable. This direction does not turn missing historical layers into passes or authorize financial replay.

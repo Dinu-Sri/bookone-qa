@@ -26,7 +26,8 @@ export function clockReport(state) {
     totalExceeded:state.chargedMs>=state.totalMs,
     boundary:'Conservative unpaused elapsed time; not measured model compute, credit usage or inferred idle time. Check before each new business submission; no automatic browser interruption.'};
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
+// CLI ENTRYPOINT
+if(typeof process!=='undefined'&&process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
   const [action,file,total,reserve,...reason]=process.argv.slice(2);
   let state;
   if(action==='open'){if(fs.existsSync(file))throw Error('Never overwrite clock');state=openClock(Number(total),Number(reserve));}
