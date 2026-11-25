@@ -504,3 +504,8 @@ Owner instruction effective 2026-10-16: **maintaining these records is a MUST fo
 116. Rapid03 original29Oct36case is expired/consumed; read RUN-20261030-rapid03-interrupted/checks/review.18financialevents accepted,CF invoice120/receipt120 read-only. NEW10case CONT1fixed30OctUTC/due31 onlyremainingrefund40/80, exactpublishedQA NEWclock/freshgates. Neverrecreateinvoice/receipt oroldworkflowevents. Preserveoldclockfullychargedgap/firstfailures,all62protected,source29dates;newtargets30. No merge/deploy/launch.
 
 CONT11 final closure: CLOSED1600618ms/0paused;31passed/6inconclusive,0pending/unresolved. Initial publication1ca8a64da60d2df414ed7bbc56345f4f2fd162d4.
+
+## Superseded pointer preserved during merge (base branch qa/v2530-mission2-preparation)
+
+# Current — Medium reviewed CONT1; final isolated accessibility task prepared
+Read root MISSION2-FINAL-ACCESSIBILITY-TASK.md and reviews/REVIEW-20261115-mission2-cont1-medium.md in launch-v2530-mission2-preparation. Six final evidence hashes and recovery success independently reverified. Next is QA engineering of an isolated hydrated actual AR/AP form harness, then8focused checkpoints/newclock/freshgates/pinnedrelease/publication. NOT a released staging queue; no run initialized. Productca05491 unchanged; no new defect established. Never reopen consumedCONT1 or replay transactions; no extra live finance/restore. Keep broader campaign/deployedrecovery/legal/migration limits. Ownerdeploysonly/no launchapproval.
