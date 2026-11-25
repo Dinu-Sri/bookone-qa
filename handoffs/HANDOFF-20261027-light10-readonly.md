@@ -1,0 +1,15 @@
+# Next Light mission: read-only Light10 — 27 October 2026
+
+Read AGENTS,STATUS,SESSION,docs/COST_AWARE_QA.md,docs/CONNECTED_BROWSER_TRANSPORT.md and [Medium review](../reviews/REVIEW-20261027-light09-medium.md). Prepared [16slotqueue](../queues/MISSION-v2522-LIGHT-10-READONLY.json) is executionReady=false and MUST NOT run. Medium must restore the original browser context, freshly qualify the candidate and publish a NEW executable copy at an exact final QA SHA. Product must freshly match211771e95d6f97cac5eb281a0f8e63f0fceef8a4 /v2.5.22 ·211771e; drift blocks.
+
+NEW90/15clock BEFORE browser setup/reconnect; NEW genericledger BEFORE auth. Original Light09 clock is CLOSED and must never resume. Bind concrete intended original actor alias and immutable configuration reference from queue BEFORE initialization; fresh actual identity/configuration must then match, without rewriting fingerprint. Private original actor/baseline/source access is mandatory. No replacement actor, grant or settings repair.
+
+Fresh inert GUARD and original fixture login; every submission checkpointed with uniqueintent/actualexit/immediatefeedback/persistedreadback through unchanged transport. Never edit adapter/oracle or replay a consumed intent. No business submissions in this mission: no invoices, bills, payments, credits, extra partial fixtures, configuration saves or source edits. Only supported read-only navigation/preview; no physical printer output.
+
+Use the existing completed sale600/receipts250+250/credit100 and bill200/payments80+120. Verify private IDs/ancestry from supported View lists; no95rowpartialscan. Complete required print/history/source/audit/report/stock/settings/protected comparisons, preserving missing layers. Historical opening references are private retained artifacts, not inferred current facts. Aging asOf26Oct, accountingOct/asOf31Oct; do not substitute today's aging or aggregate balances for line-level mapping. Branch attribution uses actual individual journals; never recreate an intermediate state.
+
+Original Light09 remains16recordedpasses/9not-run/ENDinconclusive,327.509chargedminutes. Medium verified9receiptchains and unchanged independent1600/+300oracle, but pendingactor/configuration labels and incomplete historical actualtool provenance prevent full historical control certification. Fresh Light10 cannot cure those old gaps.
+
+Stop new cases at75chargedminutes, reserve15closing; explicitly pause at observed interruptions, otherwise charge whole gaps. Publish sanitized run/checks/handoff/pointers/additivecoverage and closeclock, disclose metadata tail. No rawIDs/credentials/screenshots/privatebaselines in publicGit. No merge/deploy/release/canonical/expert acceptance. BackupLAST.
+
+Current blocker: Browser app could not access its originating connected-browser context; no product UI was read in this Medium session. Open this ChatGPT conversation in the browser with the connected extension, then request fresh Medium qualification. Do not bypass with an alternate browser or edit executionReady locally.

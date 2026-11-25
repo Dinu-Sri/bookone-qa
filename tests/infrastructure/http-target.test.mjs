@@ -9,3 +9,18 @@ test('cookie jar enforces host, path, expiry and secure transport',()=>{const j=
 test('known-foreign detail permits only its explicit same-origin list fallback',()=>{const b='https://localhost:3443/';assert.equal(deniedHttpResponse(b,307,'/sales/invoices'),false);assert.equal(deniedHttpResponse(b,307,'/sales/invoices',['/sales/invoices']),true);for(const p of ['/sales/invoices/known-foreign','/company/details','https://example.invalid/sales/invoices','https://127.0.0.1:3300/sales/invoices'])assert.equal(deniedHttpResponse(b,307,p,['/sales/invoices']),false);assert.equal(deniedHttpResponse(b,200,'/sales/invoices',['/sales/invoices']),false);});
 
 test('canonical hostname pins loopback TCP independently of DNS and keeps TLS identity',()=>{const b='https://localhost:3443/',c='ephemeral-ci-next';assert.deepEqual(localTlsTransport(b,c),{hostname:'127.0.0.1',port:3443,servername:'localhost'});assert.throws(()=>localTlsTransport('https://example.invalid:3443/',c));assert.throws(()=>localTlsTransport(b,undefined));assert.throws(()=>localPath(b,'https://127.0.0.1:3443/login'));assert.equal(deniedHttpResponse(b,307,'https://127.0.0.1:3443/login'),false);});
+import {receiptPath,settingsDeniedValue} from '../../scripts/http/contracts.mjs';
+
+test('receipt contract requires saved payment IDs and refuses obsolete amount-only facts',()=>{
+  const first='00000000-0000-4000-8000-000000000001',second='00000000-0000-4000-8000-000000000002';
+  assert.equal(receiptPath([first,second]),'/sales/payments/receipt?payment='+first+'&payment='+second);
+  for(const value of [undefined,[],['150'],['../login']])assert.throws(()=>receiptPath(value));
+});
+
+test('Viewer settings denial probes a different valid value even when FIFO is already seeded',()=>{
+  assert.equal(settingsDeniedValue([{value:'fifo'}],'fifo','average'),'average');
+  assert.equal(settingsDeniedValue([{value:'average'}],'fifo','average'),'fifo');
+  assert.equal(settingsDeniedValue([],'forbidden','owner'),'forbidden');
+  assert.throws(()=>settingsDeniedValue([{value:'fifo'}],'fifo','fifo'));
+  assert.throws(()=>settingsDeniedValue([{value:'fifo'},{value:'average'}],'fifo','average'));
+});

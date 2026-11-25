@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-26",
+  "mission": "MISSION-v2522-LIGHT-08-EXEC3",
+  "executionQaSha": "2d43963978d2d3f619afcf9cfa77ad74cd079276",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "liveStamp": "v2.5.22 \u00b7 211771e",
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "passed": 4,
+    "failed": 0,
+    "blocked": 28,
+    "inconclusive": 0,
+    "not-run": 0
+  },
+  "cases": [
+    {
+      "id": "L08-GATE",
+      "status": "passed",
+      "actual": "Exact clean QA checkout verified; fresh signed-out page shows v2.5.22 \u00b7 211771e; product full SHA retained from exact mission pin. New120/20 clock and32case ledger initialized before browser read. Image/schema not attested."
+    },
+    {
+      "id": "L08-GUARD",
+      "status": "passed",
+      "actual": "Actual connected Browser title BookOne; exit/intent/fingerprint/clock refused with zero calls.61tests passed."
+    },
+    {
+      "id": "L08-IDENTITY",
+      "status": "passed",
+      "actual": "Fresh original private fixture sign-in accepted; Remember off; loaded QA N141710 own company and QA/Owner role at expected build. Initial Workspace placeholder hydrated to actual company; no repeat login."
+    },
+    {
+      "id": "L08-ACTOR",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-PHYSICAL",
+      "status": "blocked",
+      "actual": "Already-authorized full Inventory writer not qualified. Readable10product catalogue/7stocklines/31movements do not prove writer. No Save/grant/quickcreate.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-FIXTURES",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-SALE",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-S-JOURNAL",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-RECEIVE",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-CREDIT",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-C-PRINT",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-AR-OVER",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-AR-CLOSE",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-S-HISTORY",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-S-REPORTS",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-BILL",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-P-JOURNAL",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-PAY",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-AP-OVER",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-AP-CLOSE",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-P-HISTORY",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-P-REPORTS",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-COMBINED",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-AGING",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-STOCK",
+      "status": "blocked",
+      "actual": "All31 movement rows across4pages unchanged; full10product catalogue and stock780 read, accounts unchanged. Complete catalogue identity/type/qty/value comparison not independently finalized across both captures; no full invariance pass claimed.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-DRILLDOWN",
+      "status": "blocked",
+      "actual": "Complete ACTOR financial qualification not established: current-period lock state has no verified supported readback in inspected navigation/company/settings/calendar; relevant full-form capabilities and complete protected-source details not qualified. Operator/fixture limitation, not proven product absence/denial. No financial Save attempted. Medium must identify supported lock-state/capability/source qualification before another money mission.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    },
+    {
+      "id": "L08-PARTIAL-SCAN",
+      "status": "blocked",
+      "actual": "All95 sales-return rows inspected across10supported pages, all displayed paid; no partial badge fixture qualified. No status edits/new return. HELPcases not attempted without required partial fixture.",
+      "nextAction": "Fixture owner: identify authentic existing partial-return source or Medium review safe fixture design; no historical repair."
+    },
+    {
+      "id": "L08-HELP-D",
+      "status": "blocked",
+      "actual": "All95 sales-return rows inspected across10supported pages, all displayed paid; no partial badge fixture qualified. No status edits/new return. HELPcases not attempted without required partial fixture.",
+      "nextAction": "Fixture owner: identify authentic existing partial-return source or Medium review safe fixture design; no historical repair."
+    },
+    {
+      "id": "L08-HELP-320",
+      "status": "blocked",
+      "actual": "All95 sales-return rows inspected across10supported pages, all displayed paid; no partial badge fixture qualified. No status edits/new return. HELPcases not attempted without required partial fixture.",
+      "nextAction": "Fixture owner: identify authentic existing partial-return source or Medium review safe fixture design; no historical repair."
+    },
+    {
+      "id": "L08-HELP-390",
+      "status": "blocked",
+      "actual": "All95 sales-return rows inspected across10supported pages, all displayed paid; no partial badge fixture qualified. No status edits/new return. HELPcases not attempted without required partial fixture.",
+      "nextAction": "Fixture owner: identify authentic existing partial-return source or Medium review safe fixture design; no historical repair."
+    },
+    {
+      "id": "L08-GAPS",
+      "status": "passed",
+      "actual": "Missing current-period lock readback, full form/capability/protected-source qualification, partial-return fixture and known isolated real-role/foreign/runtime/concurrency/upgrade/AT/POS/rental/unsupported print layers retained explicitly. No acceptance claimed; original Light07 and Light08 failures preserved."
+    },
+    {
+      "id": "L08-END",
+      "status": "blocked",
+      "actual": "No business/configuration writes.24sales/7purchase/2inventory fields and32account rows unchanged; all31stockmovement rows unchanged. Full protected-source and financial preflight unavailable, so full END remains blocked. No viewport override used. Auth intent accepted/resolved; no unresolved business intent. Publication/clock close recorded separately.",
+      "nextAction": "Medium: resolve precise missing qualification; publish new exact-bound mission only after prerequisites are demonstrated. Do not repeat unchanged blocked queue."
+    }
+  ],
+  "tests": {
+    "guardTransportPassed": 61,
+    "failed": 0
+  },
+  "guard": {
+    "actualPositiveCalls": 1,
+    "positiveClaims": 1,
+    "title": "BookOne",
+    "negativeCalls": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "negativeClaims": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "authentication": {
+    "originalFixture": true,
+    "remember": false,
+    "accepted": 1,
+    "unresolved": 0
+  },
+  "businessWrites": 0,
+  "settingsWrites": 0,
+  "openingClosing": {
+    "sales24FieldsEqual": true,
+    "purchase7FieldsEqual": true,
+    "inventory2FieldsEqual": true,
+    "accounts32RowsEqual": true,
+    "stock31MovementRowsFourPagesEqual": true,
+    "journalEntries": 155,
+    "debitCredit": "17708.11",
+    "AR": "1906.21",
+    "AP": "1490",
+    "stockValueObserved": "780",
+    "inventoryGL": "660",
+    "fullCatalogueAndProtectedSourceComparison": "not-qualified;END-blocked",
+    "viewportOverrideUsed": false,
+    "endingViewport": [
+      1534,
+      847
+    ]
+  },
+  "partialScan": {
+    "pages": 10,
+    "rows": 95,
+    "allDisplayedStatuses": "paid",
+    "partialQualified": false
+  },
+  "classification": "Operator qualification and fixture blockers; no new proven product defect",
+  "historicalResults": "immutable; Light07L07-SALE remains failed; firstLight08EXECfailure preserved",
+  "acceptance": "not-established",
+  "publicationClock": "active-through-publication; close record follows",
+  "costs": "unobservable; no routing/savings claimed"
+}

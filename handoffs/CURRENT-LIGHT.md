@@ -1,3 +1,3 @@
-# Current Light handoff
+# Current QA continuation
 
-Use [Light08 EXEC2](HANDOFF-20261025-light08-exec2.md) at the final published checkout supplied in the PR; reviewed executable source fc79951208e9dbc7272464e11405cebcf693c511. New 120/20 clock and ledger required.
+Light08 EXEC2 is terminal:10passed27blocked,0NEWbusinesswrites. Read [coding handoff](CODING-MISSION-20261025-light08-exec2.md) and [run](../runs/RUN-20261025-light08-exec2.md). Complete preflight/fixture review before any NEW financial queue; never resume this terminal ledger.
