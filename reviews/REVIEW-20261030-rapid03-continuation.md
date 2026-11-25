@@ -1,0 +1,9 @@
+# Medium —30October remaining Rapid03 review
+
+Original36case executionQA057f318/productb89dd78 fixed29October expired; originalclockunpausedcreditgap fullycharged, no oldrequest dispatch. [Partialresults](../runs/RUN-20261030-rapid03-interrupted.md) retain18accepted submissions22journals1680, originalfailures and4not-run-budget. Readonlycurrent30October liveb89dd78,223journals26928.11,cash700/AR1906.21/AP1490,43moves/qty8cost60; all44oldprotected andall201oldjournals40moves preserved.
+
+Sourceexception explicit: only originalCF invoice120paid120zero andreceipt120 are retained READONLYopening, dated29/due31. OrdinaryUI sourcepicker confirms3manualServiceunits40/value120 unreturned; no refundintent/claim/effectexists. OriginalCFsourceis eligibleforremainingrefunds, neverrecreateinvoice/receipt. Fourcompletedpriorworkflowlanes cannotreplay.
+
+New10case queue/oracle/helper fixed30OctoberUTC/due31/final5minrefusal, exactpublishedQA/NEW120-20clock/freshoriginalactor/profile/openings/all62protectedroutes/actualcontrols mandatory. Onlytwofinancialsubmissionsrefund40then80, twojournalsDrCr120, cash/income/assets-120/returns+120, zeroAR/AP/stock. Conditional225journals27048.11cash580income1849.50assets3386.21; original29asOfremains223/cash700. Broaderhistoryacrossfingerprints notoneoriginalbatchpass. No config/grants/master/fundingchanges.
+
+Existingguardmodules unchanged; newmissiondate/source eligibility/oracle separatelyreviewed. Fresh125focusedtests expected; actualpreparation2positive/5zeroUIclaimrefusals observed. Newtests check10cases/only2refunds/noinvoicebuttons/date/refusal/120oracle/helpergate. Fullcheckretainsmissingdependency/historicalWindowsgovernance limits, no fullgreen. Light repeatsfreshcontrols. Rental/realdeniedactors/foreigntenant/bankcardpositives remainunqualified. No productdiffchange,newmoney,merge/deploy orlaunch acceptance bypreparation.

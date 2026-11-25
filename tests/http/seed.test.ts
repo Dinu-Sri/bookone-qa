@@ -36,8 +36,27 @@ it('prepare only marked ephemeral HTTP credential fixtures',async()=>{
   }
   const own=await invoice(TENANT_A,OWNER,'HTTP-OWN-LINE-SENTINEL','HTTP Own Customer');
   const foreign=await invoice(TENANT_B,FOREIGN,'HTTP-FOREIGN-LINE-SENTINEL','HTTP Foreign Customer');
-  setActor();expect(await receiveCustomerPayments({paymentDate:date,paymentAccountCode:'1000',allocations:[{documentId:own.id,amount:150}]})).toMatchObject({ok:true,paidCount:1});
+  setActor();const receipt=await receiveCustomerPayments({paymentDate:date,paymentAccountCode:'1000',allocations:[{documentId:own.id,amount:150}]});expect(receipt).toMatchObject({ok:true,paidCount:1});
+  const receiptPaymentIds=receipt.paymentIds;expect(receiptPaymentIds).toHaveLength(1);
   const [d]=await seed.select().from(schema.businessDocuments).where(eq(schema.businessDocuments.id,own.id));expect([Number(d.paidAmount),Number(d.balanceDue)]).toEqual([150,450]);
+  await seed.insert(schema.accounts).values([
+    {tenantId:TENANT_A,code:'2400',name:'Refundable deposits',type:'liability',normalSide:'credit'},
+    {tenantId:TENANT_A,code:'4400',name:'Hire income',type:'revenue',normalSide:'credit'},
+    {tenantId:TENANT_A,code:'4450',name:'Hire charges',type:'revenue',normalSide:'credit'},
+  ]);
+  const [warehouse]=await seed.insert(schema.locations).values({tenantId:TENANT_A,name:'HTTP warehouse',code:'HTTP-WH',locationType:'warehouse'}).returning();
+  await seed.insert(schema.locations).values(['on_rent','wash','repair'].map(type=>({tenantId:TENANT_A,name:'HTTP '+type,code:'HTTP-'+type,locationType:type})));
+  const [rp]=await seed.insert(schema.inventoryProducts).values({tenantId:TENANT_A,sku:'HTTP-HIRE-LINE-SENTINEL',name:'HTTP-HIRE-LINE-SENTINEL',productType:'rental',hireUnit:'event',unitCost:'50.00',sellPrice:'50.00',revenueAccountCode:'4400'}).returning();
+  await seed.insert(schema.inventoryStockLevels).values({tenantId:TENANT_A,productId:rp.id,locationId:warehouse.id,qtyOnHand:'20.0000'});
+  await seed.insert(schema.inventoryCostLayers).values({tenantId:TENANT_A,productId:rp.id,locationId:warehouse.id,qtyReceived:'20.0000',qtyRemaining:'20.0000',unitCost:'50.00',receivedOn:date});
+  await seed.insert(schema.inventorySettings).values({tenantId:TENANT_A,negativeStockPolicy:'block',costingMethod:'fifo'});
+  await seed.insert(schema.rentalSettings).values({tenantId:TENANT_A,overlapPolicy:'block',defaultTurnaroundHours:0});
+  setActor(OWNER,'owner',TENANT_A);
+  const hireRes=await createCommercialDocument({documentType:'sales_order',partyName:'HTTP Hire Customer',issueDate:date,locationId:warehouse.id,hireFrom:date,hireTo:date,invoiceTiming:'manual',lines:[{productId:rp.id,description:'HTTP-HIRE-LINE-SENTINEL',quantity:10,unitPrice:50}]} as any);
+  expect(hireRes,hireRes.error).toMatchObject({ok:true});
+  const [hireDoc]=await seed.select().from(schema.businessDocuments).where(eq(schema.businessDocuments.id,hireRes.id!));
+  const hire={id:hireDoc.id,number:hireDoc.documentNumber,marker:'HTTP-HIRE-LINE-SENTINEL',customer:'HTTP Hire Customer'};
+  setActor();
   const [role]=await admin`select rolsuper,rolbypassrls from pg_roles where rolname='qa_runtime'`;expect(role).toEqual({rolsuper:false,rolbypassrls:false});
-  mkdirSync('.local/http',{recursive:true});writeFileSync('.local/http/fixture.json',JSON.stringify({actors,own,foreign,date,tenantA:TENANT_A,tenantB:TENANT_B,foreignName}));
+  mkdirSync('.local/http',{recursive:true});writeFileSync('.local/http/fixture.json',JSON.stringify({actors,own,foreign,date,tenantA:TENANT_A,tenantB:TENANT_B,foreignName,hire,receiptPaymentIds}));
 });

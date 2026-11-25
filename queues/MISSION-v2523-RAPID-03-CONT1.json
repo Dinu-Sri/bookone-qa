@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-CYCLE3-CONT1",
+  "displayName": "Rapid03 remaining ordinary customer cash refunds —30OctoberUTC",
+  "candidate": "v2.5.23",
+  "productSha": "b89dd788b9bec9dc66cb49d22f7b8c2c92015df7",
+  "reportedShortSha": "b89dd78",
+  "executionReady": true,
+  "status": "reviewed-conditional-fresh-execution-gates-required-not-executed",
+  "budget": {
+    "totalMinutes": 120,
+    "executionMinutes": 100,
+    "closingReserveMinutes": 20,
+    "preflightCheckpointMinutes": 20
+  },
+  "oracle": "queues/ORACLE-v2523-RAPID-03-CONT1.json",
+  "strategy": "docs/RAPID_WORKFLOW_CYCLES.md",
+  "qaPin": "Exact published preparation commit in localcopyableprompt; compare cleanHEAD before init/browser. Anynewday/product/guardchange needs newreviewedmission, not editedexpectations.",
+  "transport": {
+    "entry": "dispatchPersistedDesktopAction",
+    "module": "scripts/operator-desktop-cua.mjs",
+    "host": "mcp__cua_repl.js",
+    "compatibility": "ID deliberately retains RAPID-01 prefix so unchangedadapter exact allowedButtons enforcement applies. All guard modules unchanged; newhelper/queue/oracle only."
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-10-30",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "fixturePolicy": "ONLY remaining refunds on original29OctCF invoice120/receipt120, READONLY opening verified fresh. No invoice/receipt recreation; all other62 protected sources immutable. Targetrefund30Oct/due31; originalissue/delivery/payment29 preserved. No historicalcashrefundrepair.",
+  "scheduling": "Fresh gates/open/source, ordinarytender safecheck, refund40 thenfreshremaining80, fullsource/history/audit/report closure, preservation/publication. Other Rapid03 workflows already complete and strictly read-only.",
+  "scopeExclusions": [
+    "All prior invoice/receipt/purchase/refund/payment replay orrepair",
+    "Rental/realdeniedroles/foreign-tenant/bankcardfundedpositives/race/fault/upgrades/storage unqualified",
+    "No masters/settings/grants/company/fundingtransfer/physicalprinting;backupLAST"
+  ],
+  "cases": [
+    {
+      "id": "RC1-GATE",
+      "title": "RC1-GATE",
+      "expected": "Freshfocusedtests/actual2positive5zeroUIclaimrefusals, guardedLogout/protectedreload/LoginRememberoff originalQAOwner/company,exactb89dd78v2.5.23,cleanfinalQA. Preservefirstfailures; no blindretry.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes.",
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ]
+    },
+    {
+      "id": "RC1-OPEN",
+      "title": "RC1-OPEN",
+      "expected": "Fresh14financial/settings/stocksurfaces/all223journal summaries/all43movementrows/all62 protected records. Hints cash700 AR1906.21 AP1490 stockGL900/value1020qty8cost60expense1010income1969.5assets3506.21. No settings/grants/masters. Original44plus18Rapid03sources dedup62; newinvoice/receipt remainread-only.",
+      "dependsOn": [
+        "RC1-GATE"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-SOURCE",
+      "title": "RC1-SOURCE",
+      "expected": "OriginalCF invoice120paid120balance0 datedissue/delivery/payment29due31,oneoriginalreceipt120,cash1000. Exactsource3manualServiceunits40 each,remaining3/value120,NO priorrefund. Independentlyjournal223/26928.11 andsource/receipt/Activity unchanged. Neverrecreateinvoice/receipt.",
+      "dependsOn": [
+        "RC1-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-TENDER",
+      "title": "RC1-TENDER",
+      "expected": "Ordinaryreturn UI select ONLY originalCF source. Creditonly default vsvisible1000/1100/1200,4000absent(UI exclusionnotserverdenial). Safelyinspectqty4/remaining3 withoutSubmit,restore1/cash1000/total40. Date30due31committedafterallchanges;freshcash>=40. Do notrequire disabledbuttonifonlyexplicitwarning; report eachobserved layer andneverinvalidSubmit.",
+      "dependsOn": [
+        "RC1-SOURCE"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-RETURN1",
+      "title": "RC1-RETURN1",
+      "expected": "SourceoriginalpaidCF invoice,refund1x40 visiblecash1000/date30due31. Dr4100/Cr1000 40,returnrefundedpaid40balance0durablelist/detail/reload;originalinvoicepaid120/0andreceipt120unchanged,remaining2/value80,noAR/stock/master.",
+      "dependsOn": [
+        "RC1-TENDER"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ],
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-RETURN2",
+      "title": "RC1-RETURN2",
+      "expected": "Freshremaining2x40=80/cash>=80;ordinaryrefundcash1000/date30due31. Dr4100/Cr1000 80,refundedpaid80zero durable;sourceexhausted0,value0;originalinvoicepaid120zeroandreceipt120preserved,noAR/stock/master.",
+      "dependsOn": [
+        "RC1-RETURN1"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": true,
+      "allowedButtons": [
+        "Save return"
+      ],
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-HISTORY",
+      "title": "RC1-HISTORY",
+      "expected": "Remaininglane2journalsDrCr120,cash/income/assets-120/returns+120;noAR/AP/stock. Fullsourcecycle across29+30fourjournals360/cashARincome0,revenue120returns120. Distinguishfingerprints. Allinvoice/credit/receiptpreviews,sourceexhaustion,originalreceipt exactpreservation,Activity realactor/source/CREATE40/80andoldCREATE/ALLOCATE120,datedGL/agingreportlayers. Missingauditinconclusive,no physicalprint.",
+      "dependsOn": [
+        "RC1-RETURN2"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-DATE",
+      "title": "RC1-DATE",
+      "expected": "Originalsource/receipt29 unchanged;ONLYnewrefund30/due31,sourceissue/delivery29. AsOf29 remains223/26928.11cash700income1969.5;asOf30newclosing225/27048.11cash580income1849.5assets3386.21 conditional;AR1906.21AP1490. Earlier28 reports unchanged.",
+      "dependsOn": [
+        "RC1-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-PRESERVE",
+      "title": "RC1-PRESERVE",
+      "expected": "All223openingjournals/all43moves/62protected/settings/accountdefs/catalogue/levels unchanged exceptexpectednewtwojournals/refundrecords. No newstock;stockGL900/value1020qty8cost60gap120. Fouroldbadrefundcreditsopen60/180/40/40remain,notrepaired. Priornewv2523supplierrefundsrefunded andsettledAR/APpreserved.",
+      "dependsOn": [
+        "RC1-OPEN"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes."
+    },
+    {
+      "id": "RC1-END",
+      "title": "RC1-END",
+      "expected": "All10truthfuldispositions/zero unresolved,exactendingbuild/acceptedbranches. Oneconsolidatedsanitizedresults/checks/codinghandoff/pointersPR;clockthroughinitialpublicationthenclose/disclosemetadatatail. OldRapid03partialcounts/expiredclock/firstfailurespreserved. No merge/deploy/launch;backupLAST.",
+      "dependsOn": [
+        "RC1-GATE"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "lane": "remainingCustomerCashRefund",
+      "businessSubmission": false,
+      "precondition": "ExactpublishedQA/product/live originalQA actor/profile/currentopening/source. NEW120/20clock beforebrowser/auth,30OctUTCfinal5minrefusal,targetdue31. Prior29source/receipt preserved. No unresolved/no replay. Freshcash beforeoutflow, controlledtargetdatescommitted/reread. No config/grants/masters changes.",
+      "recovery": true
+    }
+  ]
+}
