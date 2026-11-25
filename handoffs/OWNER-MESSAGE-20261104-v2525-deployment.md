@@ -1,3 +1,7 @@
+# SUPERSEDED — owner personally handles deployments
+
+Owner clarified4November that agents must not deploy. Do not relay or execute the older deployment-authorization draft below. Preserve it only as superseded history. Current first-customer priority: docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md.
+
 # Optional message for the owner to relay to the coding agent
 
 This is a draft for the owner to send if they choose to authorize the staging deployment. This file itself does not authorize any agent to merge or deploy. Customer launch is not approved.

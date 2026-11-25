@@ -1,3 +1,11 @@
+# Current — first customer programme and Mission1 specification
+
+Owner requires physical goods+services+POS, both VAT/non-VAT and cash/bank/card. Owner personally deploys; no agent deployment. Read docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md and handoffs/HANDOFF-20261104-first-customer-m1-plan.md. Four missions now have FIVE planned Light runs because Mission1 has two40-checkpoint profile batches; allow1–2grouped retests (estimate5–7, not guaranteed). Plans and independent14-journal oracles prepared; no execution or launch acceptance.
+
+ProductPR10 merged a6eda602bc67f20eb86736cbeceabc9cdd841769; tree07ff418256d8bdd56fb1569203e6baa4f03aaa44 equals reviewed5ea0d6e. Actual live deployment NOTVERIFIED. Next Medium verifies live fullSHA/tree/stamp, qualifies existing A/non-VAT funded tender+new masters and supported refund/conversion paths, then publishes NEW dated exact-bound M1A Light queue/helper/prompt. M1B requires its own legitimate VAT fixture; preserve foreignB and originalQA. Do not execute either PLAN or old Rapid04 template, invent bindings, recreate prior accounts or replay money. Tax18% is synthetic arithmetic, not expert/customer tax approval. Ledger card entries do not prove processor integration. Preserve all historical transactions/failures; backupLAST in Mission4.
+
+Historical pointers below are superseded for next-task selection.
+
 # First customer launch scope — physical goods and services
 
 Owner confirmed on 4 November 2026 that the first customer buys/sells physical goods and also sells services. The owner performs deployments personally. This scope takes priority over preparing rental as the next Light business batch. No launch approval or executable queue is created here.

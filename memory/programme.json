@@ -2037,14 +2037,55 @@
   "firstCustomerScope": {
     "date": "2026-11-04",
     "ownerRequired": [
-      "buy-and-sell-physical-goods",
-      "sell-services"
+      "physical-goods",
+      "services",
+      "POS",
+      "VAT-and-nonVAT",
+      "cash-bank-card"
     ],
-    "scope": "reviews/FIRST-CUSTOMER-SCOPE-20261104.md",
-    "nextPriority": "current-deployed-physical-and-service-complete-workflow-acceptance",
-    "rentalDeferral": "proposed-not-needed-unless-customer-requires",
     "deploymentOwner": "human-owner",
+    "programme": "docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md",
+    "mission1": "handoffs/HANDOFF-20261104-first-customer-m1-plan.md",
+    "plannedMissions": 4,
+    "plannedLightRuns": 5,
+    "groupedRetestAllowance": [
+      1,
+      2
+    ],
+    "estimatedRuns": [
+      5,
+      7
+    ],
+    "specifiedCheckpoints": 80,
     "lightExecutable": false,
-    "launchAccepted": false
+    "launchAccepted": false,
+    "next": "Medium actual live fingerprint and reusable fixture/transport qualification, then NEW exact-bound M1A release"
+  },
+  "latestControlQualification": {
+    "date": "2026-11-11",
+    "review": "reviews/REVIEW-20261111-browser-control-block.md",
+    "checks": "runs/CHECKS-20261111-native-control-qualification.json",
+    "status": "blocked-browserDOM-and-nativegeometry-screenshot",
+    "actualReadPassed": true,
+    "actualClickQualified": false,
+    "authSubmissions": 0,
+    "businessSubmissions": 0,
+    "next": "Restore supported browser control; fresh proof then qualify Mission1A"
+  },
+  "latestM1ARelease": {
+    "date": "2026-11-11",
+    "queue": "queues/MISSION-v2525-M1A-20261111.json",
+    "oracle": "queues/ORACLE-v2525-M1A-20261111.json",
+    "helper": "scripts/launch-m1a-run.mjs",
+    "review": "reviews/REVIEW-20261111-m1a-release.md",
+    "cases": 46,
+    "workflowJournals": 16,
+    "workflowDrCrCents": 368000,
+    "includingFundingJournals": 17,
+    "includingFundingDrCrCents": 418000,
+    "status": "released-conditional-not-executed",
+    "executionDate": "2026-11-11",
+    "nativeFallback": "quarantined",
+    "oldPlans": "unchanged-nonexecutable"
   }
 }
