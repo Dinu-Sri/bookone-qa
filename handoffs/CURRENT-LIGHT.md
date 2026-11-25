@@ -12,3 +12,10 @@ Light08 EXEC2 is terminal:10passed27blocked,0NEWbusinesswrites. Read [coding han
 
 # Light08 new01 prerequisite checkpoint — 24 October 2026
 [PR #68](https://github.com/Dinu-Sri/bookone-qa/pull/68): 37 blocked, zero product passes/failures; 26 guard unit passes do not prove actual transport. Fresh private actor credentials and reviewed connected-GUARD transport unavailable. No staging submissions or changes. [Run](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-results-new01/runs/RUN-20261024-light08-new01.md), [coding handoff](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-results-new01/handoffs/CODING-20261024-light08-new01.md). Next: qualify prerequisites and start NEW run. Prior evidence below is retained.
+
+## Superseded pointer preserved during merge (base branch main)
+
+## Superseded pointer preserved during merge (PR #60 branch qa/v2521-light06-browser-blocked)
+Light06 attempt: [browser-blocked handoff](HANDOFF-20261023-light06-browser-blocked.md), [checks](../runs/CHECKS-20261023-light06-browser-blocked.json). Two Browser bootstrap timeouts prevented fresh tab/build/actor/openings. **0passed/0failed/20blocked/1inconclusive**, zero BookOne submissions or viewport changes. No product failure or fix acceptance established.
+New private ledger terminal, zero unresolved intents. Clock opened after connection attempts and closed before publication: timing coverage incomplete, full-attempt budget compliance unverified. Preserve this deviation; do not backdate or reuse terminal ledger.
+Next: reconnect existing local Browser extension, then NEW attempt/clock BEFORE setup using unchanged qa/v2521-light06-mission commit60198f3189459431fe32d331a0abe1ae00351743 and [mission](HANDOFF-20261023-v2521-light06.md). Fresh verify expected v2.5.21 · 7458a9c/full7458a9c458402f9dfaf64587dd5ef7ebe1b5d448, intended actor/capabilities and actual openings. Candidate drift requires new Medium binding. Prior results/fixtures immutable; no permission bypass, deployment or financial replay. Backup/restore LAST.
