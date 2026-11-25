@@ -1,3 +1,19 @@
+# Current — first customer programme and Mission1 specification
+
+Owner requires physical goods+services+POS, both VAT/non-VAT and cash/bank/card. Owner personally deploys; no agent deployment. Read docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md and handoffs/HANDOFF-20261104-first-customer-m1-plan.md. Four missions now have FIVE planned Light runs because Mission1 has two40-checkpoint profile batches; allow1–2grouped retests (estimate5–7, not guaranteed). Plans and independent14-journal oracles prepared; no execution or launch acceptance.
+
+ProductPR10 merged a6eda602bc67f20eb86736cbeceabc9cdd841769; tree07ff418256d8bdd56fb1569203e6baa4f03aaa44 equals reviewed5ea0d6e. Actual live deployment NOTVERIFIED. Next Medium verifies live fullSHA/tree/stamp, qualifies existing A/non-VAT funded tender+new masters and supported refund/conversion paths, then publishes NEW dated exact-bound M1A Light queue/helper/prompt. M1B requires its own legitimate VAT fixture; preserve foreignB and originalQA. Do not execute either PLAN or old Rapid04 template, invent bindings, recreate prior accounts or replay money. Tax18% is synthetic arithmetic, not expert/customer tax approval. Ledger card entries do not prove processor integration. Preserve all historical transactions/failures; backupLAST in Mission4.
+
+Historical pointers below are superseded for next-task selection.
+
+# Current Medium review — v2.5.25 isolated checks green; deploy/live fixture next
+
+QA PR95 https://github.com/Dinu-Sri/bookone-qa/pull/95 reviews product5ea0d6e243a1bd37889240e15b10ea86ef3c94ba / v2.5.25 · 5ea0d6e and QA506db5b. Tested QA5043390ae43ca4bd677b7705252582a1003ec341; fresh PG136/136 (rental17/17), HTTPS30/30, Linuxvalidation and B–F source checks green. Preserve first HTTPS26/4; two harness defects corrected without changing expected money/permission outcomes. Read reviews/REVIEW-20261104-v2525-medium.md, runs/CHECKS-20261104-v2525-medium-review.json and handoffs/HANDOFF-20261104-v2525-next-batch.md.
+
+ProductPR10 open/unmerged at review; no fresh live verification (selected Chrome2 unavailable). Last observed livev2.5.24 · e5bb589. NEXT owner-controlled deployment decision, then Medium verifies actual full SHA/tree/stamp, completes A fleet20@50/bays/after-return-block fixture and freezes NEW dated substantial Light queue. Existing A/B/Viewer and A-only module grant COMPLETE under prior owner authorization; reuse private credentials, do not recreate or ask again. Current40-pointmap and11-caseplanningtemplate remain NONEXECUTABLE; Light not released. No further product fix indicated by the corrected CI failures. Preserve all transactions/failures; no merge/deploy/launch; backupLAST.
+
+Historical pointers below remain preserved and are superseded for next-task selection.
+
 # Fixture setup complete — 4 November 2026
 
 Read [setup results](../runs/RUN-20261104-rapid04-fixture-setup.md), [checks](../runs/CHECKS-20261104-rapid04-fixture-setup.json) and [fixture handoff](../handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md). Three accounts created on30October were reused: A Owner, A Viewer and B Owner. A alone is now Pro with Inventory/Rental on; POS/HR off. B and original QA remain Starter with Inventory/Rental off. Fresh logins/roles and saved settings verified. Credentials/company/member IDs remain ignored/private. Original QA context restored.

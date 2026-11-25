@@ -3,6 +3,7 @@ import {readFileSync,writeFileSync,mkdirSync,openSync,closeSync,copyFileSync} fr
 import {resolve,join} from 'node:path';import {spawn,spawnSync,execFileSync} from 'node:child_process';
 import {createHash,randomBytes,randomUUID} from 'node:crypto';import https from 'node:https';import {createRequire} from 'node:module';
 import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,localTlsTransport,deniedHttpResponse,CookieJar} from './target.mjs';
+import {receiptPath,settingsDeniedValue} from './contracts.mjs';
 const ROOT=process.cwd(),BASE='https://localhost:3443/',WEB=resolve('work/product/apps/web');
 const manifest=JSON.parse(readFileSync('batches/http-runtime.json','utf8'));
 const runId='HTTP-'+new Date().toISOString().replace(/[:.]/g,'-')+'-'+randomBytes(3).toString('hex');
@@ -104,7 +105,7 @@ async function laneCases(lane,f){
   await requireLogin(actors.platform);const r=await request('/control-room/companies',actors.platform);c(r.status===200&&r.body.includes(f.foreignName),'platform-admin-known-foreign-company-positive');o('platformControlStatus',r.status);
  });
  await test(6,async(c,o)=>{const a=actors.foreign;await requireLogin(a);const stale=a.jar.header(BASE);const r=await postJSON('/api/auth/sign-out',a,{});c(r.status===200,'signout-succeeds');const replay=await request('/api/auth/get-session',{ip:a.ip},{cookie:stale});c(!json(replay)?.user,'revoked-session-not-authenticated');const protectedReplay=await request('/sales/invoices/'+f.foreign.id,{ip:a.ip},{cookie:stale});c(denied(protectedReplay)&&!protectedReplay.body.includes(f.foreign.marker),'stale-session-protected-route-denied');o('staleSessionAuthenticated',Number(!!json(replay)?.user));});
- await test(7,async(c,o)=>{const before=await snapshot();for(const key of ['owner','viewer']){const a=actors[key];if(!a.ownRead)throw new Incomplete('known-role-positive-prerequisite');const params=new URLSearchParams({date:f.date,account:'1000',total:'150',doc:f.own.id,amt:'150'});const r=await request('/sales/payments/receipt?'+params,a);c(r.status===200&&r.body.includes('PAYMENT RECEIPT')&&r.body.includes(f.own.customer)&&r.body.includes(f.own.number)&&r.body.includes('150.00'),'existing-receipt150-real-server-renders');o(key+'ReceiptStatus',r.status);}c(await snapshot()===before,'receipt-read-no-duplicate-posting');});
+ await test(7,async(c,o)=>{const before=await snapshot();const path=receiptPath(f.receiptPaymentIds);for(const key of ['owner','viewer']){const a=actors[key];if(!a.ownRead)throw new Incomplete('known-role-positive-prerequisite');const r=await request(path,a);c(r.status===200&&r.body.includes('PAYMENT RECEIPT')&&r.body.includes(f.own.customer)&&r.body.includes(f.own.number)&&r.body.includes('150.00'),'existing-receipt150-real-server-renders');o(key+'ReceiptStatus',r.status);}c(await snapshot()===before,'receipt-read-no-duplicate-posting');});
  await test(8,async(c,o)=>{
   if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');handle=await actionHandle(actors.owner);
   const input=(id,amount)=>({paymentDate:f.date,paymentAccountCode:'1000',allocations:[{documentId:id,amount}],idempotencyKey:randomUUID()});
@@ -134,9 +135,11 @@ async function laneCases(lane,f){
   if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');
   const page=await request(spec.path,actors.owner);if(page.status!==200)throw new Incomplete('settings-owner-page-unavailable');
   const fields=formFields(page.body,spec.needle),before=await snapshot(),posted=await snapshot(postedTables);
-  await postForm(spec.path,actors.viewer,[...fields,...spec.fields,[spec.needle,spec.denied]]);
+  const priorValues=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
+  const deniedValue=settingsDeniedValue(priorValues,spec.denied,spec.allowed);
+  await postForm(spec.path,actors.viewer,[...fields,...spec.fields,[spec.needle,deniedValue]]);
   const values=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
-  const changed=values.some(r=>r.value===spec.denied);
+  const changed=JSON.stringify(values)!==JSON.stringify(priorValues);
   c(await snapshot()===before,'viewer-settings-write-zero-business-effects');c(!changed,'viewer-settings-field-unchanged');o('viewerSettingChanged',Number(changed));
   const response=await postForm(spec.path,actors.owner,[...fields,...spec.fields,[spec.needle,spec.allowed]]);
   const positive=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);

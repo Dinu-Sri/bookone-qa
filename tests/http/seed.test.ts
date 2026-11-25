@@ -36,7 +36,8 @@ it('prepare only marked ephemeral HTTP credential fixtures',async()=>{
   }
   const own=await invoice(TENANT_A,OWNER,'HTTP-OWN-LINE-SENTINEL','HTTP Own Customer');
   const foreign=await invoice(TENANT_B,FOREIGN,'HTTP-FOREIGN-LINE-SENTINEL','HTTP Foreign Customer');
-  setActor();expect(await receiveCustomerPayments({paymentDate:date,paymentAccountCode:'1000',allocations:[{documentId:own.id,amount:150}]})).toMatchObject({ok:true,paidCount:1});
+  setActor();const receipt=await receiveCustomerPayments({paymentDate:date,paymentAccountCode:'1000',allocations:[{documentId:own.id,amount:150}]});expect(receipt).toMatchObject({ok:true,paidCount:1});
+  const receiptPaymentIds=receipt.paymentIds;expect(receiptPaymentIds).toHaveLength(1);
   const [d]=await seed.select().from(schema.businessDocuments).where(eq(schema.businessDocuments.id,own.id));expect([Number(d.paidAmount),Number(d.balanceDue)]).toEqual([150,450]);
   await seed.insert(schema.accounts).values([
     {tenantId:TENANT_A,code:'2400',name:'Refundable deposits',type:'liability',normalSide:'credit'},
@@ -57,5 +58,5 @@ it('prepare only marked ephemeral HTTP credential fixtures',async()=>{
   const hire={id:hireDoc.id,number:hireDoc.documentNumber,marker:'HTTP-HIRE-LINE-SENTINEL',customer:'HTTP Hire Customer'};
   setActor();
   const [role]=await admin`select rolsuper,rolbypassrls from pg_roles where rolname='qa_runtime'`;expect(role).toEqual({rolsuper:false,rolbypassrls:false});
-  mkdirSync('.local/http',{recursive:true});writeFileSync('.local/http/fixture.json',JSON.stringify({actors,own,foreign,date,tenantA:TENANT_A,tenantB:TENANT_B,foreignName,hire}));
+  mkdirSync('.local/http',{recursive:true});writeFileSync('.local/http/fixture.json',JSON.stringify({actors,own,foreign,date,tenantA:TENANT_A,tenantB:TENANT_B,foreignName,hire,receiptPaymentIds}));
 });
