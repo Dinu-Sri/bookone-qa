@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-POSTFIX-LIGHT-05",
+  "candidate": "UNBOUND-POSTFIX",
+  "productSha": null,
+  "reportedShortSha": null,
+  "executionReady": false,
+  "status": "fixed-scenarios-awaiting-reviewed-candidate-and-fixture",
+  "reviewedProductBase": "4c3a304e6adc985c591ecb7934382b8929f9b189",
+  "qaPlanningBase": "37408fc48c5a3699a2033966594d8474652ab751",
+  "budget": {
+    "totalMinutes": 100,
+    "executionMinutes": 85,
+    "closingReserveMinutes": 15
+  },
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "bindingRequirements": [
+    "Medium actualfixdiff/source/test review with exact new fullSHA/version; no inferredv2.5.20 or acceptedold4c/3e9 docs stamp.",
+    "Already-authorized Inventorywrite privatefixture proven; no module/job/permission grants or quick-create workaround insidemission.",
+    "New published queue copy with executionReadytrue/exactcandidate and immutable fixture/config plan; originalplanningtemplateunchanged.",
+    "If fixes touch accounting allocation/posting/authscope beyondlistedcontracts, broadenreview and issueNEWexpandedqueue; do notsilentlyomitrequiredserverauthorization/upgrade/race layers."
+  ],
+  "note": "28fixedslots;planningonly.Noexecution.Acceptedphenotypesrequirefreshbinding.LiveLight04resultsremainimmutable.Noautomaticmodelrouting/costclaim.",
+  "cases": [
+    {
+      "id": "M20-GATE",
+      "title": "Exact post-fix candidate and clock",
+      "dependsOn": [],
+      "precondition": "NEW Medium-published bound copy; executionReadytrue; fullSHA/version/live match; initialize generic operator and clock before work.",
+      "expected": "Reject this unbound planning template, old4c3a304, docs3e9ffee or a matching7-char prefix with different fullSHA. Start100-minute conservative clock, reserve15; record fullQA/rule/library/UX hashes and schema attestation gap. No writes on drift.",
+      "evidence": [
+        "candidate",
+        "qaRevision",
+        "operatorState",
+        "clock"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-ACTOR",
+      "title": "Fresh legitimate writer and actual openings",
+      "dependsOn": [
+        "M20-GATE"
+      ],
+      "precondition": "Existing privately provisioned own QA actor; Inventory module/product write capability explicitly verified by supported UI or reviewed provisioning record. No access/module grants during mission.",
+      "expected": "Fresh logout/login Rememberoff; verify actor/job/company and permitted product create/edit. Capture ALL sales/purchase/inventory maps, TB/journal/AR/AP/stock and fixture IDs. Owner label alone is insufficient. Missing write fixture blocks MASTER/A and dependents before Save; never use quick-create to work around it. PlannedVATfalse18,last/block,purchaseapprovalfalse,requiredsuppliertrue,duplicatetrue,RequireGRNfalse,PostGRNIfalse; save/reload transitions.",
+      "evidence": [
+        "freshActor",
+        "writeCapability",
+        "openingBalances",
+        "settingsMaps",
+        "profileReload"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-HISTORY",
+      "title": "Preserved records read-only",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Same company only if actual historical fixtures exist; do not create substitutes.",
+      "expected": "Read-only oldINV0032open300, failedQT0004draft0 and M19 quickproductcost10/sell0/qty0; prior0037-0040 fully credited. Never Save/Post/repair/credit/delete those records. If new authorized company differs, mark these substeps missing instead of borrowing data.",
+      "evidence": [
+        "readback",
+        "noWrites"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-MASTER",
+      "title": "Fresh authorized physical master create/edit",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "ACTOR proves Inventory product write; unique M20 physical SKU, Standard tax, openingqty0,cost60,sell10.",
+      "expected": "Save full New product ONCE; verify actual stored Physical/Standard,quantity0,cost60,sell10. Then edit ONLY new run-owned product notes toM20 verified edit, Saveonce and reopen. Clear success/refusal and retained fields, no opaque exception, zeroGL/stock. First failure stops sourceA; no retry or permission change.",
+      "evidence": [
+        "create",
+        "edit",
+        "storedFacts",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-001",
+        "UXW-002"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-A",
+      "title": "Fresh physical source A180",
+      "dependsOn": [
+        "M20-MASTER"
+      ],
+      "precondition": "MASTER passed; own new/verified vendorA; unique supplierrefM20-A; quantity0.",
+      "expected": "One direct credit bill3x60=180; Dr5100/Cr2100 180; newSKU3/value180,catalogsell10/currentcost60,source180,GRNI0. Do not substitute old consumed bill or GRN.",
+      "evidence": [
+        "source",
+        "journal",
+        "stock",
+        "catalogue"
+      ],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-B",
+      "title": "Different-vendor discounted service source B95",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Own vendorB distinctA, manual service1x100,header5%,VATfalse,6800,refM20-B.",
+      "expected": "One servicebill95; Dr6800/Cr2100 95; no stock/COGS/GRNI; retainopen95.",
+      "evidence": [
+        "source",
+        "journal",
+        "stockUnchanged"
+      ],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-PICK-EMPTY",
+      "title": "Empty picker to A without reload",
+      "dependsOn": [
+        "M20-A"
+      ],
+      "precondition": "A3/180; generic purchase return empty.",
+      "expected": "Visible Findbill selection loads vendorA locked,qty3,price60readonly,header0,total180 in SAME render without reload. Qty1preview60. Do not Save yet; preserve first picker failure.",
+      "evidence": [
+        "before",
+        "sameRender",
+        "priceLock",
+        "preview",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-PICK-SWITCH",
+      "title": "A to B to A same-form replacement",
+      "dependsOn": [
+        "M20-A",
+        "M20-B"
+      ],
+      "precondition": "A3x60/header0;B1x100/header5,neither returned.",
+      "expected": "Supported same-form source switch replaces vendor,source ancestry,lines/header/total: A180→B95→A180. No mixed fields. If control absent mark capability missing; two independent pages do not prove switch.",
+      "evidence": [
+        "A",
+        "B",
+        "restoredA",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-PICK-CLEAR",
+      "title": "Clear source and reselect",
+      "dependsOn": [
+        "M20-A"
+      ],
+      "precondition": "A untouched; use only actual supported clear.",
+      "expected": "Clear removes all source-bound party/lines/header/total then reselectA3x60/180. Missing clear blocks this assertion; navigation is not clear. No writes; PARTIAL may use a separately verified fresh correct form.",
+      "evidence": [
+        "clearDisposition",
+        "reselected",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-010"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-PARTIAL",
+      "title": "Purchase credit60",
+      "dependsOn": [
+        "M20-A"
+      ],
+      "precondition": "Fresh coherentA3x60/180; no earlier credits.",
+      "expected": "Qty1preview60/source60locked; SaveONCE only if coherent. Persistedcredit60,Dr2100/Cr5100 60,sourceA120/remaining2,newSKU2/value120,GRNI0/cashCOGSunchanged. View line/total/source agree; print is checked only in declared supported print branch, not silently accepted.",
+      "evidence": [
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "stock",
+        "printDisposition"
+      ],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-DENY",
+      "title": "Remaining2 and over-return refusal",
+      "dependsOn": [
+        "M20-PARTIAL"
+      ],
+      "precondition": "PARTIAL accepted60; fresh linkedA return.",
+      "expected": "Record actual prefill and originalsourceqty3 separately. Desirededitable remainingqty2,source facts unchanged. If originalqty3 prefills, preserve UX failure; settingqty2 is an explicit correction. Set3 or split2+2; explicitoverremaining,no fictitious discount. OneSave ifoffered mustrefuse/retainallfields/zeronewcreditGLAPstock; native/client only isnotserverproof. No ambiguousoutcome before nextcredit.",
+      "evidence": [
+        "prefill",
+        "invalidPreview",
+        "refusalLayer",
+        "retainedFields",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-009",
+        "UXW-011"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-SPLIT",
+      "title": "Remaining purchase1+1 closes120",
+      "dependsOn": [
+        "M20-PARTIAL"
+      ],
+      "precondition": "Aremaining2/120; invalid refusalconclusive; freshcorrectformallowed.",
+      "expected": "Twoqty1 sourceprice60readonlyeach,row60+60/footer120. Onecredit120 Dr2100/Cr5100;A0,newSKU0/value0;noCOGS/GRNI/cash. Catalogue selling10 remains10; costmode60/source60 only.",
+      "evidence": [
+        "locks",
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "stock"
+      ],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-ZERO",
+      "title": "Exhausted A and B unchanged",
+      "dependsOn": [
+        "M20-SPLIT",
+        "M20-B"
+      ],
+      "precondition": "Afullyreturned;Bopen95.",
+      "expected": "Supported picker/detail exposesremaining0/value0; no acceptedpositivecredit; record unavailable controls atactual layer. Bstill95. No Save to repeatcredit and no newGL/stock.",
+      "evidence": [
+        "sourceA",
+        "entryDisposition",
+        "sourceB",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-009"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-QUOTE-LINE",
+      "title": "LINE150% client refusal then quote10",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "NewDigital1x10,header0; issue21/due28Oct,uniquenotes; exact keyboardSKU addonce; datecommitverified.",
+      "expected": "Set line discountpercent150 (NOT header). Saveonce expects specificclientrefusal/noquote; compareALLfields. CorrectONLYline150→0, Saveonequote10/reopenexactdatesnotesSKU;noGL. Capture searchmultiple/keyboardfocus/details/no-match separately; manualunsavedlineCancel mustnotautocreateproduct.",
+      "evidence": [
+        "fieldMap",
+        "refusal",
+        "retention",
+        "correctedQuote",
+        "noGL",
+        "manualDisposition"
+      ],
+      "uxRefs": [
+        "UXW-005",
+        "UXW-016"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-QUOTE-HEADER",
+      "title": "HEADER150% refusal then separate quote10",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Separate freshDigital1x10,line0,headerpercent150,d21/due28,notes; BR-SAL-03 governs.",
+      "expected": "OneSave refusesexcessiveHEADER beforecreation; retainraw150/type/allfields; noclampedzeroquote. Afterconclusiverefusalonly correctheader150→0; exactlyonequote10/noGL. Do notmodifyfailedQT0004. Thisdoesnotcertifyservervalidationunlessactualserverlayerseparatelyshown.",
+      "evidence": [
+        "rawHeader",
+        "refusal",
+        "retention",
+        "correctedQuote",
+        "noGL"
+      ],
+      "uxRefs": [
+        "UXW-005"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-SUPPLIER",
+      "title": "Immediate server refusal and correction bill10",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Requiredsuppliertrue/reload; ownmanualservice1x10/6800/vendor;blankref,d21/delivery22/due28,notesandselects.",
+      "expected": "Saveonce and immediately observe specificSupplier invoice number required message (toastmayexpire). Nativeconstraint meansserverbranchblocked; do notremoveit. Require ALLfields retained andzeroacceptedbillGLAPstock. Only afterconclusiveserverrefusal correctONLYrefM20-SUP andSaveonce: exactlyonebill10 Dr6800Cr2100/originaldatesnotes. Preserve unknownoutcome/no replay. Retainopen10.",
+      "evidence": [
+        "beforeFields",
+        "immediateFeedback",
+        "serverLayer",
+        "retainedFields",
+        "correctedBill",
+        "journal",
+        "zeroRefusalEffects"
+      ],
+      "uxRefs": [
+        "UXW-002"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-DIALOG",
+      "title": "ConfirmDialog focus/escape/cancel",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Own run-owned nondestructive confirmation target; desktop and actualnarrow; no destructivecommit.",
+      "expected": "Keyboardopenfocusonsafeelement; TabandShiftTabremaininside,Escapeallowedcloses,triggerfocusrestored;reopenCancelEnter andoutsidecancel followdeclaredpolicy,zeroWrites. Busybranchonlywithreviewedsafeisolatedcomponentfixture; ifunavailablemarkmissing,notfullUXW018pass. Checksecondconsumerpurchase list separately.",
+      "evidence": [
+        "initialFocus",
+        "forwardBackward",
+        "escape",
+        "returnFocus",
+        "secondConsumer",
+        "busyDisposition",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-018"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-HELP",
+      "title": "320/390 help and menu containment",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "Actualcontrolledtabviewport390then320;originalsizecaptured;invoiceandsalesreturnlists.",
+      "expected": "Longstatushelpnearleft/rightandtop/bottomedges readableinsideavailablelayoutwidth; Escape/focusreturn,hovercontentusable; rowmenusfirst/lastvisible. Measureactualrenderedbounds andvisuallyverify; screenshotexistencealoneisnotpass. Fields/actionsunobscured;realtablesmayscroll. ResetANDverifyactualtabdimensions. Nozoom/readerclaim.",
+      "evidence": [
+        "actualSizes",
+        "helpAt320",
+        "helpAt390",
+        "edgePositions",
+        "menus",
+        "focus",
+        "screenshots",
+        "reset",
+        "noWrites"
+      ],
+      "uxRefs": [
+        "UXW-018",
+        "UXW-021"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-UNLINKED",
+      "title": "Eight consumer pricing/date rerender matrix",
+      "dependsOn": [
+        "M20-MASTER"
+      ],
+      "precondition": "FreshMASTER cost60/sell10,not historical; supported quote/invoice/SO/PO/GRN/purchase/import/cash forms.",
+      "expected": "EACHconsumer selectsameSKU: sales10,purchasecost60editable,sourcePricedLinesempty byformcontract. Changeqty2,committedduedate28/issue21/notes; triggernormalcatalogsearchdetailsrerender;exactfields/economicsremain;cancelEACHwithnosaveddocsGLstock. Eightindividualdispositions; missingconsumerorbranchcannotwhole-slotpass.",
+      "evidence": [
+        "eightConsumerMatrix",
+        "prices",
+        "datesNotesQty",
+        "rerender",
+        "cancel",
+        "zeroEffects"
+      ],
+      "uxRefs": [
+        "UXW-007",
+        "UXW-008",
+        "UXW-016"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-SALES-SPLIT",
+      "title": "Fresh exact3x100 invalid then1+1+1 credit300",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "VerifiedDigitalcatalogsell10,newsource3x100/noVATdiscount,owncustomer;oldINV0032offlimits.",
+      "expected": "Postsource300 DrARCrSales; linked2+2 locks100,explicitqty4>3,nofakediscount;oneSaveUIrefusal/allfields/zeronewcreditGL. Conclusivecorrection1+1+1→rows100each/footer300;onecredit300 DrReturnsCrAR/source0/noStockCOGS. Printcapabilityseparatelydispositioned;requiredprintnotinvented.",
+      "evidence": [
+        "source",
+        "invalidRefusal",
+        "fields",
+        "locks",
+        "validPreview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "printDisposition",
+        "stockUnchanged"
+      ],
+      "uxRefs": [
+        "UXW-011"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-DISCOUNT",
+      "title": "Fresh discounted draft256.50 adjacency",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "NewDigital3x100,line10%,header5%,VATfalse,d21/delivery22/due28,notes.",
+      "expected": "Draftreopen/searchrerender retainsline-net270/header13.50/256.50/allfields;0GLuntilexplicitPostonceDrARCrSales256.50. Onefullcredit256.50 DrReturnsCrAR/source0; originalsourceqtyanddiscountretained,noStockCOGS.",
+      "evidence": [
+        "draft",
+        "retention",
+        "post",
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "stockUnchanged"
+      ],
+      "uxRefs": [
+        "UXW-006",
+        "UXW-011"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-TAX",
+      "title": "HistoricalVAT302.67 after registrationoff",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "VerifiedDigitalStandard;temporarilyVATregisteredtrue18/reload;explicitTaxInvoice;fresh3x100,line10/header5.",
+      "expected": "Post302.67=supply256.50+VAT46.17. DisableVATfalse/reloadBEFOREreturn; preview302.67,onefullcreditDrReturns256.50DrVAT46.17CrAR302.67/source0;Viewvalueshistorical/noStock. Restoreplannedfalse;printseparatecapability. No legaleligibilityapproval.",
+      "evidence": [
+        "taxClass",
+        "source",
+        "settingsReload",
+        "preview",
+        "credit",
+        "journal",
+        "sourceBalance",
+        "printDisposition"
+      ],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-CREDIT-PRINT",
+      "title": "Explicit credit-print capability and semantics",
+      "dependsOn": [
+        "M20-SALES-SPLIT",
+        "M20-TAX"
+      ],
+      "precondition": "Own new SALES-SPLIT and TAX credits accepted; supported visible print controls only; no invented routes/query parameters.",
+      "expected": "Require actual credit preview/print representation, correct credit title/kind,source identity,three1x100/net300 forsplit;taxcredit supply256.50+VAT46.17=302.67 undercurrentVATfalse;persisted line/header/source facts agree. Ifcontrolunsupported markthisslotblockedcapability andretainoriginalmissingprintassertions;neitherinvoicefallbacknorViewalonecounts. No financialwrites/nohistoryrepair. Purchasecreditprint branch separatelyrequiresnewA60/120 whenAavailable.",
+      "evidence": [
+        "controls",
+        "creditKind",
+        "splitLines",
+        "historicalVat",
+        "purchasePrintDisposition",
+        "unchangedState"
+      ],
+      "uxRefs": [
+        "UXW-006",
+        "UXW-012"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-F7",
+      "title": "Fresh residual and remaining-prefill adjacency",
+      "dependsOn": [
+        "M20-ACTOR"
+      ],
+      "precondition": "NewDigital7x1/fixedheader.05/VATfalse post6.95;onlyif budgetremainingcoversentireladderplusclose.",
+      "expected": "Sevenqty1credits.99,.99,.99,.99,.99,1,1. EACHownintent/preview/Viewlinegross1/net1/header.01first5then0/journal/sourceqty6..0/balance5.96,4.97,3.98,2.99,2,1,0 before next. Sum6.95/header.05 conserved. Prefillremaining mustnotreplace originalsourceqty7 prorationfacts. Anymismatchstopsdependentladderonly;no legacy101c/104ccertification.",
+      "evidence": [
+        "source",
+        "sevenSubmissionCheckpoints",
+        "sevenPreviews",
+        "sevenBreakdowns",
+        "sevenJournals",
+        "sevenRemaining",
+        "conservation"
+      ],
+      "uxRefs": [
+        "UXW-012"
+      ],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run"
+    },
+    {
+      "id": "M20-LATE",
+      "title": "Controlled late source-response race",
+      "dependsOn": [],
+      "precondition": "Reviewedisolatedenvironmentstillunavailableunlessseparateexactbindingprepared.",
+      "expected": "BLOCKED infrastructurebydefault;preserveexpectation:LateA cannotoverwrite selectedB. No sharedstagingfaultinjection/downgrade/fabricatedprestate orfreshladderreplacement. Ownerengineering+QAinfrastructurepreparesauthenticcompiledapp/auth/DB;actualbackuprestoreLAST.",
+      "evidence": [
+        "environment",
+        "preservedExpectation",
+        "ownerNext"
+      ],
+      "uxRefs": [],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M20-U7",
+      "title": "Authentic old-version101c upgrade",
+      "dependsOn": [],
+      "precondition": "Reviewedisolatedenvironmentstillunavailableunlessseparateexactbindingprepared.",
+      "expected": "BLOCKED infrastructurebydefault;preserveexpectation:Original6credits.99/oneunit1.01 mustfinish1.01 withvalidrepresentation. No sharedstagingfaultinjection/downgrade/fabricatedprestate orfreshladderreplacement. Ownerengineering+QAinfrastructurepreparesauthenticcompiledapp/auth/DB;actualbackuprestoreLAST.",
+      "evidence": [
+        "environment",
+        "preservedExpectation",
+        "ownerNext"
+      ],
+      "uxRefs": [],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M20-U10",
+      "title": "Authentic old-version104c upgrade",
+      "dependsOn": [],
+      "precondition": "Reviewedisolatedenvironmentstillunavailableunlessseparateexactbindingprepared.",
+      "expected": "BLOCKED infrastructurebydefault;preserveexpectation:Original9credits.99/oneunit1.04 mustfinish1.04 withvalidrepresentation. No sharedstagingfaultinjection/downgrade/fabricatedprestate orfreshladderreplacement. Ownerengineering+QAinfrastructurepreparesauthenticcompiledapp/auth/DB;actualbackuprestoreLAST.",
+      "evidence": [
+        "environment",
+        "preservedExpectation",
+        "ownerNext"
+      ],
+      "uxRefs": [],
+      "lane": "isolated-unavailable",
+      "readiness": "blocked-environment-not-prepared"
+    },
+    {
+      "id": "M20-END",
+      "title": "Restore, actual reconciliation and publish",
+      "dependsOn": [],
+      "precondition": "Atclosingreserveorqueuecompletion/genuineblocker; inspecteveryintent first.",
+      "expected": "RestoreALLactualopeningsales/purchase/inventorymapsandactualviewport/save/reloadequal. Reconcileactualpostings:notallpassforecastwhenblocked. AllpassnetAPexpense+105;A180-60-120=0inventoryAP,B95+SUP10retained;allDigitalpairsnet0.19journals/2197.24turnoverifALLfinancialbranchespass. AgainstM19anchor137/15070.87 gives156/17268.11;AP1290/profit629.50/AR1306.21/Inv660/stock780/assets1966.21. Otherfixtureusesactualopening+sameactualdeltas. Retainold0032/QT0004/newfailures;noreset/payment/writeoff/deploy. Publishsanitizedchecks/run/handoff/currentpointer,clockcharged/paused/wall andunrunbudgetscope;unknownstoMedium.",
+      "evidence": [
+        "actualDeltas",
+        "journal",
+        "subledgers",
+        "stock",
+        "mapsReload",
+        "viewport",
+        "intentReconciliation",
+        "clockReport",
+        "endStamp",
+        "publication"
+      ],
+      "uxRefs": [],
+      "lane": "staging-browser",
+      "readiness": "planned-not-run",
+      "recovery": true
+    }
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "run": "RUN-20261022-light05-results",
+  "date": "2026-10-22",
+  "productSha": "de45536bc47ead3e20f401ecd5fe144bfdf7d52c",
+  "liveStart": "v2.5.20 · de45536",
+  "liveEnd": "v2.5.20 · de45536",
+  "qaExecutionSha": "a6379c2e4c835dc710e324fca342f0bba9decd9e",
+  "queue": "queues/MISSION-v2520-LIGHT-05.json",
+  "ux": {
+    "version": "1.1.0",
+    "sha256": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b"
+  },
+  "counts": {
+    "passed": 9,
+    "failed": 2,
+    "blocked": 16,
+    "inconclusive": 3,
+    "not-run": 0
+  },
+  "cases": [
+    {
+      "id": "M20-GATE",
+      "title": "Exact post-fix candidate and clock",
+      "status": "passed",
+      "actual": "Pinned published queue byte-equal; full reviewed de45536bc47ead3e20f401ecd5fe144bfdf7d52c and live v2.5.20 · de45536; new generic queue and100/15clock. Fresh login Remember off verified. Correction: login landed Simple Entry, not dashboard as one checkpoint phrase said.",
+      "evidence": {
+        "candidate": "Reviewed fullSHA + live start/end sidebar",
+        "qaRevision": "a6379c2e4c835dc710e324fca342f0bba9decd9e; queue byte-equal",
+        "operatorState": "Generic new private state initialized; per-submission intents/readbacks used",
+        "clock": "100/15 conservative clock; final close unavailable after environment disconnect"
+      }
+    },
+    {
+      "id": "M20-ACTOR",
+      "title": "Fresh legitimate writer and actual openings",
+      "status": "blocked",
+      "actual": "Fresh intended own QA Owner verified Team; sole own company, no access-history changes. Full actual opening maps captured and planned required-ref/stock-block transitions saved/reloaded. Inventory writer unavailable; independent sales/service scope verified.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-ACCESS",
+      "title": "Denied product create/edit and quick-create scope",
+      "status": "inconclusive",
+      "actual": "New/edit product view-only with native disabled fields/noSave/no exception. Two rich-text nodes still contenteditable=true under disabled fieldset; behavior not attempted. Manual quote line offers enabled Save-as-product; not pressed. POS unavailable. No server bypass/digest attribution.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-HISTORY",
+      "title": "Preserved records read-only",
+      "status": "passed",
+      "actual": "Read-only oldINV0032open300,QT0004draft0,oldquickSKU0/cost10/sell0. Prior0037–0040 View balances0. No historical Save/Post/repair.",
+      "evidence": {
+        "readback": "Old quote/product/invoice actual View and final AR/product/quote reads",
+        "noWrites": "No historical Save/Post/archive/delete/payment/credit"
+      }
+    },
+    {
+      "id": "M20-MASTER",
+      "title": "Fresh authorized physical master create/edit",
+      "status": "blocked",
+      "actual": "No qualified Inventory writer; New view-only/noSave. No new physical SKU or quick-create workaround.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-A",
+      "title": "Fresh physical source A180",
+      "status": "blocked",
+      "actual": "Fresh physical MASTER absent; no A180 bill or substitute old source.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-B",
+      "title": "Different-vendor discounted service source B95",
+      "status": "passed",
+      "actual": "PUR-20261022-0009 manualService1x100/header5%=95/refM20-B/vendorB distinctA; Dr6800Cr2100 95; open95, stock unchanged.",
+      "evidence": {
+        "source": "PUR0009 View100/5/95/refM20-B/open95",
+        "journal": "138/15165.87;Dr6800Cr210095",
+        "stockUnchanged": "Catalogue10/stock780; no stock/COGS/GRNI lines"
+      }
+    },
+    {
+      "id": "M20-PICK-EMPTY",
+      "title": "Empty picker to A without reload",
+      "status": "blocked",
+      "actual": "Fresh A absent; same-render picker assertions retained, no substitute or submission.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-PICK-SWITCH",
+      "title": "A to B to A same-form replacement",
+      "status": "blocked",
+      "actual": "Fresh A absent; A180→B95→A180 same-form replacement assertions retained. B95 exists, but cannot substitute two independent pages.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-PICK-CLEAR",
+      "title": "Clear source and reselect",
+      "status": "blocked",
+      "actual": "Fresh A absent; clear/reselect assertions retained.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-PARTIAL",
+      "title": "Purchase credit60",
+      "status": "blocked",
+      "actual": "Fresh A absent; expected credit60/source120/stock2 retained.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-DENY",
+      "title": "Remaining2 and over-return refusal",
+      "status": "blocked",
+      "actual": "Fresh A/partial absent; remaining2/original3/over-return refusal expectations retained.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-SPLIT",
+      "title": "Remaining purchase1+1 closes120",
+      "status": "blocked",
+      "actual": "Fresh A absent; expected two1x60/credit120/source0 retained.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-ZERO",
+      "title": "Exhausted A and B unchanged",
+      "status": "blocked",
+      "actual": "Fresh A absent; exhausted0/B95 unchanged assertions retained.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-QUOTE-LINE",
+      "title": "LINE150% client refusal then quote10",
+      "status": "inconclusive",
+      "actual": "Digital search3matches/down-up Enter added once. LINE150 Save left all16fields equal/noquote/noGL; exact transient toast missed. First datefill reverted before submit to22Oct/21Nov, an operator fixture error preserved; no correctionquote submitted. Later separate keyboard-commit path verified.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-QUOTE-HEADER",
+      "title": "HEADER150% refusal then separate quote10",
+      "status": "passed",
+      "actual": "Exact HEADER150 client refusal captured; all16fields retained, no clampedzeroquote/GL. Correctonlyheader0 produced QT-20261021-0005 draft10 with21Oct/28Oct/notes/SKU; View and print correct.",
+      "evidence": {
+        "rawHeader": "percent150/line0/1x10 retained",
+        "refusal": "Percentage header discount cannot exceed 100%. captured immediately",
+        "retention": "16fields exactequal",
+        "correctedQuote": "QT0005 draft10/d21/due28/notes",
+        "noGL": "138journals/15165.87 unchanged"
+      }
+    },
+    {
+      "id": "M20-SUPPLIER",
+      "title": "Immediate server refusal and correction bill10",
+      "status": "passed",
+      "actual": "Blankrequiredref produced exact durable serverbanner, nonativerequired,16fields exactretained/zeroeffects. Sameform correctONLYrefM20-SUP produced PUR-20261021-0010 open10/original21-22-28dates/notes; Dr6800Cr210010.",
+      "evidence": {
+        "beforeFields": "16fields/ownvendor/manualService1x10/6800/d21/delivery22/due28/Net30/notes",
+        "immediateFeedback": "Supplier invoice number is required (Purchase settings). durable rolealert",
+        "serverLayer": "No native required; specific returnedbanner/noacceptedbill",
+        "retainedFields": "16 exactequal",
+        "correctedBill": "PUR0010/refM20-SUP/open10/datesnotes",
+        "journal": "139/15175.87;Dr6800Cr210010",
+        "zeroRefusalEffects": "No newbill/journal until correction"
+      }
+    },
+    {
+      "id": "M20-DIALOG",
+      "title": "ConfirmDialog focus/escape/cancel",
+      "status": "failed",
+      "actual": "Detail Cancel focus, forward/backward wrap, Escape/Cancel and triggerreturn pass. Purchase LIST ownPUR0010 Escape closes but focus is BODY on desktop andactual390x844. No Archive/Delete confirmed. Busy/outside/reader branches unexecuted.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-HELP",
+      "title": "320/390 help and menu containment",
+      "status": "failed",
+      "actual": "Invoicehelp390/layout375 x27/w340/right367 fits. Invoice+SalesReturnhelp320/layout305 x8/w304/right312 exceeds availablewidth7px. Screenshots visually confirm rightedge clipping; textloss unproven. Hover/Escape/focus and first/last invoice menus pass; desktop and bothviewport resets1920x855 verified; full edge matrix partial.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-UNLINKED",
+      "title": "Eight consumer pricing/date rerender matrix",
+      "status": "blocked",
+      "actual": "Eight-consumer pricing/date/raw-header matrix needs fresh authorized MASTER; no old-SKU substitution. Independent quote/service results do not replace it.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-SALES-SPLIT",
+      "title": "Fresh exact3x100 invalid then1+1+1 credit300",
+      "status": "passed",
+      "actual": "FreshINV0041 3x100=300. Invalid2+2 sourceprices100readonly explicitqty4>3/clienttoast/18fieldsretained/zeroeffects. Correct111→SR0086three100rows/total300/Dr4100Cr1300/source0/noStockCOGS. Creditprint semantics verified separately.",
+      "evidence": {
+        "source": "INV0041/3x100=300/Dr1300Cr4000",
+        "invalidRefusal": "This return exceeds the remaining quantity on the original invoice.",
+        "fields": "18 exactretained",
+        "locks": "Three sourceprices100readonly",
+        "validPreview": "100+100+100=300",
+        "credit": "SR0086/Viewthree1x100",
+        "journal": "141/15775.87;Dr4100Cr1300300",
+        "sourceBalance": "INV0041zero",
+        "printDisposition": "CREDIT NOTE/sourceINV0041/three100lines verified",
+        "stockUnchanged": "Digital pair; noInventoryCOGS lines"
+      }
+    },
+    {
+      "id": "M20-DISCOUNT",
+      "title": "Fresh discounted draft256.50 adjacency",
+      "status": "passed",
+      "actual": "INV0042draft256.50 retained line-net270/header13.50,dates21/22/28/notes/SKU on reopen/searchrerender;0GLuntilexplicitPost. FullSR0087 credit256.50/Dr4100Cr1300/source0; print270/13.50/256.50, noStockCOGS.",
+      "evidence": {
+        "draft": "INV0042draft256.50/noGL",
+        "retention": "17fields/reopensearchrerender exactequal/datesnotesSKU",
+        "post": "142/16032.37;Dr1300Cr4000256.50",
+        "preview": "270−13.50=256.50",
+        "credit": "SR0087 Viewgross300/line30/net270/header13.50",
+        "journal": "143/16288.87;Dr4100Cr1300256.50",
+        "sourceBalance": "INV0042zero",
+        "stockUnchanged": "NoInventoryCOGS lines"
+      }
+    },
+    {
+      "id": "M20-TAX",
+      "title": "HistoricalVAT302.67 after registrationoff",
+      "status": "passed",
+      "actual": "Existing Digital/Standard verified. VATtrue18 sourceINV0043/26OCT_01/9=256.50+46.17=302.67. VATfalse/fullopeningSalesmap restored BEFOREreturn;SR0088 preview/View/print302.67/VAT46.17;Dr4100256.50Dr220046.17Cr1300302.67/source0.",
+      "evidence": {
+        "taxClass": "StoredDigital/Standard read-onlyEdit",
+        "source": "INV0043/26OCT_01/9/302.67",
+        "settingsReload": "VATonthenfullopeningmapVAToffBEFOREcredit",
+        "preview": "302.67underVATfalse",
+        "credit": "SR0088 ViewVAT46.17/total302.67",
+        "journal": "145/16894.21;Dr4100256.50Dr220046.17Cr1300302.67",
+        "sourceBalance": "INV0043zero",
+        "printDisposition": "CREDIT NOTE/sourceINV0043/270−13.50+46.17"
+      }
+    },
+    {
+      "id": "M20-CREDIT-PRINT",
+      "title": "Explicit credit-print capability and semantics",
+      "status": "blocked",
+      "actual": "Bounded sales portions passed: SR0086 CREDIT NOTE/sourceINV0041/three1x100=300;SR0088 CREDIT NOTE/sourceINV0043/270−13.50+46.17=302.67 underVATfalse. Quote5 andinvoice42 print adjacency passed. Required purchase60/120print unavailable with A; whole slot remains blocked. In-app preview only, no nativeprinter/PDF certification.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-F7",
+      "title": "Fresh residual and remaining-prefill adjacency",
+      "status": "passed",
+      "actual": "INV0044 7x1/fixedheader.05=6.95; SR0089..0095 credit.99×5,1,1, individually previewed/View/journal/source checked. Header.01×5 then0,0; balances5.96,4.97,3.98,2.99,2,1,0; remainingprefill7→6→5→4→3→2→1→0; originalsourceqty7 unchanged. Fresh only.",
+      "evidence": {
+        "source": "INV0044/7x1/fixedheader.05/6.95",
+        "sevenSubmissionCheckpoints": "Unique intents/readbacks credit1..7; private stepfiles1..7",
+        "sevenPreviews": ".99×5,1,1",
+        "sevenBreakdowns": "Viewgross/net1,lineDiscount0,header.01first5/0last2",
+        "sevenJournals": "SR0089..0095 Dr4100Cr1300 each;147..153",
+        "sevenRemaining": "Sourcebalances5.96,4.97,3.98,2.99,2,1,0;freshprefills6..0",
+        "conservation": "Credits6.95/header.05/qty7; originalqty7/source0"
+      }
+    },
+    {
+      "id": "M20-LATE",
+      "title": "Controlled late source-response race",
+      "status": "blocked",
+      "actual": "Reviewed isolated late-response fixture unavailable; LateA must not overwrite selectedB preserved. No shared-staging fault injection.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-U7",
+      "title": "Authentic old-version101c upgrade",
+      "status": "blocked",
+      "actual": "Authentic old-version6×.99/remaining1.01 upgrade fixture unavailable. Fresh ladder cannot certify it; no downgrade/fakeprestate.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-U10",
+      "title": "Authentic old-version104c upgrade",
+      "status": "blocked",
+      "actual": "Authentic old-version9×.99/remaining1.04 upgrade fixture unavailable. Fresh ladder cannot certify it; no downgrade/fakeprestate.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-AUTH",
+      "title": "Real-auth product and quick-create server deny/isolation",
+      "status": "blocked",
+      "actual": "Isolated compiled app/real roles/realforeignrecords/restricted runtimeDB unavailable. Full/quick-create allow/deny/isolation expectations retained; no grants or sharedstaging probes.",
+      "evidence": {},
+      "nextAction": "Medium reviews missing/failing scope; preserve queue expectations and independent evidence. See Medium handoff."
+    },
+    {
+      "id": "M20-END",
+      "title": "Restore, actual reconciliation and publish",
+      "status": "inconclusive",
+      "actual": "ERP restoration and reconciliation verified: all3fullmaps exactopening, bothviewports1920x855;153journals/debits=credits16908.11;AR1306.21/AP1290/stock780/Inv660/VAT46.71/COGS420/GRNIcash0/profit629.50/assets1966.21. Local environment disconnected before inventoryrestore readback/terminal ledger/clockclose could save. Supplemental observed readback is accepted; original local END remains running. No uncertain financial outcome. Publication records this limitation without fabricating a closedclock.",
+      "evidence": {},
+      "nextAction": "On environment reconnection append observed restoration readback, preserve original END and close clock honestly without retroactive pause; no new business/replay. See Medium handoff."
+    }
+  ],
+  "publicationBoundary": "Sanitized supplemental execution report; original private generic state preserved. END disposition is supplemental inconclusive after environment disconnect, not a fabricated local terminal write.",
+  "checkpoint": {
+    "genericInitialized": true,
+    "businessAndSettingsSubmissionsIntentReadback": true,
+    "loginIntent": true,
+    "logoutBeforeLoginIntent": true,
+    "inventoryRestoreReadbackCommandSaved": false,
+    "inventoryRestoreActualPersistedReadback": "accepted: reloaded inventory last/allow and all full maps exactopening",
+    "localEndStatus": "running",
+    "unresolvedBusinessOutcomes": [],
+    "unresolvedLocalLedgerWrites": [
+      "M20-END-inventory-restore-1"
+    ],
+    "clockClosed": false
+  },
+  "budget": {
+    "totalMinutes": 100,
+    "closingReserveMinutes": 15,
+    "lastSuccessfulClockCheckChargedMs": 3439010,
+    "lastSuccessfulClockCheckMinutes": 57.316833333333335,
+    "explicitPausesRecorded": 0,
+    "finalChargedMinutes": null,
+    "finalWallMinutes": null,
+    "compliance": "unverified after environment disconnected; all unpaused gaps remain chargeable; do not subtract inferred idle or backdate pause",
+    "modelSetting": "Mission designated Light; actual UI model/setting not independently observable",
+    "credits": "unavailable"
+  },
+  "reconciliation": {
+    "openingJournals": 137,
+    "closingJournals": 153,
+    "openingTurnover": 15070.87,
+    "closingDebits": 16908.11,
+    "closingCredits": 16908.11,
+    "newEntries": 16,
+    "newTurnover": 1837.24,
+    "openingAR": 1306.21,
+    "closingAR": 1306.21,
+    "openingAP": 1185,
+    "closingAP": 1290,
+    "openingExpense6800": 105,
+    "closingExpense6800": 210,
+    "openingProfit": 734.5,
+    "closingProfit": 629.5,
+    "inventoryGL": 660,
+    "stockValue": 780,
+    "inheritedStockGLGap": 120,
+    "outputVAT": 46.71,
+    "inputVAT": 0,
+    "COGS": 420,
+    "GRNI": 0,
+    "cashBankCard": 0,
+    "assets": 1966.21,
+    "liabilitiesAndEquity": 1966.21,
+    "salesAndCreditPairsNet": 0,
+    "newPhysicalProduct": false,
+    "settingsReloadEqual": {
+      "purchase": true,
+      "inventory": true,
+      "sales": true
+    },
+    "viewport": "Both actual tabs1920x855"
+  },
+  "fixtures": {
+    "newBills": [
+      {
+        "number": "PUR-20261022-0009",
+        "open": 95,
+        "reference": "M20-B"
+      },
+      {
+        "number": "PUR-20261021-0010",
+        "open": 10,
+        "reference": "M20-SUP"
+      }
+    ],
+    "newQuote": {
+      "number": "QT-20261021-0005",
+      "total": 10,
+      "status": "draft"
+    },
+    "newSales": [
+      {
+        "number": "INV-20261022-0041",
+        "total": 300,
+        "credits": [
+          "SR-20261022-0086"
+        ],
+        "balance": 0
+      },
+      {
+        "number": "INV-20261021-0042",
+        "total": 256.5,
+        "credits": [
+          "SR-20261022-0087"
+        ],
+        "balance": 0
+      },
+      {
+        "number": "INV-20261022-0043",
+        "taxNumber": "26OCT_01/9",
+        "total": 302.67,
+        "credits": [
+          "SR-20261022-0088"
+        ],
+        "balance": 0
+      },
+      {
+        "number": "INV-20261022-0044",
+        "total": 6.95,
+        "credits": [
+          "SR-20261022-0089",
+          "SR-20261022-0090",
+          "SR-20261022-0091",
+          "SR-20261022-0092",
+          "SR-20261022-0093",
+          "SR-20261022-0094",
+          "SR-20261022-0095"
+        ],
+        "balance": 0
+      }
+    ],
+    "preserved": [
+      "INV-20261021-0032 open300",
+      "QT-20261021-0004 draft0",
+      "M19quickSKU qty0/cost10/sell0",
+      "All prior credits and consumed sources"
+    ]
+  },
+  "f7": [
+    {
+      "step": 1,
+      "credit": "SR-20261022-0089",
+      "total": 0.99,
+      "header": 0.01,
+      "sourceBalance": 5.96,
+      "remaining": 6,
+      "journalEntryCount": 147,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0089LKR 0.99-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0089-LKR 0.99"
+      ]
+    },
+    {
+      "step": 2,
+      "credit": "SR-20261022-0090",
+      "total": 0.99,
+      "header": 0.01,
+      "sourceBalance": 4.97,
+      "remaining": 5,
+      "journalEntryCount": 148,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0090LKR 0.99-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0090-LKR 0.99"
+      ]
+    },
+    {
+      "step": 3,
+      "credit": "SR-20261022-0091",
+      "total": 0.99,
+      "header": 0.01,
+      "sourceBalance": 3.98,
+      "remaining": 4,
+      "journalEntryCount": 149,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0091LKR 0.99-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0091-LKR 0.99"
+      ]
+    },
+    {
+      "step": 4,
+      "credit": "SR-20261022-0092",
+      "total": 0.99,
+      "header": 0.01,
+      "sourceBalance": 2.99,
+      "remaining": 3,
+      "journalEntryCount": 150,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0092LKR 0.99-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0092-LKR 0.99"
+      ]
+    },
+    {
+      "step": 5,
+      "credit": "SR-20261022-0093",
+      "total": 0.99,
+      "header": 0.01,
+      "sourceBalance": 2,
+      "remaining": 2,
+      "journalEntryCount": 151,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0093LKR 0.99-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0093-LKR 0.99"
+      ]
+    },
+    {
+      "step": 6,
+      "credit": "SR-20261022-0094",
+      "total": 1,
+      "header": 0,
+      "sourceBalance": 1,
+      "remaining": 1,
+      "journalEntryCount": 152,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0094LKR 1-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0094-LKR 1"
+      ]
+    },
+    {
+      "step": 7,
+      "credit": "SR-20261022-0095",
+      "total": 1,
+      "header": 0,
+      "sourceBalance": 0,
+      "remaining": 0,
+      "journalEntryCount": 153,
+      "journalLines": [
+        "4100 - Sales ReturnsdebitSR-20261022-0095LKR 1-",
+        "1300 - Accounts ReceivablecreditSR-20261022-0095-LKR 1"
+      ]
+    }
+  ],
+  "releaseAcceptance": "not-established",
+  "canonicalCaseAcceptance": "not-established",
+  "corrections": [
+    "GATE checkpoint phrase dashboard corrected to actual Simple Entry landing; fresh actor independently verified.",
+    "LINE date preflight failed to preserve intended21/28; actual22Oct/21Nov was captured after submission. Kept inconclusive; later keyboard up/down commit verified on independent HEADER/SUP/DISCOUNT fixtures.",
+    "LINE immediate toast capture missed; no replay; noquote/journal effects independently inspected.",
+    "Journal helper initially showed other expanded rows; exact intended entries were explicitly opened and verified before subsequent financial submissions. No wrong journal treated as final money evidence."
+  ],
+  "ruleLibraryPins": {
+    "qaSha": "a6379c2e4c835dc710e324fca342f0bba9decd9e",
+    "rulesPath": "rules/rulebook.json",
+    "rulesVersion": "1.0.0",
+    "libraryPath": "workflows/library.json",
+    "libraryVersion": "1.5.0",
+    "hashEvidence": "Actual SHA256 values computed into private fingerprint at initialization; preserved there. Cannot reread private file after environment disconnection; no replacement hash invented."
+  }
+}
