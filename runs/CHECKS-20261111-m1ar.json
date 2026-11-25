@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "executionQa": "642942b0630765864fde1af1cfc725ae85dadb04",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "actualFinancial": {
+    "submissions": 13,
+    "journals": 13,
+    "debitCents": 284000,
+    "creditCents": 284000
+  },
+  "combined": {
+    "journals": 17,
+    "debitCents": 418000,
+    "creditCents": 418000,
+    "stockMoves": 6,
+    "stockQty": 3,
+    "stockValueCents": 18000,
+    "cashCents": 15000,
+    "bankCents": 29000,
+    "cardCents": 0,
+    "arCents": 0,
+    "apCents": 0,
+    "incomeCents": 12000,
+    "assetsCents": 62000,
+    "equityCents": 50000
+  },
+  "focusedHostChecks": {
+    "passed": 46,
+    "failed": 0
+  },
+  "metadata": "passed",
+  "productDefectsProved": 0,
+  "missingLayers": [
+    "physical standalone receipt/remittance previews",
+    "service standalone receipt/remittance previews",
+    "full amount/cent feedback matrix"
+  ],
+  "releaseAcceptance": "not-established",
+  "counts": {
+    "passed": 34,
+    "inconclusive": 3,
+    "failed": 0,
+    "blocked": 0,
+    "pending": 0,
+    "unresolved": 0
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1591491,
+    "pausedMs": 0,
+    "initialPublication": "a479700",
+    "tail": "metadata-only"
+  }
+}

@@ -1,0 +1,700 @@
+{
+  "productSha": "3d6119ea2b4437ae50b06eaefb54c95063257dbf",
+  "productTree": "78973f5a9298ce615f5c8cda17f77b2de714bfa2",
+  "externalMerge": "dae17abcba12d6810c8f8c3fe4a74fb28280a026",
+  "testedQAHead": "0df6f6f360467384f55fa6ec3511a6e17749076e",
+  "fingerprint": {
+    "productSha": "3d6119ea2b4437ae50b06eaefb54c95063257dbf",
+    "productStamp": "v2.5.27 · 3d6119e",
+    "qaSha": "315eaddd4b940d20b4f69c9e3f34f5beab0ce7b7",
+    "qaDirty": false,
+    "node": "v22.23.4",
+    "qaContentHash": "3b648c9c51aafffbce457f263b66ebc037723f7a53b77473000cf19a08d3c5cc",
+    "preparationHash": "1bdf6cc30a9721aa26ff41eddfbc81a431426c003c25129960dfd7a8964acdf8",
+    "fixtureVersion": "runtime-v1",
+    "environment": "ephemeral-loopback-PostgreSQL16"
+  },
+  "schema": {
+    "postgresVersionNumber": 160015,
+    "migrationsApplied": 45,
+    "migrationsExpected": 45
+  },
+  "lanes": [
+    {
+      "lane": "postgres-rls",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "RT-001",
+          "status": "passed"
+        },
+        {
+          "id": "RT-002",
+          "status": "passed"
+        },
+        {
+          "id": "RT-003",
+          "status": "passed"
+        },
+        {
+          "id": "RT-004",
+          "status": "passed"
+        },
+        {
+          "id": "RT-012",
+          "status": "passed"
+        },
+        {
+          "id": "RT-013",
+          "status": "passed"
+        },
+        {
+          "id": "RT-014",
+          "status": "passed"
+        },
+        {
+          "id": "RT-015",
+          "status": "passed"
+        },
+        {
+          "id": "RT-016",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "commercial-lifecycle",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "B-101",
+          "status": "passed"
+        },
+        {
+          "id": "B-102",
+          "status": "passed"
+        },
+        {
+          "id": "B-103",
+          "status": "passed"
+        },
+        {
+          "id": "E-115",
+          "status": "passed"
+        },
+        {
+          "id": "E-116",
+          "status": "passed"
+        },
+        {
+          "id": "E-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-008",
+          "status": "passed"
+        },
+        {
+          "id": "RT-009",
+          "status": "passed"
+        },
+        {
+          "id": "RT-010",
+          "status": "passed"
+        },
+        {
+          "id": "RT-011",
+          "status": "passed"
+        },
+        {
+          "id": "B-104",
+          "status": "passed"
+        },
+        {
+          "id": "RT-060",
+          "status": "passed"
+        },
+        {
+          "id": "RT-061",
+          "status": "passed"
+        },
+        {
+          "id": "RT-062",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "reversal-concurrency",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "RT-005",
+          "status": "passed"
+        },
+        {
+          "id": "RT-006",
+          "status": "passed"
+        },
+        {
+          "id": "RT-007",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "physical-lifecycle",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "C-101",
+          "status": "passed"
+        },
+        {
+          "id": "C-102",
+          "status": "passed"
+        },
+        {
+          "id": "C-103",
+          "status": "passed"
+        },
+        {
+          "id": "C-104",
+          "status": "passed"
+        },
+        {
+          "id": "C-105",
+          "status": "passed"
+        },
+        {
+          "id": "C-106",
+          "status": "passed"
+        },
+        {
+          "id": "C-107",
+          "status": "passed"
+        },
+        {
+          "id": "C-115",
+          "status": "passed"
+        },
+        {
+          "id": "C-116",
+          "status": "passed"
+        },
+        {
+          "id": "RT-017",
+          "status": "passed"
+        },
+        {
+          "id": "RT-018",
+          "status": "passed"
+        },
+        {
+          "id": "RT-019",
+          "status": "passed"
+        },
+        {
+          "id": "RT-020",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "physical-nonowner",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "C-201",
+          "status": "passed"
+        },
+        {
+          "id": "C-202",
+          "status": "passed"
+        },
+        {
+          "id": "C-203",
+          "status": "passed"
+        },
+        {
+          "id": "C-204",
+          "status": "passed"
+        },
+        {
+          "id": "C-205",
+          "status": "passed"
+        },
+        {
+          "id": "C-206",
+          "status": "passed"
+        },
+        {
+          "id": "C-207",
+          "status": "passed"
+        },
+        {
+          "id": "C-215",
+          "status": "passed"
+        },
+        {
+          "id": "C-216",
+          "status": "passed"
+        },
+        {
+          "id": "RT-117",
+          "status": "passed"
+        },
+        {
+          "id": "RT-118",
+          "status": "passed"
+        },
+        {
+          "id": "RT-119",
+          "status": "passed"
+        },
+        {
+          "id": "RT-120",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "commercial-deep",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "B-106",
+          "status": "passed"
+        },
+        {
+          "id": "B-107",
+          "status": "passed"
+        },
+        {
+          "id": "B-108",
+          "status": "passed"
+        },
+        {
+          "id": "B-111",
+          "status": "passed"
+        },
+        {
+          "id": "B-112",
+          "status": "passed"
+        },
+        {
+          "id": "B-113",
+          "status": "passed"
+        },
+        {
+          "id": "E-108",
+          "status": "passed"
+        },
+        {
+          "id": "E-113",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "archive-persistence",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "S-0774",
+          "status": "passed"
+        },
+        {
+          "id": "S-0775",
+          "status": "passed"
+        },
+        {
+          "id": "S-0776",
+          "status": "passed"
+        },
+        {
+          "id": "S-0778",
+          "status": "passed"
+        },
+        {
+          "id": "S-0780",
+          "status": "passed"
+        },
+        {
+          "id": "S-0781",
+          "status": "passed"
+        },
+        {
+          "id": "S-0782",
+          "status": "passed"
+        },
+        {
+          "id": "S-0783",
+          "status": "passed"
+        },
+        {
+          "id": "S-0784",
+          "status": "passed"
+        },
+        {
+          "id": "S-0785",
+          "status": "passed"
+        },
+        {
+          "id": "S-0787",
+          "status": "passed"
+        },
+        {
+          "id": "S-0788",
+          "status": "passed"
+        },
+        {
+          "id": "S-0789",
+          "status": "passed"
+        },
+        {
+          "id": "S-0793",
+          "status": "passed"
+        },
+        {
+          "id": "RT-027",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "rental-lifecycle",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "D-101",
+          "status": "passed"
+        },
+        {
+          "id": "D-102",
+          "status": "passed"
+        },
+        {
+          "id": "D-103",
+          "status": "passed"
+        },
+        {
+          "id": "D-104",
+          "status": "passed"
+        },
+        {
+          "id": "D-105",
+          "status": "passed"
+        },
+        {
+          "id": "D-109",
+          "status": "passed"
+        },
+        {
+          "id": "D-110",
+          "status": "passed"
+        },
+        {
+          "id": "D-112",
+          "status": "passed"
+        },
+        {
+          "id": "D-117",
+          "status": "passed"
+        },
+        {
+          "id": "D-118",
+          "status": "passed"
+        },
+        {
+          "id": "RT-023",
+          "status": "passed"
+        },
+        {
+          "id": "E-104",
+          "status": "passed"
+        },
+        {
+          "id": "D-113",
+          "status": "passed"
+        },
+        {
+          "id": "D-114",
+          "status": "passed"
+        },
+        {
+          "id": "D-116",
+          "status": "passed"
+        },
+        {
+          "id": "D-119",
+          "status": "passed"
+        },
+        {
+          "id": "D-120",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "stock-transfer",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "C-109",
+          "status": "passed"
+        },
+        {
+          "id": "RT-021",
+          "status": "passed"
+        },
+        {
+          "id": "RT-022",
+          "status": "passed"
+        },
+        {
+          "id": "C-114",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "payment-boundaries",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "RT-024",
+          "status": "passed"
+        },
+        {
+          "id": "B-115",
+          "status": "passed"
+        },
+        {
+          "id": "RT-025",
+          "status": "passed"
+        },
+        {
+          "id": "RT-026",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "inventory-valuation",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "C-111",
+          "status": "passed"
+        },
+        {
+          "id": "RT-032",
+          "status": "passed"
+        },
+        {
+          "id": "RT-028",
+          "status": "passed"
+        },
+        {
+          "id": "RT-030",
+          "status": "passed"
+        },
+        {
+          "id": "RT-031",
+          "status": "passed"
+        },
+        {
+          "id": "RT-029",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "sales-value-boundaries",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "B-114",
+          "status": "passed"
+        },
+        {
+          "id": "RT-040",
+          "status": "passed"
+        },
+        {
+          "id": "RT-033",
+          "status": "passed"
+        },
+        {
+          "id": "RT-034",
+          "status": "passed"
+        },
+        {
+          "id": "RT-035",
+          "status": "passed"
+        },
+        {
+          "id": "RT-036",
+          "status": "passed"
+        },
+        {
+          "id": "RT-037",
+          "status": "passed"
+        },
+        {
+          "id": "RT-038",
+          "status": "passed"
+        },
+        {
+          "id": "B-105",
+          "status": "passed"
+        },
+        {
+          "id": "RT-039",
+          "status": "passed"
+        },
+        {
+          "id": "RT-041",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "role-scope-boundaries",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "B-109",
+          "status": "passed"
+        },
+        {
+          "id": "RT-042",
+          "status": "passed"
+        },
+        {
+          "id": "RT-043",
+          "status": "passed"
+        },
+        {
+          "id": "RT-044",
+          "status": "passed"
+        },
+        {
+          "id": "RT-045",
+          "status": "passed"
+        },
+        {
+          "id": "RT-046",
+          "status": "passed"
+        },
+        {
+          "id": "RT-047",
+          "status": "passed"
+        },
+        {
+          "id": "RT-048",
+          "status": "passed"
+        },
+        {
+          "id": "RT-049",
+          "status": "passed"
+        },
+        {
+          "id": "RT-050",
+          "status": "passed"
+        },
+        {
+          "id": "RT-051",
+          "status": "passed"
+        },
+        {
+          "id": "RT-052",
+          "status": "passed"
+        },
+        {
+          "id": "RT-053",
+          "status": "passed"
+        },
+        {
+          "id": "RT-054",
+          "status": "passed"
+        },
+        {
+          "id": "RT-055",
+          "status": "passed"
+        },
+        {
+          "id": "RT-056",
+          "status": "passed"
+        },
+        {
+          "id": "RT-057",
+          "status": "passed"
+        },
+        {
+          "id": "RT-058",
+          "status": "passed"
+        },
+        {
+          "id": "RT-059",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "lane": "purchase-vat-conversion",
+      "status": "passed",
+      "cases": [
+        {
+          "id": "RT-070",
+          "status": "passed"
+        },
+        {
+          "id": "RT-071",
+          "status": "passed"
+        },
+        {
+          "id": "RT-072",
+          "status": "passed"
+        },
+        {
+          "id": "RT-073",
+          "status": "passed"
+        },
+        {
+          "id": "RT-074",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "postgres": {
+    "passed": 141,
+    "failed": 0,
+    "run": 43197563152
+  },
+  "https": {
+    "passed": 30,
+    "failed": 0,
+    "run": 43197563358
+  },
+  "campaign": {
+    "passed": 315,
+    "failed": 0,
+    "executedGate": "passed",
+    "campaignAcceptance": "not-established",
+    "overallExit": 1,
+    "run": 43197563168
+  },
+  "initialNewCases": {
+    "passed": 3,
+    "failed": 2,
+    "qa": "04d2dde2f883cb019c844fe9f63db0585709714d",
+    "reason": "Assertions required okfalse; product async denial can throw exact defined quantity errors; full no-mutation assertions retained on corrected rerun"
+  },
+  "liveDeploymentVerified": false,
+  "liveWrites": 0,
+  "next": "Owner deployment then live fingerprint/fixture verification and new big Light release",
+  "mergeDeployByAgent": false
+}

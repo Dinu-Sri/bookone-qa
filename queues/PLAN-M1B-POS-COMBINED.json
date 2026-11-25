@@ -1,0 +1,1058 @@
+{
+  "schemaVersion": 1,
+  "id": "PLAN-M1B-POS-COMBINED",
+  "displayName": "Combined VAToffice+VAT/nonVATPOS+remainingM1Acoverage",
+  "executionReady": false,
+  "candidate": "UNBOUND",
+  "proposedProductReviewBaseline": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "status": "planning-only-fixture-print-tax-runtime-gates-open",
+  "budgetProposal": {
+    "totalMinutes": 180,
+    "executionMinutes": 150,
+    "closingReserveMinutes": 30,
+    "preflightMinutes": 15
+  },
+  "dateContract": "UNBOUND; new exactfixedUTCday/due date before release",
+  "cases": [
+    {
+      "id": "COMB-G01",
+      "phase": "Fresh gates",
+      "expected": "Exact published QA and deployed product/version/tree trace; refuse changed candidate",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-G02",
+      "phase": "Fresh gates",
+      "expected": "NEW clock before browser/auth; fixed release UTCday and final5minute rollover guard",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-G03",
+      "phase": "Fresh gates",
+      "expected": "Fresh actual read/click and fivezero-actionrefusal proofs using supported originalguard",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-G04",
+      "phase": "Fresh gates",
+      "expected": "Fresh owner identity/profile/module grants for each legitimate fixture",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-G05",
+      "phase": "Fresh gates",
+      "expected": "Reconcile fullcurrentopening/source/master/tender maps; consumedA/B/original protected",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-G06",
+      "phase": "Fresh gates",
+      "expected": "Verify POS preview/autoprint handling, no physicalprint/deviceconnection, no hiddenAPI",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V01",
+      "phase": "VAT office workflow",
+      "expected": "Owned physicalSKU60/100 andserviceSKU0/40 taxstatusStandard, warehouse, bankfund500 equity reconciled",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V02",
+      "phase": "VAT office workflow",
+      "expected": "PO10x60 net600/gross708; noGL",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V03",
+      "phase": "VAT office workflow",
+      "expected": "GRN10 qty/value600; GRNIoff noGL",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V04",
+      "phase": "VAT office workflow",
+      "expected": "GRNbill708 Drinventory600/inputVAT108 CrAP708; no duplicatestock",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V05",
+      "phase": "VAT office workflow",
+      "expected": "Bank cashpurchase2x60 net120/gross141.60 sourcebound",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V06",
+      "phase": "VAT office workflow",
+      "expected": "Fullsourcebankrefund141.60,stock-2/inputVAT-21.60; sourceexhausted",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V07",
+      "phase": "VAT office workflow",
+      "expected": "Physicalquote6x100 net600/gross708; supported taxprofile conversion",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V08",
+      "phase": "VAT office workflow",
+      "expected": "Quote->order noGL; tax/date/source preserved",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V09",
+      "phase": "VAT office workflow",
+      "expected": "Order->invoice708 andCOGS360 stock-6 exactlyonce",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V10",
+      "phase": "VAT office workflow",
+      "expected": "Cashreceipt295 (net250),sourcebalance413",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V11",
+      "phase": "VAT office workflow",
+      "expected": "Bankreceipt413 (net350),AR0",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V12",
+      "phase": "VAT office workflow",
+      "expected": "Ordinarysupplierreturn2x60 gross141.60,APcredit/inputVAT21.60 reverse; no cashrefund",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V13",
+      "phase": "VAT office workflow",
+      "expected": "Vendorbankpayment566.40 remainingAP0",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V14",
+      "phase": "VAT office workflow",
+      "expected": "Customerreturn1 net100/gross118 cashrefund; reverseVAT18/COGS60 stock+1",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V15",
+      "phase": "VAT office workflow",
+      "expected": "Servicequote3x40 gross141.60 taxprofile explicitly supported",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V16",
+      "phase": "VAT office workflow",
+      "expected": "Servicequote->order, no stock/GL",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V17",
+      "phase": "VAT office workflow",
+      "expected": "Serviceorder->invoice141.60 revenue120/outputVAT21.60",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V18",
+      "phase": "VAT office workflow",
+      "expected": "Cardreceipt47.20 (net40),remaining94.40",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V19",
+      "phase": "VAT office workflow",
+      "expected": "Bankreceipt94.40 (net80),AR0",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V20",
+      "phase": "VAT office workflow",
+      "expected": "Servicepartialreturn1/refund47.20card,outputVAT-7.20",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V21",
+      "phase": "VAT office workflow",
+      "expected": "Serviceremainingreturn2/refund94.40bank,outputVAT-14.40,sourceexhausted",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V22",
+      "phase": "VAT office workflow",
+      "expected": "Deliveredserviceexpensebill80+inputVAT14.40=94.40,nostock",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V23",
+      "phase": "VAT office workflow",
+      "expected": "Servicevendorpayment94.40bank,AP0",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-V24",
+      "phase": "VAT office workflow",
+      "expected": "OfficeVATclosingcash177/bank252.20/card0/stock3value180/inputVAT100.80/outputVAT90/nettaxasset10.80/income120;grossassets710/liabilities90/netassets620",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P01",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "SeparatePOSgoodsSKU60/100 andservice40; openingstock0, noofficeSKU reuse",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P02",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Supportedseparatebankfund1000 andcashfloat50/equity, eachjournalreconciled",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P03",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "AcquirePOSgoods10x60+VAT108=708 andsettlebank708; no duplicateopeningstock",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P04",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Registeractive cash1000/locationmapped; taxinvoice option confirmed; no settings save duringrun",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P05",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Open dedicatedshift float50; prove metadatafloat doesnotdoublepostledgerfunding",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P06",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cashbasket2physical:net200/VAT36/gross236; tender250/change14",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P07",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Capture persistedcashreceipt/taxnumber/stock-2/COGS120, amountsfrompersisteddata",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P08",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Returncashsource1physical/refund118; stock+1/COGS-60/VAT-18",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P09",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Returnremainingcashsource1/refund118,exhausted; originalreceiptunchanged",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P10",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cardbasket3service:net120/VAT21.60/gross141.60; correct1200",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P11",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cardreceipt141.60, no serviceCOGS/stock",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P12",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cardpartialsource1service/refund47.20",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P13",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cardremaining2/refund94.40,exhausted; cardnet0",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P14",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Bankmixedproductbasket1physical+1service:net140/VAT25.20/gross165.20",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P15",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Persistedbankreceipt165.20;stock-1/COGS60; noliquidaccountsubstitution",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P16",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Fullbanksourcebasketrefund165.20; restore1stock/COGS60 andVAT25.20",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P17",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Sale/return lookup sourcecaps/recenttickets; no unlinkedreturns",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P18",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Sourceexhaustion and safeoverqtyfeedback, invalidsubmitonlyisolatedrunner",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P19",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cashinsufficienttender feedback withoutsubmit; valid250/change14 retained",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P20",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Cartclear/cancel beforecommit proveszeropersistedwrites; no replaycompletedtickets",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P21",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Receiptpreviews taxnumber/line/tender/change/return/source/date andoriginalpreservation",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P22",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Customerdisplay only if supported read-only; thermaldeviceanddrawer excludedunlessexplicitlyqualified",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P23",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Zpreview cashin236/out236/float50/expectedcash50; card141.60/refunds141.60;bank165.20/refund165.20",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P24",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Close shiftcount50/variance0 once; safepreviewZreport withoutphysicalprint",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P25",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "Reloadclosedshift/history andrefuseclosedshiftcart atclient withoutinvalidlivewrite",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-P26",
+      "phase": "VAT POS complete lifecycle",
+      "expected": "POSnetrevenue/returns/COGS/VAT/tenders0 afterfullrefunds; retainpurchased10stock600/inputVAT108",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N01",
+      "phase": "Non-VAT POS parity",
+      "expected": "Legitimate separatenonVAT+POSfixture; donotchangecompletedAprofile orforeignB",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N02",
+      "phase": "Non-VAT POS parity",
+      "expected": "OwnSKUstock2@60; supportedbankfund500,purchase120/bankpay120; cash0; reconcileopening",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N03",
+      "phase": "Non-VAT POS parity",
+      "expected": "Ownregister/shift float0 opensonce; no doublefunding",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N04",
+      "phase": "Non-VAT POS parity",
+      "expected": "Cashsale1physical100/refund100source;stockreturns2/value120, noVAT",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N05",
+      "phase": "Non-VAT POS parity",
+      "expected": "Cardservice40/refund40source; no stock/COGS/VAT",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N06",
+      "phase": "Non-VAT POS parity",
+      "expected": "Bankmixedproductbasketphysical100+service40/refund140source; stockreturns2",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N07",
+      "phase": "Non-VAT POS parity",
+      "expected": "Allreceipt/returnpreviews nonVAT, exactsource/date/tender; no realprocessorclaims",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N08",
+      "phase": "Non-VAT POS parity",
+      "expected": "Zcashin100/out100/float0/count0;card40/refund40;bank140/refund140",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N09",
+      "phase": "Non-VAT POS parity",
+      "expected": "Close/reloadshiftvariance0; tickets/sourceexhaustion preserved",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-N10",
+      "phase": "Non-VAT POS parity",
+      "expected": "NonVATPOSnetmovement/income/tax0; bank380/stock120/assets500=equity500",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H01",
+      "phase": "Carry-forward closure",
+      "expected": "Read-only bind actualoldpaymenttransactionIDs throughsupportedlinks; auditallocationUUIDisnotpaymentID",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H02",
+      "phase": "Carry-forward closure",
+      "expected": "Originalphysicalcash250/bank350receipt andvendor480remittance preview; no oldposting",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H03",
+      "phase": "Carry-forward closure",
+      "expected": "Originalservicecard40/bank80receipt andvendor80remittance preview; no oldposting",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H04",
+      "phase": "Carry-forward closure",
+      "expected": "Beforepayingnewunpaidsources testblank/zero/negative/overbalance/cent inputsunsaved; compareexplicitfeedback",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H05",
+      "phase": "Carry-forward closure",
+      "expected": "Centrounding validamountsandtaxline/header totals independentinteger-cents oracle; no silent policyrewrite",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-H06",
+      "phase": "Carry-forward closure",
+      "expected": "ResolvepurchasepreviewINVOICE/Billto andpaymentauditreadability againstintendedcontract; classifyevidencewithoutinventedbug",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C01",
+      "phase": "Reconciliation and publication",
+      "expected": "Allnewsource documents/statuses/allocations/exhaustedcaps/dates currentownedfixtures preserved",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C02",
+      "phase": "Reconciliation and publication",
+      "expected": "Fullperjournal account/side/amount/source/taxindependentcomparison;balancedtotalsaloneinsufficient",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C03",
+      "phase": "Reconciliation and publication",
+      "expected": "Stockledgerquantity/cost/locations; office3/POSVAT10/POSnonVAT2 distinctSKUs",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C04",
+      "phase": "Reconciliation and publication",
+      "expected": "PnL/BS/CF/GL/trial/AR/AP/tax reports reconcile eachfixture andconsolidatedrollforward",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C05",
+      "phase": "Reconciliation and publication",
+      "expected": "Prior-date reports exclude newevents; futuredateduecontractcorrect; neverbackdateconversions",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C06",
+      "phase": "Reconciliation and publication",
+      "expected": "Exactlyall80dispositions; groupedseverity-rankedfindings; continueindependentlaneswhenlocaldependencyfails",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C07",
+      "phase": "Reconciliation and publication",
+      "expected": "Resolveunknownsubmissions read-only; closeallshiftsorrecordexplicitoperatorblock; no retryclaimedactions",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    },
+    {
+      "id": "COMB-C08",
+      "phase": "Reconciliation and publication",
+      "expected": "One sanitizedrun/checks/codinghandoff/launchregisterpublication; closeclockinclinitialpublication; no merge/deploy/launch",
+      "status": "specified-not-run",
+      "precondition": "Not executable until Medium publishes qualified exact-bound successor; actual dependencies/source/button/tender/date must be bound.",
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ]
+    }
+  ]
+}
