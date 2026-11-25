@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "WF-DIG-001",
+  "revision": 1,
+  "title": "Digital billing and collection with explicit fulfilment boundary",
+  "profileIds": [
+    "BP-02"
+  ],
+  "status": "draft",
+  "author": "QA-agent",
+  "review": {
+    "qaReviewer": null,
+    "businessOwner": null,
+    "record": null
+  },
+  "risk": "P1",
+  "scope": "Specified golden journey; capability/settings and expert applicability must be confirmed before acceptance.",
+  "legacyTaskRefs": [
+    "B-101",
+    "B-102",
+    "B-103",
+    "B-105",
+    "B-110",
+    "B-117"
+  ],
+  "ruleRefs": [
+    {
+      "id": "BR-ACC-01",
+      "revision": 1
+    },
+    {
+      "id": "BR-ACC-02",
+      "revision": 1
+    },
+    {
+      "id": "BR-STK-03",
+      "revision": 1
+    },
+    {
+      "id": "BR-DAT-01",
+      "revision": 1
+    },
+    {
+      "id": "RB-SAL-01",
+      "revision": 1
+    },
+    {
+      "id": "RB-FILE-01",
+      "revision": 1
+    }
+  ],
+  "featureAreas": [
+    "sales",
+    "digital",
+    "payment",
+    "files",
+    "entitlement",
+    "reports"
+  ],
+  "dependsOn": [],
+  "fixture": {
+    "currency": "LKR",
+    "moneyUnit": "integer cents",
+    "businessDate": "2026-10-16",
+    "timezone": "Asia/Colombo",
+    "taxProfile": "Tax-disabled synthetic arithmetic fixture;no statutory applicability claimed.",
+    "settings": {
+      "classification": "digital",
+      "physicalCost": "none",
+      "delivery": "capability must be inventoried;billing success is not entitlement success"
+    },
+    "opening": {
+      "cashCents": 0,
+      "ARCents": 0,
+      "physicalStockMovement": 0
+    }
+  },
+  "preconditions": [
+    "Fresh isolated run-owned fixture;verify actor,tenant and actual capability/settings before writes.",
+    "Record product/QA/build/schema/config/fixture fingerprint;missing identity blocks only affected acceptance.",
+    "No reuse of contaminated prior browser fixture;no payment replay or silent repair."
+  ],
+  "steps": [
+    {
+      "id": "S01",
+      "action": "Post digital invoice3 licences at20000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "AR",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "DigitalRevenue",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "ARCents": 60000,
+          "revenueCents": 60000,
+          "physicalStockMovement": 0,
+          "physicalCOGSCents": 0
+        },
+        "noChange": [
+          "Other tenant records",
+          "Unrelated documents"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S02",
+      "action": "Receive60000 cents",
+      "expected": {
+        "journalLines": [
+          {
+            "account": "Cash",
+            "side": "debit",
+            "cents": 60000
+          },
+          {
+            "account": "AR",
+            "side": "credit",
+            "cents": 60000
+          }
+        ],
+        "closing": {
+          "ARCents": 0,
+          "cashCents": 60000
+        },
+        "noChange": [
+          "Revenue",
+          "Physical stock",
+          "COGS"
+        ],
+        "linksAndAudit": "Persist own source/line/allocation links; retain attributable audit history"
+      }
+    },
+    {
+      "id": "S03",
+      "action": "Inspect declared fulfilment capability and delivery/access evidence",
+      "expected": {
+        "journalLines": [],
+        "closing": {
+          "recordedInvoiceCents": 60000
+        },
+        "noChange": [
+          "Financial postings",
+          "Physical stock"
+        ],
+        "linksAndAudit": "If entitlement feature supported,test authorized successful delivery and denied foreign/expired/revoked access. If absent,record not-supported and leave full digital fulfilment unaccepted;do not fabricate successful step."
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "WF-DIG-001.V01",
+      "category": "boundary",
+      "trigger": "Zero/negative/fractional amounts and remaining quantity boundary; exact currency rounding",
+      "expected": "Apply referenced rule;reject invalid values with explicit feedback and zero forbidden effects.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V02",
+      "category": "invalid-state",
+      "trigger": "Attempt conversion/return/payment after final or incompatible state",
+      "expected": "Refuse invalid transition;preserve source,stock,allocations and journals.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V03",
+      "category": "retry",
+      "trigger": "Repeat same completed request;interrupt response after posting",
+      "expected": "Inspect persisted outcome before retry;one effect per permitted idempotency contract;never blindly replay payment.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V04",
+      "category": "permissions",
+      "trigger": "Own positive,Viewer/other-role deny,foreign record and stale membership",
+      "expected": "Verify fresh actor;deny zero forbidden effects and no foreign disclosure at command/HTTP/browser layers.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V05",
+      "category": "history",
+      "trigger": "Change master price/settings after posting;return old document;choose prior report date",
+      "expected": "Preserve issued facts;use original permitted snapshots and correct asof scope.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V06",
+      "category": "failure",
+      "trigger": "Failure between document,stock,allocation and journal steps;competing request",
+      "expected": "Use isolated verified infrastructure;all-or-nothing effects and safe explicit recovery;no shared-staging fault injection.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V07",
+      "category": "capability",
+      "trigger": "Delivery/license/download feature absent or gated",
+      "expected": "Record unsupported/blocked;do not turn invoice or page load into delivery acceptance.",
+      "bugIds": []
+    },
+    {
+      "id": "WF-DIG-001.V08",
+      "category": "refund",
+      "trigger": "Refund paid digital invoice;repeat refund;revoke access where supported",
+      "expected": "Use approved recorded refundable balance;one permitted cash effect,correct access policy;unresolved entitlement policy blocks its acceptance.",
+      "bugIds": []
+    }
+  ],
+  "requiredLayers": [
+    "persisted-command",
+    "credential-auth",
+    "browser",
+    "report-reconciliation",
+    "audit-history"
+  ],
+  "policyGaps": [
+    "Digital delivery,revocation,refund and recognition policies need owner/expert confirmation where applicable."
+  ],
+  "automation": {
+    "status": "unbound",
+    "bindings": []
+  },
+  "acceptance": "not-assessed;defined elsewhere per immutable candidate run,never inferred from this specification"
+}
+

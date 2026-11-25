@@ -1,3 +1,5 @@
+Current disposition (2026-10-16): v2.5.10 original real-credential legacyViewer no-promotion/zero-money and legitimateOwner repair/payment controls pass at both ownerDB and restrictedNOBYPASSRLS boundaries, finalpaid200/due400 each. Fullsecurity/deployment acceptance remains open. Evidence: [v2.5.10 run](../runs/RUN-20261016-v2510-independent-retest.md). Earlier dispositions/reproductions below remain historical.
+
 Current disposition (2026-10-15): v2.5.9 owner-DB original real credential repro passes: Viewer not promoted/no receipt10; legitimate Owner repair works; paid200/due400/fourjournals/threeallocations. Restricted financial positive blocked; no blanket session/security certification. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
 
 # BUG-0052: Credential session repairs an unassigned Viewer into Owner

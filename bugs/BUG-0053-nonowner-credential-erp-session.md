@@ -1,3 +1,5 @@
+Current disposition (2026-10-16): v2.5.10 HTTP102 original own-invoice/role reproduction verified fixed under real credential NOBYPASSRLS runtime; ownOwner/Viewer/foreignOwner200, foreign deny, receipt/payment/legacy positives now pass. Broader route/security acceptance remains constrained by distinctBUG0054/0055 and042 investigation. No deployedrole certification. Evidence: [v2.5.10 run](../runs/RUN-20261016-v2510-independent-retest.md). Earlier dispositions/reproductions below remain historical.
+
 Current disposition (2026-10-15): Still OPEN on v2.5.9: HTTP102 own pages307 for Owner/Viewer/foreignOwner, ten dependent cases blocked. Legitimate Owner repair now observed, so lookup/session work progressed; complete protected ERP route remains broken. Source suggests getTenantInfo unscoped tenants read after tenant-context callback exits; request-specific SQL trace not obtained. Evidence: [v2.5.9 retest](../runs/RUN-20261015-v259-first-retest.md). Earlier reproduction below is historical.
 
 # BUG-0053: Real credential login cannot establish ERP session with restricted DB role
