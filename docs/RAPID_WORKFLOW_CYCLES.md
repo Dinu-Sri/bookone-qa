@@ -1,3 +1,35 @@
+# Current — first customer programme and Mission1 specification
+
+Owner requires physical goods+services+POS, both VAT/non-VAT and cash/bank/card. Owner personally deploys; no agent deployment. Read docs/FIRST_CUSTOMER_LAUNCH_PROGRAMME.md and handoffs/HANDOFF-20261104-first-customer-m1-plan.md. Four missions now have FIVE planned Light runs because Mission1 has two40-checkpoint profile batches; allow1–2grouped retests (estimate5–7, not guaranteed). Plans and independent14-journal oracles prepared; no execution or launch acceptance.
+
+ProductPR10 merged a6eda602bc67f20eb86736cbeceabc9cdd841769; tree07ff418256d8bdd56fb1569203e6baa4f03aaa44 equals reviewed5ea0d6e. Actual live deployment NOTVERIFIED. Next Medium verifies live fullSHA/tree/stamp, qualifies existing A/non-VAT funded tender+new masters and supported refund/conversion paths, then publishes NEW dated exact-bound M1A Light queue/helper/prompt. M1B requires its own legitimate VAT fixture; preserve foreignB and originalQA. Do not execute either PLAN or old Rapid04 template, invent bindings, recreate prior accounts or replay money. Tax18% is synthetic arithmetic, not expert/customer tax approval. Ledger card entries do not prove processor integration. Preserve all historical transactions/failures; backupLAST in Mission4.
+
+Historical pointers below are superseded for next-task selection.
+
+# Current Medium review — v2.5.25 isolated checks green; deploy/live fixture next
+
+QA PR95 https://github.com/Dinu-Sri/bookone-qa/pull/95 reviews product5ea0d6e243a1bd37889240e15b10ea86ef3c94ba / v2.5.25 · 5ea0d6e and QA506db5b. Tested QA5043390ae43ca4bd677b7705252582a1003ec341; fresh PG136/136 (rental17/17), HTTPS30/30, Linuxvalidation and B–F source checks green. Preserve first HTTPS26/4; two harness defects corrected without changing expected money/permission outcomes. Read reviews/REVIEW-20261104-v2525-medium.md, runs/CHECKS-20261104-v2525-medium-review.json and handoffs/HANDOFF-20261104-v2525-next-batch.md.
+
+ProductPR10 open/unmerged at review; no fresh live verification (selected Chrome2 unavailable). Last observed livev2.5.24 · e5bb589. NEXT owner-controlled deployment decision, then Medium verifies actual full SHA/tree/stamp, completes A fleet20@50/bays/after-return-block fixture and freezes NEW dated substantial Light queue. Existing A/B/Viewer and A-only module grant COMPLETE under prior owner authorization; reuse private credentials, do not recreate or ask again. Current40-pointmap and11-caseplanningtemplate remain NONEXECUTABLE; Light not released. No further product fix indicated by the corrected CI failures. Preserve all transactions/failures; no merge/deploy/launch; backupLAST.
+
+Historical pointers below remain preserved and are superseded for next-task selection.
+
+# Fixture setup complete — 4 November 2026
+
+Read [setup results](../runs/RUN-20261104-rapid04-fixture-setup.md), [checks](../runs/CHECKS-20261104-rapid04-fixture-setup.json) and [fixture handoff](../handoffs/HANDOFF-20261104-rapid04-fixtures-qualified.md). Three accounts created on30October were reused: A Owner, A Viewer and B Owner. A alone is now Pro with Inventory/Rental on; POS/HR off. B and original QA remain Starter with Inventory/Rental off. Fresh logins/roles and saved settings verified. Credentials/company/member IDs remain ignored/private. Original QA context restored.
+
+Current execution QA c9eb6510d3549f28d53b902fe8fa686c274a70b2; product e5bb589267035ffb031b6c083f4e911bb7d04aac / live v2.5.24 · e5bb589. New4Nov remaining-only run 5passed/0running/0pending, no unresolved action; one module save and nine auth transitions, no new accounts or financial events. Clock closed, 1104216ms charged/0paused. Old30Oct clock closed460780457ms/0paused, full usage gap retained; no date retarget/replay.
+
+NEXT remains grouped coding follow-up for D-112, after-return reservation/deposit continuity, Activity mapping and current CI pin/HTTP failures. New prerequisite: A has no locations/products/stock, and ordinary Locations Type offers only Branch/Warehouse/POS counter/Office, no on-rent/wash/repair; supported bay setup must be supplied. Rental defaults still On confirm/Manager override; no settings changed. Account/module setup complete does not make the full rental fixture or Light mission ready. No merge/deploy/launch; backup/restore LAST. Historical pending-authorization notes below are superseded.
+
+<!-- FIXTURE-FINISH-20261104-END -->
+
+# Medium review complete — Rapid04 coding/fixture qualification first
+
+Read [review](../reviews/REVIEW-20261030-rapid03-closure-rapid04.md), [grouped coding mission](../handoffs/CODING-MISSION-20261030-rapid04-qualification.md) and [40-checkpoint specification](../queues/PLAN-RAPID04-qualification.json). Rapid03 resultseed69cf7f63d10d13aa872f43c82830241a26f43 preserved/consumed. New preparation has no business/auth/config/grant writes. Current originalcompany still Inventoryoff/productcreate disabled; rental routes load with no hirelines. No new rental write/security acceptance. Workflowgovernance process crash reproduced sandbox/host; fullcheck NOTGREEN. Historical product-ref0bcdf4d must be deliberately aligned before next current-candidate source/runtime run.
+
+NEXT: coding/fixture owner delivers one qualified rental/realactor/runtime/control batch, Medium reviews exactcandidate/fixtures and releases an executable Light queue. The40point plan is NOT executable; no date/actor/guard or permissions invented, no repeated blocked Light attempt. Preserve all prior225journal/43move/source history; future minimum64protected sources includes newcustomerrefunds. No merge/deploy/launch;backupLAST.
+
 # Rapid03 workflows complete — 30 October 2026
 
 Product b89dd788b9bec9dc66cb49d22f7b8c2c92015df7 / live v2.5.23 · b89dd78. [Continuation results](../runs/RUN-20261030-rapid03-cont1.md), [checks](../runs/CHECKS-20261030-rapid03-cont1.json), [consolidated handoff](../handoffs/CODING-MISSION-20261030-rapid03-complete.md). New30Oct executionQA456d9f7462748e2e9d157875a4d95438b01ed6f8: 10passed/0pending,0unresolved;2customer cashrefunds40/80 accepted/reconciled. Original29Oct executionQA057f31853b706a068fd268614c6b1a79c4b352ff remains31passed/1inconclusive/4not-run-budget;18financialactions22journals1680. Across separate fingerprints all20 financial actions/24journals1800 complete, netcash/AR/AP/stock/income0; never combine into one original-batch pass.
