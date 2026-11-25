@@ -1,0 +1,9 @@
+# WCHG-20261021-light03-results
+
+Mandatoryexecution/edgeintake. Exactproducta4a6d65/QAexecutionbase0afd96b4;rulebook1.0.0/expertpending/library1.5.0/272draftunboundunchanged. [Run](../runs/RUN-20261021-light03-results.md), [checks](../runs/CHECKS-20261021-light03-results.json), [coding/Medium](../handoffs/CODING-MISSION-20261021-light03-results.md). Priorevidenceimmutable; no expectationchangedtofitoutput.
+
+Directimpactreview: purchasepickerclienttransitionPHY.J06.C01/sharedCORE.J06; splitreturnsourcepriceHYB.J02.C08,PHY.J06/salesandpurchase/sharedlineeditor; draftCORE.J04.C06; error/correctionCORE.J06.C05–C07/PHY.J02.C03; purchasechainPHY.J02.C01,J03.C01–C04,J04.C02; allocationHYB.J02.C07/C09/C11;closingPHY.J12.C01. Sharedcommercialform/accountingeffectsbroadenallservice/digital/rental/hybridandrole/historyrisk,notjustcoveredhappy-pathrows. RelatedcaseIDsarepartiallinks,notbindings.
+
+No new intendedaccountingpolicy/oracle: preserveexistingquantityconservation/historicalsourceprices/partylocks/previewpostequality/lineheaderrepresentation. Failedclientstate/sourcepricingedgesrequiremaintainedvariant/mappingreview. **Unresolvedowner:MediumQAreviewer**, withcodingagentactualfixdiff; reviewtriggerbeforecandidateacceptance. Determinewhethernewstablecasevariantsforblank→sourceA/A→B/clear/remainingandaddedsourcerowsarenecessary; editcanonicalJSON/revisions/maps/generatedviewsandrunrequiredlibrary/workflowcheckswhenextendingdefinitions. No inventedreview/implementation/bindingorblanketcanonicalpass. Thisintakeexplicitlyretainsmaintenanceuntilreview;currentdefinitionsunchanged.
+
+22newmissiondispositionsindexedaspartialevidence;18passed/2failed/2blocked≠ERPpercentage. Source-studyv2.5.12andautomatedproduct-ref0bcdf4dunchanged. Fullrepositorychecknotruninpartialcheckout. Independentintegerreconciliationandrecordreferencesvalidated. No merge/deploy/reset/directmessage;backuprestoreLAST.
