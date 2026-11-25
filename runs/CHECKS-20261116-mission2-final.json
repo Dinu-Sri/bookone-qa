@@ -1,0 +1,415 @@
+{
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "qaSha": "6172dc8adc62ae3e0855662f89be1eeda36451f3",
+  "dateContract": "2026-11-16 UTC",
+  "cases": [
+    {
+      "id": "F01",
+      "status": "passed",
+      "actual": "Exact published6172dc8 clean detached/productca05491/fixed16Nov/newclock;fresh6hostchecks/actual2positive4zeroUIrefusals/6proofclocksclosed;loopbackfixtureidentity."
+    },
+    {
+      "id": "F02",
+      "status": "passed",
+      "actual": "Actual hydrated AR11rawcases matched errors/aria/recording."
+    },
+    {
+      "id": "F03",
+      "status": "passed",
+      "actual": "Independent hydrated AP11rawcases matched errors/aria/recording."
+    },
+    {
+      "id": "F04",
+      "status": "passed",
+      "actual": "Both forms mixed/allinvalid/deselected/reselected/corrected states; one localspypositive each total12.03allocations10.01+2.02; no posting."
+    },
+    {
+      "id": "F05",
+      "status": "passed",
+      "actual": "KeyboardSpace/Tab/ShiftTab/edit observed focus/error retained and correction clears associations; no trap."
+    },
+    {
+      "id": "F06",
+      "status": "passed",
+      "actual": "390x844 both forms mixedinvalid/correction/Tab errorassociation and recordingstate verified, screenshots inspected; table horizontal scroll needed; viewportreset. No actual NVDA/JAWS speechcertification."
+    },
+    {
+      "id": "F07",
+      "status": "passed",
+      "actual": "Six predecessor hashes unchanged;0DB/financialeffects/0externalrequestsobserved,loopbackGETonly/CSPdenyexternal;spyfixturesdiscarded via tabclose/serverstop ECONNREFUSED; firstfailures retained."
+    },
+    {
+      "id": "F08",
+      "status": "passed",
+      "actual": "Initial sanitized result857d06b0a3a903ee323365120109db2265e09f74verified on draftPR120 successor ofPR119 while clockACTIVE; official close immediately follows and metadata-only tail."
+    }
+  ],
+  "evidenceHashes": {
+    "AR-matrix.json": "a548598e69685982a7a7cafd665df62f1b02184d1fe29675855d82e1fdc0b247",
+    "AP-matrix.json": "9d329ba40f79b7f839f3ae8de1d20c7822b7c05ec4dde8f3b617f0ced8adceb6",
+    "mixed.json": "79248a735fe7b4a995bf1e9fb60cd1cc9466c7dcb364bc0937cef084c40448ed",
+    "keyboard.json": "55da47a1c1745929300714da3a7d3ad1f791f673e35de8880a09a446ee620042",
+    "narrow.json": "f71fb512cce6d9e576c804e9cc0cdcceb74467ec7db2a3f6ad83de4dca94ef82",
+    "proofs.json": "ab3e1bd7fa4a8a8af6061433ee7e3c7130e54900cb6342a08ad1b857512037ff",
+    "console.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "requests.jsonl": "95e1c060cc8a02f549903d50a244054c978dfc712ff80ad357b5425710fc9d01"
+  },
+  "ar": [
+    {
+      "kind": "AR",
+      "raw": "",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "0",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "-1",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "abc",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "1abc",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "Infinity",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "NaN",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "1.001",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "kind": "AR",
+      "raw": "0.01",
+      "describedBy": null,
+      "error": null,
+      "errorRole": null,
+      "focused": true,
+      "invalid": "false",
+      "enabled": true
+    },
+    {
+      "kind": "AR",
+      "raw": "708",
+      "describedBy": null,
+      "error": null,
+      "errorRole": null,
+      "focused": true,
+      "invalid": "false",
+      "enabled": true
+    },
+    {
+      "kind": "AR",
+      "raw": "708.01",
+      "describedBy": "receive-synthetic-0-error",
+      "error": "Payment cannot exceed balance due.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    }
+  ],
+  "ap": [
+    {
+      "raw": "",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "0",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "-1",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "abc",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "1abc",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "Infinity",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "NaN",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "1.001",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Enter a positive amount with at most two decimal places.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    },
+    {
+      "raw": "0.01",
+      "describedBy": null,
+      "error": null,
+      "errorRole": null,
+      "focused": true,
+      "invalid": "false",
+      "enabled": true
+    },
+    {
+      "raw": "94.40",
+      "describedBy": null,
+      "error": null,
+      "errorRole": null,
+      "focused": true,
+      "invalid": "false",
+      "enabled": true
+    },
+    {
+      "raw": "94.41",
+      "describedBy": "pay-synthetic-1-error",
+      "error": "Payment cannot exceed balance due.",
+      "errorRole": "alert",
+      "focused": true,
+      "invalid": "true",
+      "enabled": false
+    }
+  ],
+  "mixed": [
+    {
+      "kind": "AR",
+      "phase": "mixed",
+      "enabled": false,
+      "second": {
+        "describedBy": "receive-synthetic-1-error",
+        "error": "Enter a positive amount with at most two decimal places.",
+        "errorRole": "alert",
+        "focused": true,
+        "invalid": "true",
+        "raw": "abc"
+      }
+    },
+    {
+      "kind": "AR",
+      "phase": "allinvalid",
+      "enabled": false,
+      "first": {
+        "describedBy": "receive-synthetic-0-error",
+        "error": "Enter a positive amount with at most two decimal places.",
+        "errorRole": "alert",
+        "focused": true,
+        "invalid": "true",
+        "raw": "-1"
+      }
+    },
+    {
+      "kind": "AR",
+      "phase": "deselectedinvalid",
+      "enabled": true,
+      "secondDisabled": true,
+      "second": {
+        "describedBy": null,
+        "error": null,
+        "errorRole": null,
+        "focused": false,
+        "invalid": "false",
+        "raw": "abc"
+      }
+    },
+    {
+      "kind": "AR",
+      "phase": "reselectedinvalid",
+      "enabled": false,
+      "second": {
+        "describedBy": "receive-synthetic-1-error",
+        "error": "Enter a positive amount with at most two decimal places.",
+        "errorRole": "alert",
+        "focused": false,
+        "invalid": "true",
+        "raw": "abc"
+      }
+    },
+    {
+      "kind": "AR",
+      "phase": "positiveSpy",
+      "allocations": [
+        {
+          "documentId": "synthetic-0",
+          "amount": 10.01
+        },
+        {
+          "documentId": "synthetic-1",
+          "amount": 2.02
+        }
+      ]
+    },
+    {
+      "kind": "AP",
+      "phase": "mixed",
+      "enabled": false,
+      "second": {
+        "describedBy": "pay-synthetic-1-error",
+        "error": "Enter a positive amount with at most two decimal places.",
+        "errorRole": "alert",
+        "focused": true,
+        "invalid": "true",
+        "raw": "abc"
+      },
+      "spy": "[]"
+    },
+    {
+      "kind": "AP",
+      "phase": "allinvalid",
+      "enabled": false
+    },
+    {
+      "kind": "AP",
+      "phase": "deselectedinvalid",
+      "enabled": true,
+      "second": {
+        "describedBy": null,
+        "error": null,
+        "errorRole": null,
+        "focused": false,
+        "invalid": "false",
+        "raw": "abc"
+      }
+    },
+    {
+      "kind": "AP",
+      "phase": "reselectedinvalid",
+      "enabled": false,
+      "second": {
+        "describedBy": "pay-synthetic-1-error",
+        "error": "Enter a positive amount with at most two decimal places.",
+        "errorRole": "alert",
+        "focused": false,
+        "invalid": "true",
+        "raw": "abc"
+      }
+    },
+    {
+      "kind": "AP",
+      "phase": "positiveSpy",
+      "allocations": [
+        {
+          "documentId": "synthetic-0",
+          "amount": 10.01
+        },
+        {
+          "documentId": "synthetic-1",
+          "amount": 2.02
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Actual controlled client forms with narrow Next/server-action spy adapters; no server posting or auth acceptance claim",
+    "Browser ARIA/focus evidence, not external speech certification",
+    "Narrow horizontal table scrolling; harness is not full product shell",
+    "Original U01 historical inconclusive unchanged; this is new scoped addendum"
+  ],
+  "firstFailures": [
+    "Initial relative worktree path refused; corrected explicit workspace target",
+    "First build missing real lucide dependency; installed pinned real package",
+    "Generic spy locator timed out after ARpositive; read actual DOM and captured one call without replay",
+    "Restricted shutdowncheck EACCES retained; normalhost ECONNREFUSED verified"
+  ],
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 379220,
+    "pausedMs": 0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "released-for-Light-execution",
+  "dateContract": "2026-11-15 UTC",
+  "stopBefore": "23:55 UTC",
+  "executionQaSha": "e619b7877c2f499c799c2e3c30017995884a3e3b",
+  "executionCheckout": "C:/Users/dinus/OneDrive/文件/ChatGPT/BookOne QA Agent/launch-v2530-mission2-cont1-execution",
+  "productSha": "ca05491f18965f757adfead48b5d98595872272c",
+  "productTree": "a0a8d06415067c7e8fb2ef4959bca683954279bf",
+  "requiredLiveStamp": "v2.5.30 · ca05491",
+  "publicationPr": 119,
+  "publicationBranch": "qa/v2530-mission2-preparation",
+  "sourcePinPublishedVerified": true,
+  "checkpointCount": 34,
+  "queue": "queues/MISSION2-V2530-20261115.json",
+  "queueId": "MISSION2-V2530-CONT1-20261115",
+  "runDirectory": ".local/mission2/RUN-20261115-MISSION2-CONT1",
+  "budget": {
+    "total": 180,
+    "execution": 150,
+    "closing": 30
+  },
+  "carriedCompletedCases": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "H01"
+  ],
+  "predecessor": "runs/CLOSING-20261115-mission2.md",
+  "privateSourceHashes": 10,
+  "privateBundleStaged": true,
+  "toolVerification": "Direct mcp__cua_repl.getState succeeded; Chrome connected. Inventory only, no auth/live gate claim. ALL_TOOLS absence is not proof of direct tool absence.",
+  "qualification": {
+    "normalHost": 136,
+    "exactDetachedHost": 136,
+    "failed": 0,
+    "metadata": "valid",
+    "initCanary": {
+      "clock": "closed",
+      "chargedMs": 218,
+      "pausedMs": 0,
+      "guardOnlyBlocked": 34,
+      "pending": 0,
+      "unresolved": 0,
+      "auth": 0,
+      "business": 0
+    }
+  },
+  "actualRunInitialized": false,
+  "fullPrompt": "handoffs/MISSION2-V2530-CONT1-LIGHT.md",
+  "rootPrompt": "C:/Users/dinus/OneDrive/文件/ChatGPT/BookOne QA Agent/MISSION2-V2530-CONT1-LIGHT.md",
+  "rootPromptSha256": "9105431405a27a7dd76aaaac6d7b71b6332b2d75362601eb7a2bda1b16ccae23",
+  "review": "reviews/REVIEW-20261115-mission2-cont1.md",
+  "limits": "No launch approval; fresh live/control/auth/preservation and receipt-gated fresh recovery LAST remain execution work. Later UTC needs reviewed successor. Never replay prior actions."
+}

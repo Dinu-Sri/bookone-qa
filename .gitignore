@@ -18,3 +18,5 @@ work/
 raw-evidence/
 **/*.bookone-data
 **/*.bookone-files
+# Vite bundles config files into transient intermediates during concurrent lanes.
+**/*.timestamp-*.mjs

@@ -1,0 +1,86 @@
+name: Mission2 isolated recovery LAST
+on:
+  pull_request:
+    paths:
+      - runs/MISSION2-FUNCTIONAL-RECEIPT.json
+      - tests/recovery/**
+      - scripts/mission2-recovery*.mjs
+      - vitest.mission2-recovery.config.ts
+      - .github/workflows/mission2-recovery.yml
+  workflow_dispatch:
+    inputs:
+      functional_receipt:
+        description: Published functional receipt commit (40 hex); qualification uses passed CI receipt
+        required: true
+permissions:
+  contents: read
+jobs:
+  isolated-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: bookone_qa_runtime
+          POSTGRES_USER: qa_fixture_admin
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    env:
+      QA_RUNTIME_ISOLATION: ephemeral-local-postgres
+      QA_M2_RECOVERY_ISOLATION: ephemeral-ci-recovery
+      NEXT_PUBLIC_APP_VERSION: 2.5.30
+      NEXT_PUBLIC_BOOKONE_BUILD: ca05491f18965f757adfead48b5d98595872272c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require reviewed functional receipt before recovery
+        env:
+          RECEIPT_SHA: ${{ inputs.functional_receipt || github.event.pull_request.head.sha }}
+        run: |
+          [[ "$RECEIPT_SHA" =~ ^[a-f0-9]{40}$ ]]
+          git show "$RECEIPT_SHA:runs/MISSION2-FUNCTIONAL-RECEIPT.json" > /tmp/m2-receipt.json
+          node scripts/mission2-recovery-gate.mjs /tmp/m2-receipt.json
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm product:prepare
+      - run: pnpm --dir work/product install --frozen-lockfile
+      - run: node scripts/runtime/ci-target.mjs
+      - run: pnpm runtime:prepare
+      - name: Start dedicated disposable S3-compatible storage
+        run: |
+          task_user="m2$(openssl rand -hex 8)"
+          task_secret="$(openssl rand -hex 24)"
+          echo "::add-mask::$task_user"
+          echo "::add-mask::$task_secret"
+          echo "S3_ACCESS_KEY=$task_user" >> "$GITHUB_ENV"
+          echo "S3_SECRET_KEY=$task_secret" >> "$GITHUB_ENV"
+          echo "S3_BUCKET=m2-recovery-$(openssl rand -hex 8)" >> "$GITHUB_ENV"
+          echo "S3_ENDPOINT=http://127.0.0.1:9000" >> "$GITHUB_ENV"
+          echo "S3_REGION=us-east-1" >> "$GITHUB_ENV"
+          # Official public S3-compatible gateway: https://github.com/versity/versitygw/wiki/Docker
+          docker run -d --name m2-isolated-s3 -p 127.0.0.1:9000:9000 -v m2-recovery-s3:/data -e ROOT_ACCESS_KEY="$task_user" -e ROOT_SECRET_KEY="$task_secret" -e VGW_BACKEND=posix -e VGW_BACKEND_ARG=/data -e 'VGW_ARGS=--port :9000 --health /health' ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5
+          echo "QA_M2_STORAGE_IMAGE=ghcr.io/versity/versitygw@sha256:8319a530d08d537426e2f855bae5280709795dc73a3f0c347973ef915d6343c5" >> "$GITHUB_ENV"
+          for attempt in $(seq 1 30); do curl --fail http://127.0.0.1:9000/health && break; sleep 1; done
+          curl --fail http://127.0.0.1:9000/health
+      - name: Actual product data and file export restore and application readback
+        run: |
+          export DATABASE_URL="$(node -e "process.stdout.write(JSON.parse(require('fs').readFileSync('.local/runtime/connection.json')).url)")"
+          node scripts/mission2-recovery.mjs
+      - name: Sanitized recovery summary only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission2-recovery-sanitized
+          path: .local/mission2-recovery/summary.json
+          include-hidden-files: true
+          if-no-files-found: error
+      # No backups, object bodies, credentials, tokens, private logs or raw test failures are exported.
