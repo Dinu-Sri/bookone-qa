@@ -142,13 +142,20 @@
         "D-101",
         "D-102",
         "D-103",
+        "D-104",
         "D-105",
         "D-109",
         "D-110",
+        "D-112",
         "D-117",
         "D-118",
         "RT-023",
-        "E-104"
+        "E-104",
+        "D-113",
+        "D-114",
+        "D-116",
+        "D-119",
+        "D-120"
       ],
       "credential": "admin",
       "boundary": "real-PostgreSQL-owner-connection-rental-money-fleet-permissions-fault"
@@ -236,6 +243,19 @@
       ],
       "credential": "runtime",
       "boundary": "real-PostgreSQL-non-owner-product-command-synthetic-session"
+    },
+    {
+      "name": "purchase-vat-conversion",
+      "file": "tests/runtime/purchase-vat-conversion.test.ts",
+      "expected": [
+        "RT-070",
+        "RT-071",
+        "RT-072",
+        "RT-073",
+        "RT-074"
+      ],
+      "credential": "admin",
+      "boundary": "real-PostgreSQL-owner-product-command-conversion"
     }
   ]
 }

@@ -4548,4 +4548,6 @@
       "boundary": "Supplemental inconclusive closing; original private ledger END running after environment disconnect."
     }
   ]
+,
+  "supplementalEvidenceFiles": [{"file": "coverage/browser-evidence-light08-exec2.json", "run": "runs/CHECKS-20261025-light08-exec2-results.json", "meaning": "37 fixed dispositions:10passed27blocked; no canonical acceptance or atomic assertion denominator."}]
 }

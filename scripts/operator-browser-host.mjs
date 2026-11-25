@@ -21,8 +21,8 @@ function sources() {
     if (a < 0 || b <= a) throw Error('Pinned runtime source layout changed; review required');
     return source.slice(a, b).replaceAll('export function ', 'function ').replaceAll('export async function ', 'async function ');
   };
-  const runtimeSource = extract(queue, 'const required =', 'if(process.argv[1]') +
-    extract(clock, 'export function openClock', 'if(process.argv[1]') +
+  const runtimeSource = extract(queue, 'const required =', '// CLI ENTRYPOINT') +
+    extract(clock, 'export function openClock', '// CLI ENTRYPOINT') +
     extract(action, 'function deny(', 'function parseExitCode(') +
     '\nreturn {dispatchBrowserAppWrite, evaluateAuthorization};';
   return {runtimeSource, runtimeHash: hash(runtimeSource),
@@ -103,12 +103,83 @@ export function finish(base, result) {
     toolCalls: result.toolCalls, uncertain: result.uncertain === true, status: 'consumed'});
   return {ok: true, claimed: true};
 }
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const [command, file, argument] = process.argv.slice(2);
+export const SLICE_MAX = 4096;
+export function slice(file, offsetRaw, lengthRaw) {
+  const offset = Number(offsetRaw), length = Number(lengthRaw);
+  if (!Number.isInteger(offset) || !Number.isInteger(length) || offset < 0 || length < 1 || length > SLICE_MAX) {
+    return {ok: false, reason: 'Invalid slice'};
+  }
+  const buf = fs.readFileSync(path.resolve(file));
+  if (offset > buf.length) return {ok: false, reason: 'Slice offset past end'};
+  const part = buf.subarray(offset, Math.min(offset + length, buf.length));
+  return {ok: true, offset, length: part.length, total: buf.length,
+    sha256: createHash('sha256').update(part).digest('hex'), data: part.toString('base64')};
+}
+// Validate the bytes received by the tool host, not merely the unchanged disk file.
+export function verifySlice(file, offsetRaw, data, sha256) {
+  const offset = Number(offsetRaw);
+  if (!Number.isInteger(offset) || offset < 0 || typeof data !== 'string' ||
+      data.length > Math.ceil(SLICE_MAX / 3) * 4 || !/^[a-f0-9]{64}$/.test(sha256)) {
+    return {ok: false, reason: 'Invalid received slice'};
+  }
+  const received = Buffer.from(data, 'base64');
+  if (!received.length || received.length > SLICE_MAX || received.toString('base64') !== data) {
+    return {ok: false, reason: 'Invalid received slice'};
+  }
+  const durable = fs.readFileSync(path.resolve(file)).subarray(offset, offset + received.length);
+  const digest = createHash('sha256').update(received).digest('hex');
+  if (!received.equals(durable) || digest !== sha256) return {ok: false, reason: 'Received slice mismatch'};
+  return {ok: true, offset, length: received.length, sha256: digest};
+}
+function fileDigest(file) {
+  const raw = fs.readFileSync(path.resolve(file));
+  return {raw, sha256: createHash('sha256').update(raw).digest('hex'), bytes: raw.length};
+}
+function prepareEnvelope(requestPath) {
+  const prepared = prepare(requestPath);
+  if (!prepared.ok) return prepared;
+  const file = path.join(path.dirname(path.resolve(requestPath)), prepared.preparationId + '.prepared.json');
+  const {sha256, bytes} = fileDigest(file);
+  return {ok: true, preparationId: prepared.preparationId, dispatchId: prepared.dispatchId, file, sha256, bytes,
+    planHash: prepared.inputs.state.planHash, fingerprintHash: prepared.inputs.state.fingerprintHash,
+    requestHash: prepared.requestHash, runtimeHash: prepared.runtimeHash};
+}
+function claimEnvelope(base, preparationId) {
+  const result = claim(base, preparationId);
+  if (!result.ok) return result;
+  const saved = read(path.join(base, preparationId + '.prepared.json'));
+  const payload = {ok: true, preparationId, chargedClock: result.inputs.clock, planHash: hash(result.inputs.plan),
+    fingerprintHash: hash(result.inputs.fingerprint), stateHash: hash(result.inputs.state),
+    runtimeHash: saved.prepared.runtimeHash};
+  const file = path.join(base, preparationId + '.claimed.json');
+  atomic(file, payload);
+  const {sha256, bytes} = fileDigest(file);
+  return {ok: true, file, sha256, bytes, preparationId, planHash: payload.planHash,
+    fingerprintHash: payload.fingerprintHash, runtimeHash: payload.runtimeHash};
+}
+function confirm(file, sha256, bytesRaw, kind = 'prepare') {
+  const bytes = Number(bytesRaw);
+  const digest = fileDigest(file);
+  if (digest.sha256 !== sha256 || digest.bytes !== bytes) return {ok: false, reason: 'Payload hash mismatch'};
+  const parsed = JSON.parse(digest.raw.toString('utf8'));
+  const prepared = kind === 'claim' ? parsed : parsed.prepared;
+  if (!prepared?.ok || !prepared.preparationId) return {ok: false, reason: 'Durable preparation missing'};
+  return {ok: true, preparationId: prepared.preparationId, dispatchId: prepared.dispatchId,
+    runtimeHash: prepared.runtimeHash, requestHash: prepared.requestHash, bytes: digest.bytes,
+    planHash: prepared.planHash, fingerprintHash: prepared.fingerprintHash};
+}
+if (typeof process !== 'undefined' && process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const [command, file, argument, extra, digest] = process.argv.slice(2);
   try {
-    const result = command === 'prepare' ? prepare(file) : command === 'claim' ? claim(file, argument) :
-      command === 'finish' ? finish(file, JSON.parse(fs.readFileSync(argument, 'utf8'))) : null;
-    if (!result) throw Error('Use prepare request.json / claim runDir preparationId / finish runDir result.json');
+    const result = command === 'prepare' ? prepareEnvelope(file)
+      : command === 'claim' ? claimEnvelope(file, argument)
+      : command === 'finish' ? finish(file, JSON.parse(fs.readFileSync(argument, 'utf8')))
+      : command === 'slice' ? slice(file, argument, extra)
+      : command === 'verify-slice' ? verifySlice(file, argument, extra, digest)
+      : command === 'confirm-claim' ? confirm(file, argument, extra, 'claim')
+      : command === 'confirm' ? confirm(file, argument, extra)
+      : null;
+    if (!result) throw Error('Use prepare request.json / claim runDir preparationId / finish runDir result.json / slice file offset length / verify-slice file offset base64 sha256 / confirm[-claim] file sha256 bytes');
     process.stdout.write(JSON.stringify(result));
   } catch {process.stdout.write(JSON.stringify({ok: false, reason: 'Host operation refused; inspect private evidence'})); process.exitCode = 1;}
 }
