@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {randomUUID} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+const root=path.resolve(import.meta.dirname,'../..'),helper=path.join(root,'scripts/rapid-cycle01-run.mjs');
+const run=(...args)=>spawnSync(process.execPath,[helper,...args],{cwd:root,encoding:'utf8'});
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+test('run helper initializes once; rejects unqualified/incorrect-case actions; binds successful intent',()=>{
+ const dir=path.join(root,'.local/helper-tests',randomUUID());
+ const a=run('init',dir);assert.equal(a.status,0,a.stderr);const statePath=path.join(dir,'state.json');const original=fs.readFileSync(statePath,'utf8');
+ assert.equal(run('init',dir).status,1);assert.equal(fs.readFileSync(statePath,'utf8'),original);
+ assert.equal(run('request',dir,'R01-D-INVOICE','bad','https://bookone.clossyan.com/sales/invoices/new','Post').status,1);assert.equal(fs.readFileSync(statePath,'utf8'),original);
+ assert.equal(run('request',dir,'R01-GATE','bad','https://bookone.clossyan.com/','Post').status,1);
+ let s=read(statePath);for(const c of s.cases)if(['R01-GATE','R01-GUARD'].includes(c.id))c.status='passed';fs.writeFileSync(statePath,JSON.stringify(s));
+ const b=run('request',dir,'R01-IDENTITY','fresh-login','https://bookone.clossyan.com/login','Login');assert.equal(b.status,0,b.stderr);const req=read(path.join(dir,'fresh-login.request.json'));assert.equal(req.commandExitCode,0);assert.equal(req.caseId,'R01-IDENTITY');assert.ok(req.desktopSources['scripts/operator-desktop-cua.mjs']);
+ assert.equal(read(statePath).cases.find(c=>c.id==='R01-IDENTITY').submissions[0].outcome,'unresolved');
+ assert.equal(run('request',dir,'R01-IDENTITY','fresh-login','https://bookone.clossyan.com/login','Login').status,1);
+ assert.equal(run('request',dir,'R01-IDENTITY','other','https://example.com/','Login').status,1);
+});
+test('run setup refuses paths outside the ignored private run tree',()=>assert.equal(run('init',path.join(root,'outside-private-'+randomUUID())).status,1));

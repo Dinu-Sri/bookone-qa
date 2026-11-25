@@ -3,6 +3,7 @@ import {readFileSync,writeFileSync,mkdirSync,openSync,closeSync,copyFileSync} fr
 import {resolve,join} from 'node:path';import {spawn,spawnSync,execFileSync} from 'node:child_process';
 import {createHash,randomBytes,randomUUID} from 'node:crypto';import https from 'node:https';import {createRequire} from 'node:module';
 import postgres from 'postgres';import {httpTarget,httpDatabase,localPath,localTlsTransport,deniedHttpResponse,CookieJar} from './target.mjs';
+import {receiptPath,settingsDeniedValue} from './contracts.mjs';
 const ROOT=process.cwd(),BASE='https://localhost:3443/',WEB=resolve('work/product/apps/web');
 const manifest=JSON.parse(readFileSync('batches/http-runtime.json','utf8'));
 const runId='HTTP-'+new Date().toISOString().replace(/[:.]/g,'-')+'-'+randomBytes(3).toString('hex');
@@ -58,6 +59,20 @@ async function financial(actor,handle,payload){const encoded=await handle.codec(
  if(typeof encoded==='string'){body=Buffer.from(encoded);contentType='text/plain;charset=UTF-8';}else{const req=new Request(BASE,{method:'POST',body:encoded});body=Buffer.from(await req.arrayBuffer());contentType=req.headers.get('content-type');}
  return request('/sales/payments/new',actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Next-Action':handle.id,Accept:'text/x-component','Content-Type':contentType},body});
 }
+async function hireChargeHandle(actor){
+ const page=await request('/inventory/on-rent',actor);if(page.status!==200)throw new Incomplete('rental-page-unavailable');
+ const scripts=[...page.body.matchAll(/<script\b[^>]*src="([^"]+)"/g)].map(m=>m[1]).filter(p=>p.startsWith('/_next/static/')).slice(0,40);const ids=new Set();
+ for(const path of scripts){const r=await request(path,actor);if(r.status!==200)continue;for(const m of r.body.matchAll(/\(\s*["']([a-f0-9]{40,64})["']\s*,[^;\n]{0,800}?["']invoiceHireCharges["']\s*\)/g))ids.add(m[1]);}
+ if(ids.size!==1)throw new Incomplete('hire-charge-action-reference-unavailable');
+ const req=createRequire(join(WEB,'package.json'));let codec;
+ try{codec=req('next/dist/compiled/react-server-dom-webpack/client.node').encodeReply;}catch{throw new Incomplete('pinned-action-codec-unavailable');}
+ if(typeof codec!=='function')throw new Incomplete('pinned-action-codec-unavailable');return {id:[...ids][0],codec};
+}
+async function hireCharge(actor,handle,payload){const encoded=await handle.codec([payload]);let body,contentType;
+ if(typeof encoded==='string'){body=Buffer.from(encoded);contentType='text/plain;charset=UTF-8';}else{const req=new Request(BASE,{method:'POST',body:encoded});body=Buffer.from(await req.arrayBuffer());contentType=req.headers.get('content-type');}
+ return request('/inventory/on-rent',actor,{method:'POST',headers:{Origin:BASE.slice(0,-1),'Next-Action':handle.id,Accept:'text/x-component','Content-Type':contentType},body});
+}
+const rentalPostedTables=['rental_events','rental_booking_lines',...postedTables,'audit_log'];
 async function laneCases(lane,f){
  const actors={};let i=2;for(const [name,a] of Object.entries(f.actors))actors[name]={...a,ip:'127.0.0.'+i++,jar:new CookieJar(),verified:false,ownRead:false};
  const rows=[],offset=lane.credential==='runtime'?100:0;let handle=null,financialVerified=false;
@@ -90,7 +105,7 @@ async function laneCases(lane,f){
   await requireLogin(actors.platform);const r=await request('/control-room/companies',actors.platform);c(r.status===200&&r.body.includes(f.foreignName),'platform-admin-known-foreign-company-positive');o('platformControlStatus',r.status);
  });
  await test(6,async(c,o)=>{const a=actors.foreign;await requireLogin(a);const stale=a.jar.header(BASE);const r=await postJSON('/api/auth/sign-out',a,{});c(r.status===200,'signout-succeeds');const replay=await request('/api/auth/get-session',{ip:a.ip},{cookie:stale});c(!json(replay)?.user,'revoked-session-not-authenticated');const protectedReplay=await request('/sales/invoices/'+f.foreign.id,{ip:a.ip},{cookie:stale});c(denied(protectedReplay)&&!protectedReplay.body.includes(f.foreign.marker),'stale-session-protected-route-denied');o('staleSessionAuthenticated',Number(!!json(replay)?.user));});
- await test(7,async(c,o)=>{const before=await snapshot();for(const key of ['owner','viewer']){const a=actors[key];if(!a.ownRead)throw new Incomplete('known-role-positive-prerequisite');const params=new URLSearchParams({date:f.date,account:'1000',total:'150',doc:f.own.id,amt:'150'});const r=await request('/sales/payments/receipt?'+params,a);c(r.status===200&&r.body.includes('PAYMENT RECEIPT')&&r.body.includes(f.own.customer)&&r.body.includes(f.own.number)&&r.body.includes('150.00'),'existing-receipt150-real-server-renders');o(key+'ReceiptStatus',r.status);}c(await snapshot()===before,'receipt-read-no-duplicate-posting');});
+ await test(7,async(c,o)=>{const before=await snapshot();const path=receiptPath(f.receiptPaymentIds);for(const key of ['owner','viewer']){const a=actors[key];if(!a.ownRead)throw new Incomplete('known-role-positive-prerequisite');const r=await request(path,a);c(r.status===200&&r.body.includes('PAYMENT RECEIPT')&&r.body.includes(f.own.customer)&&r.body.includes(f.own.number)&&r.body.includes('150.00'),'existing-receipt150-real-server-renders');o(key+'ReceiptStatus',r.status);}c(await snapshot()===before,'receipt-read-no-duplicate-posting');});
  await test(8,async(c,o)=>{
   if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');handle=await actionHandle(actors.owner);
   const input=(id,amount)=>({paymentDate:f.date,paymentAccountCode:'1000',allocations:[{documentId:id,amount}],idempotencyKey:randomUUID()});
@@ -120,9 +135,11 @@ async function laneCases(lane,f){
   if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');
   const page=await request(spec.path,actors.owner);if(page.status!==200)throw new Incomplete('settings-owner-page-unavailable');
   const fields=formFields(page.body,spec.needle),before=await snapshot(),posted=await snapshot(postedTables);
-  await postForm(spec.path,actors.viewer,[...fields,...spec.fields,[spec.needle,spec.denied]]);
+  const priorValues=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
+  const deniedValue=settingsDeniedValue(priorValues,spec.denied,spec.allowed);
+  await postForm(spec.path,actors.viewer,[...fields,...spec.fields,[spec.needle,deniedValue]]);
   const values=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
-  const changed=values.some(r=>r.value===spec.denied);
+  const changed=JSON.stringify(values)!==JSON.stringify(priorValues);
   c(await snapshot()===before,'viewer-settings-write-zero-business-effects');c(!changed,'viewer-settings-field-unchanged');o('viewerSettingChanged',Number(changed));
   const response=await postForm(spec.path,actors.owner,[...fields,...spec.fields,[spec.needle,spec.allowed]]);
   const positive=await sql.unsafe('select '+spec.column+'::text as value from '+spec.table+' where tenant_id=$1',[f.tenantA]);
@@ -130,13 +147,30 @@ async function laneCases(lane,f){
   c(saved,'same-form-owner-settings-positive-persisted');o('ownerSettingSaved',Number(saved));
   const historyUnchanged=await snapshot(postedTables)===posted;c(historyUnchanged,'settings-save-preserves-posted-finance-and-stock');o('postedFactsUnchanged',Number(historyUnchanged));
  });
+ await test(14,async(c,o)=>{
+  if(!actors.owner.ownRead||!actors.viewer.ownRead||!actors.foreign.ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  if(!f.hire?.id||!f.hire.marker||!f.hire.number)throw new Incomplete('rental-hire-fixture-unavailable');
+  const before=await snapshot();
+  for(const key of ['owner','viewer']){const a=actors[key];const onRent=await request('/inventory/on-rent',a);c(onRent.status===200&&onRent.body.includes(f.hire.marker),'own-on-rent-renders-hire-marker');o(key+'OnRentStatus',onRent.status);const audit=await request('/journal/audit',a);c(audit.status===200&&audit.body.includes('Activity'),'own-activity-page-renders');c(!audit.body.includes(f.foreign.marker),'own-activity-no-foreign-invoice');o(key+'AuditStatus',audit.status);}
+  const foreignOnRent=await request('/inventory/on-rent',actors.foreign);c((foreignOnRent.status===200||denied(foreignOnRent))&&!foreignOnRent.body.includes(f.hire.marker)&&!foreignOnRent.body.includes(f.hire.number),'foreign-on-rent-no-own-hire');o('foreignOnRentStatus',foreignOnRent.status);
+  const foreignAudit=await request('/journal/audit',actors.foreign);c((foreignAudit.status===200||denied(foreignAudit))&&!foreignAudit.body.includes(f.hire.marker)&&!foreignAudit.body.includes(f.hire.number),'foreign-activity-no-own-hire');o('foreignAuditStatus',foreignAudit.status);
+  c(await snapshot()===before,'rental-get-no-business-effects');
+ });
+ await test(15,async(c,o)=>{
+  if(!actors.owner.ownRead||!actors.viewer.ownRead)throw new Incomplete('known-role-positive-prerequisite');
+  if(!f.hire?.id)throw new Incomplete('rental-hire-fixture-unavailable');
+  const handle=await hireChargeHandle(actors.owner);const payload={documentId:f.hire.id,damageCharge:1,applyDeposit:false};
+  let before=await snapshot(rentalPostedTables);const deniedViewer=await hireCharge(actors.viewer,handle,payload);c(deniedViewer.status<500,'viewer-hire-charge-transport-not-server-error');c(await snapshot(rentalPostedTables)===before,'viewer-hire-charge-zero-business-effects');
+  before=await snapshot(rentalPostedTables);await hireCharge(actors.foreign,handle,payload);c(await snapshot(rentalPostedTables)===before,'foreign-hire-charge-zero-business-effects');
+  o('hireActionTransportVerified',1);
+ });
  return rows;
 }
 try{
  assert.equal(process.env.GITHUB_ACTIONS,'true','Only ephemeral CI may launch/reset this HTTP fixture');httpTarget(BASE,process.env.QA_HTTP_ISOLATION);httpDatabase(process.env.QA_RUNTIME_ADMIN_URL,process.env.QA_RUNTIME_ISOLATION);
  stage='source-guard';const verify=spawnSync(process.execPath,['scripts/verify-product.mjs'],{encoding:'utf8'});assert.equal(verify.status,0);
  const ref=JSON.parse(readFileSync('product-ref.json','utf8'));const preparation=JSON.parse(readFileSync('.local/runtime/preparation.json','utf8'));assert.equal(preparation.productSha,ref.commit);assert.equal(preparation.complete,true);
- assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:13},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
+ assert.deepEqual(manifest.lanes.map(l=>({name:l.name,credential:l.credential,expected:l.expected})),[{name:'owner-db-baseline',credential:'admin',expected:Array.from({length:15},(_,i)=>'HTTP-'+String(i+1).padStart(3,'0'))},{name:'nonowner-nobypassrls',credential:'runtime',expected:Array.from({length:15},(_,i)=>'HTTP-'+String(i+101).padStart(3,'0'))}]);
  sql=postgres(process.env.QA_RUNTIME_ADMIN_URL,{max:1});const [guard]=await sql`select * from qa_runtime_guard`;assert.equal(guard.marker,'isolated-bookone-qa-v1');assert.equal(guard.product_sha,ref.commit);
  const runtime=JSON.parse(readFileSync('.local/runtime/connection.json','utf8')).url;httpDatabase(runtime,process.env.QA_RUNTIME_ISOLATION);
  summary.fingerprint={productSha:ref.commit,productStamp:'v'+readFileSync('work/product/VERSION','utf8').trim()+' · '+ref.commit.slice(0,7),qaSha:git('rev-parse','HEAD'),qaDirty:!!git('status','--porcelain'),qaContentHash:digest(git('ls-files','--cached','--others','--exclude-standard').split(/\r?\n/).filter(p=>/\.(mjs|ts|tsx|json|md|ya?ml)$/.test(p)&&!p.startsWith('runs/')).sort().map(p=>p+'\0'+digest(readFileSync(p))).join('\n')),node:process.version,productLockHash:digest(readFileSync('work/product/pnpm-lock.yaml')),fixtureVersion:manifest.fixtureVersion,transport:'canonical-localhost-TLS-pinned-IPv4-Next-custom-server',schemaMigrations:preparation.migrations.length};
