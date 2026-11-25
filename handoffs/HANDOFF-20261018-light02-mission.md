@@ -1,0 +1,24 @@
+# Next fixed Light mission — v2.5.16 mission02
+
+Read AGENTS, STATUS/SESSION, docs/COST_AWARE_QA.md, [PR46 review](../reviews/REVIEW-20261018-pr46.md), [new18-slot queue](../queues/MISSION-v2516-LIGHT-02.json), applicable rulebook/workbooks and retained residual fixture plan. This is planned, not executed. Model selection is manual; no unattended service or automatic routing.
+
+Pin **v2.5.16 · b2c5205**, fullproductb2c5205a1bf52fbd327a948325810670467d21b4. Re-fetch this branch before trusting scratch, record its full QA SHA. Fresh intended fixture logout/login; own company/Owner and actual openings. Last anchor80journals/10475.51, AR1006.21/AP540/inventoryGL120/VAT46.71/profit539.50/assets1126.21, Widget4×60=240, inherited120gap. Re-read rather than assume. Credentials private; unavailable login is a blocker.
+
+Use a new operator ledger/fingerprint and fixed18IDs,90active-minute budget/75execution/15closing. Idle credit waiting is separately recorded. Checkpoint before and after EVERY financial submit and each conversion; one writer; no replay of ambiguous result. Operator ledger does not verify actor, dependencies, timing or business truth. Continue independent cases after a preserved failure. Any new build globally blocks mutations; no deployments during execution. If coding deploys first, Medium must create a new pinned queue, not edit this one.
+
+Key operating fixes:
+
+- Quote dates are controlled. Enter issue17Oct2026, press ArrowUp then ArrowDown; then due25Oct, same keys, Tab. Confirm exact dates AFTER a line edit and immediately before submission. Stop an invalid fixture before submitting. Source handler automatically derives good-thru from issue date, so set due last. If executing in a context where October/date/period prerequisites differ, escalate for a new binding; do not silently change fixed dates.
+- After a submit, in the same browser call wait for either actionable status OR expected success navigation, up to15s; capture whichever arrives. A timeout is not rollback. Read persisted source/list/journal before disposition; do not resubmit just to capture a toast.
+- Keep original0018, alloldbad/consumedsources, quote0001, PO0001 andopen0025 untouched. New catalog/date drafts are independent. Discounted draft Edit showing286.50 instead of256.50 must stay failed; do not Post changed economics.
+- Purchase server refusal now uses supplier-number policy, not an unavailable blank-vendor select. Under requiredsupplier=true, blank bill reference must produce a real business refusal with zero mutation; correct once in the same retained form. Known source risk predicts busy key; record actual failure and stop retries. This is an expected outcome obligation, not permission to call busy correct.
+- Purchase conversion lane uses requiredsupplier=false explicitly/reloaded, postGRNItrue/requireGRNtrue/approvalfalse, VATfalse/negativeBlock/LastCost. This separate variant avoids an unreachable invoice-number entry on conversion UI; it does not certify required-number conversions. Restore ALL actual opening settings, including purchase flags.
+- Fresh Physical5×60 PO300 has zeroGL/stock. GRN2: stock2/value120 DrInventory120CrGRNI120; bill2 from thatGRN: DrGRNI120CrAP120/no extra stock. GRN3: +3/+180/GRNI180; bill3: clear180/APtotal300/no extra stock. Return1@60: DrAP60CrInventory60; finalnewSKU4/value240/AP240/GRNI0. ExhaustedPO cannot receive a sixth unit. Bind actual sources/lines/costs and supplier/tenant locks at each step.
+
+If the supplier correction succeeds add openAP10/expense10. Otherwise its net financial delta is0. Other sale/credit controls net0; quotes/drafts0GL. Report actual partial-lane deltas if a dependency fails; do not force the golden outcome. Preserve new stock and unpaid liabilities for later lifecycle testing; no payment/writeoff/cleanup. Two authentic legacy upgrades remain blocked until isolated app/auth/DB exists. Backup/restore LAST.
+
+Finish with all performed outcomes, honest untouched-not-run scope if budget ends, first failures/corrections, exact reconciliation, full settings reload and sanitized published handoff/current pointers. No fullcanonical workflow or release acceptance from this bounded queue. Medium reviews new unknowns; Light never changes expected values.
+
+Owner prompt after selecting Light:
+
+> Continue QA from this review branch. Read handoffs/HANDOFF-20261018-light02-mission.md and execute queues/MISSION-v2516-LIGHT-02.json on exact v2.5.16 · b2c5205. Verify build/fresh actor/openings, checkpoint every submission/conversion, preserve first failures and continue independent cases through the fixed queue/budget. Use the verified quote-date procedure and immediate outcome capture. Restore all purchase/VAT/inventory settings, reconcile and publish the handoff. Escalate unknowns to Medium; no replay, deploy, reset, payment or historical repair.

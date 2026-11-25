@@ -735,3 +735,98 @@ Expected signed ledger: {"bankA":85000,"bankB":30000}.
 
 Expected business state: {"totalCashCents":115000,"additionalMoneyJournalCount":0}.
 
+
+## EX-RET-14-01 — Duplicate quantity refusal
+
+Cases: WB-HYB.J02.C08.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceQty":3,"attemptedQty":4,"newReturnCount":0,"additionalMoneyJournalCount":0}.
+
+
+## EX-RET-14-02 — Hypothetical taxable full-return arithmetic
+
+Cases: WB-HYB.J02.C09.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceNetCents":25650,"sourceTaxCents":4617,"sourceGrossCents":30267,"requiredFullCreditCents":30267}.
+
+
+## EX-RET-14-03 — Residual beyond one unit line value
+
+Cases: WB-HYB.J02.C10.
+
+Assumptions: Independent specification arithmetic/state only; no product helper. Tax example conditional on verified supported tax configuration and expert applicability; no statutory approval or posting execution.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Bind independent expected state before live execution; no ledger posting in this arithmetic example
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"sourceGrossCents":995,"priorAcceptedCents":891,"requiredFinalCreditCents":104,"finalUnitLineNetCents":100}.
+
+
+## EX-CORE-14-01 — Unchanged draft discount roundtrip
+
+Cases: WB-CORE.J04.C06.
+
+Assumptions: No tax; independent integer-cent state example; draft is not a posted receivable. Full draft save/post and cost policy require separately bound runtime evidence.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Save draft3x100/line10percent/header5percent, then open Edit without changing it
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"grossCents":30000,"lineDiscountCents":3000,"lineNetCents":27000,"headerDiscountCents":1350,"draftTotalCents":25650,"postedJournalCount":0}.
+
+
+## EX-CORE-18-01 — Zero-stock denial leaves financial state unchanged
+
+Cases: WB-CORE.J06.C07.
+
+Assumptions: Synthetic no-tax fixture; verified physical classification and negative policy block; prior catalog creation separate from rejected invoice. No independent runtime/fault/role acceptance implied.
+
+Opening signed ledger cents: {}.
+
+### Step 1: Attempt invoice1unit at1000cents against available0
+
+| Account purpose | Debit cents | Credit cents |
+|---|---:|---:|
+| No GL posting | 0 | 0 |
+
+Expected signed ledger: {}.
+
+Expected business state: {"availableUnits":0,"requestedUnits":1,"shortUnits":1,"newInvoiceCount":0,"newJournalCount":0,"ARDeltaCents":0,"inventoryDeltaCents":0}.
+

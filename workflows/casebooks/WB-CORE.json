@@ -1,6 +1,6 @@
 {
   "id": "WB-CORE",
-  "revision": 3,
+  "revision": 6,
   "title": "Shared accounting, access and document controls",
   "profileIds": [
     "BP-01",
@@ -424,7 +424,7 @@
     },
     {
       "id": "WB-CORE.J04",
-      "revision": 2,
+      "revision": 3,
       "title": "Master data, document snapshots and safe archive",
       "status": "draft",
       "risk": "P1",
@@ -440,6 +440,10 @@
         },
         {
           "id": "RB-CONFIG-01",
+          "revision": 1
+        },
+        {
+          "id": "BR-SAL-03",
           "revision": 1
         }
       ],
@@ -512,6 +516,36 @@
           "kind": "invalid-state",
           "oracle": [],
           "id": "WB-CORE.J04.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-CORE.J04.C06",
+          "title": "Draft edit roundtrip preserves line and header discounts",
+          "given": "Draft invoice3x100 with line10%=30 and header5%of270=13.50; stored line-net270,total256.50; no posted journal. Product catalog may change later; bind declared draft repricing policy separately.",
+          "action": "Save draft, reload detail, open Edit without changes, cancel; repeat save unchanged and supported Post on separate fixtures.",
+          "expected": "Unchanged edit must hydrate original discount semantics or equivalent explicit amounts and preview270-13.50=256.50. It must not blank line discount and show286.50. Cancel preserves draft facts/no GL; save preserves original totals and discounts; Post exactly once under valid current cost/stock policy, no duplicate draft/source and attributable audit. Changes in master price cannot silently change saved draft economics; original draft and posted controls remain distinct.",
+          "kind": "history",
+          "oracle": [
+            {
+              "label": "line net cents",
+              "operation": "sub",
+              "operands": [
+                30000,
+                3000
+              ],
+              "equals": 27000
+            },
+            {
+              "label": "draft total cents",
+              "operation": "sub",
+              "operands": [
+                27000,
+                1350
+              ],
+              "equals": 25650
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }
@@ -654,7 +688,7 @@
     },
     {
       "id": "WB-CORE.J06",
-      "revision": 2,
+      "revision": 4,
       "title": "Forms, retries, concurrency and ambiguous success",
       "status": "draft",
       "risk": "P1",
@@ -757,6 +791,27 @@
           "kind": "invalid-input",
           "oracle": [],
           "id": "WB-CORE.J06.C06",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "id": "WB-CORE.J06.C07",
+          "title": "Stock-rule rejection preserves a valid invoice form",
+          "given": "Verified stored Physical product with availableqty0; negativeStockPolicy=block; unsaved invoiceqty1/price10/customer/issue18Oct/delivery19Oct/due25Oct/notes otherwisevalid. Product quickcreation,ifused,completed separately before this attempt.",
+          "action": "Submit once; inspect actionable shortage, retained fields and before/after document,AR,GL,stock and audit snapshots. Receive goods through separate authorized workflow before retrying the retained invoice.",
+          "expected": "Reject shortage1 with zero new invoice/journal/AR/stock movement. Retain customer/issue date/delivery date/due date/SKU/qty/price/notes on same editable entry; do not redirect to list and discard work. Busy state clears. Do not remove a catalog product deliberately created before submission. A separately bound digital/service positive under block must not require physical stock. Subsequent supported correction posts at most once; never replay an ambiguous financial submit without readback. Retaining controlled product lines while resetting dates or notes is a failure; compare every submitted field before/after. Client-only validation must retain the same fields as a separate control.",
+          "kind": "invalid-state",
+          "oracle": [
+            {
+              "label": "short units",
+              "operation": "sub",
+              "operands": [
+                1,
+                0
+              ],
+              "equals": 1
+            }
+          ],
           "execution": "not-run",
           "binding": null
         }

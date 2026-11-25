@@ -1,0 +1,175 @@
+{
+  "run": "RUN-20261017-v2514-retest",
+  "productSha": "a36af042753f3ad8b40246d6cd579deac9233ba7",
+  "observedLoginStamp": "v2.5.14 \u00b7 a36af04",
+  "qaBase": "4676d17b8f87b9e97423fe748a7106514b948bdf",
+  "sourceGitBlob": "c13acd102065be99eaad9623fd62dbb27a9fc2de",
+  "testSha256": "ef8f23b163dc7d4a62caa843854e027b60aa9130d29c065acddc0a4adee4bda9",
+  "node": "24.19.0",
+  "layer": "isolated-pure-pinned-source",
+  "passed": 24,
+  "failed": 4,
+  "skipped": 0,
+  "checks": [
+    {
+      "id": "N14-S001",
+      "name": "different supplier rejected by pure guard",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S002",
+      "name": "different customer rejected by pure guard",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S003",
+      "name": "matching party name survives whitespace/case normalization",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S004",
+      "name": "one of three discounted units credits85.50",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S005",
+      "name": "remaining two units credit171",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S006",
+      "name": "full source credit256.50 stays exact",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S007",
+      "name": "source unit cost60 remains bound to partial return",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S008",
+      "name": "last unit after accepted1+1 takes0.99",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S009",
+      "name": "full digital3 return remains2.99",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S010",
+      "name": "single excess unit denied",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S011",
+      "name": "one cent over remaining value denied",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S012",
+      "name": "unknown product quantity denied",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S013",
+      "name": "fractional quantity conservation at4decimal boundary",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S014",
+      "name": "future receipt excluded from prior AR cutoff",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S015",
+      "name": "fully paid current invoice still has100 prior debt",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S016",
+      "name": "display subtotal270 minus13.50 equals stored256.50",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S017",
+      "name": "line150percent remains invalid",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S018",
+      "name": "fixed source discount prorates30/3 to10",
+      "result": "passed"
+    },
+    {
+      "id": "N14-S019",
+      "name": "sequential2unit returns conserve header1cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S020",
+      "name": "sequential2unit returns conserve header5cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S021",
+      "name": "sequential3unit returns conserve header1cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S022",
+      "name": "sequential3unit returns conserve header5cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S023",
+      "name": "sequential7unit returns conserve header1cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S024",
+      "name": "sequential7unit returns conserve header5cents",
+      "result": "failed",
+      "finding": "SRC-N14-RESIDUAL"
+    },
+    {
+      "id": "N14-S025",
+      "name": "sequential10unit returns conserve header1cents",
+      "result": "passed",
+      "finding": null
+    },
+    {
+      "id": "N14-S026",
+      "name": "sequential10unit returns conserve header5cents",
+      "result": "failed",
+      "finding": "SRC-N14-RESIDUAL"
+    },
+    {
+      "id": "N14-S027",
+      "name": "aggregate duplicate current lines must not return4 against source3",
+      "result": "failed",
+      "finding": "SRC-N14-DUPQTY"
+    },
+    {
+      "id": "N14-S028",
+      "name": "gross VAT source total must not erase original net header discount",
+      "result": "failed",
+      "finding": "SRC-N14-TAX"
+    }
+  ],
+  "governanceInfrastructure": {
+    "passed": 26,
+    "failed": 0
+  },
+  "browser": {
+    "originalFixRetests": "blocked-no-valid-session",
+    "preparedAccountCreated": false,
+    "accountingMutations": 0
+  },
+  "acceptance": "not-established"
+}
