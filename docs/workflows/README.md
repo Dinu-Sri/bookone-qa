@@ -1,6 +1,6 @@
 # BookOne business workflow playbooks
 
-**Expanded maintained library:** start with [eight business workbooks](LIBRARY.md): 52 journeys, 271 cases, a source-linked business map, field matrix and independent worked examples. These detailed books apply the protocol below; all new cases remain draft/unbound/not run. The five starter families below remain retained anchors.
+**Expanded maintained library:** start with [eight business workbooks](LIBRARY.md): 52 journeys, 272 cases, a source-linked business map, field matrix and independent worked examples. These detailed books apply the protocol below; all new cases remain draft/unbound/not run. The five starter families below remain retained anchors.
 
 **One shared rulebook; five business playbooks; one maintenance protocol.** This is internal QA standard1.0.0,not a claim of ISO certification or product readiness.
 
@@ -36,4 +36,11 @@ pnpm workflows:plan discount payment
 ```
 
 Planner returns affected families plus transitive dependents;missing/unknown impact broadens to all five. Shared core and actual-diff review remain mandatory. It neither executes business tests nor selects every inherited case automatically. Existing campaign/batch/HTTP/browser runners remain execution tools.
+
+
+## UI/UX across all books
+
+Read the [shared UI/UX companion](../ux/README.md) for32 interaction rules,48 drafted workflows, pinned existing-design inventory and safe incremental coding guidance. It supplements all eight books without replacing the current design system or financial policy.
+
+
 
