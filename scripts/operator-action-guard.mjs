@@ -182,7 +182,7 @@ function persistClock(clockPath, chargedClock) {
   renameSync(temp, clockPath);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (typeof process !== 'undefined' && process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const argv = process.argv.slice(2);
   const command = argv[0];
   if (!['authorize', 'execute'].includes(command)) {

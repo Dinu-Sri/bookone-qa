@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "kind": "medium-preparation-not-business-execution",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "startEndStamp": "v2.5.22 · 211771e",
+  "queueCases": 41,
+  "financialEventsIfAllPass": 19,
+  "focusedTests": {
+    "passed": 96,
+    "failed": 0,
+    "skipped": 0,
+    "files": [
+      "operator-queue.test.mjs",
+      "operator-action-guard.test.mjs",
+      "operator-browser-transport.test.mjs",
+      "operator-desktop-cua.test.mjs",
+      "rapid-cycle01.test.mjs",
+      "rapid-cycle01-run.test.mjs"
+    ]
+  },
+  "actualCUAProof": [
+    {
+      "mode": "positive",
+      "executed": true,
+      "uiCalls": 1,
+      "title": "BookOne",
+      "claims": 1
+    },
+    {
+      "mode": "exit",
+      "executed": false,
+      "uiCalls": 0,
+      "claims": 0
+    },
+    {
+      "mode": "intent",
+      "executed": false,
+      "uiCalls": 0,
+      "claims": 0
+    },
+    {
+      "mode": "fingerprint",
+      "executed": false,
+      "uiCalls": 0,
+      "claims": 0
+    },
+    {
+      "mode": "clock",
+      "executed": false,
+      "uiCalls": 0,
+      "claims": 0
+    }
+  ],
+  "actualSafeClick": {
+    "executed": true,
+    "uiCalls": 1,
+    "claims": 1
+  },
+  "sourceHashes": {
+    "scripts/operator-desktop-cua.mjs": "dad8b00b23296ab3636695bd9ab0213efee607105dacbee4c1a8b1cb260f53a0",
+    "scripts/operator-browser-host.mjs": "06eba56f6835fa4d6de7cae381afe30a611ad6ddd273c54c53bfb55364bddd8b",
+    "scripts/operator-browser-transport.mjs": "3d9f9f9a8f7790f834a57a607813e4fe9bb4d6e902b62cde535f5cc5ea5325b9",
+    "scripts/operator-action-guard.mjs": "2245ac9fa74c3128adf6c0d8698551c91900d1f11cfef622966b4bfe4291ed3a",
+    "scripts/operator-queue.mjs": "1da17374c22e199fd423b642d546e115b2b2af865549bb77c593f788fd0708e4",
+    "scripts/operator-clock.mjs": "1a61a4b27869a5a0be853f57a3ab6f18d852cef3de3f3c8bfc570ff6d2866d51"
+  },
+  "hashes": {
+    "rules/rulebook.json": "abcdd8970b1c36e62a97c6a111d6088ca97067ad3d6e954f64250b67989b39fc",
+    "workflows/library.json": "a18153cf65aa140b2ac71cd52b47faef142a51756967fb749581d93e326f7015",
+    "ux/workbook.json": "c6fb86e2473c7e981051a7e36382841fc1f9bb89515017dc13bb34ee038ae74b",
+    "queues/ORACLE-v2522-RAPID-01.json": "91c02b12edf08c8f82d99b7ea3f7cd1ae8921bec940651a95d2ef550512d6f08",
+    "queues/MISSION-v2522-RAPID-01.json": "92713f0685edeb672508d9b8d81bcfe1c77b03f5dada0b3418ded8f83c4184be"
+  },
+  "fullRepositoryCheck": {
+    "status": "not-passed",
+    "reason": "Existing workflow-governance test process exited3221226505 in this Windows environment. Separate unchanged-checkout run returned2pass/8filesystemEIO. Root cause unconfirmed. Remaining full-chain stages not inferred passed."
+  },
+  "metadataChecks": [
+    "business-library check passed",
+    "workflows check passed",
+    "rulebook check passed",
+    "ux-workbook check passed"
+  ],
+  "noBusinessWrites": true,
+  "acceptance": "No canonical, independent-expert or release acceptance. Author Medium technical review; not a separate third-party review."
+}

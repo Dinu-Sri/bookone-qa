@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "newQueueCases": 37,
+  "remainingOriginalCases": 31,
+  "freshGates": 6,
+  "focusedChecks": {
+    "restricted": {
+      "passed": 37,
+      "failed": 9,
+      "reason": "Windows sandbox atomic rename EPERM; retained first result"
+    },
+    "host": {
+      "passed": 46,
+      "failed": 0
+    },
+    "scope": "queue/desktop source controls and independent financial oracles only; not live execution"
+  },
+  "metadata": "passed",
+  "syntax": "both new helpers passed",
+  "oldQueueOracleHashesUnchanged": true,
+  "remainingExecutionStarted": false,
+  "remainingFinancialSubmissions": 13,
+  "remainingJournals": 13,
+  "remainingDrCrCents": 284000,
+  "priorRunCounts": {
+    "passed": 15,
+    "blocked": 1,
+    "notRunBudget": 30,
+    "unresolved": 0
+  },
+  "releaseAcceptance": "not-established"
+}
