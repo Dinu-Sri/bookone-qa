@@ -1,0 +1,83 @@
+{
+  "status": "CLOSED",
+  "dateContract": "2026-11-18 UTC",
+  "sourceInvoiceDate": "2026-11-17",
+  "productCommit": "43233f0d3fade99228f6e7590f1e7e86d6b91370",
+  "productTree": "fbda63ca4e60e44f4a512f5200f8839695a2a123",
+  "qaStartPin": "b8afcdcad894f47495564e0b5cff9f6a6fb6656f",
+  "continuationReview": "c07ebe8",
+  "initialPublication": "d36509935581fa55bb3c5980e75c90e629a32a23",
+  "pullRequest": "https://github.com/Dinu-Sri/bookone-qa/pull/126",
+  "chargedMs": 903816,
+  "pausedMs": 0,
+  "clock": {
+    "schemaVersion": 1,
+    "totalMs": 10800000,
+    "reserveMs": 1800000,
+    "chargedMs": 903816,
+    "pausedMs": 0,
+    "lastAt": 1794971590037,
+    "mode": "closed",
+    "events": [
+      {
+        "action": "open",
+        "at": 1794970686221
+      },
+      {
+        "action": "check",
+        "at": 1794971298120,
+        "elapsedMs": 611899,
+        "priorMode": "active"
+      },
+      {
+        "action": "close",
+        "at": 1794971590037,
+        "elapsedMs": 291917,
+        "priorMode": "active"
+      }
+    ]
+  },
+  "productTests": {
+    "failed": 0,
+    "passed": 425,
+    "files": 50
+  },
+  "independentServiceTests": {
+    "finalSuiteFailed": 5,
+    "failed": 5,
+    "passed": 0,
+    "firstSuiteFailed": 4
+  },
+  "financialIntents": 0,
+  "approvalIntents": 0,
+  "newBills": 0,
+  "newJournals": 0,
+  "newRestoreIntents": 0,
+  "backupPairsPrepared": 1,
+  "newConnections": 0,
+  "pendingActions": 0,
+  "unresolvedDispatchedActions": 0,
+  "originalOwnerRestored": true,
+  "originalClosing": {
+    "postedEntries": 23,
+    "cashAvailable": 771.2,
+    "ar": 0,
+    "netPosition": 120,
+    "ap": 0
+  },
+  "freshSource": {
+    "draftOnly": true,
+    "proposalCount": 1,
+    "vendorCount": 1,
+    "status": "validated",
+    "postingStopped": true,
+    "documentCount": 1
+  },
+  "limits": [
+    "Five independent failures use actual service with MemoryStore/recording port, not actual unauthorized PostgreSQL posting",
+    "No actual staging approval/posting, external Codex/Claude connection or new recovery pass",
+    "Raw original download and restored-byte proof not qualified in this run",
+    "Preservation bounded to observed UI; no full DB equality assertion"
+  ],
+  "priorRun": "CLOSING-20261117-ab05-first-attempt.json"
+}

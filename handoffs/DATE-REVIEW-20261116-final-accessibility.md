@@ -1,0 +1,3 @@
+# Explicit date successor —16 November2026UTC
+
+The assigned15Nov task is expired. This reviewed successor authorizes only the same isolated client-form qualification on16Nov2026UTC,stop23:55UTC,new180/150/30clock after harness freeze/publication. Productca05491/treea0a8d064 unchanged. Original document dates and all CLOSED runs remain immutable. No staging interaction/financial/data/restore authority added. Initial worktree-relative product checkout attempt refused outside workspace; retained as preparation failure, corrected with verified explicit workspace absolute target. No file deletion or relocation performed.
