@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "kind": "additiveboundedbrowserobservations",
+  "mission": "MISSION-v2521-LIGHT-07",
+  "attempt": 2,
+  "candidate": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "executionQaSha": "d04c33e10d375582ea6c6184a48470233e97ed46",
+  "counts": {
+    "passed": 13,
+    "failed": 1,
+    "blocked": 22
+  },
+  "canonicalCaseAcceptance": false,
+  "validatedCanonicalBindings": [],
+  "boundary": "Relatedpartial observations only;actual2financialevents,notfullworkflow;operatorfailure red;no wholecase acceptance from counts",
+  "items": [
+    {
+      "id": "L07-GATE",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-ACTOR",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-PHYSICAL",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-FIXTURES",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-QUOTE",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-Q-EDIT",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-Q-PRINT",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-Q-ORDER",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-ORDER",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-DRAFT",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-D-GUARD",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-SALE",
+      "outcome": "failed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-S-JOURNAL",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-RECEIVE",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-CREDIT",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-C-PRINT",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AR-OVER",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AR-CLOSE",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-S-HISTORY",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-S-REPORTS",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-BILL",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-P-JOURNAL",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-PAY",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AP-OVER",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AP-CLOSE",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-P-HISTORY",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-P-REPORTS",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-COMBINED",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AGING",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-STOCK",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-LISTS",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-EXPORT",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-DRILLDOWN",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-AUDIT",
+      "outcome": "blocked",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-GAPS",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    },
+    {
+      "id": "L07-END",
+      "outcome": "passed",
+      "evidenceFile": "runs/CHECKS-20261024-light07-attempt2.json",
+      "layer": "stagingbrowser-and-private-persisted-readback",
+      "canonicalBinding": "unbound"
+    }
+  ]
+}
