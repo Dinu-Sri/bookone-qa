@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-24",
+  "scope": "Independent review of PR #69 connected Browser transport; no business action",
+  "authorQaSha": "a9ccd4fbc360ed67fd3083f79bbd8c094eabef45",
+  "productSha": "211771e95d6f97cac5eb281a0f8e63f0fceef8a4",
+  "tests": {
+    "guardAndTransport": 46,
+    "operatorQueue": 9,
+    "review54Controls": 9,
+    "missionLight08Exec": 3,
+    "totalPassed": 67,
+    "totalFailed": 0
+  },
+  "authorPinRerun": {
+    "passed": 43,
+    "failed": 1,
+    "failedTest": "concrete code host treats Browser tool isError as an uncertain consumed call",
+    "cause": "Windows cmd.exe could not run POSIX cat via shell:true"
+  },
+  "repositoryCheck": {
+    "command": "pnpm check",
+    "completed": false,
+    "note": "This worktree has no node_modules/tsx; full check was not completed. Linux CI validate-and-unit on the author pin succeeded."
+  },
+  "connectedToolControls": {
+    "actualBrowserAppJs": "unavailable-in-review-session",
+    "syntheticInjectedJs": {
+      "positiveOnce": true,
+      "rejectedExitZeroCalls": true,
+      "rejectedIntentZeroCalls": true,
+      "changedFingerprintZeroCalls": true,
+      "expiredClockZeroCalls": true,
+      "crashAfterClaimConsumedUnknown": true
+    }
+  },
+  "originalGuardClockQueueChanged": false,
+  "businessActions": 0,
+  "applicationConfigurationChanges": 0,
+  "bookOneDeploy": false,
+  "financialTesting": false,
+  "historicalFixturesPreserved": true,
+  "independentReview": "approved-after-portable-crash-finish-correction",
+  "canonicalAcceptance": "not-established"
+}

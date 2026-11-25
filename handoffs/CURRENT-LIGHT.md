@@ -1,9 +1,9 @@
-# Current QA continuation — Light08 prepared
+# Current QA continuation
 
-Execute NEW [Light08 handoff](HANDOFF-20261024-v2522-light08.md), [review](../reviews/REVIEW-20261024-light08.md), [37-slot queue](../queues/MISSION-v2522-LIGHT-08.json) and [oracle](../queues/ORACLE-v2522-LIGHT-08.json) from the final exact QA commit supplied by the coordinator.
+Light08 EXEC2 is terminal:10passed27blocked,0NEWbusinesswrites. Read [coding handoff](CODING-MISSION-20261025-light08-exec2.md) and [run](../runs/RUN-20261025-light08-exec2.md). Complete preflight/fixture review before any NEW financial queue; never resume this terminal ledger.
 
-Live observed v2.5.22 ·211771e/full211771e95d6f97cac5eb281a0f8e63f0fceef8a4. Guard source basee21c329046579aeea6687f52d59b4ea253d9cd55 independently passes26tests. No new live business action in preparation. Actual connected Browser app dispatch proof remains mandatory before any financial write; if unavailable, block financial families and continue independent focus/help/order-source read-only cases. No adapter development during the fixed run.
+## Superseded pointer preserved during merge (PR #71 branch qa/v2522-light08-exec-results)
 
-NEW120-minute clock with20closing, fresh intendedfixture/actor/openings, genericledger before anysession/formsubmission. Preserve first failures and every intent/readback. No uncertain replay. ExistingLight07Q/order600,Ddraft100,openS600/P200 areREADONLYprotected;NEWfinancialfamiliesonlyafterallgates. ActualfundingbeforePpay;no grants/module/job/settings/newcompany/quickcreate/fundingworkaround.
-
-Prior [Light07attempt2](HANDOFF-20261024-light07-attempt2.md) remains13passed/1operatorfailure/22blocked; prior [Light06](HANDOFF-20261023-light06-results.md) remainsimmutable. No bugclosure from code or unitpasses. Actual encryptedbackup/restoreLAST;no release/canonical/ATacceptance.
+# Light08 EXEC run1 — 24 October 2026
+[PR71](https://github.com/Dinu-Sri/bookone-qa/pull/71):1setup pass/1harness failure/35blocked. Full-mission transport preparation exceeds the host output cap before dispatch;46unit tests pass but actual EXEC GUARD proof did not complete. Read-only Browser navigation and diagnostics also stalled after fresh login. No business actions/settings changes/viewport overrides. Historical results remain immutable; no release acceptance.
+[Run](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-exec-results/runs/RUN-20261024-light08-exec-run1.md), [coding handoff](https://github.com/Dinu-Sri/bookone-qa/blob/qa/v2522-light08-exec-results/handoffs/CODING-20261024-light08-exec-run1.md). Next: independent bounded transport correction with full-mission payload regression, Browser recovery, then NEW exact-bound EXEC run. Parent pointers remain in Git at fa927046fa5127d927fdd5cedea5a5279d26e3f3.
