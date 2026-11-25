@@ -1,0 +1,88 @@
+{
+  "kind": "medium-preparation-not-business-execution",
+  "date": "2026-11-12",
+  "productMergeSha": "dae17abcba12d6810c8f8c3fe4a74fb28280a026",
+  "reviewedProductSha": "3d6119ea2b4437ae50b06eaefb54c95063257dbf",
+  "tree": "78973f5a9298ce615f5c8cda17f77b2de714bfa2",
+  "observedLiveStamp": "v2.5.27 · dae17ab",
+  "serverImageDigest": "not-independently-attested",
+  "priorCandidateValidation": {
+    "qaPr": 105,
+    "postgresPassed": 141,
+    "postgresFailed": 0,
+    "httpsPassed": 30,
+    "httpsFailed": 0,
+    "accountingPassed": 210,
+    "campaignPassed": 315,
+    "campaignFailed": 0,
+    "fullCampaignAcceptance": "not-established"
+  },
+  "freshActualControl": {
+    "positive": 2,
+    "positiveUiCallsEach": 1,
+    "positiveClaimsEach": 1,
+    "negative": 5,
+    "negativeUiCallsEach": 0,
+    "negativeClaimsEach": 0,
+    "proofClocksClosed": 7
+  },
+  "authentication": {
+    "actualDispatches": 3,
+    "independentlyAccepted": 2,
+    "adjudicatedNotEstablished": 1,
+    "firstPrematureRawAcceptedLabelPreserved": true,
+    "unresolved": 0
+  },
+  "mutations": {
+    "financial": 0,
+    "stock": 0,
+    "shift": 0,
+    "settings": 0,
+    "master": 0,
+    "grant": 0,
+    "signup": 0,
+    "physicalPrint": 0
+  },
+  "liveVandNZeroOpenings": true,
+  "discovery": {
+    "checkpoints": 80,
+    "events": 48,
+    "financialEvents": 38,
+    "conditionalDrCents": 1021840,
+    "conditionalCrCents": 1021840
+  },
+  "focusedRestrictedFirst": {
+    "passed": 76,
+    "failed": 41,
+    "reason": "Windows temporary-file atomic rename restrictions; original result retained"
+  },
+  "focusedHostFirst": {
+    "passed": 117,
+    "failed": 0
+  },
+  "focusedFinal": {
+    "failed": 0,
+    "passed": 22,
+    "scope": "new policy/oracle suite after final auth/field-map changes; original96 host checks unchanged from successful117 run"
+  },
+  "metadata": {
+    "status": "passed",
+    "files": 1076,
+    "scenarios": 792,
+    "assertionsReviewed": 30,
+    "assertionsPending": 762
+  },
+  "clockClosure": {
+    "initialPublication": "a6308df978075664197caa4c030c01c6b9afcb69",
+    "chargedMs": 11084752,
+    "includesInitialPublication": true,
+    "explicitPausedMs": 0,
+    "totalExceeded": true,
+    "mode": "closed",
+    "boundary": "Entire unpaused credit gap charged; no auth/business after budget expiry; this commit is metadata-only closure tail",
+    "totalBudgetMs": 3600000
+  },
+  "executionAcceptance": "not-established",
+  "launchAcceptance": "not-established",
+  "agentMergeOrDeployment": false
+}
