@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "productSha": "b2c5205a1bf52fbd327a948325810670467d21b4",
+  "sourceHashes": {
+    "apps/web/src/components/module/commercial-doc-screens.tsx": "6f0bc909a08103a90c7ff6f8d445cd05010fc34f9e65afb2fb3526e4518f018e",
+    "apps/web/src/components/module/document-lines-editor.tsx": "0d571e731581104256c96e3ca66c1903af6274e6fa961e76b3bee0bd36b512ad",
+    "apps/web/src/components/sales/invoice-document-form.tsx": "a93559cad8867497d3de460f0bcc6a185375b1b2e29a62b8158e43e53607e5d1",
+    "apps/web/src/components/sales/sales-document-form.tsx": "274e2f7f81176d5852f4ba32262b10d0b207e81eb2623f8b59f98c019982d9d9",
+    "packages/accounting/src/document-guards.ts": "24cd0e0dfc4277a8bd3fb43d388d4ad77d587f6a56bbde0ea0d08e3f38b57776"
+  },
+  "layer": "Pinned product source calculation/control-flow diagnostics; no browser, database, credential or release acceptance",
+  "checks": [
+    {
+      "id": "F7-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F7-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F7-conservation",
+      "expectedCents": 695,
+      "actualCents": 695,
+      "status": "passed"
+    },
+    {
+      "id": "F10-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F10-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F10-conservation",
+      "expectedCents": 995,
+      "actualCents": 995,
+      "status": "passed"
+    },
+    {
+      "id": "F3-sales-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F3-purchase-preview-post",
+      "expected": "Every preview, posting and declared independent fixture amount agrees",
+      "status": "passed"
+    },
+    {
+      "id": "F3-conservation",
+      "expectedCents": 299,
+      "actualCents": 299,
+      "status": "passed"
+    },
+    {
+      "id": "U7-total",
+      "expectedCents": 101,
+      "actualCents": 101,
+      "status": "passed"
+    },
+    {
+      "id": "U7-line-representation",
+      "expected": "Line amounts minus header reconcile to returned credit without unexplained adjustment",
+      "status": "passed"
+    },
+    {
+      "id": "U10-total",
+      "expectedCents": 104,
+      "actualCents": 104,
+      "status": "passed"
+    },
+    {
+      "id": "U10-line-representation",
+      "expected": "Line amounts minus header reconcile to returned credit without unexplained adjustment",
+      "status": "passed"
+    }
+  ],
+  "ladders": [
+    {
+      "quantity": 7,
+      "headerCents": 5,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 99,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 198,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 4,
+          "priorCents": 297,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 5,
+          "priorCents": 396,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 6,
+          "priorCents": 495,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 7,
+          "priorCents": 595,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 695
+    },
+    {
+      "quantity": 10,
+      "headerCents": 5,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 99,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 198,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 4,
+          "priorCents": 297,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 5,
+          "priorCents": 396,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        },
+        {
+          "step": 6,
+          "priorCents": 495,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 7,
+          "priorCents": 595,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 8,
+          "priorCents": 695,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 9,
+          "priorCents": 795,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 10,
+          "priorCents": 895,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 995
+    },
+    {
+      "quantity": 3,
+      "headerCents": 1,
+      "steps": [
+        {
+          "step": 1,
+          "priorCents": 0,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 2,
+          "priorCents": 100,
+          "expectedCents": 100,
+          "previewCents": {
+            "sales": 100,
+            "purchase": 100
+          },
+          "postingCents": 100,
+          "represented": true
+        },
+        {
+          "step": 3,
+          "priorCents": 200,
+          "expectedCents": 99,
+          "previewCents": {
+            "sales": 99,
+            "purchase": 99
+          },
+          "postingCents": 99,
+          "represented": true
+        }
+      ],
+      "cumulativeCents": 299
+    }
+  ],
+  "upgrades": [
+    {
+      "quantity": 7,
+      "priorCents": 594,
+      "expectedCents": 101,
+      "postingCents": 101,
+      "lineNetCents": 101,
+      "persistableLineSumCents": 101,
+      "headerCents": 0,
+      "allocationAdjustmentCents": 1,
+      "sourceUnitPrices": [
+        1
+      ]
+    },
+    {
+      "quantity": 10,
+      "priorCents": 891,
+      "expectedCents": 104,
+      "postingCents": 104,
+      "lineNetCents": 104,
+      "persistableLineSumCents": 104,
+      "headerCents": 0,
+      "allocationAdjustmentCents": 4,
+      "sourceUnitPrices": [
+        1
+      ]
+    }
+  ],
+  "actionObservation": {
+    "boundary": "Source linkage inspection only; real React DOM retention, submission and pending behavior remain untested",
+    "invoiceUsesRetainingHelper": true,
+    "helperPreventsNativeSubmit": true,
+    "helperCapturesSubmitter": true,
+    "helperWrapsPending": true,
+    "invoiceFunctionActionRemoved": true
+  },
+  "productGate": "passed",
+  "releaseAcceptance": "not-established",
+  "run": "RUN-20261018-v2516-source-preflight",
+  "qaBase": "039324870def4327a67d872d6f685ff56173d4c5",
+  "adapterSha256": "f5a27edbd0b6e97dc2f40043506049de9dce099dbe9557a7c51807c2285d99d5",
+  "oracleModuleSha256": "0a97783e4c2df1effc049fad1a6d87330f92e619df5258e591dadf7b6ad5064b",
+  "sourceManifestSha256": "0ead8051422d3f7b59bf076d788d24635c575775fd0509bbbbf3b6ee6e51fe2c",
+  "nodeVersion": "v24.19.0",
+  "counts": {
+    "passed": 13,
+    "failed": 0
+  },
+  "processExitCode": 0,
+  "firstAttempt": "QAadapter omitted cents definition; repaired before results; unchanged independent expectations; private attempt retained",
+  "runtimeAcceptance": "not-established",
+  "liveStamp": "not-verified"
+}

@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2518-LIGHT-03",
+  "productSha": "a4a6d65fa0f8ecc116b728b99d70e86f1b2b577f",
+  "qaBase": "bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+  "startStamp": "v2.5.18 · a4a6d65",
+  "endStamp": "v2.5.18 · a4a6d65",
+  "planHash": "4bbb70501e30baa762561e942a224a33b3154b93f6b5f0bc6643740242f55629",
+  "fingerprintHash": "fdc560077dcbd55307cbbe1c7eed4958db761a7d763dc065a4b8c1876e49a8a1",
+  "cases": [
+    {
+      "id": "M18-GATE",
+      "status": "passed",
+      "actual": "Exact live candidate and published QA revision verified.",
+      "evidence": {
+        "liveStamp": "Login and Owner sidebar v2.5.18 · a4a6d65",
+        "qaRevision": "Remote qa/v2518-retest-mission bc7f0bf0cfe31ff4b5ee455f2f166d704237efa5",
+        "deploymentFreeze": "No candidate change observed; no deploy performed"
+      }
+    },
+    {
+      "id": "M18-ACTOR",
+      "status": "blocked",
+      "actual": "Fresh intended login and openings verified; required profile cannot be established because checkbox interactions do not change state.",
+      "evidence": {
+        "freshLogin": "PrivateQA N141710 freshLogin;owncompanyOwner;Remembermeunchecked",
+        "openingBalances": "88journals11115.51;AR1006.21/AP840/InvGL420/GRNI0/VAT46.71/COGS420/profit539.50/assets1426.21",
+        "openingStock": "Widget4value240/M17Receipt5value300/total540;inheritedgap120",
+        "openingSettings": "VATfalse18/export0/dept01/localcommercial/creditlimitoff;last/allow;purchasefalse,false,true,false,false,Net30,6800",
+        "settingsReload": "Requiredsupplier checkbox remainsfalse after check twice,Space,CUAclick,safeReload,DOMCUA;Save neverclicked",
+        "endStamp": "v2.5.18 · a4a6d65"
+      },
+      "nextAction": "Medium diagnose UI interaction/no-change boundary before a fresh or safely resumed mission; do not bypass with API/DOM mutation."
+    },
+    {
+      "id": "M18-SUPPLIER",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-OLD-DRAFT",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-NEW-DRAFT",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-PO",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-GRN2",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-BILL2",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-GRN3",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-BILL3",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-RET1",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-REMAINING",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-OVER",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-DUP-SALES",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-F7",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-F10",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-F3",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-TAX",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-RETENTION",
+      "status": "blocked",
+      "actual": "Required M18-ACTOR profile could not be established; business case not attempted; no mutation.",
+      "evidence": {
+        "dependency": "M18-ACTOR blocked before trading; UI checkbox no-change across supported methods",
+        "businessExecution": "Not attempted; no supplier/draft/PO/GRN/bill/return created"
+      },
+      "nextAction": "Medium review interaction issue, reverify actor/profile and bind new run; do not mark business test passed."
+    },
+    {
+      "id": "M18-U7",
+      "status": "blocked",
+      "actual": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "evidence": {
+        "environmentDisposition": "Isolated v2.5.14 app/auth/DB unavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN1.0.0;101c/104c unchanged",
+        "nextAction": "Infrastructure operator prepares authentic pinned upgrade fixture; no SQL fabrication or staging downgrade"
+      },
+      "nextAction": "Prepare authentic isolated environment; no fake legacy fixture."
+    },
+    {
+      "id": "M18-U10",
+      "status": "blocked",
+      "actual": "Authentic isolated old-version app/auth/database not prepared; upgrade not attempted.",
+      "evidence": {
+        "environmentDisposition": "Isolated v2.5.14 app/auth/DB unavailable",
+        "fixturePlan": "RESIDUAL_FIXTURE_PLAN1.0.0;101c/104c unchanged",
+        "nextAction": "Infrastructure operator prepares authentic pinned upgrade fixture; no SQL fabrication or staging downgrade"
+      },
+      "nextAction": "Prepare authentic isolated environment; no fake legacy fixture."
+    },
+    {
+      "id": "M18-END",
+      "status": "passed",
+      "actual": "Zero trading delta; no settings save; all actual openings reloaded unchanged; no ambiguous financial intent.",
+      "evidence": {
+        "trialBalance": "88journals11115.51debits=credits;assets1426.21=liabilities+equity",
+        "controlDeltas": "Allzero;AR1006.21/AP840/InvGL420/GRNI0/VAT46.71/profit539.50",
+        "stockDeltas": "Allzero;Widget4value240/M17Receipt5value300/total540/inheritedgap120",
+        "fixtureRegister": "NoM18documents/products/returns/financialintents;alloldfixturesretained",
+        "settingsReload": "Purchasefalse,false,true,false,false,Net30,6800;Inventorylast/allow;fullsalesmapidenticalopening",
+        "endStamp": "v2.5.18 · a4a6d65;ownQAOwner"
+      }
+    }
+  ],
+  "checkpointEvents": [
+    {
+      "command": "start",
+      "id": "M18-GATE",
+      "status": "running",
+      "at": "2026-10-19T04:37:42.474Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-GATE",
+      "status": "passed",
+      "at": "2026-10-19T04:37:42.475Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-ACTOR",
+      "status": "running",
+      "at": "2026-10-19T04:37:42.525Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-ACTOR",
+      "status": "blocked",
+      "at": "2026-10-19T04:37:42.526Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-SUPPLIER",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.581Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-SUPPLIER",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.581Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-OLD-DRAFT",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-OLD-DRAFT",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-NEW-DRAFT",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-NEW-DRAFT",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-PO",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-PO",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-GRN2",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-GRN2",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-BILL2",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-BILL2",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.582Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-GRN3",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-GRN3",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-BILL3",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-BILL3",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-RET1",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-RET1",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-REMAINING",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-REMAINING",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-OVER",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-OVER",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-DUP-SALES",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.583Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-DUP-SALES",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.584Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-F7",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.584Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-F7",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.584Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-F10",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.584Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-F10",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-F3",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-F3",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-TAX",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-TAX",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-RETENTION",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-RETENTION",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-U7",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-U7",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.585Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-U10",
+      "status": "running",
+      "at": "2026-10-19T04:38:19.586Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-U10",
+      "status": "blocked",
+      "at": "2026-10-19T04:38:19.586Z"
+    },
+    {
+      "command": "start",
+      "id": "M18-END",
+      "status": "running",
+      "at": "2026-10-19T04:39:03.811Z"
+    },
+    {
+      "command": "record",
+      "id": "M18-END",
+      "status": "passed",
+      "at": "2026-10-19T04:39:03.812Z"
+    }
+  ],
+  "counts": {
+    "passed": 2,
+    "failed": 0,
+    "blocked": 20
+  },
+  "businessCasesPassed": 0,
+  "businessCasesAttempted": 0,
+  "actor": "Fresh explicit private QA N141710 login; own QA company Owner; Remember me unchecked",
+  "opening": {
+    "journals": 88,
+    "turnover": 11115.51,
+    "AR": 1006.21,
+    "AP": 840,
+    "inventoryGL": 420,
+    "GRNI": 0,
+    "VAT": 46.71,
+    "profit": 539.5,
+    "assets": 1426.21,
+    "stockValue": 540
+  },
+  "closing": {
+    "journals": 88,
+    "turnover": 11115.51,
+    "AR": 1006.21,
+    "AP": 840,
+    "inventoryGL": 420,
+    "GRNI": 0,
+    "VAT": 46.71,
+    "profit": 539.5,
+    "assets": 1426.21,
+    "stockValue": 540
+  },
+  "settingsChanged": false,
+  "settingsSaved": false,
+  "financialSubmissions": 0,
+  "ambiguousFinancialIntents": 0,
+  "stopReason": "Required actor/configuration gate blocked by UI input actions producing no checkbox change; do not bypass profile",
+  "classification": "Interaction anomaly; product versus browser/control cause unknown; Medium review required",
+  "observations": [
+    {
+      "id": "M18-UI-01",
+      "action": "Require supplier invoice checkbox",
+      "before": false,
+      "after": false,
+      "methods": [
+        "Playwright check twice with intervening readback",
+        "Space key",
+        "coordinate CUA click grounded in screenshot",
+        "safe page reload then DOM CUA node click"
+      ],
+      "outcome": "All readbacks false; Save purchase settings never clicked"
+    },
+    {
+      "id": "M18-NAV-01",
+      "action": "Trial Balance link",
+      "outcome": "Heading wait timed out; URL stayed /reports/P&L; supported direct observed href navigation subsequently loaded correct Trial Balance; no financial operation"
+    }
+  ],
+  "preserved": "No M18 documents/products/returns created; all prior fixtures untouched; inherited stockGLgap120 unchanged",
+  "metrics": {
+    "modelRoutingVerified": false,
+    "creditsObserved": null,
+    "additionalUserPrompts": 0
+  },
+  "releaseAcceptance": false,
+  "canonicalAcceptance": false
+}

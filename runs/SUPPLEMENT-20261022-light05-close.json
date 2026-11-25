@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "case": "M20-END",
+  "submissionId": "M20-END-inventory-restore-1",
+  "outcome": "accepted",
+  "actual": "Browser reload verified inventory last/allow and fullpurchase/sales maps EXACTopening; bothviewports1920x855. AR/AP/trial/BS/product and historical reads reconcile. No uncertain financial outcome.",
+  "mapsEqual": {
+    "purchase": true,
+    "inventory": true,
+    "sales": true
+  },
+  "localLedgerWrite": "failed-environment-offline; original state remains preserved/running",
+  "supplementalCaseDisposition": "inconclusive",
+  "budget": "Final clockclose/wall/elapsed unavailable; no backdated pause; unpaused gaps remain chargeable.",
+  "nextAction": "Append to originalprivateledger onreconnection, preserve evidence and close clockhonestly; no business replay.",
+  "preparedAt": "2026-10-22T13:57:27.931Z"
+}
