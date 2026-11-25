@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "mission": "MISSION-v2521-LIGHT-07",
+  "attempt": 2,
+  "date": "2026-10-24",
+  "executionQaSha": "d04c33e10d375582ea6c6184a48470233e97ed46",
+  "productSha": "7458a9c458402f9dfaf64587dd5ef7ebe1b5d448",
+  "liveStamp": "v2.5.21 · 7458a9c",
+  "counts": {
+    "passed": 13,
+    "failed": 1,
+    "blocked": 22
+  },
+  "financialBoundary": "OnlyS600/P200accepted;2journalsDrCr800,AR+600/AP+200/netincome+400/liquid0;fullseveneventladdernotexecuted",
+  "operatorFailure": "RejectedpreintentdidnotstopSPost;laterecoverypreserved;no replay",
+  "handoff": "handoffs/HANDOFF-20261024-light07-attempt2.md",
+  "checks": "runs/CHECKS-20261024-light07-attempt2.json",
+  "next": "Fail-closedoperatorguard/MediumreviewthenNEWfreshfinancialrun",
+  "canonicalAcceptance": false,
+  "releaseAcceptance": false,
+  "publicationBoundary": "Historicalmemory/programme.jsonupdateautomaticallyrejectedforbroaderinternalmetadata;originalindexunchanged;thisscopedentrycontainsLight07only."
+}
