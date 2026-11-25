@@ -1,0 +1,876 @@
+{
+  "dateContract": "2026-11-17 UTC",
+  "testedCandidateSha": "bd16a8468cf4f5d14f8e84e42b6b0c78d0a45f97",
+  "testedTree": "aa7ff89b146d8f2532dd5a5ef350a0e530e21d6b",
+  "mergedMasterSha": "9eb13dabc3bd988bec2ed9e6bb2d17ded05db767",
+  "mergedTreeEqualsTestedTree": true,
+  "version": "2.7.4",
+  "product": {
+    "passed": 46,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "independent acceptance expectations AB-02 unsupported paid invoice cannot be approved and posted while blocking issues remain",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-02 different keys concurrent on same approved proposal cause at most one posting call",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-02 tokens without finite expiry are rejected even when their signature is valid",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-02 connected agent cannot grant a human-only approval even with carried approve capability",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-02 configured live OCR must do more than throw an unconditional blocked stub",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-02 local HMAC fixture is not accepted as production OAuth",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-03 stale Viewer post scope is intersected away and creates zero bills",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-03 lost-response reconciliation updates receipt and document together without a second post",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-03 token scopes never expand past current grants",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-04 token scopes never expand a read-only token to post",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations AB-04 persisted .write aliases map to the same capabilities as catalog action keys",
+        "status": "passed"
+      },
+      {
+        "name": "local fixture tokens parses inbox and approve/post scopes",
+        "status": "passed"
+      },
+      {
+        "name": "local fixture tokens rejects expired, wrong-secret and malformed tokens",
+        "status": "passed"
+      },
+      {
+        "name": "local fixture tokens rejects a valid signature when expiry, issuer or audience is missing",
+        "status": "passed"
+      },
+      {
+        "name": "scoped CoreGuard registry keeps required suites distinct from blocked external configuration",
+        "status": "passed"
+      },
+      {
+        "name": "scoped CoreGuard registry adds CoreGuard as an extra publication need without masking quality",
+        "status": "passed"
+      },
+      {
+        "name": "configurable OCR HTTP adapter forwards attachment bytes and MIME and does not fabricate facts",
+        "status": "passed"
+      },
+      {
+        "name": "configurable OCR HTTP adapter fails closed on provider timeout without invented amounts",
+        "status": "passed"
+      },
+      {
+        "name": "issue detection does not convert a paid invoice into an unpaid bill",
+        "status": "passed"
+      },
+      {
+        "name": "issue detection records malicious document text without treating it as an instruction",
+        "status": "passed"
+      },
+      {
+        "name": "durable extraction jobs redelivers a job left running after a crash without posting",
+        "status": "passed"
+      },
+      {
+        "name": "durable extraction jobs persists jobs on the store so a restarted worker can recover",
+        "status": "passed"
+      },
+      {
+        "name": "MCP JSON-RPC adapter advertises the documented protocol and every required tool",
+        "status": "passed"
+      },
+      {
+        "name": "MCP JSON-RPC adapter submits through MCP without accepting a filesystem path",
+        "status": "passed"
+      },
+      {
+        "name": "MCP JSON-RPC adapter rejects missing bearer tokens and rate-limits a noisy client",
+        "status": "passed"
+      },
+      {
+        "name": "money protocol rejects non-integer minor units",
+        "status": "passed"
+      },
+      {
+        "name": "money protocol rounds VAT half-up independently of production helpers",
+        "status": "passed"
+      },
+      {
+        "name": "OAuth RS256 JWKS interoperability resolves a locally issued RS256 access token through JWKS HTTP",
+        "status": "passed"
+      },
+      {
+        "name": "OAuth RS256 JWKS interoperability still accepts labelled HMAC fixtures on the same resolver",
+        "status": "passed"
+      },
+      {
+        "name": "golden corpus independence oracles do not import production purchase helpers",
+        "status": "passed"
+      },
+      {
+        "name": "golden corpus independence maps every golden case to independent expected outcomes",
+        "status": "passed"
+      },
+      {
+        "name": "security fixtures ignores approve-yourself text in the document body",
+        "status": "passed"
+      },
+      {
+        "name": "security fixtures rejects foreign attachment handles and path traversal keys",
+        "status": "passed"
+      },
+      {
+        "name": "security fixtures live extractor fails closed without pretending fixture output is live",
+        "status": "passed"
+      },
+      {
+        "name": "security fixtures draft-only agents cannot approve or post",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService refuses work when the company flag is off",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService runs the supported VAT service invoice from upload to one receipt",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService asks a plain-language supplier question and will not invent a vendor",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService stops unsupported paid invoices instead of reinterpreting them",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService enforces draft-only, posting-disable, viewer denial and stale approval",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService isolates tenants on documents, attachments and errors",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService rejects path traversal filenames and files over 8MB",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService flags a duplicate scan instead of posting twice",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridgeService catches a wrong-money preview against the independent oracle",
+        "status": "passed"
+      },
+      {
+        "name": "document state machine allows the Build1 happy path",
+        "status": "passed"
+      },
+      {
+        "name": "document state machine forbids posting from draft and rewriting posted bills",
+        "status": "passed"
+      }
+    ]
+  },
+  "auth": {
+    "passed": 123,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver owner template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver accountant template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver purchasing template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver Viewer stays denied even when capability grants are copied into its job",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver Viewer default template has no approve/post write",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver Sales job without those grants cannot approve or post",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver deny override refuses even when the template granted write",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver deny override on the persisted .write alias also refuses",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver custom persisted .write suffix still authorizes the catalog action key",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver RBAC off keeps Owner/Admin write and Viewer/empty read-only",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver purchase module ceiling denies AgentBridge write when purchase is off",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver does not grant unknown keys",
+        "status": "passed"
+      },
+      {
+        "name": "AB-04 AgentBridge action keys through the actual resolver job matrix persists exact action keys and reads the .write alias",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridge permission catalog v2 bumps the catalog and registers inbox plus approve/post keys",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridge permission catalog v2 grants purchasing write, accountant approve/post, viewer read-only inbox",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridge permission catalog v2 public bill create still session-authorizes; AgentBridge posting opts in after service checks",
+        "status": "passed"
+      },
+      {
+        "name": "AgentBridge permission catalog v2 044 enables RLS and docker-web keeps quality plus CoreGuard",
+        "status": "passed"
+      },
+      {
+        "name": "idempotency completed result (BUG-0023) treats paidCount/ok payloads without id as done",
+        "status": "passed"
+      },
+      {
+        "name": "idempotency completed result (BUG-0023) keeps in-flight claims busy",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle releases a conclusive supplier-number refusal so the corrected reference posts once",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle releases stock, dimension and rollback refusals the same way",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle keeps a concurrent in-flight claim busy until the owner finishes",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle replays a committed success when the response was lost",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle does not treat a permanently cached error as correction recovery",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle never deletes a completed success on release",
+        "status": "passed"
+      },
+      {
+        "name": "commercial rejected-attempt idempotency lifecycle skips keys shorter than 8 characters",
+        "status": "passed"
+      },
+      {
+        "name": "inventory product-write ceiling sole lite cannot write inventory even when the module flag is on",
+        "status": "passed"
+      },
+      {
+        "name": "inventory product-write ceiling sole full can write inventory when the module is on",
+        "status": "passed"
+      },
+      {
+        "name": "inventory product-write ceiling company with inventory off cannot write inventory",
+        "status": "passed"
+      },
+      {
+        "name": "inventory product-write ceiling viewer job cannot write inventory products",
+        "status": "passed"
+      },
+      {
+        "name": "inventory product-write ceiling owner job can write inventory products when the module is on",
+        "status": "passed"
+      },
+      {
+        "name": "rental module contract starter company owner cannot write inventory products or rental dispatch",
+        "status": "passed"
+      },
+      {
+        "name": "rental module contract company with inventory and rental on lets owner write catalogue and dispatch",
+        "status": "passed"
+      },
+      {
+        "name": "rental module contract rental catalogue create is inventory.products.write; dispatch is rental.dispatch.write",
+        "status": "passed"
+      },
+      {
+        "name": "rental module contract viewer cannot dispatch, return, collect, refund, or invoice hire charges",
+        "status": "passed"
+      },
+      {
+        "name": "financial audit journal-read gate owner accountant and viewer can read journal; cashier cannot",
+        "status": "passed"
+      },
+      {
+        "name": "shouldRepairOwnerJob (BUG-0052) fills a missing Owner job on an existing Owner membership",
+        "status": "passed"
+      },
+      {
+        "name": "shouldRepairOwnerJob (BUG-0052) does not promote a legacy Viewer with a null job",
+        "status": "passed"
+      },
+      {
+        "name": "shouldRepairOwnerJob (BUG-0052) does not promote Admin or custom memberships",
+        "status": "passed"
+      },
+      {
+        "name": "shouldRepairOwnerJob (BUG-0052) leaves an Owner who already has a job unchanged",
+        "status": "passed"
+      },
+      {
+        "name": "payment idempotency fingerprint (BUG-0032) matches equivalent replay and rejects a different invoice",
+        "status": "passed"
+      },
+      {
+        "name": "payment idempotency fingerprint (BUG-0032) rejects completed results that have no fingerprint",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) save and archive assert company.sales_settings.write before mutating",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) listPosRegisters does not insert a default register on the read path",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) VAT settings write remains on the same company.sales_settings.write guard",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) Owner may write sales settings; Viewer and a custom read-only job may not",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) company sales page and Simple Entry derive write controls from the same policy",
+        "status": "passed"
+      },
+      {
+        "name": "POS register write authorization (Mission1 P1) payment actions revalidate two-decimal amounts and the forms share one batch helper",
+        "status": "passed"
+      },
+      {
+        "name": "Docker web image publication gate (BUG-0008 / A-014) in-memory negative controls reject Tests-only, masked, skipped, and always() publishers",
+        "status": "passed"
+      },
+      {
+        "name": "Docker web image publication gate (BUG-0008 / A-014) failed, cancelled, skipped, missing, and timed-out needed jobs block publication",
+        "status": "passed"
+      },
+      {
+        "name": "Docker web image publication gate (BUG-0008 / A-014) A-014 image publication depends on successful same-workflow required validation",
+        "status": "passed"
+      },
+      {
+        "name": "Docker web image publication gate (BUG-0008 / A-014) quality job is unconditional and contains unmasked lint typecheck build test",
+        "status": "passed"
+      },
+      {
+        "name": "adaptReservedForDrizzle lets drizzle construct on a reserved client that has no options",
+        "status": "passed"
+      },
+      {
+        "name": "adaptReservedForDrizzle runs begin and commit on the reserved client",
+        "status": "passed"
+      },
+      {
+        "name": "adaptReservedForDrizzle rolls back when the begin callback throws",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer job can read sales invoices and customers",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer job cannot write invoices or customers",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer job cannot write even when extra Sales grants or allow-overrides are present",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer job cannot write when only jobSlug is viewer",
+        "status": "passed"
+      },
+      {
+        "name": "fallback full access does not grant writes to Viewer when rbac is off",
+        "status": "passed"
+      },
+      {
+        "name": "fallback full access does not treat empty or member as owner",
+        "status": "passed"
+      },
+      {
+        "name": "fallback full access owner still has writes when rbac is off",
+        "status": "passed"
+      },
+      {
+        "name": "fallback full access admin still has financial writes when rbac is off",
+        "status": "passed"
+      },
+      {
+        "name": "Sales job can write customers and invoices",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Owner can open existing invoices when Sales is off and cannot create or pay",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Viewer can read historical invoices when Sales is off and cannot write",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Warehouse cannot read invoices when Sales is off",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Sales job cannot create invoices when Sales is off and can still read them",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Cashier cannot receive payment when Sales is off and can still read invoices",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) explicit deny still blocks historical invoice read",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) personal entity cannot read sales invoices",
+        "status": "passed"
+      },
+      {
+        "name": "module-off historical reads (BUG-0043) Owner can read purchase, inventory, POS and rental history when those modules are off",
+        "status": "passed"
+      },
+      {
+        "name": "starter plan module defaults (BUG-0050) treats empty flags as starter sales and purchase, not inventory or POS",
+        "status": "passed"
+      },
+      {
+        "name": "starter plan module defaults (BUG-0050) keeps explicit false when flags are present",
+        "status": "passed"
+      },
+      {
+        "name": "starter plan module defaults (BUG-0050) lets an additional-company Owner write the first starter PO and not inventory",
+        "status": "passed"
+      },
+      {
+        "name": "starter plan module defaults (BUG-0050) denies Owner purchase write when stored flags are empty and not normalized",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer company settings writes (BUG-0051) denies Viewer writes on company profile and the four settings forms",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer company settings writes (BUG-0051) keeps Owner writes on those company keys",
+        "status": "passed"
+      },
+      {
+        "name": "archive crypto round-trips gzip JSON with the owner password",
+        "status": "passed"
+      },
+      {
+        "name": "archive crypto rejects the wrong password",
+        "status": "passed"
+      },
+      {
+        "name": "archive crypto hashes content stably",
+        "status": "passed"
+      },
+      {
+        "name": "empty tenant helper is empty only when every trading table is zero",
+        "status": "passed"
+      },
+      {
+        "name": "archive table whitelist does not dump users, ops, platform audit, or invite tokens",
+        "status": "passed"
+      },
+      {
+        "name": "archive table whitelist keeps prepared archives out of the files pack prefix",
+        "status": "passed"
+      },
+      {
+        "name": "archive table whitelist starts at schema version 1",
+        "status": "passed"
+      },
+      {
+        "name": "company.backup permission lets the owner export and denies Viewer and Admin",
+        "status": "passed"
+      },
+      {
+        "name": "company.backup permission denies Viewer backup in both RBAC modes despite extra Owner grant and override",
+        "status": "passed"
+      },
+      {
+        "name": "company.backup permission denies Admin backup in both RBAC modes even with extra Owner, grant, and override",
+        "status": "passed"
+      },
+      {
+        "name": "company.backup permission keeps Admin financial and team writes when RBAC is off, without Owner-only backup",
+        "status": "passed"
+      },
+      {
+        "name": "archive restore remap remaps tenant and owner, skips extra memberships, and rewrites storage keys",
+        "status": "passed"
+      },
+      {
+        "name": "archive restore remap rewrites AgentBridge blob keys with the shared storage-pointer rule",
+        "status": "passed"
+      },
+      {
+        "name": "archive restore remap accepts balanced journals and rejects unbalanced ones",
+        "status": "passed"
+      },
+      {
+        "name": "archive restore remap insert order is every dump table except tenants",
+        "status": "passed"
+      },
+      {
+        "name": "archive restore remap rejects a files pack and a tampered checksum",
+        "status": "passed"
+      },
+      {
+        "name": "archive files pack rewrites only the tenant prefix on storage keys",
+        "status": "passed"
+      },
+      {
+        "name": "archive files pack validates a files envelope, rejects a data file, and applies blobs once",
+        "status": "passed"
+      },
+      {
+        "name": "archive files pack pairs files pack to the restored exportId",
+        "status": "passed"
+      },
+      {
+        "name": "archive files pack refuses to mark a files pack complete when objects were invalid",
+        "status": "passed"
+      },
+      {
+        "name": "archive schema transformers and golden restore is a no-op at schema version 1 and refuses unknown windows",
+        "status": "passed"
+      },
+      {
+        "name": "archive schema transformers and golden restore golden: trial balance, invoice totals, stock on hand, receipt key remapped",
+        "status": "passed"
+      },
+      {
+        "name": "archive schema transformers and golden restore rejects stock that does not match remaining cost layers",
+        "status": "passed"
+      },
+      {
+        "name": "archive schema transformers and golden restore rejects posted AR/AP that does not match control accounts or document totals",
+        "status": "passed"
+      },
+      {
+        "name": "control room nav visibility keeps Control Room children for platform super_admin",
+        "status": "passed"
+      },
+      {
+        "name": "control room nav visibility hides unknown labels for a company Admin job",
+        "status": "passed"
+      },
+      {
+        "name": "tenant GUC after requireTenantContext (BUG-0053 / HTTP-102) ALS tenant scope does not persist after the callback returns",
+        "status": "passed"
+      },
+      {
+        "name": "tenant GUC after requireTenantContext (BUG-0053 / HTTP-102) withTenantContext pins then clears GUC on the reserved connection",
+        "status": "passed"
+      },
+      {
+        "name": "tenant GUC after requireTenantContext (BUG-0053 / HTTP-102) getTenantInfo re-enters withTenantContext for the tenants row",
+        "status": "passed"
+      },
+      {
+        "name": "tenant GUC after requireTenantContext (BUG-0053 / HTTP-102) cashbook tenant reads re-enter withTenantContext",
+        "status": "passed"
+      },
+      {
+        "name": "tenant GUC after requireTenantContext (BUG-0053 / HTTP-102) invoice detail still loads tenant + document together",
+        "status": "passed"
+      },
+      {
+        "name": "company settings GET after requireTenantContext (BUG-0054 / HTTP-104) getCompanySettingsData re-enters withTenantContext and does not insert memberships",
+        "status": "passed"
+      },
+      {
+        "name": "company settings GET after requireTenantContext (BUG-0054 / HTTP-104) profile and tax writes still deny via assertPermission",
+        "status": "passed"
+      },
+      {
+        "name": "platform catalog under restricted DB (BUG-0055 / HTTP-105) company listing uses the privileged catalog after requirePlatformAdmin",
+        "status": "passed"
+      },
+      {
+        "name": "platform catalog under restricted DB (BUG-0055 / HTTP-105) company detail and writes pin request-local tenant context",
+        "status": "passed"
+      },
+      {
+        "name": "platform catalog under restricted DB (BUG-0055 / HTTP-105) normal-role Control Room page still denies before listing",
+        "status": "passed"
+      },
+      {
+        "name": "privileged lookup hardening (INV-20261016-042 / migration 043) keeps historical 042 unchanged and hardens via forward 043",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 clipping reproduction legacy per-item estimate clips View-only Accounting children",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 clipping reproduction production CSS uses natural grid height instead of the estimate",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 documentation link and theme isolation Documentation is a real new-tab anchor",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 documentation link and theme isolation docs layout restores html class and does not scan the whole app for Tailwind",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 permission model Owner with full modules sees Control Room only when super-admin",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 permission model Viewer read-only labels stay visible; none is hidden; docs stay",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 permission model restricted modules drop POS, rental, Control Room and personal Team",
+        "status": "passed"
+      },
+      {
+        "name": "UI-NAV-01 permission model visible suites expose unique destinations for a given job",
+        "status": "passed"
+      }
+    ]
+  },
+  "originalService": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "independent acceptance expectations, failures retained unsupported paid invoice cannot be approved and posted while blocking issues remain",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained different keys concurrent on same approved proposal cause at most one posting call",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained tokens without finite expiry are rejected even when their signature is valid",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained connected agent cannot grant a human-only approval even with carried approve capability",
+        "status": "passed"
+      },
+      {
+        "name": "independent acceptance expectations, failures retained configured live OCR must do more than throw an unconditional blocked stub",
+        "status": "passed"
+      }
+    ]
+  },
+  "permissions": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "owner template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "accountant template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "purchasing template approval and post grants work through the real permission resolver",
+        "status": "passed"
+      },
+      {
+        "name": "Viewer stays denied even when capability grants are copied into its job",
+        "status": "passed"
+      }
+    ]
+  },
+  "runtime": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "AB-DB-01 positive scoped upload persists a real document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-02 separate tenant cannot read the positive fixture under non-owner RLS",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-03 returned runtime service retains the authorized tenant scope at call time",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-04 scoped supported approval posts an actual balanced ERP bill matching its preview",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-05 connected Viewer cannot post using stale post scope after current permission resolution",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-06 fresh service reconciles simulated lost response to both posted receipt and document",
+        "status": "passed"
+      },
+      {
+        "name": "AB-DB-07 stale Viewer token refuses at permission check before proposal lookup",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-01 actual tenant archive includes the persisted AgentBridge document and blob",
+        "status": "passed"
+      },
+      {
+        "name": "AB-REC-02 fresh encrypted restore retrieves exact AgentBridge attachment bytes without changing source",
+        "status": "passed"
+      }
+    ]
+  },
+  "ownerPermission": {
+    "job": "owner",
+    "approvalGrantPresent": true,
+    "postGrantPresent": true,
+    "approvalAllowed": true,
+    "postAllowed": true
+  },
+  "migrationsApplied": 47,
+  "reconciliation": {
+    "role": {
+      "rolsuper": false,
+      "rolbypassrls": false
+    },
+    "rows": [
+      {
+        "alias": "source",
+        "documents": 3,
+        "blobs": 3,
+        "retrievablekeypairs": 3,
+        "bills": 1,
+        "journalnet": "0.00"
+      },
+      {
+        "alias": "restoredTarget",
+        "documents": 3,
+        "blobs": 3,
+        "retrievablekeypairs": 3,
+        "bills": 1,
+        "journalnet": "0.00"
+      }
+    ]
+  },
+  "release": {
+    "pr": 17,
+    "merged": true,
+    "productionCheckRun": 44007311027,
+    "productionCheck": "success",
+    "dockerRun": 44007310935,
+    "docker": "success",
+    "quality": "success",
+    "coreguard": "success",
+    "imageTag": "ghcr.io/dinu-sri/bookone-web:sha-9eb13da"
+  },
+  "live": {
+    "url": "https://bookone.clossyan.com/login",
+    "initialObservedStamp": "v2.7.3 · 382f0d8",
+    "finalVerification": "new release not observed live; owner Portainer Update/Re-pull required",
+    "authSubmissions": 0,
+    "businessWrites": 0,
+    "configurationWrites": 0,
+    "finalObservedPublicStamp": "v2.7.3 · 382f0d8",
+    "finalObservedProtectedStamp": "v2.7.3 · 382f0d8",
+    "companyFlags": {
+      "inboxEnabled": false,
+      "draftOnly": true,
+      "postingDisabled": true
+    },
+    "expectedNewStamp": "v2.7.4 · 9eb13da"
+  },
+  "branchProtection": {
+    "masterProtected": false,
+    "rulesets": []
+  },
+  "recovery": "LAST: posted bill/journal and exact DB-backed attachment bytes restored; approvals revoked; safety flags on; source unchanged",
+  "decision": "Reported-defect candidate qualification passed; live deployment and remaining activation scope not certified",
+  "publication": "https://github.com/Dinu-Sri/bookone-qa/pull/124",
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1088392,
+    "pausedMs": 0
+  },
+  "cleanup": {
+    "temporaryTabs": "closed",
+    "isolatedDatabase": "stopped; data retained",
+    "unresolvedAuth": 0
+  },
+  "hashBoundary": "Git index blob bytes",
+  "hashes": {
+    "product-ref.json": "f13ad7b6d708e1c579be7d803e9b1782caa14b472b7a1d87d8ece2e47fcc32d2",
+    "tests/runtime/agentbridge-v273.test.ts": "1cd7f9023f834940c4ac749eec999121aee4ebac08bc737cebe81872f82be27d",
+    "tests/agentbridge/v273-permissions.test.ts": "13923312d36bdbbc556518626a175d9090e477f5d9180150456757138b64a49a",
+    "vitest.v274-runtime.config.ts": "ec6dc91ec15fab5ba573bb759dcc69a62f59a263fee47ffd00f76dc41ffb4fa9",
+    "vitest.v274-auth.config.mjs": "aa80115f2a734800a85cf6fd998229d1b56ef9cf9a8998e3d66d1648d5355b75",
+    "scripts/agentbridge-v274-review.mjs": "a8070f756bdc8015550ebb0f9538877dd009f29f6734899f756c24dd8ce931f6"
+  }
+}
