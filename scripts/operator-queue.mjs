@@ -71,7 +71,8 @@ export function report(plan,state,fingerprint) {
     next:unresolved.length?null:state.cases.find(c=>c.status==='pending')?.id??null,
     releaseAcceptance:'not-established',canonicalCaseAcceptance:'not-established'};
 }
-if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
+// CLI ENTRYPOINT
+if(typeof process!=='undefined' && process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
   const [command,planPath,statePath,fingerprintPath,id,resultPath]=process.argv.slice(2);
   const read=p=>JSON.parse(readFileSync(p,'utf8')),plan=read(planPath);
   validate(plan);
