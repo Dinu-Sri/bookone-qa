@@ -19,6 +19,7 @@ export async function dispatchConnectedBrowser({prepared, claim, finish, js, now
   let toolCalls = 0;
   let receipt;
   let out;
+  let finishError;
   try {
     out = await runtime.dispatchBrowserAppWrite({...prepared.inputs, now: now()}, {
       script: prepared.script,
@@ -36,9 +37,22 @@ export async function dispatchConnectedBrowser({prepared, claim, finish, js, now
     });
   } finally {
     // A failed/uncertain tool call remains consumed in durable storage; never replay.
-    await finish({preparationId: prepared.preparationId, executed: out?.executed === true,
-      toolCalls, uncertain: toolCalls > 0 && out?.executed !== true,
-      chargedClock: receipt?.finalChargedClock ?? receipt?.inputs?.clock ?? out?.chargedClock});
+    try {
+      await finish({preparationId: prepared.preparationId, executed: out?.executed === true,
+        toolCalls, uncertain: toolCalls > 0 && out?.executed !== true,
+        chargedClock: receipt?.finalChargedClock ?? receipt?.inputs?.clock ?? out?.chargedClock});
+    } catch (error) {
+      finishError = error;
+    }
+  }
+  if (finishError) {
+    return {
+      executed: false,
+      uncertain: true,
+      reason: 'Finish refused; never replay',
+      toolCalls,
+      chargedClock: receipt?.finalChargedClock ?? receipt?.inputs?.clock ?? out?.chargedClock,
+    };
   }
   return {...out, chargedClock: receipt?.finalChargedClock ?? receipt?.inputs?.clock ?? out?.chargedClock,
     uncertain: toolCalls > 0 && out?.executed !== true, toolCalls};
