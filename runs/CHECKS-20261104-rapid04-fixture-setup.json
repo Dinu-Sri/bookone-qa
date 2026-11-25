@@ -1,0 +1,110 @@
+{
+  "executionQa": "c9eb6510d3549f28d53b902fe8fa686c274a70b2",
+  "productSha": "e5bb589267035ffb031b6c083f4e911bb7d04aac",
+  "liveStamp": "v2.5.24 · e5bb589",
+  "dateContract": "2026-11-04 UTC; remaining setup only",
+  "counts": {
+    "passed": 5,
+    "failed": 0,
+    "blocked": 0,
+    "inconclusive": 0,
+    "not-run": 0,
+    "pending": 0,
+    "running": 0
+  },
+  "unresolvedSubmissions": 0,
+  "acceptedSubmissions": 10,
+  "newAccountsToday": 0,
+  "moduleWrites": 1,
+  "authTransitions": 9,
+  "newFinancial": 0,
+  "freshTests": {
+    "hostPassed": 96,
+    "hostFailed": 0,
+    "sandboxPassed": 55,
+    "sandboxFailed": 41,
+    "boundary": "temporary-file sandbox restrictions retained"
+  },
+  "actualToolProof": {
+    "positiveUiClaims": 2,
+    "refusedZeroUiClaims": 5
+  },
+  "fixtureMatrix": [
+    {
+      "alias": "A Owner",
+      "job": "Owner",
+      "plan": "Pro",
+      "inventory": true,
+      "rental": true,
+      "credentialsLoginVerified": true
+    },
+    {
+      "alias": "A Viewer",
+      "job": "Viewer",
+      "plan": "Pro",
+      "inventory": true,
+      "rental": true,
+      "credentialsLoginVerified": true,
+      "creationUiDenied": true,
+      "authoritativeServerDenial": "not-tested"
+    },
+    {
+      "alias": "B Owner",
+      "job": "Owner",
+      "plan": "Starter",
+      "inventory": false,
+      "rental": false,
+      "credentialsLoginVerified": true
+    }
+  ],
+  "aUnchangedModules": {
+    "sales": true,
+    "purchase": true,
+    "pos": false,
+    "hr": false
+  },
+  "aOpening": {
+    "journals": 0,
+    "products": 0,
+    "stockValue": 0,
+    "movements": 0,
+    "locations": 0
+  },
+  "originalClosing": {
+    "entries": 225,
+    "cash": 580,
+    "ar": 1906.21,
+    "ap": 1490,
+    "income": 1849.5,
+    "assets": 3386.21,
+    "movementCount": 43,
+    "inventoryOff": true,
+    "fullProtectedRowEquality": "not-retested-this-run"
+  },
+  "oldRun": {
+    "date": "2026-10-30",
+    "clock": "closed",
+    "chargedMs": 460780457,
+    "pausedMs": 0,
+    "remainingLedgerCounts": {
+      "passed": 3,
+      "blocked": 1,
+      "notRunBudget": 1
+    },
+    "noUnresolved": true,
+    "creditGapFullyCharged": true,
+    "noReplay": true
+  },
+  "clock": {
+    "mode": "closed",
+    "chargedMs": 1104216,
+    "pausedMs": 0,
+    "includesInitialPublication": true,
+    "metadataOnlyTail": true
+  },
+  "accountModuleSetupComplete": true,
+  "rentalBusinessFixtureReady": false,
+  "lightExecutionReady": false,
+  "noMergeDeploy": true,
+  "backupLast": true
+}
