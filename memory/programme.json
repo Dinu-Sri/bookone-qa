@@ -2071,5 +2071,21 @@
     "authSubmissions": 0,
     "businessSubmissions": 0,
     "next": "Restore supported browser control; fresh proof then qualify Mission1A"
+  },
+  "latestM1ARelease": {
+    "date": "2026-11-11",
+    "queue": "queues/MISSION-v2525-M1A-20261111.json",
+    "oracle": "queues/ORACLE-v2525-M1A-20261111.json",
+    "helper": "scripts/launch-m1a-run.mjs",
+    "review": "reviews/REVIEW-20261111-m1a-release.md",
+    "cases": 46,
+    "workflowJournals": 16,
+    "workflowDrCrCents": 368000,
+    "includingFundingJournals": 17,
+    "includingFundingDrCrCents": 418000,
+    "status": "released-conditional-not-executed",
+    "executionDate": "2026-11-11",
+    "nativeFallback": "quarantined",
+    "oldPlans": "unchanged-nonexecutable"
   }
 }

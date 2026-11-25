@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "id": "MISSION-v2522-RAPID-01-COMBQUAL-20261111",
+  "displayName": "Light combinedVAT/POS prerequisite qualification",
+  "executionReady": true,
+  "candidate": "v2.5.25",
+  "productSha": "a6eda602bc67f20eb86736cbeceabc9cdd841769",
+  "status": "qualification-only-no-financial-or-configuration-writes",
+  "budget": {
+    "totalMinutes": 45,
+    "executionMinutes": 35,
+    "closingReserveMinutes": 10
+  },
+  "dateContract": {
+    "mode": "fixed-utc-day",
+    "executionDate": "2026-11-11",
+    "stopBeforeMidnightMinutes": 5
+  },
+  "oracle": "docs/COMBINED_QUALIFICATION_BOUNDARY.md",
+  "cases": [
+    {
+      "id": "CQ-01",
+      "title": "Clock and exact QA",
+      "expected": "Before browser/auth NEW45minute clock/35execution/10closing, exactpublishedcleanQA, fixed11NovUTC/final5minute refusal. No oldrunclockreuse.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-02",
+      "title": "Visible live candidate",
+      "expected": "Observe actualv2.5.25 a6eda60 againstknownmergedfullSHA/reviewedtree/ownerreport; serverdigestnotattested. Changedcandidate blocksdependentqualification, noinventedbinding.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [
+        "CQ-01"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-03",
+      "title": "Fresh actual control proof",
+      "expected": "Actual title and harmlessSalesmenu click each1UI/claim plusfivezeroUIclaim refusals; supportedoriginalguard only/nativequarantined;closeproofclocks.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [
+        "CQ-02"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-04",
+      "title": "Fresh ordinary owner login",
+      "expected": "GuardLogout once thenprotected/accountsredirect; savedAOwnerLogin Rememberoff once; resolvebothaccepted/refusedbyindependentreadback. ActualAOwner/company/build; no newadminactor/companyswitch writes.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [
+        "CQ-03"
+      ],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [
+        "Logout",
+        "Login"
+      ]
+    },
+    {
+      "id": "CQ-05",
+      "title": "Private fixture inventory",
+      "expected": "Readcentralignoredfixtures andexistingqualificationrecords withoutprintingsecrets. ListactualVATpositive/nonVATPOSpositive fixture availability. A/B/Viewer previouslyexist doesnotimply newVAT/POSfixtures. No newcredentials/accounts/grants.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-06",
+      "title": "VAT fixture availability",
+      "expected": "If legitimateVATpositivefixturealreadybound, read-onlyevidenceofowner/Inventory/POS/taxprofile; otherwise blocked-with-specificmissingfixture. Do notcreate orflipA/Bsettings.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-07",
+      "title": "Non-VAT POS availability",
+      "expected": "Legitimate separate nonVATPOSfixture read-only qualification or concreteblockeddisposition. CompletedA preserved; foreignBneverrepurposed.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-08",
+      "title": "Tender and opening contract",
+      "expected": "Readexistingaccountcodes1000/1100/1200/1300/2100/2300/2200/3000/4000/4100/5000/5100/6800 and balances; identifyrequirednewfunding separately, neverpostit.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-09",
+      "title": "Location/register contract",
+      "expected": "Observe existingwarehouse/registerlocation/cashaccount/active/printmode fields; prepareunsaveddraftonlyifnecessary. No Addregister/Save/settings/grants.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-10",
+      "title": "Fixture preparation package",
+      "expected": "Produceconcretereviewablesetupsteps for separatefixtures/mapping/tax/grants and requiredaction-timeconfirmations; reuseexistingauthorizationswhereapplicable. Noaccountcreation/terms/grantsubmissioninthismission.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-11",
+      "title": "VAT office conversion source",
+      "expected": "Readexactpinnedquotation/order/invoiceUI+source. Identifycommercial-hardcodedquote andwhetherordinarysupportedconversionyieldsintendedVATtaxinvoice; unsupportedassumptionblocked, notsilentdirectinvoicesubstitute.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-12",
+      "title": "Tax and rounding independent math",
+      "expected": "Verifytaxexclusive18%arithmetic/returns/inputVAT grossBSassetpresentation in80pointplan; legal/customerVATapprovalnotinferred. Noallpassoracleuntilactualcontractbound.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-13",
+      "title": "POS pricing/tender source",
+      "expected": "Reviewcash/card/bank andmixedPRODUCTbaskets; confirmpriceVATinclusive/exclusiveatUI/source. MixedTENDERsplit remainsunqualified; nofakecard/bankacceptance.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-14",
+      "title": "POS print controls",
+      "expected": "InspectfinishPrint/receipt autoprint/Zclose source andsupportedUI. Determinemanualpreview/controlavailablewithoutphysicalprint ordeviceeffects. No sale/return/shiftcommit toexperiment. NoJSinjection/driverbypass.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-15",
+      "title": "POS shift/refund contract",
+      "expected": "Reviewopenshift metadatafloatversusledgerfunding; close/Zexpectedcash/count/variance; sourcecaps/returntenders. Qualifiedsource/read-onlyUI is not actualsale/refund/closeacceptance.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-16",
+      "title": "Historical receipt bindings",
+      "expected": "Read-onlyexistingM1AR savedfeedback/observedlinks; distinguishpaymenttransactionIDfromallocationUUID. Bindonlyactualpersistedpaymentroutes; no guessedUUID ornewpayments.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-17",
+      "title": "Receipt/remittance read-only closure",
+      "expected": "If actualsupportedpaymentlinkavailable,reopenownreceipts250/350/40/80 andremittances480/80; verifydate/tender/source/amount. Missingbinding remainsinconclusive; noqueryamount/datefabrication.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-18",
+      "title": "Amount/cent boundary preparation",
+      "expected": "ReviewAllocationAmountField/sharedparse/rounding andplanunsavedlivecheckswhenfutureunpaidsourceexists; no newdebt/invoices/invalidlive submit. Sourceonly isnotliveacceptance.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-19",
+      "title": "Readiness matrix and grouped handoff",
+      "expected": "Eachsixreleasegate READY/PARTIAL/BLOCKED withactualevidence/missingowner/action. Distinguishsource finding fromlive reproducedbug; codinghandoffonlyconfirmedcontractdefect. Continueindependentread-onlywork; no tinyrepeatedblockedloops.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": []
+    },
+    {
+      "id": "CQ-20",
+      "title": "Preservation and reconciliation",
+      "expected": "Zero financial/master/settings/grant/shiftwrites; authonlypermitted. Confirmledgerclaims/authresolved, existingAcurrentclosingread-onlyifavailable; nofullhistoricalequalityclaimwithoutcomparison.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    },
+    {
+      "id": "CQ-21",
+      "title": "Consolidated publication",
+      "expected": "All22dispositions,source/UIbinding/permission/print/tax/fixturequestions bundled inonesanitizedreport/checks/handoff. Publishunderstandingapproval; no otherchatmessage.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    },
+    {
+      "id": "CQ-22",
+      "title": "Clock close and next decision",
+      "expected": "Resolveallunknownauthintentsread-only,closeclockinclinitialpublication,metadata-onlytail. Mediumreviewsandbinds80pointexecutablebatchoronegroupedfix/setupmission. Do notreleasebusinessmissionasLight.",
+      "precondition": "Exactnewrun/currentUTC/candidate; no oldrequestreplay. Read-onlyqualification except guarded CQ04 Logout/Login.",
+      "dependsOn": [],
+      "evidence": [
+        "observations",
+        "sourceAndBindings",
+        "journalAndStock",
+        "preservation"
+      ],
+      "businessSubmission": false,
+      "allowedButtons": [],
+      "recovery": true
+    }
+  ]
+}
