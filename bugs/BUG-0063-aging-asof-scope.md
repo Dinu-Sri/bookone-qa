@@ -36,3 +36,9 @@ No fix commit or passing retest yet. Add a lasting independent assertion for the
 Original AR/AP future-issue exclusion passed15Oct cutoff0. Adjacent future-payment scope still OPEN P1: INV0003 issued16Oct256.50, receipt75.50/16Oct, DISTINCT1/17Oct;16Oct AR incorrectly180 instead181, aggregate250 instead251. Current180 correct. Preserve fixture. Date-fill first attempt was harness issue, not product date bug.
 
 Candidate ead3a82170e7a34ad625ec6ef8434e5ae65b1609. [Exact run and boundaries](../runs/RUN-20261016-v2512-browser-deep.md), [assertions](../runs/CHECKS-20261016-v2512-browser-deep.json). Original observations above remain immutable; this is scoped follow-up, not blanket closure.
+
+## Appended v2.5.13 independent retest — 17 October 2026
+
+Preserved INV0003 now reconstructs181 at16Oct,aggregate251,current180. AR/AP15Oct0. New currently closed sources correctly reconstruct AR34.50 and AP206.50/100 before genuine future18Oct credits/payments; same-day18Oct effects apply. These scoped historical variants pass. Void/reversal/dimension/timezone/runtime/actor/race layers remain open; no global report/security acceptance.
+
+Candidate1a1020127c4ff0f11ccd9d84d736c6b18b235fca. [Immutable next-wave report](../runs/RUN-20261017-v2513-next-wave.md) and [exact assertions](../runs/CHECKS-20261017-v2513-next-wave.json). Original observations and previous scoped retests above remain preserved.

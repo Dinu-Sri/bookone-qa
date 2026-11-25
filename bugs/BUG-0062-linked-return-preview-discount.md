@@ -36,3 +36,9 @@ No fix commit or passing retest yet. Add a lasting independent assertion for the
 Original full-return preview corrected256.50. Adjacent partial1 preview56.50 vs85.50, remaining2 preview156.50 vs171: still OPEN P2. Backend credits85.50/171 and original cost reversals60/120 correct; cumulative source256.50/180, invoice due0; excess return added no SR/journal.
 
 Candidate ead3a82170e7a34ad625ec6ef8434e5ae65b1609. [Exact run and boundaries](../runs/RUN-20261016-v2512-browser-deep.md), [assertions](../runs/CHECKS-20261016-v2512-browser-deep.json). Original observations above remain immutable; this is scoped follow-up, not blanket closure.
+
+## Appended v2.5.13 independent retest — 17 October 2026
+
+The original full/partial quantity previews pass on fresh INV0005:256.50/85.50/171, with accepted credits and original costs correct. Adjacent source-price editing still previews361 and posts171; sequential0.01-discount rounding strands the final unit on separate INV0009. Keep these variants open; no blanket return acceptance.
+
+Candidate1a1020127c4ff0f11ccd9d84d736c6b18b235fca. [Immutable next-wave report](../runs/RUN-20261017-v2513-next-wave.md) and [exact assertions](../runs/CHECKS-20261017-v2513-next-wave.json). Original observations and previous scoped retests above remain preserved.

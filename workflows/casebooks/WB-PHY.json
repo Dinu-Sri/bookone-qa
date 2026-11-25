@@ -1,6 +1,6 @@
 {
   "id": "WB-PHY",
-  "revision": 1,
+  "revision": 2,
   "title": "Physical retail and wholesale",
   "profileIds": [
     "BP-01"
@@ -537,7 +537,7 @@
     },
     {
       "id": "WB-PHY.J05",
-      "revision": 1,
+      "revision": 2,
       "title": "Credit sale, partial receipt and customer return",
       "status": "draft",
       "risk": "P1",
@@ -667,6 +667,27 @@
           "id": "WB-PHY.J05.C05",
           "execution": "not-run",
           "binding": null
+        },
+        {
+          "title": "Linked credit must retain source customer",
+          "given": "Synthetic customer A invoice1x1 with fixedheader0.01,total0.99,unpaid; distinct same-tenant customer B exists.",
+          "action": "Load A through supported return picker; change customer to B and submit one full linked return.",
+          "expected": "Inherit A on load. Reject B mismatch with zero credit/journal/allocation, or enforce immutable A before preview and posting. Never create B credit that settles A invoice. Correct A full credit0.99 closes source; no invented refund.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "source net cents",
+              "operation": "sub",
+              "operands": [
+                100,
+                1
+              ],
+              "equals": 99
+            }
+          ],
+          "id": "WB-PHY.J05.C06",
+          "execution": "not-run",
+          "binding": null
         }
       ],
       "controlRefs": [
@@ -690,7 +711,7 @@
     },
     {
       "id": "WB-PHY.J06",
-      "revision": 1,
+      "revision": 2,
       "title": "Supplier return and vendor settlement",
       "status": "draft",
       "risk": "P1",
@@ -798,6 +819,36 @@
           "kind": "permissions",
           "oracle": [],
           "id": "WB-PHY.J06.C05",
+          "execution": "not-run",
+          "binding": null
+        },
+        {
+          "title": "Source-linked supplier inheritance and mismatch guard",
+          "given": "Supplier A bill3x100/header14.5%=256.50; paid50 leaves206.50; unrelated B exists.",
+          "action": "Open supported linked purchase-return form; inspect supplier; attempt partial1=85.50 under B, then test separate matching-A positive.",
+          "expected": "Copy supplier A as well as lines/header. Reject mismatched B before any return/GL/allocation, or enforce A consistently. A source must never be settled by a differently attributed B credit. Source/dimension/currency identity and original economics retained; valid partial leaves121 and remaining2=171.",
+          "kind": "invalid-input",
+          "oracle": [
+            {
+              "label": "prior due cents",
+              "operation": "sub",
+              "operands": [
+                25650,
+                5000
+              ],
+              "equals": 20650
+            },
+            {
+              "label": "valid partial due cents",
+              "operation": "sub",
+              "operands": [
+                20650,
+                8550
+              ],
+              "equals": 12100
+            }
+          ],
+          "id": "WB-PHY.J06.C06",
           "execution": "not-run",
           "binding": null
         }
