@@ -1,0 +1,10 @@
+const {open,BASE}=require('./lib');
+(async()=>{const {b,p}=await open(); p.setDefaultTimeout(15000);
+ await p.goto(BASE+'/inventory/adjustments/new',{waitUntil:'networkidle'});
+ await p.fill('input[name=reason]','Damaged in storage');
+ const op=await p.$$eval('select[name=line_0_productId] option',x=>x.map(y=>[y.value,y.text])); await p.selectOption('select[name=line_0_productId]',op.find(x=>x[1].startsWith('OF-CHR-001'))[0]); await p.fill('input[name=line_0_quantity]','-2');
+ await p.screenshot({path:'adj_form.png',fullPage:true});
+ await Promise.all([p.waitForLoadState('networkidle'),p.getByRole('button',{name:'Post adjustment'}).click()]); await p.waitForTimeout(2000); console.log('adj ->',p.url().replace(BASE,''),(await p.$eval('main',m=>m.innerText.replace(/\s+/g,' ').slice(0,200))));
+ await p.goto(BASE+'/inventory/transfers/new',{waitUntil:'networkidle'}); await p.screenshot({path:'tr_form.png',fullPage:true});
+ console.log(await p.$$eval('main [role=combobox], main button',x=>x.map(e=>e.innerText.trim().slice(0,30)+'|'+e.id).join(' ; ')));
+ await b.close();})();

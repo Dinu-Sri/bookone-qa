@@ -2,19 +2,18 @@
 
 Staging `staging.clossyan.com`, build **v2.17.12 · e2e04d2**. Synthetic owner account UI-A (credentials kept privately, not in this public repo).
 
-Shareable version with the same content: https://claude.ai/artifact/E5UyGKEMsCCaJq2U9xK185 (private to the owner until shared).
-
 ## Summary
 
-32 layout findings: **1 critical, 8 high, 13 medium, 10 low**. 93 routes × 3 viewports (desktop 1440×900, tablet 768×1024, mobile 390×844) = 279 captures, 0 load errors.
+38 layout findings: **1 critical, 10 high, 16 medium, 11 low**. 118 routes × 3 viewports (desktop 1440×900, tablet 768×1024, mobile 390×844) = 354 captures, 0 load errors. UI-33 to UI-38 come from the second pass on Inventory, POS and Rental with the modules switched on.
 
 The biggest problems are structural, not per-page: the app shell has no responsive mode (UI-01, UI-02, UI-05), and tables and line-item grids have no narrow-screen layout (UI-03, UI-07, UI-08, UI-09). Fixing the shell drawer, a shared responsive table, and the line-item grid resolves most mobile/tablet findings at once. Desktop is mostly sound; its issues are alignment and consistency (UI-04, UI-10 to UI-23).
 
 ### Suggested fix order for the coding agent
 
 1. App shell: off-canvas sidebar below 1024px + one-row mobile top bar (UI-01, UI-02, UI-05, UI-18).
-2. Shared table: right-aligned tabular money, nowrap codes/dates, stacked cards under 640px, scroll wrapper (UI-03, UI-04, UI-06, UI-09, UI-14, UI-20).
-3. Line-item grid and narrow forms (UI-07, UI-08, UI-23, UI-22).
+2. Shared table: right-aligned tabular money, nowrap codes/dates, stacked cards under 640px, scroll wrapper (UI-03, UI-04, UI-06, UI-09, UI-14, UI-20, UI-36, UI-37).
+3. Line-item grid and narrow forms (UI-07, UI-08, UI-23, UI-22, UI-35).
+3b. Rental calendar scroll container and two-pane POS terminal with a sticky Pay bar (UI-33, UI-34, UI-38).
 4. Page frame and form primitives: PageShell, check-row, form footer, form-grid auto-fit (UI-15, UI-16, UI-17, UI-29, UI-32, UI-02 forms).
 5. Dashboard and remaining polish (UI-10 to UI-13, UI-19, UI-21, UI-24 to UI-31).
 
@@ -31,6 +30,8 @@ The biggest problems are structural, not per-page: the app shell has no responsi
 | [UI-07](#ui-07) | High | Document line items: Description field is too narrow (text cut) while SKU wastes space; unusable on mobile | Sales invoice / quotation / order, purchase bill / PO / cash purchase / import / returns forms | Desktop and Mobile |
 | [UI-08](#ui-08) | High | Mobile: stock transfer and adjustment forms are wider than the screen | Inventory > Transfers / Adjustments (new) | Mobile |
 | [UI-09](#ui-09) | High | Tablet: "Receive or bill from PO" table spills outside its card | Purchase order detail | Tablet |
+| [UI-33](#ui-33) | High | Rental calendar timeline widens the whole page instead of scrolling inside its card | Inventory > Rental calendar (Timeline view) | All; worst on tablet and mobile |
+| [UI-34](#ui-34) | High | POS terminal on tablet and phone: cart and Pay button are pushed below the product grid | POS terminal (/pos) | Tablet 768x1024, Mobile 390x844 |
 | [UI-10](#ui-10) | Medium | Jobs: Access dropdowns zig-zag because each section's table sizes its own columns | Company > Team > Jobs | All |
 | [UI-11](#ui-11) | Medium | Dashboard KPI rows: the two card groups have different top edges and heights | Dashboard | Desktop, Tablet |
 | [UI-12](#ui-12) | Medium | Dashboard charts: uneven x-axis ticks, only two raw y labels, unreadable on mobile | Dashboard | All |
@@ -40,10 +41,13 @@ The biggest problems are structural, not per-page: the app shell has no responsi
 | [UI-16](#ui-16) | Medium | Checkboxes touch their labels and sit off the text baseline | Settings forms | All |
 | [UI-17](#ui-17) | Medium | Sales settings: POS register form fields are scattered; empty register table has no message | Company > Sales settings | Desktop |
 | [UI-18](#ui-18) | Medium | Desktop sidebar: menu is cut off by the user footer at 900px height | App shell | Desktop 1440x900 |
-| [UI-19](#ui-19) | Medium | Inventory, POS and Rental screens have no sidebar entry; sidebar highlights the wrong section on them | Navigation | All |
+| [UI-19](#ui-19) | Medium | Inventory, POS and Rental routes stay reachable with no sidebar entry when the module is off | Navigation | All |
 | [UI-20](#ui-20) | Medium | Receive payment: amount inputs show raw numbers, columns unbalanced | Sales > Receive payments / Purchase > Pay vendors | Desktop |
 | [UI-21](#ui-21) | Medium | Invoice detail header: big empty gap and wrapped meta values | Sales/purchase document detail | Desktop |
 | [UI-22](#ui-22) | Medium | Quotation form totals box is not right-aligned (differs from invoice form) | Sales > Quotations (new/edit) | Desktop |
+| [UI-35](#ui-35) | Medium | Product form: Cancel / Save bar sits on top of the Short description editor | Inventory > Products (new / edit) | Desktop 1440x900 |
+| [UI-36](#ui-36) | Medium | Dispatch / returns: mixed label styles, GL codes in labels, tall action column; page overflows on mobile | Inventory > Dispatch / returns | All; overflow on mobile |
+| [UI-37](#ui-37) | Medium | Stock levels: stock value squeezed into the toolbar; money and reorder cells wrap | Inventory > Stock levels / Low stock | Desktop 1440x900 (worse on tablet) |
 | [UI-23](#ui-23) | Low | Document form header grid: field edges don't line up row to row | Document forms | Desktop |
 | [UI-24](#ui-24) | Low | Date formats are inconsistent (US mm/dd/yyyy in inputs and printouts) | Forms, print | All |
 | [UI-25](#ui-25) | Low | Backup page uses native unstyled controls | Company > Backup | Desktop |
@@ -54,6 +58,7 @@ The biggest problems are structural, not per-page: the app shell has no responsi
 | [UI-30](#ui-30) | Low | Sidebar icons repeat for different items | Sidebar | All |
 | [UI-31](#ui-31) | Low | Documentation: page title duplicated; nav items have bevelled borders | /docs | All |
 | [UI-32](#ui-32) | Low | Party form card is stretched to the full viewport height | Customers/Vendors new & edit | Desktop |
+| [UI-38](#ui-38) | Low | Rental month view: booking chips unreadable on mobile; overdue hire not shown as overdue | Inventory > Rental calendar (Month view) | Mobile 390x844; Desktop |
 
 ## UI-01
 
@@ -198,7 +203,7 @@ Screens: /sales/invoices/new, /sales/invoices/{id}/edit, /sales/quotations/new, 
 Severity: **High** · Area: Inventory > Transfers / Adjustments (new) · Viewport: Mobile  
 Screens: /inventory/transfers/new, /inventory/adjustments/new
 
-**What is wrong.** Date, Reason, Notes inputs are fixed at 720px wide and the product line table does not shrink, so the fields run off the card and the Qty column is cut.
+**What is wrong.** Date, Reason, Notes inputs are fixed at 720px wide and the product line table does not shrink, so the fields run off the card and the Qty column is cut. Retest with data (26 Nov): the page no longer widens, but the card now clips the inputs on the right, so the product select text and the Qty column are cut off at 390px (same fix).
 
 **Steps to reproduce.**
 1. At 390px open /inventory/transfers/new.
@@ -225,6 +230,48 @@ Screens: /purchase/orders/{id}
 ![UI-09](img/ui09-tablet-po-receive-table.jpg)
 
 **Suggested fix.** Wrap the table in `.table-wrap{overflow-x:auto}`; reduce the qty stepper to a 72px input; under 900px stack per line.
+
+## UI-33
+
+**Rental calendar timeline widens the whole page instead of scrolling inside its card**  
+Severity: **High** · Area: Inventory > Rental calendar (Timeline view) · Viewport: All; worst on tablet and mobile  
+Screens: /inventory/calendar (default Timeline view)
+
+**What is wrong.** The 30-day grid has a fixed minimum width and no scroll container, so the page grows sideways: 1578px wide at 1440 (+138px), 1578px at 768 (+810px) and 1298px at 390. The "On rent now" button and the right end of the grid sit outside the top bar and page frame, and at 1440 the last days (28 to 30) need a horizontal page scroll. Booking bars are cut to "40 · 24…" and "150 · 28–30 · K…" with no way to read the full label.
+
+**Steps to reproduce.**
+1. Have at least one hire booking (sales order with hire dates) in the month.
+2. Open /inventory/calendar at 1440×900, then at 768 and 390.
+3. Scroll right: the top bar stops at 1440 while the grid and "On rent now" continue.
+
+**Evidence.**
+
+![UI-33](img/ui33-rental-calendar-desktop.jpg)
+
+![UI-33](img/ui33-rental-calendar-mobile.jpg)
+
+**Suggested fix.** Wrap the timeline in `<div class="hire-cal-scroll" style="overflow-x:auto">` inside the card and let the page stay at viewport width. Make the Item column `position:sticky;left:0` with a background so names stay visible while scrolling. Let the toolbar wrap (`flex-wrap:wrap`) so "On rent now" stays inside the frame. Give bars a `title` (or tooltip) with the full "qty · dates · customer" text, and on screens under 768px default to the List view.
+
+## UI-34
+
+**POS terminal on tablet and phone: cart and Pay button are pushed below the product grid**  
+Severity: **High** · Area: POS terminal (/pos) · Viewport: Tablet 768x1024, Mobile 390x844  
+Screens: /pos
+
+**What is wrong.** Below desktop width the two-pane terminal stacks: product grid first, then the cart, totals and Pay. On a 768×1024 tablet (a typical POS device) the Pay button is at y≈1130, below the fold, and on a phone it is at the bottom of a 2645px page after every product tile. The header also wraps to three rows on tablet and five on phone. A cashier has to scroll after every scan to see the cart and total.
+
+**Steps to reproduce.**
+1. Open a shift and go to /pos at 768×1024.
+2. Tap a product: the cart line is added off-screen; scroll down to find the total and Pay.
+3. Repeat at 390×844.
+
+**Evidence.**
+
+![UI-34](img/ui34-pos-tablet.jpg)
+
+![UI-34](img/ui34-pos-mobile.jpg)
+
+**Suggested fix.** Keep the terminal two-pane down to 768px (grid `minmax(0,1fr) 320px`, product tiles `repeat(auto-fill,minmax(120px,1fr))`). Under 768px show a sticky bottom bar with item count, total and Pay (`position:sticky;bottom:0`) that opens the cart as a bottom sheet. Collapse the header actions (Close shift, History, Shifts, printer and drawer buttons) into one overflow menu under 1024px.
 
 ## UI-10
 
@@ -389,11 +436,11 @@ Screens: All Company pages
 
 ## UI-19
 
-**Inventory, POS and Rental screens have no sidebar entry; sidebar highlights the wrong section on them**  
+**Inventory, POS and Rental routes stay reachable with no sidebar entry when the module is off**  
 Severity: **Medium** · Area: Navigation · Viewport: All  
 Screens: /inventory/*, /sales/pos, /sales/pos/shifts, /company/rental
 
-**What is wrong.** These routes load, but the sidebar has no Inventory or POS group; on them ACCOUNTING is expanded with nothing active. (In this test company Inventory is off in Control Room, which may be why, but the pages still open.)
+**What is wrong.** Retest with modules on (26 Nov): the INVENTORY group appears and highlights the current page correctly, so the main problem is gone. With the module off (first pass), /inventory/*, /sales/pos and /company/rental still load, the sidebar shows no group for them and ACCOUNTING is expanded with nothing active.
 
 **Steps to reproduce.**
 1. Open /inventory/levels or /sales/pos.
@@ -402,7 +449,7 @@ Screens: /inventory/*, /sales/pos, /sales/pos/shifts, /company/rental
 
 ![UI-19](img/ui19-inventory-no-nav.jpg)
 
-**Suggested fix.** Either add Inventory/POS/Rental groups (shown disabled with "Off for this company" when the module is off) and map their active state, or redirect these routes to a module-off page when the module is disabled.
+**Suggested fix.** When a module is off, redirect its routes to a short "This module is off for your company" page (or show the group disabled with that note). No change needed when the module is on.
 
 ## UI-20
 
@@ -454,6 +501,62 @@ Screens: /sales/quotations/new, /sales/quotations/{id}/edit
 ![UI-22](img/ui22-quote-totals.jpg)
 
 **Suggested fix.** Reuse the invoice footer layout: notes left (flex:1), discount, totals `margin-left:auto;width:266px`.
+
+## UI-35
+
+**Product form: Cancel / Save bar sits on top of the Short description editor**  
+Severity: **Medium** · Area: Inventory > Products (new / edit) · Viewport: Desktop 1440x900  
+Screens: /inventory/products/new, /inventory/products/{id}/edit
+
+**What is wrong.** The form card is fixed to the viewport height and its action bar has no background or separation, so on the Identity tab the Cancel and Save product buttons share a row with the editor toolbar and the editor itself is cut in half ("A short summary customers will see first" is clipped at the card edge).
+
+**Steps to reproduce.**
+1. Open /inventory/products/new at 1440×900.
+2. Look at the bottom of the Identity tab.
+
+**Evidence.**
+
+![UI-35](img/ui35-product-form-footer.jpg)
+
+**Suggested fix.** Make the footer a real sticky bar: `position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px` and give the scroll area `padding-bottom` equal to the bar height. Or let the card grow with content instead of fixing it to 100vh (same root cause as UI-32).
+
+## UI-36
+
+**Dispatch / returns: mixed label styles, GL codes in labels, tall action column; page overflows on mobile**  
+Severity: **Medium** · Area: Inventory > Dispatch / returns · Viewport: All; overflow on mobile  
+Screens: /inventory/on-rent
+
+**What is wrong.** Each job card mixes stacked labels (Tender, Extend hire to) with inline labels squeezed beside inputs ("Agreed damage (4450)", "Agreed late fee (4450)", "Extra hire (4400)"), and shows raw GL account numbers to the user. The "Confirm overlap" checkbox floats next to the date. In the lines table, Dispatch / Open doc / Packing list are stacked so each row is about 110px tall. At 390px the table forces the page to 738px wide.
+
+**Steps to reproduce.**
+1. Create a sales order with hire dates and confirm it.
+2. Open /inventory/on-rent at 1440 and at 390.
+
+**Evidence.**
+
+![UI-36](img/ui36-dispatch-desktop.jpg)
+
+![UI-36](img/ui36-dispatch-mobile.jpg)
+
+**Suggested fix.** Use one form grid per card: stacked labels above every input, in rows of 3 (`grid-template-columns:repeat(auto-fit,minmax(180px,1fr))`). Move the account numbers to a help tooltip or drop them. Put Open doc and Packing list into a row-level "⋯" menu and keep only the primary action (Dispatch / Return) as a button. Under 640px render the lines as stacked cards (shared table fix, UI-03).
+
+## UI-37
+
+**Stock levels: stock value squeezed into the toolbar; money and reorder cells wrap**  
+Severity: **Medium** · Area: Inventory > Stock levels / Low stock · Viewport: Desktop 1440x900 (worse on tablet)  
+Screens: /inventory/levels, /inventory/levels?low=1, /inventory/levels?fleet=on_rent
+
+**What is wrong.** The total stock value is small grey text wedged between the Wash filter and the Adjustment button, so it reads as a disabled control. Value cells wrap to two lines ("LKR / 495,000"), and the Reorder cell stacks a "blocked" pill over "≤ 50", so rows have uneven heights. Money is left-aligned (see UI-14).
+
+**Steps to reproduce.**
+1. Have stock in more than one location.
+2. Open /inventory/levels at 1440×900.
+
+**Evidence.**
+
+![UI-37](img/ui37-stock-levels-toolbar.jpg)
+
+**Suggested fix.** Move "Stock value LKR 3,615,650" into a summary line or stat card above the table. Give money cells `white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums`. Show reorder as one line ("≤ 50 · blocked") or a single status pill with the level in a tooltip.
 
 ## UI-23
 
@@ -625,20 +728,66 @@ Screens: /parties/customers/new, /parties/vendors/new, edit
 
 **Suggested fix.** Remove the forced min-height on the form card; keep the action bar sticky to the bottom of the viewport instead.
 
+## UI-38
+
+**Rental month view: booking chips unreadable on mobile; overdue hire not shown as overdue**  
+Severity: **Low** · Area: Inventory > Rental calendar (Month view) · Viewport: Mobile 390x844; Desktop  
+Screens: /inventory/calendar?view=month
+
+**What is wrong.** At 390px each day cell is about 40px wide, so every booking chip truncates to one letter and an ellipsis ("N…", "K…"). On all sizes the chip colour is the job pastel only: SO-20261126-0003 is overdue (ended 25 Nov, still out) and the timeline marks it red, but the month view shows it in the same yellow as a normal booking, even though the legend above lists Overdue in red.
+
+**Steps to reproduce.**
+1. Have one hire whose end date is before today and not returned.
+2. Open /inventory/calendar?view=month at 1440, then at 390.
+
+**Evidence.**
+
+![UI-38](img/ui38-month-chips-mobile.jpg)
+
+![UI-38](img/ui38-month-overdue-desktop.jpg)
+
+**Suggested fix.** Under 640px replace chips with a coloured dot per booking and list the day's bookings below the grid when a day is tapped (or default to List view). Add the status border used in the timeline (`hire-cal-chip-late`) to month chips so overdue jobs show red regardless of job pastel.
+
 ## Incidental functional finding (outside UI scope, for the functional thread)
+
+Shareable report with images: https://claude.ai/artifact/E5UyGKEMsCCaJq2U9xK185 (private until shared). This file is the repo copy; images are in `img/`.
 
 **F-01 — Posting a sales document to an existing customer creates a duplicate customer when the display name differs from the legal name.** High.
 The customer picker on invoice/quotation/order forms submits the display name (`partyName` = "Lanka Hardware") instead of the party id. When the customer's legal name differs ("Lanka Hardware & Building Supplies (Private) Limited"), posting creates a new customer (CUS-0007) and books the receivable there, leaving the real customer (CUS-0001) at LKR 0. Reproduced three times (CUS-0007, -0008, -0009) and the same pattern for vendors (8 vendor rows after creating 4). Repro: create customer with Legal name A and Display name B; New invoice, pick that customer, Post; Customers list now shows two rows named B and the balance sits on the new one. Fix: submit `partyId` from the select and resolve by id server-side; only create a party from the free-text "Or type new name" field.
 
 Also noticed: on the quotation form the field named `placeOfSupply` holds payment terms and `paymentMode` holds the ship-via values (labels are right, field names are swapped), worth checking that the saved values land in the intended columns.
 
+### From the Inventory, POS and Rental pass (26 Nov, modules on)
+
+**F-02 — Stock can go negative without warning.** High. A POS sale from the Front Counter register (no stock there) and an adjustment at the Default location left on-hand at −1 and −2, with negative stock value (LKR −37,000). Fix: block or warn on issues that take a location below zero, unless the company allows negative stock.
+
+![F-02](img/f02-negative-stock.jpg)
+
+**F-03 — Product save reports an error but still creates the product.** Medium. Saving a stocked product with opening quantity but no opening location shows "Pick a location for opening stock", yet the product is created with quantity 0. Fix: validate before insert and roll back on error.
+
+**F-04 — Stock transfer form has no From and To location fields.** High. /inventory/transfers/new only has Date, Reason, product lines and Notes, so a transfer cannot say where stock moves from or to. The first line is also prefilled with A4 Copy Paper, qty 1. Fix: add required From/To location selects and start with empty lines.
+
+![F-04](img/f04-transfer-no-locations.jpg)
+
+**F-05 — Posted adjustment shows 0 lines.** Low. ADJ-20261126-0001 (one line, posted) shows LINES 0 in the adjustments list. Fix: count lines in the list query.
+
+**F-06 — POS sells rental fleet items.** Medium. Rental products (Banquet Chair, Marquee Tent and their fleet variants) appear as sellable tiles in the POS grid at their hire price. Fix: exclude rental-type products from POS, or route them to a hire flow.
+
+![F-06](img/f06-pos-fleet-items.jpg)
+
+**F-07 — Purchase bill asks for hire dates when it contains a rental product.** Low. Buying rental fleet stock on a purchase bill requires hire-from/to dates, which do not apply to a purchase. Fix: only ask for hire dates on sales documents.
+
+**F-08 — Sales order detail hides the hire details.** Medium. Hire from/to, event date, venue and guest count entered on the order form are not shown on the order detail page (only on Dispatch / returns). Fix: show a Hire block under the header on hire orders.
+
+![F-08](img/f08-order-no-hire-details.jpg)
+
 ## Coverage and limits
 
 - Covered: every sidebar route plus Inventory, POS, Rental routes reached by URL; list, empty, new, edit, detail and print-preview states for sales and purchase documents; reports (P&L, balance sheet, cash flow, GL, trial balance, VAT); company settings; AgentBridge; Commerce new-connection form.
 - Data: 10 parties, 6 sales invoices (posted, partial, paid, draft), 2 quotations, 1 sales order, 1 PO, 2 credit purchases, 2 cash purchases, 1 customer receipt (2 invoices), 1 vendor payment.
-- Not covered: populated Inventory/POS/Rental screens and the full-screen POS terminal. Inventory is off for new companies (set in Control Room), so products, stock and POS sales could not be created with this account. Re-run those once Inventory/POS are enabled for UI-A.
+- Second pass (26 Nov, Inventory, POS and Rental switched on for UI-A): 25 more routes in `routes-inv.txt` (products, categories, stock levels, ledger, transfers, adjustments, rental calendar Timeline/Month/List, dispatch / returns, POS list, shifts, full-screen terminal, rental and location settings). Data: 4 locations, 4 categories, 10 products (5 stocked, 4 rental fleet), 2 stock bills, 1 adjustment, 1 POS sale on an open shift, 2 hire orders (one reserved, one dispatched and overdue). Not covered: a posted stock transfer (form has no location fields, F-04) and service products.
 - Automated detector (scripts/ui-layout-audit/detect.js) flags page overflow, off-viewport elements, clipped text, overlapping leaves and cropped field values; every finding above was confirmed by eye on the screenshots. Overlap hits from the collapsed sidebar panels on mobile were false positives and are not reported.
 
 ## Re-running
 
-`scripts/ui-layout-audit/`: `audit.js <label> routes-full.txt desktop,tablet,mobile` with a logged-in `storage-state.json` (not committed). Seeding helpers: `seedcust.js`, `seeddocs.js`, `seed2.js`. Test account alias UI-A; its password is held privately by the owner, never in this repo.
+`scripts/ui-layout-audit/`: `audit.js <label> routes-full.txt desktop,tablet,mobile` with a logged-in `storage-state.json` (not committed). Seeding helpers: `seedcust.js`, `seeddocs.js`, `seed2.js`; module data: `seedinv1.js`, `seedprod.js`, `seedstock2.js`, `seedrent.js`, `seedmove.js`, `seedhire.js` (re-run `audit.js inv routes-inv.txt desktop,tablet,mobile`). Test account alias UI-A; its password is held privately by the owner, never in this repo.
