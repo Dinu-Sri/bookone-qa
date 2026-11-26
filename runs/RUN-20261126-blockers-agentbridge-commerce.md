@@ -1,6 +1,6 @@
 # Retest: blockers, AgentBridge and ecommerce connector — 26 November 2026 (UTC)
 
-Status: **NOT customer-ready.** The 19 Nov bank blockers and the five AgentBridge safety failures are fixed on the live build. New P1 defects remain: an OAuth redirect bug that stops the real Claude connector from completing sign-in, missing server permission checks (discounts, company domains, bank statement import), and duplicate customers/vendors on posting. The ecommerce connector could only be tested up to order intake because Inventory is switched off for new companies.
+Status: **NOT customer-ready.** The 19 Nov bank blockers and the five AgentBridge safety failures are fixed on the live build. P1 defects remain: an OAuth redirect bug that stops the real Claude connector from completing sign-in, missing server permission checks (discounts, company domains, bank statement import), duplicate customers/vendors on posting, and three ecommerce P1s found once Inventory was enabled: concurrent orders oversell into negative stock, concurrent postings share invoice numbers and customer codes, and every commerce cancel/refund fails.
 
 - Target: `https://staging.clossyan.com` and `https://bookone.clossyan.com` (same deployment and database). Build shown on login: **v2.17.12 · e2e04d2** (product commit `e2e04d29920265c2556a26cfc03590f5abcc1bbb`).
 - Method: real browser automation (Playwright/Chromium) against staging, plus direct HTTP for the Commerce v1 API and a standards OAuth 2.1 + MCP client for AgentBridge. Server-side permission checks were tested by capturing the Owner's real server-action request and replaying it with the Viewer's or Cashier's own session cookie, then reading the result back as Owner. A refused replay that changed nothing counts as a pass; a replay that changed data counts as a fail.
@@ -18,7 +18,8 @@ Status: **NOT customer-ready.** The 19 Nov bank blockers and the five AgentBridg
 | AgentBridge service safety (AB-05 independent reproductions) | **Fixed.** 5/5 pass on v2.17.12 source. |
 | AgentBridge live end to end | **Works with one P1 blocker.** Upload → facts → preview → human approval → one bill posts. Stale approval, double commit, agent self-approval and agent posting are all refused. Revoke works. **OAuth consent redirect uses HTTP 307, so Claude's callback gets a POST and returns 405.** |
 | Backup / restore | **Pass.** Restore into a fresh empty company matches balances, bills and original PDF bytes; AgentBridge safety flags come back ON; commerce keys and team members are not copied. |
-| Ecommerce connector | **Partly tested.** Key issue, auth, order intake, idempotency, cancel, pause and reservations behave as documented. Mapping, stock publish, paid-order posting, last-unit race and refunds are **blocked**: Inventory is off for new companies and only Control Room can turn it on. WooCommerce plugin live install not run (no WordPress host available to QA). |
+| Ecommerce connector | **Tested end to end via API; 3 P1s.** Mapping, stock publish, paid order → invoice + stock movement, idempotency, pending → paid, sequential oversell review all work. **Concurrent last-unit orders all post (stock −2 with Block policy), share one invoice number and one customer code. Cancel-after-post and refunds always fail with 422.** WooCommerce plugin live install not run (no WordPress host). |
+| POS | **Mostly works.** Open shift, cash sale, stock block, Owner return, close shift with zero variance. Cashier cannot complete a return (permission missing). |
 
 ## Findings
 
@@ -31,7 +32,7 @@ Severity: P1 = must fix before customers; P2 = fix before pilot; P3 = polish.
 | QA-1126-03 | P1 | Viewer and Cashier can add company verification domains (no server check) |
 | QA-1126-04 | P1 | Posting an invoice/bill for a party whose display name differs from its legal name creates a duplicate party and puts the balance on the duplicate |
 | QA-1126-05 | P2 | Viewer can import bank statements and open reconciliation sessions; reconciliation and statement-import actions have no permission checks in source |
-| QA-1126-06 | P2 | New "Company (Pvt Ltd)" has Inventory off, so products, stock and the ecommerce connector cannot be used |
+| QA-1126-06 | P2 | New "Company (Pvt Ltd)" has Inventory off, so products, stock and the ecommerce connector cannot be used (owner enabled modules for the test company; onboarding issue stands) |
 | QA-1126-07 | P2 | AgentBridge accepts the same file again as a new document with no warning |
 | QA-1126-08 | P2 | AgentBridge "Commit purchase bill once" refuses silently (posting stopped, duplicate invoice) with no message |
 | QA-1126-09 | P3 | Permission refusals on several settings actions surface as HTTP 500 instead of a clear "no permission" result |
@@ -41,6 +42,12 @@ Severity: P1 = must fix before customers; P2 = fix before pilot; P3 = polish.
 | QA-1126-13 | P3 | Commerce API says "token is required" when the token is present but invalid |
 | QA-1126-14 | P3 | Balance Sheet lists asset accounts out of code order |
 | QA-1126-15 | P3 | Sign-up says "check your email to verify" but sign-in works without verifying |
+| QA-1126-16 | P1 | Concurrent paid orders for the last unit all post; stock goes negative even with "Block negative stock" |
+| QA-1126-17 | P1 | Concurrent postings get the same invoice number and the same customer code |
+| QA-1126-18 | P1 | Commerce cancel-after-post and refunds always fail (422 "same customer as the original invoice") and the failure is not shown in Activity |
+| QA-1126-19 | P2 | Cashier sees POS Return but completing it is refused |
+| QA-1126-20 | P2 | Commerce orders post with no VAT on a VAT-registered company |
+| QA-1126-21 | P3 | Commerce/POS small issues: review reason overwritten, paid orders left open in AR, negative stock defaults to Allow, "Walk-in" party created |
 
 Full repro steps, expected vs actual, evidence and suggested fixes are in the coding handoff.
 
@@ -77,14 +84,23 @@ Ecommerce (Commerce v1 at `https://bookone.clossyan.com/api/commerce/v1`):
 - Pause inbound orders → `POST /orders` 409 `INBOUND_PAUSED`; unpause restores.
 - `POST /reservations` → 422 `RESERVATION_DISABLED`. Bad token → 401.
 
+Ecommerce, after Inventory was enabled (location "QA Main Store", connection posting mode "posting"):
+- Products SKU-1 (qty 1), SKU-VAR (qty 2) and SKU-RACE (qty 1) mapped to site-101, site-102/site-102-red and site-103. Viewer replay of product create and mapping → refused.
+- Publish stock → "Published 2 BookOne variants"; `GET /products` and `/inventory` show correct quantities.
+- Paid order → sales invoice + stock decrement. Same key replay → same receipt; new key, same externalId → same document. Total mismatch and fractional quantity → needs_review. Pending payment → received, no stock change; later paid event posts (2→1). Sequential oversell (5 requested, 2 on hand) → needs_review. Restock refund without line refs → 422.
+- **Failed:** concurrent last-unit orders (QA-1126-16/17); cancel after post and refund (QA-1126-18).
+
+POS (Cashier, register REG1):
+- Open shift with 5,000 float; cash sale POS-20261126-0001 (800). With Block policy, a sale beyond stock is refused ("Insufficient stock lots…").
+- Return as Cashier refused (QA-1126-19); same return as Owner → SR-20261126-0001, stock restored. Close shift: expected 5,000, counted 5,000, variance 0.
+
 ## Not tested and why
 
-- Commerce mapping, stock publish, paid-order posting to a sales invoice, last-unit race, refunds with/without restock: Inventory module is off for the test company (QA-1126-06). Needs Control Room to enable Inventory for "QAOwner Nov26's Company", then rerun.
 - WooCommerce plugin install and live checkout: no WordPress host or Docker daemon in the QA environment. Plugin ZIP 1.2.0 not exercised.
 - Real Claude/Codex connector: QA used a standards OAuth/MCP client with Claude's public client id and callback. A real Claude connection is expected to fail until QA-1126-01 is fixed.
-- POS flows: no registers module setup tested beyond register create permission.
+- POS card/mixed tenders, printer and customer display (no hardware).
 - UI layout audit: handled in a separate thread.
 
 ## Synthetic records created on staging
 
-Company "QAOwner Nov26's Company": bank 1101 QA-OWNER-BANK; 3 Simple Entry journals (300, 1,000, transfer 100); customers CUS-0001/0002 "Acme"; vendors VEN-0001/0002 "LankaSup", VEN-0003 ABC Services; INV-20261126-0001 (500), PUR-20261126-0001 (200), PUR-20261125-0002 (2,360), PUR-20261124-0003 (2,950); 4 AgentBridge documents; discounts QA-VIEWER-DISC ×2 and QA-CASHIER-RPL (archived by Viewer); domains viewer-/cashier-qa-2611.example.com; POS register REG1; VAT registered 18%; commerce connection QA-Woo-Sandbox with orders woo-1001 (cancelled); one bank import bank-nov.csv. AgentBridge flags left: Inbox ON, Draft-only OFF, Stop posting OFF (synthetic company only). Second company (restore target) holds the restored copy.
+Company "QAOwner Nov26's Company": bank 1101 QA-OWNER-BANK; 3 Simple Entry journals (300, 1,000, transfer 100); customers CUS-0001/0002 "Acme"; vendors VEN-0001/0002 "LankaSup", VEN-0003 ABC Services; INV-20261126-0001 (500), PUR-20261126-0001 (200), PUR-20261125-0002 (2,360), PUR-20261124-0003 (2,950); 4 AgentBridge documents; discounts QA-VIEWER-DISC ×2 and QA-CASHIER-RPL (archived by Viewer); domains viewer-/cashier-qa-2611.example.com; POS register REG1; VAT registered 18%; commerce connection QA-Woo-Sandbox with orders woo-1001 (cancelled), woo-2001/2002, woo-3001 to 3006, woo-401 to 403; location QA Main Store; products SKU-1, SKU-VAR, SKU-RACE (some at negative stock from the race); inventory negative-stock policy Block; POS sale POS-20261126-0001 and return SR-20261126-0001; one bank import bank-nov.csv. AgentBridge flags left: Inbox ON, Draft-only OFF, Stop posting OFF (synthetic company only). Second company (restore target) holds the restored copy.

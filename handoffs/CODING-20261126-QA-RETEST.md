@@ -95,6 +95,8 @@ Also source-only, same pattern: `inventory.ts` `archiveProductFromForm`, `restor
 
 ## QA-1126-06 · P2 · New "Company (Pvt Ltd)" has Inventory off
 
+**Update 26 Nov (later):** the owner enabled all modules for the test company from Control Room, so commerce and POS were then tested. The onboarding mismatch below still applies to new companies.
+
 **Repro:** sign up → onboarding **Company (Pvt Ltd) — "Full company ERP — sales, purchase, stock, POS"** → Inventory → Products → New: "This catalogue is view-only because Inventory is off for this company… Plan and modules are set in Control Room" (`inventory-off.png`). Commerce Integrations still lets the Owner create a store connection, but nothing can be mapped or stocked.
 
 **Expected:** the plan chosen at onboarding enables what the onboarding card promises, or the card says what is not included and how to get it.
@@ -154,6 +156,60 @@ Reports → Balance Sheet lists assets as 5100 Inventory, 1360, 1000, 1101, 1200
 
 Sign-up shows "Account created. Check your email to verify before signing in." but sign-in works immediately without verifying. Either enforce verification or change the copy.
 
+## QA-1126-16 · P1 · Concurrent paid orders for the last unit all post: stock goes negative
+
+**Where:** `packages/commerce/src/service.ts` about line 843 reads stock with `getStock()` and only then decides `received` vs `needs_review`; `adjustStock()` in `apps/web/src/app/actions/commercial-docs.ts` (about line 570) reads `qtyOnHand` and checks `blockNegative` without a row lock. Two requests read the same quantity and both pass.
+
+**Repro:**
+1. Inventory on, location "QA Main Store", product SKU-RACE qty 1, mapped to `site-103`, connection posting mode **posting**. Inventory Settings → negative stock **Block**.
+2. Send 3 `POST /orders` at the same time (different `externalId`/Idempotency-Key: woo-401, woo-402, woo-403), each `payment.status: paid`, 1 × site-103.
+
+**Expected:** one order posts; the others go to `needs_review` with the oversell reason; stock ends at 0.
+**Actual:** all three post. Stock for SKU-RACE is **−2**, even with "Block negative stock". Same with policy Allow (woo-2001/woo-2002 on SKU-1 → −1). Sequential oversell is caught correctly (woo-3004 asked for 5 with 2 on hand → needs_review). Evidence: `com-race-invoices.png`, `com-race-levels.png`.
+
+**Fix:** take a row lock on the stock level (`SELECT … FOR UPDATE` on `inventory_stock_levels` for tenant/product/location, inside the posting transaction) or use a conditional update (`UPDATE … SET qty_on_hand = qty_on_hand - $q WHERE … AND qty_on_hand >= $q RETURNING`) and treat zero rows as oversell → `needs_review`. The commerce pre-check must run in the same transaction as the decrement. Add a test that fires N concurrent orders for one unit and asserts exactly one posts.
+
+## QA-1126-17 · P1 · Concurrent postings get the same invoice number and the same customer code
+
+**Where:** `nextDocumentNumber()` in `apps/web/src/app/actions/commercial-docs.ts` (line 506) and `nextPartyCode()` in `apps/web/src/app/actions/parties.ts` (line 291) both compute `count(*) + 1` with no lock and no unique constraint.
+
+**Repro:** the race in QA-1126-16. woo-2001 and woo-2002 both became **INV-20261126-0002** and their new customers both **CUS-0003**. woo-401/402/403 all became **INV-20261126-0006** and three "Race Shopper" customers all **CUS-0008** (`com-race-invoices.png`). Any two users posting at the same moment hit the same thing.
+
+**Expected:** unique, gap-controlled numbers per tenant/type/window; unique party codes.
+**Fix:** use a per-tenant counter row (`document_sequences(tenant, type, window)` with `UPDATE … SET next = next + 1 RETURNING`) or a Postgres advisory lock around allocation, and add unique indexes on `(tenant_id, document_type, document_number)` and `(tenant_id, code)` for parties. Note `count(*)` also excludes voided documents, so voiding one can make the next document reuse an existing number. Add a repair script for the existing duplicates on staging.
+
+## QA-1126-18 · P1 · Commerce cancel-after-post and refunds always fail (422 "same customer")
+
+**Where:** `apps/web/src/lib/commerce-runtime.ts` line 65–71, `postSalesReturn` hardcodes `partyName: 'Commerce refund'`. The linked-return guard `linkedReturnPartyMismatch` (`packages/accounting/src/document-guards.ts` about line 657) then rejects every return because the party differs from the original invoice.
+
+**Repro:**
+1. Paid order woo-3003 posts → INV-20261126-0004.
+2. `POST /orders/{id}/events` `{type:"cancelled"}` → **422** "This return must use the same customer as the original invoice."
+3. Paid order woo-3005 → INV-20261126-0005; `POST /orders/{id}/events` `{type:"refunded", restock:false, lines:[…]}` → same 422.
+
+**Expected:** a sales return linked to the original invoice for the same customer; restock when requested; order status `cancelled`/`refunded`.
+**Actual:** the orders stay `posted`, no return, no restock, and the failure does not appear under Activity → Orders needing review (`com-activity-after.png`), so a shop owner never learns the refund was not booked.
+**Fix:** pass the original invoice's `partyId` (and name) into `postSalesReturn`; record a failed event as `needs_review` with the error so it shows in Activity with Retry. Add tests for cancel-after-post, refund without restock and refund with restock.
+
+## QA-1126-19 · P2 · Cashier sees POS Return but cannot complete it
+
+**Where:** Cashier template (`packages/auth/src/permissions/templates.ts` line 206) grants `pos.terminal.write` but not `sales.returns.write`; `completePosReturn` (`apps/web/src/app/actions/pos-session.ts` line 572) creates a `sales_return`, which needs that key.
+
+**Repro:** Cashier opens a shift on REG1, sells QA Widget Var (POS-20261126-0001, LKR 800 cash). Return → find POS-20261126-0001 → Return all remaining → REFUND → **Complete refund · LKR 800.00** → "You do not have permission to do that." The same steps as Owner work (SR-20261126-0001, stock restored). Evidence: `pos-return.png`, `pos-return-done.png` (Owner).
+
+**Expected:** decide the rule. If cashiers may refund at the till, grant a POS-scoped return permission (for example `pos.returns.write`) and check that in `completePosReturn`. If not, hide the Return tab for cashiers or show "Ask a manager" before the cashier builds the refund.
+
+## QA-1126-20 · P2 · Commerce orders post with no VAT on a VAT-registered company
+
+Company is VAT registered at 18%. Paid web orders post commercial invoices with no Output VAT line. Either apply the product/company tax code, treat the shop price as tax-inclusive per a connection setting, or put the order in review when tax cannot be determined.
+
+## QA-1126-21 · P3 · Commerce and POS small issues
+
+- A refund event that arrives for an order already in review overwrites the original review reason (woo-3006: "Oversell…" replaced by "Refund arrived before its order was posted"). Keep both.
+- Paid web orders leave the invoice open in AR ("settlement not_configured"). Offer a clearing account per connection so paid orders are settled.
+- Inventory negative-stock policy defaults to **Allow** for new companies. Default to Block (or ask at setup) when POS or commerce is on.
+- A POS cash sale with no customer creates a party "Walk-in" (CUS-0007). Reuse one walk-in party per company.
+
 ---
 
 ## Retest checklist after the fix
@@ -162,4 +218,5 @@ Sign-up shows "Account created. Check your email to verify before signing in." b
 2. Display-name customer/vendor → invoice, bill, returns, POS, AgentBridge → no new party; existing duplicates mergeable.
 3. Real Claude custom connector (client `bookone-claude`) completes sign-in; consent returns 303.
 4. Duplicate file and duplicate supplier invoice show clear messages; posting-stop refusal shows a message.
-5. With Inventory enabled: commerce mapping, publish stock, paid order → one sales invoice and one stock movement, last-unit race (one posts, one needs_review, never negative), cancel after post → linked return, refund with and without restock.
+5. Commerce: fire 3 concurrent paid orders for the last unit → exactly one posts, others needs_review, stock 0, unique invoice numbers and customer codes. Cancel after post and refund with/without restock → linked sales return for the same customer, stock restored only with restock. Failed events appear in Activity.
+6. POS: Cashier completes (or is clearly refused before building) a return; VAT appears on commerce invoices for a VAT-registered company.
