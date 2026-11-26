@@ -1,0 +1,12 @@
+const {open,BASE}=require('./lib'); const {makeDoc}=require('./seeddocs');
+(async()=>{const {b,p}=await open(); p.setDefaultTimeout(15000);
+ const run=async(f)=>{try{await f()}catch(e){console.log('ERR',e.message.split('\n')[0])}};
+ await run(()=>makeDoc(p,'/sales/quotations/new',{party:'Nimal Perera',date:'2026-11-18',intent:'Save quotation',lines:[['Ergonomic office chair with lumbar support and adjustable armrests (black mesh)',4,28500,10],['Standing desk 160x80',2,96000]]}));
+ await run(()=>makeDoc(p,'/sales/quotations/new',{party:'Kandy Lakeside',date:'2026-11-21',intent:'Save quotation',lines:[['Linen supply — December',60,3200]]}));
+ await run(()=>makeDoc(p,'/sales/orders/new',{party:'Lanka Hardware',date:'2026-11-22',intent:'Save sales order',lines:[['Cement 50kg bags — Holcim',200,2450]]}));
+ await run(()=>makeDoc(p,'/purchase/orders/new',{party:'Colombo Stationery',date:'2026-11-12',intent:'Save purchase order',lines:[['A4 copy paper 80gsm (ream)',100,1650],['Stapler heavy duty',10,4200]]}));
+ await run(()=>makeDoc(p,'/purchase/purchases/new',{party:'Colombo Stationery',date:'2026-11-14',intent:'Save purchase',lines:[['A4 copy paper 80gsm (ream)',100,1650]]}));
+ await run(()=>makeDoc(p,'/purchase/purchases/new',{party:'Dialog',date:'2026-11-05',intent:'Save purchase',lines:[['Fibre broadband — November 2026 (100 Mbps business plan)',1,14990]]}));
+ await run(()=>makeDoc(p,'/purchase/expenses/new',{party:'CEB',date:'2026-11-08',intent:'Save cash purchase',lines:[['Electricity bill October',1,38750]]}));
+ await run(()=>makeDoc(p,'/purchase/expenses/new',{party:'Sunil Transport',date:'2026-11-19',intent:'Save cash purchase',lines:[['Lorry hire Colombo–Kandy',1,22000]]}));
+ await b.close();})();

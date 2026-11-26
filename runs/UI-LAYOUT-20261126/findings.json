@@ -1,0 +1,639 @@
+[
+ {
+  "id": "UI-01",
+  "sev": "Critical",
+  "title": "Mobile: the full sidebar renders above every page, pushing content ~800px down",
+  "area": "App shell (all screens)",
+  "vp": "Mobile 390x844",
+  "screens": "Every authenticated screen",
+  "what": "At 390px the sidebar is not a drawer. It is laid out inline above the page, expanded, so the first screen a phone user sees is navigation only; page content starts around y=800. The collapse button turns it into a vertical column of icons (still ~430px tall) and it re-expands on the next navigation.",
+  "repro": [
+   "Sign in at 390x844 (iPhone 12/13/14 size).",
+   "Open /sales/invoices.",
+   "Nothing from the invoice list is visible without scrolling. Tap the collapse icon, then open /sales/quotations: the full sidebar is back."
+  ],
+  "evidence": [
+   "ui01-mobile-sidebar.jpg"
+  ],
+  "fix": "Below 1024px render the sidebar as an off-canvas drawer: `.sidebar{position:fixed;inset:0 auto 0 0;width:min(84vw,300px);transform:translateX(-100%);transition:transform .2s;z-index:50}` `.sidebar[data-open=true]{transform:none}` plus a backdrop. Add a hamburger button to the top bar that toggles it, default closed, close on route change and on Escape/backdrop tap. Keep the current static sidebar at >=1024px."
+ },
+ {
+  "id": "UI-02",
+  "sev": "High",
+  "title": "Tablet: fixed 268px sidebar leaves ~500px for content; pages overflow sideways and nested forms collapse",
+  "area": "App shell, settings forms, wide pages",
+  "vp": "Tablet 768x1024",
+  "screens": "/transactions (+225px), /advances (+250px), /company/team (+286px), /company/team/jobs (+286px), /purchase/orders/{id} (+267px); cramped: /company/details, /company/tax, all document forms",
+  "what": "The desktop sidebar stays at full width on tablet. Several pages become wider than the viewport (horizontal page scroll; the Transactions filter row spills out of its card and the search box overlaps the Party field). Company details puts a 2-column field grid inside a 2-column page grid, so inputs are ~82px wide and values are cropped (\"Sri Lank\", \"Asia/Col\", TIN placeholder \"Used on\"). The bell icon button in the top bar is squeezed to ~18px wide.",
+  "repro": [
+   "Set the window to 768x1024.",
+   "Open /transactions: the page scrolls horizontally; Filter and Clear sit outside the card.",
+   "Open /company/details: field values are cut off."
+  ],
+  "evidence": [
+   "ui02-tablet-overflow-transactions.jpg",
+   "ui02-tablet-company-details.jpg",
+   "ui02-tablet-jobs.jpg"
+  ],
+  "fix": "Use the UI-01 drawer below 1024px (or a 64px icon rail). Make field grids content-driven: `.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 16px}`. Stack the two settings cards below 1100px (`grid-template-columns:1fr`). Give toolbar rows `flex-wrap:wrap` with `min-width:0` on inputs. Top bar icon buttons: `flex:0 0 40px`."
+ },
+ {
+  "id": "UI-03",
+  "sev": "High",
+  "title": "Mobile/tablet tables: key columns (Amount, Status, Actions) are off-screen; document numbers and dates break mid-token",
+  "area": "All list tables",
+  "vp": "Mobile, Tablet",
+  "screens": "/sales/invoices, /sales/quotations, /sales/orders, /purchase/*, /parties/*, /accounts, /transactions, /journal, /sales/aging, /purchase/aging",
+  "what": "Tables keep desktop columns and scroll horizontally with no visible scroll cue. On a phone only Number/Kind/Customer are visible; the money, status and action columns need a sideways swipe nobody knows about. Document numbers wrap as \"INV-/20261125-/0004\" and dates as \"2026-/11-26\".",
+  "repro": [
+   "At 390px open /sales/invoices.",
+   "Only 3 of 7 columns show; Total and Actions are hidden to the right."
+  ],
+  "evidence": [
+   "ui03-mobile-invoices-table.jpg",
+   "ui03-mobile-transactions-table.jpg"
+  ],
+  "fix": "1) `td.num, td.code, td.date{white-space:nowrap}`. 2) Below 640px switch list tables to stacked cards: each `<tr>` becomes a card, cells get `data-label` and `td::before{content:attr(data-label)}`; show Number + Status on the first line, Customer, Date, Total right-aligned, Actions as a kebab. 3) Where a table must scroll, wrap it in `.table-scroll{overflow-x:auto}` with an edge shadow and a sticky first column."
+ },
+ {
+  "id": "UI-04",
+  "sev": "High",
+  "title": "Transactions at 1440px: table is wider than its card; the Reverse action is cropped to \"Reve\"",
+  "area": "Accounting > Transactions",
+  "vp": "Desktop 1440x900",
+  "screens": "/transactions",
+  "what": "The 10-column table overflows the card. The Action column is clipped (\"Reve\"), dates wrap onto two lines, amounts wrap (\"-LKR / 14,990\"), and account names wrap to three lines, making rows ~80px tall.",
+  "repro": [
+   "At 1440x900 open /transactions with a few posted entries.",
+   "Look at the right edge of the table."
+  ],
+  "evidence": [
+   "ui04-desktop-transactions-action-crop.jpg"
+  ],
+  "fix": "`table-layout:fixed` with explicit widths (Date 96px, Party 140px, Description auto/min 220px, Category 140px, Account 150px, Type 110px, Review 120px, Receipt 64px, Amount 120px, Action 44px); nowrap on Date/Amount; make Reverse an icon button with tooltip and aria-label; let Description wrap. Show Account as code on line 1, name muted on line 2."
+ },
+ {
+  "id": "UI-05",
+  "sev": "High",
+  "title": "Mobile: sticky top bar takes 2 rows (~120px) and truncates the company name",
+  "area": "App shell",
+  "vp": "Mobile",
+  "screens": "All",
+  "what": "The sticky header wraps to two rows (company switcher on row 1; date, bell, logout on row 2) and stays on screen while scrolling, using ~14% of the viewport. The company name is truncated to \"Uma Audit's Com…\".",
+  "repro": [
+   "At 390px open any form (e.g. an invoice draft) and scroll."
+  ],
+  "evidence": [
+   "ui05-mobile-topbar.jpg"
+  ],
+  "fix": "One 56px row below 640px: hamburger | company switcher (`flex:1;min-width:0;text-overflow:ellipsis`) | icon-only date button | overflow menu holding notifications and logout. Or make the header non-sticky on mobile."
+ },
+ {
+  "id": "UI-06",
+  "sev": "High",
+  "title": "AgentBridge: \"Connected clients\" table is unstyled and collides on mobile",
+  "area": "Company > AgentBridge (must-have feature)",
+  "vp": "All; worst on mobile",
+  "screens": "/company/agent-bridge",
+  "what": "The Connected clients table uses browser-default styling: 17px bold headers that do not line up with the rest of the page, the empty message as a long default-font paragraph. On mobile the headers run together (\"ClientCompanyAllowedStatus Last use Creat…\") and are cut by the card edge. The \"AgentBridge developer guide\" in the intro is not styled as a link.",
+  "repro": [
+   "Open /company/agent-bridge with no clients connected.",
+   "Scroll to Connected clients. Repeat at 390px."
+  ],
+  "evidence": [
+   "ui06-agentbridge-clients-desktop.jpg",
+   "ui06-agentbridge-clients-mobile.jpg"
+  ],
+  "fix": "Render it with the shared table component (`<div class=\"table-wrap\"><table class=\"table\">`), put the empty state in `<tr><td colspan=\"7\" class=\"table-empty\">`, and on <640px use the stacked-card pattern from UI-03. Style the guide reference as `<a class=\"link\">`."
+ },
+ {
+  "id": "UI-07",
+  "sev": "High",
+  "title": "Document line items: Description field is too narrow (text cut) while SKU wastes space; unusable on mobile",
+  "area": "Sales invoice / quotation / order, purchase bill / PO / cash purchase / import / returns forms",
+  "vp": "Desktop and Mobile",
+  "screens": "/sales/invoices/new, /sales/invoices/{id}/edit, /sales/quotations/new, /sales/orders/new, /purchase/*/new",
+  "what": "At 1440px the Description input in a line is ~150px wide (\"Draft: Christmas deco…\") while the SKU column is ~160px showing only \"MANUAL\". On mobile the Description input is ~32px (\"Draft: C\"), Unit price is cut and Amount/Discount/remove are off-screen.",
+  "repro": [
+   "Open a draft invoice (/sales/invoices/{id}/edit) with a free-text line.",
+   "Look at the line row; then repeat at 390px."
+  ],
+  "evidence": [
+   "ui07-line-items-desktop.jpg",
+   "ui07-line-items-mobile.jpg"
+  ],
+  "fix": "Line grid: `grid-template-columns: 80px minmax(260px,3fr) 120px 120px 170px 130px 150px 32px` (SKU, Description, Qty, Unit price, Discount, Amount, Save as product, remove). Show MANUAL as a small tag under the description instead of its own column. Below 768px render each line as a card: Description full width, then Qty / Unit price / Discount in a 3-up row, Amount right-aligned, remove as icon."
+ },
+ {
+  "id": "UI-08",
+  "sev": "High",
+  "title": "Mobile: stock transfer and adjustment forms are wider than the screen",
+  "area": "Inventory > Transfers / Adjustments (new)",
+  "vp": "Mobile",
+  "screens": "/inventory/transfers/new, /inventory/adjustments/new",
+  "what": "Date, Reason, Notes inputs are fixed at 720px wide and the product line table does not shrink, so the fields run off the card and the Qty column is cut. Retest with data (26 Nov): the page no longer widens, but the card now clips the inputs on the right, so the product select text and the Qty column are cut off at 390px (same fix).",
+  "repro": [
+   "At 390px open /inventory/transfers/new."
+  ],
+  "evidence": [
+   "ui08-mobile-transfer-form.jpg"
+  ],
+  "fix": "`width:100%;max-width:720px;box-sizing:border-box` on the inputs; product lines as stacked rows (Product full width, Qty below) under 640px."
+ },
+ {
+  "id": "UI-09",
+  "sev": "High",
+  "title": "Tablet: \"Receive or bill from PO\" table spills outside its card",
+  "area": "Purchase order detail",
+  "vp": "Tablet",
+  "screens": "/purchase/orders/{id}",
+  "what": "The receive/bill table (Ordered, Received, Billed, Remaining, This qty, Unit price) extends ~267px past the card and the viewport; Remaining values sit on the card border.",
+  "repro": [
+   "At 768px open a confirmed PO."
+  ],
+  "evidence": [
+   "ui09-tablet-po-receive-table.jpg"
+  ],
+  "fix": "Wrap the table in `.table-wrap{overflow-x:auto}`; reduce the qty stepper to a 72px input; under 900px stack per line."
+ },
+ {
+  "id": "UI-10",
+  "sev": "Medium",
+  "title": "Jobs: Access dropdowns zig-zag because each section's table sizes its own columns",
+  "area": "Company > Team > Jobs",
+  "vp": "All",
+  "screens": "/company/team/jobs",
+  "what": "Each section (Accounting, Parties, Sales, POS, Purchase, Inventory, Rental, Company, Team) is a separate auto-layout table, so the Access column starts at a different x in every section (from ~297px to ~440px). The page reads as misaligned.",
+  "repro": [
+   "Open /company/team/jobs and scroll."
+  ],
+  "evidence": [
+   "ui10-jobs-access-column.jpg"
+  ],
+  "fix": "`table{table-layout:fixed;width:100%}` with `<col style=\"width:55%\"><col>` in every section, or one CSS grid `grid-template-columns: 1fr 320px` shared by all rows."
+ },
+ {
+  "id": "UI-11",
+  "sev": "Medium",
+  "title": "Dashboard KPI rows: the two card groups have different top edges and heights",
+  "area": "Dashboard",
+  "vp": "Desktop, Tablet",
+  "screens": "/dashboard",
+  "what": "\"Selected period\" cards start at y=183 and are 102px tall; \"As of range end\" cards start ~8px lower and are shorter (no comparison line). The row looks broken. Below it, the Sales trend card has an empty band where the Cash card has a summary line.",
+  "repro": [
+   "Open /dashboard (Month to date)."
+  ],
+  "evidence": [
+   "ui11-dashboard-kpi-misalign.jpg"
+  ],
+  "fix": "Put both groups in one grid row with `align-items:stretch`; give the group label the same height; give all KPI cards the same structure (reserve the comparison line with min-height). Add the matching summary line to the Sales trend card (\"Net sales 674,800\")."
+ },
+ {
+  "id": "UI-12",
+  "sev": "Medium",
+  "title": "Dashboard charts: uneven x-axis ticks, only two raw y labels, unreadable on mobile",
+  "area": "Dashboard",
+  "vp": "All",
+  "screens": "/dashboard",
+  "what": "X ticks are 01/11, 06/11, 11/11, 13/11, 16/11, 21/11, 26/11 (11/11 and 13/11 collide). Y axis shows only the max and 0 as raw numbers (\"432,800\", \"157,000\"). On mobile tick labels are ~7px.",
+  "repro": [
+   "Open /dashboard with sales on several days."
+  ],
+  "evidence": [
+   "ui12-dashboard-charts.jpg"
+  ],
+  "fix": "Generate ticks at a fixed step (every 5 days), drop the extra mid tick; 3 to 5 'nice' y ticks with compact formatting (100K, 200K…) and gridlines; minimum 11px axis font, fewer ticks under 640px."
+ },
+ {
+  "id": "UI-13",
+  "sev": "Medium",
+  "title": "Dashboard aging strip: bars are always full width; links use an unstyled 17px font",
+  "area": "Dashboard",
+  "vp": "All",
+  "screens": "/dashboard",
+  "what": "Each aging bucket bar is drawn full width whether the bucket is 0 or 100% (Current shows a full bar at LKR 0). \"View all customer overdue\" / \"View all supplier due\" render in default 17px text, larger than the headings around them.",
+  "repro": [
+   "Open /dashboard."
+  ],
+  "evidence": [
+   "ui13-dashboard-aging.jpg"
+  ],
+  "fix": "Bar width = bucket amount / total (one stacked bar, or 5 bars with `width:%`); grey for zero. Style the links with the shared `.link` class (13px, brand colour)."
+ },
+ {
+  "id": "UI-14",
+  "sev": "Medium",
+  "title": "Money columns are left-aligned and receivable balances shown in red",
+  "area": "All tables with amounts",
+  "vp": "All",
+  "screens": "/sales/invoices, /sales/quotations, /sales/orders, /purchase/*, /parties/customers, /parties/vendors, /sales/payments, /sales/aging, /purchase/aging, invoice/PO detail line tables",
+  "what": "Total, Balance, Unit price and Amount columns are left-aligned, so digits don't line up. Customer balances (money owed to the company) are red, which reads as an error/negative.",
+  "repro": [
+   "Open /sales/invoices and /parties/customers."
+  ],
+  "evidence": [
+   "ui14-money-left-aligned.jpg",
+   "ui14-customers-balance.jpg"
+  ],
+  "fix": "`th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}` on all money columns (Accounts and General Ledger already do this). Use neutral text for positive balances; red only for overdue/negative."
+ },
+ {
+  "id": "UI-15",
+  "sev": "Medium",
+  "title": "Inconsistent page frame: no titles on list pages, toolbar jammed under the top bar, different gutters and widths",
+  "area": "Page layout",
+  "vp": "All",
+  "screens": "List pages (invoices, customers, POS, inventory...), /accounts, /company/commerce, /accounts/opening",
+  "what": "List pages have no page title and their toolbar starts 5px below the top bar (y≈77) while card pages start at y≈97. Accounts uses a tinted, un-carded header. Commerce Integrations uses a 285px left gutter (others 297) and a full-height card. Opening balances is limited to ~895px wide while other forms are full width.",
+  "repro": [
+   "Compare /sales/invoices, /accounts, /company/commerce and /company/details."
+  ],
+  "evidence": [
+   "ui15-list-no-title-tight-top.jpg",
+   "ui15-accounts-header.jpg",
+   "ui15-commerce-gutter.jpg"
+  ],
+  "fix": "One PageShell component: `padding:24px 28px`, an `h1.page-title` (can be compact) + optional actions on the right, then content. Same max-width for every page (or none), same card component. Remove per-page outer wrappers on Commerce and Opening balances."
+ },
+ {
+  "id": "UI-16",
+  "sev": "Medium",
+  "title": "Checkboxes touch their labels and sit off the text baseline",
+  "area": "Settings forms",
+  "vp": "All",
+  "screens": "/company/purchase, /company/sales (VAT registered, credit limits, POS Active)",
+  "what": "Checkbox and label have no gap (\"☐Require approval…\") and the box sits ~6px above the label text.",
+  "repro": [
+   "Open /company/purchase."
+  ],
+  "evidence": [
+   "ui16-checkbox-gap.jpg",
+   "ui33-sales-settings-checkbox.jpg"
+  ],
+  "fix": "Use the same checkbox row as AgentBridge settings: `.check-row{display:flex;align-items:center;gap:8px}`; wrap input inside the label."
+ },
+ {
+  "id": "UI-17",
+  "sev": "Medium",
+  "title": "Sales settings: POS register form fields are scattered; empty register table has no message",
+  "area": "Company > Sales settings",
+  "vp": "Desktop",
+  "screens": "/company/sales",
+  "what": "\"Print mode\" sits alone at the top-right with an empty block to its left; Code/Name start lower; \"Active\" checkbox floats under Location. The registers table shows only headers.",
+  "repro": [
+   "Open /company/sales and scroll to POS registers."
+  ],
+  "evidence": [
+   "ui17-pos-register-form.jpg"
+  ],
+  "fix": "3-column grid: Code | Name | Print mode, then Thermal note | Cash account | Location, then Receipt footer (span 2) | Active. Put the print-mode help text under its field. Add an empty row: \"No registers yet\"."
+ },
+ {
+  "id": "UI-18",
+  "sev": "Medium",
+  "title": "Desktop sidebar: menu is cut off by the user footer at 900px height",
+  "area": "App shell",
+  "vp": "Desktop 1440x900",
+  "screens": "All Company pages",
+  "what": "With COMPANY expanded the list runs under the footer: \"Team\" is half hidden (its active pill is clipped on /company/team) and Jobs/Groups are not visible, with no scroll cue.",
+  "repro": [
+   "At 1440x900 open /company/details."
+  ],
+  "evidence": [
+   "ui18-sidebar-clipped.jpg"
+  ],
+  "fix": "Sidebar as a flex column: nav `flex:1;min-height:0;overflow-y:auto` with a bottom fade, footer `flex-shrink:0`. Auto-collapse other sections when one opens."
+ },
+ {
+  "id": "UI-19",
+  "sev": "Medium",
+  "title": "Inventory, POS and Rental routes stay reachable with no sidebar entry when the module is off",
+  "area": "Navigation",
+  "vp": "All",
+  "screens": "/inventory/*, /sales/pos, /sales/pos/shifts, /company/rental",
+  "what": "Retest with modules on (26 Nov): the INVENTORY group appears and highlights the current page correctly, so the main problem is gone. With the module off (first pass), /inventory/*, /sales/pos and /company/rental still load, the sidebar shows no group for them and ACCOUNTING is expanded with nothing active.",
+  "repro": [
+   "Open /inventory/levels or /sales/pos."
+  ],
+  "evidence": [
+   "ui19-inventory-no-nav.jpg"
+  ],
+  "fix": "When a module is off, redirect its routes to a short \"This module is off for your company\" page (or show the group disabled with that note). No change needed when the module is on."
+ },
+ {
+  "id": "UI-20",
+  "sev": "Medium",
+  "title": "Receive payment: amount inputs show raw numbers, columns unbalanced",
+  "area": "Sales > Receive payments / Purchase > Pay vendors",
+  "vp": "Desktop",
+  "screens": "/sales/payments/new, /purchase/payments/new",
+  "what": "Amount placeholders are unformatted (\"432800\") next to formatted balances (\"LKR 432,800\"); both are left-aligned; a large empty area sits right of the amount column. The page header band is a different background from the card below it.",
+  "repro": [
+   "Open /sales/payments/new."
+  ],
+  "evidence": [
+   "ui20-receive-payment.jpg"
+  ],
+  "fix": "Right-align Balance and Amount, format the placeholder with grouping, put the amount column at the right edge (`margin-left:auto`), use the same card for header and table."
+ },
+ {
+  "id": "UI-21",
+  "sev": "Medium",
+  "title": "Invoice detail header: big empty gap and wrapped meta values",
+  "area": "Sales/purchase document detail",
+  "vp": "Desktop",
+  "screens": "/sales/invoices/{id}, /purchase/purchases/{id}, /purchase/orders/{id}",
+  "what": "The totals box on the right sets the header height, leaving ~90px of blank space between the status line and the Date/Delivery row; \"Commercial — no output VAT\" wraps in a 6-column row with spare width.",
+  "repro": [
+   "Open any posted invoice."
+  ],
+  "evidence": [
+   "ui21-invoice-detail-gap.jpg"
+  ],
+  "fix": "Header as `grid-template-columns:1fr auto; align-items:start`, put the meta grid in the left column directly under the title; meta grid `repeat(auto-fit,minmax(140px,1fr))`."
+ },
+ {
+  "id": "UI-22",
+  "sev": "Medium",
+  "title": "Quotation form totals box is not right-aligned (differs from invoice form)",
+  "area": "Sales > Quotations (new/edit)",
+  "vp": "Desktop",
+  "screens": "/sales/quotations/new, /sales/quotations/{id}/edit",
+  "what": "Totals box ends at x≈1119 leaving a 280px empty strip to its right, while the invoice form places totals at the right edge.",
+  "repro": [
+   "Open /sales/quotations/new."
+  ],
+  "evidence": [
+   "ui22-quote-totals.jpg"
+  ],
+  "fix": "Reuse the invoice footer layout: notes left (flex:1), discount, totals `margin-left:auto;width:266px`."
+ },
+ {
+  "id": "UI-23",
+  "sev": "Low",
+  "title": "Document form header grid: field edges don't line up row to row",
+  "area": "Document forms",
+  "vp": "Desktop",
+  "screens": "/sales/invoices/new, /sales/quotations/new, /purchase/*/new",
+  "what": "Row 1 is a 3-column grid and row 2 a 4-column grid, so column edges are offset (e.g. Invoice kind ends at 895, Invoice date at 895 but Customer starts at 908 and Due date at 1158).",
+  "repro": [
+   "Open /sales/invoices/new."
+  ],
+  "evidence": [
+   "ui23-doc-header-grid.jpg"
+  ],
+  "fix": "Single 4-column grid; Customer `grid-column:span 2`; Mode of payment in column 1 of row 3."
+ },
+ {
+  "id": "UI-24",
+  "sev": "Low",
+  "title": "Date formats are inconsistent (US mm/dd/yyyy in inputs and printouts)",
+  "area": "Forms, print",
+  "vp": "All",
+  "screens": "All native date inputs, print preview",
+  "what": "Native date inputs show 11/26/2026 (browser locale) and the printed invoice shows 11/10/2026, while the app shows 26 Nov 2026 and ISO 2026-11-26 in tables. Opening balances uses a different custom date picker.",
+  "repro": [
+   "Open /sales/invoices/new; then Print an invoice."
+  ],
+  "evidence": [
+   "ui24-print-preview-dates.jpg"
+  ],
+  "fix": "Use the shared DateField (DS-11) everywhere and format printed dates with the company locale (e.g. `Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric'})`)."
+ },
+ {
+  "id": "UI-25",
+  "sev": "Low",
+  "title": "Backup page uses native unstyled controls",
+  "area": "Company > Backup",
+  "vp": "Desktop",
+  "screens": "/company/backup",
+  "what": "\"Choose File\" is the browser default file input and \"Restore company data first\" is an unstyled disabled native button; password fields only fill half the card; the yellow notice touches the paragraph above.",
+  "repro": [
+   "Open /company/backup."
+  ],
+  "evidence": [
+   "ui25-backup-native-controls.jpg"
+  ],
+  "fix": "Use the app Button and a styled file picker (hidden input + Button + file name); `.notice{margin-top:12px}`; password fields in the standard 2-column grid."
+ },
+ {
+  "id": "UI-26",
+  "sev": "Low",
+  "title": "AR/AP aging toolbar and bucket cards misaligned",
+  "area": "Sales > AR Aging, Purchase > AP Aging",
+  "vp": "Desktop",
+  "screens": "/sales/aging, /purchase/aging",
+  "what": "The date input is indented 8px from its label, touches the Refresh button and is a different height (40 vs 37px). The six bucket cards stop at x≈1250, leaving an empty strip on the right.",
+  "repro": [
+   "Open /sales/aging."
+  ],
+  "evidence": [
+   "ui26-ar-aging-toolbar.jpg"
+  ],
+  "fix": "Toolbar `display:flex;gap:8px;align-items:end`; same 40px control height; bucket cards `grid-template-columns:repeat(6,1fr)`."
+ },
+ {
+  "id": "UI-27",
+  "sev": "Low",
+  "title": "Raw codes shown as labels (invoice_bill, lowercase statuses)",
+  "area": "Journal, Transactions, lists",
+  "vp": "All",
+  "screens": "/journal, /transactions, /parties/*, /company/team",
+  "what": "Type shows \"invoice_bill\"; statuses show \"active\", \"open\" in lowercase.",
+  "repro": [
+   "Open /journal."
+  ],
+  "evidence": [
+   "ui27-raw-enum-labels.jpg"
+  ],
+  "fix": "Map enum values to display labels (\"Invoice / bill\", \"Active\") in one label helper."
+ },
+ {
+  "id": "UI-28",
+  "sev": "Low",
+  "title": "Reports: rows not ordered by account code, no totals, expenses coloured green",
+  "area": "Reports (P&L, Trial balance)",
+  "vp": "All",
+  "screens": "/reports?report=pnl, /reports?report=trial",
+  "what": "Accounts appear in arbitrary order (3000, 1400, 2100, 3100…). Trial balance has no Debit/Credit totals row. P&L shows expense amounts in the same green as revenue and no section subtotals. Zero rows dominate.",
+  "repro": [
+   "Open /reports?report=trial."
+  ],
+  "evidence": [
+   "ui28-trial-balance-order.jpg"
+  ],
+  "fix": "Sort by code; add totals row (and section subtotals on P&L); neutral colour for amounts; a \"Hide zero balances\" toggle (default on)."
+ },
+ {
+  "id": "UI-29",
+  "sev": "Low",
+  "title": "Save button placement differs between settings pages",
+  "area": "Company settings",
+  "vp": "Desktop",
+  "screens": "/company/tax (full width), /company/details (full width), /company/purchase, /company/sales (right-aligned)",
+  "what": "Some settings pages use a full-width primary button, others a right-aligned one.",
+  "repro": [
+   "Compare /company/tax and /company/purchase."
+  ],
+  "evidence": [
+   "ui29-tax-save-fullwidth.jpg"
+  ],
+  "fix": "Shared form footer: divider + right-aligned primary button."
+ },
+ {
+  "id": "UI-30",
+  "sev": "Low",
+  "title": "Sidebar icons repeat for different items",
+  "area": "Sidebar",
+  "vp": "All",
+  "screens": "All",
+  "what": "Tax Info, Sales Settings, Document styles and AgentBridge share one document icon; Locations reuses the bank icon of Accounting; Purchase Settings and Commerce use the same cart.",
+  "repro": [
+   "Expand COMPANY in the sidebar."
+  ],
+  "evidence": [
+   "ui30-sidebar-icons.jpg"
+  ],
+  "fix": "Distinct icons (e.g. Percent for Tax, Palette for Document styles, Bot/Plug for AgentBridge, Store for Commerce, MapPin for Locations)."
+ },
+ {
+  "id": "UI-31",
+  "sev": "Low",
+  "title": "Documentation: page title duplicated; nav items have bevelled borders",
+  "area": "/docs",
+  "vp": "All",
+  "screens": "/docs",
+  "what": "\"BookOne documentation\" appears as two H1s one under the other; sidebar items show a 3D right/bottom border unlike the app.",
+  "repro": [
+   "Open /docs."
+  ],
+  "evidence": [
+   "ui31-docs-duplicate-h1.jpg"
+  ],
+  "fix": "Drop the markdown H1 when the page header already renders the title; flat 1px border on nav items."
+ },
+ {
+  "id": "UI-32",
+  "sev": "Low",
+  "title": "Party form card is stretched to the full viewport height",
+  "area": "Customers/Vendors new & edit",
+  "vp": "Desktop",
+  "screens": "/parties/customers/new, /parties/vendors/new, edit",
+  "what": "The Identity tab fills ~40% of the card and the rest is blank down to the Save bar.",
+  "repro": [
+   "Open /parties/customers/new."
+  ],
+  "evidence": [
+   "ui32-customer-form-empty.jpg"
+  ],
+  "fix": "Remove the forced min-height on the form card; keep the action bar sticky to the bottom of the viewport instead."
+ },
+ {
+  "id": "UI-33",
+  "sev": "High",
+  "title": "Rental calendar timeline widens the whole page instead of scrolling inside its card",
+  "area": "Inventory > Rental calendar (Timeline view)",
+  "vp": "All; worst on tablet and mobile",
+  "screens": "/inventory/calendar (default Timeline view)",
+  "what": "The 30-day grid has a fixed minimum width and no scroll container, so the page grows sideways: 1578px wide at 1440 (+138px), 1578px at 768 (+810px) and 1298px at 390. The \"On rent now\" button and the right end of the grid sit outside the top bar and page frame, and at 1440 the last days (28 to 30) need a horizontal page scroll. Booking bars are cut to \"40 · 24…\" and \"150 · 28–30 · K…\" with no way to read the full label.",
+  "repro": [
+   "Have at least one hire booking (sales order with hire dates) in the month.",
+   "Open /inventory/calendar at 1440×900, then at 768 and 390.",
+   "Scroll right: the top bar stops at 1440 while the grid and \"On rent now\" continue."
+  ],
+  "evidence": [
+   "ui33-rental-calendar-desktop.jpg",
+   "ui33-rental-calendar-mobile.jpg"
+  ],
+  "fix": "Wrap the timeline in `<div class=\"hire-cal-scroll\" style=\"overflow-x:auto\">` inside the card and let the page stay at viewport width. Make the Item column `position:sticky;left:0` with a background so names stay visible while scrolling. Let the toolbar wrap (`flex-wrap:wrap`) so \"On rent now\" stays inside the frame. Give bars a `title` (or tooltip) with the full \"qty · dates · customer\" text, and on screens under 768px default to the List view."
+ },
+ {
+  "id": "UI-34",
+  "sev": "High",
+  "title": "POS terminal on tablet and phone: cart and Pay button are pushed below the product grid",
+  "area": "POS terminal (/pos)",
+  "vp": "Tablet 768x1024, Mobile 390x844",
+  "screens": "/pos",
+  "what": "Below desktop width the two-pane terminal stacks: product grid first, then the cart, totals and Pay. On a 768×1024 tablet (a typical POS device) the Pay button is at y≈1130, below the fold, and on a phone it is at the bottom of a 2645px page after every product tile. The header also wraps to three rows on tablet and five on phone. A cashier has to scroll after every scan to see the cart and total.",
+  "repro": [
+   "Open a shift and go to /pos at 768×1024.",
+   "Tap a product: the cart line is added off-screen; scroll down to find the total and Pay.",
+   "Repeat at 390×844."
+  ],
+  "evidence": [
+   "ui34-pos-tablet.jpg",
+   "ui34-pos-mobile.jpg"
+  ],
+  "fix": "Keep the terminal two-pane down to 768px (grid `minmax(0,1fr) 320px`, product tiles `repeat(auto-fill,minmax(120px,1fr))`). Under 768px show a sticky bottom bar with item count, total and Pay (`position:sticky;bottom:0`) that opens the cart as a bottom sheet. Collapse the header actions (Close shift, History, Shifts, printer and drawer buttons) into one overflow menu under 1024px."
+ },
+ {
+  "id": "UI-35",
+  "sev": "Medium",
+  "title": "Product form: Cancel / Save bar sits on top of the Short description editor",
+  "area": "Inventory > Products (new / edit)",
+  "vp": "Desktop 1440x900",
+  "screens": "/inventory/products/new, /inventory/products/{id}/edit",
+  "what": "The form card is fixed to the viewport height and its action bar has no background or separation, so on the Identity tab the Cancel and Save product buttons share a row with the editor toolbar and the editor itself is cut in half (\"A short summary customers will see first\" is clipped at the card edge).",
+  "repro": [
+   "Open /inventory/products/new at 1440×900.",
+   "Look at the bottom of the Identity tab."
+  ],
+  "evidence": [
+   "ui35-product-form-footer.jpg"
+  ],
+  "fix": "Make the footer a real sticky bar: `position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px` and give the scroll area `padding-bottom` equal to the bar height. Or let the card grow with content instead of fixing it to 100vh (same root cause as UI-32)."
+ },
+ {
+  "id": "UI-36",
+  "sev": "Medium",
+  "title": "Dispatch / returns: mixed label styles, GL codes in labels, tall action column; page overflows on mobile",
+  "area": "Inventory > Dispatch / returns",
+  "vp": "All; overflow on mobile",
+  "screens": "/inventory/on-rent",
+  "what": "Each job card mixes stacked labels (Tender, Extend hire to) with inline labels squeezed beside inputs (\"Agreed damage (4450)\", \"Agreed late fee (4450)\", \"Extra hire (4400)\"), and shows raw GL account numbers to the user. The \"Confirm overlap\" checkbox floats next to the date. In the lines table, Dispatch / Open doc / Packing list are stacked so each row is about 110px tall. At 390px the table forces the page to 738px wide.",
+  "repro": [
+   "Create a sales order with hire dates and confirm it.",
+   "Open /inventory/on-rent at 1440 and at 390."
+  ],
+  "evidence": [
+   "ui36-dispatch-desktop.jpg",
+   "ui36-dispatch-mobile.jpg"
+  ],
+  "fix": "Use one form grid per card: stacked labels above every input, in rows of 3 (`grid-template-columns:repeat(auto-fit,minmax(180px,1fr))`). Move the account numbers to a help tooltip or drop them. Put Open doc and Packing list into a row-level \"⋯\" menu and keep only the primary action (Dispatch / Return) as a button. Under 640px render the lines as stacked cards (shared table fix, UI-03)."
+ },
+ {
+  "id": "UI-37",
+  "sev": "Medium",
+  "title": "Stock levels: stock value squeezed into the toolbar; money and reorder cells wrap",
+  "area": "Inventory > Stock levels / Low stock",
+  "vp": "Desktop 1440x900 (worse on tablet)",
+  "screens": "/inventory/levels, /inventory/levels?low=1, /inventory/levels?fleet=on_rent",
+  "what": "The total stock value is small grey text wedged between the Wash filter and the Adjustment button, so it reads as a disabled control. Value cells wrap to two lines (\"LKR / 495,000\"), and the Reorder cell stacks a \"blocked\" pill over \"≤ 50\", so rows have uneven heights. Money is left-aligned (see UI-14).",
+  "repro": [
+   "Have stock in more than one location.",
+   "Open /inventory/levels at 1440×900."
+  ],
+  "evidence": [
+   "ui37-stock-levels-toolbar.jpg"
+  ],
+  "fix": "Move \"Stock value LKR 3,615,650\" into a summary line or stat card above the table. Give money cells `white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums`. Show reorder as one line (\"≤ 50 · blocked\") or a single status pill with the level in a tooltip."
+ },
+ {
+  "id": "UI-38",
+  "sev": "Low",
+  "title": "Rental month view: booking chips unreadable on mobile; overdue hire not shown as overdue",
+  "area": "Inventory > Rental calendar (Month view)",
+  "vp": "Mobile 390x844; Desktop",
+  "screens": "/inventory/calendar?view=month",
+  "what": "At 390px each day cell is about 40px wide, so every booking chip truncates to one letter and an ellipsis (\"N…\", \"K…\"). On all sizes the chip colour is the job pastel only: SO-20261126-0003 is overdue (ended 25 Nov, still out) and the timeline marks it red, but the month view shows it in the same yellow as a normal booking, even though the legend above lists Overdue in red.",
+  "repro": [
+   "Have one hire whose end date is before today and not returned.",
+   "Open /inventory/calendar?view=month at 1440, then at 390."
+  ],
+  "evidence": [
+   "ui38-month-chips-mobile.jpg",
+   "ui38-month-overdue-desktop.jpg"
+  ],
+  "fix": "Under 640px replace chips with a coloured dot per booking and list the day's bookings below the grid when a day is tapped (or default to List view). Add the status border used in the timeline (`hire-cal-chip-late`) to month chips so overdue jobs show red regardless of job pastel."
+ }
+]

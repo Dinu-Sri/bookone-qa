@@ -1,0 +1,51 @@
+[
+ [
+  "F-02",
+  "High",
+  "Stock can go negative without warning.",
+  "A POS sale from the Front Counter register (no stock there) and an adjustment at the Default location left on-hand at −1 and −2, with negative stock value (LKR −37,000). Fix: block or warn on issues that take a location below zero, unless the company allows negative stock.",
+  "f02-negative-stock.jpg"
+ ],
+ [
+  "F-03",
+  "Medium",
+  "Product save reports an error but still creates the product.",
+  "Saving a stocked product with opening quantity but no opening location shows \"Pick a location for opening stock\", yet the product is created with quantity 0. Fix: validate before insert and roll back on error.",
+  null
+ ],
+ [
+  "F-04",
+  "High",
+  "Stock transfer form has no From and To location fields.",
+  "/inventory/transfers/new only has Date, Reason, product lines and Notes, so a transfer cannot say where stock moves from or to. The first line is also prefilled with A4 Copy Paper, qty 1. Fix: add required From/To location selects and start with empty lines.",
+  "f04-transfer-no-locations.jpg"
+ ],
+ [
+  "F-05",
+  "Low",
+  "Posted adjustment shows 0 lines.",
+  "ADJ-20261126-0001 (one line, posted) shows LINES 0 in the adjustments list. Fix: count lines in the list query.",
+  null
+ ],
+ [
+  "F-06",
+  "Medium",
+  "POS sells rental fleet items.",
+  "Rental products (Banquet Chair, Marquee Tent and their fleet variants) appear as sellable tiles in the POS grid at their hire price. Fix: exclude rental-type products from POS, or route them to a hire flow.",
+  "f06-pos-fleet-items.jpg"
+ ],
+ [
+  "F-07",
+  "Low",
+  "Purchase bill asks for hire dates when it contains a rental product.",
+  "Buying rental fleet stock on a purchase bill requires hire-from/to dates, which do not apply to a purchase. Fix: only ask for hire dates on sales documents.",
+  null
+ ],
+ [
+  "F-08",
+  "Medium",
+  "Sales order detail hides the hire details.",
+  "Hire from/to, event date, venue and guest count entered on the order form are not shown on the order detail page (only on Dispatch / returns). Fix: show a Hire block under the header on hire orders.",
+  "f08-order-no-hire-details.jpg"
+ ]
+]
