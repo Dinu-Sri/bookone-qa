@@ -1,3 +1,7 @@
+# Current — 26 November 2026 retest on v2.17.12 (e2e04d2): not customer-ready
+
+Bank blockers from 19 Nov and the five AgentBridge AB-05 safety failures are fixed on the live build. New P1s: AgentBridge OAuth consent redirects with 307 (Claude connector cannot finish sign-in), Viewer/Cashier can write discounts and company domains, Viewer can import bank statements, and posting creates duplicate customers/vendors when display name differs from legal name. Ecommerce tested up to order intake; mapping/stock/posting blocked because Inventory is off for new companies. Backup/restore into a fresh company passed. Read runs/RUN-20261126-blockers-agentbridge-commerce.md and handoffs/CODING-20261126-QA-RETEST.md. Older pointers below are historical.
+
 # Current — 12 November v2.5.27 live; combined Light mission released
 
 Owner personally merged/deployed Product PR11. Actual V/N stamp v2.5.27 · dae17ab; full merged dae17abcba12d6810c8f8c3fe4a74fb28280a026, identical reviewed candidate3d6119e/tree78973f5a9298ce615f5c8cda17f77b2de714bfa2. PR105 PG141/141, HTTPS30/30, accounting210, fullcheck/BatchA/BF/archive pass; campaign315/0 but coverage/launch acceptance unestablished. Both V/N setup complete/zero financial openings; manual dedicated POS, GRNI/approval off, new Input VAT selector observed. No new financial/settings/master/stock/shift/print writes in Medium preparation. First premature auth acceptance explicitly adjudicated not-established; successor actual protected identity passed, original evidence preserved.
